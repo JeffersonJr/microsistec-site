@@ -365,12 +365,12 @@ function Albert() {
               >
                 Converse com o Albert agora mesmo <ArrowRight className="w-4 h-4" />
               </a>
-              <a
-                href="#demo"
+              <Link
+                to="/planos-albert"
                 className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
               >
                 Ver planos
-              </a>
+              </Link>
             </div>
           </div>
 
