@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* ------------------- Variáveis de cor ------------------- */
+:root {
+  --background: #ffffff;          /* fundo claro */
+  --foreground: #111827;          /* texto primário */
+  --primary: #111827;             /* para títulos */
+  --muted: #6b7280;               /* texto secundário */
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+}
+
+/* Dark mode – ativado via class="dark" no <html> */
+.dark {
+  --background: #0f172a;          /* azul quase preto */
+  --foreground: #f8fafc;
+  --primary: #f8fafc;
+  --muted: #94a3b8;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --color-emerald-500: var(--emerald-500);
+  --color-emerald-600: var(--emerald-600);
+  --color-emerald-700: var(--emerald-700);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+/* ------------------- Base tipográfica ------------------- */
+html {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  color: var(--foreground);
+  background-color: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ------------------- Utilitários de texto ------------------- */
+.text-muted {
+  color: var(--muted);
+}
+.text-primary {
+  color: var(--primary);
+}
+
+/* ------------------- Botões ------------------- */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-md transition-all hover:shadow-lg hover:shadow-emerald-600/10 active:scale-95;
+}
+.btn-outline {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-muted/30 rounded-md font-medium text-primary hover:bg-muted/10 transition-all active:scale-95;
+}
+
+/* ------------------- Dark mode utilities ------------------- */
+.dark .bg-muted\/50 {
+  background-color: rgba(30, 41, 59, 0.5);
+}
+.dark .hover\:bg-muted\/100:hover {
+  background-color: rgba(30, 41, 59, 0.8);
+}
