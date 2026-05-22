@@ -86,9 +86,9 @@ export function DemoModal() {
           <div className="relative flex items-center justify-between">
             <div>
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">Microsistec CRM</span>
-              <h3 className="font-extrabold text-xl tracking-tight mt-1">
+              <DialogTitle className="font-extrabold text-xl tracking-tight mt-1">
                 Ativar Teste Grátis
-              </h3>
+              </DialogTitle>
             </div>
             <Sparkles className="w-8 h-8 text-[color:var(--brand-orange)]" />
           </div>
