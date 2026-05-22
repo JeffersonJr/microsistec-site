@@ -1,0 +1,10 @@
+# Ignore Cloudflare Workers artifacts — not needed on Vercel
+.wrangler
+wrangler.jsonc
+
+# Ignore development/local files
+.tanstack
+.next
+
+# Ignore source files — only built output is needed
+# (Vercel runs the build command, so node_modules and src are used during build)

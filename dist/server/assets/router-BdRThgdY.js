@@ -1,57 +1,651 @@
-import { 
-  Building2, 
-  Smartphone, 
-  LineChart, 
-  Workflow, 
-  Bot, 
-  Globe, 
-  Sparkles,
-  ShieldCheck,
-  Zap,
-  Users,
-  Home
-} from "lucide-react";
-
-export interface Solution {
-  id: string;
-  slug: string;
-  title: string;
-  shortDesc: string;
-  longDesc: string;
-  iconName: string;
-  features: string[];
-  benefits: string[];
-  ctaText: string;
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { createRootRouteWithContext, useRouter, Link, Outlet, HeadContent, Scripts, createFileRoute, lazyRouteComponent, notFound, createRouter } from "@tanstack/react-router";
+import { jsx, jsxs } from "react/jsx-runtime";
+import * as React from "react";
+import { X, Sparkles, ArrowRight, Loader2, CheckCircle2, Key, MapPin, Home, Users, Zap, ShieldCheck, Globe, Bot, Workflow, LineChart, Smartphone, Building2 } from "lucide-react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { Slot } from "@radix-ui/react-slot";
+import { cva } from "class-variance-authority";
+import * as LabelPrimitive from "@radix-ui/react-label";
+import Intercom from "@intercom/messenger-js-sdk";
+const appCss = "/assets/styles-BLVIphRI.css";
+const DemoModalContext = React.createContext(void 0);
+function DemoModalProvider({ children }) {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const openModal = React.useCallback(() => setIsOpen(true), []);
+  const closeModal = React.useCallback(() => setIsOpen(false), []);
+  return /* @__PURE__ */ jsx(DemoModalContext.Provider, { value: { isOpen, openModal, closeModal }, children });
 }
-
-export interface BlogPost {
-  id: string;
-  slug: string;
-  tag: string;
-  title: string;
-  excerpt: string;
-  content: string; // HTML-rich detailed article content
-  date: string;
-  readTime: string;
-  imageUrl: string;
-  author: {
-    name: string;
-    role: string;
-    avatarUrl: string;
+function useDemoModal() {
+  const context = React.useContext(DemoModalContext);
+  if (!context) {
+    throw new Error("useDemoModal must be used within a DemoModalProvider");
+  }
+  return context;
+}
+function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+const Dialog = DialogPrimitive.Root;
+const DialogPortal = DialogPrimitive.Portal;
+const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+  DialogPrimitive.Overlay,
+  {
+    ref,
+    className: cn(
+      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      className
+    ),
+    ...props
+  }
+));
+DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
+const DialogContent = React.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ jsxs(DialogPortal, { children: [
+  /* @__PURE__ */ jsx(DialogOverlay, {}),
+  /* @__PURE__ */ jsxs(
+    DialogPrimitive.Content,
+    {
+      ref,
+      className: cn(
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg",
+        className
+      ),
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsxs(DialogPrimitive.Close, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background cursor-pointer transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground", children: [
+          /* @__PURE__ */ jsx(X, { className: "h-4 w-4" }),
+          /* @__PURE__ */ jsx("span", { className: "sr-only", children: "Close" })
+        ] })
+      ]
+    }
+  )
+] }));
+DialogContent.displayName = DialogPrimitive.Content.displayName;
+const DialogTitle = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+  DialogPrimitive.Title,
+  {
+    ref,
+    className: cn("text-lg font-semibold leading-none tracking-tight", className),
+    ...props
+  }
+));
+DialogTitle.displayName = DialogPrimitive.Title.displayName;
+const DialogDescription = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+  DialogPrimitive.Description,
+  {
+    ref,
+    className: cn("text-sm text-muted-foreground", className),
+    ...props
+  }
+));
+DialogDescription.displayName = DialogPrimitive.Description.displayName;
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline"
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-md px-3 text-xs",
+        lg: "h-10 rounded-md px-8",
+        icon: "h-9 w-9"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default"
+    }
+  }
+);
+const Button = React.forwardRef(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return /* @__PURE__ */ jsx(Comp, { className: cn(buttonVariants({ variant, size, className })), ref, ...props });
+  }
+);
+Button.displayName = "Button";
+const Input = React.forwardRef(
+  ({ className, type, ...props }, ref) => {
+    return /* @__PURE__ */ jsx(
+      "input",
+      {
+        type,
+        className: cn(
+          "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          className
+        ),
+        ref,
+        ...props
+      }
+    );
+  }
+);
+Input.displayName = "Input";
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+);
+const Label = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(LabelPrimitive.Root, { ref, className: cn(labelVariants(), className), ...props }));
+Label.displayName = LabelPrimitive.Root.displayName;
+const STEPS = [
+  { label: "Validando informações comerciais...", duration: 800 },
+  { label: "Configurando banco de dados no imob.online...", duration: 900 },
+  { label: "Instanciando Albert IA com dados da Microsistec...", duration: 1e3 },
+  { label: "Finalizando ativação do painel administrativo...", duration: 700 }
+];
+function DemoModal() {
+  const { isOpen, closeModal } = useDemoModal();
+  const [formData, setFormData] = React.useState({
+    nome: "",
+    cargo: "",
+    tel: "",
+    email: "",
+    senha: ""
+  });
+  const [status, setStatus] = React.useState("idle");
+  const [currentStep, setCurrentStep] = React.useState(0);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
+  const resetModal = React.useCallback(() => {
+    setStatus("idle");
+    setCurrentStep(0);
+    setFormData({ nome: "", cargo: "", tel: "", email: "", senha: "" });
+  }, []);
+  const handleClose = () => {
+    closeModal();
+    setTimeout(() => {
+      resetModal();
+    }, 300);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.nome || !formData.email || !formData.senha || !formData.tel) {
+      return;
+    }
+    setStatus("loading");
+    setCurrentStep(0);
+    let stepIndex = 0;
+    const runStep = () => {
+      if (stepIndex < STEPS.length) {
+        setTimeout(() => {
+          stepIndex++;
+          setCurrentStep(stepIndex);
+          runStep();
+        }, STEPS[stepIndex].duration);
+      } else {
+        setStatus("success");
+      }
+    };
+    runStep();
+  };
+  return /* @__PURE__ */ jsx(Dialog, { open: isOpen, onOpenChange: (open) => !open && handleClose(), children: /* @__PURE__ */ jsxs(DialogContent, { className: "max-w-md bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] overflow-hidden shadow-elev rounded-3xl p-0 relative", children: [
+    /* @__PURE__ */ jsx(
+      "button",
+      {
+        onClick: handleClose,
+        className: "absolute top-4 right-4 z-50 w-8 h-8 rounded-full bg-[color:var(--brand-ink)]/10 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)]/70 flex items-center justify-center transition cursor-pointer border-none",
+        "aria-label": "Fechar",
+        children: /* @__PURE__ */ jsx(X, { className: "w-4 h-4" })
+      }
+    ),
+    /* @__PURE__ */ jsxs("div", { className: "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-6 relative", children: [
+      /* @__PURE__ */ jsx("div", { className: "bg-grid absolute inset-0 opacity-15" }),
+      /* @__PURE__ */ jsxs("div", { className: "relative flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxs("div", { children: [
+          /* @__PURE__ */ jsx("span", { className: "stamp text-[color:var(--brand-orange)] text-[10px]", children: "Microsistec CRM" }),
+          /* @__PURE__ */ jsx("h3", { className: "font-extrabold text-xl tracking-tight mt-1", children: "Ativar Teste Grátis" })
+        ] }),
+        /* @__PURE__ */ jsx(Sparkles, { className: "w-8 h-8 text-[color:var(--brand-orange)]" })
+      ] })
+    ] }),
+    status === "idle" && /* @__PURE__ */ jsxs("form", { onSubmit: handleSubmit, className: "p-6 space-y-4", children: [
+      /* @__PURE__ */ jsx(DialogDescription, { className: "text-sm text-foreground/75 leading-relaxed", children: "Crie seu acesso administrativo em 30 segundos. Experimente a potência do CRM imobiliário e do Albert IA por 14 dias sem compromisso." }),
+      /* @__PURE__ */ jsxs("div", { className: "space-y-3 mt-2", children: [
+        /* @__PURE__ */ jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsx(Label, { htmlFor: "nome", className: "text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80", children: "Nome Completo" }),
+          /* @__PURE__ */ jsx(
+            Input,
+            {
+              id: "nome",
+              name: "nome",
+              type: "text",
+              required: true,
+              placeholder: "Ex: Jefferson Junior",
+              value: formData.nome,
+              onChange: handleChange,
+              className: "bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
+          /* @__PURE__ */ jsxs("div", { className: "space-y-1.5", children: [
+            /* @__PURE__ */ jsx(Label, { htmlFor: "cargo", className: "text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80", children: "Cargo / Função" }),
+            /* @__PURE__ */ jsx(
+              Input,
+              {
+                id: "cargo",
+                name: "cargo",
+                type: "text",
+                required: true,
+                placeholder: "Ex: Diretor, Corretor",
+                value: formData.cargo,
+                onChange: handleChange,
+                className: "bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxs("div", { className: "space-y-1.5", children: [
+            /* @__PURE__ */ jsx(Label, { htmlFor: "tel", className: "text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80", children: "WhatsApp / Tel" }),
+            /* @__PURE__ */ jsx(
+              Input,
+              {
+                id: "tel",
+                name: "tel",
+                type: "tel",
+                required: true,
+                placeholder: "Ex: (13) 99759-1781",
+                value: formData.tel,
+                onChange: handleChange,
+                className: "bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
+              }
+            )
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsx(Label, { htmlFor: "email", className: "text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80", children: "E-mail Corporativo" }),
+          /* @__PURE__ */ jsx(
+            Input,
+            {
+              id: "email",
+              name: "email",
+              type: "email",
+              required: true,
+              placeholder: "jefferson@imobiliaria.com",
+              value: formData.email,
+              onChange: handleChange,
+              className: "bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "space-y-1.5", children: [
+          /* @__PURE__ */ jsx(Label, { htmlFor: "senha", className: "text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80", children: "Senha para Acesso" }),
+          /* @__PURE__ */ jsx(
+            Input,
+            {
+              id: "senha",
+              name: "senha",
+              type: "password",
+              required: true,
+              placeholder: "••••••••",
+              value: formData.senha,
+              onChange: handleChange,
+              className: "bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs(
+        Button,
+        {
+          type: "submit",
+          className: "w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-5 font-semibold text-sm cursor-pointer mt-4 flex items-center justify-center gap-2",
+          children: [
+            "Ativar Meu Acesso Grátis ",
+            /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4" })
+          ]
+        }
+      )
+    ] }),
+    status === "loading" && /* @__PURE__ */ jsxs("div", { className: "p-8 flex flex-col items-center justify-center min-h-[350px] space-y-6", children: [
+      /* @__PURE__ */ jsxs("div", { className: "relative", children: [
+        /* @__PURE__ */ jsx("div", { className: "absolute -inset-3 rounded-full bg-[color:var(--brand-orange)]/10 blur-md animate-pulse" }),
+        /* @__PURE__ */ jsx(Loader2, { className: "w-12 h-12 text-[color:var(--brand-orange)] animate-spin relative" })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "text-center space-y-2", children: [
+        /* @__PURE__ */ jsx("h4", { className: "font-bold text-lg tracking-tight", children: "Ativando Ambiente Seguro" }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground max-w-xs mx-auto", children: "Aguarde alguns segundos enquanto configuramos sua imobiliária digital." })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "w-full bg-[color:var(--brand-ink)]/10 rounded-full h-1.5 overflow-hidden", children: /* @__PURE__ */ jsx(
+        "div",
+        {
+          className: "h-full bg-[color:var(--brand-orange)] transition-all duration-300",
+          style: { width: `${currentStep / STEPS.length * 100}%` }
+        }
+      ) }),
+      /* @__PURE__ */ jsx("div", { className: "w-full space-y-2 text-xs font-mono-ui bg-background/50 border border-[color:var(--brand-ink)]/5 rounded-xl p-3.5", children: STEPS.map((s, idx) => /* @__PURE__ */ jsxs(
+        "div",
+        {
+          className: `flex items-center gap-2 transition-opacity duration-300 ${idx < currentStep ? "text-[color:var(--brand-orange)] font-semibold" : idx === currentStep ? "text-foreground animate-pulse" : "text-muted-foreground/50"}`,
+          children: [
+            /* @__PURE__ */ jsx("span", { className: "shrink-0", children: idx < currentStep ? "✓" : idx === currentStep ? "●" : "○" }),
+            /* @__PURE__ */ jsx("span", { children: s.label })
+          ]
+        },
+        s.label
+      )) })
+    ] }),
+    status === "success" && /* @__PURE__ */ jsxs("div", { className: "p-8 text-center min-h-[350px] flex flex-col items-center justify-center space-y-6", children: [
+      /* @__PURE__ */ jsx("div", { className: "w-16 h-16 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] flex items-center justify-center", children: /* @__PURE__ */ jsx(CheckCircle2, { className: "w-10 h-10" }) }),
+      /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
+        /* @__PURE__ */ jsx("h3", { className: "font-extrabold text-2xl tracking-tight leading-none text-gradient", children: "Plataforma Ativada!" }),
+        /* @__PURE__ */ jsxs("p", { className: "text-sm text-foreground/80 leading-relaxed max-w-xs mx-auto", children: [
+          "Parabéns ",
+          /* @__PURE__ */ jsx("strong", { children: formData.nome.split(" ")[0] }),
+          "! Seu CRM e o Albert IA estão prontos no ambiente temporário."
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "w-full text-left space-y-2 text-xs font-mono-ui bg-background/90 border border-[color:var(--brand-ink)]/10 rounded-2xl p-4", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex justify-between pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-muted-foreground", children: "Sistema URL:" }),
+          /* @__PURE__ */ jsx("span", { className: "font-semibold text-foreground", children: "imob.online/microsistec" })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex justify-between pt-1", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-muted-foreground", children: "E-mail:" }),
+          /* @__PURE__ */ jsx("span", { className: "font-semibold text-foreground", children: formData.email })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex justify-between", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-muted-foreground", children: "Cargo:" }),
+          /* @__PURE__ */ jsx("span", { className: "font-semibold text-foreground", children: formData.cargo })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex justify-between", children: [
+          /* @__PURE__ */ jsx("span", { className: "text-muted-foreground", children: "Status do Albert IA:" }),
+          /* @__PURE__ */ jsx("span", { className: "font-semibold text-[color:var(--brand-orange)]", children: "Ativo (Treinando)" })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "w-full flex flex-col gap-2 pt-2", children: [
+        /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: "https://imob.online/",
+            target: "_blank",
+            rel: "noreferrer",
+            className: "w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3.5 font-bold text-sm flex items-center justify-center gap-2",
+            children: [
+              "Entrar no Sistema ",
+              /* @__PURE__ */ jsx(ArrowRight, { className: "w-4 h-4" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          Button,
+          {
+            variant: "ghost",
+            onClick: handleClose,
+            className: "text-xs text-muted-foreground hover:text-foreground hover:bg-transparent",
+            children: "Fechar esta janela"
+          }
+        )
+      ] })
+    ] })
+  ] }) });
 }
-
-export interface Testimonial {
-  id: string;
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-  location: string;
-  avatarUrl: string;
+function NotFoundComponent() {
+  return /* @__PURE__ */ jsxs(
+    "div",
+    {
+      className: "min-h-screen flex flex-col items-center justify-center px-6 py-20 text-center relative overflow-hidden",
+      style: { background: "var(--brand-ink, #0e1117)", color: "var(--brand-sand, #f5f0e8)" },
+      children: [
+        /* @__PURE__ */ jsx(
+          "div",
+          {
+            className: "pointer-events-none absolute inset-0 opacity-[0.04]",
+            style: {
+              backgroundImage: "repeating-linear-gradient(0deg,currentColor,currentColor 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,currentColor,currentColor 1px,transparent 1px,transparent 60px)"
+            }
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "div",
+          {
+            className: "mb-8 flex items-center justify-center w-20 h-20 rounded-3xl",
+            style: {
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              animation: "float 3s ease-in-out infinite"
+            },
+            children: /* @__PURE__ */ jsx(Key, { style: { width: 36, height: 36, color: "var(--brand-orange, #ff6b35)" } })
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "div",
+          {
+            className: "font-extrabold leading-none tracking-[-0.05em] select-none",
+            style: {
+              fontSize: "clamp(7rem, 20vw, 14rem)",
+              background: "linear-gradient(135deg, var(--brand-sand, #f5f0e8) 40%, var(--brand-orange, #ff6b35) 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text"
+            },
+            children: "404"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "h1",
+          {
+            className: "mt-4 font-extrabold tracking-tight",
+            style: { fontSize: "clamp(1.5rem, 4vw, 2.5rem)", color: "var(--brand-sand, #f5f0e8)" },
+            children: "Este endereço não existe no cadastro."
+          }
+        ),
+        /* @__PURE__ */ jsxs(
+          "p",
+          {
+            className: "mt-4 max-w-lg leading-relaxed",
+            style: { color: "rgba(245,240,232,0.65)", fontSize: "1.05rem" },
+            children: [
+              "Parece que o nosso corretor saiu para uma visita e levou a página com ele.",
+              " ",
+              /* @__PURE__ */ jsx("span", { style: { color: "var(--brand-orange, #ff6b35)", fontStyle: "italic" }, children: "Mas não se preocupe" }),
+              ", vamos te guiar até o próximo lead."
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxs(
+          "div",
+          {
+            className: "mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono",
+            style: {
+              background: "rgba(255,107,53,0.12)",
+              border: "1px solid rgba(255,107,53,0.3)",
+              color: "var(--brand-orange, #ff6b35)",
+              letterSpacing: "0.08em"
+            },
+            children: [
+              /* @__PURE__ */ jsx(MapPin, { style: { width: 12, height: 12 } }),
+              "Imóvel não encontrado · Verifique o endereço e tente novamente"
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsx("div", { className: "mt-10 flex flex-wrap items-center justify-center gap-4", children: /* @__PURE__ */ jsxs(
+          Link,
+          {
+            to: "/",
+            className: "inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-full transition-all duration-200 no-underline",
+            style: {
+              background: "var(--brand-orange, #ff6b35)",
+              color: "var(--brand-ink, #0e1117)"
+            },
+            onMouseEnter: (e) => {
+              e.currentTarget.style.opacity = "0.88";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            },
+            onMouseLeave: (e) => {
+              e.currentTarget.style.opacity = "1";
+              e.currentTarget.style.transform = "translateY(0)";
+            },
+            children: [
+              /* @__PURE__ */ jsx(Home, { style: { width: 16, height: 16 } }),
+              "Me leva para a Home",
+              /* @__PURE__ */ jsx(ArrowRight, { style: { width: 14, height: 14 } })
+            ]
+          }
+        ) }),
+        /* @__PURE__ */ jsxs(
+          "p",
+          {
+            className: "mt-16 text-xs font-mono",
+            style: { color: "rgba(245,240,232,0.3)", letterSpacing: "0.06em" },
+            children: [
+              "© ",
+              (/* @__PURE__ */ new Date()).getFullYear(),
+              " Microsistec · nem todos os endereços existem, mas todos os leads são bem-vindos."
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsx("style", { children: `
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+      ` })
+      ]
+    }
+  );
 }
-
-export const solutions: Solution[] = [
+function ErrorComponent({ error, reset }) {
+  console.error(error);
+  const router2 = useRouter();
+  return /* @__PURE__ */ jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxs("div", { className: "max-w-md text-center", children: [
+    /* @__PURE__ */ jsx("h1", { className: "text-xl font-semibold tracking-tight text-foreground", children: "This page didn't load" }),
+    /* @__PURE__ */ jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: "Something went wrong on our end. You can try refreshing or head back home." }),
+    /* @__PURE__ */ jsxs("div", { className: "mt-6 flex flex-wrap justify-center gap-2", children: [
+      /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: () => {
+            router2.invalidate();
+            reset();
+          },
+          className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
+          children: "Try again"
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        "a",
+        {
+          href: "/",
+          className: "inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent",
+          children: "Go home"
+        }
+      )
+    ] })
+  ] }) });
+}
+const Route$5 = createRootRouteWithContext()({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Lovable App" },
+      { name: "description", content: "Lovable Generated Project" },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "Lovable App" },
+      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" }
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      }
+    ]
+  }),
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent
+});
+function RootShell({ children }) {
+  return /* @__PURE__ */ jsxs("html", { lang: "en", children: [
+    /* @__PURE__ */ jsx("head", { children: /* @__PURE__ */ jsx(HeadContent, {}) }),
+    /* @__PURE__ */ jsxs("body", { children: [
+      children,
+      /* @__PURE__ */ jsx(Scripts, {})
+    ] })
+  ] });
+}
+function RootComponent() {
+  const { queryClient } = Route$5.useRouteContext();
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        Intercom({
+          app_id: "mjj9j4fs"
+        });
+      } catch (err) {
+        console.error("Failed to initialize Intercom:", err);
+      }
+    }
+  }, []);
+  return /* @__PURE__ */ jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxs(DemoModalProvider, { children: [
+    /* @__PURE__ */ jsx(Outlet, {}),
+    /* @__PURE__ */ jsx(DemoModal, {})
+  ] }) });
+}
+const $$splitComponentImporter$4 = () => import("./empresa-DJ4HFXqv.js");
+const Route$4 = createFileRoute("/empresa")({
+  head: () => ({
+    meta: [{
+      title: "Sobre a Microsistec - Trinta Anos de Inovação Imobiliária"
+    }, {
+      name: "description",
+      content: "Conheça a história da Microsistec, pioneira em tecnologia imobiliária fundada em 1994, agora impulsionando vendas com CRM e IA."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$4, "component")
+});
+const $$splitComponentImporter$3 = () => import("./index-BSbZTPJ0.js");
+const Route$3 = createFileRoute("/")({
+  head: () => ({
+    meta: [{
+      title: "Microsistec - A IA que move sua imobiliária"
+    }, {
+      name: "description",
+      content: "Microsistec une CRM, site, app e o Albert IA, a inteligência artificial sob medida para imobiliárias que querem vender mais e atender melhor."
+    }, {
+      property: "og:title",
+      content: "Microsistec - Tecnologia + IA para Imobiliárias"
+    }, {
+      property: "og:description",
+      content: "CRM imobiliário, app de atendimento, sites e o Albert IA num só lugar. Vendas com contexto, automação e velocidade."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$3, "component")
+});
+const $$splitComponentImporter$2 = () => import("./blog.index-PKNCJoyq.js");
+const Route$2 = createFileRoute("/blog/")({
+  head: () => ({
+    meta: [{
+      title: "Blog Microsistec - Tecnologia + IA para Imobiliárias"
+    }, {
+      name: "description",
+      content: "Leia artigos especializados em tecnologia imobiliária, inteligência artificial, marketing digital, e vendas para corretores e imobiliárias."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+const solutions = [
   {
     id: "crm",
     slug: "crm",
@@ -242,8 +836,7 @@ export const solutions: Solution[] = [
     ctaText: "Em Breve"
   }
 ];
-
-export const blogPosts: BlogPost[] = [
+const blogPosts = [
   {
     id: "1",
     slug: "como-ia-transforma-leads-imobiliarios",
@@ -510,8 +1103,7 @@ export const blogPosts: BlogPost[] = [
     `
   }
 ];
-
-export const testimonials: Testimonial[] = [
+const testimonials = [
   {
     id: "1",
     quote: "A gente parou de perder lead no WhatsApp. O Albert qualifica enquanto o corretor dorme e de manhã está tudo no CRM, organizado. Mudou a operação.",
@@ -558,8 +1150,7 @@ export const testimonials: Testimonial[] = [
     avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
   }
 ];
-
-export function getIconComponent(name: string) {
+function getIconComponent(name) {
   switch (name) {
     case "Building2":
       return Building2;
@@ -587,19 +1178,7 @@ export function getIconComponent(name: string) {
       return Sparkles;
   }
 }
-
-export interface PortalIntegration {
-  name: string;
-  category: "Portais Imobiliários Nacionais" | "Portais Imobiliários Regionais" | "Marketing & Ferramentas" | "Exclusivos & XML";
-  description: string;
-  type: "XML" | "API" | "XML / API" | "Em Breve";
-  logoBg: string;
-  logoTextColor: string;
-  logoText: string;
-  officialColor: string;
-}
-
-export const portalIntegrations: PortalIntegration[] = [
+const portalIntegrations = [
   {
     name: "Grupo Zap (Oferta Única)",
     category: "Portais Imobiliários Nacionais",
@@ -1051,3 +1630,116 @@ export const portalIntegrations: PortalIntegration[] = [
     officialColor: "#5EEAD4"
   }
 ];
+const $$splitComponentImporter$1 = () => import("./solucoes._slug-wTF83ueR.js");
+const Route$1 = createFileRoute("/solucoes/$slug")({
+  head: ({
+    params
+  }) => {
+    const sol = solutions.find((s) => s.slug === params.slug);
+    return {
+      meta: [{
+        title: sol ? `${sol.title} - Microsistec` : "Soluções Microsistec"
+      }, {
+        name: "description",
+        content: sol ? sol.shortDesc : "Explore as soluções de inteligência imobiliária da Microsistec."
+      }]
+    };
+  },
+  loader: ({
+    params
+  }) => {
+    const sol = solutions.find((s) => s.slug === params.slug);
+    if (!sol) {
+      throw notFound();
+    }
+    return sol;
+  },
+  component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+const $$splitComponentImporter = () => import("./blog._slug-BHC-zxX-.js");
+const Route = createFileRoute("/blog/$slug")({
+  head: ({
+    params
+  }) => {
+    const post = blogPosts.find((p) => p.slug === params.slug);
+    return {
+      meta: [{
+        title: post ? `${post.title} - Blog Microsistec` : "Artigo Microsistec"
+      }, {
+        name: "description",
+        content: post ? post.excerpt : "Artigo especializado em inovação imobiliária e IA."
+      }]
+    };
+  },
+  loader: ({
+    params
+  }) => {
+    const post = blogPosts.find((p) => p.slug === params.slug);
+    if (!post) {
+      throw notFound();
+    }
+    return post;
+  },
+  component: lazyRouteComponent($$splitComponentImporter, "component")
+});
+const EmpresaRoute = Route$4.update({
+  id: "/empresa",
+  path: "/empresa",
+  getParentRoute: () => Route$5
+});
+const IndexRoute = Route$3.update({
+  id: "/",
+  path: "/",
+  getParentRoute: () => Route$5
+});
+const BlogIndexRoute = Route$2.update({
+  id: "/blog/",
+  path: "/blog/",
+  getParentRoute: () => Route$5
+});
+const SolucoesSlugRoute = Route$1.update({
+  id: "/solucoes/$slug",
+  path: "/solucoes/$slug",
+  getParentRoute: () => Route$5
+});
+const BlogSlugRoute = Route.update({
+  id: "/blog/$slug",
+  path: "/blog/$slug",
+  getParentRoute: () => Route$5
+});
+const rootRouteChildren = {
+  IndexRoute,
+  EmpresaRoute,
+  BlogSlugRoute,
+  SolucoesSlugRoute,
+  BlogIndexRoute
+};
+const routeTree = Route$5._addFileChildren(rootRouteChildren)._addFileTypes();
+const getRouter = () => {
+  const queryClient = new QueryClient();
+  const router2 = createRouter({
+    routeTree,
+    context: { queryClient },
+    scrollRestoration: true,
+    defaultPreloadStaleTime: 0
+  });
+  return router2;
+};
+const router = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  getRouter
+}, Symbol.toStringTag, { value: "Module" }));
+export {
+  Button as B,
+  Input as I,
+  Route$1 as R,
+  Route as a,
+  blogPosts as b,
+  cn as c,
+  getIconComponent as g,
+  portalIntegrations as p,
+  router as r,
+  solutions as s,
+  testimonials as t,
+  useDemoModal as u
+};

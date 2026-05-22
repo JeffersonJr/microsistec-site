@@ -1,9 +1,17 @@
-import { i as createMiddleware } from "./server-BHksymyu.js";
-import { r as renderErrorPage } from "./worker-entry-Dz5t8jJ5.js";
+import { c as createMiddleware } from "./server-Bx6zHhhI.js";
+import { r as renderErrorPage } from "../server.js";
 import "node:async_hooks";
-import "node:stream/web";
-import "node:stream";
-import "node:events";
+import "rou3";
+import "srvx";
+import "@tanstack/router-core";
+import "seroval";
+import "@tanstack/history";
+import "@tanstack/router-core/ssr/client";
+import "@tanstack/router-core/ssr/server";
+import "react";
+import "@tanstack/react-router";
+import "react/jsx-runtime";
+import "@tanstack/react-router/ssr/server";
 function dedupeSerializationAdapters(deduped, serializationAdapters) {
   for (let i = 0, len = serializationAdapters.length; i < len; i++) {
     const current = serializationAdapters[i];

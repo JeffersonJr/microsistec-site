@@ -65,6 +65,9 @@ export function Nav() {
                     >
                       <IconComp className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
                       <span className="font-semibold leading-none">{sol.title}</span>
+                      {sol.ctaText === "Em Breve" && (
+                        <span className="ml-auto text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 shrink-0">Em Breve</span>
+                      )}
                     </Link>
                   </DropdownMenuItem>
                 );
@@ -719,10 +722,16 @@ export function Footer() {
               Proptech brasileira desde 1994. CRM, sites, app de atendimento e o Albert IA
               em um ecossistema só, pensado pra imobiliária de verdade.
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <a
+              href="https://imob.online/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-sm hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition shadow-soft no-underline decoration-none group"
+            >
               <KeyRound className="w-4 h-4" />
-              <a href="https://imob.online/" target="_blank" rel="noreferrer" className="hover:text-foreground">imob.online: área do cliente</a>
-            </div>
+              <span>imob.online: área do cliente</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </a>
           </div>
           <FooterCol
             title="Soluções"

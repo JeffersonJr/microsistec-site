@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CheckCircle2, Loader2, Sparkles, Building2, ShieldCheck, KeyRound, ArrowRight } from "lucide-react";
+import { CheckCircle2, Loader2, Sparkles, Building2, ShieldCheck, KeyRound, ArrowRight, X } from "lucide-react";
 
 type SetupStep = {
   label: string;
@@ -78,7 +78,15 @@ export function DemoModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="max-w-md bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] overflow-hidden shadow-elev rounded-3xl p-0">
+      <DialogContent className="max-w-md bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] overflow-hidden shadow-elev rounded-3xl p-0 relative">
+        {/* Close X button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-50 w-8 h-8 rounded-full bg-[color:var(--brand-ink)]/10 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)]/70 flex items-center justify-center transition cursor-pointer border-none"
+          aria-label="Fechar"
+        >
+          <X className="w-4 h-4" />
+        </button>
         
         {/* Banner with style */}
         <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-6 relative">

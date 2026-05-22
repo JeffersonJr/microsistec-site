@@ -25,7 +25,8 @@ import {
   Activity, 
   Gauge,
   Calendar,
-  DollarSign
+  DollarSign,
+  ShieldCheck
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -459,133 +460,221 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
     ]);
   };
 
+  const albertCapabilities = [
+    { icon: "🧠", title: "IA personalizada para sua imobiliária", desc: "O Albert é treinado sob medida com os dados, tom de voz e roteiro comercial da sua empresa. Ele não é genérico, ele é o clone do seu melhor SDR." },
+    { icon: "💬", title: "Atendimento via WhatsApp 24/7", desc: "Atende leads automaticamente pelo WhatsApp com diálogos livres, naturais e consultivos. Sem menus engessados, sem frustrações." },
+    { icon: "🎯", title: "Qualificação financeira inteligente", desc: "Identifica renda, entrada, FGTS e capacidade de financiamento do lead antes mesmo do corretor entrar na conversa." },
+    { icon: "📅", title: "Agendamento automático de visitas", desc: "Cruza disponibilidade de corretores e preferências do cliente para agendar visitas direto no CRM, sem intervenção humana." },
+    { icon: "🔗", title: "Integração total com o CRM", desc: "Toda conversa, qualificação e agendamento é registrado automaticamente na ficha do lead dentro do CRM Microsistec." },
+    { icon: "📊", title: "Relatórios de atendimento", desc: "Dashboard com métricas de atendimento, tempo médio de resposta, taxa de qualificação e conversão por período." },
+  ];
+
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
-      <div className="grid lg:grid-cols-12 gap-12 items-center">
+    <>
+      <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
         
-        {/* Texts */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-xs font-mono-ui font-bold">
-            <Bot className="w-3.5 h-3.5" /> Interatividade Real
-          </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Veja o Albert IA operando em tempo real
-          </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Interaja com o simulador de WhatsApp ao lado. O Albert atende com empatia linguística, faz cruzamento de dados, qualificação bancária de crédito e agenda visitas integradas diretamente no CRM da sua imobiliária, 24 horas por dia.
-          </p>
+          {/* Texts */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-xs font-mono-ui font-bold">
+              <Bot className="w-3.5 h-3.5" /> Interatividade Real
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+              Veja o Albert IA operando em tempo real
+            </h2>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Interaja com o simulador de WhatsApp ao lado. O Albert atende com empatia linguística, faz cruzamento de dados, qualificação bancária de crédito e agenda visitas integradas diretamente no CRM da sua imobiliária, 24 horas por dia.
+            </p>
 
-          {/* Comparison */}
-          <div className="space-y-4 pt-2">
-            <h4 className="text-xs font-bold uppercase font-mono-ui text-foreground tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
-              Por que ele é diferente de chatbots comuns?
-            </h4>
-            <div className="grid grid-cols-2 gap-4 text-xs leading-relaxed">
-              <div className="p-3 bg-red-50/40 rounded-xl border border-red-100">
-                <span className="font-bold text-red-700 block mb-1">Chatbot Tradicional</span>
-                Menu engessado de botões, sem contexto humano e frustrante para o cliente final.
+            {/* Comparison */}
+            <div className="space-y-4 pt-2">
+              <h4 className="text-xs font-bold uppercase font-mono-ui text-foreground tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
+                Por que ele é diferente de chatbots comuns?
+              </h4>
+              <div className="grid grid-cols-2 gap-4 text-xs leading-relaxed">
+                <div className="p-3 bg-red-50/40 rounded-xl border border-red-100">
+                  <span className="font-bold text-red-700 block mb-1">Chatbot Tradicional</span>
+                  Menu engessado de botões, sem contexto humano e frustrante para o cliente final.
+                </div>
+                <div className="p-3 bg-emerald-50/40 rounded-xl border border-emerald-100">
+                  <span className="font-bold text-emerald-700 block mb-1">Albert IA</span>
+                  Diálogos dinâmicos livres, tom consultivo, entendimento de renda, entrada e agendamento inteligente.
+                </div>
               </div>
-              <div className="p-3 bg-emerald-50/40 rounded-xl border border-emerald-100">
-                <span className="font-bold text-emerald-700 block mb-1">Albert IA</span>
-                Diálogos dinâmicos livres, tom consultivo, entendimento de renda, entrada e agendamento inteligente.
-              </div>
+            </div>
+
+            <div className="pt-2">
+              <button 
+                onClick={resetChat} 
+                className="text-xs font-mono-ui font-bold text-[color:var(--brand-orange)] hover:underline flex items-center gap-1 cursor-pointer"
+              >
+                Reiniciar Simulação ↻
+              </button>
             </div>
           </div>
 
-          <div className="pt-2">
-            <button 
-              onClick={resetChat} 
-              className="text-xs font-mono-ui font-bold text-[color:var(--brand-orange)] hover:underline flex items-center gap-1 cursor-pointer"
-            >
-              Reiniciar Simulação ↻
-            </button>
-          </div>
-        </div>
-
-        {/* WhatsApp Mockup */}
-        <div className="lg:col-span-7 bg-[color:var(--brand-sand)]/60 rounded-3xl p-4 border border-[color:var(--brand-ink)]/15 shadow-soft relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
+          {/* WhatsApp Mockup */}
+          <div className="lg:col-span-7 bg-[color:var(--brand-sand)]/60 rounded-3xl p-4 border border-[color:var(--brand-ink)]/15 shadow-soft relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
           
-          {/* Mockup Header */}
-          <div className="flex items-center gap-3 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-4 rounded-2xl mb-4 shadow-sm relative">
-            <div className="w-10 h-10 rounded-full bg-[color:var(--brand-sand)]/20 p-1 flex items-center justify-center">
-              <img src="/albert-logo.png" alt="Albert" className="w-7 h-7 object-contain" />
-            </div>
-            <div>
-              <div className="font-bold text-sm flex items-center gap-1">
-                Albert IA <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse inline-block" />
+            {/* Mockup Header */}
+            <div className="flex items-center gap-3 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-4 rounded-2xl mb-4 shadow-sm relative">
+              <div className="w-10 h-10 rounded-full bg-[color:var(--brand-sand)]/20 p-1 flex items-center justify-center">
+                <img src="/albert-logo.png" alt="Albert" className="w-7 h-7 object-contain" />
               </div>
-              <div className="text-[10px] text-[color:var(--brand-sand)]/70">Atendimento Imobiliário Oficial</div>
+              <div>
+                <div className="font-bold text-sm flex items-center gap-1">
+                  Albert IA <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse inline-block" />
+                </div>
+                <div className="text-[10px] text-[color:var(--brand-sand)]/70">Atendimento Imobiliário Oficial</div>
+              </div>
+              <div className="ml-auto flex items-center gap-2">
+                <span className="stamp text-[color:var(--brand-orange)] text-[9px] border-[color:var(--brand-orange)]/30 font-bold">24h ONLINE</span>
+              </div>
             </div>
-            <div className="ml-auto flex items-center gap-2">
-              <span className="stamp text-[color:var(--brand-orange)] text-[9px] border-[color:var(--brand-orange)]/30 font-bold">24h ONLINE</span>
-            </div>
-          </div>
 
-          {/* Messages area */}
-          <div className="h-[360px] overflow-y-auto space-y-3 px-2 py-4 bg-background/50 rounded-2xl border border-[color:var(--brand-ink)]/5 flex flex-col justify-end">
-            <div className="overflow-y-auto space-y-3 pr-1">
-              {chatHistory.map((msg, index) => (
-                <div 
-                  key={index}
-                  className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"} animate-fadeIn`}
-                >
+            {/* Messages area */}
+            <div className="h-[360px] overflow-y-auto space-y-3 px-2 py-4 bg-background/50 rounded-2xl border border-[color:var(--brand-ink)]/5 flex flex-col justify-end">
+              <div className="overflow-y-auto space-y-3 pr-1">
+                {chatHistory.map((msg, index) => (
                   <div 
-                    className={`max-w-[85%] rounded-2xl p-3 text-xs leading-relaxed ${
-                      msg.sender === "user" 
-                        ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-tr-none" 
-                        : "bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/10 rounded-tl-none shadow-sm"
-                    }`}
+                    key={index}
+                    className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"} animate-fadeIn`}
                   >
-                    <p className="whitespace-pre-line">{msg.text}</p>
-                    <span className="text-[9px] text-muted-foreground/60 mt-1 block text-right">
-                      Hoje, {new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                    </span>
+                    <div 
+                      className={`max-w-[85%] rounded-2xl p-3 text-xs leading-relaxed ${
+                        msg.sender === "user" 
+                          ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-tr-none" 
+                          : "bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/10 rounded-tl-none shadow-sm"
+                      }`}
+                    >
+                      <p className="whitespace-pre-line">{msg.text}</p>
+                      <span className="text-[9px] text-muted-foreground/60 mt-1 block text-right">
+                        Hoje, {new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              {isTyping && (
-                <div className="flex justify-start">
-                  <div className="bg-[color:var(--brand-sand)] rounded-2xl rounded-tl-none p-3 border border-[color:var(--brand-ink)]/10 flex items-center gap-1 shadow-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 animate-bounce" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 animate-bounce [animation-delay:0.2s]" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 animate-bounce [animation-delay:0.4s]" />
+                {isTyping && (
+                  <div className="flex justify-start">
+                    <div className="bg-[color:var(--brand-sand)] rounded-2xl rounded-tl-none p-3 border border-[color:var(--brand-ink)]/10 flex items-center gap-1 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 animate-bounce" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 animate-bounce [animation-delay:0.2s]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50 animate-bounce [animation-delay:0.4s]" />
+                    </div>
                   </div>
-                </div>
+                )}
+              </div>
+            </div>
+
+            {/* Options Buttons */}
+            <div className="mt-4 p-2 bg-background/80 rounded-2xl border border-[color:var(--brand-ink)]/10 min-h-[60px] flex flex-wrap items-center justify-center gap-2">
+              {!isTyping && chatHistory[chatHistory.length - 1]?.options && chatHistory[chatHistory.length - 1].options!.length > 0 ? (
+                chatHistory[chatHistory.length - 1].options!.map((opt, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleOptionClick(opt.label, opt.actionStep)}
+                    className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] px-4 py-2 rounded-full text-xs font-bold transition shadow-sm cursor-pointer"
+                  >
+                    {opt.label}
+                  </button>
+                ))
+              ) : !isTyping && currentStep === 4 ? (
+                <button
+                  onClick={openModal}
+                  className="bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] text-[color:var(--brand-ink)] px-6 py-2.5 rounded-full text-xs font-extrabold transition shadow-elev cursor-pointer flex items-center gap-1"
+                >
+                  Conectar Minha Imobiliária Agora <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              ) : (
+                <span className="text-xs text-muted-foreground/60 italic font-mono-ui">
+                  Albert digitando... aguarde a resposta
+                </span>
               )}
             </div>
           </div>
 
-          {/* Options Buttons */}
-          <div className="mt-4 p-2 bg-background/80 rounded-2xl border border-[color:var(--brand-ink)]/10 min-h-[60px] flex flex-wrap items-center justify-center gap-2">
-            {!isTyping && chatHistory[chatHistory.length - 1]?.options && chatHistory[chatHistory.length - 1].options!.length > 0 ? (
-              chatHistory[chatHistory.length - 1].options!.map((opt, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleOptionClick(opt.label, opt.actionStep)}
-                  className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] px-4 py-2 rounded-full text-xs font-bold transition shadow-sm cursor-pointer"
-                >
-                  {opt.label}
-                </button>
-              ))
-            ) : !isTyping && currentStep === 4 ? (
-              <button
-                onClick={openModal}
-                className="bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] text-[color:var(--brand-ink)] px-6 py-2.5 rounded-full text-xs font-extrabold transition shadow-elev cursor-pointer flex items-center gap-1"
-              >
-                Conectar Minha Imobiliária Agora <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            ) : (
-              <span className="text-xs text-muted-foreground/60 italic font-mono-ui">
-                Albert digitando... aguarde a resposta
-              </span>
-            )}
+        </div>
+      </section>
+
+      {/* Albert capabilities section */}
+      <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
+        <div className="space-y-4 mb-14 text-center max-w-2xl mx-auto">
+          <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
+            A única IA para imobiliárias com um coração
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            O clone do seu melhor SDR
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Chega de soluções genéricas. O Albert é uma IA personalizada que atua como um clone do seu melhor SDR. Uma solução montada sob medida para sua imobiliária com tom de voz, conhecimento dos empreendimentos e roteiro comercial exclusivos.
+          </p>
+        </div>
+
+        {/* Capabilities grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          {albertCapabilities.map((cap, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
+            >
+              <span className="text-2xl shrink-0 mt-0.5">{cap.icon}</span>
+              <div>
+                <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
+                  {cap.title}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{cap.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
+            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">24/7</div>
+            <div className="text-xs text-muted-foreground font-mono-ui mt-1">Disponibilidade</div>
+          </div>
+          <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
+            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">300%</div>
+            <div className="text-xs text-muted-foreground font-mono-ui mt-1">+ Velocidade</div>
+          </div>
+          <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
+            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">&lt;3s</div>
+            <div className="text-xs text-muted-foreground font-mono-ui mt-1">Tempo resposta</div>
+          </div>
+          <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
+            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">100%</div>
+            <div className="text-xs text-muted-foreground font-mono-ui mt-1">Integrado ao CRM</div>
           </div>
         </div>
 
-      </div>
-    </section>
+        {/* CTA */}
+        <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-8 md:p-10 rounded-3xl relative overflow-hidden">
+          <div className="bg-grid absolute inset-0 opacity-15" />
+          <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="flex items-center gap-4">
+              <img src="/albert-logo.png" alt="Albert IA" className="w-14 h-14 object-contain" />
+              <div className="flex-1 space-y-2">
+                <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">Conheça o Albert pessoalmente</h3>
+                <p className="text-sm text-[color:var(--brand-sand)]/70 max-w-lg">
+                  Converse agora mesmo com o Albert pelo WhatsApp e veja na prática como ele transforma o atendimento da sua imobiliária.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
+            >
+              Converse com o Albert <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -970,9 +1059,57 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
    CUSTOM COMPONENT 4: CRM SUBSECTION
    ========================================== */
 function CRMSubSection() {
+  const crmModules = [
+    { icon: "🏠", title: "Cadastro de Imóveis", desc: "Cadastre imóveis de venda e locação com fotos ilimitadas, vídeos, plantas e tour virtual. Campos personalizados para cada tipo de propriedade." },
+    { icon: "🏗️", title: "Empreendimentos", desc: "Gerencie lançamentos com tabelas de preço por unidade, espelho de vendas interativo e acompanhamento de evolução da obra." },
+    { icon: "🏢", title: "Condomínios", desc: "Cadastre condomínios completos com infraestrutura, taxas, localização e vincule automaticamente aos imóveis cadastrados." },
+    { icon: "👥", title: "Clientes & Proprietários", desc: "Base unificada de contatos com histórico de interações, preferências de busca, documentação e controle de exclusividade." },
+    { icon: "🔑", title: "Marca d'Água Automática", desc: "Proteja suas fotos profissionais com marca d'água personalizada da sua imobiliária, aplicada automaticamente no upload." },
+    { icon: "🔄", title: "Integração com Portais", desc: "Publique automaticamente nos maiores portais: ZAP, VivaReal, OLX, Imovelweb, Mercado Livre, Chaves na Mão e mais de 40 portais." },
+    { icon: "📱", title: "Facebook & Google Ads", desc: "Receba leads de campanhas Facebook Lead Ads, Instagram e Google diretamente no CRM com rastreamento de origem." },
+    { icon: "🎯", title: "Rodízio de Atendimento", desc: "Distribuição automática e justa de leads entre corretores com regras por especialidade, plantão e tempo de resposta." },
+    { icon: "👤", title: "Usuários & Permissões", desc: "Cadastre gerentes, corretores e parceiros com permissionamento granular. Controle quem vê, edita e exporta dados." },
+    { icon: "📰", title: "Blog Integrado", desc: "Módulo de blog profissional para sua imobiliária produzir conteúdo SEO e atrair leads orgânicos. Vendido separadamente." },
+  ];
+
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
+      {/* Header */}
+      <div className="space-y-4 mb-14 text-center max-w-2xl mx-auto">
+        <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
+          Ecossistema Completo
+        </span>
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+          Tudo que sua imobiliária precisa em um só lugar
+        </h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          O CRM da Microsistec vai muito além de um simples cadastro. É uma plataforma completa de gestão imobiliária com módulos integrados que funcionam em sinergia.
+        </p>
+      </div>
+
+      {/* Modules Grid */}
+      <div className="grid md:grid-cols-2 gap-4 mb-12">
+        {crmModules.map((mod, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
+          >
+            <span className="text-2xl shrink-0 mt-0.5">{mod.icon}</span>
+            <div>
+              <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
+                {mod.title}
+                {mod.title === "Blog Integrado" && (
+                  <span className="ml-2 text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Módulo Extra</span>
+                )}
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">{mod.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Match Inteligente Visual */}
+      <div className="grid lg:grid-cols-2 gap-10 items-center mb-14">
         <div className="space-y-6">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-xs font-mono-ui font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" /> Cruzamento de Dados
@@ -981,9 +1118,8 @@ function CRMSubSection() {
             Match Inteligente de Imóveis
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Nossa plataforma não apenas armazena cadastros; ela correlaciona dados em tempo real. No momento em que um novo imóvel é inserido no CRM, o algoritmo varre sua carteira de leads e notifica por e-mail e WhatsApp os compradores com potencial de fechamento correspondente.
+            No momento em que um novo imóvel é inserido no CRM, o algoritmo varre sua carteira de leads e notifica por e-mail e WhatsApp os compradores com potencial de fechamento correspondente.
           </p>
-
           <ul className="space-y-3 text-xs text-foreground/80 font-mono-ui">
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-emerald-500" /> Match por bairro, faixa financeira, dormitórios e vagas.
@@ -1016,10 +1152,66 @@ function CRMSubSection() {
           </div>
 
           <div className="p-4 bg-background rounded-2xl border border-[color:var(--brand-ink)]/10 shadow-sm relative">
-            <div className="absolute top-2 right-2 stamp text-indigo-600 text-[8px] font-bold">CRÉDITO PRÉ-APROVADO</div>
+            <div className="absolute top-2 right-2 stamp text-indigo-600 text-[8px] font-bold">LEAD QUALIFICADO</div>
             <h4 className="font-extrabold text-sm">Jefferson Junior</h4>
             <div className="text-xs text-muted-foreground mt-1">Preferencia: Gonzaga/Boqueirão · R$ 900.000 max.</div>
           </div>
+        </div>
+      </div>
+
+      {/* Central de Ajuda + Academy */}
+      <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <a
+          href="http://intercom.help/microsistec-ajuda/pt-BR"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
+        >
+          <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+            <ShieldCheck className="w-6 h-6" />
+          </div>
+          <div>
+            <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition">Central de Ajuda</h3>
+            <p className="text-xs text-muted-foreground mt-0.5">Base de conhecimento com mais de 200 artigos, tutoriais e vídeos de suporte.</p>
+          </div>
+          <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
+        </a>
+
+        <a
+          href="https://microsistec-academy.memberkit.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
+        >
+          <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+            <Award className="w-6 h-6" />
+          </div>
+          <div>
+            <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition">Microsistec Academy</h3>
+            <p className="text-xs text-muted-foreground mt-0.5">Cursos e treinamentos exclusivos para sua equipe dominar cada recurso da plataforma.</p>
+          </div>
+          <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
+        </a>
+      </div>
+
+      {/* E muito mais CTA */}
+      <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-8 md:p-10 rounded-3xl relative overflow-hidden">
+        <div className="bg-grid absolute inset-0 opacity-15" />
+        <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10">
+          <div className="flex-1 space-y-3">
+            <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">E muito mais.</h3>
+            <p className="text-sm text-[color:var(--brand-sand)]/70 max-w-lg">
+              Marca d'água inteligente, relatórios gerenciais, exportação de dados, controle de exclusividade, histórico completo de atendimentos, fichas de visita, contratos PDF e dezenas de outros recursos prontos para usar.
+            </p>
+          </div>
+          <a
+            href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+falar+com+um+especialista+sobre+o+CRM&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
+          >
+            Fale com o Especialista <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
@@ -1030,17 +1222,26 @@ function CRMSubSection() {
    CUSTOM COMPONENT 5: APP SUBSECTION
    ========================================== */
 function AppSubSection() {
+  const appFeatures = [
+    { icon: "📩", title: "Receba leads em tempo real", desc: "O app notifica instantaneamente quando um novo lead chega de qualquer portal, Facebook, Google ou site próprio direto na palma da mão." },
+    { icon: "📊", title: "Funil de vendas mobile", desc: "Acompanhe toda a jornada do lead em formato visual. Mova negócios entre etapas com um simples toque no celular." },
+    { icon: "🏠", title: "Catálogo de imóveis completo", desc: "Visualize todos os imóveis da carteira com fotos, valores, descrições e compartilhe lâminas profissionais no WhatsApp com 1 clique." },
+    { icon: "📍", title: "Endereço e rota para visita", desc: "Abra o endereço do imóvel direto no Google Maps ou Waze. Chegue na visita sem perder tempo procurando o caminho." },
+    { icon: "💬", title: "Histórico de atendimento", desc: "Todo o histórico de conversas, notas, tarefas e interações com cada cliente sempre disponível, mesmo offline." },
+    { icon: "📞", title: "Ligação com registro automático", desc: "Ligue para o cliente direto do app e o sistema registra automaticamente a chamada no histórico do CRM." },
+  ];
+
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       <div className="grid lg:grid-cols-12 gap-10 items-center">
         
         {/* Visual Phone mockup */}
         <div className="lg:col-span-5 flex justify-center">
-          <div className="w-[260px] h-[500px] bg-[color:var(--brand-ink)] rounded-[40px] p-3 border-4 border-[color:var(--brand-ink)] shadow-elev relative overflow-hidden flex flex-col">
+          <div className="w-[260px] h-[520px] bg-[color:var(--brand-ink)] rounded-[40px] p-3 border-4 border-[color:var(--brand-ink)] shadow-elev relative overflow-hidden flex flex-col">
             <div className="w-32 h-5 bg-[color:var(--brand-ink)] rounded-b-2xl absolute top-0 left-1/2 -translate-x-1/2 z-20" />
             
             {/* Screen Content */}
-            <div className="bg-background w-full h-full rounded-[30px] p-4 flex flex-col justify-between overflow-hidden relative text-xs">
+            <div className="bg-background w-full h-full rounded-[30px] p-4 flex flex-col overflow-hidden relative text-xs">
               <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
               
               {/* Header */}
@@ -1049,26 +1250,53 @@ function AppSubSection() {
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
               </div>
 
-              {/* Action mockup */}
-              <div className="space-y-3 flex-grow overflow-y-auto">
-                <div className="p-3 bg-[color:var(--brand-sand)]/60 rounded-xl border border-[color:var(--brand-ink)]/5 space-y-1">
-                  <span className="text-[8px] text-muted-foreground font-mono-ui">CAPTURA DE LEAD</span>
-                  <div className="font-bold text-[10px]">Novo lead VivaReal às 14:02</div>
-                  <p className="text-[9px] text-muted-foreground">Carla Santos solicitou contato no Whatsapp.</p>
+              {/* Screen content cards */}
+              <div className="space-y-2.5 flex-grow overflow-y-auto">
+                {/* New Lead notification */}
+                <div className="p-2.5 bg-[color:var(--brand-orange)]/10 rounded-xl border border-[color:var(--brand-orange)]/20 space-y-1">
+                  <span className="text-[8px] text-[color:var(--brand-orange)] font-mono-ui font-bold">🔔 NOVO LEAD</span>
+                  <div className="font-bold text-[10px]">Carla Santos · VivaReal</div>
+                  <p className="text-[9px] text-muted-foreground">Interesse: Apt. 3 quartos Gonzaga</p>
                 </div>
 
-                <div className="p-3 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-xl space-y-2">
-                  <div className="font-bold text-[9px] flex items-center justify-between">
-                    <span>Enviar Lâmina</span>
-                    <span className="text-[8px] text-[color:var(--brand-orange)] font-bold">1-CLIQUE</span>
+                {/* Funnel mini */}
+                <div className="p-2.5 bg-[color:var(--brand-sand)]/60 rounded-xl border border-[color:var(--brand-ink)]/5 space-y-1.5">
+                  <span className="text-[8px] text-muted-foreground font-mono-ui">FUNIL DE VENDAS</span>
+                  <div className="flex gap-1">
+                    <div className="flex-1 h-1.5 rounded-full bg-[color:var(--brand-orange)]" />
+                    <div className="flex-1 h-1.5 rounded-full bg-[color:var(--brand-orange)]/60" />
+                    <div className="flex-1 h-1.5 rounded-full bg-[color:var(--brand-ink)]/10" />
+                    <div className="flex-1 h-1.5 rounded-full bg-[color:var(--brand-ink)]/10" />
                   </div>
-                  <button className="w-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] rounded-full text-[9px] py-1.5 font-extrabold border-none cursor-pointer">
-                    Compartilhar no WhatsApp
+                  <div className="text-[9px] font-bold">3 em qualificação · 1 em visita</div>
+                </div>
+
+                {/* Property card with map */}
+                <div className="p-2.5 bg-background rounded-xl border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1.5">
+                  <div className="font-bold text-[10px] flex items-center justify-between">
+                    <span>AP Gonzaga Vista Mar</span>
+                    <span className="text-[8px] text-[color:var(--brand-orange)] font-bold">R$ 890k</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
+                    <span>📍</span> Av. Ana Costa, 432 · Gonzaga
+                  </div>
+                  <button className="w-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-full text-[8px] py-1 font-bold border-none cursor-pointer">
+                    Abrir rota no Maps
                   </button>
+                </div>
+
+                {/* History */}
+                <div className="p-2.5 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-xl space-y-1.5">
+                  <span className="text-[8px] text-[color:var(--brand-orange)] font-bold font-mono-ui">HISTÓRICO</span>
+                  <div className="text-[9px] space-y-1 text-[color:var(--brand-sand)]/80">
+                    <div>✓ Ligação 2min · Ontem 15:30</div>
+                    <div>✓ WhatsApp lâmina · Ontem 15:32</div>
+                    <div>✓ Visita agendada · Sáb 10h</div>
+                  </div>
                 </div>
               </div>
 
-              {/* Status bar bottom */}
+              {/* Bottom bar */}
               <div className="pt-2 border-t border-[color:var(--brand-ink)]/5 text-center text-[8px] text-muted-foreground font-mono-ui">
                 Corretor Conectado · Santos/SP
               </div>
@@ -1082,21 +1310,35 @@ function AppSubSection() {
             <Smartphone className="w-3.5 h-3.5" /> Mobilidade Total
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Toda a imobiliária no bolso do corretor
+            Toda a imobiliária na palma da mão do corretor
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Esqueça planilhas ou a necessidade de sentar no computador para conferir dados. Nosso aplicativo oficial de atendimento imobiliário foi feito sob medida para o dia a dia na rua. Receba avisos instantâneos de novos leads, ligue diretamente do app e envie belas apresentações de imóveis no WhatsApp do cliente com apenas um clique.
+            O corretor não trabalha sentado o dia todo. Ele está na rua, visitando imóveis e fechando negócios. Nosso app coloca todos os leads, o funil de vendas completo, o catálogo de imóveis com endereço para visita e todo o histórico de atendimento sempre disponível no bolso dele.
           </p>
 
-          <div className="grid grid-cols-2 gap-4 text-xs">
-            <div className="space-y-1">
-              <span className="font-bold text-foreground block">Notificação Rápida</span>
-              O app apita na hora em que o lead é enviado em qualquer portal imobiliário.
-            </div>
-            <div className="space-y-1">
-              <span className="font-bold text-foreground block">Check-in Geolocalizado</span>
-              Acompanhe a rota e registre visitas de campo com precisão e segurança legal.
-            </div>
+          {/* Features grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {appFeatures.map((feat, i) => (
+              <div key={i} className="flex items-start gap-3 p-3 rounded-xl border border-[color:var(--brand-ink)]/5 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/20 transition">
+                <span className="text-lg shrink-0">{feat.icon}</span>
+                <div>
+                  <h4 className="font-bold text-xs text-foreground mb-0.5">{feat.title}</h4>
+                  <p className="text-[10px] text-muted-foreground leading-relaxed">{feat.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="pt-2">
+            <a
+              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+App+de+Atendimento&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-sm hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
+            >
+              Fale com o Especialista <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
