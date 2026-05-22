@@ -25,7 +25,7 @@ function Empresa() {
     {
       year: "1994",
       title: "Fundação & Primeiros Passos",
-      desc: "Nascemos em Santos/SP, em uma época em que controle de imóveis era feito em fichas de papel. Nosso fundador visualizou que o futuro das imobiliárias seria impulsionado por computadores.",
+      desc: "Nascemos em Praia Grande/SP, em uma época em que controle de imóveis era feito em fichas de papel. Nosso fundador visualizou que o futuro das imobiliárias seria impulsionado por computadores.",
     },
     {
       year: "2002",

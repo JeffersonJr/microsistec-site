@@ -4,7 +4,7 @@ import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { blogPosts, BlogPost } from "@/lib/data";
 import { useDemoModal } from "@/hooks/use-demo-modal";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Bot, ChevronRight, Clock, Share2, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Bot, ChevronRight, Clock, Share2, Sparkles, Building2 } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => {
@@ -165,6 +165,32 @@ function BlogLeitor() {
                   >
                     Converse com o Albert agora mesmo <ArrowRight className="w-3.5 h-3.5" />
                   </a>
+                </div>
+              </div>
+            </div>
+
+            {/* CRM Test Card */}
+            <div className="bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-3xl p-6 shadow-soft relative overflow-hidden space-y-4">
+              <div className="relative space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-ink)]/5 flex items-center justify-center">
+                  <Building2 className="w-5 h-5 text-[color:var(--brand-ink)]" />
+                </div>
+                
+                <h3 className="font-extrabold text-xl tracking-tight leading-snug">
+                  Gestão imobiliária que dá resultado
+                </h3>
+                
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Experimente o CRM mais robusto do mercado. Automações, contratos, integrações com portais e funil de vendas avançado.
+                </p>
+
+                <div className="pt-2">
+                  <button
+                    onClick={openModal}
+                    className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
+                  >
+                    Testar CRM por 15 dias <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
             </div>
