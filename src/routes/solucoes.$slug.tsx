@@ -95,6 +95,21 @@ function SolucaoDetalhe() {
     }
   };
 
+  const getFeatureCardTitle = (slug: string, idx: number) => {
+    const titles: Record<string, string[]> = {
+      "crm": ["Smart Match", "Cadastro Ágil", "Gestão de Acessos", "Documentos Automatizados", "Timeline do Cliente"],
+      "app": ["Notificações em Tempo Real", "Portabilidade Total", "Compartilhamento Ágil", "Agenda na Palma da Mão", "Sincronização Imediata"],
+      "funil": ["Visualização Kanban", "Gatilhos de Automação", "Prevenção de Estagnação", "Análise de Conversão", "Funis Personalizados"],
+      "integracoes": ["Sincronia Bidirecional", "Atendimento via WhatsApp", "Captura Inteligente no Meta", "Painel Unificado", "Distribuição Automática"],
+      "albert-ia": ["Qualificação Precisa", "Agendamento Autônomo", "Domínio de Empreendimentos", "Transferência Fluida", "Atendimento 24/7"],
+      "sites-template": ["Design Adaptável", "Otimização para Buscas (SEO)", "Pesquisa Refinada", "Captação de Alta Conversão", "Implantação Expressa"],
+      "sites-v8": ["Performance Extrema", "Identidade Exclusiva", "Integrações Customizadas", "Acompanhamento Dedicado", "Arquitetura Escalável"],
+      "rodizio": ["Distribuição Equilibrada", "Regras por Performance", "Transparência de Fila", "Redirecionamento Ágil", "Métricas de Eficiência"],
+      "locacao": ["Controle de Inadimplência", "Vistorias Digitais", "Repasses Automáticos", "Gestão de Contratos", "Portal do Inquilino"]
+    };
+    return titles[slug]?.[idx] || "Recurso Exclusivo";
+  };
+
   // Custom subsection renderer
   const renderCustomSection = () => {
     switch (sol.slug) {
@@ -246,7 +261,7 @@ function SolucaoDetalhe() {
                 </div>
                 <div>
                   <h3 className="font-bold text-base text-foreground mb-1">
-                    Funcionalidade Integrada
+                    {getFeatureCardTitle(sol.slug, idx)}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {f}
