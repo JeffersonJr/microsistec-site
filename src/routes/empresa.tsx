@@ -164,10 +164,10 @@ function Empresa() {
         <section className="border-t border-[color:var(--brand-ink)]/10 py-20 bg-[color:var(--brand-sand)]/30 overflow-hidden">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-2xl md:text-3xl font-extrabold text-[color:var(--brand-ink)]">
-              Pioneirismo em <span className="font-serif-italic font-normal text-emerald-700">Tecnologia Imobiliária</span>
+              Pioneirismo em <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Tecnologia Imobiliária</span>
             </h2>
             <p className="text-muted-foreground text-sm max-w-2xl mx-auto px-6">
-              O Albert utiliza o que há de mais moderno em IA para garantir que sua imobiliária esteja sempre um passo à frente no mercado digital.
+              A Microsistec desenvolve soluções nativas com inteligência artificial para colocar a sua imobiliária sempre um passo à frente no mercado digital.
             </p>
           </div>
 
@@ -175,8 +175,8 @@ function Empresa() {
             <div className="flex w-[200%] animate-marquee">
               {[...Array(2)].map((_, i) => (
                 <div key={`row1-${i}`} className="flex gap-4 px-2 w-1/2 justify-around">
-                  {["CRM Imobiliário", "Qualificação de Leads", "Follow-up Automático", "Atendimento 24/7", "Inteligência Artificial para Corretores", "SDR Digital", "PropTech"].map((tag, j) => (
-                    <span key={j} className="whitespace-nowrap px-4 py-2 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-semibold shadow-sm">
+                  {["CRM Imobiliário Completo", "Albert IA - SDR Automático", "Atendimento 24/7", "Integração com Portais Imobiliários", "Funil de Vendas Inteligente", "Sites para Imobiliárias", "Aplicativo do Corretor"].map((tag, j) => (
+                    <span key={j} className="whitespace-nowrap px-4 py-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-background text-[color:var(--brand-ink)] text-xs font-semibold shadow-sm">
                       {tag}
                     </span>
                   ))}
@@ -187,8 +187,8 @@ function Empresa() {
             <div className="flex w-[200%] animate-marquee-reverse">
               {[...Array(2)].map((_, i) => (
                 <div key={`row2-${i}`} className="flex gap-4 px-2 w-1/2 justify-around">
-                  {["Real Estate AI", "Automação de Vendas", "Gestão de Atendimento", "Inovação Imobiliária", "Agendamento de Visitas", "Nutrição de Leads", "Sistema para Imobiliárias"].map((tag, j) => (
-                    <span key={j} className="whitespace-nowrap px-4 py-2 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-semibold shadow-sm">
+                  {["Qualificação de Leads com IA", "Automação Imobiliária V8", "Rodízio de Leads Inteligente", "Templates de Site Express", "Tecnologia para Corretores", "Dashboard de Desempenho", "Proptech Brasileira"].map((tag, j) => (
+                    <span key={j} className="whitespace-nowrap px-4 py-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-background text-[color:var(--brand-ink)] text-xs font-semibold shadow-sm">
                       {tag}
                     </span>
                   ))}
