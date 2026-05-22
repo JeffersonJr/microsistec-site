@@ -81,6 +81,19 @@ function SolucaoDetalhe() {
 
   const IconComp = getIconComponent(sol.iconName);
 
+  const getFeaturesTitle = (s: string, defaultTitle: string) => {
+    switch (s) {
+      case "app": return "O poder do CRM na palma da sua mão";
+      case "funil": return "Acelere negócios com um funil de vendas inteligente";
+      case "integracoes": return "Conectividade total com portais, WhatsApp e Meta";
+      case "albert-ia": return "Conheça o SDR que nunca dorme e não perde leads";
+      case "sites-template": return "Seu site imobiliário no ar em tempo recorde";
+      case "sites-v8": return "Presença digital única e de altíssima performance";
+      case "rodizio": return "Distribuição justa e automática de leads";
+      default: return `Recursos e Funcionalidades do ${defaultTitle}`;
+    }
+  };
+
   // Custom subsection renderer
   const renderCustomSection = () => {
     switch (sol.slug) {
@@ -217,7 +230,7 @@ function SolucaoDetalhe() {
               O que está incluso
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-              Recursos e Funcionalidades do {sol.title}
+              {getFeaturesTitle(sol.slug, sol.title)}
             </h2>
           </div>
 
