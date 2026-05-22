@@ -166,26 +166,6 @@ function SolucaoDetalhe() {
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
                     </a>
-                  ) : sol.slug === "app" ? (
-                    <button
-                      onClick={() => {
-                        const ua = navigator.userAgent || "";
-                        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-                        const isMac = /Macintosh|MacIntel/.test(ua) && !isIOS;
-                        if (isIOS || isMac) {
-                          window.open("https://apps.apple.com/br/app/microsistec/id1035266100", "_blank");
-                        } else {
-                          window.open("https://play.google.com/store/apps/details?id=br.com.microsistec", "_blank");
-                        }
-                      }}
-                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
-                    >
-                      {sol.ctaText} <ArrowRight className="w-4 h-4" />
-                    </button>
-                  ) : sol.ctaText === "Em Breve" ? (
-                    <span className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)]/30 text-[color:var(--brand-sand)]/60 px-6 py-3.5 font-semibold cursor-not-allowed">
-                      {sol.ctaText}
-                    </span>
                   ) : (
                     <button
                       onClick={openModal}
@@ -221,7 +201,7 @@ function SolucaoDetalhe() {
               O que está incluso
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-              Recursos e Funcionalidades
+              Recursos e Funcionalidades do {sol.title}
             </h2>
           </div>
 
@@ -1350,7 +1330,7 @@ function AppSubSection() {
           </div>
 
           {/* CTA */}
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap gap-3">
             <a
               href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+App+de+Atendimento&type=phone_number&app_absent=0"
               target="_blank"
@@ -1358,6 +1338,22 @@ function AppSubSection() {
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-sm hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
             >
               Fale com o Especialista <ArrowRight className="w-4 h-4" />
+            </a>
+            
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+                if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+                  window.open("https://apps.apple.com/br/search?term=microsistec", "_blank");
+                } else {
+                  window.open("https://play.google.com/store/search?q=microsistec", "_blank");
+                }
+              }}
+              className="inline-flex items-center gap-2 rounded-full bg-background border border-[color:var(--brand-ink)]/20 text-[color:var(--brand-ink)] px-6 py-3 font-bold text-sm hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer shadow-soft no-underline decoration-none"
+            >
+              Baixar aplicativo <Smartphone className="w-4 h-4" />
             </a>
           </div>
         </div>
