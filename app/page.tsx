@@ -58,7 +58,7 @@ export default function Home() {
           <div className="space-y-4 md:col-span-1">
             <div className="relative h-10 w-44 filter brightness-0 invert opacity-90">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt="Microsistec Logo"
                 fill
                 className="object-contain"

@@ -65,7 +65,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2">
               <div className="relative h-10 w-44 bg-white/40 dark:bg-transparent rounded-lg p-1">
                 <Image
-                  src="/images/logo.svg"
+                  src="/images/logo.png"
                   alt="Microsistec Logo"
                   fill
                   className="object-contain"

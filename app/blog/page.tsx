@@ -256,7 +256,7 @@ export default function BlogIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="relative h-8 w-36 mx-auto filter brightness-0 invert opacity-70">
             <Image
-              src="/images/logo.svg"
+              src="/images/logo.png"
               alt="Microsistec Logo"
               fill
               className="object-contain"
