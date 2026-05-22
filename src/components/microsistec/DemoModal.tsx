@@ -79,6 +79,10 @@ export function DemoModal() {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
       <DialogContent className="max-w-md w-full sm:max-w-md bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] overflow-hidden shadow-elev rounded-3xl p-0 relative">
+        {/* Radix requires DialogDescription to be rendered unconditionally for accessibility */}
+        <DialogDescription className="sr-only">
+          Preencha o formulário para iniciar seu teste grátis na Microsistec.
+        </DialogDescription>
         {/* Default close button is provided by Radix DialogContent */}
         {/* Banner with style */}
         <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-6 relative">
@@ -96,9 +100,9 @@ export function DemoModal() {
 
         {status === "idle" && (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
-            <DialogDescription className="text-sm text-foreground/75 leading-relaxed">
+            <p className="text-sm text-foreground/75 leading-relaxed">
               Crie seu acesso administrativo em 30 segundos. Experimente a potência do CRM imobiliário e do Albert IA por 14 dias sem compromisso.
-            </DialogDescription>
+            </p>
 
             <div className="space-y-3 mt-2">
               <div className="space-y-1.5">
