@@ -26,7 +26,14 @@ cp -r dist/client/* .vercel/output/static/
 cp -r dist/server/* .vercel/output/functions/ssr.func/
 
 # 4. Copy node_modules into the function (required - the server bundle has external imports)
-cp -r node_modules .vercel/output/functions/ssr.func/node_modules
+# Prune dev dependencies first to avoid exceeding Vercel's 250MB Serverless Function limit
+echo "→ Pruning devDependencies to reduce function size..."
+rm -rf node_modules
+bun install --production
+echo "→ Removing massive unused build tools included by Vinxi..."
+rm -rf node_modules/esbuild node_modules/@esbuild node_modules/@babel node_modules/prettier node_modules/lightningcss* node_modules/rollup node_modules/caniuse-lite node_modules/vite node_modules/@vitejs node_modules/browserslist node_modules/jiti node_modules/defu node_modules/consola
+rm -rf node_modules/.bin
+cp -R node_modules .vercel/output/functions/ssr.func/node_modules
 
 # 5. Create a package.json for the function to signal ESM
 cat > .vercel/output/functions/ssr.func/package.json << 'PKGJSON'
@@ -113,7 +120,7 @@ ENTRY
 # 7. Create the function config
 cat > .vercel/output/functions/ssr.func/.vc-config.json << 'VCCONFIG'
 {
-  "runtime": "nodejs20.x",
+  "runtime": "nodejs24.x",
   "handler": "index.mjs",
   "launcherType": "Nodejs",
   "maxDuration": 30
