@@ -1,0 +1,145 @@
+{
+  "%23tanstack-start-plugin-adapters": {
+    "file": "assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js",
+    "name": "__23tanstack-start-plugin-adapters",
+    "src": "%23tanstack-start-plugin-adapters",
+    "isDynamicEntry": true
+  },
+  "/Users/jefferson/Documents/GitHub/microsistec-site/src/styles.css": {
+    "file": "assets/styles-CpzsZuKy.css",
+    "src": "/Users/jefferson/Documents/GitHub/microsistec-site/src/styles.css"
+  },
+  "_MicrosistecLanding-BL0zN38N.js": {
+    "file": "assets/MicrosistecLanding-BL0zN38N.js",
+    "name": "MicrosistecLanding",
+    "imports": [
+      "_server-BHksymyu.js",
+      "_router-BHIC0459.js"
+    ]
+  },
+  "_router-BHIC0459.js": {
+    "file": "assets/router-BHIC0459.js",
+    "name": "router",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js"
+    ],
+    "dynamicImports": [
+      "src/routes/empresa.tsx?tsr-split=component",
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/blog.index.tsx?tsr-split=component",
+      "src/routes/solucoes.$slug.tsx?tsr-split=component",
+      "src/routes/blog.$slug.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/styles-CpzsZuKy.css"
+    ]
+  },
+  "_search-C-sHOv53.js": {
+    "file": "assets/search-C-sHOv53.js",
+    "name": "search",
+    "imports": [
+      "_router-BHIC0459.js"
+    ]
+  },
+  "_server-BHksymyu.js": {
+    "file": "assets/server-BHksymyu.js",
+    "name": "server",
+    "isDynamicEntry": true,
+    "dynamicImports": [
+      "tanstack-start-manifest:v",
+      "_router-BHIC0459.js",
+      "src/start.ts",
+      "%23tanstack-start-plugin-adapters"
+    ]
+  },
+  "_worker-entry-Dz5t8jJ5.js": {
+    "file": "assets/worker-entry-Dz5t8jJ5.js",
+    "name": "worker-entry",
+    "dynamicImports": [
+      "_server-BHksymyu.js"
+    ]
+  },
+  "src/routes/blog.$slug.tsx?tsr-split=component": {
+    "file": "assets/blog._slug-CHridwuo.js",
+    "name": "blog._slug",
+    "src": "src/routes/blog.$slug.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js",
+      "_MicrosistecLanding-BL0zN38N.js",
+      "_router-BHIC0459.js"
+    ]
+  },
+  "src/routes/blog.index.tsx?tsr-split=component": {
+    "file": "assets/blog.index-vjMsjjg6.js",
+    "name": "blog.index",
+    "src": "src/routes/blog.index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js",
+      "_MicrosistecLanding-BL0zN38N.js",
+      "_router-BHIC0459.js",
+      "_search-C-sHOv53.js"
+    ]
+  },
+  "src/routes/empresa.tsx?tsr-split=component": {
+    "file": "assets/empresa-DwaIzFst.js",
+    "name": "empresa",
+    "src": "src/routes/empresa.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js",
+      "_MicrosistecLanding-BL0zN38N.js",
+      "_router-BHIC0459.js"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-7QHDPyB_.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js",
+      "_MicrosistecLanding-BL0zN38N.js",
+      "_router-BHIC0459.js"
+    ]
+  },
+  "src/routes/solucoes.$slug.tsx?tsr-split=component": {
+    "file": "assets/solucoes._slug-BK_cxsZR.js",
+    "name": "solucoes._slug",
+    "src": "src/routes/solucoes.$slug.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js",
+      "_MicrosistecLanding-BL0zN38N.js",
+      "_router-BHIC0459.js",
+      "_search-C-sHOv53.js"
+    ]
+  },
+  "src/start.ts": {
+    "file": "assets/start-DiQYT3cG.js",
+    "name": "start",
+    "src": "src/start.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-BHksymyu.js",
+      "_worker-entry-Dz5t8jJ5.js"
+    ]
+  },
+  "tanstack-start-manifest:v": {
+    "file": "assets/_tanstack-start-manifest_v-ClwJycZa.js",
+    "name": "_tanstack-start-manifest_v",
+    "src": "tanstack-start-manifest:v",
+    "isDynamicEntry": true
+  },
+  "virtual:cloudflare/worker-entry": {
+    "file": "index.js",
+    "name": "index",
+    "src": "virtual:cloudflare/worker-entry",
+    "isEntry": true,
+    "imports": [
+      "_worker-entry-Dz5t8jJ5.js"
+    ]
+  }
+}
