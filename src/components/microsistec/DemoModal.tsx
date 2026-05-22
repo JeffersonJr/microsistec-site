@@ -45,7 +45,7 @@ export function DemoModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="sm:max-w-[450px] p-0 bg-[#f5f0e8] border-[#1c1a17]/15 overflow-hidden rounded-[24px]">
+      <DialogContent className="z-[55] sm:max-w-[450px] p-0 bg-[#f5f0e8] border-[#1c1a17]/15 overflow-hidden rounded-[24px]">
         
         {/* Unconditional elements for Accessibility */}
         <DialogTitle className="sr-only">Ativar Teste Grátis</DialogTitle>
