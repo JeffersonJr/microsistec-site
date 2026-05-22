@@ -1,27 +1,5 @@
 {
-  "framework": null,
-  "buildCommand": "bun run build",
+  "buildCommand": "bash scripts/vercel-build.sh",
   "installCommand": "bun install",
-  "outputDirectory": "dist/client",
-  "rewrites": [
-    {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api/index"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ]
+  "framework": null
 }
