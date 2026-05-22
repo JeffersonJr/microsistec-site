@@ -81,7 +81,31 @@ export function Nav() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link to="/planos" className="hover:text-[color:var(--brand-orange)] transition">Planos</Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1.5 hover:text-[color:var(--brand-orange)] transition cursor-pointer outline-none border-none bg-transparent">
+              Planos <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-56 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-xl p-2 shadow-elev">
+              <DropdownMenuItem asChild>
+                <Link
+                  to="/planos"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
+                >
+                  <Building2 className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
+                  <span className="font-semibold leading-none">CRM Imobiliário</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link
+                  to="/planos-albert"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
+                >
+                  <Bot className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
+                  <span className="font-semibold leading-none">Albert IA</span>
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Link to="/empresa" className="hover:text-[color:var(--brand-orange)] transition">Sobre</Link>
           <Link to="/blog" className="hover:text-[color:var(--brand-orange)] transition">Blog</Link>
         </nav>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { useDemoModal } from "@/hooks/use-demo-modal";
-import { Check, ArrowRight, Minus } from "lucide-react";
+import { CheckCircle2, ArrowRight, Bot, HelpCircle } from "lucide-react";
 import React from "react";
 
 export const Route = createFileRoute("/planos-albert")({
@@ -11,52 +11,83 @@ export const Route = createFileRoute("/planos-albert")({
 function PlanosAlbertPage() {
   const { openModal } = useDemoModal();
 
-  const tiers = [
-    { name: "500", volume: "500" },
-    { name: "1000", volume: "1000" },
-    { name: "1500", volume: "1500" },
-    { name: "2000", volume: "2000" },
-  ];
-
-  const features = [
+  const plans = [
     {
-      label: "Preço",
-      values: ["Sob consulta", "Sob consulta", "Sob consulta", "Sob consulta"],
-      isString: true
+      id: "500",
+      name: "500",
+      desc: "atendimentos mensais",
+      price: "Sob consulta",
+      isCustom: true,
+      users: "Corretores Ilimitados",
+      limit: "Até 500 chats",
+      features: [
+        "Fidelidade Flexível",
+        "Busca de imóveis",
+        "Agendamento de visitas",
+        "Envio de leads para o CRM",
+        "Suporte técnico",
+        "Marca personalizada",
+        "CRM Próprio (Opcional)",
+        "2 Reuniões Estratégicas"
+      ]
     },
     {
-      label: "Fidelidade",
-      values: ["Flexível", "Flexível", "Flexível", "Flexível"],
-      isString: true
+      id: "1000",
+      name: "1000",
+      isPopular: true,
+      desc: "atendimentos mensais",
+      price: "Sob consulta",
+      isCustom: true,
+      users: "Corretores Ilimitados",
+      limit: "Até 1.000 chats",
+      features: [
+        "Fidelidade Flexível",
+        "Busca de imóveis",
+        "Agendamento de visitas",
+        "Envio de leads para o CRM",
+        "Suporte técnico",
+        "Marca personalizada",
+        "CRM Próprio (Opcional)",
+        "2 Reuniões Estratégicas"
+      ]
     },
     {
-      label: "Busca de imóveis",
-      values: [true, true, true, true],
+      id: "1500",
+      name: "1500",
+      desc: "atendimentos mensais",
+      price: "Sob consulta",
+      isCustom: true,
+      users: "Corretores Ilimitados",
+      limit: "Até 1.500 chats",
+      features: [
+        "Fidelidade Flexível",
+        "Busca de imóveis",
+        "Agendamento de visitas",
+        "Envio de leads para o CRM",
+        "Suporte técnico",
+        "Marca personalizada",
+        "CRM Próprio (Opcional)",
+        "1 Reunião Mensal"
+      ]
     },
     {
-      label: "Agendamento de visitas",
-      values: [true, true, true, true],
-    },
-    {
-      label: "Envio de leads para o CRM",
-      values: [true, true, true, true],
-    },
-    {
-      label: "Suporte",
-      values: [true, true, true, true],
-    },
-    {
-      label: "Marca personalizada",
-      values: [true, true, true, true],
-    },
-    {
-      label: "CRM Próprio",
-      values: [true, true, true, true],
-    },
-    {
-      label: "Reunião Estratégica (consultor)",
-      values: ["2 reuniões", "2 reuniões", "1 reunião mensal", "Sob demanda"],
-      isString: true
+      id: "2000",
+      name: "2000+",
+      desc: "atendimentos mensais",
+      price: "Sob consulta",
+      isCustom: true,
+      users: "Corretores Ilimitados",
+      limit: "Volume massivo",
+      features: [
+        "Fidelidade Flexível",
+        "Busca de imóveis",
+        "Agendamento de visitas",
+        "Envio de leads para o CRM",
+        "Suporte VIP",
+        "Marca personalizada",
+        "CRM Próprio (Opcional)",
+        "Consultoria Sob Demanda"
+      ]
     }
   ];
 
@@ -66,7 +97,7 @@ function PlanosAlbertPage() {
       
       <main>
         {/* Header Section */}
-        <section className="relative overflow-hidden bg-hero py-20 border-b border-[color:var(--brand-ink)]/10">
+        <section className="relative overflow-hidden bg-hero py-20 md:py-28 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-5xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
@@ -87,57 +118,88 @@ function PlanosAlbertPage() {
           </div>
         </section>
 
-        {/* Pricing Table Section */}
+        {/* Pricing Cards */}
         <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="bg-white rounded-3xl border border-[color:var(--brand-ink)]/10 shadow-soft overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[800px] text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-[color:var(--brand-ink)]/10">
-                    <th className="py-8 px-6 lg:px-10 font-extrabold text-xl lg:text-2xl text-[color:var(--brand-ink)] w-1/3">
-                      Atendimento Mensal
-                    </th>
-                    {tiers.map((tier) => (
-                      <th key={tier.name} className="py-8 px-6 text-center font-extrabold text-3xl lg:text-5xl text-[color:var(--brand-ink)]">
-                        {tier.volume}
-                      </th>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-4 items-stretch">
+            {plans.map((plan) => (
+              <div 
+                key={plan.id}
+                className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${
+                  plan.isPopular 
+                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev lg:-mt-4 lg:mb-4 border-2 border-[color:var(--brand-orange)]" 
+                    : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
+                }`}
+              >
+                {plan.isPopular && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
+                    Mais Escolhido
+                  </div>
+                )}
+                
+                <div className="space-y-2 mb-8">
+                  <h3 className="text-5xl font-extrabold tracking-tight leading-none">{plan.name}</h3>
+                  <p className={`text-sm leading-relaxed ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
+                    {plan.desc}
+                  </p>
+                </div>
+
+                <div className="mb-8">
+                  <div className="text-3xl font-extrabold tracking-tighter leading-none py-2">{plan.price}</div>
+                </div>
+
+                <div className="space-y-4 mb-8 flex-1">
+                  <div className="pb-4 mb-4 border-b border-current/10">
+                    <div className="flex items-center gap-2 mb-2 font-semibold text-sm">
+                      <Bot className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`} />
+                      {plan.limit}
+                    </div>
+                    <div className="flex items-center gap-2 font-semibold text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                      {plan.users}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-sm leading-tight">
+                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : "text-[color:var(--brand-ink)]/50"}`} />
+                        <span>{feature}</span>
+                      </li>
                     ))}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[color:var(--brand-ink)]/5">
-                  {features.map((feature, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                      <td className="py-6 px-6 lg:px-10 font-bold text-sm lg:text-base text-[color:var(--brand-ink)]">
-                        {feature.label}
-                      </td>
-                      {feature.values.map((val, vIdx) => (
-                        <td key={vIdx} className="py-6 px-6 text-center">
-                          {feature.isString ? (
-                            <span className="text-sm font-semibold text-[color:var(--brand-ink)]/80">
-                              {val}
-                            </span>
-                          ) : val === true ? (
-                            <Check className="w-5 h-5 text-emerald-600 mx-auto" strokeWidth={3} />
-                          ) : (
-                            <Minus className="w-5 h-5 text-[color:var(--brand-ink)]/30 mx-auto" strokeWidth={3} />
-                          )}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            
-            <div className="p-8 lg:p-10 bg-slate-50 border-t border-[color:var(--brand-ink)]/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="text-sm text-muted-foreground max-w-xl">
-                O Albert atende clientes de forma 100% autônoma, capturando informações chave e enviando o lead enriquecido direto para o seu funil de vendas.
+                  </ul>
+                </div>
+
+                <button
+                  onClick={openModal}
+                  className={`w-full py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] ${
+                    plan.isPopular
+                      ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
+                      : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
+                  }`}
+                >
+                  Falar com Consultor
+                </button>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid opacity-[0.05]" />
+          <div className="relative mx-auto max-w-4xl px-6 text-center space-y-8">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+              Pronto para transformar seu atendimento?
+            </h2>
+            <p className="text-lg text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
+              O Albert atende clientes de forma 100% autônoma, capturando informações chave e enviando o lead enriquecido direto para o seu funil de vendas.
+            </p>
+            <div className="pt-4">
               <button
                 onClick={openModal}
-                className="shrink-0 inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:brightness-110 transition cursor-pointer border-none shadow-elev"
+                className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:brightness-110 transition cursor-pointer border-none shadow-elev"
               >
-                Solicitar Orçamento <ArrowRight className="w-4 h-4" />
+                Solicitar Orçamento <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
