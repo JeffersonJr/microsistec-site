@@ -172,7 +172,7 @@ function SolucaoDetalhe() {
                       onClick={(e) => {
                         e.preventDefault();
                         const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-                        if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+                        if (/iPad|iPhone|iPod|Mac/.test(userAgent) && !(window as any).MSStream) {
                           window.open("https://apps.apple.com/us/app/microsistec-leads/id1550404156", "_blank");
                         } else {
                           window.open("https://play.google.com/store/apps/details?id=br.com.microsistec.mercury&hl=pt_BR", "_blank");
@@ -1361,7 +1361,7 @@ function AppSubSection() {
               onClick={(e) => {
                 e.preventDefault();
                 const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-                if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+                if (/iPad|iPhone|iPod|Mac/.test(userAgent) && !(window as any).MSStream) {
                   window.open("https://apps.apple.com/us/app/microsistec-leads/id1550404156", "_blank");
                 } else {
                   window.open("https://play.google.com/store/apps/details?id=br.com.microsistec.mercury&hl=pt_BR", "_blank");

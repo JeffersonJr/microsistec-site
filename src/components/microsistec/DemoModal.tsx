@@ -78,7 +78,7 @@ export function DemoModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="max-w-md w-[95vw] max-h-[90vh] overflow-y-auto bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] shadow-elev rounded-3xl p-0 relative">
+      <DialogContent className="max-w-md w-full sm:max-w-md bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] overflow-hidden shadow-elev rounded-3xl p-0 relative">
         {/* Default close button is provided by Radix DialogContent */}
         {/* Banner with style */}
         <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-6 relative">
