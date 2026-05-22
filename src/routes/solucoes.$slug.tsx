@@ -166,6 +166,26 @@ function SolucaoDetalhe() {
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
                     </a>
+                  ) : sol.slug === "app" ? (
+                    <button
+                      onClick={() => {
+                        const ua = navigator.userAgent || "";
+                        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+                        const isMac = /Macintosh|MacIntel/.test(ua) && !isIOS;
+                        if (isIOS || isMac) {
+                          window.open("https://apps.apple.com/br/app/microsistec/id1035266100", "_blank");
+                        } else {
+                          window.open("https://play.google.com/store/apps/details?id=br.com.microsistec", "_blank");
+                        }
+                      }}
+                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
+                    >
+                      {sol.ctaText} <ArrowRight className="w-4 h-4" />
+                    </button>
+                  ) : sol.ctaText === "Em Breve" ? (
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)]/30 text-[color:var(--brand-sand)]/60 px-6 py-3.5 font-semibold cursor-not-allowed">
+                      {sol.ctaText}
+                    </span>
                   ) : (
                     <button
                       onClick={openModal}
