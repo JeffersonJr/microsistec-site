@@ -4,7 +4,7 @@ import { MicrosistecLanding } from "@/components/microsistec/MicrosistecLanding"
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Microsistec - A IA que move sua imobiliária" },
+      { title: "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994" },
       {
         name: "description",
         content:
