@@ -12,4 +12,12 @@ export default defineConfig({
       preset: "vercel",
     },
   },
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'UNUSED_EXTERNAL_IMPORT' && warning.message.includes('@tanstack/router-core')) return;
+        warn(warning);
+      }
+    }
+  }
 });
