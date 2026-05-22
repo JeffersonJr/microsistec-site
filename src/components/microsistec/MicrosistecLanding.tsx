@@ -745,6 +745,7 @@ export function Footer() {
             links={[
               { label: "CRM Imobiliário", to: "/solucoes/$slug", params: { slug: "crm" } },
               { label: "Albert IA", to: "/solucoes/$slug", params: { slug: "albert-ia" } },
+              { label: "Planos Albert IA", to: "/planos-albert" },
               { label: "App de Atendimento", to: "/solucoes/$slug", params: { slug: "app" } },
               { label: "Rodízio de Atendimento", to: "/solucoes/$slug", params: { slug: "rodizio" } },
               { label: "Sites Customizados V8", to: "/solucoes/$slug", params: { slug: "sites-v8" } },

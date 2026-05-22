@@ -58,7 +58,7 @@ function NotFoundComponent() {
         className="mt-4 font-extrabold tracking-tight"
         style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)", color: "var(--brand-sand, #f5f0e8)" }}
       >
-        Este endereço não existe no cadastro.
+        Página não encontrada
       </h1>
 
       {/* Funny sub-copy */}
@@ -84,7 +84,7 @@ function NotFoundComponent() {
         }}
       >
         <MapPin style={{ width: 12, height: 12 }} />
-        Imóvel não encontrado · Verifique o endereço e tente novamente
+        Página não encontrada · Verifique o endereço e tente novamente
       </div>
 
       {/* CTA */}
@@ -169,14 +169,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994" },
+      { name: "description", content: "A solução perfeita para corretores autônomos e imobiliárias." },
+      { name: "author", content: "Microsistec" },
+      { property: "og:title", content: "Microsistec" },
+      { property: "og:description", content: "A proptech pioneira em tecnologia imobiliária desde 1994" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@microsistec" },
     ],
     links: [
       {
