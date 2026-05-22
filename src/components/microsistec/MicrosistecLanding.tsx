@@ -81,6 +81,7 @@ export function Nav() {
             </DropdownMenuContent>
           </DropdownMenu>
 
+          <Link to="/planos" className="hover:text-[color:var(--brand-orange)] transition">Planos</Link>
           <Link to="/empresa" className="hover:text-[color:var(--brand-orange)] transition">Sobre</Link>
           <Link to="/blog" className="hover:text-[color:var(--brand-orange)] transition">Blog</Link>
         </nav>
@@ -753,6 +754,7 @@ export function Footer() {
             title="Empresa"
             links={[
               { label: "Sobre", to: "/empresa" },
+              { label: "Planos", to: "/planos" },
               { label: "Blog", to: "/blog" },
               { label: "Falar no WhatsApp", to: "https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0" },
             ]}
