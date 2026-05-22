@@ -1,74 +1,41 @@
 import * as React from "react";
 import { useDemoModal } from "@/hooks/use-demo-modal";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { CheckCircle2, Loader2, Sparkles, Building2, ShieldCheck, KeyRound, ArrowRight, X } from "lucide-react";
-
-type SetupStep = {
-  label: string;
-  duration: number;
-};
-
-const STEPS: SetupStep[] = [
-  { label: "Validando informações comerciais...", duration: 800 },
-  { label: "Configurando banco de dados no imob.online...", duration: 900 },
-  { label: "Instanciando Albert IA com dados da Microsistec...", duration: 1000 },
-  { label: "Finalizando ativação do painel administrativo...", duration: 700 },
-];
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Sparkles, ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
 export function DemoModal() {
   const { isOpen, closeModal } = useDemoModal();
-  const [formData, setFormData] = React.useState({
-    nome: "",
-    cargo: "",
-    tel: "",
-    email: "",
-    senha: "",
-  });
-
   const [status, setStatus] = React.useState<"idle" | "loading" | "success">("idle");
   const [currentStep, setCurrentStep] = React.useState(0);
 
-  // Form handle changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const resetModal = React.useCallback(() => {
-    setStatus("idle");
-    setCurrentStep(0);
-    setFormData({ nome: "", cargo: "", tel: "", email: "", senha: "" });
-  }, []);
+  const steps = [
+    "Validando informações comerciais...",
+    "Configurando banco de dados no imob.online...",
+    "Instanciando Albert IA...",
+    "Finalizando ativação do painel..."
+  ];
 
   const handleClose = () => {
     closeModal();
-    // Reset form after transition out
     setTimeout(() => {
-      resetModal();
+      setStatus("idle");
+      setCurrentStep(0);
     }, 300);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.nome || !formData.email || !formData.senha || !formData.tel) {
-      return;
-    }
-
     setStatus("loading");
     setCurrentStep(0);
 
-    // Sequence the loading steps
     let stepIndex = 0;
     const runStep = () => {
-      if (stepIndex < STEPS.length) {
+      if (stepIndex < steps.length) {
         setTimeout(() => {
           stepIndex++;
           setCurrentStep(stepIndex);
           runStep();
-        }, STEPS[stepIndex].duration);
+        }, 800);
       } else {
         setStatus("success");
       }
@@ -78,221 +45,111 @@ export function DemoModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="max-w-md w-full sm:max-w-md bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-[color:var(--brand-ink)] overflow-hidden shadow-elev rounded-3xl p-0 relative">
-        {/* Radix requires DialogDescription to be rendered unconditionally for accessibility */}
-        <DialogDescription className="sr-only">
-          Preencha o formulário para iniciar seu teste grátis na Microsistec.
-        </DialogDescription>
-        {/* Default close button is provided by Radix DialogContent */}
-        {/* Banner with style */}
-        <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-6 relative">
-          <div className="bg-grid absolute inset-0 opacity-15" />
-          <div className="relative flex items-center justify-between">
+      <DialogContent className="sm:max-w-[450px] p-0 bg-[#f5f0e8] border-[#1c1a17]/15 overflow-hidden rounded-[24px]">
+        
+        {/* Unconditional elements for Accessibility */}
+        <DialogTitle className="sr-only">Ativar Teste Grátis</DialogTitle>
+        <DialogDescription className="sr-only">Preencha o formulário para criar seu acesso gratuito ao Microsistec CRM.</DialogDescription>
+
+        {/* Header / Banner */}
+        <div className="bg-[#1c1a17] text-[#f5f0e8] p-6 relative">
+          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]" />
+          <div className="relative flex items-center justify-between z-10">
             <div>
-              <span className="stamp text-[color:var(--brand-orange)] text-[10px]">Microsistec CRM</span>
-              <DialogTitle className="font-extrabold text-xl tracking-tight mt-1">
+              <span className="text-[#f97316] text-[10px] font-bold uppercase tracking-widest bg-[#f97316]/10 px-2 py-1 rounded-full">Microsistec CRM</span>
+              <h2 className="font-extrabold text-xl tracking-tight mt-2">
                 Ativar Teste Grátis
-              </DialogTitle>
+              </h2>
             </div>
-            <Sparkles className="w-8 h-8 text-[color:var(--brand-orange)]" />
+            <Sparkles className="w-8 h-8 text-[#f97316]" />
           </div>
         </div>
 
+        {/* State: IDLE (Form) */}
         {status === "idle" && (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
-            <p className="text-sm text-foreground/75 leading-relaxed">
-              Crie seu acesso administrativo em 30 segundos. Experimente a potência do CRM imobiliário e do Albert IA por 14 dias sem compromisso.
+            <p className="text-sm text-[#1c1a17]/80 leading-relaxed mb-4">
+              Crie seu acesso administrativo em segundos. Experimente a potência do CRM imobiliário por 14 dias.
             </p>
 
-            <div className="space-y-3 mt-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="nome" className="text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80">
-                  Nome Completo
-                </Label>
-                <Input
-                  id="nome"
-                  name="nome"
-                  type="text"
-                  required
-                  placeholder="Ex: Jefferson Junior"
-                  value={formData.nome}
-                  onChange={handleChange}
-                  className="bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
-                />
+            <div className="space-y-3">
+              <div>
+                <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">Nome Completo</label>
+                <input required type="text" placeholder="Ex: Jefferson Junior" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
               </div>
-
+              
               <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-1.5">
-                  <Label htmlFor="cargo" className="text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80">
-                    Cargo / Função
-                  </Label>
-                  <Input
-                    id="cargo"
-                    name="cargo"
-                    type="text"
-                    required
-                    placeholder="Ex: Diretor, Corretor"
-                    value={formData.cargo}
-                    onChange={handleChange}
-                    className="bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
-                  />
+                <div>
+                  <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">Cargo</label>
+                  <input required type="text" placeholder="Ex: Diretor" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
                 </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="tel" className="text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80">
-                    WhatsApp / Tel
-                  </Label>
-                  <Input
-                    id="tel"
-                    name="tel"
-                    type="tel"
-                    required
-                    placeholder="Ex: (13) 99759-1781"
-                    value={formData.tel}
-                    onChange={handleChange}
-                    className="bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
-                  />
+                <div>
+                  <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">WhatsApp</label>
+                  <input required type="tel" placeholder="(11) 99999-9999" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
                 </div>
               </div>
 
-              <div className="space-y-1.5">
-                <Label htmlFor="email" className="text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80">
-                  E-mail Corporativo
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="jefferson@imobiliaria.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
-                />
+              <div>
+                <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">E-mail</label>
+                <input required type="email" placeholder="jefferson@suaimobiliaria.com.br" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
               </div>
 
-              <div className="space-y-1.5">
-                <Label htmlFor="senha" className="text-xs font-mono-ui font-semibold uppercase tracking-wider text-foreground/80">
-                  Senha para Acesso
-                </Label>
-                <Input
-                  id="senha"
-                  name="senha"
-                  type="password"
-                  required
-                  placeholder="••••••••"
-                  value={formData.senha}
-                  onChange={handleChange}
-                  className="bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-lg text-sm"
-                />
+              <div>
+                <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">Senha</label>
+                <input required type="password" placeholder="••••••••" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
               </div>
             </div>
 
-            <Button
-              type="submit"
-              className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-5 font-semibold text-sm cursor-pointer mt-4 flex items-center justify-center gap-2"
-            >
-              Ativar Meu Acesso Grátis <ArrowRight className="w-4 h-4" />
-            </Button>
+            <button type="submit" className="w-full bg-[#1c1a17] hover:bg-[#f97316] text-[#f5f0e8] hover:text-[#1c1a17] transition-colors rounded-xl py-4 font-bold text-sm mt-6 flex items-center justify-center gap-2 cursor-pointer shadow-md">
+              Ativar Meu Acesso <ArrowRight className="w-4 h-4" />
+            </button>
           </form>
         )}
 
+        {/* State: LOADING */}
         {status === "loading" && (
-          <div className="p-8 flex flex-col items-center justify-center min-h-[350px] space-y-6">
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-full bg-[color:var(--brand-orange)]/10 blur-md animate-pulse" />
-              <Loader2 className="w-12 h-12 text-[color:var(--brand-orange)] animate-spin relative" />
-            </div>
+          <div className="p-8 flex flex-col items-center justify-center min-h-[350px] space-y-6 text-[#1c1a17]">
+            <Loader2 className="w-12 h-12 text-[#f97316] animate-spin" />
             
             <div className="text-center space-y-2">
-              <h4 className="font-bold text-lg tracking-tight">Ativando Ambiente Seguro</h4>
-              <p className="text-sm text-muted-foreground max-w-xs mx-auto">
-                Aguarde alguns segundos enquanto configuramos sua imobiliária digital.
-              </p>
+              <h4 className="font-bold text-lg">Ativando Ambiente...</h4>
             </div>
 
-            {/* Pipeline progress bar & steps list */}
-            <div className="w-full bg-[color:var(--brand-ink)]/10 rounded-full h-1.5 overflow-hidden">
-              <div 
-                className="h-full bg-[color:var(--brand-orange)] transition-all duration-300"
-                style={{ width: `${((currentStep) / STEPS.length) * 100}%` }}
-              />
+            <div className="w-full bg-[#1c1a17]/10 rounded-full h-1.5 overflow-hidden">
+              <div className="h-full bg-[#f97316] transition-all duration-300" style={{ width: `${(currentStep / steps.length) * 100}%` }} />
             </div>
 
-            <div className="w-full space-y-2 text-xs font-mono-ui bg-background/50 border border-[color:var(--brand-ink)]/5 rounded-xl p-3.5">
-              {STEPS.map((s, idx) => (
-                <div 
-                  key={s.label}
-                  className={`flex items-center gap-2 transition-opacity duration-300 ${
-                    idx < currentStep 
-                      ? "text-[color:var(--brand-orange)] font-semibold" 
-                      : idx === currentStep 
-                      ? "text-foreground animate-pulse" 
-                      : "text-muted-foreground/50"
-                  }`}
-                >
-                  <span className="shrink-0">
-                    {idx < currentStep ? "✓" : idx === currentStep ? "●" : "○"}
-                  </span>
-                  <span>{s.label}</span>
+            <div className="w-full space-y-2 text-xs font-mono bg-white border border-[#1c1a17]/10 rounded-xl p-4">
+              {steps.map((s, idx) => (
+                <div key={s} className={`flex items-center gap-2 transition-opacity ${idx < currentStep ? "text-[#f97316] font-bold" : idx === currentStep ? "text-[#1c1a17] animate-pulse" : "text-[#1c1a17]/40"}`}>
+                  <span className="shrink-0">{idx < currentStep ? "✓" : idx === currentStep ? "●" : "○"}</span>
+                  <span>{s}</span>
                 </div>
               ))}
             </div>
           </div>
         )}
 
+        {/* State: SUCCESS */}
         {status === "success" && (
-          <div className="p-8 text-center min-h-[350px] flex flex-col items-center justify-center space-y-6">
-            <div className="w-16 h-16 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] flex items-center justify-center">
+          <div className="p-8 text-center min-h-[350px] flex flex-col items-center justify-center space-y-6 text-[#1c1a17]">
+            <div className="w-16 h-16 rounded-full bg-[#f97316]/10 text-[#f97316] flex items-center justify-center">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-extrabold text-2xl tracking-tight leading-none text-gradient">
-                Plataforma Ativada!
-              </h3>
-              <p className="text-sm text-foreground/80 leading-relaxed max-w-xs mx-auto">
-                Parabéns <strong>{formData.nome.split(" ")[0]}</strong>! Seu CRM e o Albert IA estão prontos no ambiente temporário.
+              <h3 className="font-extrabold text-2xl tracking-tight">Plataforma Ativada!</h3>
+              <p className="text-sm text-[#1c1a17]/80 max-w-xs mx-auto">
+                Seu CRM e o Albert IA estão prontos. Verifique o seu e-mail para acessar o painel administrativo.
               </p>
             </div>
 
-            <div className="w-full text-left space-y-2 text-xs font-mono-ui bg-background/90 border border-[color:var(--brand-ink)]/10 rounded-2xl p-4">
-              <div className="flex justify-between pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
-                <span className="text-muted-foreground">Sistema URL:</span>
-                <span className="font-semibold text-foreground">imob.online/microsistec</span>
-              </div>
-              <div className="flex justify-between pt-1">
-                <span className="text-muted-foreground">E-mail:</span>
-                <span className="font-semibold text-foreground">{formData.email}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Cargo:</span>
-                <span className="font-semibold text-foreground">{formData.cargo}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Status do Albert IA:</span>
-                <span className="font-semibold text-[color:var(--brand-orange)]">Ativo (Treinando)</span>
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col gap-2 pt-2">
-              <a
-                href="https://imob.online/"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3.5 font-bold text-sm flex items-center justify-center gap-2"
-              >
-                Entrar no Sistema <ArrowRight className="w-4 h-4" />
-              </a>
-              <Button
-                variant="ghost"
-                onClick={handleClose}
-                className="text-xs text-muted-foreground hover:text-foreground hover:bg-transparent"
-              >
-                Fechar esta janela
-              </Button>
-            </div>
+            <button onClick={handleClose} className="bg-[#1c1a17] text-[#f5f0e8] hover:bg-[#f97316] hover:text-[#1c1a17] rounded-full px-8 py-3 font-bold transition-colors cursor-pointer shadow-md">
+              Acessar Painel
+            </button>
           </div>
         )}
+
       </DialogContent>
     </Dialog>
   );
