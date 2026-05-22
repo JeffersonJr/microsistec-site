@@ -2,6 +2,10 @@
 # Custom Vercel build script.
 # Runs the normal Vite build, then assembles the .vercel/output directory
 # using the Build Output API v3.
+#
+# The SSR server bundle has external dependencies (react, srvx, etc.)
+# that are NOT bundled. We include node_modules in the function so they
+# can be resolved at runtime.
 
 set -euo pipefail
 
@@ -21,7 +25,17 @@ cp -r dist/client/* .vercel/output/static/
 # 3. Copy the SSR server bundle into the function directory
 cp -r dist/server/* .vercel/output/functions/ssr.func/
 
-# 4. Create the Node.js Serverless Function entry point
+# 4. Copy node_modules into the function (required - the server bundle has external imports)
+cp -r node_modules .vercel/output/functions/ssr.func/node_modules
+
+# 5. Create a package.json for the function to signal ESM
+cat > .vercel/output/functions/ssr.func/package.json << 'PKGJSON'
+{
+  "type": "module"
+}
+PKGJSON
+
+# 6. Create the Node.js Serverless Function entry point
 #    Adapts Vercel's Node.js (req, res) API to the Web fetch() API used by srvx/TanStack Start
 cat > .vercel/output/functions/ssr.func/index.mjs << 'ENTRY'
 import server from './server.js';
@@ -68,49 +82,45 @@ export default async function handler(req, res) {
     // Write Web Response back to Node.js ServerResponse
     res.statusCode = webResponse.status;
     for (const [key, value] of webResponse.headers.entries()) {
+      // Avoid setting transfer-encoding when streaming
+      if (key.toLowerCase() === 'transfer-encoding') continue;
       res.setHeader(key, value);
     }
 
     if (webResponse.body) {
       const reader = webResponse.body.getReader();
-      const pump = async () => {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          res.write(value);
-        }
-        res.end();
-      };
-      await pump();
-    } else {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        res.write(value);
+      }
       res.end();
+    } else {
+      const text = await webResponse.text();
+      res.end(text);
     }
   } catch (err) {
     console.error('[vercel-ssr] Unhandled error:', err);
-    res.statusCode = 500;
-    res.setHeader('content-type', 'text/html; charset=utf-8');
-    res.end('<h1>Internal Server Error</h1>');
+    if (!res.headersSent) {
+      res.statusCode = 500;
+      res.setHeader('content-type', 'text/html; charset=utf-8');
+      res.end('<h1>Internal Server Error</h1><pre>' + String(err) + '</pre>');
+    }
   }
 }
 ENTRY
 
-# 5. Create the function config — Node.js 20 runtime for full compatibility
+# 7. Create the function config
 cat > .vercel/output/functions/ssr.func/.vc-config.json << 'VCCONFIG'
 {
   "runtime": "nodejs20.x",
   "handler": "index.mjs",
-  "launcherType": "Nodejs"
+  "launcherType": "Nodejs",
+  "maxDuration": 30
 }
 VCCONFIG
 
-# 6. Create a minimal package.json for the function to signal ESM
-cat > .vercel/output/functions/ssr.func/package.json << 'PKGJSON'
-{
-  "type": "module"
-}
-PKGJSON
-
-# 7. Create the top-level output config with routing rules
+# 8. Create the top-level output config with routing rules
 cat > .vercel/output/config.json << 'CONFIG'
 {
   "version": 3,
@@ -135,3 +145,4 @@ CONFIG
 echo "✓ .vercel/output assembled successfully!"
 echo "  Static files: $(find .vercel/output/static -type f | wc -l | tr -d ' ') files"
 echo "  SSR function: .vercel/output/functions/ssr.func/"
+echo "  node_modules included for runtime dependencies"
