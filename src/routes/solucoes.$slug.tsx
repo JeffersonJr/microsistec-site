@@ -166,6 +166,22 @@ function SolucaoDetalhe() {
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
                     </a>
+                  ) : sol.slug === "app" ? (
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+                        if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
+                          window.open("https://apps.apple.com/br/search?term=microsistec", "_blank");
+                        } else {
+                          window.open("https://play.google.com/store/search?q=microsistec", "_blank");
+                        }
+                      }}
+                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
+                    >
+                      {sol.ctaText} <Smartphone className="w-4 h-4" />
+                    </a>
                   ) : (
                     <button
                       onClick={openModal}
