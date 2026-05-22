@@ -83,6 +83,7 @@ function SolucaoDetalhe() {
 
   const getFeaturesTitle = (s: string, defaultTitle: string) => {
     switch (s) {
+      case "crm": return "Gestão Imobiliária e Automação de Ponta a Ponta";
       case "app": return "O poder do CRM na palma da sua mão";
       case "funil": return "Acelere negócios com um funil de vendas inteligente";
       case "integracoes": return "Conectividade total com portais, WhatsApp e Meta";

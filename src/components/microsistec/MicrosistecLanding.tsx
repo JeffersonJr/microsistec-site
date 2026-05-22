@@ -115,7 +115,7 @@ function Hero() {
           <div className="flex items-center gap-3 text-sm">
             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/15 px-3 py-1">
               <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)]" />
-              pioneira em tecnologia imobiliária desde 1994
+              A pioneira em tecnologia imobiliária desde 1994
             </span>
           </div>
           <span className="font-serif-italic text-muted-foreground hidden md:inline">
@@ -126,14 +126,15 @@ function Hero() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* headline */}
           <h1 className="lg:col-span-9 font-extrabold tracking-[-0.045em] leading-[0.95] text-[clamp(2.4rem,6.5vw,5rem)]">
-            A proptech
+            Vender imóvel
             <br />
+            virou{" "}
             <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
-              pioneira
-            </span>{" "}
-            em tecnologia
+              outra coisa
+            </span>
+            .
             <br />
-            imobiliária desde <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">1994</span>.
+            E a gente já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> aqui.
           </h1>
 
           {/* sticker badge */}
