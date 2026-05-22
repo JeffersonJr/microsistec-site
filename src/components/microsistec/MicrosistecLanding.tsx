@@ -56,19 +56,25 @@ export function Nav() {
             <DropdownMenuContent align="start" className="w-64 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-xl p-2 shadow-elev">
               {solutions.map((sol) => {
                 const IconComp = getIconComponent(sol.iconName);
+                const isComingSoon = sol.ctaText === "Em Breve";
                 return (
-                  <DropdownMenuItem key={sol.slug} asChild>
-                    <Link
-                      to="/solucoes/$slug"
-                      params={{ slug: sol.slug }}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
-                    >
-                      <IconComp className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
-                      <span className="font-semibold leading-none">{sol.title}</span>
-                      {sol.ctaText === "Em Breve" && (
+                  <DropdownMenuItem key={sol.slug} asChild={!isComingSoon} disabled={isComingSoon}>
+                    {isComingSoon ? (
+                      <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)]/40 cursor-not-allowed">
+                        <IconComp className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]/40" />
+                        <span className="font-semibold leading-none">{sol.title}</span>
                         <span className="ml-auto text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 shrink-0">Em Breve</span>
-                      )}
-                    </Link>
+                      </div>
+                    ) : (
+                      <Link
+                        to="/solucoes/$slug"
+                        params={{ slug: sol.slug }}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
+                      >
+                        <IconComp className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
+                        <span className="font-semibold leading-none">{sol.title}</span>
+                      </Link>
+                    )}
                   </DropdownMenuItem>
                 );
               })}

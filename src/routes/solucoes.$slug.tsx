@@ -118,9 +118,9 @@ function SolucaoDetalhe() {
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground" />
-              <span className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold">
+              <Link to="/solucoes" className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold hover:underline transition">
                 Soluções
-              </span>
+              </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground" />
               <span className="text-xs font-mono-ui uppercase text-muted-foreground">
                 {sol.title}
