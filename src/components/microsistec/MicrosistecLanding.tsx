@@ -51,7 +51,7 @@ export function Nav() {
           <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
           <span className="text-[9px] text-muted-foreground self-start mt-1 select-none font-sans font-medium" title="Marca Registrada">®</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-7 text-sm">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-7 text-sm">
           {/* Soluções Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1.5 hover:text-[color:var(--brand-orange)] transition cursor-pointer outline-none border-none bg-transparent">
@@ -239,7 +239,7 @@ function Hero() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="top" className="relative overflow-hidden bg-hero min-h-[calc(100dvh-4rem)] flex flex-col justify-between lg:h-[calc(100vh-4rem)] lg:min-h-0">
+    <section id="top" className="relative overflow-hidden bg-hero min-h-[calc(100dvh-4rem)] flex flex-col justify-between lg:min-h-[calc(100vh-4rem)] lg:h-auto">
       <div className="bg-grid absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
@@ -366,9 +366,9 @@ function StatsStrip() {
           últ. atualização · operação {new Date().getFullYear()}
         </span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-[color:var(--brand-ink)]/15 border-y border-[color:var(--brand-ink)]/15">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[color:var(--brand-ink)]/15 border-y border-[color:var(--brand-ink)]/15">
         {stats.map((s) => (
-          <div key={s.label} className="py-6 md:py-8 px-4 md:px-6 last:col-span-2 md:last:col-span-1 text-center md:text-left">
+          <div key={s.label} className="bg-background py-6 md:py-8 px-4 md:px-6 last:col-span-2 lg:last:col-span-1 text-center md:text-left">
             <div className="text-4xl md:text-5xl font-extrabold tracking-tight">{s.n}</div>
             <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
           </div>
@@ -682,7 +682,7 @@ function Ecosystem() {
   return (
     <section className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10">
       <div className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {items.map((it, i) => (
             <div
               key={it.title}
