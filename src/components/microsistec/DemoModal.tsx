@@ -56,7 +56,7 @@ export function DemoModal() {
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]" />
           <div className="relative flex items-center justify-between z-10">
             <div>
-              <span className="text-[#f97316] text-[10px] font-bold uppercase tracking-widest bg-[#f97316]/10 px-2 py-1 rounded-full">Microsistec CRM</span>
+              <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest bg-[#f97316]/10 px-2.5 py-1 rounded-full">Microsistec CRM</span>
               <h2 className="font-extrabold text-xl tracking-tight mt-2">
                 Ativar Teste Grátis
               </h2>
@@ -74,28 +74,28 @@ export function DemoModal() {
 
             <div className="space-y-3">
               <div>
-                <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">Nome Completo</label>
+                <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1.5">Nome Completo</label>
                 <input required type="text" placeholder="Ex: Jefferson Junior" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
               </div>
               
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">Cargo</label>
+                  <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1.5">Cargo</label>
                   <input required type="text" placeholder="Ex: Diretor" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
                 </div>
                 <div>
-                  <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">WhatsApp</label>
+                  <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1.5">WhatsApp</label>
                   <input required type="tel" placeholder="(11) 99999-9999" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
                 </div>
               </div>
 
               <div>
-                <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">E-mail</label>
+                <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1.5">E-mail</label>
                 <input required type="email" placeholder="jefferson@suaimobiliaria.com.br" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
               </div>
 
               <div>
-                <label className="text-xs font-mono font-bold uppercase tracking-wider text-[#1c1a17]/70 block mb-1">Senha</label>
+                <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1.5">Senha</label>
                 <input required type="password" placeholder="••••••••" className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
               </div>
             </div>

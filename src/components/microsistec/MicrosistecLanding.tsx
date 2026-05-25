@@ -49,7 +49,7 @@ export function Nav() {
         <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.02em] hover:opacity-90" title="Microsistec - Marca Registrada">
           microsistec
           <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
-          <span className="text-[9px] text-muted-foreground self-start mt-1 select-none font-sans font-medium" title="Marca Registrada">®</span>
+          <span className="text-xs text-muted-foreground self-start mt-1 select-none font-sans font-medium" title="Marca Registrada">®</span>
         </Link>
         <nav className="hidden md:flex items-center gap-4 lg:gap-7 text-sm">
           {/* Soluções Dropdown */}
@@ -272,7 +272,7 @@ function Hero() {
           {/* sticker badge */}
           <div className="lg:col-span-3 flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="sticker px-5 py-4 max-w-[220px] shadow-elev">
-              <div className="font-mono-ui text-[10px] opacity-70 mb-1">selo do dono</div>
+              <div className="font-mono-ui text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">selo do dono</div>
               <div className="font-serif-italic text-lg leading-tight">
                 "feito por gente que conhece imobiliária de verdade"
               </div>
@@ -425,7 +425,7 @@ function Pillars() {
             >
               <div className="flex items-start justify-between mb-8">
                 <it.icon className="w-6 h-6 text-[color:var(--brand-orange)]" />
-                <span className="font-mono-ui text-[10px] text-muted-foreground group-hover:text-[color:var(--brand-sand)]/60">
+                <span className="font-mono-ui text-xs font-medium text-muted-foreground group-hover:text-[color:var(--brand-sand)]/80">
                   0{i + 1} / 04
                 </span>
               </div>
@@ -529,12 +529,12 @@ function AlbertChat() {
             </div>
             <div>
               <div className="font-semibold text-sm leading-tight">Albert</div>
-              <div className="font-mono-ui text-[10px] text-[color:var(--brand-sand)]/60">
+              <div className="font-mono-ui text-xs font-medium text-[color:var(--brand-sand)]/80">
                 SDR · atende agora
               </div>
             </div>
           </div>
-          <span className="font-mono-ui text-[10px] text-[color:var(--brand-sand)]/60">
+          <span className="font-mono-ui text-xs font-medium text-[color:var(--brand-sand)]/80">
             lead #4827 · 13s
           </span>
         </div>
@@ -551,9 +551,9 @@ function AlbertChat() {
           </Bubble>
           <Bubble who="lead">Funciona 🤝</Bubble>
 
-          <div className="mt-5 pt-4 border-t border-dashed border-[color:var(--brand-ink)]/20 flex items-center justify-between font-mono-ui text-[11px] text-muted-foreground">
+          <div className="mt-5 pt-4 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-xs text-muted-foreground font-medium">
             <span>qualificado e repassado em 38s</span>
-            <span className="text-[color:var(--brand-orange)] font-semibold">+ CRM ✓</span>
+            <span className="text-[color:var(--brand-orange)] font-bold">+ CRM ✓</span>
           </div>
         </div>
       </div>
@@ -633,12 +633,12 @@ function FunnelVisual() {
   ];
   return (
     <div className="relative rounded-3xl border border-[color:var(--brand-ink)] bg-background shadow-elev p-6 md:p-8 tilt-l">
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-dashed border-[color:var(--brand-ink)]/20">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-dashed border-[color:var(--brand-ink)]/30">
         <div className="flex items-center gap-2">
           <Building2 className="w-4 h-4" />
-          <span className="font-mono-ui text-xs">imob.online / funil</span>
+          <span className="font-mono-ui text-sm font-medium">imob.online / funil</span>
         </div>
-        <span className="font-mono-ui text-xs text-[color:var(--brand-teal)] font-semibold">
+        <span className="font-mono-ui text-sm text-[color:var(--brand-teal)] font-bold">
           +24% MoM
         </span>
       </div>
@@ -649,9 +649,9 @@ function FunnelVisual() {
               <span className="text-muted-foreground">{s.label}</span>
               <span className="font-semibold tabular-nums">{s.value.toLocaleString("pt-BR")}</span>
             </div>
-            <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/10">
+            <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className="h-full flex items-center px-3 text-xs font-mono-ui text-[color:var(--brand-sand)] transition-all"
+                className="h-full flex items-center px-3 text-sm font-bold font-mono-ui text-[color:var(--brand-sand)] transition-all"
                 style={{
                   width: s.w,
                   background:
@@ -861,7 +861,7 @@ export function Footer() {
             <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-2xl tracking-[-0.02em] mb-4 hover:opacity-90" title="Microsistec - Marca Registrada">
               microsistec
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
-              <span className="text-[10px] text-muted-foreground self-start select-none font-sans font-medium" title="Marca Registrada">®</span>
+              <span className="text-xs text-muted-foreground self-start select-none font-sans font-medium" title="Marca Registrada">®</span>
             </Link>
             <p className="text-muted-foreground max-w-sm">
               Proptech brasileira desde 1994. CRM, sites, app de atendimento e o Albert IA
