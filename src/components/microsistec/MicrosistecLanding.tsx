@@ -136,7 +136,7 @@ export function Nav() {
 
       {/* Mobile Navigation Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-[color:var(--brand-sand)] border-b border-[color:var(--brand-ink)]/15 shadow-xl z-50 overflow-y-auto max-h-[calc(100vh-4rem)]">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-[color:var(--brand-sand)] border-b border-[color:var(--brand-ink)]/15 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-4rem)] pb-24">
           <div className="px-6 py-6 flex flex-col gap-6 text-[color:var(--brand-ink)]">
             {/* Soluções Group */}
             <div className="flex flex-col gap-2">
@@ -270,7 +270,7 @@ function Hero() {
           </h1>
 
           {/* sticker badge */}
-          <div className="lg:col-span-3 flex lg:justify-end">
+          <div className="lg:col-span-3 flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="sticker px-5 py-4 max-w-[220px] shadow-elev">
               <div className="font-mono-ui text-[10px] opacity-70 mb-1">selo do dono</div>
               <div className="font-serif-italic text-lg leading-tight">
@@ -287,16 +287,16 @@ function Hero() {
             <strong className="text-foreground">Albert IA</strong>, uma inteligência artificial
             que age como um clone do seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
-          <div className="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
+          <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-3 md:justify-end">
             <button
               onClick={openModal}
-              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none"
+              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none"
             >
               Testar 14 dias grátis <ArrowRight className="w-4 h-4" />
             </button>
             <a
               href="#albert"
-              className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/20 px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition"
+              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/20 px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition"
             >
               Conhecer o Albert <Sparkles className="w-4 h-4" />
             </a>
@@ -353,8 +353,8 @@ function StatsStrip() {
     { n: "3M+", label: "leads/ano" },
   ];
   return (
-    <section id="resultados" className="mx-auto max-w-7xl px-6 py-20">
-      <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
+    <section id="resultados" className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-10">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight max-w-xl">
           Fomos pioneiros ao trazer a tecnologia para as imobiliárias brasileiras. Três décadas de estrada{" "}
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
@@ -368,7 +368,7 @@ function StatsStrip() {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-[color:var(--brand-ink)]/15 border-y border-[color:var(--brand-ink)]/15">
         {stats.map((s) => (
-          <div key={s.label} className="py-6 md:py-8 px-4 md:px-6">
+          <div key={s.label} className="py-6 md:py-8 px-4 md:px-6 last:col-span-2 md:last:col-span-1 text-center md:text-left">
             <div className="text-4xl md:text-5xl font-extrabold tracking-tight">{s.n}</div>
             <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
           </div>
@@ -487,18 +487,20 @@ function Albert() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
               <a
                 href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline"
+                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline text-center"
               >
-                Converse com o Albert agora mesmo <ArrowRight className="w-4 h-4" />
+                <span className="hidden sm:inline">Converse com o Albert agora mesmo</span>
+                <span className="sm:hidden">Falar com o Albert no zap</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </a>
               <Link
                 to="/planos-albert"
-                className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
+                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
               >
                 Ver planos
               </Link>
@@ -704,12 +706,15 @@ function Ecosystem() {
 export function Testimonial() {
   return (
     <section className="w-full overflow-hidden border-y border-[color:var(--brand-ink)]/10">
-      <div className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid md:grid-cols-12 gap-10 items-center">
-        <div className="md:col-span-2">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-10 items-start md:items-center">
+        <div className="md:col-span-2 hidden md:block">
           <Quote className="w-14 h-14 text-[color:var(--brand-orange)]" />
         </div>
-        <div className="md:col-span-10 min-w-0 w-full overflow-hidden">
+        <div className="md:col-span-10 min-w-0 w-full overflow-hidden relative">
+          <div className="md:hidden absolute top-0 -left-2 opacity-20 pointer-events-none">
+            <Quote className="w-12 h-12 text-[color:var(--brand-orange)]" />
+          </div>
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
               {testimonials.map((t) => (
@@ -752,7 +757,7 @@ export function Testimonial() {
 export function Blog() {
   const posts = blogPosts.slice(0, 3);
   return (
-    <section id="blog" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <section id="blog" className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:py-32">
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] max-w-2xl">
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Leitura</span>{" "}
@@ -804,8 +809,8 @@ export function CTA() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="demo" className="mx-auto max-w-7xl px-6 pb-24">
-      <div className="relative overflow-hidden rounded-3xl border border-[color:var(--brand-ink)] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-10 md:p-16 shadow-elev">
+    <section id="demo" className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+      <div className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[color:var(--brand-ink)] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-8 md:p-16 shadow-elev">
         <div className="bg-grid absolute inset-0 opacity-25" />
         <div
           className="absolute -top-20 -right-10 w-80 h-80 rounded-full opacity-30"
@@ -824,16 +829,16 @@ export function CTA() {
               Você decide depois, sem pressão.
             </p>
           </div>
-          <div className="md:col-span-4 flex flex-col gap-3">
+          <div className="md:col-span-4 flex flex-col gap-3 w-full">
             <button
               onClick={openModal}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none"
             >
-              Testar grátis <ArrowRight className="w-4 h-4" />
+              Testar grátis <ArrowRight className="w-4 h-4 shrink-0" />
             </button>
             <a
               href="https://wa.me/5513997591781"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
             >
               Falar no WhatsApp
             </a>
@@ -850,8 +855,8 @@ export function CTA() {
 export function Footer() {
   return (
     <footer className="border-t border-[color:var(--brand-ink)]/15 bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-2xl tracking-[-0.02em] mb-4 hover:opacity-90" title="Microsistec - Marca Registrada">
               microsistec
