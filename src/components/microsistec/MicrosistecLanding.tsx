@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -15,6 +16,8 @@ import {
   Quote,
   KeyRound,
   ChevronDown,
+  Menu,
+  X,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useDemoModal } from "@/hooks/use-demo-modal";
@@ -38,6 +41,7 @@ import {
 /* -------------------------------------------------------------------------- */
 export function Nav() {
   const { openModal } = useDemoModal();
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
@@ -119,8 +123,111 @@ export function Nav() {
           >
             Testar grátis <ArrowUpRight className="w-4 h-4" />
           </button>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-[color:var(--brand-sand)] border-b border-[color:var(--brand-ink)]/15 shadow-xl z-50 overflow-y-auto max-h-[calc(100vh-4rem)]">
+          <div className="px-6 py-6 flex flex-col gap-6 text-[color:var(--brand-ink)]">
+            {/* Soluções Group */}
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider opacity-60">Soluções</span>
+              <div className="grid grid-cols-1 gap-2 pl-2">
+                {solutions.map((sol) => {
+                  const IconComp = getIconComponent(sol.iconName);
+                  const isComingSoon = sol.ctaText === "Em Breve";
+                  if (isComingSoon) return null;
+                  return (
+                    <Link
+                      key={sol.slug}
+                      to="/solucoes/$slug"
+                      params={{ slug: sol.slug }}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-3 py-2 text-sm font-semibold hover:text-[color:var(--brand-orange)] transition"
+                    >
+                      <IconComp className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                      {sol.title}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Planos Group */}
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider opacity-60">Planos</span>
+              <div className="grid grid-cols-1 gap-2 pl-2">
+                <Link
+                  to="/planos"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-3 py-2 text-sm font-semibold hover:text-[color:var(--brand-orange)] transition"
+                >
+                  <Building2 className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                  CRM Imobiliário
+                </Link>
+                <Link
+                  to="/planos-albert"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-3 py-2 text-sm font-semibold hover:text-[color:var(--brand-orange)] transition"
+                >
+                  <Bot className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                  Albert IA
+                </Link>
+              </div>
+            </div>
+
+            <hr className="border-[color:var(--brand-ink)]/10" />
+
+            {/* General links */}
+            <div className="flex flex-col gap-3 pl-2">
+              <Link
+                to="/empresa"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base font-semibold hover:text-[color:var(--brand-orange)] transition"
+              >
+                Sobre nós
+              </Link>
+              <Link
+                to="/blog"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base font-semibold hover:text-[color:var(--brand-orange)] transition"
+              >
+                Blog
+              </Link>
+              <a
+                href="https://imob.online/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-base font-semibold hover:text-[color:var(--brand-orange)] transition"
+              >
+                Entrar no sistema
+              </a>
+            </div>
+
+            {/* Mobile CTAs */}
+            <div className="mt-4 pt-4 border-t border-[color:var(--brand-ink)]/10">
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  openModal();
+                }}
+                className="w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-3.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-md"
+              >
+                Testar grátis por 14 dias <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
@@ -132,7 +239,7 @@ function Hero() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="top" className="relative overflow-hidden bg-hero lg:h-[calc(100vh-4rem)] lg:flex lg:flex-col lg:justify-between">
+    <section id="top" className="relative overflow-hidden bg-hero min-h-[calc(100dvh-4rem)] flex flex-col justify-between lg:h-[calc(100vh-4rem)] lg:min-h-0">
       <div className="bg-grid absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
@@ -596,12 +703,13 @@ function Ecosystem() {
 /* -------------------------------------------------------------------------- */
 export function Testimonial() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 border-y border-[color:var(--brand-ink)]/10">
-      <div className="grid md:grid-cols-12 gap-10 items-center">
+    <section className="w-full overflow-hidden border-y border-[color:var(--brand-ink)]/10">
+      <div className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-2">
           <Quote className="w-14 h-14 text-[color:var(--brand-orange)]" />
         </div>
-        <div className="md:col-span-10">
+        <div className="md:col-span-10 min-w-0 w-full overflow-hidden">
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
               {testimonials.map((t) => (
@@ -633,7 +741,8 @@ export function Testimonial() {
           </Carousel>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
 
