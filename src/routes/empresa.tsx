@@ -81,7 +81,6 @@ function Empresa() {
               <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
                 experiência de verdade
               </span>
-              .
             </h1>
             <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
               Como pioneiros absolutos em trazer a tecnologia para o setor imobiliário brasileiro, há mais de trinta anos ajudamos imobiliárias, construtoras e corretores a vender mais. Essa estrada sólida prova que realmente sabemos o que fazemos.
@@ -97,7 +96,7 @@ function Empresa() {
                 Nossa história
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-                Pioneiros absolutos em tecnologia imobiliária.
+                Pioneiros absolutos em tecnologia imobiliária
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Nossa trajetória não começou ontem com slides bonitos de startup. Fomos os pioneiros em trazer computadores, banco de dados e sites dinâmicos para o setor imobiliário brasileiro desde 1994. São trinta anos de liderança comprovando que entendemos cada detalhe do dia a dia do corretor e que sabemos exatamente o que fazemos.
@@ -160,36 +159,16 @@ function Empresa() {
           </div>
         </section>
 
-        {/* SEO Tags Cloud */}
-        <section className="border-t border-[color:var(--brand-ink)]/10 py-20 bg-[color:var(--brand-sand)]/30 overflow-hidden">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[color:var(--brand-ink)]">
-              Pioneirismo em <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Tecnologia Imobiliária</span>
-            </h2>
-            <p className="text-muted-foreground text-sm max-w-2xl mx-auto px-6">
-              A Microsistec desenvolve soluções nativas com inteligência artificial para colocar a sua imobiliária sempre um passo à frente no mercado digital.
-            </p>
-          </div>
-
-          <div className="relative flex flex-col gap-4">
-            <div className="flex w-[200%] animate-marquee">
-              {[...Array(2)].map((_, i) => (
-                <div key={`row1-${i}`} className="flex gap-4 px-2 w-1/2 justify-around">
-                  {["CRM Imobiliário Completo", "Albert IA - SDR Automático", "Atendimento 24/7", "Integração com Portais Imobiliários", "Funil de Vendas Inteligente", "Sites para Imobiliárias", "Aplicativo do Corretor"].map((tag, j) => (
-                    <span key={j} className="whitespace-nowrap px-4 py-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-background text-[color:var(--brand-ink)] text-xs font-semibold shadow-sm">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </div>
-
-            <div className="flex w-[200%] animate-marquee-reverse">
-              {[...Array(2)].map((_, i) => (
-                <div key={`row2-${i}`} className="flex gap-4 px-2 w-1/2 justify-around">
-                  {["Qualificação de Leads com IA", "Automação Imobiliária V8", "Rodízio de Leads Inteligente", "Templates de Site Express", "Tecnologia para Corretores", "Dashboard de Desempenho", "Proptech Brasileira"].map((tag, j) => (
-                    <span key={j} className="whitespace-nowrap px-4 py-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-background text-[color:var(--brand-ink)] text-xs font-semibold shadow-sm">
-                      {tag}
+        {/* Marquee Ticker */}
+        <section className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] overflow-hidden">
+          <div className="overflow-hidden">
+            <div className="marquee flex gap-10 py-4 whitespace-nowrap text-sm">
+              {[...Array(3)].map((_, rIdx) => (
+                <div key={rIdx} className="flex gap-10 items-center">
+                  {["CRM imobiliário", "App de atendimento", "Site para imobiliária", "Albert IA · SDR", "Funil de vendas", "Automações", "Rodízio de leads", "Secretaria de vendas", "Integração com portais"].map((t, i) => (
+                    <span key={i} className="inline-flex items-center gap-3">
+                      <span className="font-serif-italic text-[color:var(--brand-orange)] text-lg">✦</span>
+                      <span className="font-medium tracking-wide uppercase text-[11px] font-mono-ui">{t}</span>
                     </span>
                   ))}
                 </div>

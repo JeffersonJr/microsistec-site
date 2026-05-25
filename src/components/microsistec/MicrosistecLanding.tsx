@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  ArrowLeft,
   ArrowUpRight,
   ArrowRight,
   Sparkles,
@@ -29,11 +30,10 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import {
+  type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 /* -------------------------------------------------------------------------- */
@@ -264,18 +264,19 @@ function Hero() {
             <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
               outra coisa
             </span>
-            .
             <br />
-            E a gente já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> aqui.
+            E a gente já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> aqui
           </h1>
 
           {/* sticker badge */}
           <div className="lg:col-span-3 flex justify-center lg:justify-end mt-4 lg:mt-0">
-            <div className="sticker px-5 py-4 max-w-[220px] shadow-elev">
-              <div className="font-mono-ui text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">selo do dono</div>
-              <div className="font-serif-italic text-lg leading-tight">
-                "feito por gente que conhece imobiliária de verdade"
+            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-[2rem] px-6 py-5 max-w-[220px] shadow-elev select-none hover:scale-105 transition-all duration-300 cursor-default">
+              <div className="font-mono-ui text-[9px] font-extrabold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2">
+                Selo do Dono
               </div>
+              <p className="font-serif-italic text-[1.15rem] leading-[1.3] text-[color:var(--brand-sand)]/90">
+                "feito por gente que conhece imobiliária de verdade"
+              </p>
             </div>
           </div>
         </div>
@@ -360,7 +361,7 @@ function StatsStrip() {
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
             provam que sabemos
           </span>{" "}
-          o que fazemos.
+          o que fazemos
         </h2>
         <span className="font-mono-ui text-xs text-muted-foreground">
           últ. atualização · operação {new Date().getFullYear()}
@@ -410,7 +411,7 @@ function Pillars() {
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
           <h2 className="md:col-span-8 text-4xl md:text-6xl font-bold tracking-tight leading-[1.02]">
             Sistema, site e app,{" "}
-            <span className="font-serif-italic font-normal">numa coisa só</span>.
+            <span className="font-serif-italic font-normal">numa coisa só</span>
           </h2>
           <p className="md:col-span-4 text-lg text-muted-foreground">
             Tudo o que a imobiliária precisa para vender mais e ter previsibilidade, sem amarrar
@@ -473,7 +474,7 @@ function Albert() {
             </div>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02] mb-6">
               Uma IA que <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">conhece</span> imobiliária,
-              não uma que <em className="font-serif-italic text-[color:var(--brand-sand)]/50">finge</em> conhecer.
+              não uma que <em className="font-serif-italic text-[color:var(--brand-sand)]/50">finge</em> conhecer
             </h2>
             <p className="text-lg text-[color:var(--brand-sand)]/70 mb-8 max-w-xl">
               Chega de chatbot decorando frase. O <strong className="text-[color:var(--brand-sand)]">Albert</strong> é
@@ -599,7 +600,7 @@ function Funil() {
             sobre tempo
           </span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
-            Você está perdendo lead enquanto procura ele no caderno.
+            Você está perdendo lead enquanto procura ele no caderno
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
             Controle do atendimento + script bem executado = mais vendas. A gente organiza o
@@ -687,7 +688,6 @@ function Ecosystem() {
             <div
               key={it.title}
               className="rounded-2xl bg-background border border-[color:var(--brand-ink)]/15 p-8 shadow-soft"
-              style={{ transform: `rotate(${(i - 1) * 0.7}deg)` }}
             >
               <it.icon className="w-6 h-6 text-[color:var(--brand-orange)] mb-6" />
               <h3 className="font-bold text-xl tracking-tight mb-2">{it.title}</h3>
@@ -704,6 +704,8 @@ function Ecosystem() {
 /*  TESTIMONIAL                                                               */
 /* -------------------------------------------------------------------------- */
 export function Testimonial() {
+  const [api, setApi] = React.useState<CarouselApi>();
+
   return (
     <section className="w-full overflow-hidden border-y border-[color:var(--brand-ink)]/10">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -715,7 +717,7 @@ export function Testimonial() {
           <div className="md:hidden absolute top-0 -left-2 opacity-20 pointer-events-none">
             <Quote className="w-12 h-12 text-[color:var(--brand-orange)]" />
           </div>
-          <Carousel opts={{ loop: true }} className="w-full">
+          <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
             <CarouselContent>
               {testimonials.map((t) => (
                 <CarouselItem key={t.id}>
@@ -739,9 +741,23 @@ export function Testimonial() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex gap-2 justify-end mt-4">
-              <CarouselPrevious className="static translate-y-0" />
-              <CarouselNext className="static translate-y-0" />
+            <div className="flex gap-3 justify-end mt-6">
+              <button
+                type="button"
+                onClick={() => api?.scrollPrev()}
+                className="w-10 h-10 rounded-full border border-[color:var(--brand-ink)]/15 bg-background flex items-center justify-center text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer shadow-soft"
+                aria-label="Depoimento anterior"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => api?.scrollNext()}
+                className="w-10 h-10 rounded-full border border-[color:var(--brand-ink)]/15 bg-background flex items-center justify-center text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer shadow-soft"
+                aria-label="Próximo depoimento"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
           </Carousel>
         </div>
@@ -761,7 +777,7 @@ export function Blog() {
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] max-w-2xl">
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Leitura</span>{" "}
-          rápida pra quem vende imóvel.
+          rápida pra quem vende imóvel
         </h2>
         <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium hover:opacity-70">
           Ver todos <ArrowUpRight className="w-4 h-4" />

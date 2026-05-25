@@ -140,7 +140,6 @@ function PlanosPage() {
               <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
                 imobiliária
               </span>
-              .
             </h1>
             <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
               Escolha o plano que melhor se adapta ao momento do seu negócio. Comece pequeno ou escale com poder total.

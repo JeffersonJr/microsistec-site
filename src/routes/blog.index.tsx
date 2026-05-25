@@ -54,7 +54,6 @@ function BlogIndex() {
               <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
                 vende imóvel de verdade
               </span>
-              .
             </h1>
             <p className="text-muted-foreground text-base max-w-lg mx-auto leading-relaxed">
               Descubra estratégias práticas de SEO local, inteligência artificial, gestão comercial e vendas com o olhar de quem tem trinta anos de mercado.

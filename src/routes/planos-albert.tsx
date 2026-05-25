@@ -110,7 +110,6 @@ function PlanosAlbertPage() {
               <span className="font-serif-italic font-normal text-emerald-700">
                 atendimento
               </span>
-              .
             </h1>
             <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
               Escolha o volume ideal de atendimentos mensais. O Albert cuida de toda a triagem e qualificação, sem limite de corretores.

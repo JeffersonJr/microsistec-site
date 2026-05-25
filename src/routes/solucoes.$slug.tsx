@@ -241,7 +241,7 @@ function SolucaoDetalhe() {
 
         {/* Detailed Features Grid */}
         <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <div className="space-y-3 mb-14">
+          <div className="space-y-6 mb-14">
             <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
               O que está incluso
             </span>
@@ -281,7 +281,7 @@ function SolucaoDetalhe() {
               
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                <div className="space-y-3 max-w-lg">
+                <div className="space-y-6 max-w-lg">
                   <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
                     Ecossistema Completo
                   </span>
@@ -645,7 +645,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
 
       {/* Albert capabilities section */}
       <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
-        <div className="space-y-4 mb-14 text-center max-w-2xl mx-auto">
+        <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
           <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
             A única IA para imobiliárias com um coração
           </span>
@@ -847,7 +847,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
 
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
-      <div className="space-y-4 mb-12 text-center max-w-2xl mx-auto">
+      <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Catálogo Oficial de Temas
         </span>
@@ -871,23 +871,23 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
               <img 
                 src={tpl.image} 
                 alt={tpl.name} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
                 }}
               />
-              <div className="absolute top-2 left-2 flex flex-wrap gap-1">
-                {tpl.tags.slice(0, 2).map((tg, idx) => (
-                  <span key={idx} className="bg-[color:var(--brand-ink)]/90 backdrop-blur-sm text-[color:var(--brand-sand)] text-[8px] font-mono-ui font-semibold px-2 py-0.5 rounded-full uppercase">
-                    {tg}
-                  </span>
-                ))}
-              </div>
             </div>
 
             {/* Info */}
             <div className="p-5 flex-grow flex flex-col justify-between">
               <div className="space-y-2">
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {tpl.tags.slice(0, 2).map((tg, idx) => (
+                    <span key={idx} className="bg-[color:var(--brand-ink)]/10 text-[color:var(--brand-ink)]/80 text-[8px] font-mono-ui font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      {tg}
+                    </span>
+                  ))}
+                </div>
                 <h3 className="font-extrabold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
                   {tpl.name}
                 </h3>
@@ -1001,7 +1001,7 @@ const v8Clients: V8Client[] = [
 function SitesV8SubSection({ openModal }: { openModal: () => void }) {
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
-      <div className="space-y-4 mb-12 text-center max-w-2xl mx-auto">
+      <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Showcase Imobiliário Real
         </span>
@@ -1120,7 +1120,7 @@ function CRMSubSection() {
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       {/* Header */}
-      <div className="space-y-4 mb-14 text-center max-w-2xl mx-auto">
+      <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Ecossistema Completo
         </span>
@@ -1557,7 +1557,7 @@ function RodizioSubSection() {
   return (
     <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       {/* Header */}
-      <div className="space-y-4 mb-14 max-w-2xl">
+      <div className="space-y-6 mb-14 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Fila Inteligente Round-Robin
         </span>
