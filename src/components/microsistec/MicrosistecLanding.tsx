@@ -942,7 +942,7 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h4 className="font-semibold mb-4">{title}</h4>
+      <h3 className="font-semibold mb-4 text-base">{title}</h3>
       <ul className="space-y-2 text-muted-foreground text-sm">
         {links.map((link) => (
           <li key={link.label}>
