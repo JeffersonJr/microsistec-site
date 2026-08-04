@@ -17,7 +17,7 @@ function PlanosPage() {
       id: "essencial",
       name: "Essencial",
       desc: "Pequenas imobiliárias e autônomos",
-      price: isAnnual ? "285" : "315",
+      price: isAnnual ? "252" : "315",
       users: "2 usuários",
       limit: "Até 600 imóveis",
       features: [
@@ -35,7 +35,7 @@ function PlanosPage() {
       name: "Profissional",
       isPopular: true,
       desc: "Imobiliárias de médio porte",
-      price: isAnnual ? "646" : "718",
+      price: isAnnual ? "382" : "478",
       users: "5 usuários",
       limit: "Até 1.500 imóveis",
       features: [
@@ -52,7 +52,7 @@ function PlanosPage() {
       id: "avancado",
       name: "Avançado",
       desc: "Imobiliárias de grande porte",
-      price: isAnnual ? "1.132" : "1.258",
+      price: isAnnual ? "574" : "718",
       users: "10 usuários",
       limit: "Até 5.000 imóveis",
       features: [
@@ -69,7 +69,7 @@ function PlanosPage() {
       id: "corporativo",
       name: "Corporativo",
       desc: "Grandes imobiliárias e redes",
-      price: isAnnual ? "2.115" : "2.350",
+      price: isAnnual ? "968" : "1.210",
       users: "20 usuários",
       limit: "Imóveis Ilimitados",
       features: [
