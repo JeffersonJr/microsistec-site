@@ -97,24 +97,26 @@ export const solutions: Solution[] = [
   {
     id: "funil",
     slug: "funil",
-    title: "Funil de Vendas",
-    shortDesc: "Acompanhe visualmente a jornada do lead. Identifique gargalos na operação e garanta previsibilidade financeira na imobiliária.",
-    longDesc: "Não gerencie sua imobiliária com base no 'achismo'. O Funil de Vendas Imobiliário da Microsistec oferece um pipeline visual em formato Kanban, permitindo visualizar com total clareza onde estão suas maiores oportunidades de receita e quais leads precisam de atenção imediata.",
+    title: "Funil de Vendas Multi-Funil",
+    shortDesc: "Crie quantos funis e etapas quiser. Cada processo de venda, locação, captação e lançamento tem sua própria jornada — com métricas separadas e precisas.",
+    longDesc: "Cada negócio imobiliário é único. Um processo de venda de alto padrão é completamente diferente de um Minha Casa Minha Vida, de uma captação de imóveis ou de uma locação comercial. Com o Multi-Funil da Microsistec, você cria funis independentes para cada tipo de operação — com etapas, responsáveis e métricas próprias. Chega de misturar leads de processos distintos num único pipeline confuso.",
     iconName: "LineChart",
     features: [
-      "Etapas do funil 100% customizáveis para se ajustar à realidade da sua equipe.",
-      "Arrastar e soltar (drag & drop) intuitivo para atualização rápida de status.",
-      "Alertas automáticos para negócios parados há muito tempo em uma fase.",
-      "Cálculo automático de taxa de conversão entre etapas do processo.",
-      "Previsão de vendas baseada no valor estimado das propostas ativas."
+      "Multi-funil ilimitado: crie funis separados para venda, locação, captação, lançamentos, alto padrão, MCMV e qualquer outro processo.",
+      "Etapas 100% customizáveis por funil — adicione, renomeie, reordene e remova sem limite.",
+      "Drag & drop intuitivo estilo Kanban para mover leads entre etapas com um toque ou clique.",
+      "Métricas independentes por funil: taxa de conversão, tempo médio por etapa e previsão de receita separados.",
+      "Alertas automáticos por funil quando um lead fica parado além do tempo configurado em cada etapa.",
+      "Visão consolidada de todos os funis no painel do gestor — ou visão individual por corretor."
     ],
     benefits: [
-      "Visão gerencial instantânea da saúde comercial da imobiliária.",
-      "Fim do esquecimento de leads no funil com tarefas e lembretes integrados.",
-      "Decisões baseadas em estatísticas sólidas e não em intuições genéricas."
+      "Jornada única para cada tipo de cliente: MCMV, alto padrão, locação, captação e lançamentos nunca mais misturados.",
+      "Métricas mais efetivas porque comparam maçã com maçã — locação com locação, venda com venda.",
+      "Decisões baseadas em dados reais por processo, não em médias distorcidas de pipelines mistos."
     ],
     ctaText: "Otimizar Meu Funil"
   },
+
   {
     id: "integracoes",
     slug: "integracoes",

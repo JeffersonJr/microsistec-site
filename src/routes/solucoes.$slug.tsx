@@ -53,6 +53,334 @@ export const Route = createFileRoute("/solucoes/$slug")({
   component: SolucaoDetalhe,
 });
 
+
+/* ==========================================
+   HOW IT WORKS — 3 steps por produto
+   ========================================== */
+const howItWorksData: Record<string, { title: string; steps: { n: string; title: string; desc: string }[] }> = {
+  crm: {
+    title: "Do cadastro ao fechamento em 3 passos",
+    steps: [
+      { n: "01", title: "Cadastre e organize", desc: "Adicione imóveis, proprietários e clientes em minutos. O sistema sugere categorias e otimiza as mídias automaticamente." },
+      { n: "02", title: "Cruze e qualifique", desc: "O Smart Match identifica os leads com maior chance de compra para cada imóvel novo cadastrado e dispara alertas em tempo real." },
+      { n: "03", title: "Acompanhe e feche", desc: "Visualize toda a jornada no funil, controle propostas, gere contratos em PDF e registre o fechamento com histórico completo." },
+    ],
+  },
+  "albert-ia": {
+    title: "Do lead ao agendamento em menos de 3 minutos",
+    steps: [
+      { n: "01", title: "Lead entra no WhatsApp", desc: "O Albert detecta automaticamente novos leads de qualquer fonte: portais, site, Instagram Ads ou número direto da imobiliária." },
+      { n: "02", title: "Qualificação inteligente", desc: "Em conversa natural, o Albert coleta renda, entrada, FGTS, localização desejada e urgência, sem menus engessados." },
+      { n: "03", title: "Repasse e agendamento", desc: "O lead qualificado é transferido ao corretor certo com toda a ficha preenchida e visita já agendada no CRM." },
+    ],
+  },
+  app: {
+    title: "Gestão imobiliária de qualquer lugar",
+    steps: [
+      { n: "01", title: "Instale em 2 minutos", desc: "Disponível para iOS e Android. Faça login com suas credenciais do CRM Microsistec e sincronize tudo automaticamente." },
+      { n: "02", title: "Receba leads instantaneamente", desc: "Notificações push em tempo real ao chegar um novo lead de qualquer canal. Atenda antes que o concorrente." },
+      { n: "03", title: "Trabalhe onde estiver", desc: "Acesse o funil, catálogo, histórico e agenda de visitas. Compartilhe lâminas no WhatsApp com um toque." },
+    ],
+  },
+  funil: {
+    title: "Crie a jornada certa para cada tipo de venda",
+    steps: [
+      { n: "01", title: "Crie seus funis", desc: "Crie funis separados para venda, locação, MCMV, alto padrão ou lançamento. Cada um com etapas, nomes e regras totalmente independentes." },
+      { n: "02", title: "Configure as etapas", desc: "Adicione quantas etapas quiser em cada funil. Nomeie-as do jeito que a sua equipe fala: 'Visita Técnica', 'Simulação CEF', 'Proposta Formal'..." },
+      { n: "03", title: "Acompanhe métricas por processo", desc: "Cada funil gera suas próprias métricas: conversão, tempo médio e previsão de receita. Compare MCMV com MCMV, alto padrão com alto padrão." },
+    ],
+  },
+  integracoes: {
+    title: "Conecte tudo em uma tarde",
+    steps: [
+      { n: "01", title: "Ative os portais", desc: "Selecione os portais parceiros no painel. Imóveis são enviados automaticamente via XML sem nenhum cadastro manual." },
+      { n: "02", title: "Conecte WhatsApp e Meta", desc: "Configure a API oficial do WhatsApp Business e os Lead Ads do Facebook/Instagram. Leads chegam direto no CRM." },
+      { n: "03", title: "Acompanhe tudo num painel", desc: "Visualize de onde vêm os leads, qual portal converte mais e quanto cada campanha gera em oportunidades reais." },
+    ],
+  },
+  "sites-template": {
+    title: "Do zero ao site publicado em 1 dia",
+    steps: [
+      { n: "01", title: "Escolha seu tema", desc: "São 15 templates de alta conversão. Escolha o que melhor combina com a identidade da sua imobiliária." },
+      { n: "02", title: "Personalize", desc: "Adicione logo, cores, textos e imóveis da sua carteira. Tudo sincronizado automaticamente com o CRM." },
+      { n: "03", title: "Publique no seu domínio", desc: "Configure o DNS e em minutos seu site imobiliário está no ar com SEO otimizado e formulários de captação ativos." },
+    ],
+  },
+  "sites-v8": {
+    title: "Do briefing ao site premium em 2 semanas",
+    steps: [
+      { n: "01", title: "Briefing e identidade", desc: "Nossa equipe faz um diagnóstico completo: nicho, público, concorrentes e objetivos de conversão da imobiliária." },
+      { n: "02", title: "Design exclusivo", desc: "Criamos um layout único 100% personalizado com identidade visual, tipografia e paleta desenvolvidas para você." },
+      { n: "03", title: "Entrega e performance", desc: "Site SSR nativo, nota máxima no PageSpeed, CDN Cloudflare e monitoramento contínuo de performance e SEO." },
+    ],
+  },
+  rodizio: {
+    title: "Distribuição justa e automática",
+    steps: [
+      { n: "01", title: "Configure as regras", desc: "Defina a sequência de corretores, especialidades por tipo de imóvel e janelas de plantão de atendimento." },
+      { n: "02", title: "Lead chega, sistema distribui", desc: "Ao entrar um lead, o sistema identifica o próximo da fila, envia por WhatsApp e aguarda resposta com timeout configurável." },
+      { n: "03", title: "Métricas de equidade", desc: "Relatórios em tempo real mostram quantos leads cada corretor recebeu, tempo de resposta e taxa de conversão." },
+    ],
+  },
+};
+
+function SolutionHowItWorks({ slug }: { slug: string }) {
+  const data = howItWorksData[slug];
+  if (!data) return null;
+
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+      <div className="border-t border-[color:var(--brand-ink)]/8 pt-14 md:pt-20">
+        <div className="space-y-3 mb-12">
+          <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+            Como funciona
+          </span>
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+            {data.title}
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {data.steps.map((step, i) => (
+            <div key={i} className="relative flex flex-col gap-4 p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300">
+              <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center font-mono-ui text-sm font-bold shrink-0">
+                {step.n}
+              </div>
+              <div>
+                <h3 className="font-bold text-base mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              </div>
+              {/* Connector */}
+              {i < data.steps.length - 1 && (
+                <div className="absolute right-[-13px] top-1/2 -translate-y-1/2 w-6 h-px bg-[color:var(--brand-ink)]/10 hidden md:block" />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ==========================================
+   IMPACT METRICS — 4 números por produto
+   ========================================== */
+const metricsData: Record<string, { value: string; label: string; sub: string }[]> = {
+  crm:           [{ value: "40%", label: "mais produtividade", sub: "corretores ativos" }, { value: "3×", label: "mais velocidade", sub: "busca de imóveis" }, { value: "100%", label: "LGPD conforme", sub: "segurança de dados" }, { value: "30+", label: "anos de mercado", sub: "experiência validada" }],
+  "albert-ia":   [{ value: "24/7", label: "atendimento", sub: "sem pausas" }, { value: "<3s", label: "tempo de resposta", sub: "média do Albert" }, { value: "300%", label: "mais velocidade", sub: "vs. atendimento humano" }, { value: "100%", label: "integrado", sub: "ao CRM Microsistec" }],
+  app:           [{ value: "2×", label: "conversão", sub: "1º contato mais rápido" }, { value: "iOS + Android", label: "multiplataforma", sub: "nativo" }, { value: "100%", label: "sincronizado", sub: "em tempo real" }, { value: "Offline", label: "histórico disponível", sub: "sem internet" }],
+  funil:         [{ value: "∞", label: "funis possíveis", sub: "sem limite" }, { value: "∞", label: "etapas por funil", sub: "total liberdade" }, { value: "100%", label: "métricas separadas", sub: "por processo" }, { value: "0", label: "leads misturados", sub: "cada negócio no lugar certo" }],
+  integracoes:   [{ value: "40+", label: "portais", sub: "conectados" }, { value: "100%", label: "automático", sub: "sem cadastro manual" }, { value: "↓ 90%", label: "menos tempo", sub: "em publicações" }, { value: "Bidirecional", label: "sincronia", sub: "leads e anúncios" }],
+  "sites-template": [{ value: "15", label: "temas", sub: "de alta conversão" }, { value: "1 dia", label: "para publicar", sub: "do zero ao ar" }, { value: "100%", label: "integrado", sub: "ao CRM Microsistec" }, { value: "SEO", label: "nativo", sub: "otimizado Google" }],
+  "sites-v8":    [{ value: "98+", label: "PageSpeed", sub: "mobile e desktop" }, { value: "100%", label: "SEO score", sub: "técnico" }, { value: "CDN", label: "Cloudflare Edge", sub: "velocidade global" }, { value: "Custom", label: "design exclusivo", sub: "identidade única" }],
+  rodizio:       [{ value: "<3min", label: "resposta média", sub: "com rodízio ativo" }, { value: "100%", label: "equidade", sub: "distribuição justa" }, { value: "↑ 42%", label: "conversão", sub: "1º contato" }, { value: "Round-Robin", label: "algoritmo", sub: "inteligente" }],
+};
+
+function SolutionMetrics({ slug }: { slug: string }) {
+  const metrics = metricsData[slug];
+  if (!metrics) return null;
+
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-14 md:pb-20">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border border-[color:var(--brand-ink)]/8 rounded-2xl overflow-hidden">
+        {metrics.map((m, i) => (
+          <div key={i} className="bg-background px-5 py-7 text-center flex flex-col items-center gap-1">
+            <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--brand-orange)] tracking-tight">{m.value}</div>
+            <div className="text-xs font-semibold text-foreground mt-0.5">{m.label}</div>
+            <div className="text-[10px] text-muted-foreground font-mono-ui">{m.sub}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ==========================================
+   FOR WHO — perfis ideais por produto
+   ========================================== */
+const forWhoData: Record<string, { icon: string; title: string; desc: string }[]> = {
+  crm: [
+    { icon: "🏢", title: "Imobiliárias em crescimento", desc: "Que precisam organizar a carteira e escalar a equipe de corretores sem perder o controle." },
+    { icon: "🔑", title: "Corretores autônomos", desc: "Que gerenciam múltiplos clientes e imóveis e querem profissionalizar o atendimento." },
+    { icon: "📈", title: "Gestores e sócios", desc: "Que precisam de visibilidade real das métricas sem depender de planilhas." },
+  ],
+  "albert-ia": [
+    { icon: "⚡", title: "Imobiliárias com alto volume de leads", desc: "Que recebem dezenas de leads por dia e não conseguem atender todos em tempo hábil." },
+    { icon: "🌙", title: "Operações sem plantão 24h", desc: "Que perdem leads fora do horário comercial ou nos fins de semana." },
+    { icon: "📊", title: "Incorporadoras e lançamentos", desc: "Que precisam qualificar e filtrar leads antes de acionar a equipe comercial." },
+  ],
+  app: [
+    { icon: "🚗", title: "Corretores na rua", desc: "Que passam o dia fazendo visitas e precisam atualizar o CRM sem voltar ao escritório." },
+    { icon: "📲", title: "Equipes ágeis e mobile-first", desc: "Que preferem operar 100% pelo smartphone com notificações instantâneas de leads." },
+    { icon: "🏃", title: "Profissionais de alta performance", desc: "Que querem ser o primeiro a responder um lead e fechar mais rápido que a concorrência." },
+  ],
+  funil: [
+    { icon: "🏆", title: "Imobiliárias multi-nicho", desc: "Que trabalham com MCMV, alto padrão e locação ao mesmo tempo e precisam de métricas separadas por processo." },
+    { icon: "📋", title: "Gestores com times segmentados", desc: "Que têm equipes distintas por produto e querem acompanhar a performance de cada time de forma independente." },
+    { icon: "🎯", title: "Incorporadoras e lançamentos", desc: "Que têm um processo comercial para pré-lançamento totalmente diferente das vendas do estoque disponível." },
+  ],
+  integracoes: [
+    { icon: "🌐", title: "Imobiliárias com múltiplos portais", desc: "Que atualizam imóveis manualmente em vários portais e perdem horas toda semana." },
+    { icon: "📱", title: "Operações com tráfego pago", desc: "Que investem em Facebook/Instagram Ads e precisam capturar leads direto no CRM." },
+    { icon: "🤝", title: "Imobiliárias que usam WhatsApp", desc: "Que querem centralizar atendimento via WhatsApp integrado ao histórico do cliente." },
+  ],
+  "sites-template": [
+    { icon: "🚀", title: "Imobiliárias que precisam lançar rápido", desc: "Que precisam de um site profissional no ar em um dia sem esperar desenvolvimento customizado." },
+    { icon: "💡", title: "Corretores autônomos", desc: "Que querem ter um portal próprio de imóveis com formulário de captação e SEO básico." },
+    { icon: "🏗️", title: "Imobiliárias de médio porte", desc: "Que buscam custo-benefício alto com templates modernos e integração imediata ao CRM." },
+  ],
+  "sites-v8": [
+    { icon: "⭐", title: "Alto padrão e lançamentos", desc: "Que trabalham com imóveis de luxo e precisam de um site que transmita exclusividade." },
+    { icon: "📊", title: "SEO como estratégia", desc: "Que querem capturar leads orgânicos do Google com conteúdo e performance técnica impecáveis." },
+    { icon: "🏆", title: "Grandes imobiliárias", desc: "Com catálogos extensos, múltiplas equipes e necessidade de integrações customizadas." },
+  ],
+  rodizio: [
+    { icon: "⚖️", title: "Equipes com conflito de leads", desc: "Onde corretores brigam por leads ou alguns ficam sem atendimento e outros sobrecarregados." },
+    { icon: "🎪", title: "Plantão de atendimento", desc: "Que precisam distribuir leads automaticamente conforme o horário e disponibilidade de cada corretor." },
+    { icon: "📈", title: "Gerentes focados em dados", desc: "Que querem medir tempo de resposta e taxa de conversão por corretor para tomada de decisão." },
+  ],
+};
+
+function SolutionForWho({ slug }: { slug: string }) {
+  const profiles = forWhoData[slug];
+  if (!profiles) return null;
+
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-14 md:pb-20">
+      <div className="mb-8">
+        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+          Para quem é
+        </span>
+      </div>
+      <div className="grid md:grid-cols-3 gap-4">
+        {profiles.map((p, i) => (
+          <div key={i} className="p-5 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-[color:var(--brand-sand)]/30 hover:bg-background hover:border-[color:var(--brand-orange)]/20 transition-all duration-300">
+            <span className="text-2xl block mb-3">{p.icon}</span>
+            <h3 className="font-bold text-sm mb-1.5">{p.title}</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ==========================================
+   FAQ — Accordion por produto
+   ========================================== */
+const faqData: Record<string, { q: string; a: string }[]> = {
+  crm: [
+    { q: "Quanto tempo leva para migrar dados do meu sistema atual?", a: "A migração é feita pela nossa equipe de onboarding em até 3 dias úteis. Importamos imóveis, clientes e histórico de forma segura sem perda de dados." },
+    { q: "Funciona para imobiliária de locação e venda?", a: "Sim. O CRM é completo para locação e venda. Você pode gerenciar contratos de locação, reajustes e repasses sem módulos adicionais." },
+    { q: "Quantos usuários posso cadastrar?", a: "Depende do plano. Temos planos para corretores autônomos até grandes imobiliárias com equipes ilimitadas. Consulte nossa tabela de planos." },
+    { q: "O sistema funciona offline?", a: "A plataforma web requer conexão. O app mobile mantém histórico e dados em cache offline, sincronizando ao reconectar." },
+    { q: "Tem integração com portais como ZAP e Viva Real?", a: "Sim. Integramos com mais de 40 portais nacionais e regionais, Facebook Lead Ads, Google e WhatsApp Business. Tudo centralizado no CRM." },
+  ],
+  "albert-ia": [
+    { q: "Quanto tempo leva para configurar o Albert?", a: "O processo de onboarding dura em média 5 dias úteis. Nossa equipe coleta seu script, tone of voice e catálogo de imóveis para treinar o Albert." },
+    { q: "O Albert substitui o corretor?", a: "Não. O Albert é um SDR — ele qualifica e agenda, mas o corretor fecha. O objetivo é liberar o time para o que importa: negociar e fechar." },
+    { q: "Em quais plataformas o Albert atua?", a: "Atualmente via WhatsApp Business (API oficial) e no site da imobiliária. Novas integrações estão em roadmap." },
+    { q: "O que acontece se o lead fizer uma pergunta que o Albert não sabe?", a: "O Albert reconhece limitações e transfere o lead para um corretor humano de forma transparente, sem frustrar o cliente." },
+    { q: "O Albert funciona 24 horas por dia, inclusive fins de semana?", a: "Sim. O Albert atende 365 dias por ano, 24 horas por dia, sem pausas, feriados ou plantões extras." },
+  ],
+  app: [
+    { q: "O app é gratuito?", a: "O app está incluído nos planos do CRM Microsistec sem custo adicional. Disponível para iOS e Android." },
+    { q: "Posso usar o app sem o CRM web?", a: "Não. O app é uma extensão mobile do CRM e requer conta ativa na plataforma." },
+    { q: "O app sincroniza em tempo real?", a: "Sim. Qualquer ação no app é sincronizada instantaneamente com a plataforma web e vice-versa." },
+    { q: "Funciona no iPhone e Android?", a: "Sim. O app está disponível na App Store (iOS) e Google Play (Android), com paridade de funcionalidades." },
+    { q: "Como recebo notificações de novos leads?", a: "Por push notifications nativas do sistema operacional. Você recebe o alerta mesmo com o app fechado." },
+  ],
+  funil: [
+    { q: "Quantos funis posso criar?", a: "Não há limite. Você pode criar quantos funis quiser: venda de imóveis residenciais, locação, lançamentos, MCMV, alto padrão, comercial e muito mais." },
+    { q: "As etapas de cada funil são diferentes?", a: "Sim. Cada funil tem suas próprias etapas totalmente independentes. O funil de MCMV pode ter 'Simulação CEF' e 'Aprovação Bancária', enquanto o alto padrão tem 'Visita Técnica' e 'Carta de Crédito'. Você nomeia do jeito que a sua equipe fala." },
+    { q: "As métricas de conversão são separadas por funil?", a: "Sim. Cada funil gera seus próprios relatórios de conversão, tempo médio por etapa e previsão de receita. Isso evita que dados de MCMV (alta conversão, ticket baixo) distorçam os resultados de alto padrão (baixa conversão, ticket alto)." },
+    { q: "Posso ter corretores diferentes por funil?", a: "Sim. Cada funil pode ter responsáveis configurados de forma independente, permitindo que você tenha equipes especializadas por tipo de produto." },
+    { q: "O funil funciona em conjunto com o Albert IA?", a: "Sim. O Albert qualifica o lead e o registra automaticamente no funil correto baseado no interesse demonstrado. Um lead interessado em MCMV vai para o funil MCMV; um lead de alto padrão vai para o funil certo." },
+  ],
+  integracoes: [
+    { q: "Quais portais estão disponíveis para integração?", a: "Mais de 40 portais, incluindo ZAP Imóveis, Viva Real, OLX, Imovelweb, Mercado Livre, Chaves na Mão e portais regionais." },
+    { q: "A sincronização é bidirecional?", a: "Sim. Imóveis cadastrados no CRM são enviados para os portais. Leads recebidos nos portais chegam ao CRM automaticamente." },
+    { q: "Preciso pagar extra pelo WhatsApp Business?", a: "A integração com a API oficial do WhatsApp tem um custo de conversação conforme a tabela da Meta. A integração com nosso sistema não tem custo adicional." },
+    { q: "Funciona com Facebook e Instagram Lead Ads?", a: "Sim. Leads gerados em campanhas do Facebook e Instagram chegam direto ao CRM sem precisar exportar planilhas." },
+    { q: "Os imóveis sobem automaticamente nos portais?", a: "Sim. Ao cadastrar ou atualizar um imóvel no CRM, as alterações são enviadas automaticamente para todos os portais configurados via XML." },
+  ],
+  "sites-template": [
+    { q: "Preciso de conhecimento técnico para instalar?", a: "Não. Nossa equipe faz a instalação completa. Você só precisa ter um domínio registrado e apontar o DNS conforme nossa orientação." },
+    { q: "Posso trocar de tema depois?", a: "Sim. A migração de tema é feita pela equipe técnica sem perda de dados. Disponível mediante solicitação." },
+    { q: "O site atualiza os imóveis automaticamente do CRM?", a: "Sim. Toda vez que você adiciona ou atualiza um imóvel no CRM, o site reflete as mudanças automaticamente." },
+    { q: "Os formulários do site vão para o CRM?", a: "Sim. Todos os formulários de contato e interesse do site criam leads automaticamente no CRM com origem identificada." },
+    { q: "O site é otimizado para SEO?", a: "Sim. Todos os temas são otimizados com meta tags, sitemap, URLs amigáveis e velocidade de carregamento adequada para Google." },
+  ],
+  "sites-v8": [
+    { q: "Qual o prazo de entrega de um site V8?", a: "Em média 2 a 3 semanas do briefing à entrega, dependendo da complexidade e aprovações do cliente." },
+    { q: "O site V8 é hospedado pela Microsistec?", a: "Sim. Hospedagem, CDN Cloudflare, certificado SSL e monitoramento de performance estão incluídos no plano." },
+    { q: "Posso ter integrações customizadas?", a: "Sim. Sites V8 permitem integrações com CRMs externos, sistemas de gestão de condomínios e APIs personalizadas." },
+    { q: "Como é feita a manutenção do site?", a: "Oferecemos pacotes de suporte mensal com atualizações de conteúdo, ajustes de layout e monitoramento técnico." },
+    { q: "O site V8 é diferente dos temas prontos?", a: "Totalmente. O V8 é um projeto exclusivo com design 100% personalizado, enquanto os templates são modelos pré-formatados prontos para uso." },
+  ],
+  rodizio: [
+    { q: "O rodízio funciona para qualquer quantidade de corretores?", a: "Sim. Funciona desde equipes de 2 corretores até grandes operações com dezenas de profissionais em múltiplas filiais." },
+    { q: "O que acontece se o corretor não responder ao lead?", a: "Após o timeout configurado, o sistema passa o lead automaticamente para o próximo da fila e notifica o gestor sobre o no-show." },
+    { q: "Posso configurar regras por especialidade?", a: "Sim. Você pode definir que leads de lançamentos vão para corretores específicos, e leads de locação para outros." },
+    { q: "O corretor em férias ou folga é pulado?", a: "Sim. O corretor pode marcar seu status como 'férias' ou 'folga' e o sistema o exclui automaticamente da fila de distribuição." },
+    { q: "Como funciona o rodízio fora do horário comercial?", a: "Você configura um plantão de atendimento. Fora do plantão, o Albert IA pode atender e qualificar o lead até o próximo corretor disponível." },
+  ],
+};
+
+function SolutionFAQ({ slug }: { slug: string }) {
+  const faqs = faqData[slug];
+  const [openIdx, setOpenIdx] = React.useState<number | null>(null);
+
+  if (!faqs) return null;
+
+  return (
+    <section className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+      <div className="mb-8">
+        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+          Perguntas frequentes
+        </span>
+      </div>
+
+      <div className="divide-y divide-[color:var(--brand-ink)]/7">
+        {faqs.map((faq, i) => {
+          const isOpen = openIdx === i;
+          return (
+            <div key={i} className="py-4">
+              <button
+                onClick={() => setOpenIdx(isOpen ? null : i)}
+                className="w-full flex items-center justify-between gap-4 text-left cursor-pointer bg-transparent border-none py-1 group"
+              >
+                <span className="text-sm font-semibold text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                  {faq.q}
+                </span>
+                <span
+                  className="text-[color:var(--brand-orange)] shrink-0 transition-transform duration-300"
+                  style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </button>
+              <div
+                className="faq-content"
+                style={{
+                  maxHeight: isOpen ? "400px" : "0px",
+                  opacity: isOpen ? 1 : 0,
+                }}
+              >
+                <p className="text-sm text-muted-foreground leading-relaxed pt-3 pb-1">
+                  {faq.a}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function SolucaoDetalhe() {
   const sol = Route.useLoaderData() as Solution;
   const { openModal } = useDemoModal();
@@ -99,7 +427,7 @@ function SolucaoDetalhe() {
     const titles: Record<string, string[]> = {
       "crm": ["Smart Match", "Cadastro Ágil", "Gestão de Acessos", "Documentos Automatizados", "Timeline do Cliente"],
       "app": ["Notificações em Tempo Real", "Portabilidade Total", "Compartilhamento Ágil", "Agenda na Palma da Mão", "Sincronização Imediata"],
-      "funil": ["Visualização Kanban", "Gatilhos de Automação", "Prevenção de Estagnação", "Análise de Conversão", "Funis Personalizados"],
+      "funil": ["Multi-Funil Ilimitado", "Etapas por Negócio", "Arrastar e Soltar", "Métricas Independentes", "Alertas por Funil", "Painel Consolidado"],
       "integracoes": ["Sincronia Bidirecional", "Atendimento via WhatsApp", "Captura Inteligente no Meta", "Painel Unificado", "Distribuição Automática"],
       "albert-ia": ["Qualificação Precisa", "Agendamento Autônomo", "Domínio de Empreendimentos", "Transferência Fluida", "Atendimento 24/7"],
       "sites-template": ["Design Adaptável", "Otimização para Buscas (SEO)", "Pesquisa Refinada", "Captação de Alta Conversão", "Implantação Expressa"],
@@ -138,50 +466,50 @@ function SolucaoDetalhe() {
 
       <main>
         {/* Solution Hero */}
-        <section className="relative overflow-hidden bg-hero py-20 md:py-28 border-b border-[color:var(--brand-ink)]/10">
+        <section className="relative overflow-hidden bg-hero py-20 md:py-28 border-b border-[color:var(--brand-ink)]/8">
           <div className="bg-grid absolute inset-0" />
           
           <div className="relative mx-auto max-w-5xl px-6">
-            <div className="flex flex-wrap items-center gap-2 mb-6">
-              <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+            <div className="flex flex-wrap items-center gap-2 mb-8">
+              <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground">
                 Home
               </Link>
-              <ChevronRight className="w-3 h-3 text-muted-foreground" />
-              <Link to="/solucoes" className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold hover:underline transition">
+              <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
+              <Link to="/solucoes" className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)]/80 hover:text-[color:var(--brand-orange)] transition">
                 Soluções
               </Link>
-              <ChevronRight className="w-3 h-3 text-muted-foreground" />
+              <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
               <span className="text-xs font-mono-ui uppercase text-muted-foreground">
                 {sol.title}
               </span>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-8 space-y-6">
+            <div className="grid md:grid-cols-12 gap-10 items-start">
+              <div className="md:col-span-8 space-y-5">
                 <div className="inline-flex items-center gap-3">
                   {sol.slug === "albert-ia" ? (
-                    <div className="bg-[color:var(--brand-sand)]/85 backdrop-blur-sm rounded-2xl p-2.5 border border-[color:var(--brand-ink)]/15 shadow-soft flex items-center justify-center max-w-[190px]">
-                      <img src="/albert-logo.png" alt="Albert IA" className="h-9 object-contain" />
+                    <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-2.5 border border-[color:var(--brand-ink)]/10 shadow-soft flex items-center justify-center max-w-[180px]">
+                      <img src="/albert-logo.png" alt="Albert IA" className="h-8 object-contain" />
                     </div>
                   ) : (
-                    <div className="w-12 h-12 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center shadow-soft">
-                      <IconComp className="w-6 h-6 text-[color:var(--brand-orange)]" />
+                    <div className="w-11 h-11 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center">
+                      <IconComp className="w-5 h-5 text-[color:var(--brand-orange)]" />
                     </div>
                   )}
-                  <span className="stamp text-[color:var(--brand-orange)] text-xs">
+                  <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
                     Produto Exclusivo
                   </span>
                 </div>
                 
-                <h1 className="font-extrabold tracking-[-0.045em] leading-[0.98] text-[clamp(2.3rem,5vw,4rem)]">
+                <h1 className="font-extrabold tracking-[-0.045em] leading-[0.97] text-[clamp(2.4rem,5vw,3.8rem)]">
                   {sol.title}
                 </h1>
                 
-                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-serif-italic">
+                <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-serif-italic">
                   {sol.shortDesc}
                 </p>
 
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {sol.longDesc}
                 </p>
 
@@ -222,13 +550,13 @@ function SolucaoDetalhe() {
                 </div>
               </div>
 
-              <div className="md:col-span-4 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-3xl p-6 shadow-soft space-y-6 md:sticky md:top-24">
-                <h4 className="font-bold text-sm uppercase font-mono-ui text-foreground tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
-                  ✦ Vantagens Comerciais
+              <div className="md:col-span-4 bg-background border border-[color:var(--brand-ink)]/8 rounded-2xl p-6 shadow-soft space-y-5 md:sticky md:top-20">
+                <h4 className="font-bold text-xs uppercase font-mono-ui text-muted-foreground/70 tracking-widest pb-3 border-b border-[color:var(--brand-ink)]/6">
+                  Vantagens
                 </h4>
                 <ul className="space-y-3">
                   {sol.benefits.map((b: string, idx: number) => (
-                    <li key={idx} className="flex gap-2 text-sm leading-relaxed text-foreground/80">
+                    <li key={idx} className="flex gap-2.5 text-sm leading-relaxed text-foreground/75">
                       <CheckCircle2 className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
                       <span>{b}</span>
                     </li>
@@ -240,27 +568,27 @@ function SolucaoDetalhe() {
         </section>
 
         {/* Detailed Features Grid */}
-        <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <div className="space-y-6 mb-14">
+        <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+          <div className="space-y-4 mb-12">
             <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
               O que está incluso
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
               {getFeaturesTitle(sol.slug, sol.title)}
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             {sol.features.map((f: string, idx: number) => (
               <div 
                 key={idx} 
-                className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:bg-[color:var(--brand-sand)]/30 hover:border-[color:var(--brand-orange)]/30 transition duration-300"
+                className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-xs font-bold">
+                <div className="w-8 h-8 rounded-xl bg-[color:var(--brand-orange)]/8 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-xs font-bold">
                   {(idx + 1).toString().padStart(2, "0")}
                 </div>
                 <div>
-                  <h3 className="font-bold text-base text-foreground mb-1">
+                  <h3 className="font-semibold text-sm text-foreground mb-1">
                     {getFeatureCardTitle(sol.slug, idx)}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -275,7 +603,14 @@ function SolucaoDetalhe() {
         {/* Interactive Custom Subsection Injection */}
         {renderCustomSection()}
 
+        {/* How it Works + Metrics + For Who + FAQ */}
+        <SolutionHowItWorks slug={sol.slug} />
+        <SolutionMetrics slug={sol.slug} />
+        <SolutionForWho slug={sol.slug} />
+        <SolutionFAQ slug={sol.slug} />
+
         {sol.slug === "integracoes" && (
+
           <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
             <div className="border-t border-[color:var(--brand-ink)]/10 pt-16 md:pt-24 space-y-8">
               
@@ -1412,89 +1747,217 @@ function AppSubSection() {
    CUSTOM COMPONENT 6: FUNIL SUBSECTION
    ========================================== */
 function FunilSubSection() {
+  const funnels = [
+    {
+      id: "alto-padrao",
+      label: "🏆 Alto Padrão",
+      color: "text-violet-700 bg-violet-50",
+      activeColor: "bg-violet-600",
+      metrics: { total: 12, conversion: "8%", avgValue: "R$ 2.1M", avgDays: 42 },
+      stages: [
+        { name: "Qualificação", count: 4, leads: [
+          { name: "Ricardo Menezes", desc: "Cobertura Riviera - Vista Mar", value: "R$ 3.8M", tag: "" },
+          { name: "Ana Carvalho", desc: "Casa em condomínio fechado", value: "R$ 2.2M", tag: "Albert MQL" },
+        ]},
+        { name: "Visita Técnica", count: 3, leads: [
+          { name: "Fernando Lima", desc: "Triplex Ponta da Praia", value: "R$ 4.5M", tag: "Sáb 14h" },
+        ]},
+        { name: "Proposta", count: 2, leads: [
+          { name: "Juliana Bianchi", desc: "Penthouse Gonzaga", value: "R$ 2.9M", tag: "Negociando" },
+        ]},
+        { name: "Assinatura", count: 1, leads: [
+          { name: "Marcos Salave", desc: "Casa Alto Padrão Guarujá", value: "R$ 1.85M", tag: "CONTRATO" },
+        ]},
+      ],
+    },
+    {
+      id: "mcmv",
+      label: "🏠 MCMV",
+      color: "text-emerald-700 bg-emerald-50",
+      activeColor: "bg-emerald-600",
+      metrics: { total: 58, conversion: "22%", avgValue: "R$ 280K", avgDays: 18 },
+      stages: [
+        { name: "Triagem", count: 18, leads: [
+          { name: "Maria Santos", desc: "Apto 2q Praia Grande", value: "R$ 280K", tag: "Faixa 2" },
+          { name: "José Oliveira", desc: "Casa 3q - São Vicente", value: "R$ 220K", tag: "FGTS OK" },
+        ]},
+        { name: "Simulação CEF", count: 14, leads: [
+          { name: "Ana Pereira", desc: "Apto 2q programa MCMV", value: "R$ 190K", tag: "Faixa 1" },
+        ]},
+        { name: "Documentação", count: 9, leads: [
+          { name: "Carlos Melo", desc: "Sobrado Cubatão", value: "R$ 250K", tag: "Aprovado CEF" },
+        ]},
+        { name: "Assinatura", count: 4, leads: [
+          { name: "Rosa Alves", desc: "Apto 45m² Guarujá", value: "R$ 195K", tag: "ESCRITURA" },
+        ]},
+      ],
+    },
+    {
+      id: "locacao",
+      label: "🔑 Locação",
+      color: "text-blue-700 bg-blue-50",
+      activeColor: "bg-blue-600",
+      metrics: { total: 34, conversion: "38%", avgValue: "R$ 2.8K/mês", avgDays: 9 },
+      stages: [
+        { name: "Interesse", count: 12, leads: [
+          { name: "Gabriel Torres", desc: "Apto 2q Gonzaga", value: "R$ 3.200/mês", tag: "App" },
+          { name: "Letícia Ramos", desc: "Sala Comercial - Centro", value: "R$ 4.500/mês", tag: "Portais" },
+        ]},
+        { name: "Visita", count: 8, leads: [
+          { name: "Pedro Nunes", desc: "Casa 3q Boqueirão", value: "R$ 3.800/mês", tag: "Ter 10h" },
+        ]},
+        { name: "Análise Cadastral", count: 5, leads: [
+          { name: "Sofia Lima", desc: "Studio Gonzaga", value: "R$ 2.100/mês", tag: "Crédito OK" },
+        ]},
+        { name: "Contrato", count: 4, leads: [
+          { name: "Bruno Melo", desc: "Apto 3q Pompéia", value: "R$ 4.200/mês", tag: "ASSINADO" },
+        ]},
+      ],
+    },
+    {
+      id: "lancamento",
+      label: "🏗️ Lançamento",
+      color: "text-amber-700 bg-amber-50",
+      activeColor: "bg-amber-500",
+      metrics: { total: 94, conversion: "11%", avgValue: "R$ 680K", avgDays: 30 },
+      stages: [
+        { name: "Pré-Lançamento", count: 31, leads: [
+          { name: "Camila Rocha", desc: "Torres Riviera - Unid. 804", value: "R$ 890K", tag: "VIP lista" },
+          { name: "Diego Vieira", desc: "Edifício Soleil - Unid. 1102", value: "R$ 1.2M", tag: "Reserva" },
+        ]},
+        { name: "Espelho Ativo", count: 22, leads: [
+          { name: "Thiago Martins", desc: "Oceano Residence - 2q", value: "R$ 680K", tag: "Opção B3" },
+        ]},
+        { name: "Proposta Formal", count: 14, leads: [
+          { name: "Patricia Lima", desc: "Grand Tower - Cobertura", value: "R$ 2.1M", tag: "Revisão" },
+        ]},
+        { name: "Contrato", count: 6, leads: [
+          { name: "Roberto Salas", desc: "Vila Nova - Unidade 301", value: "R$ 520K", tag: "PERMUTA" },
+        ]},
+      ],
+    },
+    {
+      id: "captacao",
+      label: "📸 Captação",
+      color: "text-rose-700 bg-rose-50",
+      activeColor: "bg-rose-500",
+      metrics: { total: 45, conversion: "41%", avgValue: "R$ 950K", avgDays: 14 },
+      stages: [
+        { name: "Prospecção", count: 21, leads: [
+          { name: "Carlos Nogueira", desc: "Proprietário - Apto Gonzaga", value: "R$ 800K", tag: "Frio" },
+          { name: "Mariana Costa", desc: "Casa Vila Rica", value: "R$ 1.5M", tag: "Indicação" },
+        ]},
+        { name: "Visita/Fotos", count: 12, leads: [
+          { name: "Roberto Silva", desc: "Cobertura Boqueirão", value: "R$ 2.2M", tag: "Fotos Sex 14h" },
+        ]},
+        { name: "Avaliação/Doc", count: 8, leads: [
+          { name: "Luciana Reis", desc: "Terreno Aparecida", value: "R$ 600K", tag: "Aguardando Matrícula" },
+        ]},
+        { name: "Publicado", count: 4, leads: [
+          { name: "João Pedro", desc: "Apto 3q Gonzaga", value: "R$ 950K", tag: "EXCLUSIVIDADE" },
+        ]},
+      ],
+    },
+  ];
+
+  const [activeFunnel, setActiveFunnel] = React.useState(0);
+  const funnel = funnels[activeFunnel];
+
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
-      <div className="space-y-4 mb-12 text-center max-w-2xl mx-auto">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
-          Pipeline Comercial Visual
+    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
+      {/* Header */}
+      <div className="space-y-4 mb-10 max-w-2xl">
+        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+          Multi-Funil Interativo
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-          Funil de Vendas em Formato Kanban
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+          Um funil diferente para cada tipo de negócio
         </h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Tenha controle absoluto e previsibilidade sobre suas comissões de fechamento. Mova os negócios de fase com arrastar e soltar suave no CRM:
+          Alto padrão, MCMV, locação e lançamentos têm jornadas completamente diferentes. 
+          Crie funis independentes com etapas, responsáveis e métricas próprias para cada processo.
         </p>
       </div>
 
-      {/* Simulated Kanban Columns */}
-      <div className="grid md:grid-cols-4 gap-4">
-        {/* Column 1 */}
-        <div className="bg-[color:var(--brand-sand)]/30 rounded-2xl p-4 border border-[color:var(--brand-ink)]/5 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/5">
-            <span className="text-[10px] font-bold font-mono-ui uppercase text-muted-foreground">1. Novo Lead</span>
-            <span className="bg-[color:var(--brand-ink)]/10 text-[color:var(--brand-ink)] text-[9px] font-bold px-2 py-0.5 rounded-full">2</span>
-          </div>
-          
-          <div className="p-3 bg-background rounded-xl border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)] transition">
-            <h4 className="font-bold text-xs">Carlos Eduardo</h4>
-            <p className="text-[10px] text-muted-foreground">Apartamento 2 quartos Gonzaga</p>
-            <div className="text-[9px] text-[color:var(--brand-orange)] font-bold">R$ 550.000</div>
-          </div>
-          
-          <div className="p-3 bg-background rounded-xl border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)] transition">
-            <h4 className="font-bold text-xs">Cláudia Cruz</h4>
-            <p className="text-[10px] text-muted-foreground">Cobertura duplex Ponta da Praia</p>
-            <div className="text-[9px] text-[color:var(--brand-orange)] font-bold">R$ 1.200.000</div>
-          </div>
-        </div>
+      {/* Funnel Tabs */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {funnels.map((f, i) => (
+          <button
+            key={f.id}
+            onClick={() => setActiveFunnel(i)}
+            className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 cursor-pointer border-none ${
+              activeFunnel === i
+                ? `${f.color} ring-1 ring-inset ring-current`
+                : "bg-[color:var(--brand-sand)]/40 text-muted-foreground hover:bg-[color:var(--brand-sand)] hover:text-foreground"
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
 
-        {/* Column 2 */}
-        <div className="bg-[color:var(--brand-sand)]/30 rounded-2xl p-4 border border-[color:var(--brand-ink)]/5 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/5">
-            <span className="text-[10px] font-bold font-mono-ui uppercase text-muted-foreground">2. Qualificado</span>
-            <span className="bg-[color:var(--brand-ink)]/10 text-[color:var(--brand-ink)] text-[9px] font-bold px-2 py-0.5 rounded-full">1</span>
+      {/* Metrics for active funnel */}
+      <div className="grid grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border border-[color:var(--brand-ink)]/8 rounded-xl overflow-hidden mb-6">
+        {[
+          { label: "Leads ativos", value: String(funnel.metrics.total) },
+          { label: "Conversão", value: funnel.metrics.conversion },
+          { label: "Ticket médio", value: funnel.metrics.avgValue },
+          { label: "Tempo médio", value: `${funnel.metrics.avgDays}d` },
+        ].map((m) => (
+          <div key={m.label} className="bg-background px-4 py-3 text-center">
+            <div className="text-sm font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
+            <div className="text-[10px] text-muted-foreground font-mono-ui mt-0.5">{m.label}</div>
           </div>
-          
-          <div className="p-3 bg-background rounded-xl border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)] transition">
-            <h4 className="font-bold text-xs">Bruno Alves</h4>
-            <p className="text-[10px] text-muted-foreground">Comprovou entrada e FGTS com Albert</p>
-            <div className="text-[9px] text-emerald-600 font-bold font-mono-ui">Albert MQL</div>
-          </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Column 3 */}
-        <div className="bg-[color:var(--brand-sand)]/30 rounded-2xl p-4 border border-[color:var(--brand-ink)]/5 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/5">
-            <span className="text-[10px] font-bold font-mono-ui uppercase text-muted-foreground">3. Visita Agendada</span>
-            <span className="bg-[color:var(--brand-ink)]/10 text-[color:var(--brand-ink)] text-[9px] font-bold px-2 py-0.5 rounded-full">1</span>
+      {/* Kanban columns */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {funnel.stages.map((stage, si) => (
+          <div key={si} className="bg-[color:var(--brand-sand)]/25 rounded-xl p-3 border border-[color:var(--brand-ink)]/6 space-y-2">
+            <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/6">
+              <span className="text-[9px] font-bold font-mono-ui uppercase text-muted-foreground truncate pr-1">{stage.name}</span>
+              <span className="bg-[color:var(--brand-ink)]/8 text-[color:var(--brand-ink)] text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0">{stage.count}</span>
+            </div>
+            {stage.leads.map((lead, li) => (
+              <div key={li} className="p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)]/40 transition cursor-pointer">
+                <h4 className="font-bold text-[10px] leading-tight">{lead.name}</h4>
+                <p className="text-[9px] text-muted-foreground leading-tight">{lead.desc}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] text-[color:var(--brand-orange)] font-bold">{lead.value}</span>
+                  {lead.tag && (
+                    <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded-full ${funnel.color}`}>
+                      {lead.tag}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+            {/* Add card placeholder */}
+            <div className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition">
+              + Adicionar
+            </div>
           </div>
-          
-          <div className="p-3 bg-background rounded-xl border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)] transition relative">
-            <div className="absolute top-2 right-2 flex items-center gap-1 text-[8px] text-[color:var(--brand-orange)] font-bold"><Calendar className="w-2.5 h-2.5" /> Sáb 10h</div>
-            <h4 className="font-bold text-xs">Juliana Costa</h4>
-            <p className="text-[10px] text-muted-foreground">Sobrado em Condomínio Fechado</p>
-            <div className="text-[9px] text-[color:var(--brand-orange)] font-bold">R$ 2.400.000</div>
-          </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Column 4 */}
-        <div className="bg-[color:var(--brand-sand)]/30 rounded-2xl p-4 border border-[color:var(--brand-ink)]/5 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/5">
-            <span className="text-[10px] font-bold font-mono-ui uppercase text-muted-foreground">4. Proposta / Fechamento</span>
-            <span className="bg-[color:var(--brand-ink)]/10 text-[color:var(--brand-ink)] text-[9px] font-bold px-2 py-0.5 rounded-full">1</span>
-          </div>
-          
-          <div className="p-3 bg-indigo-50/50 rounded-xl border border-indigo-100 shadow-sm space-y-1 relative">
-            <div className="absolute top-2 right-2 flex items-center gap-0.5 text-[8px] text-indigo-600 font-bold"><DollarSign className="w-2.5 h-2.5" /> CONTRATO</div>
-            <h4 className="font-bold text-xs">Marcos Paulo</h4>
-            <p className="text-[10px] text-muted-foreground">Documentos aprovados em cartório</p>
-            <div className="text-[9px] text-indigo-700 font-bold">COMISSÃO R$ 38.000</div>
-          </div>
+      {/* Bottom callout */}
+      <div className="mt-8 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
+        <div className="flex-1">
+          <div className="text-xs font-mono-ui text-[color:var(--brand-orange)] mb-1">Multi-Funil Ilimitado</div>
+          <p className="text-sm text-[color:var(--brand-sand)]/80 leading-relaxed">
+            Crie quantos funis precisar. Etapas, responsáveis e métricas totalmente independentes por processo de negócio.
+          </p>
+        </div>
+        <div className="flex gap-2 shrink-0 text-[10px] font-mono-ui">
+          <span className="px-3 py-1.5 rounded-full bg-white/5 text-[color:var(--brand-sand)]/70">∞ Funis</span>
+          <span className="px-3 py-1.5 rounded-full bg-white/5 text-[color:var(--brand-sand)]/70">∞ Etapas</span>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ==========================================
    CUSTOM COMPONENT 7: RODÍZIO SUBSECTION
@@ -1718,3 +2181,4 @@ function RodizioSubSection() {
     </section>
   );
 }
+

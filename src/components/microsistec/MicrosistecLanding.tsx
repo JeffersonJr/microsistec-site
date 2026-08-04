@@ -44,12 +44,12 @@ export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.02em] hover:opacity-90" title="Microsistec - Marca Registrada">
+    <header className="sticky top-0 z-50 backdrop-blur-sm bg-background/90 border-b border-[color:var(--brand-ink)]/6">
+      <div className="mx-auto max-w-7xl px-6 h-[60px] flex items-center justify-between">
+        <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.03em] hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
           microsistec
           <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
-          <span className="text-xs text-muted-foreground self-start mt-1 select-none font-sans font-medium" title="Marca Registrada">®</span>
+          <span className="text-[10px] text-muted-foreground/60 self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
         </Link>
         <nav className="hidden md:flex items-center gap-4 lg:gap-7 text-sm">
           {/* Soluções Dropdown */}
@@ -113,15 +113,16 @@ export function Nav() {
           <Link to="/empresa" className="hover:text-[color:var(--brand-orange)] transition">Sobre</Link>
           <Link to="/blog" className="hover:text-[color:var(--brand-orange)] transition">Blog</Link>
         </nav>
-        <div className="flex items-center gap-2">
-          <a href="https://imob.online/" target="_blank" rel="noreferrer" className="hidden md:inline text-sm hover:opacity-70 px-3 py-2">
+        <div className="flex items-center gap-3">
+          <a href="https://imob.online/" target="_blank" rel="noreferrer" className="hidden md:inline text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1.5">
             Entrar
           </a>
+          <div className="hidden md:block w-px h-4 bg-[color:var(--brand-ink)]/10" />
           <button
             onClick={openModal}
-            className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-medium px-4 py-2.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-medium px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none"
           >
-            Testar grátis <ArrowUpRight className="w-4 h-4" />
+            Testar grátis <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -239,25 +240,25 @@ function Hero() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="top" className="relative overflow-hidden bg-hero min-h-[calc(100dvh-4rem)] flex flex-col justify-between lg:min-h-[calc(100vh-4rem)] lg:h-auto">
+    <section id="top" className="relative overflow-hidden bg-hero min-h-[calc(100dvh-60px)] flex flex-col justify-between lg:min-h-[calc(100vh-60px)] lg:h-auto">
       <div className="bg-grid absolute inset-0" />
-      <div className="relative mx-auto max-w-7xl px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex-grow flex flex-col justify-center">
+      <div className="relative mx-auto max-w-7xl px-6 pt-10 pb-14 md:pt-16 md:pb-20 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 md:mb-10">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 md:mb-12">
           <div className="flex items-center gap-3 text-sm">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/15 px-3 py-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)]" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-ink)]/[0.03] px-3.5 py-1 text-[13px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse" />
               A pioneira em tecnologia imobiliária desde 1994
             </span>
           </div>
-          <span className="font-serif-italic text-muted-foreground hidden md:inline">
+          <span className="font-serif-italic text-muted-foreground/60 hidden md:inline text-sm">
             cap. 01: uma carta para quem ainda vende imóvel no caderninho
           </span>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* headline */}
-          <h1 className="lg:col-span-9 font-extrabold tracking-[-0.045em] leading-[0.95] text-[clamp(2.4rem,6.5vw,5rem)]">
+          <h1 className="lg:col-span-9 font-extrabold tracking-[-0.045em] leading-[0.95] text-[clamp(2.6rem,6.5vw,5.2rem)]">
             Vender imóvel
             <br />
             virou{" "}
@@ -268,13 +269,13 @@ function Hero() {
             E a gente já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> aqui
           </h1>
 
-          {/* sticker badge */}
+          {/* proof badge */}
           <div className="lg:col-span-3 flex justify-center lg:justify-end mt-4 lg:mt-0">
-            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-[2rem] px-6 py-5 max-w-[220px] shadow-elev select-none hover:scale-105 transition-all duration-300 cursor-default">
-              <div className="font-mono-ui text-[9px] font-extrabold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2">
-                Selo do Dono
+            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-4 max-w-[200px] shadow-card select-none border border-white/5">
+              <div className="font-mono-ui text-[9px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2 opacity-80">
+                Desde 1994
               </div>
-              <p className="font-serif-italic text-[1.15rem] leading-[1.3] text-[color:var(--brand-sand)]/90">
+              <p className="font-serif-italic text-base leading-[1.35] text-[color:var(--brand-sand)]/85">
                 "feito por gente que conhece imobiliária de verdade"
               </p>
             </div>
@@ -282,8 +283,8 @@ function Hero() {
         </div>
 
         {/* sub + CTAs */}
-        <div className="mt-8 lg:mt-10 grid md:grid-cols-12 gap-6 items-center">
-          <p className="md:col-span-7 text-base md:text-lg text-foreground/75 leading-relaxed">
+        <div className="mt-10 lg:mt-12 grid md:grid-cols-12 gap-6 items-center">
+          <p className="md:col-span-7 text-base md:text-lg text-foreground/60 leading-relaxed">
             Como pioneiros em trazer tecnologia para o setor imobiliário brasileiro, unimos CRM completo, site, app de atendimento, automações e o{" "}
             <strong className="text-foreground">Albert IA</strong>, uma inteligência artificial
             que age como um clone do seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
@@ -349,29 +350,29 @@ function StatsStrip() {
   const stats = [
     { n: "30+", label: "anos no mercado" },
     { n: "1.2K", label: "imobiliárias" },
-    { n: "15K", label: "corretores ativos/mês" },
+    { n: "15K", label: "corretores/mês" },
     { n: "R$8bi", label: "em negócios geridos" },
     { n: "3M+", label: "leads/ano" },
   ];
   return (
-    <section id="resultados" className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+    <section id="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight max-w-xl">
-          Fomos pioneiros ao trazer a tecnologia para as imobiliárias brasileiras. Três décadas de estrada{" "}
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight max-w-xl leading-snug">
+          Pioneiros em trazer tecnologia para imobiliárias. Três décadas de estrada{" "}
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
             provam que sabemos
           </span>{" "}
-          o que fazemos
+          o que fazemos.
         </h2>
-        <span className="font-mono-ui text-xs text-muted-foreground">
-          últ. atualização · operação {new Date().getFullYear()}
+        <span className="font-mono-ui text-xs text-muted-foreground/60">
+          operação · {new Date().getFullYear()}
         </span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[color:var(--brand-ink)]/15 border-y border-[color:var(--brand-ink)]/15">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[color:var(--brand-ink)]/8 border-y border-[color:var(--brand-ink)]/8">
         {stats.map((s) => (
-          <div key={s.label} className="bg-background py-6 md:py-8 px-4 md:px-6 last:col-span-2 lg:last:col-span-1 text-center md:text-left">
-            <div className="text-4xl md:text-5xl font-extrabold tracking-tight">{s.n}</div>
-            <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+          <div key={s.label} className="bg-background py-7 md:py-9 px-5 md:px-6 last:col-span-2 lg:last:col-span-1 text-center md:text-left">
+            <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">{s.n}</div>
+            <div className="text-xs text-muted-foreground mt-1.5 font-mono-ui">{s.label}</div>
           </div>
         ))}
       </div>
@@ -681,17 +682,17 @@ function Ecosystem() {
     { icon: ShieldCheck, title: "LGPD e segurança", desc: "Infra robusta, 99.9% de uptime, backups diários, você dorme tranquilo." },
   ];
   return (
-    <section className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10">
-      <div className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {items.map((it, i) => (
+    <section className="border-y border-[color:var(--brand-ink)]/8">
+      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          {items.map((it) => (
             <div
               key={it.title}
-              className="rounded-2xl bg-background border border-[color:var(--brand-ink)]/15 p-8 shadow-soft"
+              className="rounded-2xl bg-[color:var(--brand-sand)]/40 border border-[color:var(--brand-ink)]/7 p-7 hover:bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300"
             >
-              <it.icon className="w-6 h-6 text-[color:var(--brand-orange)] mb-6" />
-              <h3 className="font-bold text-xl tracking-tight mb-2">{it.title}</h3>
-              <p className="text-muted-foreground">{it.desc}</p>
+              <it.icon className="w-5 h-5 text-[color:var(--brand-orange)] mb-5" />
+              <h3 className="font-bold text-lg tracking-tight mb-2">{it.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>
@@ -870,18 +871,18 @@ export function CTA() {
 /* -------------------------------------------------------------------------- */
 export function Footer() {
   return (
-    <footer className="border-t border-[color:var(--brand-ink)]/15 bg-background">
+    <footer className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-2xl tracking-[-0.02em] mb-4 hover:opacity-90" title="Microsistec - Marca Registrada">
+            <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
               microsistec
-              <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
-              <span className="text-xs text-muted-foreground self-start select-none font-sans font-medium" title="Marca Registrada">®</span>
+              <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
+              <span className="text-[10px] text-muted-foreground/60 self-start select-none font-sans font-normal" title="Marca Registrada">®</span>
             </Link>
-            <p className="text-muted-foreground max-w-sm">
-              Proptech brasileira desde 1994. CRM, sites, app de atendimento e o Albert IA
-              em um ecossistema só, pensado pra imobiliária de verdade.
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+              Proptech brasileira desde 1994. CRM, sites, app de atendimento e Albert IA
+              num ecossistema só para imobiliárias de verdade.
             </p>
             <a
               href="https://imob.online/"
@@ -915,9 +916,9 @@ export function Footer() {
             ]}
           />
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-dashed border-[color:var(--brand-ink)]/20 text-sm text-muted-foreground">
-          <span>© {new Date().getFullYear()} Microsistec · feito no Brasil ✦</span>
-          <span className="font-serif-italic">com Albert IA dentro</span>
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-[color:var(--brand-ink)]/8 text-xs text-muted-foreground font-mono-ui">
+          <span>© {new Date().getFullYear()} Microsistec · feito no Brasil</span>
+          <span className="font-serif-italic font-sans text-sm">com Albert IA dentro</span>
         </div>
       </div>
     </footer>

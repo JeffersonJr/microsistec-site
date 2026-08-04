@@ -62,7 +62,7 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.875rem;
   --background: oklch(0.99 0.005 280);
   --foreground: oklch(0.14 0.02 270);
   --card: oklch(1 0 0);
@@ -79,24 +79,28 @@
   --accent-foreground: oklch(0.14 0.02 270);
   --destructive: oklch(0.62 0.24 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.91 0.01 270);
+  --border: oklch(0.93 0.008 270);
   --input: oklch(0.91 0.01 270);
   --ring: oklch(0.6 0.18 280);
 
-  /* Warm proptech palette — own personality */
-  --background: oklch(0.985 0.012 80);          /* cream */
-  --foreground: oklch(0.18 0.02 50);            /* deep ink */
-  --brand-orange: oklch(0.623 0.106 195.8);     /* #00A8A8 - primary green/teal accent */
-  --brand-clay:   oklch(0.499 0.113 182.2);     /* #007978 - dark green/teal accent */
-  --brand-teal:   oklch(0.735 0.121 190.4);     /* #4BC2C2 - bright/light green/teal accent */
-  --brand-ink:    oklch(0.22 0.03 50);          /* near black */
-  --brand-sand:   oklch(0.93 0.025 75);         /* sand card */
+  /* Clean minimal proptech palette */
+  --background: oklch(0.99 0.003 270);          /* near white */
+  --foreground: oklch(0.15 0.02 260);            /* deep ink */
+  --brand-orange: oklch(0.623 0.106 195.8);     /* primary teal accent */
+  --brand-clay:   oklch(0.499 0.113 182.2);     /* dark teal */
+  --brand-teal:   oklch(0.735 0.121 190.4);     /* light teal */
+  --brand-ink:    oklch(0.18 0.025 255);         /* near black, cool */
+  --brand-sand:   oklch(0.97 0.008 75);         /* very light warm surface */
 
-  --gradient-hero: radial-gradient(70% 60% at 80% 0%, oklch(0.95 0.04 195 / 0.55), transparent 60%),
-                   radial-gradient(50% 50% at 0% 100%, oklch(0.9 0.06 200 / 0.45), transparent 60%);
+  --surface:      oklch(0.975 0.005 270);        /* ultra-light card surface */
+  --surface-hover: oklch(0.99 0.003 270);       /* hovered surface */
+
+  --gradient-hero: radial-gradient(70% 60% at 80% 0%, oklch(0.95 0.04 195 / 0.35), transparent 60%),
+                   radial-gradient(50% 50% at 0% 100%, oklch(0.9 0.06 200 / 0.25), transparent 60%);
   --gradient-text: linear-gradient(100deg, var(--brand-clay), var(--brand-orange) 60%, var(--brand-teal));
-  --shadow-soft: 0 1px 2px oklch(0.14 0.02 270 / 0.04), 0 8px 24px oklch(0.14 0.02 270 / 0.06);
-  --shadow-elev: 0 24px 60px -20px oklch(0.14 0.02 270 / 0.18);
+  --shadow-soft: 0 1px 2px oklch(0.14 0.02 270 / 0.03), 0 6px 20px oklch(0.14 0.02 270 / 0.05);
+  --shadow-elev: 0 20px 50px -16px oklch(0.14 0.02 270 / 0.14);
+  --shadow-card: 0 0 0 1px oklch(0.14 0.02 270 / 0.06), 0 4px 16px oklch(0.14 0.02 270 / 0.05);
   --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
   --font-serif:   "Instrument Serif", "Cormorant Garamond", Georgia, serif;
   --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -176,13 +180,27 @@
   .bg-hero { background: var(--gradient-hero); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-elev { box-shadow: var(--shadow-elev); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+
+  /* Clean minimal card */
+  .card-clean {
+    background: var(--surface);
+    border: 1px solid oklch(0.14 0.02 270 / 0.07);
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .card-clean:hover {
+    background: var(--surface-hover);
+    border-color: oklch(0.623 0.106 195.8 / 0.22);
+    box-shadow: var(--shadow-soft);
+  }
+
   .bg-grid::before {
     content: "";
     position: absolute; inset: 0; pointer-events: none;
     background-image:
-      linear-gradient(oklch(0.18 0.02 50 / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.18 0.02 50 / 0.06) 1px, transparent 1px);
-    background-size: 56px 56px;
+      linear-gradient(oklch(0.18 0.02 50 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.18 0.02 50 / 0.035) 1px, transparent 1px);
+    background-size: 60px 60px;
     mask-image: radial-gradient(80% 60% at 30% 40%, black, transparent 80%);
   }
   .marquee {
@@ -200,12 +218,31 @@
   .tilt-l { transform: none; }
   .tilt-r { transform: none; }
   .stamp {
-    border: 2px solid currentColor;
-    border-radius: 6px;
-    padding: 0.15em 0.5em;
+    border: 1.5px solid currentColor;
+    border-radius: 5px;
+    padding: 0.12em 0.5em;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.09em;
     font-weight: 700;
+    opacity: 0.9;
+  }
+
+  /* FAQ accordion */
+  .faq-content {
+    overflow: hidden;
+    transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+
+  /* Step connector line */
+  .step-line::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 1px;
+    height: 2rem;
+    background: linear-gradient(to bottom, oklch(0.623 0.106 195.8 / 0.3), transparent);
+    transform: translateX(-50%);
   }
 
 @keyframes marquee {
@@ -219,5 +256,23 @@
 
 .animate-marquee-reverse {
   animation: marquee 35s linear infinite reverse;
+}
+
+/* Subtle fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+/* Slide up */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slideUp {
+  animation: slideUp 0.4s ease forwards;
 }
 }
