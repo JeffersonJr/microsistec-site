@@ -9,23 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
-import { Route as PlanosRouteImport } from './routes/planos'
-import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
+import { Route as EmpresaRouteImport } from './routes/empresa'
+import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
+import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 
-const PlanosAlbertRoute = PlanosAlbertRouteImport.update({
-  id: '/planos-albert',
-  path: '/planos-albert',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlanosRoute = PlanosRouteImport.update({
-  id: '/planos',
-  path: '/planos',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmpresaRoute = EmpresaRouteImport.update({
@@ -33,14 +28,14 @@ const EmpresaRoute = EmpresaRouteImport.update({
   path: '/empresa',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SolucoesIndexRoute = SolucoesIndexRouteImport.update({
-  id: '/solucoes/',
-  path: '/solucoes/',
+const PlanosAlbertRoute = PlanosAlbertRouteImport.update({
+  id: '/planos-albert',
+  path: '/planos-albert',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -48,14 +43,19 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SolucoesSlugRoute = SolucoesSlugRouteImport.update({
-  id: '/solucoes/$slug',
-  path: '/solucoes/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesIndexRoute = SolucoesIndexRouteImport.update({
+  id: '/solucoes/',
+  path: '/solucoes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesSlugRoute = SolucoesSlugRouteImport.update({
+  id: '/solucoes/$slug',
+  path: '/solucoes/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -136,18 +136,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/planos-albert': {
-      id: '/planos-albert'
-      path: '/planos-albert'
-      fullPath: '/planos-albert'
-      preLoaderRoute: typeof PlanosAlbertRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/planos': {
-      id: '/planos'
-      path: '/planos'
-      fullPath: '/planos'
-      preLoaderRoute: typeof PlanosRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/empresa': {
@@ -157,18 +150,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmpresaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/solucoes/': {
-      id: '/solucoes/'
-      path: '/solucoes'
-      fullPath: '/solucoes/'
-      preLoaderRoute: typeof SolucoesIndexRouteImport
+    '/planos-albert': {
+      id: '/planos-albert'
+      path: '/planos-albert'
+      fullPath: '/planos-albert'
+      preLoaderRoute: typeof PlanosAlbertRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -178,18 +171,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/solucoes/$slug': {
-      id: '/solucoes/$slug'
-      path: '/solucoes/$slug'
-      fullPath: '/solucoes/$slug'
-      preLoaderRoute: typeof SolucoesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes/': {
+      id: '/solucoes/'
+      path: '/solucoes'
+      fullPath: '/solucoes/'
+      preLoaderRoute: typeof SolucoesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes/$slug': {
+      id: '/solucoes/$slug'
+      path: '/solucoes/$slug'
+      fullPath: '/solucoes/$slug'
+      preLoaderRoute: typeof SolucoesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
