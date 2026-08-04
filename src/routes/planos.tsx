@@ -15,10 +15,10 @@ function PlanosPage() {
   const plans = [
     {
       id: "essencial",
-      name: "Essencial",
+      name: "Essencial (2u + 2App)",
       desc: "Pequenas imobiliárias e autônomos",
       price: isAnnual ? "252" : "315",
-      users: "2 usuários",
+      users: "2 usuários e 2 Apps",
       limit: "Até 600 imóveis",
       features: [
         "Site Imobiliário Otimizado",
@@ -32,11 +32,11 @@ function PlanosPage() {
     },
     {
       id: "profissional",
-      name: "Profissional",
+      name: "Profissional (5u + 1 App)",
       isPopular: true,
       desc: "Imobiliárias de médio porte",
-      price: isAnnual ? "382" : "478",
-      users: "5 usuários",
+      price: isAnnual ? "855,68" : "1.069,60",
+      users: "5 usuários e 1 App",
       limit: "Até 1.500 imóveis",
       features: [
         "Site Imobiliário Otimizado",
@@ -50,10 +50,10 @@ function PlanosPage() {
     },
     {
       id: "avancado",
-      name: "Avançado",
+      name: "Avançado (10u + 1 App)",
       desc: "Imobiliárias de grande porte",
-      price: isAnnual ? "574" : "718",
-      users: "10 usuários",
+      price: isAnnual ? "1.054,40" : "1.318,00",
+      users: "10 usuários e 1 App",
       limit: "Até 5.000 imóveis",
       features: [
         "Site Imobiliário Otimizado",
@@ -67,10 +67,10 @@ function PlanosPage() {
     },
     {
       id: "corporativo",
-      name: "Corporativo",
+      name: "Corporativo (20u + 1 App)",
       desc: "Grandes imobiliárias e redes",
-      price: isAnnual ? "968" : "1.210",
-      users: "20 usuários",
+      price: isAnnual ? "1.928" : "2.410",
+      users: "20 usuários e 1 App",
       limit: "Imóveis Ilimitados",
       features: [
         "Site Imobiliário Otimizado",
