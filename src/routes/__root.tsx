@@ -204,7 +204,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
@@ -226,13 +226,17 @@ function RootComponent() {
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
-      try {
-        Intercom({
-          app_id: "mjj9j4fs",
-        });
-      } catch (err) {
-        console.error("Failed to initialize Intercom:", err);
-      }
+      const timer = setTimeout(() => {
+        try {
+          Intercom({
+            app_id: "mjj9j4fs",
+          });
+        } catch (err) {
+          console.error("Failed to initialize Intercom:", err);
+        }
+      }, 4000); // 4s delay to prevent LCP/TBT blocking
+      
+      return () => clearTimeout(timer);
     }
   }, []);
 

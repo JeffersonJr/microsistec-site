@@ -728,6 +728,10 @@ export function Testimonial() {
                       <img 
                         src={t.avatarUrl} 
                         alt={t.author} 
+                        width={40}
+                        height={40}
+                        loading="lazy"
+                        decoding="async"
                         className="w-10 h-10 rounded-full object-cover border border-[color:var(--brand-ink)]/10 shrink-0" 
                         onError={(e) => {
                           e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
@@ -800,6 +804,10 @@ export function Blog() {
               <img 
                 src={p.imageUrl} 
                 alt={p.title} 
+                width={800}
+                height={500}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-500" 
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
