@@ -118,12 +118,14 @@ export function Nav() {
             Entrar
           </a>
           <div className="hidden md:block w-px h-4 bg-[color:var(--brand-ink)]/10" />
-          <button
-            onClick={openModal}
-            className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-medium px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none"
+          <a
+            href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-medium px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
           >
-            Testar grátis <ArrowUpRight className="w-3.5 h-3.5" />
-          </button>
+            Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer"
@@ -216,15 +218,14 @@ export function Nav() {
 
             {/* Mobile CTAs */}
             <div className="mt-4 pt-4 border-t border-[color:var(--brand-ink)]/10">
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  openModal();
-                }}
-                className="w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-3.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-md"
+              <a
+                href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-3.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-md no-underline"
               >
-                Testar grátis por 14 dias <ArrowUpRight className="w-4 h-4" />
-              </button>
+                Falar com especialista <ArrowUpRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -290,12 +291,14 @@ function Hero() {
             que age como um clone do seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-3 md:justify-end">
-            <button
-              onClick={openModal}
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none"
+            <a
+              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
-              Testar 14 dias grátis <ArrowRight className="w-4 h-4" />
-            </button>
+              Falar com especialista <ArrowRight className="w-4 h-4" />
+            </a>
             <a
               href="#albert"
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/20 px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition"
@@ -855,12 +858,14 @@ export function CTA() {
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 w-full">
-            <button
-              onClick={openModal}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none"
+            <a
+              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none no-underline"
             >
-              Testar grátis <ArrowRight className="w-4 h-4 shrink-0" />
-            </button>
+              Falar com especialista <ArrowRight className="w-4 h-4 shrink-0" />
+            </a>
             <a
               href="https://wa.me/5513997591781"
               className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
