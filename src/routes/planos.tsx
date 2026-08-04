@@ -180,7 +180,7 @@ function PlanosPage() {
                 )}
                 
                 <div className="space-y-4 mb-8">
-                  <h3 className="text-2xl font-extrabold tracking-tight">{plan.name}</h3>
+                  <h3 className="text-xl lg:text-2xl xl:text-xl 2xl:text-2xl font-extrabold tracking-tight leading-tight">{plan.name}</h3>
                   <p className={`text-sm leading-relaxed ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
                     {plan.desc}
                   </p>
@@ -188,9 +188,9 @@ function PlanosPage() {
 
                 <div className="mb-8">
                   {!plan.isCustom ? (
-                    <div className="flex items-end gap-1">
+                    <div className="flex items-end gap-1 flex-wrap">
                       <span className="text-sm font-bold">R$</span>
-                      <span className="text-4xl lg:text-5xl font-extrabold tracking-tighter leading-none">{plan.price}</span>
+                      <span className="text-4xl lg:text-5xl xl:text-3xl 2xl:text-4xl font-extrabold tracking-tighter leading-none">{plan.price}</span>
                       <span className={`text-sm mb-1 ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>/mês</span>
                     </div>
                   ) : (
