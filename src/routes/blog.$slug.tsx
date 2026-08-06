@@ -37,7 +37,7 @@ function BlogLeitor() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      <main className="mx-auto max-w-5xl px-6 py-10 md:py-16">
+      <main className="mx-auto max-w-5xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
         {/* Breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[color:var(--brand-ink)]/10 pb-4">
           <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">

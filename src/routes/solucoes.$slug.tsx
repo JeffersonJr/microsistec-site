@@ -468,7 +468,7 @@ function SolucaoDetalhe() {
 
       <main>
         {/* Solution Hero */}
-        <section className="relative overflow-hidden bg-hero py-24 md:py-36 border-b border-[color:var(--brand-ink)]/8">
+        <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/8">
           <div className="bg-grid absolute inset-0" />
           
           <div className="relative mx-auto max-w-5xl px-6">
