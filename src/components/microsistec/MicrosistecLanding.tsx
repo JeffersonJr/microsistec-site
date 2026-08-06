@@ -70,7 +70,7 @@ export function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 pointer-events-none">
       <div
         ref={navRef}
-        className={`mx-auto max-w-6xl pointer-events-auto nav-pill ${scrolled ? "nav-pill-scrolled" : ""}`}
+        className={`relative mx-auto max-w-6xl pointer-events-auto nav-pill ${scrolled ? "nav-pill-scrolled" : ""}`}
       >
         <div className="flex h-[54px] items-center justify-between px-5">
           <Link
