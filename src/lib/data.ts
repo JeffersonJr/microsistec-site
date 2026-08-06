@@ -125,9 +125,9 @@ export const solutions: Solution[] = [
     longDesc: "Perder tempo cadastrando o mesmo imóvel em múltiplos portais, copiando dados no WhatsApp e capturando leads de Facebook/Instagram Ads de forma isolada é coisa do passado. Nossa tecnologia de integração publica seus anúncios automaticamente nos portais parceiros (ZAP, VivaReal, OLX, Imovelweb) e centraliza conversas do WhatsApp e leads da Meta para facilitar o atendimento.",
     iconName: "Workflow",
     features: [
-      "Carga automatizada de anúncios de imóveis (XML) sem intervenção manual.",
+      "Carga automatizada de anúncios de imóveis via XML, JSON ou API, dependendo do portal parceiro.",
       "Centralização de leads recebidos em todas as plataformas e campanhas da Meta direto no CRM.",
-      "Integração oficial com API do WhatsApp Business e Meta Lead Ads para maior segurança.",
+      "Integração oficial com API do WhatsApp Business e Facebook Lead Ads para maior segurança.",
       "Distribuição automática de leads (fila de rodízio) para corretores online.",
       "Rastreabilidade total das campanhas que mais trazem retorno de leads."
     ],

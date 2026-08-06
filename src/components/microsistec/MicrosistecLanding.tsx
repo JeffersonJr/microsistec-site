@@ -19,16 +19,13 @@ import {
   ChevronDown,
   Menu,
   X,
+  Users,
+  Home,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useDemoModal } from "@/hooks/use-demo-modal";
 import { solutions, getIconComponent, blogPosts, testimonials } from "@/lib/data";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
+
 import {
   type CarouselApi,
   Carousel,
@@ -39,112 +36,337 @@ import {
 /* -------------------------------------------------------------------------- */
 /*  NAV                                                                       */
 /* -------------------------------------------------------------------------- */
+type OpenMenu = "solucoes" | "planos" | null;
+
 export function Nav() {
   const { openModal } = useDemoModal();
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMobileOpen, setIsMobileOpen] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState<OpenMenu>(null);
+  const [scrolled, setScrolled] = React.useState(false);
+  const navRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close menu when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const toggleMenu = (menu: OpenMenu) => {
+    setOpenMenu(prev => prev === menu ? null : menu);
+  };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-sm bg-background/90 border-b border-[color:var(--brand-ink)]/6">
-      <div className="mx-auto max-w-7xl px-6 h-[60px] flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.03em] hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
-          microsistec
-          <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
-          <span className="text-[10px] text-muted-foreground/60 self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-4 lg:gap-7 text-sm">
-          {/* Soluções Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1.5 hover:text-[color:var(--brand-orange)] transition cursor-pointer outline-none border-none bg-transparent">
-              Soluções <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-64 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-xl p-2 shadow-elev">
-              {solutions.map((sol) => {
-                const IconComp = getIconComponent(sol.iconName);
-                const isComingSoon = sol.ctaText === "Em Breve";
-                return (
-                  <DropdownMenuItem key={sol.slug} asChild={!isComingSoon} disabled={isComingSoon}>
-                    {isComingSoon ? (
-                      <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)]/40 cursor-not-allowed">
-                        <IconComp className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]/40" />
-                        <span className="font-semibold leading-none">{sol.title}</span>
-                        <span className="ml-auto text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 shrink-0">Em Breve</span>
-                      </div>
-                    ) : (
-                      <Link
-                        to="/solucoes/$slug"
-                        params={{ slug: sol.slug }}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
-                      >
-                        <IconComp className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
-                        <span className="font-semibold leading-none">{sol.title}</span>
-                      </Link>
-                    )}
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 pointer-events-none">
+      <div
+        ref={navRef}
+        className={`mx-auto max-w-6xl pointer-events-auto nav-pill ${scrolled ? "nav-pill-scrolled" : ""}`}
+      >
+        <div className="flex h-[54px] items-center justify-between px-5">
+          <Link
+            to="/"
+            className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
+            title="Microsistec - Marca Registrada"
+            onClick={() => setOpenMenu(null)}
+          >
+            microsistec
+            <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
+            <span className="text-[10px] text-muted-foreground/60 self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+          </Link>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1.5 hover:text-[color:var(--brand-orange)] transition cursor-pointer outline-none border-none bg-transparent">
-              Planos <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-56 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-xl p-2 shadow-elev">
-              <DropdownMenuItem asChild>
-                <Link
-                  to="/planos"
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
-                >
-                  <Building2 className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
-                  <span className="font-semibold leading-none">CRM Imobiliário</span>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link
-                  to="/planos-albert"
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer"
-                >
-                  <Bot className="w-4 h-4 shrink-0 text-[color:var(--brand-orange)]" />
-                  <span className="font-semibold leading-none">Albert IA</span>
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Link to="/empresa" className="hover:text-[color:var(--brand-orange)] transition">Sobre</Link>
-          <Link to="/blog" className="hover:text-[color:var(--brand-orange)] transition">Blog</Link>
-        </nav>
-        <div className="flex items-center gap-3">
-          <a href="https://imob.online/" target="_blank" rel="noreferrer" className="hidden md:inline text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1.5">
-            Entrar
-          </a>
-          <div className="hidden md:block w-px h-4 bg-[color:var(--brand-ink)]/10" />
-          <a
-            href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-medium px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
-          >
-            Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer"
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-1 text-sm">
+
+            {/* Soluções */}
+            <div className="relative">
+              <button
+                onClick={() => toggleMenu("solucoes")}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "solucoes" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
+              >
+                Soluções
+                <ChevronDown
+                  className="w-3.5 h-3.5 transition-transform duration-200"
+                  style={{ transform: openMenu === "solucoes" ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </button>
+            </div>
+
+            {/* Planos */}
+            <div className="relative">
+              <button
+                onClick={() => toggleMenu("planos")}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "planos" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
+              >
+                Planos
+                <ChevronDown
+                  className="w-3.5 h-3.5 transition-transform duration-200"
+                  style={{ transform: openMenu === "planos" ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </button>
+            </div>
+
+            <Link
+              to="/empresa"
+              onClick={() => setOpenMenu(null)}
+              className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+            >
+              Sobre
+            </Link>
+            <Link
+              to="/blog"
+              onClick={() => setOpenMenu(null)}
+              className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+            >
+              Blog
+            </Link>
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <a
+              href="https://imob.online/"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden md:inline text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
+            >
+              Entrar
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
+            >
+              Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+            <button
+              onClick={() => { setIsMobileOpen(!isMobileOpen); setOpenMenu(null); }}
+              className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/8 transition cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mega Menu Panels — Tesla Style */}
+        {openMenu === "solucoes" && (
+          <div className="absolute top-full left-0 right-0 mt-3 w-full bg-[color:var(--brand-sand)]/98 backdrop-blur-xl border border-[color:var(--brand-ink)]/12 rounded-[24px] p-8 shadow-elev animate-fadeIn z-50 pointer-events-auto">
+            <div className="grid grid-cols-4 gap-8 text-left">
+              {/* Col 1: Operação */}
+              <div className="space-y-4">
+                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Operação & Vendas</span>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { slug: "crm", title: "CRM Imobiliário", desc: "Gestão operacional e base unificada", icon: Building2 },
+                    { slug: "app", title: "App de Atendimento", desc: "Mobilidade e agilidade na rua", icon: Smartphone },
+                    { slug: "funil", title: "Multi-Funil Kanban", desc: "Pipelines separados por processo", icon: LineChart },
+                    { slug: "rodizio", title: "Rodízio de Leads", desc: "Distribuição automática e justa", icon: Users }
+                  ].map(item => (
+                    <Link
+                      key={item.slug}
+                      to="/solucoes/$slug"
+                      params={{ slug: item.slug }}
+                      onClick={() => setOpenMenu(null)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
+                        <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-normal">{item.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Col 2: Presença Digital */}
+              <div className="space-y-4">
+                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Presença Digital</span>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { slug: "sites-template", title: "Sites Express", desc: "Templates otimizados em 1 dia", icon: Globe },
+                    { slug: "sites-v8", title: "Sites Custom V8", desc: "Design exclusivo de alta performance", icon: Sparkles },
+                    { slug: "integracoes", title: "Integrações Meta (Facebook)", desc: "WhatsApp API e portais integrados", icon: Workflow }
+                  ].map(item => (
+                    <Link
+                      key={item.slug}
+                      to="/solucoes/$slug"
+                      params={{ slug: item.slug }}
+                      onClick={() => setOpenMenu(null)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
+                        <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-normal">{item.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Col 3: Inteligência Artificial */}
+              <div className="space-y-4">
+                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Inteligência Artificial</span>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { slug: "albert-ia", title: "Albert IA (SDR)", desc: "Conversa e agenda no WhatsApp 24/7", icon: Bot }
+                  ].map(item => (
+                    <Link
+                      key={item.slug}
+                      to="/solucoes/$slug"
+                      params={{ slug: item.slug }}
+                      onClick={() => setOpenMenu(null)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
+                        <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-normal">{item.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Col 4: Financeiro */}
+              <div className="space-y-4">
+                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Financeiro</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3 p-2.5 rounded-xl text-[color:var(--brand-ink)]/35 cursor-not-allowed">
+                    <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0">
+                      <Home className="w-4 h-4 text-muted-foreground/45" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <h4 className="font-bold text-sm leading-none">Sistema de Locação</h4>
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 leading-none">Em breve</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground/50 leading-normal">Contratos, reajustes e repasses imobiliários digitais</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-xs text-muted-foreground">
+              <span>Tem alguma dúvida operacional ou deseja integrar canais específicos?</span>
+              <a
+                href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline"
+              >
+                Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        )}
+
+        {openMenu === "planos" && (
+          <div className="absolute top-full left-0 right-0 mt-3 w-full bg-[color:var(--brand-sand)]/98 backdrop-blur-xl border border-[color:var(--brand-ink)]/12 rounded-[24px] p-8 shadow-elev animate-fadeIn z-50 pointer-events-auto">
+            <div className="grid grid-cols-3 gap-8 text-left">
+              {/* CRM */}
+              <div className="space-y-4">
+                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
+                    <Building2 className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                  </div>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">CRM Imobiliário</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                  Planos desenhados para corretores independentes, imobiliárias em crescimento ou grandes redes com dezenas de filiais.
+                </p>
+                <div>
+                  <Link
+                    to="/planos"
+                    onClick={() => setOpenMenu(null)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[color:var(--brand-orange)] hover:underline"
+                  >
+                    Ver tabela de preços do CRM <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Albert IA */}
+              <div className="space-y-4">
+                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2 flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
+                    <Bot className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                  </div>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Albert IA (SDR)</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                  Automatize o primeiro contato dos portais e Meta Ads no WhatsApp 24/7 com inteligência e qualificação financeira.
+                </p>
+                <div>
+                  <Link
+                    to="/planos-albert"
+                    onClick={() => setOpenMenu(null)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[color:var(--brand-orange)] hover:underline"
+                  >
+                    Conhecer planos do Albert IA <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+
+              {/* Promo Banner */}
+              <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+                <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
+                <div>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-orange)] mb-1 block">Atendimento</span>
+                  <h4 className="font-extrabold text-base mb-2">Fale com um Especialista</h4>
+                  <p className="text-xs text-[color:var(--brand-sand)]/70 leading-relaxed">
+                    Fale com nosso especialista agora e tire suas dúvidas ou solicite uma simulação customizada para o tamanho da sua imobiliária.
+                  </p>
+                </div>
+                <button
+                  onClick={() => { setOpenMenu(null); openModal(); }}
+                  className="w-full mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-xs font-bold py-2.5 hover:scale-[1.02] transition cursor-pointer border-none"
+                >
+                  Falar com especialista agora
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Mobile Navigation Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-[color:var(--brand-sand)] border-b border-[color:var(--brand-ink)]/15 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-4rem)] pb-24">
-          <div className="px-6 py-6 flex flex-col gap-6 text-[color:var(--brand-ink)]">
-            {/* Soluções Group */}
-            <div className="flex flex-col gap-2">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider opacity-60">Soluções</span>
-              <div className="grid grid-cols-1 gap-2 pl-2">
+      {/* Mobile drawer */}
+      {isMobileOpen && (
+        <div className="md:hidden pointer-events-auto mx-4 mt-2 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/12 rounded-2xl shadow-elev overflow-y-auto max-h-[calc(100dvh-5rem)] animate-fadeIn">
+          <div className="px-4 py-5 flex flex-col gap-5 text-[color:var(--brand-ink)]">
+
+            {/* Soluções */}
+            <div>
+              <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60 px-2 mb-2 block">Soluções</span>
+              <div className="grid grid-cols-1">
                 {solutions.map((sol) => {
                   const IconComp = getIconComponent(sol.iconName);
                   const isComingSoon = sol.ctaText === "Em Breve";
@@ -154,10 +376,12 @@ export function Nav() {
                       key={sol.slug}
                       to="/solucoes/$slug"
                       params={{ slug: sol.slug }}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center gap-3 py-2 text-sm font-semibold hover:text-[color:var(--brand-orange)] transition"
+                      onClick={() => setIsMobileOpen(false)}
+                      className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition"
                     >
-                      <IconComp className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                      <div className="w-7 h-7 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
+                        <IconComp className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
+                      </div>
                       {sol.title}
                     </Link>
                   );
@@ -165,68 +389,62 @@ export function Nav() {
               </div>
             </div>
 
-            {/* Planos Group */}
-            <div className="flex flex-col gap-2">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider opacity-60">Planos</span>
-              <div className="grid grid-cols-1 gap-2 pl-2">
+            <hr className="border-[color:var(--brand-ink)]/8" />
+
+            {/* Planos */}
+            <div>
+              <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60 px-2 mb-2 block">Planos</span>
+              <div className="grid grid-cols-1">
                 <Link
                   to="/planos"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center gap-3 py-2 text-sm font-semibold hover:text-[color:var(--brand-orange)] transition"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition"
                 >
-                  <Building2 className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                  <div className="w-7 h-7 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
+                    <Building2 className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
+                  </div>
                   CRM Imobiliário
                 </Link>
                 <Link
                   to="/planos-albert"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center gap-3 py-2 text-sm font-semibold hover:text-[color:var(--brand-orange)] transition"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition"
                 >
-                  <Bot className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                  <div className="w-7 h-7 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
+                    <Bot className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
+                  </div>
                   Albert IA
                 </Link>
               </div>
             </div>
 
-            <hr className="border-[color:var(--brand-ink)]/10" />
+            <hr className="border-[color:var(--brand-ink)]/8" />
 
-            {/* General links */}
-            <div className="flex flex-col gap-3 pl-2">
-              <Link
-                to="/empresa"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-base font-semibold hover:text-[color:var(--brand-orange)] transition"
-              >
+            {/* Links gerais */}
+            <div className="grid grid-cols-1 gap-0.5">
+              <Link to="/empresa" onClick={() => setIsMobileOpen(false)}
+                className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition">
                 Sobre nós
               </Link>
-              <Link
-                to="/blog"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-base font-semibold hover:text-[color:var(--brand-orange)] transition"
-              >
+              <Link to="/blog" onClick={() => setIsMobileOpen(false)}
+                className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition">
                 Blog
               </Link>
-              <a
-                href="https://imob.online/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-base font-semibold hover:text-[color:var(--brand-orange)] transition"
-              >
+              <a href="https://imob.online/" target="_blank" rel="noreferrer"
+                className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition">
                 Entrar no sistema
               </a>
             </div>
 
-            {/* Mobile CTAs */}
-            <div className="mt-4 pt-4 border-t border-[color:var(--brand-ink)]/10">
-              <a
-                href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-3.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-md no-underline"
-              >
-                Falar com especialista <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
+            {/* CTA */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-3.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
+            >
+              Falar com especialista <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       )}
@@ -241,9 +459,9 @@ function Hero() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="top" className="relative overflow-hidden bg-hero min-h-[calc(100dvh-60px)] flex flex-col justify-between lg:min-h-[calc(100vh-60px)] lg:h-auto">
+    <section id="top" className="relative overflow-hidden bg-hero min-h-screen flex flex-col justify-between lg:h-auto">
       <div className="bg-grid absolute inset-0" />
-      <div className="relative mx-auto max-w-7xl px-6 pt-10 pb-14 md:pt-16 md:pb-20 flex-grow flex flex-col justify-center">
+      <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-14 md:pt-36 md:pb-20 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 md:mb-12">
           <div className="flex items-center gap-3 text-sm">
@@ -714,64 +932,64 @@ export function Testimonial() {
     <section className="w-full overflow-hidden border-y border-[color:var(--brand-ink)]/10">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-10 items-start md:items-center">
-        <div className="md:col-span-2 hidden md:block">
-          <Quote className="w-14 h-14 text-[color:var(--brand-orange)]" />
-        </div>
-        <div className="md:col-span-10 min-w-0 w-full overflow-hidden relative">
-          <div className="md:hidden absolute top-0 -left-2 opacity-20 pointer-events-none">
-            <Quote className="w-12 h-12 text-[color:var(--brand-orange)]" />
+          <div className="md:col-span-2 hidden md:block">
+            <Quote className="w-14 h-14 text-[color:var(--brand-orange)]" />
           </div>
-          <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
-            <CarouselContent>
-              {testimonials.map((t) => (
-                <CarouselItem key={t.id}>
-                  <blockquote className="text-2xl md:text-4xl font-serif-italic leading-[1.2] tracking-[-0.01em]">
-                    "{t.quote}"
-                    <footer className="not-italic mt-6 flex items-center gap-3 text-sm font-sans text-muted-foreground">
-                      <img 
-                        src={t.avatarUrl} 
-                        alt={t.author} 
-                        width={40}
-                        height={40}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-10 h-10 rounded-full object-cover border border-[color:var(--brand-ink)]/10 shrink-0" 
-                        onError={(e) => {
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
-                        }}
-                      />
-                      <div>
-                        <div className="font-semibold text-foreground">{t.author}</div>
-                        <div>{t.role}, {t.company} · {t.location}</div>
-                      </div>
-                    </footer>
-                  </blockquote>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex gap-3 justify-end mt-6">
-              <button
-                type="button"
-                onClick={() => api?.scrollPrev()}
-                className="w-10 h-10 rounded-full border border-[color:var(--brand-ink)]/15 bg-background flex items-center justify-center text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer shadow-soft"
-                aria-label="Depoimento anterior"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => api?.scrollNext()}
-                className="w-10 h-10 rounded-full border border-[color:var(--brand-ink)]/15 bg-background flex items-center justify-center text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer shadow-soft"
-                aria-label="Próximo depoimento"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
+          <div className="md:col-span-10 min-w-0 w-full overflow-hidden relative">
+            <div className="md:hidden absolute top-0 -left-2 opacity-20 pointer-events-none">
+              <Quote className="w-12 h-12 text-[color:var(--brand-orange)]" />
             </div>
-          </Carousel>
+            <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
+              <CarouselContent>
+                {testimonials.map((t) => (
+                  <CarouselItem key={t.id}>
+                    <blockquote className="text-2xl md:text-4xl font-serif-italic leading-[1.2] tracking-[-0.01em]">
+                      "{t.quote}"
+                      <footer className="not-italic mt-6 flex items-center gap-3 text-sm font-sans text-muted-foreground">
+                        <img
+                          src={t.avatarUrl}
+                          alt={t.author}
+                          width={40}
+                          height={40}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-10 h-10 rounded-full object-cover border border-[color:var(--brand-ink)]/10 shrink-0"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
+                          }}
+                        />
+                        <div>
+                          <div className="font-semibold text-foreground">{t.author}</div>
+                          <div>{t.role}, {t.company} · {t.location}</div>
+                        </div>
+                      </footer>
+                    </blockquote>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex gap-3 justify-end mt-6">
+                <button
+                  type="button"
+                  onClick={() => api?.scrollPrev()}
+                  className="w-10 h-10 rounded-full border border-[color:var(--brand-ink)]/15 bg-background flex items-center justify-center text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer shadow-soft"
+                  aria-label="Depoimento anterior"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => api?.scrollNext()}
+                  className="w-10 h-10 rounded-full border border-[color:var(--brand-ink)]/15 bg-background flex items-center justify-center text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition duration-200 cursor-pointer shadow-soft"
+                  aria-label="Próximo depoimento"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </Carousel>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 }
 
@@ -804,14 +1022,14 @@ export function Blog() {
               <span>{p.date}</span>
             </div>
             <div className="aspect-[16/10] rounded-xl mb-6 overflow-hidden border border-[color:var(--brand-ink)]/10">
-              <img 
-                src={p.imageUrl} 
-                alt={p.title} 
+              <img
+                src={p.imageUrl}
+                alt={p.title}
                 width={800}
                 height={500}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-500" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
                 }}
@@ -938,12 +1156,12 @@ export function Footer() {
   );
 }
 
-function FooterCol({ 
-  title, 
-  links 
-}: { 
-  title: string; 
-  links: { label: string; to: string; params?: any }[] 
+function FooterCol({
+  title,
+  links
+}: {
+  title: string;
+  links: { label: string; to: string; params?: any }[]
 }) {
   return (
     <div>

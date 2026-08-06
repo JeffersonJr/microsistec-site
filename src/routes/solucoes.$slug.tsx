@@ -140,20 +140,21 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 relative">
+          {/* Connector line between steps */}
+          <div className="hidden md:block absolute top-10 left-[18%] right-[18%] h-px bg-gradient-to-r from-[color:var(--brand-orange)]/20 via-[color:var(--brand-orange)]/40 to-[color:var(--brand-orange)]/20" />
           {data.steps.map((step, i) => (
-            <div key={i} className="relative flex flex-col gap-4 p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center font-mono-ui text-sm font-bold shrink-0">
-                {step.n}
+            <div key={i} className="relative flex flex-col gap-4 p-7 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/30 hover:shadow-soft transition-all duration-300 feature-card">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center font-mono-ui text-sm font-bold shrink-0">
+                  {step.n}
+                </div>
+                <div className="h-px flex-1 bg-[color:var(--brand-ink)]/8 md:hidden" />
               </div>
               <div>
                 <h3 className="font-bold text-base mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
-              {/* Connector */}
-              {i < data.steps.length - 1 && (
-                <div className="absolute right-[-13px] top-1/2 -translate-y-1/2 w-6 h-px bg-[color:var(--brand-ink)]/10 hidden md:block" />
-              )}
             </div>
           ))}
         </div>
@@ -182,12 +183,13 @@ function SolutionMetrics({ slug }: { slug: string }) {
 
   return (
     <section className="mx-auto max-w-5xl px-6 pb-14 md:pb-20">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border border-[color:var(--brand-ink)]/8 rounded-2xl overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metrics.map((m, i) => (
-          <div key={i} className="bg-background px-5 py-7 text-center flex flex-col items-center gap-1">
-            <div className="text-2xl md:text-3xl font-extrabold text-[color:var(--brand-orange)] tracking-tight">{m.value}</div>
-            <div className="text-xs font-semibold text-foreground mt-0.5">{m.label}</div>
-            <div className="text-[10px] text-muted-foreground font-mono-ui">{m.sub}</div>
+          <div key={i} className="relative bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-8 flex flex-col items-center gap-1 text-center overflow-hidden group feature-card border border-[color:var(--brand-ink)]">
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-[color:var(--brand-orange)]/10 rounded-full" />
+            <div className="text-3xl md:text-4xl font-extrabold text-[color:var(--brand-orange)] tracking-tight relative z-10">{m.value}</div>
+            <div className="text-xs font-semibold text-[color:var(--brand-sand)] mt-1 relative z-10">{m.label}</div>
+            <div className="text-[10px] text-[color:var(--brand-sand)]/50 font-mono-ui relative z-10">{m.sub}</div>
           </div>
         ))}
       </div>
@@ -254,9 +256,9 @@ function SolutionForWho({ slug }: { slug: string }) {
       </div>
       <div className="grid md:grid-cols-3 gap-4">
         {profiles.map((p, i) => (
-          <div key={i} className="p-5 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-[color:var(--brand-sand)]/30 hover:bg-background hover:border-[color:var(--brand-orange)]/20 transition-all duration-300">
-            <span className="text-2xl block mb-3">{p.icon}</span>
-            <h3 className="font-bold text-sm mb-1.5">{p.title}</h3>
+          <div key={i} className="group p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-gradient-to-br from-[color:var(--brand-sand)]/40 to-background hover:from-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-soft transition-all duration-300 feature-card">
+            <span className="text-3xl block mb-4">{p.icon}</span>
+            <h3 className="font-bold text-sm mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">{p.title}</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
           </div>
         ))}
@@ -270,14 +272,14 @@ function SolutionForWho({ slug }: { slug: string }) {
    ========================================== */
 const faqData: Record<string, { q: string; a: string }[]> = {
   crm: [
-    { q: "Quanto tempo leva para migrar dados do meu sistema atual?", a: "A migração é feita pela nossa equipe de onboarding em até 3 dias úteis. Importamos imóveis, clientes e histórico de forma segura sem perda de dados." },
-    { q: "Funciona para imobiliária de locação e venda?", a: "Sim. O CRM é completo para locação e venda. Você pode gerenciar contratos de locação, reajustes e repasses sem módulos adicionais." },
+    { q: "Quanto tempo leva para migrar dados do meu sistema atual?", a: "A migração é feita pela nossa equipe de onboarding em 3 a 9 dias úteis, dependendo da plataforma de origem e da qualidade dos dados exportados. Importamos imóveis, clientes e histórico de forma segura sem perda de dados." },
+    { q: "Funciona para imobiliária de locação e venda?", a: "Sim. O CRM possui módulos para gestão de venda. Para locação, consulte nossa equipe para verificar a disponibilidade dos módulos de locação e as opções de integração." },
     { q: "Quantos usuários posso cadastrar?", a: "Depende do plano. Temos planos para corretores autônomos até grandes imobiliárias com equipes ilimitadas. Consulte nossa tabela de planos." },
     { q: "O sistema funciona offline?", a: "A plataforma web requer conexão. O app mobile mantém histórico e dados em cache offline, sincronizando ao reconectar." },
     { q: "Tem integração com portais como ZAP e Viva Real?", a: "Sim. Integramos com mais de 40 portais nacionais e regionais, Facebook Lead Ads, Google e WhatsApp Business. Tudo centralizado no CRM." },
   ],
   "albert-ia": [
-    { q: "Quanto tempo leva para configurar o Albert?", a: "O processo de onboarding dura em média 5 dias úteis. Nossa equipe coleta seu script, tone of voice e catálogo de imóveis para treinar o Albert." },
+    { q: "Quanto tempo leva para configurar o Albert?", a: "O processo de onboarding dura em média de 5 a 15 dias úteis, dependendo da complexidade da operação. Nossa equipe coleta seu script, tone of voice e catálogo de imóveis para treinar o Albert." },
     { q: "O Albert substitui o corretor?", a: "Não. O Albert é um SDR — ele qualifica e agenda, mas o corretor fecha. O objetivo é liberar o time para o que importa: negociar e fechar." },
     { q: "Em quais plataformas o Albert atua?", a: "Atualmente via WhatsApp Business (API oficial) e no site da imobiliária. Novas integrações estão em roadmap." },
     { q: "O que acontece se o lead fizer uma pergunta que o Albert não sabe?", a: "O Albert reconhece limitações e transfere o lead para um corretor humano de forma transparente, sem frustrar o cliente." },
@@ -301,8 +303,8 @@ const faqData: Record<string, { q: string; a: string }[]> = {
     { q: "Quais portais estão disponíveis para integração?", a: "Mais de 40 portais, incluindo ZAP Imóveis, Viva Real, OLX, Imovelweb, Mercado Livre, Chaves na Mão e portais regionais." },
     { q: "A sincronização é bidirecional?", a: "Sim. Imóveis cadastrados no CRM são enviados para os portais. Leads recebidos nos portais chegam ao CRM automaticamente." },
     { q: "Preciso pagar extra pelo WhatsApp Business?", a: "A integração com a API oficial do WhatsApp tem um custo de conversação conforme a tabela da Meta. A integração com nosso sistema não tem custo adicional." },
-    { q: "Funciona com Facebook e Instagram Lead Ads?", a: "Sim. Leads gerados em campanhas do Facebook e Instagram chegam direto ao CRM sem precisar exportar planilhas." },
-    { q: "Os imóveis sobem automaticamente nos portais?", a: "Sim. Ao cadastrar ou atualizar um imóvel no CRM, as alterações são enviadas automaticamente para todos os portais configurados via XML." },
+    { q: "Funciona com Facebook Lead Ads?", a: "Sim. Leads gerados em campanhas do Facebook chegam direto ao CRM sem precisar exportar planilhas. A integração com Instagram Lead Ads está em breve." },
+    { q: "Os imóveis sobem automaticamente nos portais?", a: "Sim. Ao cadastrar ou atualizar um imóvel no CRM, as alterações são enviadas automaticamente para todos os portais configurados." },
   ],
   "sites-template": [
     { q: "Preciso de conhecimento técnico para instalar?", a: "Não. Nossa equipe faz a instalação completa. Você só precisa ter um domínio registrado e apontar o DNS conforme nossa orientação." },
@@ -466,7 +468,7 @@ function SolucaoDetalhe() {
 
       <main>
         {/* Solution Hero */}
-        <section className="relative overflow-hidden bg-hero py-20 md:py-28 border-b border-[color:var(--brand-ink)]/8">
+        <section className="relative overflow-hidden bg-hero py-24 md:py-36 border-b border-[color:var(--brand-ink)]/8">
           <div className="bg-grid absolute inset-0" />
           
           <div className="relative mx-auto max-w-5xl px-6">
@@ -582,9 +584,9 @@ function SolucaoDetalhe() {
             {sol.features.map((f: string, idx: number) => (
               <div 
                 key={idx} 
-                className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300"
+                className="feature-card flex items-start gap-4 p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/25 transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded-xl bg-[color:var(--brand-orange)]/8 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-xs font-bold">
+                <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/8 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-xs font-bold">
                   {(idx + 1).toString().padStart(2, "0")}
                 </div>
                 <div>
@@ -715,34 +717,49 @@ function SolucaoDetalhe() {
         )}
 
         {/* CTA section */}
-        <section className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-16 relative overflow-hidden border-t border-[color:var(--brand-ink)]/10">
-          <div className="bg-grid absolute inset-0 opacity-15" />
-          <div className="relative mx-auto max-w-4xl px-6 text-center space-y-6">
-            <Sparkles className="w-10 h-10 text-[color:var(--brand-orange)] mx-auto animate-pulse" />
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Comece a usar o {sol.title} hoje mesmo
+        <section className="relative overflow-hidden py-20 md:py-28">
+          <div className="absolute inset-0 bg-[color:var(--brand-ink)]" />
+          <div className="absolute inset-0 opacity-30 pointer-events-none"
+            style={{ background: "radial-gradient(60% 50% at 80% 0%, oklch(0.7 0.19 45 / 0.5), transparent 60%), radial-gradient(50% 40% at 20% 100%, oklch(0.623 0.106 195.8 / 0.4), transparent 60%)" }}
+          />
+          <div className="bg-grid absolute inset-0 opacity-10" />
+          <div className="relative mx-auto max-w-4xl px-6 text-center space-y-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/15 bg-[color:var(--brand-sand)]/8 px-4 py-1.5 text-sm text-[color:var(--brand-sand)]/70">
+              <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse" />
+              Comece hoje, sem burocracia
+            </div>
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[color:var(--brand-sand)] leading-[1.02]">
+              Comece a usar o{" "}
+              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">{sol.title}</span>
+              {" "}hoje mesmo
             </h2>
-            <p className="text-sm text-[color:var(--brand-sand)]/70 max-w-md mx-auto">
-              Experimente toda a inteligência e automação da Microsistec. Leva menos de 30 segundos para configurar sua carteira imobiliária.
+            <p className="text-base text-[color:var(--brand-sand)]/60 max-w-md mx-auto">
+              Experimente toda a inteligência e automação da Microsistec. Leva menos de 30 segundos para configurar.
             </p>
-            <div className="pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               {sol.slug === "albert-ia" ? (
                 <a
                   href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-elev decoration-none no-underline"
+                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-base hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev decoration-none no-underline"
                 >
-                  Converse com o Albert agora mesmo <ArrowRight className="w-4 h-4" />
+                  Converse com o Albert agora <ArrowRight className="w-4 h-4" />
                 </a>
               ) : (
                 <button
                   onClick={openModal}
-                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-elev"
+                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-base hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev"
                 >
                   Ativar Teste 14 Dias Grátis <ArrowRight className="w-4 h-4" />
                 </button>
               )}
+              <a
+                href="/solucoes"
+                className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/20 text-[color:var(--brand-sand)]/70 px-7 py-4 font-medium text-base hover:bg-[color:var(--brand-sand)]/10 transition decoration-none no-underline"
+              >
+                Ver todas as soluções
+              </a>
             </div>
           </div>
         </section>
@@ -1283,13 +1300,6 @@ const v8Clients: V8Client[] = [
     tags: ["Tradição", "CDN Edge", "Carregamento Rápido"]
   },
   {
-    name: "Isidório Imóveis",
-    url: "https://isidorioimoveis.com.br/",
-    desc: "Especialista em lançamentos e alto padrão, oferecendo uma experiência visual limpa e luxuosa.",
-    perf: { mobile: 97, desktop: 99, seo: 100 },
-    tags: ["Lançamentos", "Alto Padrão", "Aesthetics"]
-  },
-  {
     name: "G3 Negócios",
     url: "https://negociosg3.com.br/",
     desc: "Foco total na conversão de leads comerciais e residenciais com integração em tempo real de WhatsApp.",
@@ -1325,11 +1335,11 @@ const v8Clients: V8Client[] = [
     tags: ["SEO Local", "Captação", "Google Rankings"]
   },
   {
-    name: "Monaco Brokers",
-    url: "https://monacobrokers.com.br/",
-    desc: "Corretora boutique de investimentos imobiliários com layout executivo premium focado em investidores.",
-    perf: { mobile: 99, desktop: 100, seo: 100 },
-    tags: ["Investimentos", "Boutique", "Layout Executivo"]
+    name: "Robles Imobiliária",
+    url: "https://roblesimobiliariasp.com.br/",
+    desc: "Imobiliária moderna com portfólio diversificado e experiência digital premium voltada ao cliente urbano.",
+    perf: { mobile: 98, desktop: 100, seo: 100 },
+    tags: ["Moderno", "Experiência Premium", "Conversão"]
   }
 ];
 

@@ -15,7 +15,7 @@ function PlanosPage() {
   const plans = [
     {
       id: "essencial",
-      name: "Essencial (2u + 2App)",
+      name: "Essencial",
       desc: "Pequenas imobiliárias e autônomos",
       price: isAnnual ? "252" : "315",
       users: "2 usuários e 2 Apps",
@@ -32,10 +32,10 @@ function PlanosPage() {
     },
     {
       id: "profissional",
-      name: "Profissional (5u + 1 App)",
+      name: "Profissional",
       isPopular: true,
       desc: "Imobiliárias de médio porte",
-      price: isAnnual ? "855,68" : "1.069,60",
+      price: isAnnual ? "574" : "718",
       users: "5 usuários e 1 App",
       limit: "Até 1.500 imóveis",
       features: [
@@ -50,9 +50,9 @@ function PlanosPage() {
     },
     {
       id: "avancado",
-      name: "Avançado (10u + 1 App)",
+      name: "Avançado",
       desc: "Imobiliárias de grande porte",
-      price: isAnnual ? "1.054,40" : "1.318,00",
+      price: isAnnual ? "1.006" : "1.258",
       users: "10 usuários e 1 App",
       limit: "Até 5.000 imóveis",
       features: [
@@ -67,9 +67,9 @@ function PlanosPage() {
     },
     {
       id: "corporativo",
-      name: "Corporativo (20u + 1 App)",
+      name: "Corporativo",
       desc: "Grandes imobiliárias e redes",
-      price: isAnnual ? "1.928" : "2.410",
+      price: isAnnual ? "1.880" : "2.350",
       users: "20 usuários e 1 App",
       limit: "Imóveis Ilimitados",
       features: [
@@ -127,7 +127,7 @@ function PlanosPage() {
       
       <main>
         {/* Header Section */}
-        <section className="relative overflow-hidden bg-hero py-20 md:py-28 border-b border-[color:var(--brand-ink)]/10">
+        <section className="relative overflow-hidden bg-hero py-24 md:py-36 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-5xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
@@ -273,14 +273,14 @@ function PlanosPage() {
               Ainda não tem certeza?
             </h2>
             <p className="text-lg text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
-              Teste o CRM gratuitamente por 14 dias. Sem cartão de crédito, sem compromisso. Sinta a diferença de uma ferramenta feita por quem entende de imóveis.
+              Fale com nosso especialista agora e monte a solução ideal para a sua imobiliária, tirando todas as suas dúvidas operacionais.
             </p>
             <div className="pt-4">
               <button
                 onClick={openModal}
                 className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:brightness-110 transition cursor-pointer border-none shadow-elev"
               >
-                Ativar Meu Teste Grátis <ArrowRight className="w-5 h-5" />
+                Falar com especialista <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
