@@ -168,6 +168,10 @@
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "ss01", "cv11";
   }
+
+  svg.lucide {
+    stroke-width: 1.5 !important;
+  }
 }
 
 @layer utilities {

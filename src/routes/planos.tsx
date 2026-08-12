@@ -129,7 +129,7 @@ function PlanosPage() {
         {/* Header Section */}
         <section className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
-          <div className="relative mx-auto max-w-5xl px-6 text-center space-y-6">
+          <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
               Preços e Planos
             </span>

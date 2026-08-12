@@ -25,7 +25,14 @@ function BlogIndex() {
   const [selectedTag, setSelectedTag] = React.useState("Todas");
 
   // Extract all unique tags
-  const tags = ["Todas", ...new Set(blogPosts.map((p) => p.tag))];
+  const tags = [
+    "Todas",
+    "Gestão Comercial",
+    "Gestão imobiliária",
+    "Inovação",
+    "Marketing Imobiliário",
+    "Mercado Imobiliário"
+  ];
 
   // Filter posts
   const filteredPosts = blogPosts.filter((post) => {
@@ -44,7 +51,7 @@ function BlogIndex() {
         {/* Blog Header Hero */}
         <section className="relative overflow-hidden bg-hero pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
-          <div className="relative mx-auto max-w-5xl px-6 text-center space-y-4">
+          <div className="relative mx-auto max-w-7xl px-6 text-center space-y-4">
             <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
               Conteúdo de Valor
             </span>
@@ -62,7 +69,7 @@ function BlogIndex() {
         </section>
 
         {/* Filters and Search Strip */}
-        <section className="mx-auto max-w-5xl px-6 mt-12 mb-8">
+        <section className="mx-auto max-w-7xl px-6 mt-12 mb-8">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-6 border-b border-[color:var(--brand-ink)]/10">
             {/* Tag Pills */}
             <div className="flex flex-wrap gap-2 w-full md:w-auto">
@@ -96,7 +103,7 @@ function BlogIndex() {
         </section>
 
         {/* Blog Post List */}
-        <section className="mx-auto max-w-5xl px-6">
+        <section className="mx-auto max-w-7xl px-6">
           {filteredPosts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
@@ -118,6 +125,10 @@ function BlogIndex() {
                       src={post.imageUrl}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={500}
                       onError={(e) => {
                         e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
                       }}

@@ -129,7 +129,7 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
   if (!data) return null;
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+    <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
       <div className="border-t border-[color:var(--brand-ink)]/8 pt-14 md:pt-20">
         <div className="space-y-3 mb-12">
           <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -182,7 +182,7 @@ function SolutionMetrics({ slug }: { slug: string }) {
   if (!metrics) return null;
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-14 md:pb-20">
+    <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-20">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metrics.map((m, i) => (
           <div key={i} className="relative bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-8 flex flex-col items-center gap-1 text-center overflow-hidden group feature-card border border-[color:var(--brand-ink)]">
@@ -248,7 +248,7 @@ function SolutionForWho({ slug }: { slug: string }) {
   if (!profiles) return null;
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-14 md:pb-20">
+    <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-20">
       <div className="mb-8">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Para quem é
@@ -336,7 +336,7 @@ function SolutionFAQ({ slug }: { slug: string }) {
   if (!faqs) return null;
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+    <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
       <div className="mb-8">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Perguntas frequentes
@@ -471,7 +471,7 @@ function SolucaoDetalhe() {
         <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/8">
           <div className="bg-grid absolute inset-0" />
           
-          <div className="relative mx-auto max-w-5xl px-6">
+          <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
               <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground">
                 Home
@@ -570,7 +570,7 @@ function SolucaoDetalhe() {
         </section>
 
         {/* Detailed Features Grid */}
-        <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="space-y-4 mb-12">
             <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
               O que está incluso
@@ -613,7 +613,7 @@ function SolucaoDetalhe() {
 
         {sol.slug === "integracoes" && (
 
-          <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
+          <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
             <div className="border-t border-[color:var(--brand-ink)]/10 pt-16 md:pt-24 space-y-8">
               
               {/* Header */}
@@ -868,7 +868,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
 
   return (
     <>
-      <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+      <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
         
           {/* Texts */}
@@ -996,7 +996,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
       </section>
 
       {/* Albert capabilities section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
+      <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
         <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
           <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
             A única IA para imobiliárias com um coração
@@ -1198,7 +1198,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
   const [selectedTheme, setSelectedTheme] = React.useState<ThemeTemplate | null>(null);
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Catálogo Oficial de Temas
@@ -1345,7 +1345,7 @@ const v8Clients: V8Client[] = [
 
 function SitesV8SubSection({ openModal }: { openModal: () => void }) {
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Showcase Imobiliário Real
@@ -1463,7 +1463,7 @@ function CRMSubSection() {
   ];
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       {/* Header */}
       <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
@@ -1622,7 +1622,7 @@ function AppSubSection() {
   ];
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       <div className="grid lg:grid-cols-12 gap-10 items-center">
         
         {/* Visual Phone mockup */}
@@ -1874,7 +1874,7 @@ function FunilSubSection() {
   const funnel = funnels[activeFunnel];
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
       {/* Header */}
       <div className="space-y-4 mb-10 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -2028,7 +2028,7 @@ function RodizioSubSection() {
   };
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       {/* Header */}
       <div className="space-y-6 mb-14 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">

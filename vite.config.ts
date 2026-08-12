@@ -13,11 +13,27 @@ export default defineConfig({
     },
   },
   build: {
+    // Target modern browsers for smaller bundles
+    target: "es2020",
+    // Enable CSS minification
+    cssMinify: true,
+    // Smaller chunks for better caching
     rollupOptions: {
       onwarn(warning, warn) {
         if (warning.code === 'UNUSED_EXTERNAL_IMPORT' && warning.message.includes('@tanstack/router-core')) return;
         warn(warning);
-      }
-    }
-  }
+      },
+      output: {
+        // Split vendor libraries into separate chunks
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("lucide-react")) return "icons";
+            if (id.includes("@radix-ui") || id.includes("@tanstack/react-query")) return "ui";
+            if (id.includes("@tanstack/react-router") || id.includes("@tanstack/router")) return "router";
+            return "vendor";
+          }
+        },
+      },
+    },
+  },
 });

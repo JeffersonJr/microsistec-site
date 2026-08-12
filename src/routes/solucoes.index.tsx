@@ -43,7 +43,7 @@ function SolucoesIndex() {
         <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/8">
           <div className="bg-grid absolute inset-0" />
 
-          <div className="relative mx-auto max-w-5xl px-6">
+          <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
               <Link
                 to="/"
@@ -75,7 +75,7 @@ function SolucoesIndex() {
 
         {/* Stats strip */}
         <section className="border-b border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-ink)]">
-          <div className="mx-auto max-w-5xl px-6 py-6 grid grid-cols-3 divide-x divide-[color:var(--brand-sand)]/10">
+          <div className="mx-auto max-w-7xl px-6 py-6 grid grid-cols-3 divide-x divide-[color:var(--brand-sand)]/10">
             {[
               { icon: Building2, value: `${activeSolutions.length}`, label: "Soluções integradas" },
               { icon: Users,     value: "1.2K",                      label: "Imobiliárias ativas" },
@@ -91,7 +91,7 @@ function SolucoesIndex() {
         </section>
 
         {/* Solutions Grid */}
-        <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="mb-10">
             <p className="text-xs font-mono-ui uppercase tracking-widest text-muted-foreground">
               {activeSolutions.length} soluções disponíveis
@@ -188,7 +188,7 @@ function SolucoesIndex() {
 
         {/* CTA band */}
         <section className="bg-[color:var(--brand-ink)] border-t border-white/5">
-          <div className="mx-auto max-w-5xl px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="mx-auto max-w-7xl px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--brand-sand)] tracking-tight">
                 Pronto para explorar o ecossistema?

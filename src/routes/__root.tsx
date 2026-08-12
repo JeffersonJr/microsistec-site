@@ -170,19 +170,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994" },
-      { name: "description", content: "A solução perfeita para corretores autônomos e imobiliárias." },
+      { name: "description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores. A proptech pioneira no Brasil desde 1994." },
       { name: "author", content: "Microsistec" },
-      { property: "og:title", content: "Microsistec" },
-      { property: "og:description", content: "A proptech pioneira em tecnologia imobiliária desde 1994" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "theme-color", content: "#0e1117" },
+      // Open Graph
+      { property: "og:title", content: "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994" },
+      { property: "og:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:url", content: "https://microsistec.com.br" },
+      { property: "og:image", content: "https://microsistec.com.br/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Microsistec - Tecnologia para imobiliárias" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:site_name", content: "Microsistec" },
+      // Twitter Card
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@microsistec" },
+      { name: "twitter:title", content: "Microsistec - Tecnologia imobiliária desde 1994" },
+      { name: "twitter:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
+      { name: "twitter:image", content: "https://microsistec.com.br/og-image.png" },
     ],
     links: [
       {
         rel: "icon",
         type: "image/svg+xml",
         href: "/favicon.svg",
+      },
+      {
+        rel: "canonical",
+        href: "https://microsistec.com.br",
       },
       {
         rel: "stylesheet",
@@ -201,23 +219,27 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        {/* Preconnect critical origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://api.whatsapp.com" />
+        <link rel="dns-prefetch" href="https://intercom.help" />
+        {/* Async font load (non-blocking) */}
         <link
           rel="preload"
           as="style"
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
           media="print"
           onLoad={(e: any) => { e.currentTarget.media = 'all'; }}
         />
         <noscript>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
           />
         </noscript>
       </head>

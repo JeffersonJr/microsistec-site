@@ -37,7 +37,7 @@ function BlogLeitor() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      <main className="mx-auto max-w-5xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
+      <main className="mx-auto max-w-7xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
         {/* Breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[color:var(--brand-ink)]/10 pb-4">
           <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
@@ -113,6 +113,10 @@ function BlogLeitor() {
                 src={post.imageUrl}
                 alt={post.title}
                 className="w-full h-full object-cover"
+                width={1200}
+                height={675}
+                fetchPriority="high"
+                decoding="async"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80";
                 }}

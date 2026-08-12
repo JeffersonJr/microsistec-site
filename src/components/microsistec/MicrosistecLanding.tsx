@@ -21,6 +21,9 @@ import {
   X,
   Users,
   Home,
+  Facebook,
+  Instagram,
+  Youtube,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useDemoModal } from "@/hooks/use-demo-modal";
@@ -61,6 +64,18 @@ export function Nav() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (isMobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileOpen]);
 
   const toggleMenu = (menu: OpenMenu) => {
     setOpenMenu(prev => prev === menu ? null : menu);
@@ -125,12 +140,19 @@ export function Nav() {
             >
               Sobre
             </Link>
-            <Link
+            <Link 
               to="/blog"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Blog
+            </Link>
+            <Link 
+              to="/materiais"
+              onClick={() => setOpenMenu(null)}
+              className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+            >
+              Materiais
             </Link>
           </nav>
 
@@ -363,91 +385,80 @@ export function Nav() {
 
       {/* Mobile drawer */}
       {isMobileOpen && (
-        <div className="md:hidden pointer-events-auto mx-4 mt-2 bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/12 rounded-2xl shadow-elev overflow-y-auto max-h-[calc(100dvh-5rem)] animate-fadeIn">
-          <div className="px-4 py-5 flex flex-col gap-5 text-[color:var(--brand-ink)]">
+        <div className="md:hidden fixed inset-0 top-[54px] bg-[color:var(--brand-sand)] z-40 pointer-events-auto overflow-hidden animate-fadeIn flex flex-col">
+          <div className="flex-1 px-5 py-5 flex flex-col gap-5 text-[color:var(--brand-ink)]">
 
-            {/* Soluções */}
+            {/* Soluções — 2 cols compacto */}
             <div>
-              <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60 px-2 mb-2 block">Soluções</span>
-              <div className="grid grid-cols-1">
+              <span className="text-[9px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 mb-2 block">Soluções</span>
+              <div className="grid grid-cols-2 gap-1.5">
                 {solutions.map((sol) => {
                   const IconComp = getIconComponent(sol.iconName);
-                  const isComingSoon = sol.ctaText === "Em Breve";
-                  if (isComingSoon) return null;
+                  if (sol.ctaText === "Em Breve") return null;
                   return (
                     <Link
                       key={sol.slug}
                       to="/solucoes/$slug"
                       params={{ slug: sol.slug }}
                       onClick={() => setIsMobileOpen(false)}
-                      className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition"
+                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/60 border border-[color:var(--brand-ink)]/6 text-sm font-semibold hover:border-[color:var(--brand-orange)]/30 hover:bg-white transition no-underline text-[color:var(--brand-ink)]"
                     >
-                      <div className="w-7 h-7 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
-                        <IconComp className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
-                      </div>
-                      {sol.title}
+                      <IconComp className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
+                      <span className="truncate text-xs font-semibold">{sol.title}</span>
                     </Link>
                   );
                 })}
               </div>
             </div>
 
-            <hr className="border-[color:var(--brand-ink)]/8" />
+            <div className="h-px bg-[color:var(--brand-ink)]/8" />
 
-            {/* Planos */}
-            <div>
-              <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60 px-2 mb-2 block">Planos</span>
-              <div className="grid grid-cols-1">
+            {/* Nav links — 2 cols */}
+            <div className="grid grid-cols-2 gap-1.5">
+              {([
+                { label: "Planos CRM", to: "/planos" },
+                { label: "Albert IA", to: "/planos-albert" },
+                { label: "Sobre nós", to: "/empresa" },
+                { label: "Blog", to: "/blog" },
+                { label: "Materiais", to: "/materiais" },
+              ] as { label: string; to: "/planos" | "/planos-albert" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
                 <Link
-                  to="/planos"
+                  key={item.to}
+                  to={item.to}
                   onClick={() => setIsMobileOpen(false)}
-                  className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition"
+                  className="flex items-center px-3 py-3 rounded-xl text-sm font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/6 transition no-underline"
                 >
-                  <div className="w-7 h-7 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
-                    <Building2 className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
-                  </div>
-                  CRM Imobiliário
+                  {item.label}
                 </Link>
-                <Link
-                  to="/planos-albert"
-                  onClick={() => setIsMobileOpen(false)}
-                  className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition"
-                >
-                  <div className="w-7 h-7 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
-                    <Bot className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
-                  </div>
-                  Albert IA
-                </Link>
-              </div>
-            </div>
-
-            <hr className="border-[color:var(--brand-ink)]/8" />
-
-            {/* Links gerais */}
-            <div className="grid grid-cols-1 gap-0.5">
-              <Link to="/empresa" onClick={() => setIsMobileOpen(false)}
-                className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition">
-                Sobre nós
-              </Link>
-              <Link to="/blog" onClick={() => setIsMobileOpen(false)}
-                className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition">
-                Blog
-              </Link>
-              <a href="https://imob.online/" target="_blank" rel="noreferrer"
-                className="flex items-center gap-3 px-2 py-2.5 rounded-xl text-sm font-semibold hover:bg-[color:var(--brand-ink)]/5 transition">
-                Entrar no sistema
+              ))}
+              <a
+                href="https://imob.online/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center px-3 py-3 rounded-xl text-sm font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/6 transition no-underline"
+              >
+                Entrar
               </a>
             </div>
+          </div>
 
-            {/* CTA */}
+          {/* Bottom actions — thumb zone */}
+          <div className="px-5 pb-8 pt-3 flex flex-col gap-3 border-t border-[color:var(--brand-ink)]/8">
             <a
               href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
               target="_blank"
               rel="noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-3.5 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-4 transition cursor-pointer border-none no-underline active:scale-[0.98]"
             >
               Falar com especialista <ArrowUpRight className="w-4 h-4" />
             </a>
+            <button
+              onClick={() => setIsMobileOpen(false)}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-ink)]/8 text-[color:var(--brand-ink)] text-sm font-semibold py-4 hover:bg-[color:var(--brand-ink)]/12 transition cursor-pointer border-none active:scale-[0.98]"
+              aria-label="Fechar menu"
+            >
+              <X className="w-4 h-4" /> Fechar
+            </button>
           </div>
         </div>
       )}
@@ -492,7 +503,7 @@ function Hero() {
           </h1>
 
           {/* proof badge */}
-          <div className="lg:col-span-3 flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <div className="hidden lg:flex lg:col-span-3 justify-end mt-6 lg:mt-0">
             <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-4 max-w-[200px] shadow-card select-none border border-white/5">
               <div className="font-mono-ui text-[9px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2 opacity-80">
                 Desde 1994
@@ -505,13 +516,13 @@ function Hero() {
         </div>
 
         {/* sub + CTAs */}
-        <div className="mt-10 lg:mt-12 grid md:grid-cols-12 gap-6 items-center">
-          <p className="md:col-span-7 text-base md:text-lg text-foreground/60 leading-relaxed">
+        <div className="mt-8 lg:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start md:items-center">
+          <p className="md:col-span-7 text-base md:text-lg text-foreground/75 leading-relaxed">
             Como pioneiros em trazer tecnologia para o setor imobiliário brasileiro, unimos CRM completo, site, app de atendimento, automações e o{" "}
             <strong className="text-foreground">Albert IA</strong>, uma inteligência artificial
             que age como um clone do seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
-          <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-3 md:justify-end">
+          <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
             <a
               href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
               target="_blank"
@@ -1107,7 +1118,7 @@ export function Footer() {
   return (
     <footer className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
               <img src="/icon.svg" alt="Microsistec Logo" className="w-8 h-8 object-contain" />
@@ -1149,7 +1160,23 @@ export function Footer() {
               { label: "Sobre", to: "/empresa" },
               { label: "Planos", to: "/planos" },
               { label: "Blog", to: "/blog" },
+              { label: "Materiais", to: "/materiais" },
               { label: "Falar no WhatsApp", to: "https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0" },
+            ]}
+          />
+          <FooterCol
+            title="Contato"
+            links={[
+              { label: "financeiro@microsistec.com.br", to: "mailto:financeiro@microsistec.com.br" },
+              { label: "suporte@microsistec.com.br", to: "mailto:suporte@microsistec.com.br" },
+            ]}
+          />
+          <FooterCol
+            title="Redes sociais"
+            links={[
+              { label: <span className="flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</span>, to: "https://www.facebook.com/Microsistec/" },
+              { label: <span className="flex items-center gap-2"><Youtube className="w-4 h-4" /> Youtube</span>, to: "https://www.youtube.com/c/microsistec" },
+              { label: <span className="flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</span>, to: "https://www.instagram.com/microsistec.com.br" },
             ]}
           />
         </div>
@@ -1167,14 +1194,14 @@ function FooterCol({
   links
 }: {
   title: string;
-  links: { label: string; to: string; params?: any }[]
+  links: { label: React.ReactNode; to: string; params?: any }[]
 }) {
   return (
     <div>
       <h3 className="font-semibold mb-4 text-base">{title}</h3>
       <ul className="space-y-2 text-muted-foreground text-sm">
-        {links.map((link) => (
-          <li key={link.label}>
+        {links.map((link, idx) => (
+          <li key={idx}>
             {link.to.startsWith("http") || link.to.startsWith("#") || link.to.startsWith("/#") ? (
               <a href={link.to} className="hover:text-[color:var(--brand-orange)] transition">
                 {link.label}

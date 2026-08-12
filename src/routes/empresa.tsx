@@ -75,7 +75,7 @@ function Empresa() {
         {/* Editorial Hero */}
         <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
-          <div className="relative mx-auto max-w-5xl px-6 text-center space-y-6">
+          <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
               Fundada em 1994
             </span>
@@ -94,7 +94,7 @@ function Empresa() {
         </section>
 
         {/* Story Section & Timeline */}
-        <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="grid md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5 md:sticky md:top-24 space-y-6">
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl block">
@@ -138,7 +138,7 @@ function Empresa() {
 
         {/* Values Block */}
         <section className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10 py-20 md:py-28">
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-7xl px-6">
             <div className="text-center space-y-3 mb-16">
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
                 Nossos valores
@@ -183,7 +183,7 @@ function Empresa() {
         </section>
 
         {/* CTA section */}
-        <section className="mx-auto max-w-5xl px-6 py-20 text-center space-y-6">
+        <section className="mx-auto max-w-7xl px-6 py-20 text-center space-y-6">
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
             Pronto para impulsionar sua imobiliária?
           </h2>
