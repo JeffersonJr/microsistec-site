@@ -34,11 +34,11 @@ export function CookieBanner() {
         <div className="text-sm leading-relaxed text-gray-600">
           <p>
             Utilizamos cookies para melhorar a sua experiência em nosso site, personalizar conteúdo e anúncios. Ao continuar navegando, você concorda com a nossa{" "}
-            <Link to="/politica-de-privacidade" className="text-[#ff6b35] font-medium hover:underline underline-offset-2">
+            <Link to="/politica-de-privacidade" className="text-[#c2410c] font-medium hover:underline underline-offset-2">
               Política de Privacidade
             </Link>{" "}
             e{" "}
-            <Link to="/politica-de-cookies" className="text-[#ff6b35] font-medium hover:underline underline-offset-2">
+            <Link to="/politica-de-cookies" className="text-[#c2410c] font-medium hover:underline underline-offset-2">
               Política de Cookies
             </Link>.
           </p>

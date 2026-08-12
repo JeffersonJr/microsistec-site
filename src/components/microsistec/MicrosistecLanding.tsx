@@ -98,7 +98,7 @@ export function Nav() {
             <div className="flex items-baseline gap-0.5">
               microsistec
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
-              <span className="text-[10px] text-muted-foreground/60 self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+              <span className="text-[10px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
             </div>
           </Link>
 
@@ -546,7 +546,7 @@ function Hero() {
           {/* proof badge */}
           <div className="hidden lg:flex lg:col-span-3 justify-end mt-6 lg:mt-0">
             <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-4 max-w-[200px] shadow-card select-none border border-white/5">
-              <div className="font-mono-ui text-[9px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2 opacity-80">
+              <div className="font-mono-ui text-[9px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2">
                 Desde 1994
               </div>
               <p className="font-serif-italic text-base leading-[1.35] text-[color:var(--brand-sand)]/85">
@@ -873,7 +873,7 @@ function Funil() {
     <section id="funil" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
-          <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl mb-3 block">
+          <span className="font-serif-italic text-[#c2410c] text-xl mb-3 block">
             sobre tempo
           </span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
@@ -916,7 +916,7 @@ function FunnelVisual() {
           <Building2 className="w-4 h-4" />
           <span className="font-mono-ui text-sm font-medium">imob.online / funil</span>
         </div>
-        <span className="font-mono-ui text-sm text-[color:var(--brand-teal)] font-bold">
+        <span className="font-mono-ui text-sm text-emerald-700 font-bold">
           +24% MoM
         </span>
       </div>
@@ -929,7 +929,9 @@ function FunnelVisual() {
             </div>
             <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className="h-full flex items-center px-3 text-sm font-bold font-mono-ui text-[color:var(--brand-sand)] transition-all"
+                className={`h-full flex items-center px-3 text-sm font-bold font-mono-ui transition-all ${
+                  i === stages.length - 1 ? "text-[color:var(--brand-ink)]" : "text-[color:var(--brand-sand)]"
+                }`}
                 style={{
                   width: s.w,
                   background:
