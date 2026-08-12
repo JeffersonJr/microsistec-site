@@ -28,24 +28,6 @@ export default function Testimonial() {
                   <CarouselItem key={t.id}>
                     <blockquote className="text-2xl md:text-4xl font-serif-italic leading-[1.2] tracking-[-0.01em]">
                       "{t.quote}"
-                      <footer className="not-italic mt-6 flex items-center gap-3 text-sm font-sans text-muted-foreground">
-                        <img
-                          src={t.avatarUrl}
-                          alt={t.author}
-                          width={40}
-                          height={40}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-10 h-10 rounded-full object-cover border border-[color:var(--brand-ink)]/10 shrink-0"
-                          onError={(e) => {
-                            e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
-                          }}
-                        />
-                        <div>
-                          <div className="font-semibold text-foreground">{t.author}</div>
-                          <div>{t.role}, {t.company} · {t.location}</div>
-                        </div>
-                      </footer>
                     </blockquote>
                   </CarouselItem>
                 ))}

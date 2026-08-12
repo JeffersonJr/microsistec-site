@@ -245,9 +245,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 import { DemoModalProvider } from "@/hooks/use-demo-modal";
-import { DemoModal } from "@/components/microsistec/DemoModal";
+const DemoModal = React.lazy(() => import("@/components/microsistec/DemoModal").then((m) => ({ default: m.DemoModal })));
 import { CookieBanner } from "@/components/microsistec/CookieBanner";
-import { WhatsAppButton } from "@/components/microsistec/WhatsAppButton";
+
 
 import Intercom from "@intercom/messenger-js-sdk";
 
@@ -297,9 +297,10 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <DemoModalProvider>
         <Outlet />
-        <DemoModal />
+        <React.Suspense fallback={null}>
+          <DemoModal />
+        </React.Suspense>
         <CookieBanner />
-        <WhatsAppButton />
       </DemoModalProvider>
     </QueryClientProvider>
   );
