@@ -1203,6 +1203,8 @@ export function Footer() {
               { label: "Blog", to: "/blog" },
               { label: "Materiais", to: "/materiais" },
               { label: "Falar no WhatsApp", to: "https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0" },
+              { label: "Política de Privacidade", to: "/politica-de-privacidade" },
+              { label: "Política de Cookies", to: "/politica-de-cookies" },
             ]}
           />
           <FooterCol

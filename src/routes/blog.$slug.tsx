@@ -136,7 +136,7 @@ function BlogLeitor() {
             {/* Content Injection */}
             <div 
               className="prose max-w-none text-foreground/90 mt-8 leading-relaxed space-y-6 text-base"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: post.content || '' }}
             />
 
             {/* Bottom Back Nav */}
