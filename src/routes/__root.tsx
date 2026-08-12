@@ -249,7 +249,7 @@ const DemoModal = React.lazy(() => import("@/components/microsistec/DemoModal").
 import { CookieBanner } from "@/components/microsistec/CookieBanner";
 
 
-import Intercom from "@intercom/messenger-js-sdk";
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -259,10 +259,11 @@ function RootComponent() {
 
     let initialized = false;
 
-    const initIntercom = () => {
+    const initIntercom = async () => {
       if (initialized) return;
       initialized = true;
       try {
+        const { default: Intercom } = await import("@intercom/messenger-js-sdk");
         Intercom({
           app_id: "mjj9j4fs",
         });
