@@ -219,29 +219,15 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
-        {/* Preconnect critical origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
-        <link rel="dns-prefetch" href="https://intercom.help" />
-        {/* Async font load (non-blocking) */}
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-        />
+        
+        {/* Optimized Font Loading */}
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-          media="print"
-          onLoad={(e: any) => { e.currentTarget.media = 'all'; }}
         />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-          />
-        </noscript>
       </head>
       <body suppressHydrationWarning>
         {children}

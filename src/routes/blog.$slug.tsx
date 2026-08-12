@@ -81,6 +81,10 @@ function BlogLeitor() {
               <img
                 src={post.author.avatarUrl}
                 alt={post.author.name}
+                width={40}
+                height={40}
+                loading="lazy"
+                decoding="async"
                 className="w-10 h-10 rounded-full object-cover border border-[color:var(--brand-ink)]/10"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
