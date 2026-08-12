@@ -94,7 +94,7 @@ export function Nav() {
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
-            <img src="/icon.svg" alt="Microsistec Logo" className="w-8 h-8 object-contain" />
+            <img src="/icon.svg" alt="Microsistec Logo" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
             <div className="flex items-baseline gap-0.5">
               microsistec
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
@@ -383,15 +383,46 @@ export function Nav() {
         )}
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile menu — bottom sheet pattern */}
       {isMobileOpen && (
-        <div className="md:hidden fixed inset-0 top-[54px] bg-[color:var(--brand-sand)] z-40 pointer-events-auto overflow-hidden animate-fadeIn flex flex-col">
-          <div className="flex-1 px-5 py-5 flex flex-col gap-5 text-[color:var(--brand-ink)]">
+        <>
+          {/* Backdrop — tap to close */}
+          <div
+            className="md:hidden fixed inset-0 bg-[color:var(--brand-ink)]/30 backdrop-blur-sm z-30 animate-fadeIn pointer-events-auto"
+            onClick={() => setIsMobileOpen(false)}
+            aria-hidden="true"
+          />
 
-            {/* Soluções — 2 cols compacto */}
-            <div>
-              <span className="text-[9px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 mb-2 block">Soluções</span>
-              <div className="grid grid-cols-2 gap-1.5">
+          {/* Bottom sheet */}
+          <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 animate-fadeIn pointer-events-auto">
+            <div className="bg-[color:var(--brand-sand)] rounded-t-[28px] shadow-2xl border-t border-[color:var(--brand-ink)]/8">
+
+              {/* Header com pull bar e botão de fechar */}
+              <div className="relative flex justify-center pt-3.5 pb-2">
+                {/* Pull bar */}
+                <button
+                  onClick={() => setIsMobileOpen(false)}
+                  className="w-full flex justify-center border-none bg-transparent cursor-pointer"
+                  aria-label="Fechar menu"
+                >
+                  <span className="w-10 h-1.5 rounded-full bg-[color:var(--brand-ink)]/20 block" />
+                </button>
+                
+                {/* Close 'X' Button */}
+                <button
+                  onClick={() => setIsMobileOpen(false)}
+                  className="absolute right-4 top-3.5 w-8 h-8 flex items-center justify-center rounded-full bg-[color:var(--brand-ink)]/5 text-[color:var(--brand-ink)]/60 hover:bg-[color:var(--brand-ink)]/10 hover:text-[color:var(--brand-ink)] transition-colors border-none cursor-pointer"
+                  aria-label="Fechar menu"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="overflow-y-auto px-4 pb-2" style={{ maxHeight: "60vh" }}>
+
+                {/* Soluções */}
+                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mt-1 mb-0.5">Soluções</p>
                 {solutions.map((sol) => {
                   const IconComp = getIconComponent(sol.iconName);
                   if (sol.ctaText === "Em Breve") return null;
@@ -401,66 +432,76 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: sol.slug }}
                       onClick={() => setIsMobileOpen(false)}
-                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/60 border border-[color:var(--brand-ink)]/6 text-sm font-semibold hover:border-[color:var(--brand-orange)]/30 hover:bg-white transition no-underline text-[color:var(--brand-ink)]"
+                      className="flex items-center gap-3.5 px-2 rounded-2xl hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline text-[color:var(--brand-ink)]"
+                      style={{ minHeight: 52 }}
                     >
-                      <IconComp className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0" />
-                      <span className="truncate text-xs font-semibold">{sol.title}</span>
+                      <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
+                        <IconComp className="w-[18px] h-[18px] text-[color:var(--brand-orange)]" />
+                      </div>
+                      <span className="text-[15px] font-semibold flex-1">{sol.title}</span>
+                      <ArrowRight className="w-4 h-4 text-[color:var(--brand-ink)]/25 shrink-0" />
                     </Link>
                   );
                 })}
+
+                {/* Divider */}
+                <div className="h-px bg-[color:var(--brand-ink)]/8 mx-1 my-2" />
+
+                {/* Outras páginas */}
+                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mb-0.5">Páginas</p>
+                {([
+                  { label: "Planos CRM", to: "/planos" },
+                  { label: "Albert IA", to: "/planos-albert" },
+                  { label: "Sobre nós", to: "/empresa" },
+                  { label: "Blog", to: "/blog" },
+                  { label: "Materiais gratuitos", to: "/materiais" },
+                ] as { label: string; to: "/planos" | "/planos-albert" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setIsMobileOpen(false)}
+                    className="flex items-center gap-3.5 px-2 rounded-2xl text-[15px] font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline"
+                    style={{ minHeight: 52 }}
+                  >
+                    <span className="flex-1">{item.label}</span>
+                    <ArrowRight className="w-4 h-4 text-[color:var(--brand-ink)]/25 shrink-0" />
+                  </Link>
+                ))}
+              </div>
+
+              {/* Sticky CTAs — always in thumb zone */}
+              <div className="px-4 pt-3 pb-8 border-t border-[color:var(--brand-ink)]/8 flex flex-col gap-2.5">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline active:scale-[0.98] transition border-none"
+                  style={{ minHeight: 56 }}
+                >
+                  Falar com especialista <ArrowUpRight className="w-4 h-4" />
+                </a>
+                <div className="flex gap-2.5">
+                  <a
+                    href="https://imob.online/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 inline-flex items-center justify-center rounded-2xl bg-transparent text-[color:var(--brand-ink)] text-[15px] font-semibold no-underline active:scale-[0.98] transition border border-[color:var(--brand-ink)]/15"
+                    style={{ minHeight: 52 }}
+                  >
+                    Entrar no sistema
+                  </a>
+                  <button
+                    onClick={() => setIsMobileOpen(false)}
+                    className="flex-1 inline-flex items-center justify-center rounded-2xl bg-[color:var(--brand-ink)]/5 text-[color:var(--brand-ink)] text-[15px] font-semibold no-underline active:scale-[0.98] transition border border-transparent hover:bg-[color:var(--brand-ink)]/10 cursor-pointer"
+                    style={{ minHeight: 52 }}
+                  >
+                    Fechar menu
+                  </button>
+                </div>
               </div>
             </div>
-
-            <div className="h-px bg-[color:var(--brand-ink)]/8" />
-
-            {/* Nav links — 2 cols */}
-            <div className="grid grid-cols-2 gap-1.5">
-              {([
-                { label: "Planos CRM", to: "/planos" },
-                { label: "Albert IA", to: "/planos-albert" },
-                { label: "Sobre nós", to: "/empresa" },
-                { label: "Blog", to: "/blog" },
-                { label: "Materiais", to: "/materiais" },
-              ] as { label: string; to: "/planos" | "/planos-albert" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="flex items-center px-3 py-3 rounded-xl text-sm font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/6 transition no-underline"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href="https://imob.online/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center px-3 py-3 rounded-xl text-sm font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/6 transition no-underline"
-              >
-                Entrar
-              </a>
-            </div>
           </div>
-
-          {/* Bottom actions — thumb zone */}
-          <div className="px-5 pb-8 pt-3 flex flex-col gap-3 border-t border-[color:var(--brand-ink)]/8">
-            <a
-              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-bold py-4 transition cursor-pointer border-none no-underline active:scale-[0.98]"
-            >
-              Falar com especialista <ArrowUpRight className="w-4 h-4" />
-            </a>
-            <button
-              onClick={() => setIsMobileOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-ink)]/8 text-[color:var(--brand-ink)] text-sm font-semibold py-4 hover:bg-[color:var(--brand-ink)]/12 transition cursor-pointer border-none active:scale-[0.98]"
-              aria-label="Fechar menu"
-            >
-              <X className="w-4 h-4" /> Fechar
-            </button>
-          </div>
-        </div>
+        </>
       )}
     </header>
   );
@@ -1121,7 +1162,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
-              <img src="/icon.svg" alt="Microsistec Logo" className="w-8 h-8 object-contain" />
+              <img src="/icon.svg" alt="Microsistec Logo" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
                 microsistec
                 <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>

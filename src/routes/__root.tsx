@@ -253,6 +253,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 import { DemoModalProvider } from "@/hooks/use-demo-modal";
 import { DemoModal } from "@/components/microsistec/DemoModal";
+import { CookieBanner } from "@/components/microsistec/CookieBanner";
+import { WhatsAppButton } from "@/components/microsistec/WhatsAppButton";
 
 import Intercom from "@intercom/messenger-js-sdk";
 
@@ -280,6 +282,8 @@ function RootComponent() {
       <DemoModalProvider>
         <Outlet />
         <DemoModal />
+        <CookieBanner />
+        <WhatsAppButton />
       </DemoModalProvider>
     </QueryClientProvider>
   );
