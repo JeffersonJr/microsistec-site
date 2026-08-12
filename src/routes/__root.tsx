@@ -203,6 +203,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://microsistec.com.br",
       },
       {
+        rel: "preload",
+        as: "style",
+        href: appCss,
+        fetchPriority: "high",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -220,8 +226,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
         {/* Optimized Font Loading (Deferred to prevent render blocking) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="preload"
           as="style"
