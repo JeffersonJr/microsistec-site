@@ -21,20 +21,20 @@ O **imob.online** é o CRM imobiliário SaaS da Microsistec. Inclui:
 
 ## Soluções Disponíveis
 
-- `/solucoes/crm` — CRM imobiliário completo
-- `/solucoes/app` — Aplicativo móvel de gestão de leads
-- `/solucoes/funil` — Funil de vendas e automação
-- `/solucoes/integracoes` — Integrações com portais e WhatsApp
-- `/solucoes/albert-ia` — Agente de IA para atendimento autônomo
-- `/solucoes/sites-template` — Sites imobiliários com templates
-- `/solucoes/sites-v8` — Sites imobiliários premium
-- `/solucoes/rodizio` — Sistema de rodízio de leads
-- `/solucoes/locacao` — Módulo de locação
+- [/solucoes/crm](https://microsistec.com.br/solucoes/crm) — CRM imobiliário completo
+- [/solucoes/app](https://microsistec.com.br/solucoes/app) — Aplicativo móvel de gestão de leads
+- [/solucoes/funil](https://microsistec.com.br/solucoes/funil) — Funil de vendas e automação
+- [/solucoes/integracoes](https://microsistec.com.br/solucoes/integracoes) — Integrações com portais e WhatsApp
+- [/solucoes/albert-ia](https://microsistec.com.br/solucoes/albert-ia) — Agente de IA para atendimento autônomo
+- [/solucoes/sites-template](https://microsistec.com.br/solucoes/sites-template) — Sites imobiliários com templates
+- [/solucoes/sites-v8](https://microsistec.com.br/solucoes/sites-v8) — Sites imobiliários premium
+- [/solucoes/rodizio](https://microsistec.com.br/solucoes/rodizio) — Sistema de rodízio de leads
+- [/solucoes/locacao](https://microsistec.com.br/solucoes/locacao) — Módulo de locação
 
 ## Planos
 
-- `/planos` — Planos do CRM Imobiliário
-- `/planos-albert` — Planos do Albert IA
+- [/planos](https://microsistec.com.br/planos) — Planos do CRM Imobiliário
+- [/planos-albert](https://microsistec.com.br/planos-albert) — Planos do Albert IA
 
 ## Materiais Gratuitos
 
@@ -48,7 +48,7 @@ Materiais educativos gratuitos para corretores e gestores de imobiliárias:
 - Ebook: Guia de E-mail Marketing para Imobiliárias
 - Ebook: Táticas de Sucesso no Atendimento ao Cliente
 
-Acesse em: https://microsistec.com.br/materiais
+Acesse em: [Materiais](https://microsistec.com.br/materiais)
 
 ## Blog
 
@@ -60,15 +60,15 @@ O blog da Microsistec publica conteúdos sobre:
 - Instagram e redes sociais para corretores
 - Ferramentas de produtividade para imobiliárias
 
-Acesse em: https://microsistec.com.br/blog
+Acesse em: [Blog Microsistec](https://microsistec.com.br/blog)
 
 ## Contato e Suporte
 
-- Site: https://microsistec.com.br
-- Sistema: https://imob.online
-- Central de Ajuda: https://intercom.help/microsistec-ajuda/pt-BR
-- Academy (cursos): https://microsistec-academy.memberkit.com.br
-- WhatsApp Comercial: +55 (13) 99759-1781
+- Site: [microsistec.com.br](https://microsistec.com.br)
+- Sistema: [imob.online](https://imob.online)
+- Central de Ajuda: [Intercom Help](https://intercom.help/microsistec-ajuda/pt-BR)
+- Academy (cursos): [Memberkit](https://microsistec-academy.memberkit.com.br)
+- WhatsApp Comercial: [+55 (13) 99759-1781](https://wa.me/5513997591781)
 
 ## Sobre a Empresa
 

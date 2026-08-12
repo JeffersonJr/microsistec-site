@@ -1,4 +1,4 @@
-import blogPostsData from './blog-data.json';
+import blogMeta from './blog-meta.json';
 import { 
   Building2, 
   Smartphone, 
@@ -31,7 +31,7 @@ export interface BlogPost {
   tag: string;
   title: string;
   excerpt: string;
-  content: string; // HTML-rich detailed article content
+  content?: string; // HTML-rich detailed article content (Loaded asynchronously)
   date: string;
   readTime: string;
   imageUrl: string;
@@ -246,7 +246,7 @@ export const solutions: Solution[] = [
   }
 ];
 
-export const blogPosts: BlogPost[] = blogPostsData as BlogPost[];
+export { blogMeta as blogPosts };
 
 export const testimonials: Testimonial[] = [
   {
