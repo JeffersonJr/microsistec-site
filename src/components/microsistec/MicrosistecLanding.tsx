@@ -75,13 +75,16 @@ export function Nav() {
         <div className="flex h-[54px] items-center justify-between px-5">
           <Link
             to="/"
-            className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
+            className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
-            microsistec
-            <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
-            <span className="text-[10px] text-muted-foreground/60 self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+            <img src="/icon.svg" alt="Microsistec Logo" className="w-8 h-8 object-contain" />
+            <div className="flex items-baseline gap-0.5">
+              microsistec
+              <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
+              <span className="text-[10px] text-muted-foreground/60 self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
@@ -1106,10 +1109,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-baseline gap-0.5 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
-              microsistec
-              <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
-              <span className="text-[10px] text-muted-foreground/60 self-start select-none font-sans font-normal" title="Marca Registrada">®</span>
+            <Link to="/" className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
+              <img src="/icon.svg" alt="Microsistec Logo" className="w-8 h-8 object-contain" />
+              <div className="flex items-baseline gap-0.5">
+                microsistec
+                <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
+                <span className="text-[10px] text-muted-foreground/60 self-start select-none font-sans font-normal" title="Marca Registrada">®</span>
+              </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
               Proptech brasileira desde 1994. CRM, sites, app de atendimento e Albert IA
