@@ -35,6 +35,22 @@ function MaterialLandingPage() {
   const { material } = Route.useLoaderData();
   const navigate = useNavigate();
   const [step, setStep] = useState<"form" | "whatsapp">("form");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    role: "",
+  });
+  
+  const getRoleLabel = (value: string) => {
+    switch (value) {
+      case "corretor": return "Corretor(a) de Imóveis";
+      case "dono": return "Dono(a) de Imobiliária";
+      case "gerente": return "Gerente / Coordenador";
+      case "marketing": return "Marketing / Secretária(o)";
+      default: return value;
+    }
+  };
   
   // Fallbacks if data doesn't have LP specific fields
   const title = material.lpTitle || material.title;
@@ -130,19 +146,45 @@ function MaterialLandingPage() {
                     >
                       <div className="space-y-1.5">
                         <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Nome completo</label>
-                        <input required type="text" placeholder="João da Silva" className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]" />
+                        <input 
+                          required 
+                          type="text" 
+                          placeholder="João da Silva" 
+                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          value={formData.name}
+                          onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
+                        />
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-sm font-semibold text-[color:var(--brand-ink)]">E-mail de trabalho</label>
-                        <input required type="email" placeholder="joao@imobiliaria.com.br" className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]" />
+                        <input 
+                          required 
+                          type="email" 
+                          placeholder="joao@imobiliaria.com.br" 
+                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          value={formData.email}
+                          onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
+                        />
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp</label>
-                        <input required type="tel" placeholder="(11) 99999-9999" className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]" />
+                        <input 
+                          required 
+                          type="tel" 
+                          placeholder="(11) 99999-9999" 
+                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          value={formData.phone}
+                          onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
+                        />
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Cargo</label>
-                        <select required className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none">
+                        <select 
+                          required 
+                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none"
+                          value={formData.role}
+                          onChange={(e) => setFormData(p => ({ ...p, role: e.target.value }))}
+                        >
                           <option value="">Selecione uma opção...</option>
                           <option value="corretor">Corretor(a) de Imóveis</option>
                           <option value="dono">Dono(a) de Imobiliária</option>
@@ -173,7 +215,7 @@ function MaterialLandingPage() {
                     </p>
                     
                     <a 
-                      href={`https://api.whatsapp.com/send?phone=5513997591781&text=Olá! Solicitei o material ${encodeURIComponent(material.title)} no site e gostaria de acessar!`}
+                      href={`https://api.whatsapp.com/send?phone=5513997591781&text=${encodeURIComponent(`Olá! Tenho interesse no material: *${material.title}*\n\n*Meus Dados:*\nNome: ${formData.name}\nE-mail: ${formData.email}\nTelefone: ${formData.phone}\nCargo: ${getRoleLabel(formData.role)}\n\nGostaria de acessar o material!`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleWhatsAppClick}
