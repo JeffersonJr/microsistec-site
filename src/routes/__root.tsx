@@ -212,7 +212,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
           media="print"
-          // @ts-expect-error React doesn't like this but it's the standard async CSS pattern
           onLoad={(e: any) => { e.currentTarget.media = 'all'; }}
         />
         <noscript>
@@ -249,7 +248,7 @@ function RootComponent() {
           console.error("Failed to initialize Intercom:", err);
         }
       }, 4000); // 4s delay to prevent LCP/TBT blocking
-      
+
       return () => clearTimeout(timer);
     }
   }, []);

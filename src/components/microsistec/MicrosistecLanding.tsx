@@ -205,7 +205,7 @@ export function Nav() {
                   {[
                     { slug: "sites-template", title: "Sites Express", desc: "Templates otimizados em 1 dia", icon: Globe },
                     { slug: "sites-v8", title: "Sites Custom V8", desc: "Design exclusivo de alta performance", icon: Sparkles },
-                    { slug: "integracoes", title: "Integrações Meta (Facebook)", desc: "WhatsApp API e portais integrados", icon: Workflow }
+                    { slug: "integracoes", title: "Integrações", desc: "WhatsApp API e portais integrados", icon: Workflow }
                   ].map(item => (
                     <Link
                       key={item.slug}

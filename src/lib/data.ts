@@ -120,7 +120,7 @@ export const solutions: Solution[] = [
   {
     id: "integracoes",
     slug: "integracoes",
-    title: "Integrações de Portais & WhatsApp & Meta",
+    title: "Integrações de Portais, WhatsApp & Meta",
     shortDesc: "Integração bidirecional automática. Publique nos maiores portais imobiliários e gerencie conversas do WhatsApp e leads da Meta em um único painel.",
     longDesc: "Perder tempo cadastrando o mesmo imóvel em múltiplos portais, copiando dados no WhatsApp e capturando leads de Facebook/Instagram Ads de forma isolada é coisa do passado. Nossa tecnologia de integração publica seus anúncios automaticamente nos portais parceiros (ZAP, VivaReal, OLX, Imovelweb) e centraliza conversas do WhatsApp e leads da Meta para facilitar o atendimento.",
     iconName: "Workflow",
