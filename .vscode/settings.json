@@ -1,0 +1,11 @@
+{
+  // Disable the built-in CSS validator — Tailwind CSS v4 uses custom at-rules
+  // (@source, @custom-variant, @theme inline) that the standard CSS linter
+  // doesn't understand, causing false-positive errors.
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+  // Tell Tailwind IntelliSense to use v4 CSS-first config
+  "tailwindCSS.experimental.configFile": "src/styles.css"
+}
