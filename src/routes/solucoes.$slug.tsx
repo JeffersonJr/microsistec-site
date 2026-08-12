@@ -1347,10 +1347,102 @@ const v8Clients: V8Client[] = [
   }
 ];
 
+const HalfCircleDial = ({ score, label, color, maxScore = 100 }: { score: number, label: string, color: string, maxScore?: number }) => {
+  const radius = 40;
+  const circumference = 125.66; // Math.PI * 40
+  const percentage = Math.min(Math.max(score / maxScore, 0), 1);
+  const strokeDashoffset = circumference - percentage * circumference;
+  
+  const displayValue = maxScore === 100 ? score : `${score}/${maxScore}`;
+
+  return (
+    <div className="flex flex-col items-center">
+      <div className="relative w-24 h-14 overflow-hidden flex justify-center">
+        <svg className="w-24 h-24" viewBox="0 0 100 100">
+          <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="currentColor" className="text-muted/20" strokeWidth="8" strokeLinecap="round" />
+          <path 
+            d="M 10 50 A 40 40 0 0 1 90 50" 
+            fill="none" 
+            stroke={color} 
+            strokeWidth="8" 
+            strokeDasharray={circumference} 
+            strokeDashoffset={strokeDashoffset} 
+            strokeLinecap="round" 
+            style={{ transition: "stroke-dashoffset 1.5s ease-out" }} 
+          />
+        </svg>
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+          <span className="text-2xl font-bold font-mono-ui" style={{ color }}>{displayValue}</span>
+        </div>
+      </div>
+      <span className="mt-3 text-[10px] uppercase font-bold text-muted-foreground text-center leading-tight h-8 max-w-[80px]">{label}</span>
+    </div>
+  );
+};
+
+const PageSpeedComparison = () => {
+  const metrics = [
+    { label: "Desempenho", before: 42, colorBefore: "#f87171", after: 100, colorAfter: "#10b981", max: 100 },
+    { label: "Acessibilidade", before: 68, colorBefore: "#fbbf24", after: 100, colorAfter: "#10b981", max: 100 },
+    { label: "Práticas recomendadas", before: 72, colorBefore: "#fbbf24", after: 100, colorAfter: "#10b981", max: 100 },
+    { label: "SEO", before: 65, colorBefore: "#fbbf24", after: 100, colorAfter: "#10b981", max: 100 },
+    { label: "Navegação agêntica", before: 0, colorBefore: "#f87171", after: 4, colorAfter: "#10b981", max: 4 },
+  ];
+
+  return (
+    <div className="w-full mx-auto max-w-5xl px-6 py-16">
+      <div className="text-center mb-10">
+        <h3 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-4">
+          A diferença invisível que <span className="text-[color:var(--brand-orange)]">muda tudo</span>.
+        </h3>
+        <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+          Sites comuns de imobiliárias perdem vendas antes mesmo de carregar. Veja o salto técnico que os Sites V8 da Microsistec proporcionam aos olhos do Google.
+        </p>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-8 items-center bg-[color:var(--brand-ink)]/5 p-8 rounded-3xl border border-[color:var(--brand-ink)]/10">
+        {/* Antes */}
+        <div className="flex-1 flex flex-col items-center">
+          <span className="bg-red-500/10 text-red-600 font-bold px-3 py-1 rounded-full text-[10px] uppercase tracking-wider mb-8">
+            Antes (Mercado Tradicional)
+          </span>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {metrics.map((m, i) => (
+              <HalfCircleDial key={`before-${i}`} score={m.before} label={m.label} color={m.colorBefore} maxScore={m.max} />
+            ))}
+          </div>
+        </div>
+
+        {/* Divisor */}
+        <div className="hidden lg:flex w-px h-32 bg-[color:var(--brand-ink)]/10"></div>
+        <div className="lg:hidden w-32 h-px bg-[color:var(--brand-ink)]/10"></div>
+
+        {/* Depois */}
+        <div className="flex-1 flex flex-col items-center relative">
+          <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5">
+            <Sparkles className="w-8 h-8 text-[color:var(--brand-orange)] animate-pulse" />
+          </div>
+          <span className="bg-emerald-500/10 text-emerald-600 font-bold px-3 py-1 rounded-full text-[10px] uppercase tracking-wider mb-8">
+            Com Microsistec V8
+          </span>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {metrics.map((m, i) => (
+              <HalfCircleDial key={`after-${i}`} score={m.after} label={m.label} color={m.colorAfter} maxScore={m.max} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function SitesV8SubSection({ openModal }: { openModal: () => void }) {
   return (
     <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
-      <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
+      
+      <PageSpeedComparison />
+
+      <div className="space-y-6 mb-12 mt-16 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Showcase Imobiliário Real
         </span>
