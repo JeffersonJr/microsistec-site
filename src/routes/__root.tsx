@@ -10,7 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { Home, MapPin, ArrowRight, Key } from "lucide-react";
 
-import appCss from "../styles.css?url";
+import appCssInline from "../styles.css?inline";
 
 function NotFoundComponent() {
   return (
@@ -202,16 +202,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "canonical",
         href: "https://microsistec.com.br",
       },
-      {
-        rel: "preload",
-        as: "style",
-        href: appCss,
-        fetchPriority: "high",
-      },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
     ],
   }),
   shellComponent: RootShell,
@@ -225,6 +215,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        {/* Inline CSS to completely eliminate render blocking network requests */}
+        <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
         {/* Optimized Font Loading (Deferred to prevent render blocking) */}
         <link
           rel="preload"
