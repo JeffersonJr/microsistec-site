@@ -87,6 +87,7 @@ function BlogLeitor() {
               <img
                 src={post.author.avatarUrl}
                 alt={post.author.name}
+                title={`Autor: ${post.author.name}`}
                 width={40}
                 height={40}
                 loading="lazy"
@@ -122,6 +123,7 @@ function BlogLeitor() {
               <img
                 src={post.imageUrl}
                 alt={post.title}
+                title={post.title}
                 className="w-full h-full object-cover"
                 width={1200}
                 height={675}

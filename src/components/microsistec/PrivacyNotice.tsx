@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 
-export function CookieBanner() {
+export function PrivacyNotice() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

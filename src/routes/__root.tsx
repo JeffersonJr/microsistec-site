@@ -179,7 +179,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://microsistec.com.br" },
-      { property: "og:image", content: "https://microsistec.com.br/og-image.png" },
+      { property: "og:image", content: "https://microsistec.com.br/social.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Microsistec - Tecnologia para imobiliárias" },
@@ -190,7 +190,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@microsistec" },
       { name: "twitter:title", content: "Microsistec - Tecnologia imobiliária desde 1994" },
       { name: "twitter:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
-      { name: "twitter:image", content: "https://microsistec.com.br/og-image.png" },
+      { name: "twitter:image", content: "https://microsistec.com.br/social.png" },
     ],
     links: [
       {
@@ -246,7 +246,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 import { DemoModalProvider } from "@/hooks/use-demo-modal";
 const DemoModal = React.lazy(() => import("@/components/microsistec/DemoModal").then((m) => ({ default: m.DemoModal })));
-import { CookieBanner } from "@/components/microsistec/CookieBanner";
+import { PrivacyNotice } from "@/components/microsistec/PrivacyNotice";
 
 
 
@@ -301,7 +301,7 @@ function RootComponent() {
         <React.Suspense fallback={null}>
           <DemoModal />
         </React.Suspense>
-        <CookieBanner />
+        <PrivacyNotice />
       </DemoModalProvider>
     </QueryClientProvider>
   );

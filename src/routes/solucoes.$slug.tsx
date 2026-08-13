@@ -491,7 +491,7 @@ function SolucaoDetalhe() {
                 <div className="inline-flex items-center gap-3">
                   {sol.slug === "albert-ia" ? (
                     <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-2.5 border border-[color:var(--brand-ink)]/10 shadow-soft flex items-center justify-center max-w-[180px]">
-                      <img src="/albert-logo.png" alt="Albert IA" width={100} height={32} fetchPriority="high" className="h-8 w-auto object-contain" />
+                      <img src="/albert-logo.png" alt="Albert IA" title="Albert IA - Inteligência Artificial" width={100} height={32} fetchPriority="high" className="h-8 w-auto object-contain" />
                     </div>
                   ) : (
                     <div className="w-11 h-11 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center">
@@ -917,7 +917,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             {/* Mockup Header */}
             <div className="flex items-center gap-3 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-4 rounded-2xl mb-4 shadow-sm relative">
               <div className="w-10 h-10 rounded-full bg-[color:var(--brand-sand)]/20 p-1 flex items-center justify-center">
-                <img src="/albert-logo.png" alt="Albert" width={28} height={28} loading="lazy" decoding="async" className="w-7 h-7 object-contain" />
+                <img src="/albert-logo.png" alt="Albert" title="Albert - Assistente Virtual" width={28} height={28} loading="lazy" decoding="async" className="w-7 h-7 object-contain" />
               </div>
               <div>
                 <div className="font-bold text-sm flex items-center gap-1">
@@ -1052,7 +1052,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
           <div className="bg-grid absolute inset-0 opacity-15" />
           <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10">
             <div className="flex items-center gap-4">
-              <img src="/albert-logo.png" alt="Albert IA" width={56} height={56} loading="lazy" decoding="async" className="w-14 h-14 object-contain" />
+              <img src="/albert-logo.png" alt="Albert IA" title="Albert IA" width={56} height={56} loading="lazy" decoding="async" className="w-14 h-14 object-contain" />
               <div className="flex-1 space-y-2">
                 <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">Conheça o Albert pessoalmente</h3>
                 <p className="text-sm text-[color:var(--brand-sand)]/70 max-w-lg">
@@ -1223,6 +1223,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
               <img 
                 src={tpl.image} 
                 alt={tpl.name} 
+                title={tpl.name} 
                 width={800}
                 height={500}
                 loading="lazy"

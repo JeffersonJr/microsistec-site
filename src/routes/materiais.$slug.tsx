@@ -120,7 +120,7 @@ function MaterialLandingPage() {
               </div>
               
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[color:var(--brand-ink)]/10 w-full max-w-lg hidden lg:block bg-[color:var(--brand-sand)] aspect-square">
-                <img src={material.imageUrl} alt={material.title} width={800} height={800} fetchPriority="high" className="w-full h-full object-contain" />
+                <img src={material.imageUrl} alt={material.title} title={material.title} width={800} height={800} fetchPriority="high" className="w-full h-full object-contain" />
               </div>
             </div>
 

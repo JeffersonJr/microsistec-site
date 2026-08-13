@@ -89,7 +89,7 @@ export function Nav() {
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
-            <img src="/icon.svg" alt="Microsistec Logo" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
+            <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Tecnologia e Inovação" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
             <div className="flex items-baseline gap-0.5">
               microsistec
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
@@ -1010,6 +1010,7 @@ export function Blog() {
               <img
                 src={p.imageUrl}
                 alt={p.title}
+                title={p.title}
                 width={800}
                 height={500}
                 loading="lazy"
@@ -1092,7 +1093,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
-              <img src="/icon.svg" alt="Microsistec Logo" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
+              <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
                 microsistec
                 <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
