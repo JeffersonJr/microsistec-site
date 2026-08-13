@@ -46,11 +46,11 @@ function BlogLeitor() {
       <main className="mx-auto max-w-7xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
         {/* Breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[color:var(--brand-ink)]/10 pb-4">
-          <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+          <Link title="Página Inicial da Microsistec" to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-muted-foreground" />
-          <Link to="/blog" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+          <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
             Blog
           </Link>
           <ChevronRight className="w-3 h-3 text-muted-foreground" />
@@ -143,8 +143,7 @@ function BlogLeitor() {
 
             {/* Bottom Back Nav */}
             <div className="pt-8 border-t border-[color:var(--brand-ink)]/10">
-              <Link
-                to="/blog"
+              <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition"
               >
                 <ArrowLeft className="w-4 h-4" /> Voltar para o diretório de artigos
@@ -173,8 +172,7 @@ function BlogLeitor() {
                 </p>
 
                 <div className="pt-2">
-                  <a
-                    href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
+                  <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center justify-center decoration-none no-underline"
@@ -220,8 +218,7 @@ function BlogLeitor() {
                 Fomos os **pioneiros absolutos em trazer a tecnologia para o setor imobiliário brasileiro** desde **1994**. Unimos CRM robusto, sites de carregamento instantâneo, aplicativos e IA, provando em três décadas de mercado que sabemos o que fazemos.
               </p>
               <div className="pt-1">
-                <Link
-                  to="/empresa"
+                <Link title="Sobre a Microsistec" to="/empresa"
                   className="text-xs font-semibold text-[color:var(--brand-orange)] hover:underline inline-flex items-center gap-1"
                 >
                   Conhecer nossa história <Sparkles className="w-3.5 h-3.5" />

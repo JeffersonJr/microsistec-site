@@ -473,11 +473,11 @@ function SolucaoDetalhe() {
           
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
-              <Link to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground">
+              <Link title="Página Inicial da Microsistec" to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground">
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
-              <Link to="/solucoes" className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)]/80 hover:text-[color:var(--brand-orange)] transition">
+              <Link title="Acessar link" to="/solucoes" className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)]/80 hover:text-[color:var(--brand-orange)] transition">
                 Soluções
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
@@ -517,8 +517,7 @@ function SolucaoDetalhe() {
 
                 <div className="pt-2">
                   {sol.slug === "albert-ia" ? (
-                    <a
-                      href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
+                    <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
@@ -526,8 +525,7 @@ function SolucaoDetalhe() {
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
                     </a>
                   ) : sol.slug === "app" ? (
-                    <a
-                      href="#"
+                    <a title="Acessar link" href="#"
                       onClick={(e) => {
                         e.preventDefault();
                         const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
@@ -738,8 +736,7 @@ function SolucaoDetalhe() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               {sol.slug === "albert-ia" ? (
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
+                <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-base hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev decoration-none no-underline"
@@ -754,8 +751,7 @@ function SolucaoDetalhe() {
                   Ativar Teste 14 Dias Grátis <ArrowRight className="w-4 h-4" />
                 </button>
               )}
-              <a
-                href="/solucoes"
+              <a title="Acessar link" href="/solucoes"
                 className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/20 text-[color:var(--brand-sand)]/70 px-7 py-4 font-medium text-base hover:bg-[color:var(--brand-sand)]/10 transition decoration-none no-underline"
               >
                 Ver todas as soluções
@@ -1060,8 +1056,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                 </p>
               </div>
             </div>
-            <a
-              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
+            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
@@ -1255,8 +1250,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
 
               {/* Actions */}
               <div className="flex gap-2 pt-5 border-t border-dashed border-[color:var(--brand-ink)]/10 mt-4">
-                <a 
-                  href={tpl.url}
+                <a title="Acessar link" href={tpl.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 bg-background hover:bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-foreground hover:border-[color:var(--brand-orange)] transition text-center py-2.5 rounded-full text-[10px] font-extrabold flex items-center justify-center gap-1.5 no-underline decoration-none"
@@ -1502,8 +1496,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
             </div>
 
             {/* Actions */}
-            <a
-              href={client.url}
+            <a title="Acessar link" href={client.url}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-[color:var(--brand-ink)] group-hover:bg-[color:var(--brand-orange)] text-[color:var(--brand-sand)] group-hover:text-[color:var(--brand-ink)] transition text-center py-2.5 rounded-full text-xs font-bold flex items-center justify-center gap-1.5 no-underline decoration-none"
@@ -1648,8 +1641,7 @@ function CRMSubSection() {
 
       {/* Central de Ajuda + Academy */}
       <div className="grid md:grid-cols-2 gap-6 mb-12">
-        <a
-          href="http://intercom.help/microsistec-ajuda/pt-BR"
+        <a title="Acessar link" href="http://intercom.help/microsistec-ajuda/pt-BR"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
@@ -1664,8 +1656,7 @@ function CRMSubSection() {
           <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
         </a>
 
-        <a
-          href="https://microsistec-academy.memberkit.com.br/"
+        <a title="Acessar link" href="https://microsistec-academy.memberkit.com.br/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
@@ -1691,8 +1682,7 @@ function CRMSubSection() {
               Marca d'água inteligente, relatórios gerenciais, exportação de dados, controle de exclusividade, histórico completo de atendimentos, fichas de visita, contratos PDF e dezenas de outros recursos prontos para usar.
             </p>
           </div>
-          <a
-            href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+falar+com+um+especialista+sobre+o+CRM&type=phone_number&app_absent=0"
+          <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+falar+com+um+especialista+sobre+o+CRM&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
@@ -1818,8 +1808,7 @@ function AppSubSection() {
 
           {/* CTA */}
           <div className="pt-2 flex flex-wrap gap-3">
-            <a
-              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+App+de+Atendimento&type=phone_number&app_absent=0"
+            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+App+de+Atendimento&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-sm hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
@@ -1827,8 +1816,7 @@ function AppSubSection() {
               Fale com o Especialista <ArrowRight className="w-4 h-4" />
             </a>
             
-            <a
-              href="#"
+            <a title="Acessar link" href="#"
               onClick={(e) => {
                 e.preventDefault();
                 const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;

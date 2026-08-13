@@ -45,8 +45,7 @@ function SolucoesIndex() {
 
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
-              <Link
-                to="/"
+              <Link title="Página Inicial da Microsistec" to="/"
                 className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground"
               >
                 Home
@@ -103,8 +102,7 @@ function SolucoesIndex() {
               const badge = categoryBadge[sol.slug];
 
               return (
-                <Link
-                  key={sol.slug}
+                <Link title="Conhecer solução" key={sol.slug}
                   to="/solucoes/$slug"
                   params={{ slug: sol.slug }}
                   className="group relative flex flex-col rounded-2xl border border-[color:var(--brand-ink)]/8 bg-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-card transition-all duration-300 overflow-hidden no-underline decoration-none"
@@ -197,8 +195,7 @@ function SolucoesIndex() {
                 Teste 14 dias grátis, sem cartão de crédito.
               </p>
             </div>
-            <a
-              href="/"
+            <a title="Página Inicial da Microsistec" href="/"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-7 py-3.5 font-bold text-sm hover:bg-[color:var(--brand-sand)] transition shrink-0 no-underline decoration-none"
             >
               Começar teste grátis <ArrowRight className="w-4 h-4" />

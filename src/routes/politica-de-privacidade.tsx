@@ -65,7 +65,7 @@ function PoliticaPrivacidade() {
           <h2 className="text-2xl mt-10 mb-4 text-foreground">7. Contato</h2>
           <p className="text-foreground/80">
             Se você tiver alguma dúvida sobre esta política ou quiser exercer seus direitos, entre em contato conosco através do e-mail:{" "}
-            <a href="mailto:contato@microsistec.com.br" className="text-[color:var(--brand-orange)] hover:underline">
+            <a title="Acessar link" href="mailto:contato@microsistec.com.br" className="text-[color:var(--brand-orange)] hover:underline">
               contato@microsistec.com.br
             </a>.
           </p>

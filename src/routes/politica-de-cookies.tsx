@@ -75,7 +75,7 @@ function PoliticaCookies() {
           <h2 className="text-2xl mt-10 mb-4 text-foreground">6. Contato</h2>
           <p className="text-foreground/80">
             Se você tiver alguma dúvida sobre o uso de cookies ou outras tecnologias, envie um e-mail para:{" "}
-            <a href="mailto:contato@microsistec.com.br" className="text-[color:var(--brand-orange)] hover:underline">
+            <a title="Acessar link" href="mailto:contato@microsistec.com.br" className="text-[color:var(--brand-orange)] hover:underline">
               contato@microsistec.com.br
             </a>.
           </p>

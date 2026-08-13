@@ -91,7 +91,7 @@ function MaterialLandingPage() {
         
         <div className="pt-32 pb-16 md:pt-36 md:pb-24 px-6 relative z-10 max-w-7xl mx-auto w-full">
           
-          <Link to="/materiais" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10">
+          <Link title="Materiais Ricos e Gratuitos" to="/materiais" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10">
             <ArrowLeft className="w-4 h-4" />
             Voltar para materiais
           </Link>
@@ -214,8 +214,7 @@ function MaterialLandingPage() {
                       <strong>Assim que você clicar, o download começará automaticamente!</strong>
                     </p>
                     
-                    <a 
-                      href={`https://api.whatsapp.com/send?phone=5513997591781&text=${encodeURIComponent(`Olá! Tenho interesse no material: *${material.title}*\n\n*Meus Dados:*\nNome: ${formData.name}\nE-mail: ${formData.email}\nTelefone: ${formData.phone}\nCargo: ${getRoleLabel(formData.role)}\n\nGostaria de acessar o material!`)}`}
+                    <a title="Acessar link" href={`https://api.whatsapp.com/send?phone=5513997591781&text=${encodeURIComponent(`Olá! Tenho interesse no material: *${material.title}*\n\n*Meus Dados:*\nNome: ${formData.name}\nE-mail: ${formData.email}\nTelefone: ${formData.phone}\nCargo: ${getRoleLabel(formData.role)}\n\nGostaria de acessar o material!`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleWhatsAppClick}

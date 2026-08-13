@@ -89,8 +89,7 @@ function NotFoundComponent() {
 
       {/* CTA */}
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <Link
-          to="/"
+        <Link title="Página Inicial da Microsistec" to="/"
           className="inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-full transition-all duration-200 no-underline"
           style={{
             background: "var(--brand-orange, #ff6b35)",
@@ -152,8 +151,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a
-            href="/"
+          <a title="Página Inicial da Microsistec" href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home

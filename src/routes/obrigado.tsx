@@ -37,14 +37,12 @@ function ObrigadoPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/blog"
+            <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
               className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] font-bold text-lg hover:bg-black/5 transition"
             >
               Ler nosso Blog
             </Link>
-            <Link
-              to="/"
+            <Link title="Página Inicial da Microsistec" to="/"
               className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center gap-2 rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-lg hover:bg-[color:var(--brand-sand)] transition shadow-soft group"
             >
               Conhecer a Microsistec

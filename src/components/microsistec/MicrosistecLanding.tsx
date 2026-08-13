@@ -128,22 +128,19 @@ export function Nav() {
               </button>
             </div>
 
-            <Link
-              to="/empresa"
+            <Link title="Sobre a Microsistec" to="/empresa"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Sobre
             </Link>
-            <Link
-              to="/blog"
+            <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Blog
             </Link>
-            <Link
-              to="/materiais"
+            <Link title="Materiais Ricos e Gratuitos" to="/materiais"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
@@ -152,16 +149,14 @@ export function Nav() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href="https://imob.online/"
+            <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
               className="hidden md:inline text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
             >
               Entrar
             </a>
-            <a
-              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
               target="_blank"
               rel="noreferrer"
               className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
@@ -194,8 +189,7 @@ export function Nav() {
                     { slug: "funil", title: "Multi-Funil Kanban", desc: "Pipelines separados por processo", icon: LineChart },
                     { slug: "rodizio", title: "Rodízio de Leads", desc: "Distribuição automática e justa", icon: Users }
                   ].map(item => (
-                    <Link
-                      key={item.slug}
+                    <Link title="Conhecer solução" key={item.slug}
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
@@ -224,8 +218,7 @@ export function Nav() {
                     { slug: "sites-v8", title: "Sites Custom V8", desc: "Design exclusivo de alta performance", icon: Sparkles },
                     { slug: "integracoes", title: "Integrações", desc: "WhatsApp API e portais integrados", icon: Workflow }
                   ].map(item => (
-                    <Link
-                      key={item.slug}
+                    <Link title="Conhecer solução" key={item.slug}
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
@@ -252,8 +245,7 @@ export function Nav() {
                   {[
                     { slug: "albert-ia", title: "Albert IA (SDR)", desc: "Conversa e agenda no WhatsApp 24/7", icon: Bot }
                   ].map(item => (
-                    <Link
-                      key={item.slug}
+                    <Link title="Conhecer solução" key={item.slug}
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
@@ -296,8 +288,7 @@ export function Nav() {
             {/* Bottom Bar */}
             <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-xs text-muted-foreground">
               <span>Tem alguma dúvida operacional ou deseja integrar canais específicos?</span>
-              <a
-                href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+              <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline"
@@ -323,8 +314,7 @@ export function Nav() {
                   Planos desenhados para corretores independentes, imobiliárias em crescimento ou grandes redes com dezenas de filiais.
                 </p>
                 <div>
-                  <Link
-                    to="/planos"
+                  <Link title="Planos e Preços do CRM" to="/planos"
                     onClick={() => setOpenMenu(null)}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
@@ -345,8 +335,7 @@ export function Nav() {
                   Automatize o primeiro contato dos portais e Meta Ads no WhatsApp 24/7 com inteligência e qualificação financeira.
                 </p>
                 <div>
-                  <Link
-                    to="/planos-albert"
+                  <Link title="Planos e Preços da IA Albert" to="/planos-albert"
                     onClick={() => setOpenMenu(null)}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
@@ -422,8 +411,7 @@ export function Nav() {
                   const IconComp = getIconComponent(sol.iconName);
                   if (sol.ctaText === "Em Breve") return null;
                   return (
-                    <Link
-                      key={sol.slug}
+                    <Link title="Conhecer solução" key={sol.slug}
                       to="/solucoes/$slug"
                       params={{ slug: sol.slug }}
                       onClick={() => setIsMobileOpen(false)}
@@ -451,8 +439,7 @@ export function Nav() {
                   { label: "Blog", to: "/blog" },
                   { label: "Materiais gratuitos", to: "/materiais" },
                 ] as { label: string; to: "/planos" | "/planos-albert" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
-                  <Link
-                    key={item.to}
+                  <Link title="Acessar link" key={item.to}
                     to={item.to}
                     onClick={() => setIsMobileOpen(false)}
                     className="flex items-center gap-3.5 px-2 rounded-2xl text-[15px] font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline"
@@ -466,8 +453,7 @@ export function Nav() {
 
               {/* Sticky CTAs — always in thumb zone */}
               <div className="px-4 pt-3 pb-8 border-t border-[color:var(--brand-ink)]/8 flex flex-col gap-2.5">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+                <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline active:scale-[0.98] transition border-none"
@@ -476,8 +462,7 @@ export function Nav() {
                   Falar com especialista <ArrowUpRight className="w-4 h-4" />
                 </a>
                 <div className="flex gap-2.5">
-                  <a
-                    href="https://imob.online/"
+                  <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1 inline-flex items-center justify-center rounded-2xl bg-transparent text-[color:var(--brand-ink)] text-[15px] font-semibold no-underline active:scale-[0.98] transition border border-[color:var(--brand-ink)]/15"
@@ -560,16 +545,14 @@ function Hero() {
             que age como um clone do seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
-            <a
-              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
               target="_blank"
               rel="noreferrer"
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowRight className="w-4 h-4" />
             </a>
-            <a
-              href="#albert"
+            <a title="Conheça o Albert" href="#albert"
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/20 px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition"
             >
               Conhecer o Albert <Sparkles className="w-4 h-4" />
@@ -761,8 +744,7 @@ function Albert() {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-              <a
-                href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
+              <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline text-center"
@@ -771,8 +753,7 @@ function Albert() {
                 <span className="sm:hidden">Falar com o Albert no zap</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </a>
-              <Link
-                to="/planos-albert"
+              <Link title="Planos e Preços da IA Albert" to="/planos-albert"
                 className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
               >
                 Ver planos
@@ -989,14 +970,13 @@ export function Blog() {
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Leitura</span>{" "}
           rápida pra quem vende imóvel
         </h2>
-        <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium hover:opacity-70">
+        <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium hover:opacity-70">
           Ver todos <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {posts.map((p) => (
-          <Link
-            key={p.id}
+          <Link title="Ler artigo no Blog" key={p.id}
             to="/blog/$slug"
             params={{ slug: p.slug }}
             className="group flex flex-col border-t border-[color:var(--brand-ink)]/20 pt-6 hover:border-[color:var(--brand-orange)] transition cursor-pointer"
@@ -1061,16 +1041,14 @@ export function CTA() {
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 w-full">
-            <a
-              href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
+            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
               target="_blank"
               rel="noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowRight className="w-4 h-4 shrink-0" />
             </a>
-            <a
-              href="https://wa.me/5513997591781"
+            <a title="Fale conosco pelo WhatsApp" href="https://wa.me/5513997591781"
               className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
             >
               Falar no WhatsApp
@@ -1103,8 +1081,7 @@ export function Footer() {
               Proptech brasileira desde 1994. CRM, sites, app de atendimento e Albert IA
               num ecossistema só para imobiliárias de verdade.
             </p>
-            <a
-              href="https://imob.online/"
+            <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
               className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-sm hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition shadow-soft no-underline decoration-none group"
@@ -1176,11 +1153,11 @@ function FooterCol({
         {links.map((link, idx) => (
           <li key={idx}>
             {link.to.startsWith("http") || link.to.startsWith("#") || link.to.startsWith("/#") ? (
-              <a href={link.to} className="hover:text-[color:var(--brand-orange)] transition">
+              <a title="Acessar link" href={link.to} className="hover:text-[color:var(--brand-orange)] transition">
                 {link.label}
               </a>
             ) : (
-              <Link to={link.to} params={link.params} className="hover:text-[color:var(--brand-orange)] transition cursor-pointer">
+              <Link title="Acessar link" to={link.to} params={link.params} className="hover:text-[color:var(--brand-orange)] transition cursor-pointer">
                 {link.label}
               </Link>
             )}

@@ -107,8 +107,7 @@ function BlogIndex() {
           {filteredPosts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Link
-                  key={post.id}
+                <Link title="Ler artigo no Blog" key={post.id}
                   to="/blog/$slug"
                   params={{ slug: post.slug }}
                   className="group flex flex-col border-t border-[color:var(--brand-ink)]/10 pt-6 hover:border-[color:var(--brand-orange)] transition duration-300 cursor-pointer"
