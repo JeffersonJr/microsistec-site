@@ -13,8 +13,28 @@ function PlanosAlbertPage() {
 
   const plans = [
     {
+      id: "200",
+      name: "200",
+      desc: "atendimentos mensais",
+      price: "Sob consulta",
+      isCustom: true,
+      users: "Corretores Ilimitados",
+      limit: "Até 200 chats",
+      features: [
+        "Fidelidade Flexível",
+        "Busca de imóveis",
+        "Agendamento de visitas",
+        "Envio de leads para o CRM",
+        "Suporte técnico",
+        "Marca personalizada",
+        "CRM Próprio (Opcional)",
+        "2 Reuniões Estratégicas"
+      ]
+    },
+    {
       id: "500",
       name: "500",
+      isPopular: true,
       desc: "atendimentos mensais",
       price: "Sob consulta",
       isCustom: true,
@@ -32,28 +52,8 @@ function PlanosAlbertPage() {
       ]
     },
     {
-      id: "1000",
-      name: "1000",
-      isPopular: true,
-      desc: "atendimentos mensais",
-      price: "Sob consulta",
-      isCustom: true,
-      users: "Corretores Ilimitados",
-      limit: "Até 1.000 chats",
-      features: [
-        "Fidelidade Flexível",
-        "Busca de imóveis",
-        "Agendamento de visitas",
-        "Envio de leads para o CRM",
-        "Suporte técnico",
-        "Marca personalizada",
-        "CRM Próprio (Opcional)",
-        "2 Reuniões Estratégicas"
-      ]
-    },
-    {
-      id: "1500",
-      name: "1500",
+      id: "800",
+      name: "800",
       desc: "atendimentos mensais",
       price: "Sob consulta",
       isCustom: true,
@@ -71,8 +71,8 @@ function PlanosAlbertPage() {
       ]
     },
     {
-      id: "2000",
-      name: "2000+",
+      id: "Personalizado",
+      name: "Personalizado",
       desc: "atendimentos mensais",
       price: "Sob consulta",
       isCustom: true,
@@ -94,7 +94,7 @@ function PlanosAlbertPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      
+
       <main>
         {/* Header Section */}
         <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
@@ -121,22 +121,23 @@ function PlanosAlbertPage() {
         <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-4 items-stretch">
             {plans.map((plan) => (
-              <div 
+              <div
                 key={plan.id}
-                className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${
-                  plan.isPopular 
-                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev lg:-mt-4 lg:mb-4 border-2 border-[color:var(--brand-orange)]" 
+                className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${plan.isPopular
+                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev lg:-mt-4 lg:mb-4 border-2 border-[color:var(--brand-orange)]"
                     : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
-                }`}
+                  }`}
               >
                 {plan.isPopular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
                     Mais Escolhido
                   </div>
                 )}
-                
+
                 <div className="space-y-2 mb-8">
-                  <h3 className="text-5xl font-extrabold tracking-tight leading-none">{plan.name}</h3>
+                  <h3 className={`font-extrabold tracking-tight leading-none ${plan.name.length > 10 ? 'text-[1.75rem] lg:text-[1.35rem] xl:text-[1.65rem] break-words' : 'text-5xl'}`}>
+                    {plan.name}
+                  </h3>
                   <p className={`text-sm leading-relaxed ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
                     {plan.desc}
                   </p>
@@ -153,7 +154,7 @@ function PlanosAlbertPage() {
                       {plan.limit}
                     </div>
                     <div className="flex items-center gap-2 font-semibold text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                       {plan.users}
                     </div>
                   </div>
@@ -170,11 +171,10 @@ function PlanosAlbertPage() {
 
                 <button
                   onClick={openModal}
-                  className={`w-full py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] ${
-                    plan.isPopular
+                  className={`w-full py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] ${plan.isPopular
                       ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
                       : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
-                  }`}
+                    }`}
                 >
                   Falar com Consultor
                 </button>

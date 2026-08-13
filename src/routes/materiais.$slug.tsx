@@ -4,6 +4,7 @@ import { materiaisData } from "@/lib/data";
 import { ArrowLeft, CheckCircle2, MessageCircle } from "lucide-react";
 import * as React from "react";
 import { useState } from "react";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 export const Route = createFileRoute("/materiais/$slug")({
   loader: ({ params }) => {
@@ -38,6 +39,7 @@ function MaterialLandingPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    dialCode: "+55",
     phone: "",
     role: "",
   });
@@ -84,7 +86,7 @@ function MaterialLandingPage() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[color:var(--brand-orange)] selection:text-[color:var(--brand-sand)] flex flex-col">
       <Nav />
 
-      <main className="flex-1 relative overflow-hidden bg-hero border-b border-[color:var(--brand-ink)]/10">
+      <main className="flex-1 relative bg-hero border-b border-[color:var(--brand-ink)]/10 overflow-x-clip">
         <div className="bg-grid absolute inset-0 pointer-events-none" />
         
         <div className="pt-32 pb-16 md:pt-36 md:pb-24 px-6 relative z-10 max-w-7xl mx-auto w-full">
@@ -168,13 +170,11 @@ function MaterialLandingPage() {
                       </div>
                       <div className="space-y-1.5">
                         <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp</label>
-                        <input 
-                          required 
-                          type="tel" 
-                          placeholder="(11) 99999-9999" 
-                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                        <PhoneInput
+                          required
                           value={formData.phone}
-                          onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
+                          dialCode={formData.dialCode}
+                          onPhoneChange={(phone, dialCode) => setFormData(p => ({ ...p, phone, dialCode }))}
                         />
                       </div>
                       <div className="space-y-1.5">

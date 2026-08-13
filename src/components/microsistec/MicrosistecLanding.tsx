@@ -135,14 +135,14 @@ export function Nav() {
             >
               Sobre
             </Link>
-            <Link 
+            <Link
               to="/blog"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Blog
             </Link>
-            <Link 
+            <Link
               to="/materiais"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
@@ -402,7 +402,7 @@ export function Nav() {
                 >
                   <span className="w-10 h-1.5 rounded-full bg-[color:var(--brand-ink)]/20 block" />
                 </button>
-                
+
                 {/* Close 'X' Button */}
                 <button
                   onClick={() => setIsMobileOpen(false)}
@@ -539,12 +539,13 @@ function Hero() {
           </h1>
 
           {/* proof badge */}
-          <div className="hidden lg:flex lg:col-span-3 justify-end mt-6 lg:mt-0">
-            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-4 max-w-[200px] shadow-card select-none border border-white/5">
-              <div className="font-mono-ui text-[9px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-2">
+          <div className="flex lg:col-span-3 justify-start lg:justify-end mt-8 lg:mt-0 relative z-10">
+            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-3xl px-6 py-5 max-w-[280px] shadow-[0_15px_40px_-10px_rgba(255,107,53,0.25)] select-none border border-[color:var(--brand-orange)]/40 -rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 cursor-default">
+              <div className="font-mono-ui text-[10px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-3 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse"></span>
                 Desde 1994
               </div>
-              <p className="font-serif-italic text-base leading-[1.35] text-[color:var(--brand-sand)]/85">
+              <p className="font-serif-italic text-xl leading-[1.3] text-[color:var(--brand-sand)]">
                 "feito por gente que conhece imobiliária de verdade"
               </p>
             </div>
@@ -619,11 +620,10 @@ function Ticker() {
 /* -------------------------------------------------------------------------- */
 function StatsStrip() {
   const stats = [
-    { n: "30+", label: "anos no mercado" },
-    { n: "1.2K", label: "imobiliárias" },
-    { n: "15K", label: "corretores/mês" },
-    { n: "R$8bi", label: "em negócios geridos" },
-    { n: "3M+", label: "leads/ano" },
+    { n: "30+", label: "Anos no inovação" },
+    { n: "15 mil+", label: "Corretores já atendidos" },
+    { n: "500 mil+", label: "Leads qualificados" },
+    { n: "1.200+", label: "Imobiliárias atendidas" },
   ];
   return (
     <section id="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
@@ -639,9 +639,9 @@ function StatsStrip() {
           operação · {new Date().getFullYear()}
         </span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[color:var(--brand-ink)]/8 border-y border-[color:var(--brand-ink)]/8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border-y border-[color:var(--brand-ink)]/8">
         {stats.map((s) => (
-          <div key={s.label} className="bg-background py-7 md:py-9 px-5 md:px-6 last:col-span-2 lg:last:col-span-1 text-center md:text-left">
+          <div key={s.label} className="bg-background py-7 md:py-9 px-5 md:px-6 text-center md:text-left">
             <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">{s.n}</div>
             <div className="text-xs text-muted-foreground mt-1.5 font-mono-ui">{s.label}</div>
           </div>
@@ -683,7 +683,7 @@ function Pillars() {
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
           <h2 className="md:col-span-8 text-4xl md:text-6xl font-bold tracking-tight leading-[1.02]">
             Sistema, site e app,{" "}
-            <span className="font-serif-italic font-normal">numa coisa só</span>
+            <span className="font-serif-italic font-normal">em um único ecosistema</span>
           </h2>
           <p className="md:col-span-4 text-lg text-muted-foreground">
             Tudo o que a imobiliária precisa para vender mais e ter previsibilidade, sem amarrar
@@ -924,9 +924,8 @@ function FunnelVisual() {
             </div>
             <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className={`h-full flex items-center px-3 text-sm font-bold font-mono-ui transition-all ${
-                  i === stages.length - 1 ? "text-[color:var(--brand-ink)]" : "text-[color:var(--brand-sand)]"
-                }`}
+                className={`h-full flex items-center px-3 text-sm font-bold font-mono-ui transition-all ${i === stages.length - 1 ? "text-[color:var(--brand-ink)]" : "text-[color:var(--brand-sand)]"
+                  }`}
                 style={{
                   width: s.w,
                   background:

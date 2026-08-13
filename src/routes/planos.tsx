@@ -117,7 +117,7 @@ function PlanosPage() {
     },
     {
       q: "Como funciona o bônus do ciclo anual?",
-      a: "Optando pelo faturamento anual, você recebe 10% de desconto no valor final da sua licença, garantindo a previsibilidade do seu fluxo de caixa."
+      a: "Optando pelo faturamento anual, você recebe 20% de desconto no valor final da sua licença, garantindo a previsibilidade do seu fluxo de caixa."
     }
   ];
 
@@ -159,7 +159,7 @@ function PlanosPage() {
               <div className={`w-6 h-6 bg-[color:var(--brand-orange)] rounded-full shadow-md transition-transform duration-300 ${isAnnual ? 'translate-x-8' : 'translate-x-0'}`} />
             </button>
             <span className={`text-sm font-bold ${isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>
-              Anual <span className="ml-2 text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">-10%</span>
+              Anual <span className="ml-2 text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">-20%</span>
             </span>
           </div>
 
@@ -168,8 +168,8 @@ function PlanosPage() {
               <div
                 key={plan.id}
                 className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${plan.isPopular
-                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev border-2 border-[color:var(--brand-orange)]"
-                    : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
+                  ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev border-2 border-[color:var(--brand-orange)]"
+                  : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
                   }`}
               >
                 {plan.isPopular && (
@@ -224,8 +224,8 @@ function PlanosPage() {
                   target="_blank"
                   rel="noreferrer"
                   className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline ${plan.isPopular
-                      ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
-                      : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
+                    ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
+                    : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
                     }`}
                 >
                   Falar com especialista
