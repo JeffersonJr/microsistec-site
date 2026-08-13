@@ -177,7 +177,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://microsistec.evolves.site" },
-      { property: "og:image", content: "https://microsistec.evolves.site/social.png" },
+      { property: "og:image", content: "https://microsistec.evolves.site/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Microsistec - Tecnologia para imobiliárias" },
@@ -188,7 +188,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@microsistec" },
       { name: "twitter:title", content: "Microsistec - Tecnologia imobiliária desde 1994" },
       { name: "twitter:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
-      { name: "twitter:image", content: "https://microsistec.evolves.site/social.png" },
+      { name: "twitter:image", content: "https://microsistec.evolves.site/og-image.png" },
     ],
     links: [
       {
