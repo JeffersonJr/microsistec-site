@@ -540,9 +540,9 @@ function Hero() {
         {/* sub + CTAs */}
         <div className="mt-8 lg:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start md:items-center">
           <p className="md:col-span-7 text-base md:text-lg text-foreground/75 leading-relaxed">
-            Como pioneiros em trazer tecnologia para o setor imobiliário brasileiro, unimos CRM completo, site, app de atendimento, automações e o{" "}
+            Como pioneiros em trazer tecnologia para o setor imobiliário brasileiro, somos uma empresa <strong>A.I. first</strong>. Unimos CRM completo, site, app de atendimento, automações e o{" "}
             <strong className="text-foreground">Albert IA</strong>, uma inteligência artificial
-            que age como um clone do seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
+            que vai além de ser o seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
             <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
@@ -551,11 +551,6 @@ function Hero() {
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowRight className="w-4 h-4" />
-            </a>
-            <a title="Conheça o Albert" href="#albert"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/20 px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition"
-            >
-              Conhecer o Albert <Sparkles className="w-4 h-4" />
             </a>
           </div>
         </div>
