@@ -78,7 +78,10 @@ function MaterialLandingPage() {
     
     // Aguarda um pequeno delay e manda para a página de obrigado
     setTimeout(() => {
-      navigate({ to: "/obrigado" });
+      navigate({ 
+        to: "/obrigado",
+        search: { url: material.downloadUrl }
+      });
     }, 500);
   };
 

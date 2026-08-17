@@ -3,7 +3,16 @@ import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import * as React from "react";
 
+type ObrigadoSearch = {
+  url?: string;
+};
+
 export const Route = createFileRoute("/obrigado")({
+  validateSearch: (search: Record<string, unknown>): ObrigadoSearch => {
+    return {
+      url: search.url as string | undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Obrigado! | Microsistec" },
@@ -14,6 +23,8 @@ export const Route = createFileRoute("/obrigado")({
 });
 
 function ObrigadoPage() {
+  const { url } = Route.useSearch();
+
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-[color:var(--brand-orange)] selection:text-white flex flex-col">
       <Nav />
@@ -32,8 +43,15 @@ function ObrigadoPage() {
           </h1>
           
           <p className="text-2xl text-muted-foreground mb-12">
-            Caso o download não tenha iniciado automaticamente, verifique sua pasta de downloads.
-            Enquanto isso, que tal aproveitar para conhecer mais sobre a Microsistec?
+            Seu download deve ter iniciado automaticamente. Caso isso não tenha acontecido,{" "}
+            {url ? (
+              <a href={url} target="_blank" rel="noreferrer" className="text-[color:var(--brand-orange)] underline font-bold hover:text-[color:var(--brand-orange)]/80">
+                clique aqui para baixar manualmente
+              </a>
+            ) : (
+              <span className="font-bold">verifique sua pasta de downloads</span>
+            )}
+            . Enquanto isso, aproveite para conhecer mais sobre as soluções que podem transformar sua imobiliária!
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

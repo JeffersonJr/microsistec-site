@@ -13,8 +13,10 @@ import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
 import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as ObrigadoCorretorRouteImport } from './routes/obrigado-corretor'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as EmpresaRouteImport } from './routes/empresa'
+import { Route as DiaCorretorRouteImport } from './routes/dia-corretor'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
 import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
@@ -43,6 +45,11 @@ const PlanosRoute = PlanosRouteImport.update({
   path: '/planos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObrigadoCorretorRoute = ObrigadoCorretorRouteImport.update({
+  id: '/obrigado-corretor',
+  path: '/obrigado-corretor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObrigadoRoute = ObrigadoRouteImport.update({
   id: '/obrigado',
   path: '/obrigado',
@@ -51,6 +58,11 @@ const ObrigadoRoute = ObrigadoRouteImport.update({
 const EmpresaRoute = EmpresaRouteImport.update({
   id: '/empresa',
   path: '/empresa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiaCorretorRoute = DiaCorretorRouteImport.update({
+  id: '/dia-corretor',
+  path: '/dia-corretor',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -91,8 +103,10 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
   '/obrigado': typeof ObrigadoRoute
+  '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
   '/planos-albert': typeof PlanosAlbertRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
@@ -106,8 +120,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
   '/obrigado': typeof ObrigadoRoute
+  '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
   '/planos-albert': typeof PlanosAlbertRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
@@ -122,8 +138,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
   '/obrigado': typeof ObrigadoRoute
+  '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
   '/planos-albert': typeof PlanosAlbertRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
@@ -139,8 +157,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/dia-corretor'
     | '/empresa'
     | '/obrigado'
+    | '/obrigado-corretor'
     | '/planos'
     | '/planos-albert'
     | '/politica-de-cookies'
@@ -154,8 +174,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/dia-corretor'
     | '/empresa'
     | '/obrigado'
+    | '/obrigado-corretor'
     | '/planos'
     | '/planos-albert'
     | '/politica-de-cookies'
@@ -169,8 +191,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/dia-corretor'
     | '/empresa'
     | '/obrigado'
+    | '/obrigado-corretor'
     | '/planos'
     | '/planos-albert'
     | '/politica-de-cookies'
@@ -185,8 +209,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DiaCorretorRoute: typeof DiaCorretorRoute
   EmpresaRoute: typeof EmpresaRoute
   ObrigadoRoute: typeof ObrigadoRoute
+  ObrigadoCorretorRoute: typeof ObrigadoCorretorRoute
   PlanosRoute: typeof PlanosRoute
   PlanosAlbertRoute: typeof PlanosAlbertRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
@@ -229,6 +255,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/obrigado-corretor': {
+      id: '/obrigado-corretor'
+      path: '/obrigado-corretor'
+      fullPath: '/obrigado-corretor'
+      preLoaderRoute: typeof ObrigadoCorretorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/obrigado': {
       id: '/obrigado'
       path: '/obrigado'
@@ -241,6 +274,13 @@ declare module '@tanstack/react-router' {
       path: '/empresa'
       fullPath: '/empresa'
       preLoaderRoute: typeof EmpresaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dia-corretor': {
+      id: '/dia-corretor'
+      path: '/dia-corretor'
+      fullPath: '/dia-corretor'
+      preLoaderRoute: typeof DiaCorretorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -297,8 +337,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DiaCorretorRoute: DiaCorretorRoute,
   EmpresaRoute: EmpresaRoute,
   ObrigadoRoute: ObrigadoRoute,
+  ObrigadoCorretorRoute: ObrigadoCorretorRoute,
   PlanosRoute: PlanosRoute,
   PlanosAlbertRoute: PlanosAlbertRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
