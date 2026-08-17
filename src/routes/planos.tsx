@@ -219,16 +219,16 @@ function PlanosPage() {
                   </ul>
                 </div>
 
-                <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline ${plan.isPopular
+                <button 
+                  title="Fale conosco pelo WhatsApp" 
+                  onClick={openModal}
+                  className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline border-none ${plan.isPopular
                     ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
                     : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
                     }`}
                 >
                   Falar com especialista
-                </a>
+                </button>
               </div>
             ))}
           </div>

@@ -1,9 +1,8 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import * as React from "react";
+import { useDemoModal } from "@/hooks/use-demo-modal";
 import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { blogPosts, BlogPost } from "@/lib/data";
-import { useDemoModal } from "@/hooks/use-demo-modal";
-import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Bot, ChevronRight, Clock, Share2, Sparkles, Building2 } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -172,13 +171,13 @@ function BlogLeitor() {
                 </p>
 
                 <div className="pt-2">
-                  <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center justify-center decoration-none no-underline"
+                  <button 
+                    title="Falar com especialista"
+                    onClick={() => openModal()}
+                    className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center decoration-none no-underline"
                   >
                     Converse com o Albert agora mesmo <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

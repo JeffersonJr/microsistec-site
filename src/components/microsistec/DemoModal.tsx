@@ -3,16 +3,20 @@ import { useDemoModal } from "@/hooks/use-demo-modal";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ArrowRight, MessageCircle, ChevronDown } from "lucide-react";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { sendLeadToClickUp } from "@/lib/clickup";
 
 export function DemoModal() {
   const { isOpen, closeModal } = useDemoModal();
   
   const [step, setStep] = React.useState<"form" | "whatsapp">("form");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
     dialCode: "+55",
     phone: "",
+    cnpj: "",
     role: "",
   });
 
@@ -25,6 +29,7 @@ export function DemoModal() {
         email: "",
         dialCode: "+55",
         phone: "",
+        cnpj: "",
         role: "",
       });
     }
@@ -66,9 +71,26 @@ export function DemoModal() {
               
               <form 
                 className="space-y-5" 
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  setStep("whatsapp");
+                  setIsSubmitting(true);
+                  setSubmitError(null);
+                  try {
+                    const telefoneCompleto = `${formData.dialCode}${formData.phone}`.replace(/\D/g, "");
+                    await sendLeadToClickUp({
+                      nome: formData.name,
+                      telefone: telefoneCompleto,
+                      email: formData.email,
+                      cnpj: formData.cnpj,
+                    });
+                    setStep("whatsapp");
+                  } catch (err) {
+                    console.error("[DemoModal] Erro ao enviar lead:", err);
+                    // Mesmo com erro no ClickUp, permite seguir para o WhatsApp
+                    setStep("whatsapp");
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}
               >
                 <div className="space-y-1.5">
@@ -102,6 +124,16 @@ export function DemoModal() {
                     onPhoneChange={(phone, dialCode) => setFormData(p => ({ ...p, phone, dialCode }))}
                   />
                 </div>
+                <div className="space-y-1.5">
+                  <label className="text-base font-semibold text-[color:var(--brand-ink)]">CNPJ (Opcional)</label>
+                  <input 
+                    type="text" 
+                    placeholder="00.000.000/0001-00" 
+                    className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                    value={formData.cnpj}
+                    onChange={(e) => setFormData(p => ({ ...p, cnpj: e.target.value }))}
+                  />
+                </div>
                 <div className="space-y-1.5 relative">
                   <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo</label>
                   <div className="relative">
@@ -120,8 +152,12 @@ export function DemoModal() {
                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
                   </div>
                 </div>
-                <button type="submit" className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft">
-                  Falar com especialista
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Enviando..." : "Falar com especialista"}
                 </button>
               </form>
             </div>

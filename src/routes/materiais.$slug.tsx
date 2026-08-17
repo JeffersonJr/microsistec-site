@@ -5,6 +5,7 @@ import { ArrowLeft, CheckCircle2, MessageCircle, ChevronDown } from "lucide-reac
 import * as React from "react";
 import { useState } from "react";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { sendLeadToClickUp } from "@/lib/clickup";
 
 export const Route = createFileRoute("/materiais/$slug")({
   loader: ({ params }) => {
@@ -36,11 +37,13 @@ function MaterialLandingPage() {
   const { material } = Route.useLoaderData();
   const navigate = useNavigate();
   const [step, setStep] = useState<"form" | "whatsapp">("form");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     dialCode: "+55",
     phone: "",
+    cnpj: "",
     role: "",
   });
   
@@ -144,9 +147,23 @@ function MaterialLandingPage() {
                     
                     <form 
                       className="space-y-5" 
-                      onSubmit={(e) => {
+                      onSubmit={async (e) => {
                         e.preventDefault();
-                        setStep("whatsapp");
+                        setIsSubmitting(true);
+                        try {
+                          const telefoneCompleto = `${formData.dialCode}${formData.phone}`.replace(/\D/g, "");
+                          await sendLeadToClickUp({
+                            nome: formData.name,
+                            telefone: telefoneCompleto,
+                            email: formData.email,
+                            cnpj: formData.cnpj,
+                          });
+                        } catch (err) {
+                          console.error("[Materiais] Erro ao enviar lead:", err);
+                        } finally {
+                          setIsSubmitting(false);
+                          setStep("whatsapp");
+                        }
                       }}
                     >
                       <div className="space-y-1.5">
@@ -180,6 +197,16 @@ function MaterialLandingPage() {
                           onPhoneChange={(phone, dialCode) => setFormData(p => ({ ...p, phone, dialCode }))}
                         />
                       </div>
+                      <div className="space-y-1.5">
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">CNPJ (Opcional)</label>
+                        <input 
+                          type="text" 
+                          placeholder="00.000.000/0001-00" 
+                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          value={formData.cnpj}
+                          onChange={(e) => setFormData(p => ({ ...p, cnpj: e.target.value }))}
+                        />
+                      </div>
                       <div className="space-y-1.5 relative">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo</label>
                         <div className="relative">
@@ -198,8 +225,12 @@ function MaterialLandingPage() {
                           <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
                         </div>
                       </div>
-                      <button type="submit" className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft">
-                        {material.ctaText}
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? "Enviando..." : material.ctaText}
                       </button>
                     </form>
                     <p className="text-sm text-muted-foreground text-center mt-6">

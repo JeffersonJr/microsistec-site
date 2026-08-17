@@ -82,24 +82,24 @@ export function Nav() {
         ref={navRef}
         className={`relative mx-auto max-w-6xl pointer-events-auto nav-pill ${scrolled ? "nav-pill-scrolled" : ""}`}
       >
-        <div className="flex h-[54px] items-center justify-between px-5">
+        <div className="flex items-center justify-between px-5 py-2.5 w-full gap-4">
+          {/* Logo à esquerda */}
           <Link
             to="/"
-            className="flex items-center gap-2 font-extrabold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
+            className="flex items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity shrink-0"
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
             <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Tecnologia e Inovação" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
             <div className="flex items-baseline gap-0.5">
-              microsistec
+              Microsistec
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
               <span className="text-[10px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1 text-base">
-
+          {/* Links no meio (apenas Desktop) */}
+          <nav className="hidden md:flex items-center justify-center gap-1 text-base flex-1">
             {/* Soluções */}
             <div className="relative">
               <button
@@ -128,6 +128,12 @@ export function Nav() {
               </button>
             </div>
 
+            <Link title="Novidades e Lançamentos" to="/novidades"
+              onClick={() => setOpenMenu(null)}
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition flex items-center gap-1.5"
+            >
+              Novidades <span className="bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">Novo</span>
+            </Link>
             <Link title="Sobre a Microsistec" to="/empresa"
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
@@ -148,7 +154,8 @@ export function Nav() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2">
+          {/* CTAs à direita */}
+          <div className="flex items-center justify-end gap-2 shrink-0">
             <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
@@ -156,13 +163,13 @@ export function Nav() {
             >
               Entrar
             </a>
-            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noreferrer"
+            <button 
+              title="Falar com especialista" 
+              onClick={openModal}
               className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
+            </button>
             <button
               onClick={() => { setIsMobileOpen(!isMobileOpen); setOpenMenu(null); }}
               className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/8 transition cursor-pointer"
@@ -288,13 +295,13 @@ export function Nav() {
             {/* Bottom Bar */}
             <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-sm text-muted-foreground">
               <span>Tem alguma dúvida operacional ou deseja integrar canais específicos?</span>
-              <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline"
+              <button 
+                title="Falar com especialista" 
+                onClick={openModal}
+                className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline border-none bg-transparent cursor-pointer p-0"
               >
                 Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              </button>
             </div>
           </div>
         )}
@@ -435,10 +442,11 @@ export function Nav() {
                 {([
                   { label: "Planos CRM", to: "/planos" },
                   { label: "Albert IA", to: "/planos-albert" },
+                  { label: "Novidades", to: "/novidades" },
                   { label: "Sobre nós", to: "/empresa" },
                   { label: "Blog", to: "/blog" },
                   { label: "Materiais gratuitos", to: "/materiais" },
-                ] as { label: string; to: "/planos" | "/planos-albert" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
+                ] as { label: string; to: "/planos" | "/planos-albert" | "/novidades" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
                   <Link title="Acessar link" key={item.to}
                     to={item.to}
                     onClick={() => setIsMobileOpen(false)}
@@ -453,14 +461,14 @@ export function Nav() {
 
               {/* Sticky CTAs — always in thumb zone */}
               <div className="px-4 pt-3 pb-8 border-t border-[color:var(--brand-ink)]/8 flex flex-col gap-2.5">
-                <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline active:scale-[0.98] transition border-none"
+                <button 
+                  title="Falar com especialista" 
+                  onClick={openModal}
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline active:scale-[0.98] transition border-none cursor-pointer"
                   style={{ minHeight: 56 }}
                 >
                   Falar com especialista <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </button>
                 <div className="flex gap-2.5">
                   <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
                     target="_blank"
@@ -545,13 +553,13 @@ function Hero() {
             que vai além de ser o seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
-            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noreferrer"
+            <button 
+              title="Falar com especialista" 
+              onClick={openModal}
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -696,6 +704,7 @@ function Pillars() {
 /*  ALBERT — warm dark, "terminal" with personality                           */
 /* -------------------------------------------------------------------------- */
 function Albert() {
+  const { openModal } = useDemoModal();
   const features = [
     "Clone do seu melhor SDR, treinado com seu script",
     "Atendimento omnichannel 24/7 (WhatsApp, site, portais)",
@@ -739,15 +748,15 @@ function Albert() {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-              <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline text-center"
+              <button 
+                title="Fale conosco pelo WhatsApp" 
+                onClick={openModal}
+                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline text-center border-none cursor-pointer"
               >
                 <span className="hidden sm:inline">Converse com o Albert agora mesmo</span>
                 <span className="sm:hidden">Falar com o Albert no zap</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
-              </a>
+              </button>
               <Link title="Planos e Preços da IA Albert" to="/planos-albert"
                 className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
               >
@@ -1036,18 +1045,20 @@ export function CTA() {
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 w-full">
-            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noreferrer"
+            <button 
+              title="Falar com especialista" 
+              onClick={openModal}
               className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowRight className="w-4 h-4 shrink-0" />
-            </a>
-            <a title="Fale conosco pelo WhatsApp" href="https://wa.me/5513997591781"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
+            </button>
+            <button 
+              title="Falar no WhatsApp" 
+              onClick={openModal}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition bg-transparent text-[color:var(--brand-sand)] cursor-pointer"
             >
               Falar no WhatsApp
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1059,15 +1070,16 @@ export function CTA() {
 /*  FOOTER                                                                    */
 /* -------------------------------------------------------------------------- */
 export function Footer() {
+  const { openModal } = useDemoModal();
   return (
     <footer className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-12">
-          <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 font-extrabold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
+          <div className="sm:col-span-2 lg:col-span-3">
+            <Link to="/" className="flex items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
               <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
-                microsistec
+                Microsistec
                 <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
                 <span className="text-[10px] text-muted-foreground/60 self-start select-none font-sans font-normal" title="Marca Registrada">®</span>
               </div>
@@ -1087,6 +1099,7 @@ export function Footer() {
             </a>
           </div>
           <FooterCol
+            className="sm:col-span-1 lg:col-span-2"
             title="Soluções"
             links={[
               { label: "CRM Imobiliário", to: "/solucoes/$slug", params: { slug: "crm" } },
@@ -1098,18 +1111,21 @@ export function Footer() {
             ]}
           />
           <FooterCol
+            className="sm:col-span-1 lg:col-span-2"
             title="Empresa"
             links={[
               { label: "Sobre", to: "/empresa" },
+              { label: "Novidades", to: "/novidades" },
               { label: "Planos", to: "/planos" },
               { label: "Blog", to: "/blog" },
               { label: "Materiais", to: "/materiais" },
-              { label: "Falar no WhatsApp", to: "https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0" },
+              { label: "Falar no WhatsApp", onClick: openModal },
               { label: "Política de Privacidade", to: "/politica-de-privacidade" },
               { label: "Política de Cookies", to: "/politica-de-cookies" },
             ]}
           />
           <FooterCol
+            className="sm:col-span-1 lg:col-span-3"
             title="Contato"
             links={[
               { label: "financeiro@microsistec.com.br", to: "mailto:financeiro@microsistec.com.br" },
@@ -1117,6 +1133,7 @@ export function Footer() {
             ]}
           />
           <FooterCol
+            className="sm:col-span-1 lg:col-span-2"
             title="Redes sociais"
             links={[
               { label: <span className="flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</span>, to: "https://www.facebook.com/Microsistec/" },
@@ -1135,27 +1152,33 @@ export function Footer() {
 }
 
 function FooterCol({
+  className,
   title,
   links
 }: {
+  className?: string;
   title: string;
-  links: { label: React.ReactNode; to: string; params?: any }[]
+  links: { label: React.ReactNode; to?: string; params?: any; onClick?: () => void }[]
 }) {
   return (
-    <div>
+    <div className={className}>
       <h3 className="font-semibold mb-4 text-lg">{title}</h3>
       <ul className="space-y-2 text-muted-foreground text-base">
         {links.map((link, idx) => (
           <li key={idx}>
-            {link.to.startsWith("http") || link.to.startsWith("#") || link.to.startsWith("/#") ? (
+            {link.onClick ? (
+              <button onClick={link.onClick} className="hover:text-[color:var(--brand-orange)] transition cursor-pointer bg-transparent border-none p-0 text-left font-[inherit] text-[inherit]">
+                {link.label}
+              </button>
+            ) : link.to?.startsWith("http") || link.to?.startsWith("#") || link.to?.startsWith("/#") ? (
               <a title="Acessar link" href={link.to} className="hover:text-[color:var(--brand-orange)] transition">
                 {link.label}
               </a>
-            ) : (
+            ) : link.to ? (
               <Link title="Acessar link" to={link.to} params={link.params} className="hover:text-[color:var(--brand-orange)] transition cursor-pointer">
                 {link.label}
               </Link>
-            )}
+            ) : null}
           </li>
         ))}
       </ul>

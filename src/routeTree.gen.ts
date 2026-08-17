@@ -15,6 +15,7 @@ import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
 import { Route as PlanosRouteImport } from './routes/planos'
 import { Route as ObrigadoCorretorRouteImport } from './routes/obrigado-corretor'
 import { Route as ObrigadoRouteImport } from './routes/obrigado'
+import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as DiaCorretorRouteImport } from './routes/dia-corretor'
 import { Route as IndexRouteImport } from './routes/index'
@@ -53,6 +54,11 @@ const ObrigadoCorretorRoute = ObrigadoCorretorRouteImport.update({
 const ObrigadoRoute = ObrigadoRouteImport.update({
   id: '/obrigado',
   path: '/obrigado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovidadesRoute = NovidadesRouteImport.update({
+  id: '/novidades',
+  path: '/novidades',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmpresaRoute = EmpresaRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
+  '/novidades': typeof NovidadesRoute
   '/obrigado': typeof ObrigadoRoute
   '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
+  '/novidades': typeof NovidadesRoute
   '/obrigado': typeof ObrigadoRoute
   '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
+  '/novidades': typeof NovidadesRoute
   '/obrigado': typeof ObrigadoRoute
   '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/'
     | '/dia-corretor'
     | '/empresa'
+    | '/novidades'
     | '/obrigado'
     | '/obrigado-corretor'
     | '/planos'
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/dia-corretor'
     | '/empresa'
+    | '/novidades'
     | '/obrigado'
     | '/obrigado-corretor'
     | '/planos'
@@ -193,6 +204,7 @@ export interface FileRouteTypes {
     | '/'
     | '/dia-corretor'
     | '/empresa'
+    | '/novidades'
     | '/obrigado'
     | '/obrigado-corretor'
     | '/planos'
@@ -211,6 +223,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DiaCorretorRoute: typeof DiaCorretorRoute
   EmpresaRoute: typeof EmpresaRoute
+  NovidadesRoute: typeof NovidadesRoute
   ObrigadoRoute: typeof ObrigadoRoute
   ObrigadoCorretorRoute: typeof ObrigadoCorretorRoute
   PlanosRoute: typeof PlanosRoute
@@ -267,6 +280,13 @@ declare module '@tanstack/react-router' {
       path: '/obrigado'
       fullPath: '/obrigado'
       preLoaderRoute: typeof ObrigadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novidades': {
+      id: '/novidades'
+      path: '/novidades'
+      fullPath: '/novidades'
+      preLoaderRoute: typeof NovidadesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/empresa': {
@@ -339,6 +359,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DiaCorretorRoute: DiaCorretorRoute,
   EmpresaRoute: EmpresaRoute,
+  NovidadesRoute: NovidadesRoute,
   ObrigadoRoute: ObrigadoRoute,
   ObrigadoCorretorRoute: ObrigadoCorretorRoute,
   PlanosRoute: PlanosRoute,

@@ -190,21 +190,183 @@
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-nav  { box-shadow: var(--shadow-nav); }
 
-  /* Floating nav pill */
+  /* ================================================================== */
+  /*  FLOATING NAV PILL — Apple/Linear inspired                          */
+  /* ================================================================== */
   .nav-pill {
     position: relative;
-    background: oklch(1 0 0 / 0.85);
-    backdrop-filter: blur(16px) saturate(1.6);
-    -webkit-backdrop-filter: blur(16px) saturate(1.6);
-    border: 1px solid oklch(0.14 0.02 270 / 0.08);
-    border-radius: 9999px;
-    box-shadow: var(--shadow-nav);
-    transition: background 0.3s, box-shadow 0.3s;
+    background: oklch(1 0 0 / 0.82);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid oklch(0.14 0.02 270 / 0.07);
+    border-radius: 20px;
+    box-shadow:
+      var(--shadow-nav),
+      inset 0 0.5px 0 0 oklch(1 0 0 / 0.6);
+    transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   }
   .nav-pill-scrolled {
-    background: oklch(1 0 0 / 0.95);
-    box-shadow: 0 6px 32px oklch(0.14 0.02 270 / 0.14), 0 1px 0px oklch(0.14 0.02 270 / 0.06);
+    background: oklch(1 0 0 / 0.94);
+    border-color: oklch(0.14 0.02 270 / 0.10);
+    box-shadow:
+      0 8px 40px oklch(0.14 0.02 270 / 0.12),
+      0 1px 0px oklch(0.14 0.02 270 / 0.05),
+      inset 0 0.5px 0 0 oklch(1 0 0 / 0.7);
   }
+
+  /* ================================================================== */
+  /*  NAV LINK — animated underline on hover                             */
+  /* ================================================================== */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--brand-orange);
+    border-radius: 1px;
+    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    width: 60%;
+    left: 20%;
+  }
+
+  /* ================================================================== */
+  /*  MEGA MENU — spring slide-down animation                            */
+  /* ================================================================== */
+  @keyframes megaMenuIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+    }
+  }
+  .animate-megaMenu {
+    animation: megaMenuIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* ================================================================== */
+  /*  MEGA MENU ITEM — rich hover card                                   */
+  /* ================================================================== */
+  .mega-item {
+    position: relative;
+    border-left: 2px solid transparent;
+    transition: border-color 0.25s ease, background 0.2s ease, transform 0.2s ease;
+  }
+  .mega-item:hover {
+    border-left-color: var(--brand-orange);
+    background: oklch(0.14 0.02 270 / 0.03);
+    transform: translateX(2px);
+  }
+  .mega-item .mega-icon {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .mega-item:hover .mega-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px oklch(0.623 0.106 195.8 / 0.3);
+  }
+  .mega-item .mega-title {
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .mega-item:hover .mega-title {
+    color: var(--brand-orange);
+    transform: translateX(1px);
+  }
+
+  /* ================================================================== */
+  /*  CTA SHIMMER — diagonal shine sweep                                 */
+  /* ================================================================== */
+  @keyframes shimmer {
+    0%   { transform: translateX(-100%) skewX(-15deg); }
+    100% { transform: translateX(200%) skewX(-15deg); }
+  }
+  .cta-shimmer {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .cta-shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      105deg,
+      transparent 20%,
+      oklch(1 0 0 / 0.18) 50%,
+      transparent 80%
+    );
+    animation: shimmer 4s ease-in-out infinite;
+    animation-delay: 2s;
+    pointer-events: none;
+  }
+  .cta-shimmer:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px oklch(0.623 0.106 195.8 / 0.25), 0 4px 16px oklch(0.14 0.02 270 / 0.1);
+  }
+
+  /* ================================================================== */
+  /*  BADGE PULSE GLOW                                                   */
+  /* ================================================================== */
+  @keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 0 oklch(0.623 0.106 195.8 / 0.4); }
+    50%      { box-shadow: 0 0 8px 3px oklch(0.623 0.106 195.8 / 0.15); }
+  }
+  .badge-pulse {
+    animation: badgePulse 2.5s ease-in-out infinite;
+  }
+
+  /* ================================================================== */
+  /*  MOBILE BOTTOM SHEET — slide up from bottom                         */
+  /* ================================================================== */
+  @keyframes sheetSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-sheetSlideUp {
+    animation: sheetSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes backdropFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .animate-backdropFade {
+    animation: backdropFadeIn 0.3s ease forwards;
+  }
+
+  /* ================================================================== */
+  /*  HAMBURGER ICON ROTATION                                            */
+  /* ================================================================== */
+  .hamburger-icon {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hamburger-icon-open {
+    transform: rotate(90deg);
+  }
+
+  /* ================================================================== */
+  /*  EXISTING UTILITIES (preserved)                                     */
+  /* ================================================================== */
 
   /* Clean minimal card */
   .card-clean {

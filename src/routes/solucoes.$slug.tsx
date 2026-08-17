@@ -532,13 +532,13 @@ function SolucaoDetalhe() {
 
                 <div className="pt-2">
                   {sol.slug === "albert-ia" ? (
-                    <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button 
+                      title="Fale conosco pelo WhatsApp" 
+                      onClick={openModal}
                       className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </button>
                   ) : sol.slug === "app" ? (
                     <a title="Acessar link" href="#"
                       onClick={(e) => {
@@ -751,13 +751,13 @@ function SolucaoDetalhe() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               {sol.slug === "albert-ia" ? (
-                <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  title="Fale conosco pelo WhatsApp" 
+                  onClick={openModal}
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-lg hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev decoration-none no-underline"
                 >
                   Converse com o Albert agora <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               ) : (
                 <button
                   onClick={openModal}
@@ -1071,13 +1071,13 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                 </p>
               </div>
             </div>
-            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button 
+              title="Fale conosco pelo WhatsApp" 
+              onClick={openModal}
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
             >
               Converse com o Albert <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -1554,6 +1554,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
    CUSTOM COMPONENT 4: CRM SUBSECTION
    ========================================== */
 function CRMSubSection() {
+  const { openModal } = useDemoModal();
   const crmModules = [
     { icon: "🏠", title: "Cadastro de Imóveis", desc: "Cadastre imóveis de venda e locação com fotos ilimitadas, vídeos, plantas e tour virtual. Campos personalizados para cada tipo de propriedade." },
     { icon: "🏗️", title: "Empreendimentos", desc: "Gerencie lançamentos com tabelas de preço por unidade, espelho de vendas interativo e acompanhamento de evolução da obra." },
@@ -1697,13 +1698,13 @@ function CRMSubSection() {
               Marca d'água inteligente, relatórios gerenciais, exportação de dados, controle de exclusividade, histórico completo de atendimentos, fichas de visita, contratos PDF e dezenas de outros recursos prontos para usar.
             </p>
           </div>
-          <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+falar+com+um+especialista+sobre+o+CRM&type=phone_number&app_absent=0"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
+            title="Fale conosco pelo WhatsApp" 
+            onClick={openModal}
             className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
           >
             Fale com o Especialista <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -1714,6 +1715,7 @@ function CRMSubSection() {
    CUSTOM COMPONENT 5: APP SUBSECTION
    ========================================== */
 function AppSubSection() {
+  const { openModal } = useDemoModal();
   const appFeatures = [
     { icon: "📩", title: "Receba leads em tempo real", desc: "O app notifica instantaneamente quando um novo lead chega de qualquer portal, Facebook, Google ou site próprio direto na palma da mão." },
     { icon: "📊", title: "Funil de vendas mobile", desc: "Acompanhe toda a jornada do lead em formato visual. Mova negócios entre etapas com um simples toque no celular." },
@@ -1823,13 +1825,13 @@ function AppSubSection() {
 
           {/* CTA */}
           <div className="pt-2 flex flex-wrap gap-3">
-            <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+App+de+Atendimento&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button 
+              title="Fale conosco pelo WhatsApp" 
+              onClick={openModal}
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-base hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
             >
               Fale com o Especialista <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
             
             <a title="Acessar link" href="#"
               onClick={(e) => {
