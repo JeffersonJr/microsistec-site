@@ -151,7 +151,7 @@ function MaterialLandingPage() {
                         e.preventDefault();
                         setIsSubmitting(true);
                         try {
-                          const telefoneCompleto = `${formData.dialCode}${formData.phone}`.replace(/\D/g, "");
+                          const telefoneCompleto = `${formData.dialCode} ${formData.phone}`;
                           await sendLeadToClickUp({
                             nome: formData.name,
                             telefone: telefoneCompleto,
@@ -167,7 +167,7 @@ function MaterialLandingPage() {
                       }}
                     >
                       <div className="space-y-1.5">
-                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Nome completo</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Nome completo <span className="text-[color:var(--brand-orange)]">*</span></label>
                         <input 
                           required 
                           type="text" 
@@ -178,7 +178,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">E-mail de trabalho</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">E-mail de trabalho <span className="text-[color:var(--brand-orange)]">*</span></label>
                         <input 
                           required 
                           type="email" 
@@ -189,7 +189,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp <span className="text-[color:var(--brand-orange)]">*</span></label>
                         <PhoneInput
                           required
                           value={formData.phone}
@@ -198,7 +198,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">CNPJ (Opcional)</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">CNPJ</label>
                         <input 
                           type="text" 
                           placeholder="00.000.000/0001-00" 
@@ -208,7 +208,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5 relative">
-                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo <span className="text-[color:var(--brand-orange)]">*</span></label>
                         <div className="relative">
                           <select 
                             required 

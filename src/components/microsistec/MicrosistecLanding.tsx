@@ -80,7 +80,7 @@ export function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 pointer-events-none">
       <div
         ref={navRef}
-        className={`relative mx-auto max-w-6xl pointer-events-auto nav-pill ${scrolled ? "nav-pill-scrolled" : ""}`}
+        className={`relative mx-auto max-w-7xl pointer-events-auto nav-pill ${scrolled ? "nav-pill-scrolled" : ""}`}
       >
         <div className="flex items-center justify-between px-5 py-2.5 w-full gap-4">
           {/* Logo à esquerda */}
@@ -93,8 +93,7 @@ export function Nav() {
             <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Tecnologia e Inovação" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
             <div className="flex items-baseline gap-0.5">
               Microsistec
-              <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
-              <span className="text-[10px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+              <span className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
             </div>
           </Link>
 
@@ -163,8 +162,8 @@ export function Nav() {
             >
               Entrar
             </a>
-            <button 
-              title="Falar com especialista" 
+            <button
+              title="Falar com especialista"
               onClick={openModal}
               className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
@@ -295,8 +294,8 @@ export function Nav() {
             {/* Bottom Bar */}
             <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-sm text-muted-foreground">
               <span>Tem alguma dúvida operacional ou deseja integrar canais específicos?</span>
-              <button 
-                title="Falar com especialista" 
+              <button
+                title="Falar com especialista"
                 onClick={openModal}
                 className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline border-none bg-transparent cursor-pointer p-0"
               >
@@ -461,8 +460,8 @@ export function Nav() {
 
               {/* Sticky CTAs — always in thumb zone */}
               <div className="px-4 pt-3 pb-8 border-t border-[color:var(--brand-ink)]/8 flex flex-col gap-2.5">
-                <button 
-                  title="Falar com especialista" 
+                <button
+                  title="Falar com especialista"
                   onClick={openModal}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline active:scale-[0.98] transition border-none cursor-pointer"
                   style={{ minHeight: 56 }}
@@ -553,8 +552,8 @@ function Hero() {
             que vai além de ser o seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
-            <button 
-              title="Falar com especialista" 
+            <button
+              title="Falar com especialista"
               onClick={openModal}
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
@@ -748,8 +747,8 @@ function Albert() {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-              <button 
-                title="Fale conosco pelo WhatsApp" 
+              <button
+                title="Fale conosco pelo WhatsApp"
                 onClick={openModal}
                 className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline text-center border-none cursor-pointer"
               >
@@ -1045,8 +1044,8 @@ export function CTA() {
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 w-full">
-            <button 
-              title="Falar com especialista" 
+            <button
+              title="Falar com especialista"
               onClick={openModal}
               className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none no-underline"
             >
@@ -1073,8 +1072,7 @@ export function Footer() {
               <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
                 Microsistec
-                <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
-                <span className="text-[10px] text-muted-foreground/60 self-start select-none font-sans font-normal" title="Marca Registrada">®</span>
+                <span className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
               </div>
             </Link>
             <p className="text-muted-foreground text-base leading-relaxed max-w-sm">
