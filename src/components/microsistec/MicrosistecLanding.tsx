@@ -1052,13 +1052,6 @@ export function CTA() {
             >
               Falar com especialista <ArrowRight className="w-4 h-4 shrink-0" />
             </button>
-            <button 
-              title="Falar no WhatsApp" 
-              onClick={openModal}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--brand-sand)]/30 px-6 py-4 font-medium hover:bg-[color:var(--brand-sand)]/10 transition bg-transparent text-[color:var(--brand-sand)] cursor-pointer"
-            >
-              Falar no WhatsApp
-            </button>
           </div>
         </div>
       </div>
@@ -1094,7 +1087,7 @@ export function Footer() {
               className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-base hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition shadow-soft no-underline decoration-none group"
             >
               <KeyRound className="w-4 h-4" />
-              <span>imob.online: área do cliente</span>
+              <span>Entrar</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
