@@ -95,6 +95,7 @@ export const solutions: Solution[] = [
     ],
     ctaText: "Baixar Aplicativo Agora"
   },
+  /* === BACKUP MULTI-FUNIL ===
   {
     id: "funil",
     slug: "funil",
@@ -114,6 +115,28 @@ export const solutions: Solution[] = [
       "Jornada única para cada tipo de cliente: MCMV, alto padrão, locação, captação e lançamentos nunca mais misturados.",
       "Métricas mais efetivas porque comparam maçã com maçã — locação com locação, venda com venda.",
       "Decisões baseadas em dados reais por processo, não em médias distorcidas de pipelines mistos."
+    ],
+    ctaText: "Otimizar Meu Funil"
+  },
+  */
+  {
+    id: "funil",
+    slug: "funil",
+    title: "Funil de Vendas",
+    shortDesc: "Acompanhe visualmente a jornada dos seus leads, do primeiro contato até a assinatura do contrato, de forma intuitiva.",
+    longDesc: "O Funil de Vendas Kanban da Microsistec oferece uma visão clara e objetiva de todas as oportunidades de negócio da sua imobiliária. Acompanhe em qual etapa cada lead está, identifique gargalos no processo e garanta que nenhuma negociação esfrie por falta de contato.",
+    iconName: "LineChart",
+    features: [
+      "Visão Kanban interativa: movimente leads entre as etapas com um simples arrastar e soltar.",
+      "Etapas 100% customizáveis: adapte o funil ao processo de vendas exato da sua imobiliária.",
+      "Alerta de estagnação: saiba imediatamente quais leads estão parados há muito tempo em uma etapa.",
+      "Métricas em tempo real: acompanhe taxas de conversão e velocidade de avanço no funil.",
+      "Centralização total: clique em um card no funil e tenha todo o histórico, WhatsApp e propostas do lead."
+    ],
+    benefits: [
+      "Controle visual total de todo o seu pipeline de vendas e locações.",
+      "Previsibilidade de receita com base nos negócios nas etapas mais avançadas.",
+      "Correção rápida de falhas no processo comercial identificando em qual etapa os leads mais desistem."
     ],
     ctaText: "Otimizar Meu Funil"
   },

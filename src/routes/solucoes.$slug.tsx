@@ -82,12 +82,22 @@ const howItWorksData: Record<string, { title: string; steps: { n: string; title:
       { n: "03", title: "Trabalhe onde estiver", desc: "Acesse o funil, catálogo, histórico e agenda de visitas. Compartilhe lâminas no WhatsApp com um toque." },
     ],
   },
+  /* === BACKUP MULTI-FUNIL ===
   funil: {
     title: "Crie a jornada certa para cada tipo de venda",
     steps: [
       { n: "01", title: "Crie seus funis", desc: "Crie funis separados para venda, locação, MCMV, alto padrão ou lançamento. Cada um com etapas, nomes e regras totalmente independentes." },
       { n: "02", title: "Configure as etapas", desc: "Adicione quantas etapas quiser em cada funil. Nomeie-as do jeito que a sua equipe fala: 'Visita Técnica', 'Simulação CEF', 'Proposta Formal'..." },
       { n: "03", title: "Acompanhe métricas por processo", desc: "Cada funil gera suas próprias métricas: conversão, tempo médio e previsão de receita. Compare MCMV com MCMV, alto padrão com alto padrão." },
+    ],
+  },
+  */
+  funil: {
+    title: "Domine o processo de vendas de ponta a ponta",
+    steps: [
+      { n: "01", title: "Organize o funil", desc: "Personalize as colunas do funil para refletir exatamente como a sua imobiliária vende." },
+      { n: "02", title: "Acompanhe visualmente", desc: "Arraste e solte oportunidades entre as etapas. Saiba exatamente onde focar os esforços do time." },
+      { n: "03", title: "Acelere negócios", desc: "Aproveite alertas de estagnação para cobrar retornos e garanta que nenhum lead esfrie no meio do caminho." },
     ],
   },
   integracoes: {
@@ -170,7 +180,10 @@ const metricsData: Record<string, { value: string; label: string; sub: string }[
   crm:           [{ value: "40%", label: "mais produtividade", sub: "corretores ativos" }, { value: "3×", label: "mais velocidade", sub: "busca de imóveis" }, { value: "100%", label: "LGPD conforme", sub: "segurança de dados" }, { value: "30+", label: "anos de mercado", sub: "experiência validada" }],
   "albert-ia":   [{ value: "24/7", label: "atendimento", sub: "sem pausas" }, { value: "<3s", label: "tempo de resposta", sub: "média do Albert" }, { value: "300%", label: "mais velocidade", sub: "vs. atendimento humano" }, { value: "100%", label: "integrado", sub: "ao CRM Microsistec" }],
   app:           [{ value: "2×", label: "conversão", sub: "1º contato mais rápido" }, { value: "iOS + Android", label: "multiplataforma", sub: "nativo" }, { value: "100%", label: "sincronizado", sub: "em tempo real" }, { value: "Offline", label: "histórico disponível", sub: "sem internet" }],
+  /* === BACKUP MULTI-FUNIL ===
   funil:         [{ value: "∞", label: "funis possíveis", sub: "sem limite" }, { value: "∞", label: "etapas por funil", sub: "total liberdade" }, { value: "100%", label: "métricas separadas", sub: "por processo" }, { value: "0", label: "leads misturados", sub: "cada negócio no lugar certo" }],
+  */
+  funil:         [{ value: "100%", label: "visual", sub: "interface kanban" }, { value: "100%", label: "customizável", sub: "etapas sob medida" }, { value: "Zero", label: "esquecimento", sub: "alertas de estagnação" }, { value: "1 click", label: "movimentação", sub: "arrastar e soltar" }],
   integracoes:   [{ value: "40+", label: "portais", sub: "conectados" }, { value: "100%", label: "automático", sub: "sem cadastro manual" }, { value: "↓ 90%", label: "menos tempo", sub: "em publicações" }, { value: "Bidirecional", label: "sincronia", sub: "leads e anúncios" }],
   "sites-template": [{ value: "15", label: "temas", sub: "de alta conversão" }, { value: "1 dia", label: "para publicar", sub: "do zero ao ar" }, { value: "100%", label: "integrado", sub: "ao CRM Microsistec" }, { value: "SEO", label: "nativo", sub: "otimizado Google" }],
   "sites-v8":    [{ value: "98+", label: "PageSpeed", sub: "mobile e desktop" }, { value: "100%", label: "SEO score", sub: "técnico" }, { value: "CDN", label: "Cloudflare Edge", sub: "velocidade global" }, { value: "Custom", label: "design exclusivo", sub: "identidade única" }],
@@ -415,6 +428,7 @@ function SolucaoDetalhe() {
     switch (s) {
       case "crm": return "Gestão Imobiliária e Automação de Ponta a Ponta";
       case "app": return "O poder do CRM na palma da sua mão";
+      /* case "funil": return "Acelere negócios com um funil de vendas inteligente"; */
       case "funil": return "Acelere negócios com um funil de vendas inteligente";
       case "integracoes": return "Conectividade total com portais, WhatsApp e Meta";
       case "albert-ia": return "Conheça o SDR que nunca dorme e não perde leads";
@@ -429,7 +443,8 @@ function SolucaoDetalhe() {
     const titles: Record<string, string[]> = {
       "crm": ["Smart Match", "Cadastro Ágil", "Gestão de Acessos", "Documentos Automatizados", "Timeline do Cliente"],
       "app": ["Notificações em Tempo Real", "Portabilidade Total", "Compartilhamento Ágil", "Agenda na Palma da Mão", "Sincronização Imediata"],
-      "funil": ["Multi-Funil Ilimitado", "Etapas por Negócio", "Arrastar e Soltar", "Métricas Independentes", "Alertas por Funil", "Painel Consolidado"],
+      /* "funil": ["Multi-Funil Ilimitado", "Etapas por Negócio", "Arrastar e Soltar", "Métricas Independentes", "Alertas por Funil", "Painel Consolidado"], */
+      "funil": ["Kanban Visual", "Arrastar e Soltar", "Etapas Customizáveis", "Alertas de Estagnação", "Filtros Avançados", "Visão Consolidada"],
       "integracoes": ["Sincronia Bidirecional", "Atendimento via WhatsApp", "Captura Inteligente no Meta", "Painel Unificado", "Distribuição Automática"],
       "albert-ia": ["Qualificação Precisa", "Agendamento Autônomo", "Domínio de Empreendimentos", "Transferência Fluida", "Atendimento 24/7"],
       "sites-template": ["Design Adaptável", "Otimização para Buscas (SEO)", "Pesquisa Refinada", "Captação de Alta Conversão", "Implantação Expressa"],
@@ -1841,7 +1856,7 @@ function AppSubSection() {
 /* ==========================================
    CUSTOM COMPONENT 6: FUNIL SUBSECTION
    ========================================== */
-function FunilSubSection() {
+export function FunilSubSectionMulti() {
   const funnels = [
     {
       id: "alto-padrao",
@@ -2047,6 +2062,107 @@ function FunilSubSection() {
         <div className="flex gap-2 shrink-0 text-[10px] font-mono-ui">
           <span className="px-3 py-1.5 rounded-full bg-white/5 text-[color:var(--brand-sand)]/70">∞ Funis</span>
           <span className="px-3 py-1.5 rounded-full bg-white/5 text-[color:var(--brand-sand)]/70">∞ Etapas</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+function FunilSubSection() {
+  const funnel = {
+    id: "vendas",
+    label: "Vendas e Locação",
+    color: "text-blue-700 bg-blue-50",
+    metrics: { total: 125, conversion: "18%", avgValue: "R$ 450K", avgDays: 22 },
+    stages: [
+      { name: "Novo Contato", count: 45, leads: [
+        { name: "Ricardo Menezes", desc: "Apto 3q Gonzaga", value: "R$ 850K", tag: "Novo" },
+        { name: "Ana Carvalho", desc: "Casa Vila Rica", value: "R$ 1.2M", tag: "Novo" },
+      ]},
+      { name: "Em Atendimento", count: 32, leads: [
+        { name: "Fernando Lima", desc: "Apto Ponta da Praia", value: "R$ 650K", tag: "Negociando" },
+      ]},
+      { name: "Visita Agendada", count: 28, leads: [
+        { name: "Juliana Bianchi", desc: "Studio Centro", value: "R$ 290K", tag: "Visita: Sáb" },
+      ]},
+      { name: "Proposta Formal", count: 15, leads: [
+        { name: "Marcos Salave", desc: "Casa Guarujá", value: "R$ 1.8M", tag: "Em Análise" },
+      ]},
+      { name: "Fechamento", count: 5, leads: [
+        { name: "Rosa Alves", desc: "Apto Embaré", value: "R$ 420K", tag: "Contrato" },
+      ]},
+    ],
+  };
+
+  return (
+    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
+      {/* Header */}
+      <div className="space-y-4 mb-10 max-w-2xl">
+        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+          Kanban Intuitivo
+        </span>
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+          Sua imobiliária num piscar de olhos
+        </h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Tenha controle absoluto do seu pipeline de vendas e locações. Movimente oportunidades de negócio em um Kanban totalmente visual e customizado para a sua operação.
+        </p>
+      </div>
+
+      {/* Metrics for funnel */}
+      <div className="grid grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border border-[color:var(--brand-ink)]/8 rounded-xl overflow-hidden mb-6">
+        {[
+          { label: "Leads ativos", value: String(funnel.metrics.total) },
+          { label: "Conversão", value: funnel.metrics.conversion },
+          { label: "Ticket médio", value: funnel.metrics.avgValue },
+          { label: "Tempo médio", value: `${funnel.metrics.avgDays}d` },
+        ].map((m) => (
+          <div key={m.label} className="bg-background px-4 py-3 text-center">
+            <div className="text-sm font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
+            <div className="text-[10px] text-muted-foreground font-mono-ui mt-0.5">{m.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Kanban columns */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 overflow-x-auto pb-4">
+        {funnel.stages.map((stage, si) => (
+          <div key={si} className="bg-[color:var(--brand-sand)]/25 rounded-xl p-3 border border-[color:var(--brand-ink)]/6 space-y-2 min-w-[200px]">
+            <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/6">
+              <span className="text-[9px] font-bold font-mono-ui uppercase text-muted-foreground truncate pr-1">{stage.name}</span>
+              <span className="bg-[color:var(--brand-ink)]/8 text-[color:var(--brand-ink)] text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0">{stage.count}</span>
+            </div>
+            {stage.leads.map((lead, li) => (
+              <div key={li} className="p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)]/40 transition cursor-pointer">
+                <h4 className="font-bold text-[10px] leading-tight">{lead.name}</h4>
+                <p className="text-[9px] text-muted-foreground leading-tight">{lead.desc}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] text-[color:var(--brand-orange)] font-bold">{lead.value}</span>
+                  {lead.tag && (
+                    <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded-full ${funnel.color}`}>
+                      {lead.tag}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+            {/* Add card placeholder */}
+            <div className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition">
+              + Adicionar
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom callout */}
+      <div className="mt-4 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
+        <div className="flex-1">
+          <div className="text-xs font-mono-ui text-[color:var(--brand-orange)] mb-1">Totalmente Customizável</div>
+          <p className="text-sm text-[color:var(--brand-sand)]/80 leading-relaxed">
+            Renomeie, adicione ou exclua colunas livremente para que o CRM trabalhe exatamente como a sua imobiliária funciona no mundo real.
+          </p>
         </div>
       </div>
     </section>
