@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { solutions, getIconComponent } from "@/lib/data";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import { CheckCircle2, MessageCircle, ChevronDown } from "lucide-react";
 import * as React from "react";
 import { useState } from "react";
 import { PhoneInput } from "@/components/ui/phone-input";
@@ -153,20 +153,23 @@ function DiaCorretorPage() {
                         onPhoneChange={(phone, dialCode) => setFormData(p => ({ ...p, phone, dialCode }))}
                       />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-1.5 relative">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo</label>
-                      <select 
-                        required 
-                        className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none"
-                        value={formData.role}
-                        onChange={(e) => setFormData(p => ({ ...p, role: e.target.value }))}
-                      >
-                        <option value="">Selecione uma opção...</option>
-                        <option value="corretor">Corretor(a) de Imóveis</option>
-                        <option value="dono">Dono(a) de Imobiliária</option>
-                        <option value="gerente">Gerente / Coordenador</option>
-                        <option value="marketing">Marketing / Secretária(o)</option>
-                      </select>
+                      <div className="relative">
+                        <select 
+                          required 
+                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none cursor-pointer"
+                          value={formData.role}
+                          onChange={(e) => setFormData(p => ({ ...p, role: e.target.value }))}
+                        >
+                          <option value="">Selecione uma opção...</option>
+                          <option value="corretor">Corretor(a) de Imóveis</option>
+                          <option value="dono">Dono(a) de Imobiliária</option>
+                          <option value="gerente">Gerente / Coordenador</option>
+                          <option value="marketing">Marketing / Secretária(o)</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+                      </div>
                     </div>
                     <button type="submit" className="w-full h-14 mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft">
                       <MessageCircle className="w-5 h-5" />
