@@ -95,9 +95,9 @@ const howItWorksData: Record<string, { title: string; steps: { n: string; title:
   funil: {
     title: "Domine o processo de vendas de ponta a ponta",
     steps: [
-      { n: "01", title: "Organize o funil", desc: "Personalize as colunas do funil para refletir exatamente como a sua imobiliária vende." },
-      { n: "02", title: "Acompanhe visualmente", desc: "Arraste e solte oportunidades entre as etapas. Saiba exatamente onde focar os esforços do time." },
-      { n: "03", title: "Acelere negócios", desc: "Aproveite alertas de estagnação para cobrar retornos e garanta que nenhum lead esfrie no meio do caminho." },
+      { n: "01", title: "Recomendações e Match", desc: "Receba recomendações de imóveis perfeitos de acordo com o perfil do lead através do nosso cruzamento de dados inteligente." },
+      { n: "02", title: "Envios com um clique", desc: "Encaminhe as opções de imóveis selecionadas diretamente para o e-mail ou WhatsApp do cliente em segundos." },
+      { n: "03", title: "Agenda e Termo de Visita", desc: "Marque as visitas na agenda do corretor e gere automaticamente o termo de visita em PDF para assinatura." },
     ],
   },
   integracoes: {
@@ -183,7 +183,7 @@ const metricsData: Record<string, { value: string; label: string; sub: string }[
   /* === BACKUP MULTI-FUNIL ===
   funil:         [{ value: "∞", label: "funis possíveis", sub: "sem limite" }, { value: "∞", label: "etapas por funil", sub: "total liberdade" }, { value: "100%", label: "métricas separadas", sub: "por processo" }, { value: "0", label: "leads misturados", sub: "cada negócio no lugar certo" }],
   */
-  funil:         [{ value: "100%", label: "visual", sub: "interface kanban" }, { value: "100%", label: "customizável", sub: "etapas sob medida" }, { value: "Zero", label: "esquecimento", sub: "alertas de estagnação" }, { value: "1 click", label: "movimentação", sub: "arrastar e soltar" }],
+  funil:         [{ value: "100%", label: "visual", sub: "interface kanban" }, { value: "Automático", label: "recomendações", sub: "match de imóveis" }, { value: "1 click", label: "envios", sub: "whatsapp e e-mail" }, { value: "Integrado", label: "agendamento", sub: "com termo de visita" }],
   integracoes:   [{ value: "40+", label: "portais", sub: "conectados" }, { value: "100%", label: "automático", sub: "sem cadastro manual" }, { value: "↓ 90%", label: "menos tempo", sub: "em publicações" }, { value: "Bidirecional", label: "sincronia", sub: "leads e anúncios" }],
   "sites-template": [{ value: "15", label: "temas", sub: "de alta conversão" }, { value: "1 dia", label: "para publicar", sub: "do zero ao ar" }, { value: "100%", label: "integrado", sub: "ao CRM Microsistec" }, { value: "SEO", label: "nativo", sub: "otimizado Google" }],
   "sites-v8":    [{ value: "98+", label: "PageSpeed", sub: "mobile e desktop" }, { value: "100%", label: "SEO score", sub: "técnico" }, { value: "CDN", label: "Cloudflare Edge", sub: "velocidade global" }, { value: "Custom", label: "design exclusivo", sub: "identidade única" }],
@@ -444,7 +444,7 @@ function SolucaoDetalhe() {
       "crm": ["Smart Match", "Cadastro Ágil", "Gestão de Acessos", "Documentos Automatizados", "Timeline do Cliente"],
       "app": ["Notificações em Tempo Real", "Portabilidade Total", "Compartilhamento Ágil", "Agenda na Palma da Mão", "Sincronização Imediata"],
       /* "funil": ["Multi-Funil Ilimitado", "Etapas por Negócio", "Arrastar e Soltar", "Métricas Independentes", "Alertas por Funil", "Painel Consolidado"], */
-      "funil": ["Kanban Visual", "Arrastar e Soltar", "Etapas Customizáveis", "Alertas de Estagnação", "Filtros Avançados", "Visão Consolidada"],
+      "funil": ["Kanban Visual", "Match de Imóveis", "Envio via WhatsApp", "Envio por E-mail", "Agendamento", "Termo de Visita"],
       "integracoes": ["Sincronia Bidirecional", "Atendimento via WhatsApp", "Captura Inteligente no Meta", "Painel Unificado", "Distribuição Automática"],
       "albert-ia": ["Qualificação Precisa", "Agendamento Autônomo", "Domínio de Empreendimentos", "Transferência Fluida", "Atendimento 24/7"],
       "sites-template": ["Design Adaptável", "Otimização para Buscas (SEO)", "Pesquisa Refinada", "Captação de Alta Conversão", "Implantação Expressa"],
@@ -2070,35 +2070,85 @@ export function FunilSubSectionMulti() {
 
 
 
-function FunilSubSection() {
-  const funnel = {
-    id: "vendas",
-    label: "Vendas e Locação",
-    color: "text-blue-700 bg-blue-50",
-    metrics: { total: 125, conversion: "18%", avgValue: "R$ 450K", avgDays: 22 },
-    stages: [
-      { name: "Novo Contato", count: 45, leads: [
-        { name: "Ricardo Menezes", desc: "Apto 3q Gonzaga", value: "R$ 850K", tag: "Novo" },
-        { name: "Ana Carvalho", desc: "Casa Vila Rica", value: "R$ 1.2M", tag: "Novo" },
-      ]},
-      { name: "Em Atendimento", count: 32, leads: [
-        { name: "Fernando Lima", desc: "Apto Ponta da Praia", value: "R$ 650K", tag: "Negociando" },
-      ]},
-      { name: "Visita Agendada", count: 28, leads: [
-        { name: "Juliana Bianchi", desc: "Studio Centro", value: "R$ 290K", tag: "Visita: Sáb" },
-      ]},
-      { name: "Proposta Formal", count: 15, leads: [
-        { name: "Marcos Salave", desc: "Casa Guarujá", value: "R$ 1.8M", tag: "Em Análise" },
-      ]},
-      { name: "Fechamento", count: 5, leads: [
-        { name: "Rosa Alves", desc: "Apto Embaré", value: "R$ 420K", tag: "Contrato" },
-      ]},
-    ],
+
+export function FunilSubSection() {
+  const [stages, setStages] = React.useState([
+    { name: "Novo Contato", leads: [
+      { id: "1", name: "Ricardo Menezes", desc: "Apto 3q Gonzaga", value: "R$ 850K", tag: "Novo" },
+      { id: "2", name: "Ana Carvalho", desc: "Casa Vila Rica", value: "R$ 1.2M", tag: "Novo" },
+    ]},
+    { name: "Em Atendimento", leads: [
+      { id: "3", name: "Fernando Lima", desc: "Apto Ponta da Praia", value: "R$ 650K", tag: "Negociando" },
+    ]},
+    { name: "Visita Agendada", leads: [
+      { id: "4", name: "Juliana Bianchi", desc: "Studio Centro", value: "R$ 290K", tag: "Visita: Sáb" },
+    ]},
+    { name: "Proposta Formal", leads: [
+      { id: "5", name: "Marcos Salave", desc: "Casa Guarujá", value: "R$ 1.8M", tag: "Em Análise" },
+    ]},
+    { name: "Fechamento", leads: [
+      { id: "6", name: "Rosa Alves", desc: "Apto Embaré", value: "R$ 420K", tag: "Contrato" },
+    ]},
+  ]);
+
+  const [draggedItem, setDraggedItem] = React.useState<{ stageIndex: number; leadIndex: number } | null>(null);
+
+  const handleDragStart = (e: React.DragEvent, stageIndex: number, leadIndex: number) => {
+    setDraggedItem({ stageIndex, leadIndex });
+    e.dataTransfer.effectAllowed = "move";
   };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+  };
+
+  const handleDrop = (e: React.DragEvent, targetStageIndex: number) => {
+    e.preventDefault();
+    if (!draggedItem) return;
+
+    if (draggedItem.stageIndex === targetStageIndex) {
+      setDraggedItem(null);
+      return;
+    }
+
+    const newStages = [...stages];
+    const sourceStage = [...newStages[draggedItem.stageIndex].leads];
+    const targetStage = [...newStages[targetStageIndex].leads];
+    
+    // Remove from source
+    const [movedLead] = sourceStage.splice(draggedItem.leadIndex, 1);
+    // Add to target
+    targetStage.push(movedLead);
+
+    newStages[draggedItem.stageIndex].leads = sourceStage;
+    newStages[targetStageIndex].leads = targetStage;
+
+    setStages(newStages);
+    setDraggedItem(null);
+  };
+
+  const parseVGV = (val: string) => {
+    if (!val) return 0;
+    const numStr = val.replace(/[^\d.,]/g, '').replace(',', '.');
+    const num = parseFloat(numStr);
+    if (isNaN(num)) return 0;
+    if (val.toLowerCase().includes('m')) return num * 1000000;
+    if (val.toLowerCase().includes('k')) return num * 1000;
+    return num;
+  };
+
+  const formatVGV = (val: number) => {
+    if (val >= 1000000) return `R$ ${(val / 1000000).toFixed(1).replace('.0', '')}M`;
+    if (val >= 1000) return `R$ ${(val / 1000).toFixed(0)}K`;
+    return `R$ ${val}`;
+  };
+
+  const totalLeads = stages.reduce((acc, stage) => acc + stage.leads.length, 0);
+  const totalVGV = stages.reduce((acc, stage) => acc + stage.leads.reduce((sum, lead) => sum + parseVGV(lead.value), 0), 0);
 
   return (
     <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
-      {/* Header */}
       <div className="space-y-4 mb-10 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Kanban Intuitivo
@@ -2111,13 +2161,12 @@ function FunilSubSection() {
         </p>
       </div>
 
-      {/* Metrics for funnel */}
       <div className="grid grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border border-[color:var(--brand-ink)]/8 rounded-xl overflow-hidden mb-6">
         {[
-          { label: "Leads ativos", value: String(funnel.metrics.total) },
-          { label: "Conversão", value: funnel.metrics.conversion },
-          { label: "Ticket médio", value: funnel.metrics.avgValue },
-          { label: "Tempo médio", value: `${funnel.metrics.avgDays}d` },
+          { label: "Leads ativos", value: String(totalLeads) },
+          { label: "Conversão", value: "18%" },
+          { label: "VGV Potencial", value: formatVGV(totalVGV) },
+          { label: "Tempo médio", value: "22d" },
         ].map((m) => (
           <div key={m.label} className="bg-background px-4 py-3 text-center">
             <div className="text-sm font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
@@ -2126,42 +2175,55 @@ function FunilSubSection() {
         ))}
       </div>
 
-      {/* Kanban columns */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 overflow-x-auto pb-4">
-        {funnel.stages.map((stage, si) => (
-          <div key={si} className="bg-[color:var(--brand-sand)]/25 rounded-xl p-3 border border-[color:var(--brand-ink)]/6 space-y-2 min-w-[200px]">
-            <div className="flex items-center justify-between pb-2 border-b border-[color:var(--brand-ink)]/6">
-              <span className="text-[9px] font-bold font-mono-ui uppercase text-muted-foreground truncate pr-1">{stage.name}</span>
-              <span className="bg-[color:var(--brand-ink)]/8 text-[color:var(--brand-ink)] text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0">{stage.count}</span>
-            </div>
-            {stage.leads.map((lead, li) => (
-              <div key={li} className="p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)]/40 transition cursor-pointer">
-                <h4 className="font-bold text-[10px] leading-tight">{lead.name}</h4>
-                <p className="text-[9px] text-muted-foreground leading-tight">{lead.desc}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] text-[color:var(--brand-orange)] font-bold">{lead.value}</span>
-                  {lead.tag && (
-                    <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded-full ${funnel.color}`}>
-                      {lead.tag}
-                    </span>
-                  )}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 overflow-x-auto pb-4 select-none">
+        {stages.map((stage, si) => {
+          const columnVGV = stage.leads.reduce((sum, lead) => sum + parseVGV(lead.value), 0);
+          return (
+            <div 
+              key={si} 
+              className="bg-[color:var(--brand-sand)]/25 rounded-xl p-3 border border-[color:var(--brand-ink)]/6 space-y-2 min-w-[200px]"
+              onDragOver={handleDragOver}
+              onDrop={(e) => handleDrop(e, si)}
+            >
+              <div className="flex items-start justify-between pb-2 border-b border-[color:var(--brand-ink)]/6">
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold font-mono-ui uppercase text-muted-foreground truncate pr-1">{stage.name}</span>
+                  {columnVGV > 0 && <span className="text-[8px] font-mono-ui text-[color:var(--brand-orange)] font-bold">{formatVGV(columnVGV)}</span>}
                 </div>
+                <span className="bg-[color:var(--brand-ink)]/8 text-[color:var(--brand-ink)] text-[9px] font-bold px-1.5 py-0.5 rounded-full shrink-0">{stage.leads.length}</span>
               </div>
-            ))}
-            {/* Add card placeholder */}
-            <div className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition">
-              + Adicionar
+              {stage.leads.map((lead, li) => (
+                <div 
+                  key={lead.id} 
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, si, li)}
+                  className={`p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)]/40 hover:shadow-md transition cursor-grab active:cursor-grabbing ${draggedItem?.stageIndex === si && draggedItem?.leadIndex === li ? 'opacity-50' : 'opacity-100'}`}
+                >
+                  <h4 className="font-bold text-[10px] leading-tight">{lead.name}</h4>
+                  <p className="text-[9px] text-muted-foreground leading-tight pointer-events-none">{lead.desc}</p>
+                  <div className="flex items-center justify-between pointer-events-none">
+                    <span className="text-[9px] text-[color:var(--brand-orange)] font-bold">{lead.value}</span>
+                    {lead.tag && (
+                      <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full text-blue-700 bg-blue-50">
+                        {lead.tag}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+              <div className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition mt-auto">
+                + Adicionar
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Bottom callout */}
       <div className="mt-4 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
         <div className="flex-1">
-          <div className="text-xs font-mono-ui text-[color:var(--brand-orange)] mb-1">Totalmente Customizável</div>
+          <div className="text-xs font-mono-ui text-[color:var(--brand-orange)] mb-1">Mais Assertividade</div>
           <p className="text-sm text-[color:var(--brand-sand)]/80 leading-relaxed">
-            Renomeie, adicione ou exclua colunas livremente para que o CRM trabalhe exatamente como a sua imobiliária funciona no mundo real.
+            Cruze o perfil do seu lead com o estoque de imóveis, envie opções por WhatsApp e gere termos de visita automaticamente. Tudo no mesmo lugar.
           </p>
         </div>
       </div>

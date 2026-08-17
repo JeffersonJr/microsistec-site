@@ -128,10 +128,10 @@ export const solutions: Solution[] = [
     iconName: "LineChart",
     features: [
       "Visão Kanban interativa: movimente leads entre as etapas com um simples arrastar e soltar.",
-      "Etapas 100% customizáveis: adapte o funil ao processo de vendas exato da sua imobiliária.",
-      "Alerta de estagnação: saiba imediatamente quais leads estão parados há muito tempo em uma etapa.",
-      "Métricas em tempo real: acompanhe taxas de conversão e velocidade de avanço no funil.",
-      "Centralização total: clique em um card no funil e tenha todo o histórico, WhatsApp e propostas do lead."
+      "Imóveis recomendados: o sistema cruza o perfil do lead com o catálogo e sugere opções compatíveis.",
+      "Envio ágil: encaminhe as opções de imóveis diretamente por e-mail ou WhatsApp em um clique.",
+      "Gestão de visitas: agende a visita e gere o termo de visita para assinatura de forma automática.",
+      "Centralização total: clique em um card no funil e tenha todo o histórico, mensagens e propostas do lead."
     ],
     benefits: [
       "Controle visual total de todo o seu pipeline de vendas e locações.",
