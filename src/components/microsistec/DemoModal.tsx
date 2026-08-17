@@ -56,8 +56,8 @@ Gostaria de receber mais informações e agendar uma demonstração.`;
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]" />
           <div className="relative flex items-center justify-between z-10">
             <div>
-              <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest bg-[#f97316]/10 px-2.5 py-1 rounded-full">Atendimento</span>
-              <h2 className="font-extrabold text-xl tracking-tight mt-2">
+              <span className="text-[#f97316] text-sm font-bold uppercase tracking-widest bg-[#f97316]/10 px-2.5 py-1 rounded-full">Atendimento</span>
+              <h2 className="font-extrabold text-2xl tracking-tight mt-2">
                 Falar com Especialista
               </h2>
             </div>
@@ -67,13 +67,13 @@ Gostaria de receber mais informações e agendar uma demonstração.`;
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
-          <p className="text-sm text-[#1c1a17]/80 leading-relaxed mb-2">
+          <p className="text-base text-[#1c1a17]/80 leading-relaxed mb-2">
             Insira suas informações abaixo para falar conosco no WhatsApp com atendimento direcionado para sua equipe.
           </p>
 
           <div className="space-y-3">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">Nome Completo</label>
+              <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">Nome Completo</label>
               <input 
                 required 
                 type="text" 
@@ -81,13 +81,13 @@ Gostaria de receber mais informações e agendar uma demonstração.`;
                 value={formData.nome}
                 onChange={handleChange}
                 placeholder="Ex: Jefferson Junior" 
-                className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" 
+                className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#f97316]" 
               />
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">Cargo</label>
+                <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">Cargo</label>
                 <input 
                   required 
                   type="text" 
@@ -95,16 +95,16 @@ Gostaria de receber mais informações e agendar uma demonstração.`;
                   value={formData.cargo}
                   onChange={handleChange}
                   placeholder="Ex: Diretor" 
-                  className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" 
+                  className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#f97316]" 
                 />
               </div>
               <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">Qtd. Usuários</label>
+                <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">Qtd. Usuários</label>
                 <select 
                   name="usuarios"
                   value={formData.usuarios}
                   onChange={handleChange}
-                  className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316] cursor-pointer"
+                  className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#f97316] cursor-pointer"
                 >
                   <option value="1">1 usuário</option>
                   <option value="2-5">2 a 5 usuários</option>
@@ -116,7 +116,7 @@ Gostaria de receber mais informações e agendar uma demonstração.`;
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">E-mail Corporativo</label>
+              <label className="text-sm font-bold uppercase tracking-wider text-[#1c1a17]/90 block mb-1">E-mail Corporativo</label>
               <input 
                 required 
                 type="email" 
@@ -124,12 +124,12 @@ Gostaria de receber mais informações e agendar uma demonstração.`;
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="jefferson@suaimobiliaria.com.br" 
-                className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]" 
+                className="w-full h-10 px-3 rounded-lg border border-[#1c1a17]/15 bg-white text-base focus:outline-none focus:ring-2 focus:ring-[#f97316]" 
               />
             </div>
           </div>
 
-          <button type="submit" className="w-full bg-[#1c1a17] hover:bg-[#f97316] text-[#f5f0e8] hover:text-[#1c1a17] transition-colors rounded-xl py-4 font-bold text-sm mt-6 flex items-center justify-center gap-2 cursor-pointer shadow-md">
+          <button type="submit" className="w-full bg-[#1c1a17] hover:bg-[#f97316] text-[#f5f0e8] hover:text-[#1c1a17] transition-colors rounded-xl py-4 font-bold text-base mt-6 flex items-center justify-center gap-2 cursor-pointer shadow-md">
             Iniciar Conversa no WhatsApp <ArrowRight className="w-4 h-4" />
           </button>
         </form>

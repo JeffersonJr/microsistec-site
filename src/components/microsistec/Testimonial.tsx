@@ -26,7 +26,7 @@ export default function Testimonial() {
               <CarouselContent>
                 {testimonials.map((t) => (
                   <CarouselItem key={t.id}>
-                    <blockquote className="text-2xl md:text-4xl font-serif-italic leading-[1.2] tracking-[-0.01em]">
+                    <blockquote className="text-3xl md:text-5xl font-serif-italic leading-[1.2] tracking-[-0.01em]">
                       "{t.quote}"
                     </blockquote>
                   </CarouselItem>

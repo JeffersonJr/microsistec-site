@@ -145,7 +145,7 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
           <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
             Como funciona
           </span>
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
             {data.title}
           </h2>
         </div>
@@ -156,14 +156,14 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
           {data.steps.map((step, i) => (
             <div key={i} className="relative flex flex-col gap-4 p-7 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/30 hover:shadow-soft transition-all duration-300 feature-card">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center font-mono-ui text-sm font-bold shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center font-mono-ui text-base font-bold shrink-0">
                   {step.n}
                 </div>
                 <div className="h-px flex-1 bg-[color:var(--brand-ink)]/8 md:hidden" />
               </div>
               <div>
-                <h3 className="font-bold text-base mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                <h3 className="font-bold text-lg mb-2">{step.title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </div>
           ))}
@@ -200,8 +200,8 @@ function SolutionMetrics({ slug }: { slug: string }) {
         {metrics.map((m, i) => (
           <div key={i} className="relative bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-8 flex flex-col items-center gap-1 text-center overflow-hidden group feature-card border border-[color:var(--brand-ink)]">
             <div className="absolute -top-4 -right-4 w-16 h-16 bg-[color:var(--brand-orange)]/10 rounded-full" />
-            <div className="text-3xl md:text-4xl font-extrabold text-[color:var(--brand-orange)] tracking-tight relative z-10">{m.value}</div>
-            <div className="text-xs font-semibold text-[color:var(--brand-sand)] mt-1 relative z-10">{m.label}</div>
+            <div className="text-4xl md:text-5xl font-extrabold text-[color:var(--brand-orange)] tracking-tight relative z-10">{m.value}</div>
+            <div className="text-sm font-semibold text-[color:var(--brand-sand)] mt-1 relative z-10">{m.label}</div>
             <div className="text-[10px] text-[color:var(--brand-sand)]/50 font-mono-ui relative z-10">{m.sub}</div>
           </div>
         ))}
@@ -270,9 +270,9 @@ function SolutionForWho({ slug }: { slug: string }) {
       <div className="grid md:grid-cols-3 gap-4">
         {profiles.map((p, i) => (
           <div key={i} className="group p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-gradient-to-br from-[color:var(--brand-sand)]/40 to-background hover:from-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-soft transition-all duration-300 feature-card">
-            <span className="text-3xl block mb-4">{p.icon}</span>
-            <h3 className="font-bold text-sm mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">{p.title}</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
+            <span className="text-4xl block mb-4">{p.icon}</span>
+            <h3 className="font-bold text-base mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">{p.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
           </div>
         ))}
       </div>
@@ -365,7 +365,7 @@ function SolutionFAQ({ slug }: { slug: string }) {
                 onClick={() => setOpenIdx(isOpen ? null : i)}
                 className="w-full flex items-center justify-between gap-4 text-left cursor-pointer bg-transparent border-none py-1 group"
               >
-                <span className="text-sm font-semibold text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                <span className="text-base font-semibold text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
                   {faq.q}
                 </span>
                 <span
@@ -384,7 +384,7 @@ function SolutionFAQ({ slug }: { slug: string }) {
                   opacity: isOpen ? 1 : 0,
                 }}
               >
-                <p className="text-sm text-muted-foreground leading-relaxed pt-3 pb-1">
+                <p className="text-base text-muted-foreground leading-relaxed pt-3 pb-1">
                   {faq.a}
                 </p>
               </div>
@@ -488,15 +488,15 @@ function SolucaoDetalhe() {
           
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
-              <Link title="Página Inicial da Microsistec" to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground">
+              <Link title="Página Inicial da Microsistec" to="/" className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground">
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
-              <Link title="Acessar link" to="/solucoes" className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)]/80 hover:text-[color:var(--brand-orange)] transition">
+              <Link title="Acessar link" to="/solucoes" className="text-sm font-mono-ui uppercase text-[color:var(--brand-orange)]/80 hover:text-[color:var(--brand-orange)] transition">
                 Soluções
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
-              <span className="text-xs font-mono-ui uppercase text-muted-foreground">
+              <span className="text-sm font-mono-ui uppercase text-muted-foreground">
                 {sol.title}
               </span>
             </div>
@@ -522,11 +522,11 @@ function SolucaoDetalhe() {
                   {sol.title}
                 </h1>
                 
-                <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-serif-italic">
+                <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed font-serif-italic">
                   {sol.shortDesc}
                 </p>
 
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {sol.longDesc}
                 </p>
 
@@ -566,12 +566,12 @@ function SolucaoDetalhe() {
               </div>
 
               <div className="md:col-span-4 bg-background border border-[color:var(--brand-ink)]/8 rounded-2xl p-6 shadow-soft space-y-5 md:sticky md:top-20">
-                <h4 className="font-bold text-xs uppercase font-mono-ui text-muted-foreground/70 tracking-widest pb-3 border-b border-[color:var(--brand-ink)]/6">
+                <h4 className="font-bold text-sm uppercase font-mono-ui text-muted-foreground/70 tracking-widest pb-3 border-b border-[color:var(--brand-ink)]/6">
                   Vantagens
                 </h4>
                 <ul className="space-y-3">
                   {sol.benefits.map((b: string, idx: number) => (
-                    <li key={idx} className="flex gap-2.5 text-sm leading-relaxed text-foreground/75">
+                    <li key={idx} className="flex gap-2.5 text-base leading-relaxed text-foreground/75">
                       <CheckCircle2 className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
                       <span>{b}</span>
                     </li>
@@ -588,7 +588,7 @@ function SolucaoDetalhe() {
             <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
               O que está incluso
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               {getFeaturesTitle(sol.slug, sol.title)}
             </h2>
           </div>
@@ -599,14 +599,14 @@ function SolucaoDetalhe() {
                 key={idx} 
                 className="feature-card flex items-start gap-4 p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/25 transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/8 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-xs font-bold">
+                <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/8 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-sm font-bold">
                   {(idx + 1).toString().padStart(2, "0")}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm text-foreground mb-1">
+                  <h3 className="font-semibold text-base text-foreground mb-1">
                     {getFeatureCardTitle(sol.slug, idx)}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {f}
                   </p>
                 </div>
@@ -635,10 +635,10 @@ function SolucaoDetalhe() {
                   <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
                     Ecossistema Completo
                   </span>
-                  <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+                  <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
                     Mais de 40 portais e ferramentas integradas
                   </h2>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     Sincronize seus imóveis automaticamente com os maiores players do mercado. Sem cadastros manuais repetitivos, sem perda de tempo.
                   </p>
                 </div>
@@ -651,7 +651,7 @@ function SolucaoDetalhe() {
                     placeholder="Buscar portal ou ferramenta..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-background border border-[color:var(--brand-ink)]/15 focus:outline-none focus:ring-1 focus:ring-[color:var(--brand-orange)] focus:border-[color:var(--brand-orange)] rounded-full text-xs font-medium"
+                    className="w-full pl-10 pr-4 py-2.5 bg-background border border-[color:var(--brand-ink)]/15 focus:outline-none focus:ring-1 focus:ring-[color:var(--brand-orange)] focus:border-[color:var(--brand-orange)] rounded-full text-sm font-medium"
                   />
                 </div>
               </div>
@@ -662,7 +662,7 @@ function SolucaoDetalhe() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-xs font-semibold transition cursor-pointer border ${
+                    className={`px-4 py-2 rounded-full text-sm font-semibold transition cursor-pointer border ${
                       activeCategory === cat
                         ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]"
                         : "bg-background text-muted-foreground border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] hover:text-foreground"
@@ -688,7 +688,7 @@ function SolucaoDetalhe() {
                       {/* Logo and Badge */}
                       <div className="flex items-center justify-between mb-4">
                         <div
-                          className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-base shadow-sm ${portal.logoBg} ${portal.logoTextColor}`}
+                          className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-sm ${portal.logoBg} ${portal.logoTextColor}`}
                         >
                           {portal.logoText}
                         </div>
@@ -704,7 +704,7 @@ function SolucaoDetalhe() {
                       </div>
 
                       {/* Info */}
-                      <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                      <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
                         {portal.name}
                       </h3>
                       
@@ -712,7 +712,7 @@ function SolucaoDetalhe() {
                         {portal.category}
                       </span>
                       
-                      <p className="text-xs text-muted-foreground mt-3 leading-relaxed flex-grow">
+                      <p className="text-sm text-muted-foreground mt-3 leading-relaxed flex-grow">
                         {portal.description}
                       </p>
                     </div>
@@ -720,8 +720,8 @@ function SolucaoDetalhe() {
                 </div>
               ) : (
                 <div className="text-center py-16 border border-dashed border-[color:var(--brand-ink)]/15 rounded-2xl space-y-2">
-                  <h4 className="font-bold text-foreground text-sm">Nenhum portal encontrado</h4>
-                  <p className="text-xs text-muted-foreground">Tente buscar por termos diferentes ou selecione outra categoria.</p>
+                  <h4 className="font-bold text-foreground text-base">Nenhum portal encontrado</h4>
+                  <p className="text-sm text-muted-foreground">Tente buscar por termos diferentes ou selecione outra categoria.</p>
                 </div>
               )}
 
@@ -737,16 +737,16 @@ function SolucaoDetalhe() {
           />
           <div className="bg-grid absolute inset-0 opacity-10" />
           <div className="relative mx-auto max-w-4xl px-6 text-center space-y-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/15 bg-[color:var(--brand-sand)]/8 px-4 py-1.5 text-sm text-[color:var(--brand-sand)]/70">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/15 bg-[color:var(--brand-sand)]/8 px-4 py-1.5 text-base text-[color:var(--brand-sand)]/70">
               <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse" />
               Comece hoje, sem burocracia
             </div>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[color:var(--brand-sand)] leading-[1.02]">
+            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[color:var(--brand-sand)] leading-[1.02]">
               Comece a usar o{" "}
               <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">{sol.title}</span>
               {" "}hoje mesmo
             </h2>
-            <p className="text-base text-[color:var(--brand-sand)]/60 max-w-md mx-auto">
+            <p className="text-lg text-[color:var(--brand-sand)]/60 max-w-md mx-auto">
               Experimente toda a inteligência e automação da Microsistec. Leva menos de 30 segundos para configurar.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
@@ -754,20 +754,20 @@ function SolucaoDetalhe() {
                 <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-base hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev decoration-none no-underline"
+                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-lg hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev decoration-none no-underline"
                 >
                   Converse com o Albert agora <ArrowRight className="w-4 h-4" />
                 </a>
               ) : (
                 <button
                   onClick={openModal}
-                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-base hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev"
+                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-lg hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev"
                 >
                   Ativar Teste 14 Dias Grátis <ArrowRight className="w-4 h-4" />
                 </button>
               )}
               <a title="Acessar link" href="/solucoes"
-                className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/20 text-[color:var(--brand-sand)]/70 px-7 py-4 font-medium text-base hover:bg-[color:var(--brand-sand)]/10 transition decoration-none no-underline"
+                className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/20 text-[color:var(--brand-sand)]/70 px-7 py-4 font-medium text-lg hover:bg-[color:var(--brand-sand)]/10 transition decoration-none no-underline"
               >
                 Ver todas as soluções
               </a>
@@ -884,22 +884,22 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
         
           {/* Texts */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-xs font-mono-ui font-bold">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-sm font-mono-ui font-bold">
               <Bot className="w-3.5 h-3.5" /> Interatividade Real
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               Veja o Albert IA operando em tempo real
             </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Interaja com o simulador de WhatsApp ao lado. O Albert atende com empatia linguística, faz cruzamento de dados, qualificação bancária de crédito e agenda visitas integradas diretamente no CRM da sua imobiliária, 24 horas por dia.
             </p>
 
             {/* Comparison */}
             <div className="space-y-4 pt-2">
-              <h4 className="text-xs font-bold uppercase font-mono-ui text-foreground tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
+              <h4 className="text-sm font-bold uppercase font-mono-ui text-foreground tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
                 Por que ele é diferente de chatbots comuns?
               </h4>
-              <div className="grid grid-cols-2 gap-4 text-xs leading-relaxed">
+              <div className="grid grid-cols-2 gap-4 text-sm leading-relaxed">
                 <div className="p-3 bg-red-50/40 rounded-xl border border-red-100">
                   <span className="font-bold text-red-700 block mb-1">Chatbot Tradicional</span>
                   Menu engessado de botões, sem contexto humano e frustrante para o cliente final.
@@ -914,7 +914,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             <div className="pt-2">
               <button 
                 onClick={resetChat} 
-                className="text-xs font-mono-ui font-bold text-[color:var(--brand-orange)] hover:underline flex items-center gap-1 cursor-pointer"
+                className="text-sm font-mono-ui font-bold text-[color:var(--brand-orange)] hover:underline flex items-center gap-1 cursor-pointer"
               >
                 Reiniciar Simulação ↻
               </button>
@@ -931,7 +931,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                 <img src="/albert-logo.png" alt="Albert" title="Albert - Assistente Virtual" width={28} height={28} loading="lazy" decoding="async" className="w-7 h-7 object-contain" />
               </div>
               <div>
-                <div className="font-bold text-sm flex items-center gap-1">
+                <div className="font-bold text-base flex items-center gap-1">
                   Albert IA <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse inline-block" />
                 </div>
                 <div className="text-[10px] text-[color:var(--brand-sand)]/70">Atendimento Imobiliário Oficial</div>
@@ -950,7 +950,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                     className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"} animate-fadeIn`}
                   >
                     <div 
-                      className={`max-w-[85%] rounded-2xl p-3 text-xs leading-relaxed ${
+                      className={`max-w-[85%] rounded-2xl p-3 text-sm leading-relaxed ${
                         msg.sender === "user" 
                           ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-tr-none" 
                           : "bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/10 rounded-tl-none shadow-sm"
@@ -983,7 +983,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                   <button
                     key={i}
                     onClick={() => handleOptionClick(opt.label, opt.actionStep)}
-                    className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] px-4 py-2 rounded-full text-xs font-bold transition shadow-sm cursor-pointer"
+                    className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] px-4 py-2 rounded-full text-sm font-bold transition shadow-sm cursor-pointer"
                   >
                     {opt.label}
                   </button>
@@ -991,12 +991,12 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
               ) : !isTyping && currentStep === 4 ? (
                 <button
                   onClick={openModal}
-                  className="bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] text-[color:var(--brand-ink)] px-6 py-2.5 rounded-full text-xs font-extrabold transition shadow-elev cursor-pointer flex items-center gap-1"
+                  className="bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] text-[color:var(--brand-ink)] px-6 py-2.5 rounded-full text-sm font-extrabold transition shadow-elev cursor-pointer flex items-center gap-1"
                 >
                   Conectar Minha Imobiliária Agora <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               ) : (
-                <span className="text-xs text-muted-foreground/60 italic font-mono-ui">
+                <span className="text-sm text-muted-foreground/60 italic font-mono-ui">
                   Albert digitando... aguarde a resposta
                 </span>
               )}
@@ -1012,10 +1012,10 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
           <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
             A única IA para imobiliárias com um coração
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             O clone do seu melhor SDR
           </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             Chega de soluções genéricas. O Albert é uma IA personalizada que atua como um clone do seu melhor SDR. Uma solução montada sob medida para sua imobiliária com tom de voz, conhecimento dos empreendimentos e roteiro comercial exclusivos.
           </p>
         </div>
@@ -1027,12 +1027,12 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
               key={i}
               className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
             >
-              <span className="text-2xl shrink-0 mt-0.5">{cap.icon}</span>
+              <span className="text-3xl shrink-0 mt-0.5">{cap.icon}</span>
               <div>
-                <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
+                <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
                   {cap.title}
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{cap.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{cap.desc}</p>
               </div>
             </div>
           ))}
@@ -1041,20 +1041,20 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
         {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">24/7</div>
-            <div className="text-xs text-muted-foreground font-mono-ui mt-1">Disponibilidade</div>
+            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">24/7</div>
+            <div className="text-sm text-muted-foreground font-mono-ui mt-1">Disponibilidade</div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">300%</div>
-            <div className="text-xs text-muted-foreground font-mono-ui mt-1">+ Velocidade</div>
+            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">300%</div>
+            <div className="text-sm text-muted-foreground font-mono-ui mt-1">+ Velocidade</div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">&lt;3s</div>
-            <div className="text-xs text-muted-foreground font-mono-ui mt-1">Tempo resposta</div>
+            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">&lt;3s</div>
+            <div className="text-sm text-muted-foreground font-mono-ui mt-1">Tempo resposta</div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-3xl font-extrabold text-[color:var(--brand-orange)]">100%</div>
-            <div className="text-xs text-muted-foreground font-mono-ui mt-1">Integrado ao CRM</div>
+            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">100%</div>
+            <div className="text-sm text-muted-foreground font-mono-ui mt-1">Integrado ao CRM</div>
           </div>
         </div>
 
@@ -1065,8 +1065,8 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             <div className="flex items-center gap-4">
               <img src="/albert-logo.png" alt="Albert IA" title="Albert IA" width={56} height={56} loading="lazy" decoding="async" className="w-14 h-14 object-contain" />
               <div className="flex-1 space-y-2">
-                <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">Conheça o Albert pessoalmente</h3>
-                <p className="text-sm text-[color:var(--brand-sand)]/70 max-w-lg">
+                <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">Conheça o Albert pessoalmente</h3>
+                <p className="text-base text-[color:var(--brand-sand)]/70 max-w-lg">
                   Converse agora mesmo com o Albert pelo WhatsApp e veja na prática como ele transforma o atendimento da sua imobiliária.
                 </p>
               </div>
@@ -1213,10 +1213,10 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Catálogo Oficial de Temas
         </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
           Nossos 15 Modelos Otimizados
         </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed">
           Temos 15 temas de altíssima conversão integrados à nossa plataforma, prontos para rodar no seu próprio domínio com velocidade extrema e SEO avançado.
         </p>
       </div>
@@ -1255,10 +1255,10 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
                     </span>
                   ))}
                 </div>
-                <h3 className="font-extrabold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
                   {tpl.name}
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {tpl.desc}
                 </p>
               </div>
@@ -1382,7 +1382,7 @@ const HalfCircleDial = ({ score, label, color, maxScore = 100 }: { score: number
           />
         </svg>
         <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-          <span className="text-2xl font-bold font-mono-ui" style={{ color }}>{displayValue}</span>
+          <span className="text-3xl font-bold font-mono-ui" style={{ color }}>{displayValue}</span>
         </div>
       </div>
       <span className="mt-3 text-[10px] uppercase font-bold text-muted-foreground text-center leading-tight h-8 max-w-[80px]">{label}</span>
@@ -1402,10 +1402,10 @@ const PageSpeedComparison = () => {
   return (
     <div className="w-full mx-auto max-w-5xl px-6 py-16">
       <div className="text-center mb-10">
-        <h3 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-4">
+        <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
           A diferença invisível que <span className="text-[color:var(--brand-orange)]">muda tudo</span>.
         </h3>
-        <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
           Sites comuns de imobiliárias perdem vendas antes mesmo de carregar. Veja o salto técnico que os Sites V8 da Microsistec proporcionam aos olhos do Google.
         </p>
       </div>
@@ -1456,10 +1456,10 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Showcase Imobiliário Real
         </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
           Vitrine de Projetos V8 Ativos
         </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed">
           Nossos clientes Sites V8 experimentam velocidade de carregamento absurda no celular e nota máxima nos rankings técnicos. Veja projetos de verdade operando no mercado brasileiro:
         </p>
       </div>
@@ -1474,7 +1474,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
             <div>
               {/* Header: Name and metrics info */}
               <div className="flex items-center justify-between pb-4 border-b border-dashed border-[color:var(--brand-ink)]/10 mb-4">
-                <h3 className="font-extrabold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition">
+                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[color:var(--brand-orange)] transition">
                   {client.name}
                 </h3>
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse block" title="Site em produção estável" />
@@ -1489,7 +1489,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
                 ))}
               </div>
 
-              <p className="text-xs text-muted-foreground leading-relaxed mb-6">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 {client.desc}
               </p>
 
@@ -1514,7 +1514,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
             <a title="Acessar link" href={client.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[color:var(--brand-ink)] group-hover:bg-[color:var(--brand-orange)] text-[color:var(--brand-sand)] group-hover:text-[color:var(--brand-ink)] transition text-center py-2.5 rounded-full text-xs font-bold flex items-center justify-center gap-1.5 no-underline decoration-none"
+              className="w-full bg-[color:var(--brand-ink)] group-hover:bg-[color:var(--brand-orange)] text-[color:var(--brand-sand)] group-hover:text-[color:var(--brand-ink)] transition text-center py-2.5 rounded-full text-sm font-bold flex items-center justify-center gap-1.5 no-underline decoration-none"
             >
               Visitar Portal Ativo <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
@@ -1527,21 +1527,21 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
         <div className="flex items-center gap-3">
           <Award className="w-8 h-8 text-[color:var(--brand-orange)] shrink-0 mx-auto md:mx-0" />
           <div>
-            <h4 className="font-bold text-xs">Pioneirismo V8</h4>
+            <h4 className="font-bold text-sm">Pioneirismo V8</h4>
             <p className="text-[10px] text-muted-foreground">Primeira linha brasileira de sites imobiliários SSR nativos.</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <Shield className="w-8 h-8 text-[color:var(--brand-orange)] shrink-0 mx-auto md:mx-0" />
           <div>
-            <h4 className="font-bold text-xs">Segurança Extrema</h4>
+            <h4 className="font-bold text-sm">Segurança Extrema</h4>
             <p className="text-[10px] text-muted-foreground">Certificação HTTPS, CDN Cloudflare Edge e proteção anti-DDoS.</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <Zap className="w-8 h-8 text-[color:var(--brand-orange)] shrink-0 mx-auto md:mx-0" />
           <div>
-            <h4 className="font-bold text-xs">Velocidade Crítica</h4>
+            <h4 className="font-bold text-sm">Velocidade Crítica</h4>
             <p className="text-[10px] text-muted-foreground">Otimização automática de WebP e imagens sob demanda.</p>
           </div>
         </div>
@@ -1574,10 +1574,10 @@ function CRMSubSection() {
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Ecossistema Completo
         </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
           Tudo que sua imobiliária precisa em um só lugar
         </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed">
           O CRM da Microsistec vai muito além de um simples cadastro. É uma plataforma completa de gestão imobiliária com módulos integrados que funcionam em sinergia.
         </p>
       </div>
@@ -1589,15 +1589,15 @@ function CRMSubSection() {
             key={i}
             className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
           >
-            <span className="text-2xl shrink-0 mt-0.5">{mod.icon}</span>
+            <span className="text-3xl shrink-0 mt-0.5">{mod.icon}</span>
             <div>
-              <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
+              <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
                 {mod.title}
                 {mod.title === "Blog Integrado" && (
                   <span className="ml-2 text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Módulo Extra</span>
                 )}
               </h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">{mod.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{mod.desc}</p>
             </div>
           </div>
         ))}
@@ -1606,16 +1606,16 @@ function CRMSubSection() {
       {/* Match Inteligente Visual */}
       <div className="grid lg:grid-cols-2 gap-10 items-center mb-14">
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-xs font-mono-ui font-bold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-sm font-mono-ui font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" /> Cruzamento de Dados
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             Match Inteligente de Imóveis
           </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             No momento em que um novo imóvel é inserido no CRM, o algoritmo varre sua carteira de leads e notifica por e-mail e WhatsApp os compradores com potencial de fechamento correspondente.
           </p>
-          <ul className="space-y-3 text-xs text-foreground/80 font-mono-ui">
+          <ul className="space-y-3 text-sm text-foreground/80 font-mono-ui">
             <li className="flex items-center gap-2">
               <Check className="w-4 h-4 text-emerald-500" /> Match por bairro, faixa financeira, dormitórios e vagas.
             </li>
@@ -1635,8 +1635,8 @@ function CRMSubSection() {
           <div className="p-4 bg-background rounded-2xl border border-[color:var(--brand-ink)]/10 shadow-sm relative">
             <div className="absolute top-2 right-2 stamp text-emerald-600 text-[8px] font-bold">DISPONÍVEL</div>
             <div className="font-mono-ui text-[10px] text-muted-foreground">CÓD: AP3290</div>
-            <h4 className="font-extrabold text-sm mt-1">Apartamento Vista Mar - Gonzaga</h4>
-            <div className="text-xs font-mono-ui font-semibold text-[color:var(--brand-orange)] mt-1">R$ 890.000</div>
+            <h4 className="font-extrabold text-base mt-1">Apartamento Vista Mar - Gonzaga</h4>
+            <div className="text-sm font-mono-ui font-semibold text-[color:var(--brand-orange)] mt-1">R$ 890.000</div>
           </div>
 
           <div className="flex justify-center relative py-1">
@@ -1648,8 +1648,8 @@ function CRMSubSection() {
 
           <div className="p-4 bg-background rounded-2xl border border-[color:var(--brand-ink)]/10 shadow-sm relative">
             <div className="absolute top-2 right-2 stamp text-indigo-600 text-[8px] font-bold">LEAD QUALIFICADO</div>
-            <h4 className="font-extrabold text-sm">Jefferson Junior</h4>
-            <div className="text-xs text-muted-foreground mt-1">Preferencia: Gonzaga/Boqueirão · R$ 900.000 max.</div>
+            <h4 className="font-extrabold text-base">Jefferson Junior</h4>
+            <div className="text-sm text-muted-foreground mt-1">Preferencia: Gonzaga/Boqueirão · R$ 900.000 max.</div>
           </div>
         </div>
       </div>
@@ -1665,8 +1665,8 @@ function CRMSubSection() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition">Central de Ajuda</h3>
-            <p className="text-xs text-muted-foreground mt-0.5">Base de conhecimento com mais de 200 artigos, tutoriais e vídeos de suporte.</p>
+            <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition">Central de Ajuda</h3>
+            <p className="text-sm text-muted-foreground mt-0.5">Base de conhecimento com mais de 200 artigos, tutoriais e vídeos de suporte.</p>
           </div>
           <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
         </a>
@@ -1680,8 +1680,8 @@ function CRMSubSection() {
             <Award className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-sm text-foreground group-hover:text-[color:var(--brand-orange)] transition">Microsistec Academy</h3>
-            <p className="text-xs text-muted-foreground mt-0.5">Cursos e treinamentos exclusivos para sua equipe dominar cada recurso da plataforma.</p>
+            <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition">Microsistec Academy</h3>
+            <p className="text-sm text-muted-foreground mt-0.5">Cursos e treinamentos exclusivos para sua equipe dominar cada recurso da plataforma.</p>
           </div>
           <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
         </a>
@@ -1692,8 +1692,8 @@ function CRMSubSection() {
         <div className="bg-grid absolute inset-0 opacity-15" />
         <div className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10">
           <div className="flex-1 space-y-3">
-            <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">E muito mais.</h3>
-            <p className="text-sm text-[color:var(--brand-sand)]/70 max-w-lg">
+            <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">E muito mais.</h3>
+            <p className="text-base text-[color:var(--brand-sand)]/70 max-w-lg">
               Marca d'água inteligente, relatórios gerenciais, exportação de dados, controle de exclusividade, histórico completo de atendimentos, fichas de visita, contratos PDF e dezenas de outros recursos prontos para usar.
             </p>
           </div>
@@ -1733,7 +1733,7 @@ function AppSubSection() {
             <div className="w-32 h-5 bg-[color:var(--brand-ink)] rounded-b-2xl absolute top-0 left-1/2 -translate-x-1/2 z-20" />
             
             {/* Screen Content */}
-            <div className="bg-background w-full h-full rounded-[30px] p-4 flex flex-col overflow-hidden relative text-xs">
+            <div className="bg-background w-full h-full rounded-[30px] p-4 flex flex-col overflow-hidden relative text-sm">
               <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
               
               {/* Header */}
@@ -1798,13 +1798,13 @@ function AppSubSection() {
 
         {/* Texts */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-xs font-mono-ui font-bold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-sm font-mono-ui font-bold">
             <Smartphone className="w-3.5 h-3.5" /> Mobilidade Total
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             Toda a imobiliária na palma da mão do corretor
           </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             O corretor não trabalha sentado o dia todo. Ele está na rua, visitando imóveis e fechando negócios. Nosso app coloca todos os leads, o funil de vendas completo, o catálogo de imóveis com endereço para visita e todo o histórico de atendimento sempre disponível no bolso dele.
           </p>
 
@@ -1812,9 +1812,9 @@ function AppSubSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {appFeatures.map((feat, i) => (
               <div key={i} className="flex items-start gap-3 p-3 rounded-xl border border-[color:var(--brand-ink)]/5 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/20 transition">
-                <span className="text-lg shrink-0">{feat.icon}</span>
+                <span className="text-xl shrink-0">{feat.icon}</span>
                 <div>
-                  <h4 className="font-bold text-xs text-foreground mb-0.5">{feat.title}</h4>
+                  <h4 className="font-bold text-sm text-foreground mb-0.5">{feat.title}</h4>
                   <p className="text-[10px] text-muted-foreground leading-relaxed">{feat.desc}</p>
                 </div>
               </div>
@@ -1826,7 +1826,7 @@ function AppSubSection() {
             <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+App+de+Atendimento&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-sm hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
+              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-base hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
             >
               Fale com o Especialista <ArrowRight className="w-4 h-4" />
             </a>
@@ -1841,7 +1841,7 @@ function AppSubSection() {
                   window.open("https://play.google.com/store/apps/details?id=br.com.microsistec.mercury&hl=pt_BR", "_blank");
                 }
               }}
-              className="inline-flex items-center gap-2 rounded-full bg-background border border-[color:var(--brand-ink)]/20 text-[color:var(--brand-ink)] px-6 py-3 font-bold text-sm hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer shadow-soft no-underline decoration-none"
+              className="inline-flex items-center gap-2 rounded-full bg-background border border-[color:var(--brand-ink)]/20 text-[color:var(--brand-ink)] px-6 py-3 font-bold text-base hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer shadow-soft no-underline decoration-none"
             >
               Baixar aplicativo <Smartphone className="w-4 h-4" />
             </a>
@@ -1980,10 +1980,10 @@ export function FunilSubSectionMulti() {
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Multi-Funil Interativo
         </span>
-        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
           Um funil diferente para cada tipo de negócio
         </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed">
           Alto padrão, MCMV, locação e lançamentos têm jornadas completamente diferentes. 
           Crie funis independentes com etapas, responsáveis e métricas próprias para cada processo.
         </p>
@@ -1995,7 +1995,7 @@ export function FunilSubSectionMulti() {
           <button
             key={f.id}
             onClick={() => setActiveFunnel(i)}
-            className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 cursor-pointer border-none ${
+            className={`text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200 cursor-pointer border-none ${
               activeFunnel === i
                 ? `${f.color} ring-1 ring-inset ring-current`
                 : "bg-[color:var(--brand-sand)]/40 text-muted-foreground hover:bg-[color:var(--brand-sand)] hover:text-foreground"
@@ -2015,7 +2015,7 @@ export function FunilSubSectionMulti() {
           { label: "Tempo médio", value: `${funnel.metrics.avgDays}d` },
         ].map((m) => (
           <div key={m.label} className="bg-background px-4 py-3 text-center">
-            <div className="text-sm font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
+            <div className="text-base font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
             <div className="text-[10px] text-muted-foreground font-mono-ui mt-0.5">{m.label}</div>
           </div>
         ))}
@@ -2054,8 +2054,8 @@ export function FunilSubSectionMulti() {
       {/* Bottom callout */}
       <div className="mt-8 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
         <div className="flex-1">
-          <div className="text-xs font-mono-ui text-[color:var(--brand-orange)] mb-1">Multi-Funil Ilimitado</div>
-          <p className="text-sm text-[color:var(--brand-sand)]/80 leading-relaxed">
+          <div className="text-sm font-mono-ui text-[color:var(--brand-orange)] mb-1">Multi-Funil Ilimitado</div>
+          <p className="text-base text-[color:var(--brand-sand)]/80 leading-relaxed">
             Crie quantos funis precisar. Etapas, responsáveis e métricas totalmente independentes por processo de negócio.
           </p>
         </div>
@@ -2153,10 +2153,10 @@ export function FunilSubSection() {
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Kanban Intuitivo
         </span>
-        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
           Sua imobiliária num piscar de olhos
         </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed">
           Tenha controle absoluto do seu pipeline de vendas e locações. Movimente oportunidades de negócio em um Kanban totalmente visual e customizado para a sua operação.
         </p>
       </div>
@@ -2169,7 +2169,7 @@ export function FunilSubSection() {
           { label: "Tempo médio", value: "22d" },
         ].map((m) => (
           <div key={m.label} className="bg-background px-4 py-3 text-center">
-            <div className="text-sm font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
+            <div className="text-base font-extrabold text-[color:var(--brand-orange)]">{m.value}</div>
             <div className="text-[10px] text-muted-foreground font-mono-ui mt-0.5">{m.label}</div>
           </div>
         ))}
@@ -2221,8 +2221,8 @@ export function FunilSubSection() {
 
       <div className="mt-4 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
         <div className="flex-1">
-          <div className="text-xs font-mono-ui text-[color:var(--brand-orange)] mb-1">Mais Assertividade</div>
-          <p className="text-sm text-[color:var(--brand-sand)]/80 leading-relaxed">
+          <div className="text-sm font-mono-ui text-[color:var(--brand-orange)] mb-1">Mais Assertividade</div>
+          <p className="text-base text-[color:var(--brand-sand)]/80 leading-relaxed">
             Cruze o perfil do seu lead com o estoque de imóveis, envie opções por WhatsApp e gere termos de visita automaticamente. Tudo no mesmo lugar.
           </p>
         </div>
@@ -2297,10 +2297,10 @@ function RodizioSubSection() {
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Fila Inteligente Round-Robin
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
           Simulador de Rodízio de Atendimento
         </h2>
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <p className="text-muted-foreground text-base leading-relaxed">
           Veja como o sistema distribui leads de forma justa e automática entre os corretores disponíveis. Clique em "Novo Lead" para simular um contato entrando de um portal imobiliário.
         </p>
       </div>
@@ -2312,7 +2312,7 @@ function RodizioSubSection() {
           <div className="flex items-center justify-between px-5 py-3.5 border-b border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-mono-ui font-bold uppercase tracking-widest">Fila de Corretores · Ao Vivo</span>
+              <span className="text-sm font-mono-ui font-bold uppercase tracking-widest">Fila de Corretores · Ao Vivo</span>
             </div>
             <span className="text-[10px] font-mono-ui text-[color:var(--brand-sand)]/50">{queue.length} corretores</span>
           </div>
@@ -2336,14 +2336,14 @@ function RodizioSubSection() {
                 </div>
 
                 {/* Avatar initial */}
-                <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shrink-0">
+                <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-base bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shrink-0">
                   {c.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                 </div>
 
                 {/* Info */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-sm truncate">{c.name}</span>
+                    <span className="font-semibold text-base truncate">{c.name}</span>
                     {idx === 0 && (
                       <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] uppercase tracking-wide shrink-0">
                         Vez
@@ -2375,21 +2375,21 @@ function RodizioSubSection() {
         <div className="md:col-span-2 flex flex-col gap-4">
           {/* Incoming Lead Card */}
           <div className="rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 p-5 space-y-4">
-            <h4 className="font-bold text-sm uppercase font-mono-ui tracking-wider text-muted-foreground">
+            <h4 className="font-bold text-base uppercase font-mono-ui tracking-wider text-muted-foreground">
               ↙ Lead Entrante
             </h4>
 
             {incomingLead ? (
               <div className="space-y-3">
                 <div className="p-3.5 rounded-xl border border-[color:var(--brand-orange)]/30 bg-[color:var(--brand-orange)]/8 space-y-1.5">
-                  <div className="text-xs text-muted-foreground font-mono-ui">via {incomingLead.portal}</div>
-                  <div className="font-bold text-sm">{incomingLead.name}</div>
-                  <div className="text-xs text-muted-foreground">{incomingLead.phone}</div>
+                  <div className="text-sm text-muted-foreground font-mono-ui">via {incomingLead.portal}</div>
+                  <div className="font-bold text-base">{incomingLead.name}</div>
+                  <div className="text-sm text-muted-foreground">{incomingLead.phone}</div>
                 </div>
                 <button
                   onClick={handleConfirm}
                   disabled={animating}
-                  className="w-full py-3 rounded-xl font-semibold text-sm transition-all duration-200 cursor-pointer border-none"
+                  className="w-full py-3 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer border-none"
                   style={{
                     background: animating ? "rgba(14,17,23,0.3)" : "var(--brand-ink)",
                     color: "var(--brand-sand)",
@@ -2401,7 +2401,7 @@ function RodizioSubSection() {
             ) : (
               <button
                 onClick={handleDistribute}
-                className="w-full py-3 rounded-xl font-semibold text-sm transition-all duration-200 cursor-pointer border-none"
+                className="w-full py-3 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer border-none"
                 style={{ background: "var(--brand-orange)", color: "var(--brand-ink)" }}
               >
                 + Novo Lead
@@ -2409,7 +2409,7 @@ function RodizioSubSection() {
             )}
 
             {distributed && (
-              <div className="p-3 rounded-xl border border-green-500/30 bg-green-50/40 text-xs text-green-700 font-medium">
+              <div className="p-3 rounded-xl border border-green-500/30 bg-green-50/40 text-sm text-green-700 font-medium">
                 ✓ <strong>{distributed.lead}</strong> enviado para <strong>{distributed.corretor}</strong> no WhatsApp!
               </div>
             )}
@@ -2426,9 +2426,9 @@ function RodizioSubSection() {
                 key={rule.title}
                 className="flex gap-3 p-3.5 rounded-xl border border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/30 transition"
               >
-                <span className="text-lg shrink-0">{rule.icon}</span>
+                <span className="text-xl shrink-0">{rule.icon}</span>
                 <div>
-                  <div className="font-semibold text-xs mb-0.5">{rule.title}</div>
+                  <div className="font-semibold text-sm mb-0.5">{rule.title}</div>
                   <div className="text-[11px] text-muted-foreground leading-relaxed">{rule.desc}</div>
                 </div>
               </div>
@@ -2445,8 +2445,8 @@ function RodizioSubSection() {
           { value: "↑ 42%", label: "Conversão de 1º contato", sub: "por velocidade de resposta" },
         ].map((m) => (
           <div key={m.label} className="text-center">
-            <div className="text-2xl md:text-3xl font-extrabold tracking-tight text-[color:var(--brand-orange)]">{m.value}</div>
-            <div className="text-xs font-semibold mt-1">{m.label}</div>
+            <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-[color:var(--brand-orange)]">{m.value}</div>
+            <div className="text-sm font-semibold mt-1">{m.label}</div>
             <div className="text-[10px] text-muted-foreground">{m.sub}</div>
           </div>
         ))}

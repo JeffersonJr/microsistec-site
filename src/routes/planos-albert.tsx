@@ -100,7 +100,7 @@ function PlanosAlbertPage() {
         <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-            <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
+            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
               Albert IA
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
@@ -111,7 +111,7 @@ function PlanosAlbertPage() {
                 atendimento
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
               Escolha o volume ideal de atendimentos mensais. O Albert cuida de toda a triagem e qualificação, sem limite de corretores.
             </p>
           </div>
@@ -129,31 +129,31 @@ function PlanosAlbertPage() {
                   }`}
               >
                 {plan.isPopular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
                     Mais Escolhido
                   </div>
                 )}
 
                 <div className="space-y-2 mb-8">
-                  <h3 className={`font-extrabold tracking-tight leading-none ${plan.name.length > 10 ? 'text-[1.75rem] lg:text-[1.35rem] xl:text-[1.65rem] break-words' : 'text-5xl'}`}>
+                  <h3 className={`font-extrabold tracking-tight leading-none ${plan.name.length > 10 ? 'text-[1.75rem] lg:text-[1.35rem] xl:text-[1.65rem] break-words' : 'text-6xl'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm leading-relaxed ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
+                  <p className={`text-base leading-relaxed ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
                     {plan.desc}
                   </p>
                 </div>
 
                 <div className="mb-8">
-                  <div className="text-3xl font-extrabold tracking-tighter leading-none py-2">{plan.price}</div>
+                  <div className="text-4xl font-extrabold tracking-tighter leading-none py-2">{plan.price}</div>
                 </div>
 
                 <div className="space-y-4 mb-8 flex-1">
                   <div className="pb-4 mb-4 border-b border-current/10">
-                    <div className="flex items-center gap-2 mb-2 font-semibold text-sm">
+                    <div className="flex items-center gap-2 mb-2 font-semibold text-base">
                       <Bot className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`} />
                       {plan.limit}
                     </div>
-                    <div className="flex items-center gap-2 font-semibold text-sm">
+                    <div className="flex items-center gap-2 font-semibold text-base">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                       {plan.users}
                     </div>
@@ -161,7 +161,7 @@ function PlanosAlbertPage() {
 
                   <ul className="space-y-3">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm leading-tight">
+                      <li key={idx} className="flex items-start gap-3 text-base leading-tight">
                         <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : "text-[color:var(--brand-ink)]/50"}`} />
                         <span>{feature}</span>
                       </li>
@@ -187,10 +187,10 @@ function PlanosAlbertPage() {
         <section className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
           <div className="relative mx-auto max-w-4xl px-6 text-center space-y-8">
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
               Pronto para transformar seu atendimento?
             </h2>
-            <p className="text-lg text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
+            <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
               O Albert atende clientes de forma 100% autônoma, capturando informações chave e enviando o lead enriquecido direto para o seu funil de vendas.
             </p>
             <div className="pt-4">

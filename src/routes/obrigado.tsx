@@ -27,23 +27,23 @@ function ObrigadoPage() {
             <CheckCircle2 className="w-10 h-10 text-green-600" />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] mb-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-[color:var(--brand-ink)] mb-6">
             Obrigado! Seu material já deve estar baixando.
           </h1>
           
-          <p className="text-xl text-muted-foreground mb-12">
+          <p className="text-2xl text-muted-foreground mb-12">
             Caso o download não tenha iniciado automaticamente, verifique sua pasta de downloads.
             Enquanto isso, que tal aproveitar para conhecer mais sobre a Microsistec?
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
-              className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] font-bold text-lg hover:bg-black/5 transition"
+              className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-black/5 transition"
             >
               Ler nosso Blog
             </Link>
             <Link title="Página Inicial da Microsistec" to="/"
-              className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center gap-2 rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-lg hover:bg-[color:var(--brand-sand)] transition shadow-soft group"
+              className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center gap-2 rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft group"
             >
               Conhecer a Microsistec
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

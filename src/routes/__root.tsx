@@ -75,7 +75,7 @@ function NotFoundComponent() {
 
       {/* Address-style badge */}
       <div
-        className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono"
+        className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-mono"
         style={{
           background: "rgba(255,107,53,0.12)",
           border: "1px solid rgba(255,107,53,0.3)",
@@ -112,7 +112,7 @@ function NotFoundComponent() {
 
       {/* Footer joke */}
       <p
-        className="mt-16 text-xs font-mono"
+        className="mt-16 text-sm font-mono"
         style={{ color: "rgba(245,240,232,0.3)", letterSpacing: "0.06em" }}
       >
         © {new Date().getFullYear()} Microsistec · nem todos os endereços existem, mas todos os leads são bem-vindos.
@@ -135,10 +135,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           This page didn't load
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-base text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -147,12 +147,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Try again
           </button>
           <a title="Página Inicial da Microsistec" href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
           </a>

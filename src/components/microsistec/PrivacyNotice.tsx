@@ -31,7 +31,7 @@ export function PrivacyNotice() {
           color: "var(--brand-ink, #0e1117)"
         }}
       >
-        <div className="text-sm leading-relaxed text-gray-600">
+        <div className="text-base leading-relaxed text-gray-600">
           <p>
             Utilizamos cookies para melhorar a sua experiência em nosso site, personalizar conteúdo e anúncios. Ao continuar navegando, você concorda com a nossa{" "}
             <Link title="Política de Privacidade" to="/politica-de-privacidade" className="text-[#c2410c] font-medium hover:underline underline-offset-2">
@@ -47,7 +47,7 @@ export function PrivacyNotice() {
         <div className="flex-shrink-0 w-full md:w-auto flex justify-end">
           <button
             onClick={acceptCookies}
-            className="w-full md:w-auto px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
+            className="w-full md:w-auto px-6 py-2.5 rounded-full text-base font-semibold transition-all duration-200"
             style={{
               backgroundColor: "var(--brand-orange, #ff6b35)",
               color: "var(--brand-ink, #0e1117)",

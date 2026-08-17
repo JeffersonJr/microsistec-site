@@ -27,7 +27,7 @@ function MateriaisIndex() {
       <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
         <div className="bg-grid absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-          <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
+          <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
             Conteúdos Gratuitos
           </span>
           <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
@@ -37,7 +37,7 @@ function MateriaisIndex() {
               sua imobiliária
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
             E-books, guias, planilhas e scripts exclusivos desenvolvidos por especialistas para ajudar corretores e gestores a venderem mais.
           </p>
         </div>
@@ -67,7 +67,7 @@ function MateriaisIndex() {
                     width={400}
                     height={300}
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[color:var(--brand-ink)] flex items-center gap-1.5 shadow-sm">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-[color:var(--brand-ink)] flex items-center gap-1.5 shadow-sm">
                     <FileText className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
                     {mat.type}
                   </div>
@@ -75,14 +75,14 @@ function MateriaisIndex() {
 
                 {/* Conteúdo */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold tracking-tight text-[color:var(--brand-ink)] leading-snug mb-3 group-hover:text-[color:var(--brand-orange)] transition-colors">
+                  <h3 className="text-xl font-bold tracking-tight text-[color:var(--brand-ink)] leading-snug mb-3 group-hover:text-[color:var(--brand-orange)] transition-colors">
                     {mat.title}
                   </h3>
-                  <p className="text-sm text-foreground/70 leading-relaxed mb-6 flex-1">
+                  <p className="text-base text-foreground/70 leading-relaxed mb-6 flex-1">
                     {mat.description}
                   </p>
 
-                  <div className="inline-flex items-center gap-2 font-bold text-[color:var(--brand-orange)] text-sm mt-auto">
+                  <div className="inline-flex items-center gap-2 font-bold text-[color:var(--brand-orange)] text-base mt-auto">
                     {mat.ctaText}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

@@ -13,7 +13,7 @@ export function WhatsAppButton() {
         }}
       >
       <MessageCircle className="w-6 h-6 md:w-5 md:h-5" />
-      <span className="font-semibold text-sm hidden md:inline-block">Falar com especialista</span>
+      <span className="font-semibold text-base hidden md:inline-block">Falar com especialista</span>
     </a>
   );
 }

@@ -91,7 +91,7 @@ function MaterialLandingPage() {
         
         <div className="pt-32 pb-16 md:pt-36 md:pb-24 px-6 relative z-10 max-w-7xl mx-auto w-full">
           
-          <Link title="Materiais Ricos e Gratuitos" to="/materiais" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10">
+          <Link title="Materiais Ricos e Gratuitos" to="/materiais" className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10">
             <ArrowLeft className="w-4 h-4" />
             Voltar para materiais
           </Link>
@@ -100,15 +100,15 @@ function MaterialLandingPage() {
             
             {/* Esquerda: Copy / Benefícios */}
             <div className="flex flex-col lg:col-span-7">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-[color:var(--brand-sand)] text-xs font-bold text-[color:var(--brand-ink)] border border-[color:var(--brand-ink)]/5 w-fit mb-6">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-[color:var(--brand-sand)] text-sm font-bold text-[color:var(--brand-ink)] border border-[color:var(--brand-ink)]/5 w-fit mb-6">
                 Material Gratuito • {material.type}
               </div>
               
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-[-0.02em] text-[color:var(--brand-ink)] leading-[1.15] mb-6">
+              <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-0.02em] text-[color:var(--brand-ink)] leading-[1.15] mb-6">
                 {renderFormattedText(title)}
               </h1>
               
-              <p className="text-xl text-foreground/80 leading-relaxed mb-8">
+              <p className="text-2xl text-foreground/80 leading-relaxed mb-8">
                 {subtitle}
               </p>
               
@@ -116,7 +116,7 @@ function MaterialLandingPage() {
                 {bullets.map((benefit, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
-                    <span className="text-foreground/80 text-lg font-medium">{benefit}</span>
+                    <span className="text-foreground/80 text-xl font-medium">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -132,10 +132,10 @@ function MaterialLandingPage() {
                 
                 {step === "form" ? (
                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <h3 className="text-2xl font-bold tracking-tight text-[color:var(--brand-ink)] mb-2">
+                    <h3 className="text-3xl font-bold tracking-tight text-[color:var(--brand-ink)] mb-2">
                       Baixe o material agora
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-8">
+                    <p className="text-base text-muted-foreground mb-8">
                       Preencha seus dados reais para receber o link de download.
                     </p>
                     
@@ -147,7 +147,7 @@ function MaterialLandingPage() {
                       }}
                     >
                       <div className="space-y-1.5">
-                        <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Nome completo</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Nome completo</label>
                         <input 
                           required 
                           type="text" 
@@ -158,7 +158,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-sm font-semibold text-[color:var(--brand-ink)]">E-mail de trabalho</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">E-mail de trabalho</label>
                         <input 
                           required 
                           type="email" 
@@ -169,7 +169,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp</label>
                         <PhoneInput
                           required
                           value={formData.phone}
@@ -178,7 +178,7 @@ function MaterialLandingPage() {
                         />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-sm font-semibold text-[color:var(--brand-ink)]">Cargo</label>
+                        <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo</label>
                         <select 
                           required 
                           className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none"
@@ -192,11 +192,11 @@ function MaterialLandingPage() {
                           <option value="marketing">Marketing / Secretária(o)</option>
                         </select>
                       </div>
-                      <button type="submit" className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-lg hover:bg-[color:var(--brand-sand)] transition shadow-soft">
+                      <button type="submit" className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft">
                         {material.ctaText}
                       </button>
                     </form>
-                    <p className="text-xs text-muted-foreground text-center mt-6">
+                    <p className="text-sm text-muted-foreground text-center mt-6">
                       Prometemos não usar suas informações para enviar spam.
                     </p>
                   </div>
@@ -205,10 +205,10 @@ function MaterialLandingPage() {
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                       <MessageCircle className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold tracking-tight text-[color:var(--brand-ink)] mb-3">
+                    <h3 className="text-3xl font-bold tracking-tight text-[color:var(--brand-ink)] mb-3">
                       Falta pouco! Libere seu material.
                     </h3>
-                    <p className="text-muted-foreground mb-8 text-base">
+                    <p className="text-muted-foreground mb-8 text-lg">
                       Clique no botão abaixo para nos avisar no WhatsApp que você solicitou o material. 
                       <br/><br/>
                       <strong>Assim que você clicar, o download começará automaticamente!</strong>
@@ -218,7 +218,7 @@ function MaterialLandingPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleWhatsAppClick}
-                      className="w-full h-14 inline-flex items-center justify-center rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#1DA851] transition shadow-soft gap-2"
+                      className="w-full h-14 inline-flex items-center justify-center rounded-xl bg-[#25D366] text-white font-bold text-xl hover:bg-[#1DA851] transition shadow-soft gap-2"
                     >
                       <MessageCircle className="w-5 h-5" />
                       Chamar no WhatsApp e Baixar

@@ -46,15 +46,15 @@ function BlogLeitor() {
       <main className="mx-auto max-w-7xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
         {/* Breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[color:var(--brand-ink)]/10 pb-4">
-          <Link title="Página Inicial da Microsistec" to="/" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+          <Link title="Página Inicial da Microsistec" to="/" className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-muted-foreground" />
-          <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+          <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
             Blog
           </Link>
           <ChevronRight className="w-3 h-3 text-muted-foreground" />
-          <span className="text-xs font-mono-ui uppercase text-muted-foreground line-clamp-1 max-w-[200px] md:max-w-xs">
+          <span className="text-sm font-mono-ui uppercase text-muted-foreground line-clamp-1 max-w-[200px] md:max-w-xs">
             {post.title}
           </span>
         </div>
@@ -66,7 +66,7 @@ function BlogLeitor() {
           <article className="lg:col-span-8 space-y-6">
             
             {/* Meta */}
-            <div className="flex items-center gap-3 text-xs font-mono-ui">
+            <div className="flex items-center gap-3 text-sm font-mono-ui">
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
                 {post.tag}
               </span>
@@ -98,10 +98,10 @@ function BlogLeitor() {
                 }}
               />
               <div>
-                <div className="font-semibold text-sm leading-tight text-foreground">
+                <div className="font-semibold text-base leading-tight text-foreground">
                   {post.author.name}
                 </div>
-                <div className="text-xs text-muted-foreground">
+                <div className="text-sm text-muted-foreground">
                   {post.author.role} · Microsistec
                 </div>
               </div>
@@ -137,14 +137,14 @@ function BlogLeitor() {
 
             {/* Content Injection */}
             <div 
-              className="prose max-w-none text-foreground/90 mt-8 leading-relaxed space-y-6 text-base"
+              className="prose max-w-none text-foreground/90 mt-8 leading-relaxed space-y-6 text-lg"
               dangerouslySetInnerHTML={{ __html: post.content || '' }}
             />
 
             {/* Bottom Back Nav */}
             <div className="pt-8 border-t border-[color:var(--brand-ink)]/10">
               <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition"
+                className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition"
               >
                 <ArrowLeft className="w-4 h-4" /> Voltar para o diretório de artigos
               </Link>
@@ -163,11 +163,11 @@ function BlogLeitor() {
                   <Bot className="w-5 h-5 text-[color:var(--brand-orange)]" />
                 </div>
                 
-                <h3 className="font-extrabold text-xl tracking-tight leading-snug">
+                <h3 className="font-extrabold text-2xl tracking-tight leading-snug">
                   Pare de perder leads imobiliários no WhatsApp!
                 </h3>
                 
-                <p className="text-xs text-[color:var(--brand-sand)]/75 leading-relaxed">
+                <p className="text-sm text-[color:var(--brand-sand)]/75 leading-relaxed">
                   Deixe o **Albert IA** atender, qualificar e agendar visitas em tempo real direto no seu CRM, 24 horas por dia.
                 </p>
 
@@ -175,7 +175,7 @@ function BlogLeitor() {
                   <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Ol%C3%A1%2C+tudo+bem%3F+Vi+o+site+e+gostaria+de+saber+mais+sobre+o+Albert+e+suas+funcionalidades&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center justify-center decoration-none no-underline"
+                    className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center justify-center decoration-none no-underline"
                   >
                     Converse com o Albert agora mesmo <ArrowRight className="w-3.5 h-3.5" />
                   </a>
@@ -190,18 +190,18 @@ function BlogLeitor() {
                   <Building2 className="w-5 h-5 text-[color:var(--brand-ink)]" />
                 </div>
                 
-                <h3 className="font-extrabold text-xl tracking-tight leading-snug">
+                <h3 className="font-extrabold text-2xl tracking-tight leading-snug">
                   Gestão imobiliária que dá resultado
                 </h3>
                 
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Experimente o CRM mais robusto do mercado. Automações, contratos, integrações com portais e funil de vendas avançado.
                 </p>
 
                 <div className="pt-2">
                   <button
                     onClick={openModal}
-                    className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
+                    className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
                   >
                     Testar CRM por 15 dias <ArrowRight className="w-3.5 h-3.5" />
                   </button>
@@ -211,15 +211,15 @@ function BlogLeitor() {
 
             {/* General Info Card */}
             <div className="bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 rounded-3xl p-6 shadow-soft space-y-4">
-              <h4 className="font-bold text-xs uppercase font-mono-ui tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
+              <h4 className="font-bold text-sm uppercase font-mono-ui tracking-wider pb-2 border-b border-dashed border-[color:var(--brand-ink)]/15">
                 ✦ Sobre a Microsistec
               </h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 Fomos os **pioneiros absolutos em trazer a tecnologia para o setor imobiliário brasileiro** desde **1994**. Unimos CRM robusto, sites de carregamento instantâneo, aplicativos e IA, provando em três décadas de mercado que sabemos o que fazemos.
               </p>
               <div className="pt-1">
                 <Link title="Sobre a Microsistec" to="/empresa"
-                  className="text-xs font-semibold text-[color:var(--brand-orange)] hover:underline inline-flex items-center gap-1"
+                  className="text-sm font-semibold text-[color:var(--brand-orange)] hover:underline inline-flex items-center gap-1"
                 >
                   Conhecer nossa história <Sparkles className="w-3.5 h-3.5" />
                 </Link>

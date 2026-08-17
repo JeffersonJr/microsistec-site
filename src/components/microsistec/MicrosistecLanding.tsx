@@ -85,26 +85,26 @@ export function Nav() {
         <div className="flex h-[54px] items-center justify-between px-5">
           <Link
             to="/"
-            className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
+            className="flex items-center gap-2 font-extrabold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
             <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Tecnologia e Inovação" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
             <div className="flex items-baseline gap-0.5">
               microsistec
-              <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
+              <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
               <span className="text-[10px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1 text-sm">
+          <nav className="hidden md:flex items-center gap-1 text-base">
 
             {/* Soluções */}
             <div className="relative">
               <button
                 onClick={() => toggleMenu("solucoes")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "solucoes" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "solucoes" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
               >
                 Soluções
                 <ChevronDown
@@ -118,7 +118,7 @@ export function Nav() {
             <div className="relative">
               <button
                 onClick={() => toggleMenu("planos")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "planos" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "planos" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
               >
                 Planos
                 <ChevronDown
@@ -130,19 +130,19 @@ export function Nav() {
 
             <Link title="Sobre a Microsistec" to="/empresa"
               onClick={() => setOpenMenu(null)}
-              className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Sobre
             </Link>
             <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
               onClick={() => setOpenMenu(null)}
-              className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Blog
             </Link>
             <Link title="Materiais Ricos e Gratuitos" to="/materiais"
               onClick={() => setOpenMenu(null)}
-              className="px-3 py-2 rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Materiais
             </Link>
@@ -152,14 +152,14 @@ export function Nav() {
             <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
+              className="hidden md:inline text-base font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
             >
               Entrar
             </a>
             <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-sm font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
+              className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
@@ -199,8 +199,8 @@ export function Nav() {
                         <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
-                        <p className="text-xs text-muted-foreground leading-normal">{item.desc}</p>
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-normal">{item.desc}</p>
                       </div>
                     </Link>
                   ))}
@@ -228,8 +228,8 @@ export function Nav() {
                         <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
-                        <p className="text-xs text-muted-foreground leading-normal">{item.desc}</p>
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-normal">{item.desc}</p>
                       </div>
                     </Link>
                   ))}
@@ -255,8 +255,8 @@ export function Nav() {
                         <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
-                        <p className="text-xs text-muted-foreground leading-normal">{item.desc}</p>
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-normal">{item.desc}</p>
                       </div>
                     </Link>
                   ))}
@@ -275,10 +275,10 @@ export function Nav() {
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <h4 className="font-bold text-sm leading-none">Sistema de Locação</h4>
+                        <h4 className="font-bold text-base leading-none">Sistema de Locação</h4>
                         <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 leading-none">Em breve</span>
                       </div>
-                      <p className="text-xs text-muted-foreground/50 leading-normal">Contratos, reajustes e repasses imobiliários digitais</p>
+                      <p className="text-sm text-muted-foreground/50 leading-normal">Contratos, reajustes e repasses imobiliários digitais</p>
                     </div>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export function Nav() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-xs text-muted-foreground">
+            <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-sm text-muted-foreground">
               <span>Tem alguma dúvida operacional ou deseja integrar canais específicos?</span>
               <a title="Fale conosco pelo WhatsApp" href="https://api.whatsapp.com/send/?phone=5513997591781&text=Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20CRM%20imobili%C3%A1rio&type=phone_number&app_absent=0"
                 target="_blank"
@@ -310,13 +310,13 @@ export function Nav() {
                   </div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">CRM Imobiliário</span>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
                   Planos desenhados para corretores independentes, imobiliárias em crescimento ou grandes redes com dezenas de filiais.
                 </p>
                 <div>
                   <Link title="Planos e Preços do CRM" to="/planos"
                     onClick={() => setOpenMenu(null)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[color:var(--brand-orange)] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
                     Ver tabela de preços do CRM <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -331,13 +331,13 @@ export function Nav() {
                   </div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Albert IA (SDR)</span>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
                   Automatize o primeiro contato dos portais e Meta Ads no WhatsApp 24/7 com inteligência e qualificação financeira.
                 </p>
                 <div>
                   <Link title="Planos e Preços da IA Albert" to="/planos-albert"
                     onClick={() => setOpenMenu(null)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[color:var(--brand-orange)] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
                     Conhecer planos do Albert IA <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -350,14 +350,14 @@ export function Nav() {
                 <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
                 <div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-orange)] mb-1 block">Atendimento</span>
-                  <h4 className="font-extrabold text-base mb-2">Fale com um Especialista</h4>
-                  <p className="text-xs text-[color:var(--brand-sand)]/70 leading-relaxed">
+                  <h4 className="font-extrabold text-lg mb-2">Fale com um Especialista</h4>
+                  <p className="text-sm text-[color:var(--brand-sand)]/70 leading-relaxed">
                     Fale com nosso especialista agora e tire suas dúvidas ou solicite uma simulação customizada para o tamanho da sua imobiliária.
                   </p>
                 </div>
                 <button
                   onClick={() => { setOpenMenu(null); openModal(); }}
-                  className="w-full mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-xs font-bold py-2.5 hover:scale-[1.02] transition cursor-pointer border-none"
+                  className="w-full mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold py-2.5 hover:scale-[1.02] transition cursor-pointer border-none"
                 >
                   Falar com especialista agora
                 </button>
@@ -499,13 +499,13 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-14 md:pt-36 md:pb-20 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 md:mb-12">
-          <div className="flex items-center gap-3 text-sm">
+          <div className="flex items-center gap-3 text-base">
             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-ink)]/[0.03] px-3.5 py-1 text-[13px]">
               <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse" />
               A pioneira em tecnologia imobiliária desde 1994
             </span>
           </div>
-          <span className="font-serif-italic text-muted-foreground/60 hidden md:inline text-sm">
+          <span className="font-serif-italic text-muted-foreground/60 hidden md:inline text-base">
             cap. 01: uma carta para quem ainda vende imóvel no caderninho
           </span>
         </div>
@@ -530,7 +530,7 @@ function Hero() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse"></span>
                 Desde 1994
               </div>
-              <p className="font-serif-italic text-xl leading-[1.3] text-[color:var(--brand-sand)]">
+              <p className="font-serif-italic text-2xl leading-[1.3] text-[color:var(--brand-sand)]">
                 "feito por gente que conhece imobiliária de verdade"
               </p>
             </div>
@@ -539,7 +539,7 @@ function Hero() {
 
         {/* sub + CTAs */}
         <div className="mt-8 lg:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start md:items-center">
-          <p className="md:col-span-7 text-base md:text-lg text-foreground/75 leading-relaxed">
+          <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
             Como pioneiros em trazer tecnologia para o setor imobiliário brasileiro, somos uma empresa <strong>A.I. first</strong>. Unimos CRM completo, site, app de atendimento, automações e o{" "}
             <strong className="text-foreground">Albert IA</strong>, uma inteligência artificial
             que vai além de ser o seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
@@ -580,7 +580,7 @@ function Ticker() {
   return (
     <div className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
       <div className="overflow-hidden">
-        <div className="marquee flex gap-10 py-3.5 whitespace-nowrap text-sm">
+        <div className="marquee flex gap-10 py-3.5 whitespace-nowrap text-base">
           {row.map((t, i) => (
             <span key={i} className="inline-flex items-center gap-3">
               <span className="font-serif-italic text-[color:var(--brand-orange)]">✦</span>
@@ -606,22 +606,22 @@ function StatsStrip() {
   return (
     <section id="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight max-w-xl leading-snug">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-xl leading-snug">
           Pioneiros em trazer tecnologia para imobiliárias. Três décadas de estrada{" "}
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
             provam que sabemos
           </span>{" "}
           o que fazemos.
         </h2>
-        <span className="font-mono-ui text-xs text-muted-foreground/60">
+        <span className="font-mono-ui text-sm text-muted-foreground/60">
           operação · {new Date().getFullYear()}
         </span>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border-y border-[color:var(--brand-ink)]/8">
         {stats.map((s) => (
           <div key={s.label} className="bg-background py-7 md:py-9 px-5 md:px-6 text-center md:text-left">
-            <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">{s.n}</div>
-            <div className="text-xs text-muted-foreground mt-1.5 font-mono-ui">{s.label}</div>
+            <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">{s.n}</div>
+            <div className="text-sm text-muted-foreground mt-1.5 font-mono-ui">{s.label}</div>
           </div>
         ))}
       </div>
@@ -659,11 +659,11 @@ function Pillars() {
     <section id="produto" className="relative bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
-          <h2 className="md:col-span-8 text-4xl md:text-6xl font-bold tracking-tight leading-[1.02]">
+          <h2 className="md:col-span-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
             Sistema, site e app,{" "}
             <span className="font-serif-italic font-normal">em um único ecosistema</span>
           </h2>
-          <p className="md:col-span-4 text-lg text-muted-foreground">
+          <p className="md:col-span-4 text-xl text-muted-foreground">
             Tudo o que a imobiliária precisa para vender mais e ter previsibilidade, sem amarrar
             cinco ferramentas com cuspe e arame.
           </p>
@@ -676,12 +676,12 @@ function Pillars() {
             >
               <div className="flex items-start justify-between mb-8">
                 <it.icon className="w-6 h-6 text-[color:var(--brand-orange)]" />
-                <span className="font-mono-ui text-xs font-medium text-muted-foreground group-hover:text-[color:var(--brand-sand)]/80">
+                <span className="font-mono-ui text-sm font-medium text-muted-foreground group-hover:text-[color:var(--brand-sand)]/80">
                   0{i + 1} / 04
                 </span>
               </div>
-              <h3 className="font-bold text-xl tracking-tight mb-2">{it.title}</h3>
-              <p className="text-sm text-muted-foreground group-hover:text-[color:var(--brand-sand)]/70 leading-relaxed">
+              <h3 className="font-bold text-2xl tracking-tight mb-2">{it.title}</h3>
+              <p className="text-base text-muted-foreground group-hover:text-[color:var(--brand-sand)]/70 leading-relaxed">
                 {it.desc}
               </p>
             </div>
@@ -717,16 +717,16 @@ function Albert() {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 mb-6">
-              <span className="stamp text-[color:var(--brand-orange)] text-xs">Albert IA · v2</span>
+              <span className="stamp text-[color:var(--brand-orange)] text-sm">Albert IA · v2</span>
               <span className="font-serif-italic text-[color:var(--brand-sand)]/60">
                 conheça
               </span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02] mb-6">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
               Uma IA que <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">conhece</span> imobiliária,
               não uma que <em className="font-serif-italic text-[color:var(--brand-sand)]/50">finge</em> conhecer
             </h2>
-            <p className="text-lg text-[color:var(--brand-sand)]/70 mb-8 max-w-xl">
+            <p className="text-xl text-[color:var(--brand-sand)]/70 mb-8 max-w-xl">
               Chega de chatbot decorando frase. O <strong className="text-[color:var(--brand-sand)]">Albert</strong> é
               montado sob medida para a sua imobiliária, tecnologia de ponta com coração humano.
             </p>
@@ -777,18 +777,18 @@ function AlbertChat() {
               A
             </div>
             <div>
-              <div className="font-semibold text-sm leading-tight">Albert</div>
-              <div className="font-mono-ui text-xs font-medium text-[color:var(--brand-sand)]/80">
+              <div className="font-semibold text-base leading-tight">Albert</div>
+              <div className="font-mono-ui text-sm font-medium text-[color:var(--brand-sand)]/80">
                 SDR · atende agora
               </div>
             </div>
           </div>
-          <span className="font-mono-ui text-xs font-medium text-[color:var(--brand-sand)]/80">
+          <span className="font-mono-ui text-sm font-medium text-[color:var(--brand-sand)]/80">
             lead #4827 · 13s
           </span>
         </div>
 
-        <div className="p-5 space-y-3 text-sm">
+        <div className="p-5 space-y-3 text-base">
           <Bubble who="lead">Oi, vi o anúncio do 2 quartos na Av. Paulista 👋</Bubble>
           <Bubble who="albert">
             Oi! Que bom que chegou. Posso te perguntar se é para morar ou investir?
@@ -800,7 +800,7 @@ function AlbertChat() {
           </Bubble>
           <Bubble who="lead">Funciona 🤝</Bubble>
 
-          <div className="mt-5 pt-4 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-xs text-muted-foreground font-medium">
+          <div className="mt-5 pt-4 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-sm text-muted-foreground font-medium">
             <span>qualificado e repassado em 38s</span>
             <span className="text-[color:var(--brand-orange)] font-bold">+ CRM ✓</span>
           </div>
@@ -844,13 +844,13 @@ function Funil() {
     <section id="funil" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
-          <span className="font-serif-italic text-[#c2410c] text-xl mb-3 block">
+          <span className="font-serif-italic text-[#c2410c] text-2xl mb-3 block">
             sobre tempo
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
             Você está perdendo lead enquanto procura ele no caderno
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Controle do atendimento + script bem executado = mais vendas. A gente organiza o
             primeiro pra você poder focar no segundo.
           </p>
@@ -885,22 +885,22 @@ function FunnelVisual() {
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-dashed border-[color:var(--brand-ink)]/30">
         <div className="flex items-center gap-2">
           <Building2 className="w-4 h-4" />
-          <span className="font-mono-ui text-sm font-medium">imob.online / funil</span>
+          <span className="font-mono-ui text-base font-medium">imob.online / funil</span>
         </div>
-        <span className="font-mono-ui text-sm text-emerald-700 font-bold">
+        <span className="font-mono-ui text-base text-emerald-700 font-bold">
           +24% MoM
         </span>
       </div>
       <div className="space-y-3">
         {stages.map((s, i) => (
           <div key={s.label}>
-            <div className="flex items-center justify-between text-sm mb-1.5">
+            <div className="flex items-center justify-between text-base mb-1.5">
               <span className="text-muted-foreground">{s.label}</span>
               <span className="font-semibold tabular-nums">{s.value.toLocaleString("pt-BR")}</span>
             </div>
             <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className={`h-full flex items-center px-3 text-sm font-bold font-mono-ui transition-all ${i === stages.length - 1 ? "text-[color:var(--brand-ink)]" : "text-[color:var(--brand-sand)]"
+                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${i === stages.length - 1 ? "text-[color:var(--brand-ink)]" : "text-[color:var(--brand-sand)]"
                   }`}
                 style={{
                   width: s.w,
@@ -939,8 +939,8 @@ function Ecosystem() {
               className="rounded-2xl bg-[color:var(--brand-sand)]/40 border border-[color:var(--brand-ink)]/7 p-7 hover:bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300"
             >
               <it.icon className="w-5 h-5 text-[color:var(--brand-orange)] mb-5" />
-              <h3 className="font-bold text-lg tracking-tight mb-2">{it.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{it.desc}</p>
+              <h3 className="font-bold text-xl tracking-tight mb-2">{it.title}</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>
@@ -961,11 +961,11 @@ export function Blog() {
   return (
     <section id="blog" className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:py-32">
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] max-w-2xl">
+        <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-2xl">
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Leitura</span>{" "}
           rápida pra quem vende imóvel
         </h2>
-        <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium hover:opacity-70">
+        <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="inline-flex items-center gap-1.5 text-base font-medium hover:opacity-70">
           Ver todos <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
@@ -976,7 +976,7 @@ export function Blog() {
             params={{ slug: p.slug }}
             className="group flex flex-col border-t border-[color:var(--brand-ink)]/20 pt-6 hover:border-[color:var(--brand-orange)] transition cursor-pointer"
           >
-            <div className="flex items-center justify-between mb-6 text-xs font-mono-ui text-muted-foreground">
+            <div className="flex items-center justify-between mb-6 text-sm font-mono-ui text-muted-foreground">
               <span className="uppercase tracking-wider">{p.tag}</span>
               <span>{p.date}</span>
             </div>
@@ -995,10 +995,10 @@ export function Blog() {
                 }}
               />
             </div>
-            <h3 className="font-bold text-xl tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
+            <h3 className="font-bold text-2xl tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
               {p.title}
             </h3>
-            <p className="text-sm text-muted-foreground mt-3 line-clamp-2 leading-relaxed">
+            <p className="text-base text-muted-foreground mt-3 line-clamp-2 leading-relaxed">
               {p.excerpt}
             </p>
           </Link>
@@ -1024,13 +1024,13 @@ export function CTA() {
         />
         <div className="relative grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-8">
-            <span className="stamp text-[color:var(--brand-orange)] text-xs mb-6 inline-block">
+            <span className="stamp text-[color:var(--brand-orange)] text-sm mb-6 inline-block">
               teste 14 dias · sem cartão
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.02] mb-6">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
               Bora vender mais, <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">de verdade</span>?
             </h2>
-            <p className="text-lg text-[color:var(--brand-sand)]/70 max-w-xl">
+            <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-xl">
               Preenche em 30 segundos. A gente liga, mostra o sistema, libera o Albert.
               Você decide depois, sem pressão.
             </p>
@@ -1064,22 +1064,22 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 mb-12">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 font-extrabold text-xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
+            <Link to="/" className="flex items-center gap-2 font-extrabold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
               <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
                 microsistec
-                <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl leading-none">.</span>
+                <span className="font-serif-italic text-[color:var(--brand-orange)] text-3xl leading-none">.</span>
                 <span className="text-[10px] text-muted-foreground/60 self-start select-none font-sans font-normal" title="Marca Registrada">®</span>
               </div>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
+            <p className="text-muted-foreground text-base leading-relaxed max-w-sm">
               Proptech brasileira desde 1994. CRM, sites, app de atendimento e Albert IA
               num ecossistema só para imobiliárias de verdade.
             </p>
             <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-sm hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition shadow-soft no-underline decoration-none group"
+              className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-base hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition shadow-soft no-underline decoration-none group"
             >
               <KeyRound className="w-4 h-4" />
               <span>imob.online: área do cliente</span>
@@ -1125,9 +1125,9 @@ export function Footer() {
             ]}
           />
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-[color:var(--brand-ink)]/8 text-xs text-muted-foreground font-mono-ui">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-[color:var(--brand-ink)]/8 text-sm text-muted-foreground font-mono-ui">
           <span>© {new Date().getFullYear()} Microsistec · feito no Brasil</span>
-          <span className="font-serif-italic font-sans text-sm">com Albert IA dentro</span>
+          <span className="font-serif-italic font-sans text-base">com Albert IA dentro</span>
         </div>
       </div>
     </footer>
@@ -1143,8 +1143,8 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h3 className="font-semibold mb-4 text-base">{title}</h3>
-      <ul className="space-y-2 text-muted-foreground text-sm">
+      <h3 className="font-semibold mb-4 text-lg">{title}</h3>
+      <ul className="space-y-2 text-muted-foreground text-base">
         {links.map((link, idx) => (
           <li key={idx}>
             {link.to.startsWith("http") || link.to.startsWith("#") || link.to.startsWith("/#") ? (

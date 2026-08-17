@@ -46,25 +46,25 @@ function SolucoesIndex() {
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
               <Link title="Página Inicial da Microsistec" to="/"
-                className="text-xs font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground"
+                className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground"
               >
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
-              <span className="text-xs font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold">
+              <span className="text-sm font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold">
                 Soluções
               </span>
             </div>
 
             <div className="max-w-3xl space-y-5">
-              <span className="stamp text-[color:var(--brand-orange)] text-xs">
+              <span className="stamp text-[color:var(--brand-orange)] text-sm">
                 Ecossistema Completo
               </span>
               <h1 className="font-extrabold tracking-[-0.045em] leading-[0.97] text-[clamp(2.4rem,5.5vw,4.2rem)]">
                 Tudo que sua imobiliária<br />
                 precisa, <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">num só lugar</span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/65 leading-relaxed max-w-xl">
+              <p className="text-xl md:text-2xl text-foreground/65 leading-relaxed max-w-xl">
                 Tecnologia pioneira para o mercado imobiliário brasileiro desde 1994.
                 Conheça cada solução do nosso ecossistema integrado.
               </p>
@@ -82,7 +82,7 @@ function SolucoesIndex() {
             ].map(({ icon: Icon, value, label }) => (
               <div key={label} className="flex flex-col items-center gap-1 px-4 text-center">
                 <Icon className="w-4 h-4 text-[color:var(--brand-orange)] mb-1" />
-                <span className="text-xl font-extrabold text-[color:var(--brand-sand)] tracking-tight">{value}</span>
+                <span className="text-2xl font-extrabold text-[color:var(--brand-sand)] tracking-tight">{value}</span>
                 <span className="text-[11px] text-[color:var(--brand-sand)]/50 font-mono-ui">{label}</span>
               </div>
             ))}
@@ -92,7 +92,7 @@ function SolucoesIndex() {
         {/* Solutions Grid */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="mb-10">
-            <p className="text-xs font-mono-ui uppercase tracking-widest text-muted-foreground">
+            <p className="text-sm font-mono-ui uppercase tracking-widest text-muted-foreground">
               {activeSolutions.length} soluções disponíveis
             </p>
           </div>
@@ -123,16 +123,16 @@ function SolucoesIndex() {
                     </div>
 
                     <div className="flex-1">
-                      <h2 className="font-bold text-base tracking-tight mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                      <h2 className="font-bold text-lg tracking-tight mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
                         {sol.title}
                       </h2>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-base text-muted-foreground leading-relaxed">
                         {sol.shortDesc}
                       </p>
                     </div>
 
                     <div className="pt-3 border-t border-[color:var(--brand-ink)]/6 flex items-center justify-between">
-                      <span className="text-xs font-semibold text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors duration-200 flex items-center gap-1.5">
+                      <span className="text-sm font-semibold text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors duration-200 flex items-center gap-1.5">
                         Conhecer solução
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
                       </span>
@@ -149,7 +149,7 @@ function SolucoesIndex() {
           {/* Coming Soon */}
           {comingSoon.length > 0 && (
             <div className="mt-12 pt-10 border-t border-[color:var(--brand-ink)]/8">
-              <p className="text-xs font-mono-ui uppercase tracking-widest text-muted-foreground mb-5">
+              <p className="text-sm font-mono-ui uppercase tracking-widest text-muted-foreground mb-5">
                 Em breve
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -169,10 +169,10 @@ function SolucoesIndex() {
                         </span>
                       </div>
                       <div>
-                        <h2 className="font-bold text-base tracking-tight mb-1.5 text-muted-foreground">
+                        <h2 className="font-bold text-lg tracking-tight mb-1.5 text-muted-foreground">
                           {sol.title}
                         </h2>
-                        <p className="text-sm text-muted-foreground/70 leading-relaxed">
+                        <p className="text-base text-muted-foreground/70 leading-relaxed">
                           {sol.shortDesc}
                         </p>
                       </div>
@@ -188,15 +188,15 @@ function SolucoesIndex() {
         <section className="bg-[color:var(--brand-ink)] border-t border-white/5">
           <div className="mx-auto max-w-7xl px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--brand-sand)] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--brand-sand)] tracking-tight">
                 Pronto para explorar o ecossistema?
               </h2>
-              <p className="text-sm text-[color:var(--brand-sand)]/60">
+              <p className="text-base text-[color:var(--brand-sand)]/60">
                 Teste 14 dias grátis, sem cartão de crédito.
               </p>
             </div>
             <a title="Página Inicial da Microsistec" href="/"
-              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-7 py-3.5 font-bold text-sm hover:bg-[color:var(--brand-sand)] transition shrink-0 no-underline decoration-none"
+              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-7 py-3.5 font-bold text-base hover:bg-[color:var(--brand-sand)] transition shrink-0 no-underline decoration-none"
             >
               Começar teste grátis <ArrowRight className="w-4 h-4" />
             </a>

@@ -40,9 +40,9 @@ export function PhoneInput({
         <PopoverTrigger asChild>
           <button
             type="button"
-            className="flex items-center gap-1.5 px-3 py-2 text-sm text-[color:var(--brand-ink)] font-medium border-r border-input hover:bg-black/5 rounded-l-xl transition-colors focus:outline-none"
+            className="flex items-center gap-1.5 px-3 py-2 text-base text-[color:var(--brand-ink)] font-medium border-r border-input hover:bg-black/5 rounded-l-xl transition-colors focus:outline-none"
           >
-            <span className="text-base leading-none">{selectedCountry.flag}</span>
+            <span className="text-lg leading-none">{selectedCountry.flag}</span>
             <span>{dialCode}</span>
             <ChevronDown className="w-3 h-3 opacity-50 ml-0.5" />
           </button>
@@ -71,9 +71,9 @@ export function PhoneInput({
                     className="flex items-center justify-between py-2"
                   >
                     <div className="flex items-center gap-2.5">
-                      <span className="text-base leading-none">{country.flag}</span>
+                      <span className="text-lg leading-none">{country.flag}</span>
                       <span className="font-medium">{country.name}</span>
-                      <span className="text-muted-foreground text-xs">{country.dialCode}</span>
+                      <span className="text-muted-foreground text-sm">{country.dialCode}</span>
                     </div>
                     {dialCode === country.dialCode && (
                       <Check className="h-4 w-4 text-[color:var(--brand-orange)]" />

@@ -76,7 +76,7 @@ function Empresa() {
         <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-            <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
+            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
               Fundada em 1994
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
@@ -87,7 +87,7 @@ function Empresa() {
                 experiência de verdade
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
               Como pioneiros absolutos em trazer a tecnologia para o setor imobiliário brasileiro, há mais de trinta anos ajudamos imobiliárias, construtoras e corretores a vender mais. Essa estrada sólida prova que realmente sabemos o que fazemos.
             </p>
           </div>
@@ -97,10 +97,10 @@ function Empresa() {
         <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="grid md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5 md:sticky md:top-24 space-y-6">
-              <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl block">
+              <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl block">
                 Nossa história
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
                 Pioneiros absolutos em tecnologia imobiliária
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -121,13 +121,13 @@ function Empresa() {
                 <div key={m.year} className="relative pl-6">
                   {/* Point */}
                   <div className="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-[color:var(--brand-orange)] border-2 border-background" />
-                  <div className="text-sm font-mono-ui font-bold text-[color:var(--brand-orange)] mb-1">
+                  <div className="text-base font-mono-ui font-bold text-[color:var(--brand-orange)] mb-1">
                     {m.year}
                   </div>
-                  <h3 className="text-xl font-bold tracking-tight mb-2">
+                  <h3 className="text-2xl font-bold tracking-tight mb-2">
                     {m.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {m.desc}
                   </p>
                 </div>
@@ -143,7 +143,7 @@ function Empresa() {
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
                 Nossos valores
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-none">
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none">
                 O que nos move diariamente
               </h2>
             </div>
@@ -152,10 +152,10 @@ function Empresa() {
               {values.map((v) => (
                 <div key={v.title} className="bg-background rounded-2xl border border-[color:var(--brand-ink)]/15 p-8 shadow-soft">
                   <v.icon className="w-8 h-8 text-[color:var(--brand-orange)] mb-6" />
-                  <h3 className="font-bold text-xl tracking-tight mb-3">
+                  <h3 className="font-bold text-2xl tracking-tight mb-3">
                     {v.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
@@ -167,12 +167,12 @@ function Empresa() {
         {/* Marquee Ticker */}
         <section className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] overflow-hidden">
           <div className="overflow-hidden">
-            <div className="marquee flex gap-10 py-4 whitespace-nowrap text-sm">
+            <div className="marquee flex gap-10 py-4 whitespace-nowrap text-base">
               {[...Array(3)].map((_, rIdx) => (
                 <div key={rIdx} className="flex gap-10 items-center">
                   {["CRM imobiliário", "App de atendimento", "Site para imobiliária", "Albert IA · SDR", "Funil de vendas", "Automações", "Rodízio de leads", "Secretaria de vendas", "Integração com portais"].map((t, i) => (
                     <span key={i} className="inline-flex items-center gap-3">
-                      <span className="font-serif-italic text-[color:var(--brand-orange)] text-lg">✦</span>
+                      <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl">✦</span>
                       <span className="font-medium tracking-wide uppercase text-[11px] font-mono-ui">{t}</span>
                     </span>
                   ))}
@@ -184,7 +184,7 @@ function Empresa() {
 
         {/* CTA section */}
         <section className="mx-auto max-w-7xl px-6 py-20 text-center space-y-6">
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             Pronto para impulsionar sua imobiliária?
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">

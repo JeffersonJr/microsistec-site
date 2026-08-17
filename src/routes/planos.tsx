@@ -130,7 +130,7 @@ function PlanosPage() {
         <section className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-            <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
+            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
               Preços e Planos
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
@@ -141,7 +141,7 @@ function PlanosPage() {
                 imobiliária
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
               Escolha o plano que melhor se adapta ao momento do seu negócio. Comece pequeno ou escale com poder total.
             </p>
           </div>
@@ -151,15 +151,15 @@ function PlanosPage() {
         <section className="mx-auto max-w-[1400px] px-6 pt-12 pb-20 md:pt-16 md:pb-28">
           {/* Toggle Billing */}
           <div className="flex items-center justify-center gap-4 mb-10">
-            <span className={`text-sm font-bold ${!isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>Mensal</span>
+            <span className={`text-base font-bold ${!isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>Mensal</span>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
               className="w-16 h-8 bg-[color:var(--brand-ink)]/10 rounded-full relative p-1 transition-colors cursor-pointer hover:bg-[color:var(--brand-ink)]/20"
             >
               <div className={`w-6 h-6 bg-[color:var(--brand-orange)] rounded-full shadow-md transition-transform duration-300 ${isAnnual ? 'translate-x-8' : 'translate-x-0'}`} />
             </button>
-            <span className={`text-sm font-bold ${isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>
-              Anual <span className="ml-2 text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">-20%</span>
+            <span className={`text-base font-bold ${isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>
+              Anual <span className="ml-2 text-sm bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">-20%</span>
             </span>
           </div>
 
@@ -173,14 +173,14 @@ function PlanosPage() {
                   }`}
               >
                 {plan.isPopular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
                     Mais Escolhido
                   </div>
                 )}
 
                 <div className="space-y-4 mb-8">
-                  <h3 className="text-xl lg:text-2xl xl:text-xl 2xl:text-2xl font-extrabold tracking-tight leading-tight">{plan.name}</h3>
-                  <p className={`text-sm leading-relaxed min-h-[40px] ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
+                  <h3 className="text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight leading-tight">{plan.name}</h3>
+                  <p className={`text-base leading-relaxed min-h-[40px] ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
                     {plan.desc}
                   </p>
                 </div>
@@ -188,22 +188,22 @@ function PlanosPage() {
                 <div className="mb-8 h-[48px] flex items-center">
                   {!plan.isCustom ? (
                     <div className="flex items-end gap-1 flex-wrap">
-                      <span className="text-sm font-bold mb-1">R$</span>
-                      <span className="text-4xl lg:text-5xl xl:text-3xl 2xl:text-4xl font-extrabold tracking-tighter leading-none">{plan.price}</span>
-                      <span className={`text-sm mb-1 ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>/mês</span>
+                      <span className="text-base font-bold mb-1">R$</span>
+                      <span className="text-5xl lg:text-6xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tighter leading-none">{plan.price}</span>
+                      <span className={`text-base mb-1 ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>/mês</span>
                     </div>
                   ) : (
-                    <div className="text-3xl font-extrabold tracking-tighter leading-none">{plan.price}</div>
+                    <div className="text-4xl font-extrabold tracking-tighter leading-none">{plan.price}</div>
                   )}
                 </div>
 
                 <div className="space-y-4 mb-8 flex-1">
                   <div className="pb-4 mb-4 border-b border-current/10">
-                    <div className="flex items-center gap-2 mb-2 font-semibold text-sm">
+                    <div className="flex items-center gap-2 mb-2 font-semibold text-base">
                       <Building2 className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`} />
                       {plan.limit}
                     </div>
-                    <div className="flex items-center gap-2 font-semibold text-sm">
+                    <div className="flex items-center gap-2 font-semibold text-base">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                       {plan.users}
                     </div>
@@ -211,7 +211,7 @@ function PlanosPage() {
 
                   <ul className="space-y-3">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm leading-tight">
+                      <li key={idx} className="flex items-start gap-3 text-base leading-tight">
                         <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : "text-[color:var(--brand-ink)]/50"}`} />
                         <span>{feature}</span>
                       </li>
@@ -237,7 +237,7 @@ function PlanosPage() {
         {/* FAQ Section */}
         <section className="mx-auto max-w-3xl px-6 pb-20 md:pb-28">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
               Dúvidas Frequentes
             </h2>
             <p className="text-muted-foreground">
@@ -251,8 +251,8 @@ function PlanosPage() {
                 <div className="flex gap-4">
                   <HelpCircle className="w-6 h-6 shrink-0 text-[color:var(--brand-orange)]" />
                   <div>
-                    <h4 className="font-bold text-lg mb-2">{faq.q}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <h4 className="font-bold text-xl mb-2">{faq.q}</h4>
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {faq.a}
                     </p>
                   </div>
@@ -266,10 +266,10 @@ function PlanosPage() {
         <section className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
           <div className="relative mx-auto max-w-4xl px-6 text-center space-y-8">
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
               Ainda não tem certeza?
             </h2>
-            <p className="text-lg text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
+            <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
               Fale com nosso especialista agora e monte a solução ideal para a sua imobiliária, tirando todas as suas dúvidas operacionais.
             </p>
             <div className="pt-4">

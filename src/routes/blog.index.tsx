@@ -52,7 +52,7 @@ function BlogIndex() {
         <section className="relative overflow-hidden bg-hero pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-4">
-            <span className="stamp text-[color:var(--brand-orange)] text-xs inline-block">
+            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
               Conteúdo de Valor
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.2rem,5vw,4rem)]">
@@ -62,7 +62,7 @@ function BlogIndex() {
                 vende imóvel de verdade
               </span>
             </h1>
-            <p className="text-muted-foreground text-base max-w-lg mx-auto leading-relaxed">
+            <p className="text-muted-foreground text-lg max-w-lg mx-auto leading-relaxed">
               Descubra estratégias práticas de SEO local, inteligência artificial, gestão comercial e vendas com o olhar de quem tem trinta anos de mercado.
             </p>
           </div>
@@ -77,7 +77,7 @@ function BlogIndex() {
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition cursor-pointer border ${
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition cursor-pointer border ${
                     selectedTag === tag
                       ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]"
                       : "bg-background text-muted-foreground border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] hover:text-foreground"
@@ -96,7 +96,7 @@ function BlogIndex() {
                 placeholder="Buscar matérias..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9 bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-full text-xs py-5"
+                className="pl-9 bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-full text-sm py-5"
               />
             </div>
           </div>
@@ -135,11 +135,11 @@ function BlogIndex() {
                     />
                   </div>
                   
-                  <h3 className="font-bold text-lg tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
+                  <h3 className="font-bold text-xl tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
                     {post.title}
                   </h3>
                   
-                  <p className="text-xs text-muted-foreground mt-3 line-clamp-3 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mt-3 line-clamp-3 leading-relaxed">
                     {post.excerpt}
                   </p>
 
@@ -154,8 +154,8 @@ function BlogIndex() {
             </div>
           ) : (
             <div className="text-center py-20 border border-dashed border-[color:var(--brand-ink)]/15 rounded-3xl space-y-2">
-              <h3 className="font-bold text-lg text-foreground">Nenhuma matéria encontrada</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-bold text-xl text-foreground">Nenhuma matéria encontrada</h3>
+              <p className="text-base text-muted-foreground">
                 Tente redefinir sua busca ou filtrar por outra categoria.
               </p>
             </div>
