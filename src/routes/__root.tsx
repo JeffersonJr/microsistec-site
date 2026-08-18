@@ -254,6 +254,7 @@ import { PrivacyNotice } from "@/components/microsistec/PrivacyNotice";
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const [isIntercomOpen, setIsIntercomOpen] = React.useState(false);
+  const [unreadCount, setUnreadCount] = React.useState(0);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -269,6 +270,7 @@ function RootComponent() {
           app_id: "mjj9j4fs",
           custom_launcher_selector: "#custom-intercom-launcher",
           hide_default_launcher: true,
+          vertical_padding: 85,
         });
 
         // The SDK might set window.Intercom, or we can use the imported function
@@ -276,6 +278,7 @@ function RootComponent() {
         if (typeof intercomFn === "function") {
           intercomFn("onShow", () => setIsIntercomOpen(true));
           intercomFn("onHide", () => setIsIntercomOpen(false));
+          intercomFn("onUnreadCountChange", (count: number) => setUnreadCount(count));
         }
       } catch (err) {
         console.error("Failed to initialize Intercom:", err);
@@ -321,6 +324,11 @@ function RootComponent() {
           className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:scale-105"
         >
           <img src="/icon.svg" alt="Microsistec" className="h-8 w-8 object-contain" />
+          {unreadCount > 0 && (
+            <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white shadow-sm">
+              {unreadCount}
+            </span>
+          )}
         </button>
 
         <React.Suspense fallback={null}>
