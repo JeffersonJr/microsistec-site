@@ -10,7 +10,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = blogPosts.find((p) => p.slug === params.slug);
     return {
       meta: [
-        { title: post ? (post.title.length > 50 ? post.title : `${post.title} | Blog Microsistec`) : "Artigo Microsistec" },
+        { title: post ? `${post.title} - Blog` : "Artigo Microsistec" },
         {
           name: "description",
           content: post ? post.excerpt : "Artigo especializado em inovação imobiliária e IA.",
