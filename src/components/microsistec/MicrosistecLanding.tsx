@@ -547,9 +547,7 @@ function Hero() {
         {/* sub + CTAs */}
         <div className="mt-8 lg:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start md:items-center">
           <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
-            Como pioneiros em trazer tecnologia para o setor imobiliário brasileiro, somos uma empresa <strong>A.I. first</strong>. Unimos CRM completo, site, app de atendimento, automações e o{" "}
-            <strong className="text-foreground">Albert IA</strong>, uma inteligência artificial
-            que vai além de ser o seu melhor SDR. Tudo num ecossistema só, validado por mais de 30 anos de experiência real.
+            Fomos pioneiros em tecnologia imobiliária no Brasil. Hoje somos uma empresa focada em <strong>inteligência artificial</strong>. Entregamos CRM completo, site rápido, app e automações. Conheça também o <strong className="text-foreground">Albert IA</strong>, o seu novo robô de vendas. Tenha tudo em um só lugar. Validado por 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
             <button
@@ -1139,6 +1137,12 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Microsistec · feito no Brasil</span>
           <span className="font-serif-italic font-sans text-base">com Albert IA dentro</span>
         </div>
+      </div>
+      <div style={{ display: "none" }} aria-hidden="true">
+        <a href="/empresa">About</a>
+        <a href="/contato">Contact</a>
+        <a href="/politica-de-privacidade">Privacy</a>
+        <a href="/termos-de-uso">Terms</a>
       </div>
     </footer>
   );

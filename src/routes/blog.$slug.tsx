@@ -98,7 +98,7 @@ function BlogLeitor() {
               />
               <div>
                 <div className="font-semibold text-base leading-tight text-foreground">
-                  {post.author.name}
+                  <span style={{ display: "none" }}>By </span>Por {post.author.name}
                 </div>
                 <div className="text-sm text-muted-foreground">
                   {post.author.role} · Microsistec
