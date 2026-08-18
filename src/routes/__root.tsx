@@ -97,13 +97,13 @@ function NotFoundComponent() {
             background: "var(--brand-orange, #ff6b35)",
             color: "var(--brand-ink, #0e1117)",
           }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88";
-            (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+          onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.currentTarget.style.opacity = "0.88";
+            e.currentTarget.style.transform = "translateY(-1px)";
           }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-            (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+          onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.currentTarget.style.opacity = "1";
+            e.currentTarget.style.transform = "translateY(0)";
           }}
         >
           <Home style={{ width: 16, height: 16 }} />
