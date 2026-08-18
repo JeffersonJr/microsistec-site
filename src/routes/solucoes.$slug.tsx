@@ -26,7 +26,8 @@ import {
   Gauge,
   Calendar,
   DollarSign,
-  ShieldCheck
+  ShieldCheck,
+  Building2, Key, Target, Moon, BarChart3, Car, Zap as ZapIcon, Trophy, Users, Crosshair, MessageCircle, Rocket, Lightbulb, Building, Star, Crown, Scale, Clock, PlayCircle, MapPin, Phone
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -227,46 +228,46 @@ function SolutionMetrics({ slug }: { slug: string }) {
 /* ==========================================
    FOR WHO — perfis ideais por produto
    ========================================== */
-const forWhoData: Record<string, { icon: string; title: string; desc: string }[]> = {
+const forWhoData: Record<string, { icon: React.ElementType; title: string; desc: string }[]> = {
   crm: [
-    { icon: "🏢", title: "Imobiliárias em crescimento", desc: "Que precisam organizar a carteira e escalar a equipe de corretores sem perder o controle." },
-    { icon: "🔑", title: "Corretores autônomos", desc: "Que gerenciam múltiplos clientes e imóveis e querem profissionalizar o atendimento." },
-    { icon: "📈", title: "Gestores e sócios", desc: "Que precisam de visibilidade real das métricas sem depender de planilhas." },
+    { icon: Building2, title: "Imobiliárias em crescimento", desc: "Que precisam organizar a carteira e escalar a equipe de corretores sem perder o controle." },
+    { icon: Key, title: "Corretores autônomos", desc: "Que gerenciam múltiplos clientes e imóveis e querem profissionalizar o atendimento." },
+    { icon: Target, title: "Gestores e sócios", desc: "Que precisam de visibilidade real das métricas sem depender de planilhas." },
   ],
   "albert-ia": [
-    { icon: "⚡", title: "Imobiliárias com alto volume de leads", desc: "Que recebem dezenas de leads por dia e não conseguem atender todos em tempo hábil." },
-    { icon: "🌙", title: "Operações sem plantão 24h", desc: "Que perdem leads fora do horário comercial ou nos fins de semana." },
-    { icon: "📊", title: "Incorporadoras e lançamentos", desc: "Que precisam qualificar e filtrar leads antes de acionar a equipe comercial." },
+    { icon: Zap, title: "Imobiliárias com alto volume de leads", desc: "Que recebem dezenas de leads por dia e não conseguem atender todos em tempo hábil." },
+    { icon: Moon, title: "Operações sem plantão 24h", desc: "Que perdem leads fora do horário comercial ou nos fins de semana." },
+    { icon: BarChart3, title: "Incorporadoras e lançamentos", desc: "Que precisam qualificar e filtrar leads antes de acionar a equipe comercial." },
   ],
   app: [
-    { icon: "🚗", title: "Corretores na rua", desc: "Que passam o dia fazendo visitas e precisam atualizar o CRM sem voltar ao escritório." },
-    { icon: "📲", title: "Equipes ágeis e mobile-first", desc: "Que preferem operar 100% pelo smartphone com notificações instantâneas de leads." },
-    { icon: "🏃", title: "Profissionais de alta performance", desc: "Que querem ser o primeiro a responder um lead e fechar mais rápido que a concorrência." },
+    { icon: Car, title: "Corretores na rua", desc: "Que passam o dia fazendo visitas e precisam atualizar o CRM sem voltar ao escritório." },
+    { icon: Smartphone, title: "Equipes ágeis e mobile-first", desc: "Que preferem operar 100% pelo smartphone com notificações instantâneas de leads." },
+    { icon: ZapIcon, title: "Profissionais de alta performance", desc: "Que querem ser o primeiro a responder um lead e fechar mais rápido que a concorrência." },
   ],
   funil: [
-    { icon: "🏆", title: "Imobiliárias multi-nicho", desc: "Que trabalham com MCMV, alto padrão e locação ao mesmo tempo e precisam de métricas separadas por processo." },
-    { icon: "📋", title: "Gestores com times segmentados", desc: "Que têm equipes distintas por produto e querem acompanhar a performance de cada time de forma independente." },
-    { icon: "🎯", title: "Incorporadoras e lançamentos", desc: "Que têm um processo comercial para pré-lançamento totalmente diferente das vendas do estoque disponível." },
+    { icon: Trophy, title: "Imobiliárias multi-nicho", desc: "Que trabalham com MCMV, alto padrão e locação ao mesmo tempo e precisam de métricas separadas por processo." },
+    { icon: Users, title: "Gestores com times segmentados", desc: "Que têm equipes distintas por produto e querem acompanhar a performance de cada time de forma independente." },
+    { icon: Crosshair, title: "Incorporadoras e lançamentos", desc: "Que têm um processo comercial para pré-lançamento totalmente diferente das vendas do estoque disponível." },
   ],
   integracoes: [
-    { icon: "🌐", title: "Imobiliárias com múltiplos portais", desc: "Que atualizam imóveis manualmente em vários portais e perdem horas toda semana." },
-    { icon: "📱", title: "Operações com tráfego pago", desc: "Que investem em Facebook/Instagram Ads e precisam capturar leads direto no CRM." },
-    { icon: "🤝", title: "Imobiliárias que usam WhatsApp", desc: "Que querem centralizar atendimento via WhatsApp integrado ao histórico do cliente." },
+    { icon: Globe, title: "Imobiliárias com múltiplos portais", desc: "Que atualizam imóveis manualmente em vários portais e perdem horas toda semana." },
+    { icon: Smartphone, title: "Operações com tráfego pago", desc: "Que investem em Facebook/Instagram Ads e precisam capturar leads direto no CRM." },
+    { icon: MessageCircle, title: "Imobiliárias que usam WhatsApp", desc: "Que querem centralizar atendimento via WhatsApp integrado ao histórico do cliente." },
   ],
   "sites-template": [
-    { icon: "🚀", title: "Imobiliárias que precisam lançar rápido", desc: "Que precisam de um site profissional no ar em um dia sem esperar desenvolvimento customizado." },
-    { icon: "💡", title: "Corretores autônomos", desc: "Que querem ter um portal próprio de imóveis com formulário de captação e SEO básico." },
-    { icon: "🏗️", title: "Imobiliárias de médio porte", desc: "Que buscam custo-benefício alto com templates modernos e integração imediata ao CRM." },
+    { icon: Rocket, title: "Imobiliárias que precisam lançar rápido", desc: "Que precisam de um site profissional no ar em um dia sem esperar desenvolvimento customizado." },
+    { icon: Lightbulb, title: "Corretores autônomos", desc: "Que querem ter um portal próprio de imóveis com formulário de captação e SEO básico." },
+    { icon: Building, title: "Imobiliárias de médio porte", desc: "Que buscam custo-benefício alto com templates modernos e integração imediata ao CRM." },
   ],
   "sites-v8": [
-    { icon: "⭐", title: "Alto padrão e lançamentos", desc: "Que trabalham com imóveis de luxo e precisam de um site que transmita exclusividade." },
-    { icon: "📊", title: "SEO como estratégia", desc: "Que querem capturar leads orgânicos do Google com conteúdo e performance técnica impecáveis." },
-    { icon: "🏆", title: "Grandes imobiliárias", desc: "Com catálogos extensos, múltiplas equipes e necessidade de integrações customizadas." },
+    { icon: Star, title: "Alto padrão e lançamentos", desc: "Que trabalham com imóveis de luxo e precisam de um site que transmita exclusividade." },
+    { icon: Target, title: "SEO como estratégia", desc: "Que querem capturar leads orgânicos do Google com conteúdo e performance técnica impecáveis." },
+    { icon: Crown, title: "Grandes imobiliárias", desc: "Com catálogos extensos, múltiplas equipes e necessidade de integrações customizadas." },
   ],
   rodizio: [
-    { icon: "⚖️", title: "Equipes com conflito de leads", desc: "Onde corretores brigam por leads ou alguns ficam sem atendimento e outros sobrecarregados." },
-    { icon: "🎪", title: "Plantão de atendimento", desc: "Que precisam distribuir leads automaticamente conforme o horário e disponibilidade de cada corretor." },
-    { icon: "📈", title: "Gerentes focados em dados", desc: "Que querem medir tempo de resposta e taxa de conversão por corretor para tomada de decisão." },
+    { icon: Scale, title: "Equipes com conflito de leads", desc: "Onde corretores brigam por leads ou alguns ficam sem atendimento e outros sobrecarregados." },
+    { icon: Clock, title: "Plantão de atendimento", desc: "Que precisam distribuir leads automaticamente conforme o horário e disponibilidade de cada corretor." },
+    { icon: BarChart3, title: "Gerentes focados em dados", desc: "Que querem medir tempo de resposta e taxa de conversão por corretor para tomada de decisão." },
   ],
 };
 
@@ -284,7 +285,9 @@ function SolutionForWho({ slug }: { slug: string }) {
       <div className="grid md:grid-cols-3 gap-4">
         {profiles.map((p, i) => (
           <div key={i} className="group p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-gradient-to-br from-[color:var(--brand-sand)]/40 to-background hover:from-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-soft transition-all duration-300 feature-card">
-            <span className="text-4xl block mb-4">{p.icon}</span>
+            <div className="mb-4 w-12 h-12 rounded-xl bg-[color:var(--brand-ink)]/5 flex items-center justify-center text-[color:var(--brand-orange)]">
+              {React.createElement(p.icon as React.ElementType, { className: "w-6 h-6" })}
+            </div>
             <h3 className="font-bold text-base mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">{p.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
           </div>
@@ -1742,12 +1745,12 @@ function CRMSubSection() {
 function AppSubSection() {
   const { openModal } = useDemoModal();
   const appFeatures = [
-    { icon: "📩", title: "Receba leads em tempo real", desc: "O app notifica instantaneamente quando um novo lead chega de qualquer portal, Facebook, Google ou site próprio direto na palma da mão." },
-    { icon: "📊", title: "Funil de vendas mobile", desc: "Acompanhe toda a jornada do lead em formato visual. Mova negócios entre etapas com um simples toque no celular." },
-    { icon: "🏠", title: "Catálogo de imóveis completo", desc: "Visualize todos os imóveis da carteira com fotos, valores, descrições e compartilhe lâminas profissionais no WhatsApp com 1 clique." },
-    { icon: "📍", title: "Endereço e rota para visita", desc: "Abra o endereço do imóvel direto no Google Maps ou Waze. Chegue na visita sem perder tempo procurando o caminho." },
-    { icon: "💬", title: "Histórico de atendimento", desc: "Todo o histórico de conversas, notas, tarefas e interações com cada cliente sempre disponível, mesmo offline." },
-    { icon: "📞", title: "Ligação com registro automático", desc: "Ligue para o cliente direto do app e o sistema registra automaticamente a chamada no histórico do CRM." },
+    { icon: MessageCircle, title: "Receba leads em tempo real", desc: "O app notifica instantaneamente quando um novo lead chega de qualquer portal, Facebook, Google ou site próprio direto na palma da mão." },
+    { icon: BarChart3, title: "Funil de vendas mobile", desc: "Acompanhe toda a jornada do lead em formato visual. Mova negócios entre etapas com um simples toque no celular." },
+    { icon: Building, title: "Catálogo de imóveis completo", desc: "Visualize todos os imóveis da carteira com fotos, valores, descrições e compartilhe lâminas profissionais no WhatsApp com 1 clique." },
+    { icon: MapPin, title: "Endereço e rota para visita", desc: "Abra o endereço do imóvel direto no Google Maps ou Waze. Chegue na visita sem perder tempo procurando o caminho." },
+    { icon: MessageCircle, title: "Histórico de atendimento", desc: "Todo o histórico de conversas, notas, tarefas e interações com cada cliente sempre disponível, mesmo offline." },
+    { icon: Phone, title: "Ligação com registro automático", desc: "Ligue para o cliente direto do app e o sistema registra automaticamente a chamada no histórico do CRM." },
   ];
 
   return (
@@ -1839,7 +1842,9 @@ function AppSubSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {appFeatures.map((feat, i) => (
               <div key={i} className="flex items-start gap-3 p-3 rounded-xl border border-[color:var(--brand-ink)]/5 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/20 transition">
-                <span className="text-xl shrink-0">{feat.icon}</span>
+                <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0 text-[color:var(--brand-orange)]">
+                  <feat.icon className="w-4 h-4" />
+                </div>
                 <div>
                   <h4 className="font-bold text-sm text-foreground mb-0.5">{feat.title}</h4>
                   <p className="text-[10px] text-muted-foreground leading-relaxed">{feat.desc}</p>
@@ -2445,15 +2450,17 @@ function RodizioSubSection() {
           {/* Rules cards */}
           <div className="space-y-3">
             {[
-              { icon: "⚖️", title: "Round-Robin", desc: "Cada corretor recebe leads em sequência justa, nunca duplicando." },
-              { icon: "⏱️", title: "Timeout Auto-skip", desc: "Se não responder em X min, o próximo da fila é acionado automaticamente." },
-              { icon: "🔴", title: "Status Dinâmico", desc: "Corretor em visita ou folga é pulado sem intervenção manual." },
+              { icon: Scale, title: "Round-Robin", desc: "Cada corretor recebe leads em sequência justa, nunca duplicando." },
+              { icon: Clock, title: "Timeout Auto-skip", desc: "Se não responder em X min, o próximo da fila é acionado automaticamente." },
+              { icon: PlayCircle, title: "Status Dinâmico", desc: "Corretor em visita ou folga é pulado sem intervenção manual." },
             ].map((rule) => (
               <div
                 key={rule.title}
                 className="flex gap-3 p-3.5 rounded-xl border border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/30 transition"
               >
-                <span className="text-xl shrink-0">{rule.icon}</span>
+                <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0 text-[color:var(--brand-orange)]">
+                  <rule.icon className="w-4 h-4" />
+                </div>
                 <div>
                   <div className="font-semibold text-sm mb-0.5">{rule.title}</div>
                   <div className="text-[11px] text-muted-foreground leading-relaxed">{rule.desc}</div>
