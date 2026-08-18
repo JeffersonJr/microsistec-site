@@ -28,7 +28,7 @@ import {
   DollarSign,
   ShieldCheck,
   Building2, Key, Target, Moon, BarChart3, Car, Zap as ZapIcon, Trophy, Users, Crosshair, MessageCircle, Rocket, Lightbulb, Building, Star, Crown, Scale, Clock, PlayCircle, MapPin, Phone,
-  Brain, CalendarDays, Link as LinkIcon, Home, HardHat, RefreshCw, Smartphone, UserCircle, Newspaper, Globe
+  Brain, CalendarDays, Link as LinkIcon, Home, HardHat, RefreshCw, UserCircle, Newspaper
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -897,6 +897,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
     ]);
   };
 
+  const albertCapabilities = [
     { icon: Brain, title: "IA personalizada para sua imobiliária", desc: "O Albert é treinado sob medida com os dados, tom de voz e roteiro comercial da sua empresa. Ele não é genérico, ele é o clone do seu melhor SDR." },
     { icon: MessageCircle, title: "Atendimento via WhatsApp 24/7", desc: "Atende leads automaticamente pelo WhatsApp com diálogos livres, naturais e consultivos. Sem menus engessados, sem frustrações." },
     { icon: Target, title: "Qualificação financeira inteligente", desc: "Identifica renda, entrada, FGTS e capacidade de financiamento do lead antes mesmo do corretor entrar na conversa." },
