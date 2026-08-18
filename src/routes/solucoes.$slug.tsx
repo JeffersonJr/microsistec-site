@@ -36,21 +36,21 @@ export const Route = createFileRoute("/solucoes/$slug")({
     const sol = solutions.find((s) => s.slug === params.slug);
     
     const seoMap: Record<string, { title: string, desc: string }> = {
-      "crm": { title: "CRM Imobiliário e Sistema Completo - Microsistec", desc: "Aumente as vendas da sua imobiliária com o melhor CRM do mercado." },
-      "app": { title: "App para Corretores de Imóveis (iOS e Android) - Microsistec", desc: "Aplicativo completo para o corretor gerenciar leads, funil de vendas e imóveis." },
-      "sites-v8": { title: "Criar Site para Imobiliária Otimizado com SEO e Alta Velocidade", desc: "Construa um site imobiliário de alta performance e conversão." },
-      "sites-template": { title: "Temas e Sites Prontos para Imobiliárias - Microsistec", desc: "Tenha um site imobiliário profissional no ar em poucas horas." },
-      "albert-ia": { title: "Albert IA: Assistente Virtual Imobiliário", desc: "Automatize o atendimento da sua imobiliária com Inteligência Artificial." },
-      "funil": { title: "Funil de Vendas Imobiliário Integrado - Microsistec", desc: "Acompanhe seus leads desde o primeiro contato até o fechamento." },
-      "integracoes": { title: "Integração com Portais Imobiliários - Microsistec", desc: "Publique seus imóveis automaticamente nos maiores portais." },
-      "rodizio": { title: "Sistema de Rodízio de Leads Imobiliários - Microsistec", desc: "Distribuição automática e justa de leads entre seus corretores." }
+      "crm": { title: "CRM Imobiliário e Sistema Completo", desc: "Aumente as vendas da sua imobiliária com o melhor CRM do mercado." },
+      "app": { title: "App para Corretores de Imóveis", desc: "Aplicativo completo para o corretor gerenciar leads, funil de vendas e imóveis." },
+      "sites-v8": { title: "Site Imobiliário Otimizado", desc: "Construa um site imobiliário de alta performance e conversão." },
+      "sites-template": { title: "Temas e Sites para Imobiliárias", desc: "Tenha um site imobiliário profissional no ar em poucas horas." },
+      "albert-ia": { title: "Albert IA: Assistente Virtual", desc: "Automatize o atendimento da sua imobiliária com Inteligência Artificial." },
+      "funil": { title: "Funil de Vendas Integrado", desc: "Acompanhe seus leads desde o primeiro contato até o fechamento." },
+      "integracoes": { title: "Integração com Portais Imobiliários", desc: "Publique seus imóveis automaticamente nos maiores portais." },
+      "rodizio": { title: "Rodízio de Leads Imobiliários", desc: "Distribuição automática e justa de leads entre seus corretores." }
     };
 
     const override = params.slug ? seoMap[params.slug] : null;
 
     return {
       meta: [
-        { title: override ? override.title : sol ? `${sol.title} - Microsistec` : "Soluções Microsistec" },
+        { title: override ? `${override.title} | Microsistec` : sol ? `${sol.title} | Microsistec` : "Soluções Microsistec" },
         {
           name: "description",
           content: override ? override.desc : sol ? sol.shortDesc : "Explore as soluções de inteligência imobiliária da Microsistec.",

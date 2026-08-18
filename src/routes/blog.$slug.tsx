@@ -10,7 +10,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = blogPosts.find((p) => p.slug === params.slug);
     return {
       meta: [
-        { title: post ? `${post.title} - Blog Microsistec` : "Artigo Microsistec" },
+        { title: post ? (post.title.length > 50 ? post.title : `${post.title} | Blog Microsistec`) : "Artigo Microsistec" },
         {
           name: "description",
           content: post ? post.excerpt : "Artigo especializado em inovação imobiliária e IA.",
@@ -137,7 +137,7 @@ function BlogLeitor() {
             {/* Content Injection */}
             <div 
               className="prose max-w-none text-foreground/90 mt-8 leading-relaxed space-y-6 text-lg"
-              dangerouslySetInnerHTML={{ __html: post.content || '' }}
+              dangerouslySetInnerHTML={{ __html: post.content?.replace(/<h1/g, '<h2').replace(/<\/h1>/g, '</h2>') || '' }}
             />
 
             {/* Bottom Back Nav */}
