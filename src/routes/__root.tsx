@@ -240,7 +240,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <body suppressHydrationWarning>
         {children}
         <Scripts />
-        <Analytics />
       </body>
     </html>
   );
@@ -337,6 +336,7 @@ function RootComponent() {
           <DemoModal />
         </React.Suspense>
         <PrivacyNotice />
+        <Analytics />
       </DemoModalProvider>
     </QueryClientProvider>
   );
