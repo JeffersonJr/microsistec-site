@@ -72,7 +72,7 @@ export const solutions: Solution[] = [
       "Redução drástica no tempo de busca de imóveis compatíveis com o cliente.",
       "Segurança e conformidade total com as normas da LGPD."
     ],
-    ctaText: "Começar Teste do CRM"
+    ctaText: "Falar com especialista"
   },
   {
     id: "app",

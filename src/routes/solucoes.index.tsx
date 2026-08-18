@@ -192,13 +192,13 @@ function SolucoesIndex() {
                 Pronto para explorar o ecossistema?
               </h2>
               <p className="text-base text-[color:var(--brand-sand)]/60">
-                Teste 14 dias grátis, sem cartão de crédito.
+                Nossa equipe está pronta para tirar suas dúvidas e mostrar o sistema na prática.
               </p>
             </div>
             <a title="Página Inicial da Microsistec" href="/"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-7 py-3.5 font-bold text-base hover:bg-[color:var(--brand-sand)] transition shrink-0 no-underline decoration-none"
             >
-              Começar teste grátis <ArrowRight className="w-4 h-4" />
+              Falar com especialista <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </section>

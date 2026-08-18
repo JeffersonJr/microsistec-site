@@ -792,7 +792,7 @@ function SolucaoDetalhe() {
                   onClick={openModal}
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-lg hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev"
                 >
-                  Ativar Teste 14 Dias Grátis <ArrowRight className="w-4 h-4" />
+                  Falar com especialista <ArrowRight className="w-4 h-4" />
                 </button>
               )}
               <a title="Acessar link" href="/solucoes"
