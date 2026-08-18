@@ -27,7 +27,8 @@ import {
   Calendar,
   DollarSign,
   ShieldCheck,
-  Building2, Key, Target, Moon, BarChart3, Car, Zap as ZapIcon, Trophy, Users, Crosshair, MessageCircle, Rocket, Lightbulb, Building, Star, Crown, Scale, Clock, PlayCircle, MapPin, Phone
+  Building2, Key, Target, Moon, BarChart3, Car, Zap as ZapIcon, Trophy, Users, Crosshair, MessageCircle, Rocket, Lightbulb, Building, Star, Crown, Scale, Clock, PlayCircle, MapPin, Phone,
+  Brain, CalendarDays, Link as LinkIcon, Home, HardHat, RefreshCw, Smartphone, UserCircle, Newspaper, Globe
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -896,13 +897,12 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
     ]);
   };
 
-  const albertCapabilities = [
-    { icon: "🧠", title: "IA personalizada para sua imobiliária", desc: "O Albert é treinado sob medida com os dados, tom de voz e roteiro comercial da sua empresa. Ele não é genérico, ele é o clone do seu melhor SDR." },
-    { icon: "💬", title: "Atendimento via WhatsApp 24/7", desc: "Atende leads automaticamente pelo WhatsApp com diálogos livres, naturais e consultivos. Sem menus engessados, sem frustrações." },
-    { icon: "🎯", title: "Qualificação financeira inteligente", desc: "Identifica renda, entrada, FGTS e capacidade de financiamento do lead antes mesmo do corretor entrar na conversa." },
-    { icon: "📅", title: "Agendamento automático de visitas", desc: "Cruza disponibilidade de corretores e preferências do cliente para agendar visitas direto no CRM, sem intervenção humana." },
-    { icon: "🔗", title: "Integração total com o CRM", desc: "Toda conversa, qualificação e agendamento é registrado automaticamente na ficha do lead dentro do CRM Microsistec." },
-    { icon: "📊", title: "Relatórios de atendimento", desc: "Dashboard com métricas de atendimento, tempo médio de resposta, taxa de qualificação e conversão por período." },
+    { icon: Brain, title: "IA personalizada para sua imobiliária", desc: "O Albert é treinado sob medida com os dados, tom de voz e roteiro comercial da sua empresa. Ele não é genérico, ele é o clone do seu melhor SDR." },
+    { icon: MessageCircle, title: "Atendimento via WhatsApp 24/7", desc: "Atende leads automaticamente pelo WhatsApp com diálogos livres, naturais e consultivos. Sem menus engessados, sem frustrações." },
+    { icon: Target, title: "Qualificação financeira inteligente", desc: "Identifica renda, entrada, FGTS e capacidade de financiamento do lead antes mesmo do corretor entrar na conversa." },
+    { icon: CalendarDays, title: "Agendamento automático de visitas", desc: "Cruza disponibilidade de corretores e preferências do cliente para agendar visitas direto no CRM, sem intervenção humana." },
+    { icon: LinkIcon, title: "Integração total com o CRM", desc: "Toda conversa, qualificação e agendamento é registrado automaticamente na ficha do lead dentro do CRM Microsistec." },
+    { icon: BarChart3, title: "Relatórios de atendimento", desc: "Dashboard com métricas de atendimento, tempo médio de resposta, taxa de qualificação e conversão por período." },
   ];
 
   return (
@@ -1055,7 +1055,9 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
               key={i}
               className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
             >
-              <span className="text-3xl shrink-0 mt-0.5">{cap.icon}</span>
+              <span className="text-[color:var(--brand-orange)] shrink-0 mt-0.5">
+                {React.createElement(cap.icon as React.ElementType, { className: "w-8 h-8" })}
+              </span>
               <div>
                 <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
                   {cap.title}
@@ -1584,16 +1586,16 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
 function CRMSubSection() {
   const { openModal } = useDemoModal();
   const crmModules = [
-    { icon: "🏠", title: "Cadastro de Imóveis", desc: "Cadastre imóveis de venda e locação com fotos ilimitadas, vídeos, plantas e tour virtual. Campos personalizados para cada tipo de propriedade." },
-    { icon: "🏗️", title: "Empreendimentos", desc: "Gerencie lançamentos com tabelas de preço por unidade, espelho de vendas interativo e acompanhamento de evolução da obra." },
-    { icon: "🏢", title: "Condomínios", desc: "Cadastre condomínios completos com infraestrutura, taxas, localização e vincule automaticamente aos imóveis cadastrados." },
-    { icon: "👥", title: "Clientes & Proprietários", desc: "Base unificada de contatos com histórico de interações, preferências de busca, documentação e controle de exclusividade." },
-    { icon: "🔑", title: "Marca d'Água Automática", desc: "Proteja suas fotos profissionais com marca d'água personalizada da sua imobiliária, aplicada automaticamente no upload." },
-    { icon: "🔄", title: "Integração com Portais", desc: "Publique automaticamente nos maiores portais: ZAP, VivaReal, OLX, Imovelweb, Mercado Livre, Chaves na Mão e mais de 40 portais." },
-    { icon: "📱", title: "Facebook & Google Ads", desc: "Receba leads de campanhas Facebook Lead Ads, Instagram e Google diretamente no CRM com rastreamento de origem." },
-    { icon: "🎯", title: "Rodízio de Atendimento", desc: "Distribuição automática e justa de leads entre corretores com regras por especialidade, plantão e tempo de resposta." },
-    { icon: "👤", title: "Usuários & Permissões", desc: "Cadastre gerentes, corretores e parceiros com permissionamento granular. Controle quem vê, edita e exporta dados." },
-    { icon: "📰", title: "Blog Integrado", desc: "Módulo de blog profissional para sua imobiliária produzir conteúdo SEO e atrair leads orgânicos. Vendido separadamente." },
+    { icon: Home, title: "Cadastro de Imóveis", desc: "Cadastre imóveis de venda e locação com fotos ilimitadas, vídeos, plantas e tour virtual. Campos personalizados para cada tipo de propriedade." },
+    { icon: HardHat, title: "Empreendimentos", desc: "Gerencie lançamentos com tabelas de preço por unidade, espelho de vendas interativo e acompanhamento de evolução da obra." },
+    { icon: Building, title: "Condomínios", desc: "Cadastre condomínios completos com infraestrutura, taxas, localização e vincule automaticamente aos imóveis cadastrados." },
+    { icon: Users, title: "Clientes & Proprietários", desc: "Base unificada de contatos com histórico de interações, preferências de busca, documentação e controle de exclusividade." },
+    { icon: Key, title: "Marca d'Água Automática", desc: "Proteja suas fotos profissionais com marca d'água personalizada da sua imobiliária, aplicada automaticamente no upload." },
+    { icon: RefreshCw, title: "Integração com Portais", desc: "Publique automaticamente nos maiores portais: ZAP, VivaReal, OLX, Imovelweb, Mercado Livre, Chaves na Mão e mais de 40 portais." },
+    { icon: Smartphone, title: "Facebook & Google Ads", desc: "Receba leads de campanhas Facebook Lead Ads, Instagram e Google diretamente no CRM com rastreamento de origem." },
+    { icon: Target, title: "Rodízio de Atendimento", desc: "Distribuição automática e justa de leads entre corretores com regras por especialidade, plantão e tempo de resposta." },
+    { icon: UserCircle, title: "Usuários & Permissões", desc: "Cadastre gerentes, corretores e parceiros com permissionamento granular. Controle quem vê, edita e exporta dados." },
+    { icon: Newspaper, title: "Blog Integrado", desc: "Módulo de blog profissional para sua imobiliária produzir conteúdo SEO e atrair leads orgânicos. Vendido separadamente." },
   ];
 
   return (
@@ -1618,7 +1620,9 @@ function CRMSubSection() {
             key={i}
             className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
           >
-            <span className="text-3xl shrink-0 mt-0.5">{mod.icon}</span>
+            <span className="text-[color:var(--brand-orange)] shrink-0 mt-0.5">
+              {React.createElement(mod.icon as React.ElementType, { className: "w-8 h-8" })}
+            </span>
             <div>
               <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
                 {mod.title}

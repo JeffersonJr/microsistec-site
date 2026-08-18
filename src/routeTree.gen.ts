@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
@@ -18,6 +19,7 @@ import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as DiaCorretorRouteImport } from './routes/dia-corretor'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
 import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
@@ -26,6 +28,11 @@ import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 import { Route as MateriaisSlugRouteImport } from './routes/materiais.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
@@ -71,6 +78,11 @@ const DiaCorretorRoute = DiaCorretorRouteImport.update({
   path: '/dia-corretor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -109,6 +121,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
   '/novidades': typeof NovidadesRoute
@@ -118,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/planos-albert': typeof PlanosAlbertRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
@@ -127,6 +141,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
   '/novidades': typeof NovidadesRoute
@@ -136,6 +151,7 @@ export interface FileRoutesByTo {
   '/planos-albert': typeof PlanosAlbertRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
@@ -146,6 +162,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
   '/dia-corretor': typeof DiaCorretorRoute
   '/empresa': typeof EmpresaRoute
   '/novidades': typeof NovidadesRoute
@@ -155,6 +172,7 @@ export interface FileRoutesById {
   '/planos-albert': typeof PlanosAlbertRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
@@ -166,6 +184,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contato'
     | '/dia-corretor'
     | '/empresa'
     | '/novidades'
@@ -175,6 +194,7 @@ export interface FileRouteTypes {
     | '/planos-albert'
     | '/politica-de-cookies'
     | '/politica-de-privacidade'
+    | '/termos-de-uso'
     | '/blog/$slug'
     | '/materiais/$slug'
     | '/solucoes/$slug'
@@ -184,6 +204,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contato'
     | '/dia-corretor'
     | '/empresa'
     | '/novidades'
@@ -193,6 +214,7 @@ export interface FileRouteTypes {
     | '/planos-albert'
     | '/politica-de-cookies'
     | '/politica-de-privacidade'
+    | '/termos-de-uso'
     | '/blog/$slug'
     | '/materiais/$slug'
     | '/solucoes/$slug'
@@ -202,6 +224,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contato'
     | '/dia-corretor'
     | '/empresa'
     | '/novidades'
@@ -211,6 +234,7 @@ export interface FileRouteTypes {
     | '/planos-albert'
     | '/politica-de-cookies'
     | '/politica-de-privacidade'
+    | '/termos-de-uso'
     | '/blog/$slug'
     | '/materiais/$slug'
     | '/solucoes/$slug'
@@ -221,6 +245,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContatoRoute: typeof ContatoRoute
   DiaCorretorRoute: typeof DiaCorretorRoute
   EmpresaRoute: typeof EmpresaRoute
   NovidadesRoute: typeof NovidadesRoute
@@ -230,6 +255,7 @@ export interface RootRouteChildren {
   PlanosAlbertRoute: typeof PlanosAlbertRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   MateriaisSlugRoute: typeof MateriaisSlugRoute
   SolucoesSlugRoute: typeof SolucoesSlugRoute
@@ -240,6 +266,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
@@ -303,6 +336,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiaCorretorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -357,6 +397,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContatoRoute: ContatoRoute,
   DiaCorretorRoute: DiaCorretorRoute,
   EmpresaRoute: EmpresaRoute,
   NovidadesRoute: NovidadesRoute,
@@ -366,6 +407,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlanosAlbertRoute: PlanosAlbertRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
   BlogSlugRoute: BlogSlugRoute,
   MateriaisSlugRoute: MateriaisSlugRoute,
   SolucoesSlugRoute: SolucoesSlugRoute,
