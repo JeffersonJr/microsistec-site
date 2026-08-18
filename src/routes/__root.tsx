@@ -253,6 +253,7 @@ import { PrivacyNotice } from "@/components/microsistec/PrivacyNotice";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const [isIntercomOpen, setIsIntercomOpen] = React.useState(false);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -266,7 +267,16 @@ function RootComponent() {
         const { default: Intercom } = await import("@intercom/messenger-js-sdk");
         Intercom({
           app_id: "mjj9j4fs",
+          custom_launcher_selector: "#custom-intercom-launcher",
+          hide_default_launcher: true,
         });
+
+        // The SDK might set window.Intercom, or we can use the imported function
+        const intercomFn = window.Intercom || Intercom;
+        if (typeof intercomFn === "function") {
+          intercomFn("onShow", () => setIsIntercomOpen(true));
+          intercomFn("onHide", () => setIsIntercomOpen(false));
+        }
       } catch (err) {
         console.error("Failed to initialize Intercom:", err);
       }
@@ -298,6 +308,21 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <DemoModalProvider>
         <Outlet />
+
+        {/* Custom Intercom Launcher */}
+        <button
+          id="custom-intercom-launcher"
+          aria-label="Fale conosco"
+          style={{
+            opacity: isIntercomOpen ? 0 : 1,
+            pointerEvents: isIntercomOpen ? "none" : "auto",
+            transition: "opacity 0.3s ease, transform 0.2s ease"
+          }}
+          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:scale-105"
+        >
+          <img src="/icon.svg" alt="Microsistec" className="h-8 w-8 object-contain" />
+        </button>
+
         <React.Suspense fallback={null}>
           <DemoModal />
         </React.Suspense>
