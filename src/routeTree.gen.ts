@@ -9,73 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
-import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
-import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
-import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
-import { Route as PlanosRouteImport } from './routes/planos'
-import { Route as ObrigadoCorretorRouteImport } from './routes/obrigado-corretor'
-import { Route as ObrigadoRouteImport } from './routes/obrigado'
-import { Route as NovidadesRouteImport } from './routes/novidades'
-import { Route as EmpresaRouteImport } from './routes/empresa'
-import { Route as DiaCorretorRouteImport } from './routes/dia-corretor'
-import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
-import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as DiaCorretorRouteImport } from './routes/dia-corretor'
+import { Route as EmpresaRouteImport } from './routes/empresa'
+import { Route as NovidadesRouteImport } from './routes/novidades'
+import { Route as ObrigadoRouteImport } from './routes/obrigado'
+import { Route as ObrigadoCorretorRouteImport } from './routes/obrigado-corretor'
+import { Route as PlanosRouteImport } from './routes/planos'
+import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
+import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
-import { Route as MateriaisSlugRouteImport } from './routes/materiais.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
+import { Route as MateriaisSlugRouteImport } from './routes/materiais.$slug'
+import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
+import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 
-const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
-  id: '/termos-de-uso',
-  path: '/termos-de-uso',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
-  id: '/politica-de-privacidade',
-  path: '/politica-de-privacidade',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
-  id: '/politica-de-cookies',
-  path: '/politica-de-cookies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlanosAlbertRoute = PlanosAlbertRouteImport.update({
-  id: '/planos-albert',
-  path: '/planos-albert',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlanosRoute = PlanosRouteImport.update({
-  id: '/planos',
-  path: '/planos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ObrigadoCorretorRoute = ObrigadoCorretorRouteImport.update({
-  id: '/obrigado-corretor',
-  path: '/obrigado-corretor',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ObrigadoRoute = ObrigadoRouteImport.update({
-  id: '/obrigado',
-  path: '/obrigado',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NovidadesRoute = NovidadesRouteImport.update({
-  id: '/novidades',
-  path: '/novidades',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EmpresaRoute = EmpresaRouteImport.update({
-  id: '/empresa',
-  path: '/empresa',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DiaCorretorRoute = DiaCorretorRouteImport.update({
-  id: '/dia-corretor',
-  path: '/dia-corretor',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -83,19 +38,54 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DiaCorretorRoute = DiaCorretorRouteImport.update({
+  id: '/dia-corretor',
+  path: '/dia-corretor',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SolucoesIndexRoute = SolucoesIndexRouteImport.update({
-  id: '/solucoes/',
-  path: '/solucoes/',
+const EmpresaRoute = EmpresaRouteImport.update({
+  id: '/empresa',
+  path: '/empresa',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MateriaisIndexRoute = MateriaisIndexRouteImport.update({
-  id: '/materiais/',
-  path: '/materiais/',
+const NovidadesRoute = NovidadesRouteImport.update({
+  id: '/novidades',
+  path: '/novidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObrigadoRoute = ObrigadoRouteImport.update({
+  id: '/obrigado',
+  path: '/obrigado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObrigadoCorretorRoute = ObrigadoCorretorRouteImport.update({
+  id: '/obrigado-corretor',
+  path: '/obrigado-corretor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanosAlbertRoute = PlanosAlbertRouteImport.update({
+  id: '/planos-albert',
+  path: '/planos-albert',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
+  id: '/politica-de-cookies',
+  path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -103,9 +93,14 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SolucoesSlugRoute = SolucoesSlugRouteImport.update({
-  id: '/solucoes/$slug',
-  path: '/solucoes/$slug',
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MateriaisIndexRoute = MateriaisIndexRouteImport.update({
+  id: '/materiais/',
+  path: '/materiais/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MateriaisSlugRoute = MateriaisSlugRouteImport.update({
@@ -113,9 +108,14 @@ const MateriaisSlugRoute = MateriaisSlugRouteImport.update({
   path: '/materiais/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const SolucoesIndexRoute = SolucoesIndexRouteImport.update({
+  id: '/solucoes/',
+  path: '/solucoes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesSlugRoute = SolucoesSlugRouteImport.update({
+  id: '/solucoes/$slug',
+  path: '/solucoes/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -266,74 +266,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/termos-de-uso': {
-      id: '/termos-de-uso'
-      path: '/termos-de-uso'
-      fullPath: '/termos-de-uso'
-      preLoaderRoute: typeof TermosDeUsoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politica-de-privacidade': {
-      id: '/politica-de-privacidade'
-      path: '/politica-de-privacidade'
-      fullPath: '/politica-de-privacidade'
-      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politica-de-cookies': {
-      id: '/politica-de-cookies'
-      path: '/politica-de-cookies'
-      fullPath: '/politica-de-cookies'
-      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/planos-albert': {
-      id: '/planos-albert'
-      path: '/planos-albert'
-      fullPath: '/planos-albert'
-      preLoaderRoute: typeof PlanosAlbertRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/planos': {
-      id: '/planos'
-      path: '/planos'
-      fullPath: '/planos'
-      preLoaderRoute: typeof PlanosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/obrigado-corretor': {
-      id: '/obrigado-corretor'
-      path: '/obrigado-corretor'
-      fullPath: '/obrigado-corretor'
-      preLoaderRoute: typeof ObrigadoCorretorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/obrigado': {
-      id: '/obrigado'
-      path: '/obrigado'
-      fullPath: '/obrigado'
-      preLoaderRoute: typeof ObrigadoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/novidades': {
-      id: '/novidades'
-      path: '/novidades'
-      fullPath: '/novidades'
-      preLoaderRoute: typeof NovidadesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/empresa': {
-      id: '/empresa'
-      path: '/empresa'
-      fullPath: '/empresa'
-      preLoaderRoute: typeof EmpresaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dia-corretor': {
-      id: '/dia-corretor'
-      path: '/dia-corretor'
-      fullPath: '/dia-corretor'
-      preLoaderRoute: typeof DiaCorretorRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -343,25 +280,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/dia-corretor': {
+      id: '/dia-corretor'
+      path: '/dia-corretor'
+      fullPath: '/dia-corretor'
+      preLoaderRoute: typeof DiaCorretorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/solucoes/': {
-      id: '/solucoes/'
-      path: '/solucoes'
-      fullPath: '/solucoes/'
-      preLoaderRoute: typeof SolucoesIndexRouteImport
+    '/empresa': {
+      id: '/empresa'
+      path: '/empresa'
+      fullPath: '/empresa'
+      preLoaderRoute: typeof EmpresaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/materiais/': {
-      id: '/materiais/'
-      path: '/materiais'
-      fullPath: '/materiais/'
-      preLoaderRoute: typeof MateriaisIndexRouteImport
+    '/novidades': {
+      id: '/novidades'
+      path: '/novidades'
+      fullPath: '/novidades'
+      preLoaderRoute: typeof NovidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obrigado': {
+      id: '/obrigado'
+      path: '/obrigado'
+      fullPath: '/obrigado'
+      preLoaderRoute: typeof ObrigadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obrigado-corretor': {
+      id: '/obrigado-corretor'
+      path: '/obrigado-corretor'
+      fullPath: '/obrigado-corretor'
+      preLoaderRoute: typeof ObrigadoCorretorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planos-albert': {
+      id: '/planos-albert'
+      path: '/planos-albert'
+      fullPath: '/planos-albert'
+      preLoaderRoute: typeof PlanosAlbertRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-cookies': {
+      id: '/politica-de-cookies'
+      path: '/politica-de-cookies'
+      fullPath: '/politica-de-cookies'
+      preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -371,11 +357,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/solucoes/$slug': {
-      id: '/solucoes/$slug'
-      path: '/solucoes/$slug'
-      fullPath: '/solucoes/$slug'
-      preLoaderRoute: typeof SolucoesSlugRouteImport
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiais/': {
+      id: '/materiais/'
+      path: '/materiais'
+      fullPath: '/materiais/'
+      preLoaderRoute: typeof MateriaisIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/materiais/$slug': {
@@ -385,11 +378,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MateriaisSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/solucoes/': {
+      id: '/solucoes/'
+      path: '/solucoes'
+      fullPath: '/solucoes/'
+      preLoaderRoute: typeof SolucoesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes/$slug': {
+      id: '/solucoes/$slug'
+      path: '/solucoes/$slug'
+      fullPath: '/solucoes/$slug'
+      preLoaderRoute: typeof SolucoesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

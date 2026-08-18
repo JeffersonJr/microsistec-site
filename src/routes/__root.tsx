@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { Home, MapPin, ArrowRight, Key } from "lucide-react";
 import { SeoSchema } from "@/components/seo/SeoSchema";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCssInline from "../styles.css?inline";
 
@@ -239,6 +240,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <body suppressHydrationWarning>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
