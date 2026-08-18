@@ -1111,7 +1111,7 @@ export function Footer() {
               { label: "Falar no WhatsApp", onClick: openModal },
               { label: "Política de Privacidade", to: "/politica-de-privacidade" },
               { label: "Política de Cookies", to: "/politica-de-cookies" },
-              { label: "Termos de Uso", to: "https://imob.online/terms/tos" },
+              { label: "Termos de Uso", to: "/termos-de-uso" },
             ]}
           />
           <FooterCol
@@ -1142,7 +1142,7 @@ export function Footer() {
         <a href="/empresa">About</a>
         <a href="/contato">Contact</a>
         <a href="/politica-de-privacidade">Privacy</a>
-        <a href="https://imob.online/terms/tos">Terms</a>
+        <a href="/termos-de-uso">Terms</a>
       </div>
     </footer>
   );
