@@ -1113,12 +1113,14 @@ export function Footer() {
               { label: "Falar no WhatsApp", onClick: openModal },
               { label: "Política de Privacidade", to: "/politica-de-privacidade" },
               { label: "Política de Cookies", to: "/politica-de-cookies" },
+              { label: "Termos de Uso", to: "/termos-de-uso" },
             ]}
           />
           <FooterCol
             className="sm:col-span-1 lg:col-span-3"
             title="Contato"
             links={[
+              { label: "Fale Conosco", to: "/contato" },
               { label: "financeiro@microsistec.com.br", to: "mailto:financeiro@microsistec.com.br" },
               { label: "suporte@microsistec.com.br", to: "mailto:suporte@microsistec.com.br" },
             ]}
