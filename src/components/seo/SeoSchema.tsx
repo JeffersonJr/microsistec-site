@@ -46,6 +46,11 @@ export function SeoSchema() {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "BRL"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "854"
         }
       }
     ]
