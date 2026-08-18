@@ -111,7 +111,7 @@ function Empresa() {
                   onClick={openModal}
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
                 >
-                  Testar Nosso Sistema <ArrowRight className="w-4 h-4" />
+                  Falar com especialista <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

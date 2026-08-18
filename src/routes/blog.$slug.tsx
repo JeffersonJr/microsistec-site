@@ -202,7 +202,7 @@ function BlogLeitor() {
                     onClick={openModal}
                     className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
                   >
-                    Testar CRM por 15 dias <ArrowRight className="w-3.5 h-3.5" />
+                    Falar com especialista <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
