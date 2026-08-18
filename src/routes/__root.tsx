@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Home, MapPin, ArrowRight, Key } from "lucide-react";
+import { SeoSchema } from "@/components/seo/SeoSchema";
 
 import appCssInline from "../styles.css?inline";
 
@@ -167,8 +168,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994" },
-      { name: "description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores. A proptech pioneira no Brasil desde 1994." },
+      { title: "Microsistec - CRM Imobiliário e Sistema para Imobiliárias" },
+      { name: "description", content: "O melhor CRM imobiliário, site e app para corretores. A proptech pioneira no Brasil desde 1994 ajudando imobiliárias a venderem mais." },
       { name: "author", content: "Microsistec" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#0e1117" },
@@ -213,6 +214,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <SeoSchema />
         {/* Inline CSS to completely eliminate render blocking network requests */}
         <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
         {/* Optimized Font Loading (Deferred to prevent render blocking) */}

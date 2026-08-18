@@ -90,15 +90,19 @@ function NovidadesPage() {
               <span className="text-[color:var(--brand-orange)] font-mono-ui font-bold text-[10px] uppercase tracking-widest shrink-0">Novidades:</span>
               <button onClick={() => document.getElementById('multifunil')?.scrollIntoView({ behavior: 'smooth' })} className="text-[color:var(--brand-sand)]/70 hover:text-white font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer border-none bg-transparent flex items-center gap-2">
                 <SplitSquareHorizontal className="w-4 h-4" /> Multifunil
+                <span className="text-[9px] font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-1.5 py-0.5 rounded-full uppercase tracking-wider">Em breve</span>
               </button>
               <button onClick={() => document.getElementById('relatorios')?.scrollIntoView({ behavior: 'smooth' })} className="text-[color:var(--brand-sand)]/70 hover:text-white font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer border-none bg-transparent flex items-center gap-2">
                 <BarChart3 className="w-4 h-4" /> Relatórios
+                <span className="text-[9px] font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-1.5 py-0.5 rounded-full uppercase tracking-wider">Em breve</span>
               </button>
               <button onClick={() => document.getElementById('integracoes')?.scrollIntoView({ behavior: 'smooth' })} className="text-[color:var(--brand-sand)]/70 hover:text-white font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer border-none bg-transparent flex items-center gap-2">
                 <Share2 className="w-4 h-4" /> Integrações
+                <span className="text-[9px] font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-1.5 py-0.5 rounded-full uppercase tracking-wider">Em breve</span>
               </button>
               <button onClick={() => document.getElementById('automacoes')?.scrollIntoView({ behavior: 'smooth' })} className="text-[color:var(--brand-sand)]/70 hover:text-white font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer border-none bg-transparent flex items-center gap-2">
                 <Zap className="w-4 h-4" /> Automações
+                <span className="text-[9px] font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-1.5 py-0.5 rounded-full uppercase tracking-wider">Em breve</span>
               </button>
             </div>
           </div>
@@ -111,8 +115,9 @@ function NovidadesPage() {
               <div className="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center mb-4">
                 <SplitSquareHorizontal className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Multifunil
+                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">Em breve</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Cada tipo de negociação exige um processo diferente. Agora você tem a possibilidade de <strong>criar múltiplos funis</strong> independentes para Lançamentos, Alto Padrão, Locação e MCMV.
@@ -185,8 +190,9 @@ function NovidadesPage() {
               <div className="w-12 h-12 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <BarChart3 className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-[color:var(--brand-sand)]">
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-[color:var(--brand-sand)] flex items-center justify-center gap-3 flex-wrap">
                 Visão 360º em Tempo Real
+                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-3 py-1 rounded-full uppercase tracking-wider">Em breve</span>
               </h2>
               <p className="text-lg text-[color:var(--brand-sand)]/70 leading-relaxed">
                 Novos relatórios gerenciais focados em dados analíticos e de desempenho. Saiba exatamente o que está acontecendo na sua imobiliária com clareza absoluta.
@@ -309,8 +315,9 @@ function NovidadesPage() {
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4">
                 <Share2 className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Integração com Portais: Multi Corretor
+                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">Em breve</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Remodelamos a experiência de publicação em portais. Agora você tem a opção <strong>Multi Corretor</strong>.
@@ -329,8 +336,9 @@ function NovidadesPage() {
               <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">
+              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Automações de Fluxo
+                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">Em breve</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Trabalhe menos, feche mais. Cada fluxo é composto por um <strong>gatilho</strong> e uma sequência de <strong>ações</strong> que o sistema executa sozinho — sem ninguém precisar lembrar.

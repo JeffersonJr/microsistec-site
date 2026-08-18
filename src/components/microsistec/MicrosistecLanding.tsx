@@ -520,14 +520,14 @@ function Hero() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* headline */}
           <h1 className="lg:col-span-9 font-extrabold tracking-[-0.045em] leading-[0.95] text-[clamp(2.6rem,6.5vw,5.2rem)]">
-            Vender imóvel
+            O CRM Imobiliário
             <br />
-            virou{" "}
+            que muda{" "}
             <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
-              outra coisa
+              o jogo
             </span>
             <br />
-            E a gente já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> aqui
+            Para quem já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> o futuro
           </h1>
 
           {/* proof badge */}

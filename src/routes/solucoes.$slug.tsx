@@ -33,12 +33,26 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/solucoes/$slug")({
   head: ({ params }) => {
     const sol = solutions.find((s) => s.slug === params.slug);
+    
+    const seoMap: Record<string, { title: string, desc: string }> = {
+      "crm": { title: "CRM Imobiliário e Sistema Completo - Microsistec", desc: "Aumente as vendas da sua imobiliária com o melhor CRM do mercado." },
+      "app": { title: "App para Corretores de Imóveis (iOS e Android) - Microsistec", desc: "Aplicativo completo para o corretor gerenciar leads, funil de vendas e imóveis." },
+      "sites-v8": { title: "Criar Site para Imobiliária Otimizado com SEO e Alta Velocidade", desc: "Construa um site imobiliário de alta performance e conversão." },
+      "sites-template": { title: "Temas e Sites Prontos para Imobiliárias - Microsistec", desc: "Tenha um site imobiliário profissional no ar em poucas horas." },
+      "albert-ia": { title: "Albert IA: Assistente Virtual Imobiliário", desc: "Automatize o atendimento da sua imobiliária com Inteligência Artificial." },
+      "funil": { title: "Funil de Vendas Imobiliário Integrado - Microsistec", desc: "Acompanhe seus leads desde o primeiro contato até o fechamento." },
+      "integracoes": { title: "Integração com Portais Imobiliários - Microsistec", desc: "Publique seus imóveis automaticamente nos maiores portais." },
+      "rodizio": { title: "Sistema de Rodízio de Leads Imobiliários - Microsistec", desc: "Distribuição automática e justa de leads entre seus corretores." }
+    };
+
+    const override = params.slug ? seoMap[params.slug] : null;
+
     return {
       meta: [
-        { title: sol ? `${sol.title} - Microsistec` : "Soluções Microsistec" },
+        { title: override ? override.title : sol ? `${sol.title} - Microsistec` : "Soluções Microsistec" },
         {
           name: "description",
-          content: sol ? sol.shortDesc : "Explore as soluções de inteligência imobiliária da Microsistec.",
+          content: override ? override.desc : sol ? sol.shortDesc : "Explore as soluções de inteligência imobiliária da Microsistec.",
         },
       ],
     };
@@ -397,8 +411,19 @@ function SolutionFAQ({ slug }: { slug: string }) {
 }
 
 function SolucaoDetalhe() {
-  const sol = Route.useLoaderData() as Solution;
+  const sol = Route.useLoaderData() as any;
   const { openModal } = useDemoModal();
+
+  const seoH1Map: Record<string, string> = {
+    "crm": "CRM Imobiliário Completo",
+    "app": "Aplicativo para Corretores de Imóveis",
+    "sites-v8": "Plataforma de Sites para Imobiliárias",
+    "sites-template": "Temas Profissionais para Imobiliárias",
+    "albert-ia": "Albert IA - Assistente Virtual Imobiliário",
+    "funil": "Gestão de Funil de Vendas Imobiliário",
+    "integracoes": "Integração Automática com Portais Imobiliários",
+    "rodizio": "Sistema de Rodízio de Leads Imobiliários",
+  };
 
   const [searchTerm, setSearchTerm] = React.useState("");
   const [activeCategory, setActiveCategory] = React.useState("Todos");
@@ -519,7 +544,7 @@ function SolucaoDetalhe() {
                 </div>
                 
                 <h1 className="font-extrabold tracking-[-0.045em] leading-[0.97] text-[clamp(2.4rem,5vw,3.8rem)]">
-                  {sol.title}
+                  {seoH1Map[sol.slug] || sol.title}
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed font-serif-italic">
