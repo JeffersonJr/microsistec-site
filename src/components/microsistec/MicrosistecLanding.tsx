@@ -1031,7 +1031,7 @@ export function CTA() {
         <div className="relative grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-8">
             <span className="stamp text-[color:var(--brand-orange)] text-sm mb-6 inline-block">
-              teste 14 dias · sem cartão
+              consultoria gratuita · sem compromisso
             </span>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
               Bora vender mais, <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">de verdade</span>?
