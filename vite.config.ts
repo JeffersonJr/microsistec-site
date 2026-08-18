@@ -12,6 +12,7 @@ export default defineConfig({
       preset: "vercel",
     },
   },
+  // @ts-ignore - Bypass lovable type restriction to allow custom build config
   build: {
     // Target modern browsers for smaller bundles
     target: "es2020",
