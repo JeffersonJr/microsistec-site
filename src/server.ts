@@ -71,7 +71,18 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      let finalResponse = await normalizeCatastrophicSsrResponse(response);
+
+      // Add Edge Caching for successful HTML responses
+      if (finalResponse.status === 200) {
+        const contentType = finalResponse.headers.get("content-type") || "";
+        if (contentType.includes("text/html")) {
+          finalResponse = new Response(finalResponse.body, finalResponse);
+          finalResponse.headers.set("Cache-Control", "s-maxage=86400, stale-while-revalidate=86400");
+        }
+      }
+
+      return finalResponse;
     } catch (error) {
       console.error(error);
       return brandedErrorResponse();
