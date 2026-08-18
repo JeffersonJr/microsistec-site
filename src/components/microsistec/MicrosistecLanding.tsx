@@ -86,7 +86,7 @@ export function Nav() {
           {/* Logo à esquerda */}
           <Link
             to="/"
-            className="flex items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity shrink-0"
+            className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity shrink-0"
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
@@ -1066,7 +1066,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
           <div className="sm:col-span-2 lg:col-span-3">
-            <Link to="/" className="flex items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
+            <Link to="/" className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
               <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
                 Microsistec
