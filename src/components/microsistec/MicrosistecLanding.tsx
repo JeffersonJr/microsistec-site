@@ -131,7 +131,7 @@ export function Nav() {
               onClick={() => setOpenMenu(null)}
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition flex items-center gap-1.5"
             >
-              Novidades <span className="bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">Novo</span>
+              Novidades <span className="badge-pulse bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">Novo</span>
             </Link>
             <Link title="Sobre a Microsistec" to="/empresa"
               onClick={() => setOpenMenu(null)}
@@ -165,9 +165,9 @@ export function Nav() {
             <button
               title="Falar com especialista"
               onClick={openModal}
-              className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
+              className="btn-micro hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
             >
-              Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
+              Falar com especialista <ArrowUpRight className="icon-micro-nudge w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => { setIsMobileOpen(!isMobileOpen); setOpenMenu(null); }}
@@ -199,10 +199,10 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
-                        <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                        <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
                         <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
@@ -228,10 +228,10 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
-                        <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                        <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
                         <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
@@ -255,10 +255,10 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
-                        <item.icon className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                        <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
                         <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
@@ -282,7 +282,7 @@ export function Nav() {
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
                         <h4 className="font-bold text-base leading-none">Sistema de Locação</h4>
-                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 leading-none">Em breve</span>
+                        <span className="badge-pulse text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 leading-none">Em breve</span>
                       </div>
                       <p className="text-sm text-muted-foreground/50 leading-normal">Contratos, reajustes e repasses imobiliários digitais</p>
                     </div>
@@ -363,7 +363,7 @@ export function Nav() {
                 </div>
                 <button
                   onClick={() => { setOpenMenu(null); openModal(); }}
-                  className="w-full mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold py-2.5 hover:scale-[1.02] transition cursor-pointer border-none"
+                  className="btn-micro w-full mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold py-2.5 cursor-pointer border-none"
                 >
                   Falar com especialista agora
                 </button>
@@ -463,10 +463,10 @@ export function Nav() {
                 <button
                   title="Falar com especialista"
                   onClick={openModal}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline active:scale-[0.98] transition border-none cursor-pointer"
+                  className="btn-micro w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline border-none cursor-pointer group"
                   style={{ minHeight: 56 }}
                 >
-                  Falar com especialista <ArrowUpRight className="w-4 h-4" />
+                  Falar com especialista <ArrowUpRight className="icon-micro-nudge w-4 h-4" />
                 </button>
                 <div className="flex gap-2.5">
                   <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
@@ -553,9 +553,9 @@ function Hero() {
             <button
               title="Falar com especialista"
               onClick={openModal}
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none no-underline"
+              className="cta-shimmer btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
             >
-              Falar com especialista <ArrowRight className="w-4 h-4" />
+              Falar com especialista <ArrowRight className="icon-micro-nudge w-4 h-4" />
             </button>
           </div>
         </div>
@@ -748,14 +748,14 @@ function Albert() {
               <button
                 title="Fale conosco pelo WhatsApp"
                 onClick={openModal}
-                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 transition decoration-none no-underline text-center border-none cursor-pointer"
+                className="btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 decoration-none no-underline text-center border-none cursor-pointer group"
               >
                 <span className="hidden sm:inline">Converse com o Albert agora mesmo</span>
                 <span className="sm:hidden">Falar com o Albert no zap</span>
-                <ArrowRight className="w-4 h-4 shrink-0" />
+                <ArrowRight className="icon-micro-nudge w-4 h-4 shrink-0" />
               </button>
               <Link title="Planos e Preços da IA Albert" to="/planos-albert"
-                className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10 transition"
+                className="btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10"
               >
                 Ver planos
               </Link>

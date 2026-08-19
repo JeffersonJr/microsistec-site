@@ -471,12 +471,68 @@
   animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Feature card hover lift */
+/* Feature card hover lift - Enhanced with smoother easing and inner scale */
 .feature-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
 }
 .feature-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px oklch(0.14 0.02 270 / 0.1);
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 16px 48px -12px oklch(0.623 0.106 195.8 / 0.15), 0 4px 12px oklch(0.14 0.02 270 / 0.05);
 }
+
+/* ================================================================== */
+/*  MICRO-ANIMATIONS & INTERACTION STATES                              */
+/* ================================================================== */
+
+/* 1. Button Micro-interactions (Scale & Press) */
+.btn-micro {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+.btn-micro:hover {
+  transform: scale(1.02);
+}
+.btn-micro:active {
+  transform: scale(0.97);
+}
+
+/* 2. Icon Nudge inside Buttons */
+.btn-micro .icon-micro-nudge {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-micro:hover .icon-micro-nudge {
+  transform: translateX(3px) translateY(-1px);
+}
+
+/* 3. Image Parallax/Scale (Super slow and continuous on hover) */
+.img-micro-scale {
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.group:hover .img-micro-scale, 
+.img-micro-scale:hover {
+  transform: scale(1.03);
+}
+
+/* 4. Staggered Fade In for Mega Menu items */
+.mega-item-stagger {
+  opacity: 0;
+  animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Generate nth-child delays for smooth cascading effect */
+.mega-item-stagger:nth-child(1) { animation-delay: 0.05s; }
+.mega-item-stagger:nth-child(2) { animation-delay: 0.08s; }
+.mega-item-stagger:nth-child(3) { animation-delay: 0.11s; }
+.mega-item-stagger:nth-child(4) { animation-delay: 0.14s; }
+.mega-item-stagger:nth-child(5) { animation-delay: 0.17s; }
+
+/* 5. Subtle Icon Rotate (for lists/mega-menus) */
+.icon-micro-rotate {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+}
+.group:hover .icon-micro-rotate {
+  transform: scale(1.1) rotate(5deg);
+}
+
 }

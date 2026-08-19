@@ -149,12 +149,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="btn-micro inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-primary-foreground border-none cursor-pointer"
           >
             Try again
           </button>
           <a title="Página Inicial da Microsistec" href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-accent"
+            className="btn-micro inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-base font-medium text-foreground hover:bg-accent"
           >
             Go home
           </a>
@@ -317,14 +317,15 @@ function RootComponent() {
         <button
           id="custom-intercom-launcher"
           aria-label="Fale conosco"
+          className="btn-micro fixed bottom-6 right-6 z-50 flex items-center justify-center w-[60px] h-[60px] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-full shadow-[0_8px_32px_oklch(0.14_0.02_270_/_0.25)] hover:scale-[1.05] border-none cursor-pointer group"
           style={{
             opacity: isIntercomOpen ? 0 : 1,
             pointerEvents: isIntercomOpen ? "none" : "auto",
-            transition: "opacity 0.3s ease, transform 0.2s ease"
+            transition: "opacity 0.3s ease, transform 0.2s ease",
+            padding: 0
           }}
-          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.15)] hover:scale-105"
         >
-          <img src="/icon.svg" alt="Microsistec" className="h-8 w-8 object-contain" />
+          <img src="/icon.svg" width={24} height={24} alt="Chat" className="img-micro-scale" style={{ filter: 'brightness(0) invert(1)' }} />
           {unreadCount > 0 && (
             <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white shadow-sm">
               {unreadCount}
