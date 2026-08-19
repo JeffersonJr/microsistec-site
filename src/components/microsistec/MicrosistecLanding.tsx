@@ -86,6 +86,8 @@ export function Nav() {
           {/* Logo à esquerda */}
           <Link
             to="/"
+            data-gtm-cta="home_logo_header"
+            data-gtm-location="header"
             className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity shrink-0"
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
@@ -129,24 +131,32 @@ export function Nav() {
 
             <Link title="Novidades e Lançamentos" to="/novidades"
               onClick={() => setOpenMenu(null)}
+              data-gtm-cta="nav_novidades"
+              data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition flex items-center gap-1.5"
             >
               Novidades <span className="badge-pulse bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">Novo</span>
             </Link>
             <Link title="Sobre a Microsistec" to="/empresa"
               onClick={() => setOpenMenu(null)}
+              data-gtm-cta="nav_sobre"
+              data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Sobre
             </Link>
             <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
               onClick={() => setOpenMenu(null)}
+              data-gtm-cta="nav_blog"
+              data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Blog
             </Link>
             <Link title="Materiais Ricos e Gratuitos" to="/materiais"
               onClick={() => setOpenMenu(null)}
+              data-gtm-cta="nav_materiais"
+              data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
               Materiais
@@ -158,6 +168,8 @@ export function Nav() {
             <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
+              data-gtm-cta="entrar_imobonline_header"
+              data-gtm-location="header"
               className="hidden md:inline text-base font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
             >
               Entrar
@@ -165,12 +177,17 @@ export function Nav() {
             <button
               title="Falar com especialista"
               onClick={openModal}
+              data-gtm-cta="falar_especialista_header"
+              data-gtm-location="header"
+              data-gtm-modal-open="modal_demonstracao"
               className="btn-micro hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
             >
               Falar com especialista <ArrowUpRight className="icon-micro-nudge w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => { setIsMobileOpen(!isMobileOpen); setOpenMenu(null); }}
+              data-gtm-cta="menu_mobile_toggle"
+              data-gtm-location="header"
               className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/8 transition cursor-pointer"
               aria-label="Toggle menu"
             >
@@ -297,6 +314,9 @@ export function Nav() {
               <button
                 title="Falar com especialista"
                 onClick={openModal}
+                data-gtm-cta="falar_especialista_mega_menu"
+                data-gtm-location="mega_menu"
+                data-gtm-modal-open="modal_demonstracao"
                 className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline border-none bg-transparent cursor-pointer p-0"
               >
                 Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
@@ -322,6 +342,8 @@ export function Nav() {
                 <div>
                   <Link title="Planos e Preços do CRM" to="/planos"
                     onClick={() => setOpenMenu(null)}
+                    data-gtm-cta="nav_ver_planos_crm"
+                    data-gtm-location="mega_menu"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
                     Ver tabela de preços do CRM <ArrowRight className="w-3.5 h-3.5" />
@@ -343,6 +365,8 @@ export function Nav() {
                 <div>
                   <Link title="Planos e Preços da IA Albert" to="/planos-albert"
                     onClick={() => setOpenMenu(null)}
+                    data-gtm-cta="nav_ver_planos_albert"
+                    data-gtm-location="mega_menu"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
                     Conhecer planos do Albert IA <ArrowRight className="w-3.5 h-3.5" />
@@ -363,6 +387,9 @@ export function Nav() {
                 </div>
                 <button
                   onClick={() => { setOpenMenu(null); openModal(); }}
+                  data-gtm-cta="falar_especialista_promo_banner"
+                  data-gtm-location="mega_menu"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="btn-micro w-full mt-4 inline-flex items-center justify-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold py-2.5 cursor-pointer border-none"
                 >
                   Falar com especialista agora
@@ -421,6 +448,8 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: sol.slug }}
                       onClick={() => setIsMobileOpen(false)}
+                      data-gtm-cta={`mobile_nav_solucao_${sol.slug.replace(/-/g, '_')}`}
+                      data-gtm-location="mobile_menu"
                       className="flex items-center gap-3.5 px-2 rounded-2xl hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline text-[color:var(--brand-ink)]"
                       style={{ minHeight: 52 }}
                     >
@@ -449,6 +478,8 @@ export function Nav() {
                   <Link title="Acessar link" key={item.to}
                     to={item.to}
                     onClick={() => setIsMobileOpen(false)}
+                    data-gtm-cta={`mobile_nav_${item.to.replace(/\//g, '').replace(/-/g, '_')}`}
+                    data-gtm-location="mobile_menu"
                     className="flex items-center gap-3.5 px-2 rounded-2xl text-[15px] font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline"
                     style={{ minHeight: 52 }}
                   >
@@ -463,6 +494,9 @@ export function Nav() {
                 <button
                   title="Falar com especialista"
                   onClick={openModal}
+                  data-gtm-cta="falar_especialista_mobile_sticky"
+                  data-gtm-location="mobile_menu"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="btn-micro w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline border-none cursor-pointer group"
                   style={{ minHeight: 56 }}
                 >
@@ -472,6 +506,8 @@ export function Nav() {
                   <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
                     target="_blank"
                     rel="noreferrer"
+                    data-gtm-cta="entrar_imobonline_mobile"
+                    data-gtm-location="mobile_menu"
                     className="flex-1 inline-flex items-center justify-center rounded-2xl bg-transparent text-[color:var(--brand-ink)] text-[15px] font-semibold no-underline active:scale-[0.98] transition border border-[color:var(--brand-ink)]/15"
                     style={{ minHeight: 52 }}
                   >
@@ -501,7 +537,7 @@ function Hero() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="top" className="relative overflow-hidden bg-hero min-h-screen flex flex-col justify-between lg:h-auto">
+    <section id="hero" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero min-h-screen flex flex-col justify-between lg:h-auto">
       <div className="bg-grid absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-14 md:pt-36 md:pb-20 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
@@ -553,6 +589,9 @@ function Hero() {
             <button
               title="Falar com especialista"
               onClick={openModal}
+              data-gtm-cta="falar_especialista_hero"
+              data-gtm-location="hero_dobra_1"
+              data-gtm-modal-open="modal_demonstracao"
               className="cta-shimmer btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
             >
               Falar com especialista <ArrowRight className="icon-micro-nudge w-4 h-4" />
@@ -609,7 +648,7 @@ function StatsStrip() {
     { n: "1.200+", label: "Imobiliárias atendidas" },
   ];
   return (
-    <section id="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
+    <section id="resultados" data-gtm-section="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-xl leading-snug">
           Pioneiros em trazer tecnologia para imobiliárias. Três décadas de estrada{" "}
@@ -661,7 +700,7 @@ function Pillars() {
     },
   ];
   return (
-    <section id="produto" className="relative bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10">
+    <section id="produto" data-gtm-section="produto" className="relative bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
           <h2 className="md:col-span-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
@@ -710,7 +749,7 @@ function Albert() {
     "Personalizável, não é IA genérica de prateleira",
   ];
   return (
-    <section id="albert" className="relative overflow-hidden bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
+    <section id="albert" data-gtm-section="albert" className="relative overflow-hidden bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
@@ -748,6 +787,9 @@ function Albert() {
               <button
                 title="Fale conosco pelo WhatsApp"
                 onClick={openModal}
+                data-gtm-cta="falar_especialista_albert"
+                data-gtm-location="albert"
+                data-gtm-modal-open="modal_demonstracao"
                 className="btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 decoration-none no-underline text-center border-none cursor-pointer group"
               >
                 <span className="hidden sm:inline">Converse com o Albert agora mesmo</span>
@@ -755,6 +797,8 @@ function Albert() {
                 <ArrowRight className="icon-micro-nudge w-4 h-4 shrink-0" />
               </button>
               <Link title="Planos e Preços da IA Albert" to="/planos-albert"
+                data-gtm-cta="ver_planos_albert"
+                data-gtm-location="albert"
                 className="btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10"
               >
                 Ver planos
@@ -847,7 +891,7 @@ function Funil() {
     "Processo de vendas imobiliária ponta-a-ponta",
   ];
   return (
-    <section id="funil" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <section id="funil" data-gtm-section="funil" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-5">
           <span className="font-serif-italic text-[#c2410c] text-2xl mb-3 block">
@@ -936,7 +980,7 @@ function Ecosystem() {
     { icon: ShieldCheck, title: "LGPD e segurança", desc: "Infra robusta, 99.9% de uptime, backups diários, você dorme tranquilo." },
   ];
   return (
-    <section className="border-y border-[color:var(--brand-ink)]/8">
+    <section id="ecosystem" data-gtm-section="ecosistema" className="border-y border-[color:var(--brand-ink)]/8">
       <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
           {items.map((it) => (
@@ -965,13 +1009,13 @@ function Ecosystem() {
 export function Blog() {
   const posts = blogPosts.slice(0, 3);
   return (
-    <section id="blog" className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:py-32">
+    <section id="blog" data-gtm-section="blog" className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:py-32">
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-2xl">
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Leitura</span>{" "}
           rápida pra quem vende imóvel
         </h2>
-        <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="inline-flex items-center gap-1.5 text-base font-medium hover:opacity-70">
+        <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" data-gtm-cta="ver_todos_blog" data-gtm-location="blog" className="inline-flex items-center gap-1.5 text-base font-medium hover:opacity-70">
           Ver todos <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
@@ -980,6 +1024,8 @@ export function Blog() {
           <Link title="Ler artigo no Blog" key={p.id}
             to="/blog/$slug"
             params={{ slug: p.slug }}
+            data-gtm-cta="ler_artigo_blog"
+            data-gtm-location="blog"
             className="group flex flex-col border-t border-[color:var(--brand-ink)]/20 pt-6 hover:border-[color:var(--brand-orange)] transition cursor-pointer"
           >
             <div className="flex items-center justify-between mb-6 text-sm font-mono-ui text-muted-foreground">
@@ -1021,7 +1067,7 @@ export function CTA() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="demo" className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+    <section id="demo" data-gtm-section="cta_demonstracao" className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
       <div className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[color:var(--brand-ink)] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-8 md:p-16 shadow-elev">
         <div className="bg-grid absolute inset-0 opacity-25" />
         <div
@@ -1045,6 +1091,9 @@ export function CTA() {
             <button
               title="Falar com especialista"
               onClick={openModal}
+              data-gtm-cta="falar_especialista_rodape"
+              data-gtm-location="cta_demonstracao"
+              data-gtm-modal-open="modal_demonstracao"
               className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 font-semibold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none no-underline"
             >
               Falar com especialista <ArrowRight className="w-4 h-4 shrink-0" />
@@ -1062,11 +1111,11 @@ export function CTA() {
 export function Footer() {
   const { openModal } = useDemoModal();
   return (
-    <footer className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20">
+    <footer data-gtm-location="rodape" className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
           <div className="sm:col-span-2 lg:col-span-3">
-            <Link to="/" className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
+            <Link to="/" data-gtm-cta="home_logo_rodape" data-gtm-location="rodape" className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
               <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
               <div className="flex items-baseline gap-0.5">
                 Microsistec
@@ -1080,6 +1129,8 @@ export function Footer() {
             <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
+              data-gtm-cta="entrar_imobonline_rodape"
+              data-gtm-location="rodape"
               className="mt-6 inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-base hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition shadow-soft no-underline decoration-none group"
             >
               <KeyRound className="w-4 h-4" />
@@ -1091,45 +1142,45 @@ export function Footer() {
             className="sm:col-span-1 lg:col-span-2"
             title="Soluções"
             links={[
-              { label: "CRM Imobiliário", to: "/solucoes/$slug", params: { slug: "crm" } },
-              { label: "Albert IA", to: "/solucoes/$slug", params: { slug: "albert-ia" } },
-              { label: "Planos Albert IA", to: "/planos-albert" },
-              { label: "App de Atendimento", to: "/solucoes/$slug", params: { slug: "app" } },
-              { label: "Rodízio de Atendimento", to: "/solucoes/$slug", params: { slug: "rodizio" } },
-              { label: "Sites Customizados V8", to: "/solucoes/$slug", params: { slug: "sites-v8" } },
+              { label: "CRM Imobiliário", to: "/solucoes/$slug", params: { slug: "crm" }, gtmCta: "nav_rodape_crm" },
+              { label: "Albert IA", to: "/solucoes/$slug", params: { slug: "albert-ia" }, gtmCta: "nav_rodape_albert_ia" },
+              { label: "Planos Albert IA", to: "/planos-albert", gtmCta: "nav_rodape_planos_albert_ia" },
+              { label: "App de Atendimento", to: "/solucoes/$slug", params: { slug: "app" }, gtmCta: "nav_rodape_app" },
+              { label: "Rodízio de Atendimento", to: "/solucoes/$slug", params: { slug: "rodizio" }, gtmCta: "nav_rodape_rodizio" },
+              { label: "Sites Customizados V8", to: "/solucoes/$slug", params: { slug: "sites-v8" }, gtmCta: "nav_rodape_sites_v8" },
             ]}
           />
           <FooterCol
             className="sm:col-span-1 lg:col-span-2"
             title="Empresa"
             links={[
-              { label: "Sobre", to: "/empresa" },
-              { label: "Novidades", to: "/novidades" },
-              { label: "Planos", to: "/planos" },
-              { label: "Blog", to: "/blog" },
-              { label: "Materiais", to: "/materiais" },
-              { label: "Falar no WhatsApp", onClick: openModal },
-              { label: "Política de Privacidade", to: "/politica-de-privacidade" },
-              { label: "Política de Cookies", to: "/politica-de-cookies" },
-              { label: "Termos de Uso", to: "/termos-de-uso" },
+              { label: "Sobre", to: "/empresa", gtmCta: "nav_rodape_sobre" },
+              { label: "Novidades", to: "/novidades", gtmCta: "nav_rodape_novidades" },
+              { label: "Planos", to: "/planos", gtmCta: "nav_rodape_planos" },
+              { label: "Blog", to: "/blog", gtmCta: "nav_rodape_blog" },
+              { label: "Materiais", to: "/materiais", gtmCta: "nav_rodape_materiais" },
+              { label: "Falar no WhatsApp", onClick: openModal, gtmCta: "nav_rodape_falar_whatsapp" },
+              { label: "Política de Privacidade", to: "/politica-de-privacidade", gtmCta: "nav_rodape_politica_privacidade" },
+              { label: "Política de Cookies", to: "/politica-de-cookies", gtmCta: "nav_rodape_politica_cookies" },
+              { label: "Termos de Uso", to: "/termos-de-uso", gtmCta: "nav_rodape_termos_uso" },
             ]}
           />
           <FooterCol
             className="sm:col-span-1 lg:col-span-3"
             title="Contato"
             links={[
-              { label: "Fale Conosco", to: "/contato" },
-              { label: "financeiro@microsistec.com.br", to: "mailto:financeiro@microsistec.com.br" },
-              { label: "suporte@microsistec.com.br", to: "mailto:suporte@microsistec.com.br" },
+              { label: "Fale Conosco", to: "/contato", gtmCta: "nav_rodape_fale_conosco" },
+              { label: "financeiro@microsistec.com.br", to: "mailto:financeiro@microsistec.com.br", gtmCta: "nav_rodape_email_financeiro" },
+              { label: "suporte@microsistec.com.br", to: "mailto:suporte@microsistec.com.br", gtmCta: "nav_rodape_email_suporte" },
             ]}
           />
           <FooterCol
             className="sm:col-span-1 lg:col-span-2"
             title="Redes sociais"
             links={[
-              { label: <span className="flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</span>, to: "https://www.facebook.com/Microsistec/" },
-              { label: <span className="flex items-center gap-2"><Youtube className="w-4 h-4" /> Youtube</span>, to: "https://www.youtube.com/c/microsistec" },
-              { label: <span className="flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</span>, to: "https://www.instagram.com/microsistec.com.br" },
+              { label: <span className="flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</span>, to: "https://www.facebook.com/Microsistec/", gtmCta: "nav_rodape_facebook" },
+              { label: <span className="flex items-center gap-2"><Youtube className="w-4 h-4" /> Youtube</span>, to: "https://www.youtube.com/c/microsistec", gtmCta: "nav_rodape_youtube" },
+              { label: <span className="flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</span>, to: "https://www.instagram.com/microsistec.com.br", gtmCta: "nav_rodape_instagram" },
             ]}
           />
         </div>
@@ -1155,7 +1206,7 @@ function FooterCol({
 }: {
   className?: string;
   title: string;
-  links: { label: React.ReactNode; to?: string; params?: any; onClick?: () => void }[]
+  links: { label: React.ReactNode; to?: string; params?: any; onClick?: () => void; gtmCta?: string }[]
 }) {
   return (
     <div className={className}>
@@ -1164,15 +1215,15 @@ function FooterCol({
         {links.map((link, idx) => (
           <li key={idx}>
             {link.onClick ? (
-              <button onClick={link.onClick} className="hover:text-[color:var(--brand-orange)] transition cursor-pointer bg-transparent border-none p-0 text-left font-[inherit] text-[inherit]">
+              <button onClick={link.onClick} data-gtm-cta={link.gtmCta} data-gtm-location="rodape" className="hover:text-[color:var(--brand-orange)] transition cursor-pointer bg-transparent border-none p-0 text-left font-[inherit] text-[inherit]">
                 {link.label}
               </button>
             ) : link.to?.startsWith("http") || link.to?.startsWith("#") || link.to?.startsWith("/#") ? (
-              <a title="Acessar link" href={link.to} className="hover:text-[color:var(--brand-orange)] transition">
+              <a title="Acessar link" href={link.to} data-gtm-cta={link.gtmCta} data-gtm-location="rodape" className="hover:text-[color:var(--brand-orange)] transition">
                 {link.label}
               </a>
             ) : link.to ? (
-              <Link title="Acessar link" to={link.to} params={link.params} className="hover:text-[color:var(--brand-orange)] transition cursor-pointer">
+              <Link title="Acessar link" to={link.to} params={link.params} data-gtm-cta={link.gtmCta} data-gtm-location="rodape" className="hover:text-[color:var(--brand-orange)] transition cursor-pointer">
                 {link.label}
               </Link>
             ) : null}

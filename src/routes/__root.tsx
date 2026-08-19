@@ -149,11 +149,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
+            data-gtm-cta="error_try_again"
             className="btn-micro inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-primary-foreground border-none cursor-pointer"
           >
             Try again
           </button>
           <a title="Página Inicial da Microsistec" href="/"
+            data-gtm-cta="error_go_home"
             className="btn-micro inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-base font-medium text-foreground hover:bg-accent"
           >
             Go home
@@ -317,6 +319,8 @@ function RootComponent() {
         <button
           id="custom-intercom-launcher"
           aria-label="Fale conosco"
+          data-gtm-cta="abrir_chat_flutuante"
+          data-gtm-location="floating"
           className="btn-micro fixed bottom-6 right-6 z-50 flex items-center justify-center w-[60px] h-[60px] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-full shadow-[0_8px_32px_oklch(0.14_0.02_270_/_0.25)] hover:scale-[1.05] border-none cursor-pointer group"
           style={{
             opacity: isIntercomOpen ? 0 : 1,

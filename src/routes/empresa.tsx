@@ -73,7 +73,7 @@ function Empresa() {
       
       <main>
         {/* Editorial Hero */}
-        <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
+        <section id="hero_empresa" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -94,7 +94,7 @@ function Empresa() {
         </section>
 
         {/* Story Section & Timeline */}
-        <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <section id="historia_empresa" data-gtm-section="historia_empresa" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="grid md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5 md:sticky md:top-24 space-y-6">
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl block">
@@ -109,6 +109,9 @@ function Empresa() {
               <div className="pt-2">
                 <button
                   onClick={openModal}
+                  data-gtm-cta="falar_especialista_historia_empresa"
+                  data-gtm-location="historia_empresa"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
                 >
                   Falar com especialista <ArrowRight className="w-4 h-4" />
@@ -137,7 +140,7 @@ function Empresa() {
         </section>
 
         {/* Values Block */}
-        <section className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10 py-20 md:py-28">
+        <section id="valores_empresa" data-gtm-section="valores_empresa" className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10 py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center space-y-3 mb-16">
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -165,7 +168,7 @@ function Empresa() {
         </section>
 
         {/* Marquee Ticker */}
-        <section className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] overflow-hidden">
+        <section id="ticker_empresa" data-gtm-section="ticker_empresa" className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] overflow-hidden">
           <div className="overflow-hidden">
             <div className="marquee flex gap-10 py-4 whitespace-nowrap text-base">
               {[...Array(3)].map((_, rIdx) => (
@@ -183,7 +186,7 @@ function Empresa() {
         </section>
 
         {/* CTA section */}
-        <section className="mx-auto max-w-7xl px-6 py-20 text-center space-y-6">
+        <section id="cta_final_empresa" data-gtm-section="cta_final_empresa" className="mx-auto max-w-7xl px-6 py-20 text-center space-y-6">
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             Pronto para impulsionar sua imobiliária?
           </h2>
@@ -193,6 +196,9 @@ function Empresa() {
           <div className="pt-2">
             <button
               onClick={openModal}
+              data-gtm-cta="falar_especialista_cta_final_empresa"
+              data-gtm-location="cta_final_empresa"
+              data-gtm-modal-open="modal_demonstracao"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev"
             >
               Falar com especialista <ArrowRight className="w-4 h-4" />

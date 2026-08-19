@@ -62,7 +62,7 @@ function BlogLeitor() {
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           
           {/* Main Article Column */}
-          <article className="lg:col-span-8 space-y-6">
+          <article id="artigo_blog" data-gtm-section="artigo_blog" className="lg:col-span-8 space-y-6">
             
             {/* Meta */}
             <div className="flex items-center gap-3 text-sm font-mono-ui">
@@ -110,6 +110,8 @@ function BlogLeitor() {
                   navigator.clipboard.writeText(window.location.href);
                   alert("Link do artigo copiado para a área de transferência!");
                 }}
+                data-gtm-cta="compartilhar_artigo_blog"
+                data-gtm-location="artigo_blog"
                 className="ml-auto p-2 rounded-full border border-[color:var(--brand-ink)]/10 hover:border-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] transition"
                 title="Compartilhar"
               >
@@ -143,6 +145,8 @@ function BlogLeitor() {
             {/* Bottom Back Nav */}
             <div className="pt-8 border-t border-[color:var(--brand-ink)]/10">
               <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
+                data-gtm-cta="voltar_blog"
+                data-gtm-location="artigo_blog"
                 className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition"
               >
                 <ArrowLeft className="w-4 h-4" /> Voltar para o diretório de artigos
@@ -151,7 +155,7 @@ function BlogLeitor() {
           </article>
 
           {/* Sticky Sidebar Column */}
-          <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+          <aside id="sidebar_blog" data-gtm-section="sidebar_blog" className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
             
             {/* Lead Gen Card */}
             <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-3xl border border-[color:var(--brand-ink)] p-6 shadow-elev relative overflow-hidden">
@@ -174,6 +178,9 @@ function BlogLeitor() {
                   <button 
                     title="Falar com especialista"
                     onClick={() => openModal()}
+                    data-gtm-cta="falar_especialista_albert_sidebar"
+                    data-gtm-location="sidebar_blog"
+                    data-gtm-modal-open="modal_demonstracao"
                     className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center decoration-none no-underline"
                   >
                     Converse com o Albert agora mesmo <ArrowRight className="w-3.5 h-3.5" />
@@ -200,6 +207,9 @@ function BlogLeitor() {
                 <div className="pt-2">
                   <button
                     onClick={openModal}
+                    data-gtm-cta="falar_especialista_crm_sidebar"
+                    data-gtm-location="sidebar_blog"
+                    data-gtm-modal-open="modal_demonstracao"
                     className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
                   >
                     Falar com especialista <ArrowRight className="w-3.5 h-3.5" />
@@ -218,6 +228,8 @@ function BlogLeitor() {
               </p>
               <div className="pt-1">
                 <Link title="Sobre a Microsistec" to="/empresa"
+                  data-gtm-cta="conhecer_historia_sidebar"
+                  data-gtm-location="sidebar_blog"
                   className="text-sm font-semibold text-[color:var(--brand-orange)] hover:underline inline-flex items-center gap-1"
                 >
                   Conhecer nossa história <Sparkles className="w-3.5 h-3.5" />

@@ -17,7 +17,7 @@ function Contato() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+      <main id="contato_main" data-gtm-section="contato_main" className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[color:var(--brand-orange)]">
           Fale Conosco
         </h1>
@@ -34,11 +34,11 @@ function Contato() {
             <div className="space-y-4">
               <div>
                 <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Suporte Técnico</p>
-                <a href="mailto:suporte@microsistec.com.br" className="text-lg font-medium hover:text-[color:var(--brand-orange)] transition">suporte@microsistec.com.br</a>
+                <a href="mailto:suporte@microsistec.com.br" data-gtm-cta="email_suporte" data-gtm-location="contato_main" className="text-lg font-medium hover:text-[color:var(--brand-orange)] transition">suporte@microsistec.com.br</a>
               </div>
               <div>
                 <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Financeiro</p>
-                <a href="mailto:financeiro@microsistec.com.br" className="text-lg font-medium hover:text-[color:var(--brand-orange)] transition">financeiro@microsistec.com.br</a>
+                <a href="mailto:financeiro@microsistec.com.br" data-gtm-cta="email_financeiro" data-gtm-location="contato_main" className="text-lg font-medium hover:text-[color:var(--brand-orange)] transition">financeiro@microsistec.com.br</a>
               </div>
             </div>
           </div>

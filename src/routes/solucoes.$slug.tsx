@@ -155,7 +155,7 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
   if (!data) return null;
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+    <section id={`como_funciona_${slug}`} data-gtm-section="como_funciona_solucao" className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
       <div className="border-t border-[color:var(--brand-ink)]/8 pt-14 md:pt-20">
         <div className="space-y-3 mb-12">
           <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -211,7 +211,7 @@ function SolutionMetrics({ slug }: { slug: string }) {
   if (!metrics) return null;
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-20">
+    <section id={`metricas_${slug}`} data-gtm-section="metricas_solucao" className="mx-auto max-w-7xl px-6 pb-14 md:pb-20">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {metrics.map((m, i) => (
           <div key={i} className="relative bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-8 flex flex-col items-center gap-1 text-center overflow-hidden group feature-card border border-[color:var(--brand-ink)]">
@@ -277,7 +277,7 @@ function SolutionForWho({ slug }: { slug: string }) {
   if (!profiles) return null;
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-20">
+    <section id={`para_quem_${slug}`} data-gtm-section="para_quem_solucao" className="mx-auto max-w-7xl px-6 pb-14 md:pb-20">
       <div className="mb-8">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Para quem é
@@ -367,7 +367,7 @@ function SolutionFAQ({ slug }: { slug: string }) {
   if (!faqs) return null;
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+    <section id={`faq_${slug}`} data-gtm-section="faq_solucao" className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
       <div className="mb-8">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Perguntas frequentes
@@ -381,6 +381,8 @@ function SolutionFAQ({ slug }: { slug: string }) {
             <div key={i} className="py-4">
               <button
                 onClick={() => setOpenIdx(isOpen ? null : i)}
+                data-gtm-cta={`abrir_faq_solucao_${slug}`}
+                data-gtm-location="faq_solucao"
                 className="w-full flex items-center justify-between gap-4 text-left cursor-pointer bg-transparent border-none py-1 group"
               >
                 <span className="text-base font-semibold text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
@@ -512,7 +514,7 @@ function SolucaoDetalhe() {
 
       <main>
         {/* Solution Hero */}
-        <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/8">
+        <section id={`hero_solucao_${sol.slug}`} data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/8">
           <div className="bg-grid absolute inset-0" />
           
           <div className="relative mx-auto max-w-7xl px-6">
@@ -564,6 +566,9 @@ function SolucaoDetalhe() {
                     <button 
                       title="Fale conosco pelo WhatsApp" 
                       onClick={openModal}
+                      data-gtm-cta={`falar_especialista_hero_${sol.slug}`}
+                      data-gtm-location="hero_solucao"
+                      data-gtm-modal-open="modal_demonstracao"
                       className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
@@ -579,6 +584,8 @@ function SolucaoDetalhe() {
                           window.open("https://play.google.com/store/apps/details?id=br.com.microsistec.mercury&hl=pt_BR", "_blank");
                         }
                       }}
+                      data-gtm-cta="baixar_app_hero"
+                      data-gtm-location="hero_solucao"
                       className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
                     >
                       {sol.ctaText} <Smartphone className="w-4 h-4" />
@@ -586,6 +593,9 @@ function SolucaoDetalhe() {
                   ) : (
                     <button
                       onClick={openModal}
+                      data-gtm-cta={`falar_especialista_hero_${sol.slug}`}
+                      data-gtm-location="hero_solucao"
+                      data-gtm-modal-open="modal_demonstracao"
                       className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
@@ -612,7 +622,7 @@ function SolucaoDetalhe() {
         </section>
 
         {/* Detailed Features Grid */}
-        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <section id={`recursos_${sol.slug}`} data-gtm-section="recursos_solucao" className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="space-y-4 mb-12">
             <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
               O que está incluso
@@ -654,8 +664,7 @@ function SolucaoDetalhe() {
         <SolutionFAQ slug={sol.slug} />
 
         {sol.slug === "integracoes" && (
-
-          <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
+          <section id="portais_integracoes" data-gtm-section="portais_integracoes" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
             <div className="border-t border-[color:var(--brand-ink)]/10 pt-16 md:pt-24 space-y-8">
               
               {/* Header */}
@@ -691,6 +700,8 @@ function SolucaoDetalhe() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
+                    data-gtm-cta={`filtro_portal_${cat.toLowerCase()}`}
+                    data-gtm-location="portais_integracoes"
                     className={`px-4 py-2 rounded-full text-sm font-semibold transition cursor-pointer border ${
                       activeCategory === cat
                         ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]"
@@ -759,7 +770,7 @@ function SolucaoDetalhe() {
         )}
 
         {/* CTA section */}
-        <section className="relative overflow-hidden py-20 md:py-28">
+        <section id={`cta_final_${sol.slug}`} data-gtm-section="cta_final_solucao" className="relative overflow-hidden py-20 md:py-28">
           <div className="absolute inset-0 bg-[color:var(--brand-ink)]" />
           <div className="absolute inset-0 opacity-30 pointer-events-none"
             style={{ background: "radial-gradient(60% 50% at 80% 0%, oklch(0.7 0.19 45 / 0.5), transparent 60%), radial-gradient(50% 40% at 20% 100%, oklch(0.623 0.106 195.8 / 0.4), transparent 60%)" }}
@@ -783,6 +794,9 @@ function SolucaoDetalhe() {
                 <button 
                   title="Fale conosco pelo WhatsApp" 
                   onClick={openModal}
+                  data-gtm-cta={`falar_especialista_cta_final_${sol.slug}`}
+                  data-gtm-location="cta_final_solucao"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-lg hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev decoration-none no-underline"
                 >
                   Converse com o Albert agora <ArrowRight className="w-4 h-4" />
@@ -790,12 +804,17 @@ function SolucaoDetalhe() {
               ) : (
                 <button
                   onClick={openModal}
+                  data-gtm-cta={`falar_especialista_cta_final_${sol.slug}`}
+                  data-gtm-location="cta_final_solucao"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-9 py-4 font-bold text-lg hover:scale-[1.03] transition-transform cursor-pointer border-none shadow-elev"
                 >
                   Falar com especialista <ArrowRight className="w-4 h-4" />
                 </button>
               )}
               <a title="Acessar link" href="/solucoes"
+                data-gtm-cta="ver_todas_solucoes"
+                data-gtm-location="cta_final_solucao"
                 className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/20 text-[color:var(--brand-sand)]/70 px-7 py-4 font-medium text-lg hover:bg-[color:var(--brand-sand)]/10 transition decoration-none no-underline"
               >
                 Ver todas as soluções
@@ -908,7 +927,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+      <section id="demo_albert_ia" data-gtm-section="demo_albert_ia" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
         
           {/* Texts */}
@@ -943,6 +962,8 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             <div className="pt-2">
               <button 
                 onClick={resetChat} 
+                data-gtm-cta="reiniciar_simulacao_albert"
+                data-gtm-location="demo_albert_ia"
                 className="text-sm font-mono-ui font-bold text-[color:var(--brand-orange)] hover:underline flex items-center gap-1 cursor-pointer"
               >
                 Reiniciar Simulação ↻
@@ -1012,6 +1033,8 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                   <button
                     key={i}
                     onClick={() => handleOptionClick(opt.label, opt.actionStep)}
+                    data-gtm-cta={`simulador_albert_opcao_${opt.actionStep}`}
+                    data-gtm-location="demo_albert_ia"
                     className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] px-4 py-2 rounded-full text-sm font-bold transition shadow-sm cursor-pointer"
                   >
                     {opt.label}
@@ -1020,6 +1043,9 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
               ) : !isTyping && currentStep === 4 ? (
                 <button
                   onClick={openModal}
+                  data-gtm-cta="falar_especialista_albert_simulador"
+                  data-gtm-location="demo_albert_ia"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] text-[color:var(--brand-ink)] px-6 py-2.5 rounded-full text-sm font-extrabold transition shadow-elev cursor-pointer flex items-center gap-1"
                 >
                   Conectar Minha Imobiliária Agora <ArrowRight className="w-3.5 h-3.5" />
@@ -1036,7 +1062,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
       </section>
 
       {/* Albert capabilities section */}
-      <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
+      <section id="diferenciais_albert_ia" data-gtm-section="diferenciais_albert_ia" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
         <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
           <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
             A única IA para imobiliárias com um coração
@@ -1105,6 +1131,9 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             <button 
               title="Fale conosco pelo WhatsApp" 
               onClick={openModal}
+              data-gtm-cta="falar_especialista_albert_cta_section"
+              data-gtm-location="diferenciais_albert_ia"
+              data-gtm-modal-open="modal_demonstracao"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
             >
               Converse com o Albert <ArrowRight className="w-4 h-4" />
@@ -1239,7 +1268,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
   const [selectedTheme, setSelectedTheme] = React.useState<ThemeTemplate | null>(null);
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section id="catalogo_temas" data-gtm-section="catalogo_temas" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
           Catálogo Oficial de Temas
@@ -1299,12 +1328,17 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
                 <a title="Acessar link" href={tpl.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-gtm-cta={`visualizar_tema_${tpl.name.toLowerCase().replace(/\s+/g, '_')}`}
+                  data-gtm-location="catalogo_temas"
                   className="flex-1 bg-background hover:bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-foreground hover:border-[color:var(--brand-orange)] transition text-center py-2.5 rounded-full text-[10px] font-extrabold flex items-center justify-center gap-1.5 no-underline decoration-none"
                 >
                   Visualizar Tema <ExternalLink className="w-3 h-3 text-muted-foreground" />
                 </a>
                 <button
                   onClick={openModal}
+                  data-gtm-cta={`falar_especialista_tema_${tpl.name.toLowerCase().replace(/\s+/g, '_')}`}
+                  data-gtm-location="catalogo_temas"
+                  data-gtm-modal-open="modal_demonstracao"
                   className="flex-1 bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] text-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] transition text-center py-2.5 rounded-full text-[10px] font-extrabold cursor-pointer border-none"
                 >
                   Quero este Tema
@@ -1479,7 +1513,7 @@ const PageSpeedComparison = () => {
 
 function SitesV8SubSection({ openModal }: { openModal: () => void }) {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section id="showcase_v8" data-gtm-section="showcase_v8" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       
       <PageSpeedComparison />
 
@@ -1545,6 +1579,8 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
             <a title="Acessar link" href={client.url}
               target="_blank"
               rel="noopener noreferrer"
+              data-gtm-cta={`visitar_site_v8_${client.name.toLowerCase().replace(/\s+/g, '_')}`}
+              data-gtm-location="showcase_v8"
               className="w-full bg-[color:var(--brand-ink)] group-hover:bg-[color:var(--brand-orange)] text-[color:var(--brand-sand)] group-hover:text-[color:var(--brand-ink)] transition text-center py-2.5 rounded-full text-sm font-bold flex items-center justify-center gap-1.5 no-underline decoration-none"
             >
               Visitar Portal Ativo <ArrowUpRight className="w-3.5 h-3.5" />
@@ -1693,6 +1729,8 @@ function CRMSubSection() {
         <a title="Acessar link" href="http://intercom.help/microsistec-ajuda/pt-BR"
           target="_blank"
           rel="noopener noreferrer"
+          data-gtm-cta="acessar_central_ajuda_crm"
+          data-gtm-location="ecossistema_crm"
           className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
         >
           <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
@@ -1708,6 +1746,8 @@ function CRMSubSection() {
         <a title="Acessar link" href="https://microsistec-academy.memberkit.com.br/"
           target="_blank"
           rel="noopener noreferrer"
+          data-gtm-cta="acessar_academy_crm"
+          data-gtm-location="ecossistema_crm"
           className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
         >
           <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
@@ -1734,6 +1774,9 @@ function CRMSubSection() {
           <button 
             title="Fale conosco pelo WhatsApp" 
             onClick={openModal}
+            data-gtm-cta="falar_especialista_crm"
+            data-gtm-location="ecossistema_crm"
+            data-gtm-modal-open="modal_demonstracao"
             className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:bg-[color:var(--brand-sand)] transition cursor-pointer border-none shadow-elev no-underline decoration-none shrink-0"
           >
             Fale com o Especialista <ArrowRight className="w-4 h-4" />
@@ -1863,6 +1906,9 @@ function AppSubSection() {
             <button 
               title="Fale conosco pelo WhatsApp" 
               onClick={openModal}
+              data-gtm-cta="falar_especialista_app"
+              data-gtm-location="solucao_app"
+              data-gtm-modal-open="modal_demonstracao"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-base hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
             >
               Fale com o Especialista <ArrowRight className="w-4 h-4" />
@@ -1878,6 +1924,8 @@ function AppSubSection() {
                   window.open("https://play.google.com/store/apps/details?id=br.com.microsistec.mercury&hl=pt_BR", "_blank");
                 }
               }}
+              data-gtm-cta="baixar_app_lojas"
+              data-gtm-location="solucao_app"
               className="inline-flex items-center gap-2 rounded-full bg-background border border-[color:var(--brand-ink)]/20 text-[color:var(--brand-ink)] px-6 py-3 font-bold text-base hover:bg-[color:var(--brand-ink)]/5 transition cursor-pointer shadow-soft no-underline decoration-none"
             >
               Baixar aplicativo <Smartphone className="w-4 h-4" />
@@ -2011,7 +2059,7 @@ export function FunilSubSectionMulti() {
   const funnel = funnels[activeFunnel];
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
+    <section id="funil_interativo_multi" data-gtm-section="funil_interativo_multi" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
       {/* Header */}
       <div className="space-y-4 mb-10 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -2032,6 +2080,8 @@ export function FunilSubSectionMulti() {
           <button
             key={f.id}
             onClick={() => setActiveFunnel(i)}
+            data-gtm-cta={`aba_funil_${f.id}`}
+            data-gtm-location="funil_interativo_multi"
             className={`text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200 cursor-pointer border-none ${
               activeFunnel === i
                 ? `${f.color} ring-1 ring-inset ring-current`
@@ -2081,7 +2131,7 @@ export function FunilSubSectionMulti() {
               </div>
             ))}
             {/* Add card placeholder */}
-            <div className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition">
+            <div data-gtm-cta="adicionar_card_funil" data-gtm-location="funil_interativo_multi" className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition">
               + Adicionar
             </div>
           </div>
@@ -2185,7 +2235,7 @@ export function FunilSubSection() {
   const totalVGV = stages.reduce((acc, stage) => acc + stage.leads.reduce((sum, lead) => sum + parseVGV(lead.value), 0), 0);
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
+    <section id="funil_kanban_simples" data-gtm-section="funil_kanban_simples" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16">
       <div className="space-y-4 mb-10 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
           Kanban Intuitivo
@@ -2248,7 +2298,7 @@ export function FunilSubSection() {
                   </div>
                 </div>
               ))}
-              <div className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition mt-auto">
+              <div data-gtm-cta="adicionar_card_funil_simples" data-gtm-location="funil_kanban_simples" className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition mt-auto">
                 + Adicionar
               </div>
             </div>
@@ -2328,7 +2378,7 @@ function RodizioSubSection() {
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
+    <section id="simulador_rodizio" data-gtm-section="simulador_rodizio" className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       {/* Header */}
       <div className="space-y-6 mb-14 max-w-2xl">
         <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -2426,6 +2476,8 @@ function RodizioSubSection() {
                 <button
                   onClick={handleConfirm}
                   disabled={animating}
+                  data-gtm-cta="distribuir_lead_rodizio"
+                  data-gtm-location="simulador_rodizio"
                   className="w-full py-3 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer border-none"
                   style={{
                     background: animating ? "rgba(14,17,23,0.3)" : "var(--brand-ink)",
@@ -2438,6 +2490,8 @@ function RodizioSubSection() {
             ) : (
               <button
                 onClick={handleDistribute}
+                data-gtm-cta="novo_lead_rodizio"
+                data-gtm-location="simulador_rodizio"
                 className="w-full py-3 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer border-none"
                 style={{ background: "var(--brand-orange)", color: "var(--brand-ink)" }}
               >

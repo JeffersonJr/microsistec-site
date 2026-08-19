@@ -127,7 +127,7 @@ function PlanosPage() {
 
       <main>
         {/* Header Section */}
-        <section className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[color:var(--brand-ink)]/10">
+        <section id="hero_planos" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -148,12 +148,14 @@ function PlanosPage() {
         </section>
 
         {/* Pricing Cards */}
-        <section className="mx-auto max-w-[1400px] px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+        <section id="tabela_planos" data-gtm-section="tabela_planos" className="mx-auto max-w-[1400px] px-6 pt-12 pb-20 md:pt-16 md:pb-28">
           {/* Toggle Billing */}
           <div className="flex items-center justify-center gap-4 mb-10">
             <span className={`text-base font-bold ${!isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>Mensal</span>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
+              data-gtm-cta="toggle_faturamento_anual"
+              data-gtm-location="tabela_planos"
               className="w-16 h-8 bg-[color:var(--brand-ink)]/10 rounded-full relative p-1 transition-colors cursor-pointer hover:bg-[color:var(--brand-ink)]/20"
             >
               <div className={`w-6 h-6 bg-[color:var(--brand-orange)] rounded-full shadow-md transition-transform duration-300 ${isAnnual ? 'translate-x-8' : 'translate-x-0'}`} />
@@ -222,6 +224,9 @@ function PlanosPage() {
                 <button 
                   title="Fale conosco pelo WhatsApp" 
                   onClick={openModal}
+                  data-gtm-cta={`falar_especialista_plano_${plan.id}`}
+                  data-gtm-location="tabela_planos"
+                  data-gtm-modal-open="modal_demonstracao"
                   className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline border-none ${plan.isPopular
                     ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
                     : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
@@ -235,7 +240,7 @@ function PlanosPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="mx-auto max-w-3xl px-6 pb-20 md:pb-28">
+        <section id="faq" data-gtm-section="faq" className="mx-auto max-w-3xl px-6 pb-20 md:pb-28">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
               Dúvidas Frequentes
@@ -263,7 +268,7 @@ function PlanosPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
+        <section id="cta_final" data-gtm-section="cta_final" className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
           <div className="relative mx-auto max-w-4xl px-6 text-center space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -275,6 +280,9 @@ function PlanosPage() {
             <div className="pt-4">
               <button
                 onClick={openModal}
+                data-gtm-cta="falar_especialista_cta_final"
+                data-gtm-location="cta_final"
+                data-gtm-modal-open="modal_demonstracao"
                 className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:brightness-110 transition cursor-pointer border-none shadow-elev"
               >
                 Falar com especialista <ArrowRight className="w-5 h-5" />

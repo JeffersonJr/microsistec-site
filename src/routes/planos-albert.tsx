@@ -97,7 +97,7 @@ function PlanosAlbertPage() {
 
       <main>
         {/* Header Section */}
-        <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
+        <section id="hero_planos_albert" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -118,7 +118,7 @@ function PlanosAlbertPage() {
         </section>
 
         {/* Pricing Cards */}
-        <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <section id="tabela_planos_albert" data-gtm-section="tabela_planos_albert" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-4 items-stretch">
             {plans.map((plan) => (
               <div
@@ -171,6 +171,9 @@ function PlanosAlbertPage() {
 
                 <button
                   onClick={openModal}
+                  data-gtm-cta={`falar_consultor_plano_albert_${plan.id}`}
+                  data-gtm-location="tabela_planos_albert"
+                  data-gtm-modal-open="modal_demonstracao"
                   className={`w-full py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] ${plan.isPopular
                       ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
                       : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
@@ -184,7 +187,7 @@ function PlanosAlbertPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
+        <section id="cta_final_albert" data-gtm-section="cta_final_albert" className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
           <div className="relative mx-auto max-w-4xl px-6 text-center space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -196,6 +199,9 @@ function PlanosAlbertPage() {
             <div className="pt-4">
               <button
                 onClick={openModal}
+                data-gtm-cta="solicitar_orcamento_cta_final_albert"
+                data-gtm-location="cta_final_albert"
+                data-gtm-modal-open="modal_demonstracao"
                 className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-8 py-4 font-bold hover:brightness-110 transition cursor-pointer border-none shadow-elev"
               >
                 Solicitar Orçamento <ArrowRight className="w-5 h-5" />

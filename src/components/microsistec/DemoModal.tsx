@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useDemoModal } from "@/hooks/use-demo-modal";
+import { useLocation } from "@tanstack/react-router";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ArrowRight, MessageCircle, ChevronDown } from "lucide-react";
 import { PhoneInput } from "@/components/ui/phone-input";
@@ -7,6 +8,7 @@ import { sendLeadToClickUp } from "@/lib/clickup";
 
 export function DemoModal() {
   const { isOpen, closeModal } = useDemoModal();
+  const location = useLocation();
   
   const [step, setStep] = React.useState<"form" | "whatsapp">("form");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -58,7 +60,7 @@ export function DemoModal() {
         <DialogTitle className="sr-only">Falar com Especialista</DialogTitle>
         <DialogDescription className="sr-only">Preencha o formulário para falar com o nosso time de especialistas.</DialogDescription>
 
-        <div className="bg-white p-8 md:p-10 relative z-10 min-h-[450px] flex flex-col justify-center overflow-hidden">
+        <div data-gtm-modal="modal_demonstracao" className="bg-white p-8 md:p-10 relative z-10 min-h-[450px] flex flex-col justify-center overflow-hidden">
           
           {step === "form" ? (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -70,6 +72,8 @@ export function DemoModal() {
               </p>
               
               <form 
+                data-gtm-form="solicitar_demonstracao"
+                data-form-page={location.pathname}
                 className="space-y-5" 
                 onSubmit={async (e) => {
                   e.preventDefault();
@@ -96,6 +100,8 @@ export function DemoModal() {
                 <div className="space-y-1.5">
                   <label className="text-base font-semibold text-[color:var(--brand-ink)]">Nome completo <span className="text-[color:var(--brand-orange)]">*</span></label>
                   <input 
+                    id="name"
+                    name="name"
                     required 
                     type="text" 
                     placeholder="João da Silva" 
@@ -107,6 +113,8 @@ export function DemoModal() {
                 <div className="space-y-1.5">
                   <label className="text-base font-semibold text-[color:var(--brand-ink)]">E-mail de trabalho <span className="text-[color:var(--brand-orange)]">*</span></label>
                   <input 
+                    id="email"
+                    name="email"
                     required 
                     type="email" 
                     placeholder="joao@imobiliaria.com.br" 
@@ -118,6 +126,8 @@ export function DemoModal() {
                 <div className="space-y-1.5">
                   <label className="text-base font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp <span className="text-[color:var(--brand-orange)]">*</span></label>
                   <PhoneInput
+                    id="phone"
+                    name="phone"
                     required
                     value={formData.phone}
                     dialCode={formData.dialCode}
@@ -127,6 +137,8 @@ export function DemoModal() {
                 <div className="space-y-1.5">
                   <label className="text-base font-semibold text-[color:var(--brand-ink)]">CNPJ</label>
                   <input 
+                    id="cnpj"
+                    name="cnpj"
                     type="text" 
                     placeholder="00.000.000/0001-00" 
                     className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
@@ -138,6 +150,8 @@ export function DemoModal() {
                   <label className="text-base font-semibold text-[color:var(--brand-ink)]">Cargo <span className="text-[color:var(--brand-orange)]">*</span></label>
                   <div className="relative">
                     <select 
+                      id="role"
+                      name="role"
                       required 
                       className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none cursor-pointer"
                       value={formData.role}
@@ -155,6 +169,7 @@ export function DemoModal() {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
+                  data-gtm-cta="enviar_modal_demonstracao"
                   className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Enviando..." : "Falar com especialista"}
@@ -178,6 +193,7 @@ export function DemoModal() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
+                data-gtm-cta="whatsapp_modal_demonstracao"
                 className="w-full h-14 inline-flex items-center justify-center gap-2 rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft"
               >
                 <MessageCircle className="w-5 h-5" />

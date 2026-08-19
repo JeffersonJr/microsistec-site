@@ -49,7 +49,7 @@ function BlogIndex() {
 
       <main className="pb-24">
         {/* Blog Header Hero */}
-        <section className="relative overflow-hidden bg-hero pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[color:var(--brand-ink)]/10">
+        <section id="hero_blog" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[color:var(--brand-ink)]/10">
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-4">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -69,7 +69,7 @@ function BlogIndex() {
         </section>
 
         {/* Filters and Search Strip */}
-        <section className="mx-auto max-w-7xl px-6 mt-12 mb-8">
+        <section id="filtros_blog" data-gtm-section="filtros_blog" className="mx-auto max-w-7xl px-6 mt-12 mb-8">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-6 border-b border-[color:var(--brand-ink)]/10">
             {/* Tag Pills */}
             <div className="flex flex-wrap gap-2 w-full md:w-auto">
@@ -77,6 +77,8 @@ function BlogIndex() {
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
+                  data-gtm-cta={`filtro_tag_blog_${tag.toLowerCase().replace(/ /g, '_')}`}
+                  data-gtm-location="filtros_blog"
                   className={`px-3 py-1.5 rounded-full text-sm font-medium transition cursor-pointer border ${
                     selectedTag === tag
                       ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]"
@@ -103,13 +105,15 @@ function BlogIndex() {
         </section>
 
         {/* Blog Post List */}
-        <section className="mx-auto max-w-7xl px-6">
+        <section id="lista_blog" data-gtm-section="lista_blog" className="mx-auto max-w-7xl px-6">
           {filteredPosts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
                 <Link title="Ler artigo no Blog" key={post.id}
                   to="/blog/$slug"
                   params={{ slug: post.slug }}
+                  data-gtm-cta="ler_artigo_blog"
+                  data-gtm-location="lista_blog"
                   className="group flex flex-col border-t border-[color:var(--brand-ink)]/10 pt-6 hover:border-[color:var(--brand-orange)] transition duration-300 cursor-pointer"
                 >
                   <div className="flex items-center justify-between mb-4 text-[10px] font-mono-ui text-muted-foreground">
