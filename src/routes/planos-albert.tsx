@@ -58,7 +58,7 @@ function PlanosAlbertPage() {
       price: "Sob consulta",
       isCustom: true,
       users: "Corretores Ilimitados",
-      limit: "Até 1.500 chats",
+      limit: "Até 800 chats",
       features: [
         "Fidelidade Flexível",
         "Busca de imóveis",

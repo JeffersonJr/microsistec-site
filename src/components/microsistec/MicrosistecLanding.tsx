@@ -642,7 +642,7 @@ function Ticker() {
 /* -------------------------------------------------------------------------- */
 function StatsStrip() {
   const stats = [
-    { n: "30+", label: "Anos no inovação" },
+    { n: "30+", label: "Anos de inovação" },
     { n: "15 mil+", label: "Corretores já atendidos" },
     { n: "500 mil+", label: "Leads qualificados" },
     { n: "1.200+", label: "Imobiliárias atendidas" },
@@ -705,7 +705,7 @@ function Pillars() {
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
           <h2 className="md:col-span-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
             Sistema, site e app,{" "}
-            <span className="font-serif-italic font-normal">em um único ecosistema</span>
+            <span className="font-serif-italic font-normal">em um único ecossistema</span>
           </h2>
           <p className="md:col-span-4 text-xl text-muted-foreground">
             Tudo o que a imobiliária precisa para vender mais e ter previsibilidade, sem amarrar
@@ -759,31 +759,33 @@ function Albert() {
       />
       <div className="bg-grid absolute inset-0 opacity-20" />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <span className="stamp text-[color:var(--brand-orange)] text-sm">Albert IA · v2</span>
-              <span className="font-serif-italic text-[color:var(--brand-sand)]/60">
-                conheça
-              </span>
+        <div className="inline-flex items-center gap-2 mb-6">
+          <span className="stamp text-[color:var(--brand-orange)] text-sm">Albert IA · v2</span>
+          <span className="font-serif-italic text-[color:var(--brand-sand)]/60">
+            conheça
+          </span>
+        </div>
+        <div className="grid lg:grid-cols-12 gap-12 items-stretch">
+          <div className="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
+                Uma IA que <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">conhece</span> imobiliária,
+                não uma que <em className="font-serif-italic text-[color:var(--brand-sand)]/50">finge</em> conhecer
+              </h2>
+              <p className="text-xl text-[color:var(--brand-sand)]/70 mb-8 max-w-xl">
+                Chega de chatbot decorando frase. O <strong className="text-[color:var(--brand-sand)]">Albert</strong> é
+                montado sob medida para a sua imobiliária, tecnologia de ponta com coração humano.
+              </p>
+              <ul className="space-y-3 mb-8 lg:mb-0">
+                {features.map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-[color:var(--brand-sand)]/85">
+                    <CheckCircle2 className="w-5 h-5 mt-0.5 text-[color:var(--brand-orange)] shrink-0" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
-              Uma IA que <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">conhece</span> imobiliária,
-              não uma que <em className="font-serif-italic text-[color:var(--brand-sand)]/50">finge</em> conhecer
-            </h2>
-            <p className="text-xl text-[color:var(--brand-sand)]/70 mb-8 max-w-xl">
-              Chega de chatbot decorando frase. O <strong className="text-[color:var(--brand-sand)]">Albert</strong> é
-              montado sob medida para a sua imobiliária, tecnologia de ponta com coração humano.
-            </p>
-            <ul className="space-y-3 mb-10">
-              {features.map((f) => (
-                <li key={f} className="flex items-start gap-3 text-[color:var(--brand-sand)]/85">
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 text-[color:var(--brand-orange)] shrink-0" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-6 lg:pt-8">
               <button
                 title="Fale conosco pelo WhatsApp"
                 onClick={openModal}
@@ -806,7 +808,7 @@ function Albert() {
             </div>
           </div>
 
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 flex flex-col">
             <AlbertChat />
           </div>
         </div>
@@ -817,11 +819,11 @@ function Albert() {
 
 function AlbertChat() {
   return (
-    <div className="relative tilt-r">
-      <div className="absolute -inset-3 rounded-[28px] bg-[color:var(--brand-orange)]/15 blur-2xl" />
-      <div className="relative bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] rounded-3xl border border-[color:var(--brand-ink)] shadow-elev overflow-hidden">
+    <div className="relative tilt-r flex-1 flex flex-col h-full">
+      <div className="absolute -inset-3 rounded-[28px] bg-[color:var(--brand-orange)]/15 blur-2xl pointer-events-none" />
+      <div className="relative bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] rounded-3xl border border-[color:var(--brand-ink)] shadow-elev overflow-hidden flex-1 flex flex-col justify-between">
         {/* paper header */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] flex items-center justify-center font-bold">
               A
@@ -838,19 +840,21 @@ function AlbertChat() {
           </span>
         </div>
 
-        <div className="p-5 space-y-3 text-base">
-          <Bubble who="lead">Oi, vi o anúncio do 2 quartos na Av. Paulista 👋</Bubble>
-          <Bubble who="albert">
-            Oi! Que bom que chegou. Posso te perguntar se é para morar ou investir?
-          </Bubble>
-          <Bubble who="lead">Pra morar. Ainda não fiz aprovação de crédito.</Bubble>
-          <Bubble who="albert">
-            Tranquilo. Já te passo pra <strong>Camila</strong>, especialista na Paulista. Sábado às
-            10h pra visitar funciona?
-          </Bubble>
-          <Bubble who="lead">Funciona 🤝</Bubble>
+        <div className="p-5 space-y-3 text-base flex-1 flex flex-col justify-between">
+          <div className="space-y-3 flex-1 flex flex-col justify-center">
+            <Bubble who="lead">Oi, vi o anúncio do 2 quartos na Av. Paulista 👋</Bubble>
+            <Bubble who="albert">
+              Oi! Que bom que chegou. Posso te perguntar se é para morar ou investir?
+            </Bubble>
+            <Bubble who="lead">Pra morar. Ainda não fiz aprovação de crédito.</Bubble>
+            <Bubble who="albert">
+              Tranquilo. Já te passo pra <strong>Camila</strong>, especialista na Paulista. Sábado às
+              10h pra visitar funciona?
+            </Bubble>
+            <Bubble who="lead">Funciona 🤝</Bubble>
+          </div>
 
-          <div className="mt-5 pt-4 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-sm text-muted-foreground font-medium">
+          <div className="mt-4 pt-3.5 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-sm text-muted-foreground font-medium">
             <span>qualificado e repassado em 38s</span>
             <span className="text-[color:var(--brand-orange)] font-bold">+ CRM ✓</span>
           </div>
@@ -892,18 +896,20 @@ function Funil() {
   ];
   return (
     <section id="funil" data-gtm-section="funil" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-      <div className="grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-5">
-          <span className="font-serif-italic text-[#c2410c] text-2xl mb-3 block">
-            sobre tempo
-          </span>
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
-            Você está perdendo lead enquanto procura ele no caderno
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Controle do atendimento + script bem executado = mais vendas. A gente organiza o
-            primeiro pra você poder focar no segundo.
-          </p>
+      <span className="font-serif-italic text-[#c2410c] text-2xl mb-4 block">
+        sobre tempo
+      </span>
+      <div className="grid lg:grid-cols-12 gap-12 items-stretch">
+        <div className="lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
+              Você está perdendo lead enquanto procura ele no caderno
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Controle do atendimento + script bem executado = mais vendas. A gente organiza o
+              primeiro pra você poder focar no segundo.
+            </p>
+          </div>
           <ul className="space-y-3">
             {features.map((f) => (
               <li key={f} className="flex items-start gap-3">
@@ -914,7 +920,7 @@ function Funil() {
           </ul>
         </div>
 
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 flex flex-col">
           <FunnelVisual />
         </div>
       </div>
@@ -925,23 +931,26 @@ function Funil() {
 function FunnelVisual() {
   const stages = [
     { label: "Leads recebidos", value: 4820, w: "100%" },
-    { label: "Qualificados pelo Albert", value: 3210, w: "82%" },
-    { label: "Em atendimento", value: 1980, w: "62%" },
-    { label: "Propostas enviadas", value: 740, w: "38%" },
-    { label: "Vendas fechadas", value: 218, w: "18%" },
+    { label: "Qualificados pelo Albert", value: 3210, w: "67%" },
+    { label: "Em atendimento", value: 1980, w: "41%" },
+    { label: "Propostas enviadas", value: 740, w: "15%" },
+    { label: "Vendas fechadas", value: 218, w: "5%" },
   ];
   return (
-    <div className="relative rounded-3xl border border-[color:var(--brand-ink)] bg-background shadow-elev p-6 md:p-8 tilt-l">
+    <div className="relative rounded-3xl border border-[color:var(--brand-ink)] bg-background shadow-elev p-6 md:p-8 tilt-l flex-1 flex flex-col justify-between h-full">
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-dashed border-[color:var(--brand-ink)]/30">
         <div className="flex items-center gap-2">
           <Building2 className="w-4 h-4" />
-          <span className="font-mono-ui text-base font-medium">imob.online / funil</span>
+          <span className="font-mono-ui text-base font-medium">
+            imob.online / funil{" "}
+            <span className="text-xs text-muted-foreground font-normal opacity-80">(exemplo ilustrativo)</span>
+          </span>
         </div>
         <span className="font-mono-ui text-base text-emerald-700 font-bold">
           +24% MoM
         </span>
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 flex-1 flex flex-col justify-between">
         {stages.map((s, i) => (
           <div key={s.label}>
             <div className="flex items-center justify-between text-base mb-1.5">

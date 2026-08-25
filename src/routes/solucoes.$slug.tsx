@@ -473,15 +473,14 @@ function SolucaoDetalhe() {
   const getFeatureCardTitle = (slug: string, idx: number) => {
     const titles: Record<string, string[]> = {
       "crm": ["Smart Match", "Cadastro Ágil", "Gestão de Acessos", "Documentos Automatizados", "Timeline do Cliente"],
-      "app": ["Notificações em Tempo Real", "Portabilidade Total", "Compartilhamento Ágil", "Agenda na Palma da Mão", "Sincronização Imediata"],
-      /* "funil": ["Multi-Funil Ilimitado", "Etapas por Negócio", "Arrastar e Soltar", "Métricas Independentes", "Alertas por Funil", "Painel Consolidado"], */
-      "funil": ["Kanban Visual", "Match de Imóveis", "Envio via WhatsApp", "Envio por E-mail", "Agendamento", "Termo de Visita"],
-      "integracoes": ["Sincronia Bidirecional", "Atendimento via WhatsApp", "Captura Inteligente no Meta", "Painel Unificado", "Distribuição Automática"],
-      "albert-ia": ["Qualificação Precisa", "Agendamento Autônomo", "Domínio de Empreendimentos", "Transferência Fluida", "Atendimento 24/7"],
-      "sites-template": ["Design Adaptável", "Otimização para Buscas (SEO)", "Pesquisa Refinada", "Captação de Alta Conversão", "Implantação Expressa"],
-      "sites-v8": ["Performance Extrema", "Identidade Exclusiva", "Integrações Customizadas", "Acompanhamento Dedicado", "Arquitetura Escalável"],
-      "rodizio": ["Distribuição Equilibrada", "Regras por Performance", "Transparência de Fila", "Redirecionamento Ágil", "Métricas de Eficiência"],
-      "locacao": ["Controle de Inadimplência", "Vistorias Digitais", "Repasses Automáticos", "Gestão de Contratos", "Portal do Inquilino"]
+      "app": ["Sincronização Imediata", "Compartilhamento Ágil", "Notificações em Tempo Real", "Check-in de Visitas", "Chamadas com Registro"],
+      "funil": ["Kanban Visual", "Match de Imóveis", "Envio via WhatsApp", "Envio por E-mail", "Agendamento Integrado", "Termo de Visita em PDF"],
+      "integracoes": ["Carga Automatizada nos Portais", "Centralização de Leads", "WhatsApp & Meta Lead Ads", "Distribuição Automática", "Rastreabilidade de Campanhas"],
+      "albert-ia": ["Treinamento Sob Medida", "Qualificação Financeira", "Atendimento 24/7 no WhatsApp", "Integração Nativa com CRM", "Linguagem Natural Humanizada"],
+      "sites-template": ["Otimização para Buscas (SEO)", "Filtros de Busca Avançados", "Páginas de Alta Conversão", "Design 100% Responsivo", "Blog e Captação Nativas"],
+      "sites-v8": ["Design 100% Exclusivo", "Performance Extrema (PageSpeed 100)", "Integrações Customizadas", "Otimização Avançada de Mídias", "Segurança e Nuvem Resiliente"],
+      "rodizio": ["Fila Round-Robin Inteligente", "Regras por Especialidade", "Status em Tempo Real", "Escalonamento por Timeout", "Métricas de Eficiência Comercial"],
+      "locacao": ["Gestão de Contratos e Alertas", "Reajustes Automáticos (IGP-M/IPCA)", "Gestão de Garantias Locatícias", "Boletos e Inadimplência", "Repasses e Prestação de Contas"]
     };
     return titles[slug]?.[idx] || "Recurso Exclusivo";
   };
