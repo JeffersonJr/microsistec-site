@@ -321,7 +321,7 @@ function RootComponent() {
           aria-label="Fale conosco"
           data-gtm-cta="abrir_chat_flutuante"
           data-gtm-location="floating"
-          className="btn-micro fixed bottom-6 right-6 z-50 flex items-center justify-center w-[60px] h-[60px] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-full shadow-[0_8px_32px_oklch(0.14_0.02_270_/_0.25)] hover:scale-[1.05] border-none cursor-pointer group"
+          className="btn-micro fixed bottom-6 right-6 z-50 flex items-center justify-center w-[60px] h-[60px] bg-white rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] border border-[color:var(--brand-ink)]/10 hover:scale-[1.05] cursor-pointer group"
           style={{
             opacity: isIntercomOpen ? 0 : 1,
             pointerEvents: isIntercomOpen ? "none" : "auto",
@@ -329,7 +329,7 @@ function RootComponent() {
             padding: 0
           }}
         >
-          <img src="/icon.svg" width={24} height={24} alt="Chat" className="img-micro-scale" style={{ filter: 'brightness(0) invert(1)' }} />
+          <img src="/icon.svg" width={30} height={30} alt="Chat" className="img-micro-scale w-[30px] h-[30px] object-contain" />
           {unreadCount > 0 && (
             <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white shadow-sm">
               {unreadCount}

@@ -583,7 +583,7 @@ function Hero() {
         {/* sub + CTAs */}
         <div className="mt-8 lg:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start md:items-center">
           <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
-            Fomos pioneiros em tecnologia imobiliária no Brasil. Hoje somos uma empresa focada em <strong>inteligência artificial</strong>. Entregamos CRM completo, site rápido, app e automações. Conheça também o <strong className="text-foreground">Albert IA</strong>, o seu novo robô de vendas. Tenha tudo em um só lugar. Validado por 30 anos de experiência real.
+            Somos pioneiros em tecnologia imobiliária no Brasil. Hoje nossa empresa é focada em <strong>inteligência artificial</strong>. Entregamos CRM completo, site personalizado, aplicativo de atendimento e automações. Conheça também o <strong className="text-foreground">Albert IA</strong>, o seu novo assistente de vendas. Tenha tudo em um só lugar. Validado por 30 anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
             <button
@@ -642,10 +642,10 @@ function Ticker() {
 /* -------------------------------------------------------------------------- */
 function StatsStrip() {
   const stats = [
-    { n: "30+", label: "Anos de inovação" },
-    { n: "15 mil+", label: "Corretores já atendidos" },
-    { n: "500 mil+", label: "Leads qualificados" },
-    { n: "1.200+", label: "Imobiliárias atendidas" },
+    { n: "32+", label: "Anos de inovação" },
+    { n: "30 mil+", label: "Corretores já atendidos" },
+    { n: "5 M+", label: "Leads qualificados" },
+    { n: "5 mil+", label: "Imobiliárias atendidas" },
   ];
   return (
     <section id="resultados" data-gtm-section="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
@@ -704,7 +704,7 @@ function Pillars() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
           <h2 className="md:col-span-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
-            Sistema, site e app,{" "}
+            Sistema, Site e App,{" "}
             <span className="font-serif-italic font-normal">em um único ecossistema</span>
           </h2>
           <p className="md:col-span-4 text-xl text-muted-foreground">
@@ -1091,9 +1091,8 @@ export function CTA() {
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
               Bora vender mais, <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">de verdade</span>?
             </h2>
-            <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-xl">
-              Preenche em 30 segundos. A gente liga, mostra o sistema, libera o Albert.
-              Você decide depois, sem pressão.
+            <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-xl leading-relaxed">
+              Surpreenda-se com o atendimento da nossa Inteligência Artificial. Experimente na prática e decida no seu tempo como ela pode acelerar as vendas da sua imobiliária.
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 w-full">
