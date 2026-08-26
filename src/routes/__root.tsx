@@ -263,6 +263,21 @@ function RootComponent() {
     if (typeof window === "undefined") return;
 
     let initialized = false;
+    let intercomPushedState = false;
+    let intercomFnRef: any = null;
+
+    const handlePopState = () => {
+      if (intercomPushedState) {
+        intercomPushedState = false;
+        if (intercomFnRef) {
+          intercomFnRef("hide");
+        } else if (typeof (window as any).Intercom === "function") {
+          (window as any).Intercom("hide");
+        }
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
 
     const initIntercom = async () => {
       if (initialized) return;
@@ -277,10 +292,25 @@ function RootComponent() {
         });
 
         // The SDK might set window.Intercom, or we can use the imported function
-        const intercomFn = window.Intercom || Intercom;
+        const intercomFn = (window as any).Intercom || Intercom;
+        intercomFnRef = intercomFn;
         if (typeof intercomFn === "function") {
-          intercomFn("onShow", () => setIsIntercomOpen(true));
-          intercomFn("onHide", () => setIsIntercomOpen(false));
+          intercomFn("onShow", () => {
+            setIsIntercomOpen(true);
+            if (!intercomPushedState) {
+              window.history.pushState({ intercomOpen: true }, "");
+              intercomPushedState = true;
+            }
+          });
+          intercomFn("onHide", () => {
+            setIsIntercomOpen(false);
+            if (intercomPushedState) {
+              intercomPushedState = false;
+              if (window.history.state?.intercomOpen) {
+                window.history.back();
+              }
+            }
+          });
           intercomFn("onUnreadCountChange", (count: number) => setUnreadCount(count));
         }
       } catch (err) {
@@ -304,6 +334,7 @@ function RootComponent() {
 
     return () => {
       clearTimeout(fallbackTimer);
+      window.removeEventListener("popstate", handlePopState);
       window.removeEventListener("scroll", initIntercom);
       window.removeEventListener("mousemove", initIntercom);
       window.removeEventListener("touchstart", initIntercom);
