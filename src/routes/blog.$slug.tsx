@@ -3,7 +3,16 @@ import * as React from "react";
 import { useDemoModal } from "@/hooks/use-demo-modal";
 import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { blogPosts, BlogPost } from "@/lib/data";
-import { ArrowLeft, ArrowRight, Bot, ChevronRight, Clock, Share2, Sparkles, Building2 } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Bot,
+  ChevronRight,
+  Clock,
+  Share2,
+  Sparkles,
+  Building2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ params }) => {
@@ -13,7 +22,9 @@ export const Route = createFileRoute("/blog/$slug")({
         { title: post ? `${post.title} - Blog` : "Artigo Microsistec" },
         {
           name: "description",
-          content: post ? post.excerpt : "Artigo especializado em inovação imobiliária e IA.",
+          content: post
+            ? post.excerpt
+            : "Artigo especializado em inovação imobiliária e IA.",
         },
       ],
     };
@@ -23,12 +34,14 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) {
       throw notFound();
     }
-    
+
     // Lazy-load the heavy HTML content (5.3MB!) only when needed
     // This removes it from the main JS bundle, guaranteeing 100/100 PageSpeed
-    const contentData = await import('@/lib/blog-content.json');
-    const content = (contentData.default as Record<string, string>)[params.slug];
-    
+    const contentData = await import("@/lib/blog-content.json");
+    const content = (contentData.default as Record<string, string>)[
+      params.slug
+    ];
+
     return { ...post, content } as BlogPost;
   },
   component: BlogLeitor,
@@ -45,11 +58,19 @@ function BlogLeitor() {
       <main className="mx-auto max-w-7xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
         {/* Breadcrumb */}
         <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[color:var(--brand-ink)]/10 pb-4">
-          <Link title="Página Inicial da Microsistec" to="/" className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+          <Link
+            title="Página Inicial da Microsistec"
+            to="/"
+            className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition"
+          >
             Home
           </Link>
           <ChevronRight className="w-3 h-3 text-muted-foreground" />
-          <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition">
+          <Link
+            title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário"
+            to="/blog"
+            className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition"
+          >
             Blog
           </Link>
           <ChevronRight className="w-3 h-3 text-muted-foreground" />
@@ -60,10 +81,12 @@ function BlogLeitor() {
 
         {/* Dynamic Reader Layout */}
         <div className="grid lg:grid-cols-12 gap-10 items-start">
-          
           {/* Main Article Column */}
-          <article id="artigo_blog" data-gtm-section="artigo_blog" className="lg:col-span-8 space-y-6">
-            
+          <article
+            id="artigo_blog"
+            data-gtm-section="artigo_blog"
+            className="lg:col-span-8 space-y-6"
+          >
             {/* Meta */}
             <div className="flex items-center gap-3 text-sm font-mono-ui">
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -93,7 +116,8 @@ function BlogLeitor() {
                 decoding="async"
                 className="w-10 h-10 rounded-full object-cover border border-[color:var(--brand-ink)]/10"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
                 }}
               />
               <div>
@@ -104,8 +128,8 @@ function BlogLeitor() {
                   {post.author.role} · Microsistec
                 </div>
               </div>
-              
-              <button 
+
+              <button
                 onClick={() => {
                   navigator.clipboard.writeText(window.location.href);
                   alert("Link do artigo copiado para a área de transferência!");
@@ -131,51 +155,64 @@ function BlogLeitor() {
                 fetchPriority="high"
                 decoding="async"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80";
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80";
                 }}
               />
             </div>
 
             {/* Content Injection */}
-            <div 
+            <div
               className="prose max-w-none text-foreground/90 mt-8 leading-relaxed space-y-6 text-lg"
-              dangerouslySetInnerHTML={{ __html: post.content?.replace(/<h1/g, '<h2').replace(/<\/h1>/g, '</h2>') || '' }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  post.content
+                    ?.replace(/<h1/g, "<h2")
+                    .replace(/<\/h1>/g, "</h2>") || "",
+              }}
             />
 
             {/* Bottom Back Nav */}
             <div className="pt-8 border-t border-[color:var(--brand-ink)]/10">
-              <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
+              <Link
+                title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário"
+                to="/blog"
                 data-gtm-cta="voltar_blog"
                 data-gtm-location="artigo_blog"
                 className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition"
               >
-                <ArrowLeft className="w-4 h-4" /> Voltar para o diretório de artigos
+                <ArrowLeft className="w-4 h-4" /> Voltar para o diretório de
+                artigos
               </Link>
             </div>
           </article>
 
           {/* Sticky Sidebar Column */}
-          <aside id="sidebar_blog" data-gtm-section="sidebar_blog" className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-            
+          <aside
+            id="sidebar_blog"
+            data-gtm-section="sidebar_blog"
+            className="lg:col-span-4 space-y-6 lg:sticky lg:top-24"
+          >
             {/* Lead Gen Card */}
             <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-3xl border border-[color:var(--brand-ink)] p-6 shadow-elev relative overflow-hidden">
               <div className="bg-grid absolute inset-0 opacity-15" />
-              
+
               <div className="relative space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-orange)]/10 flex items-center justify-center">
                   <Bot className="w-5 h-5 text-[color:var(--brand-orange)]" />
                 </div>
-                
+
                 <h3 className="font-extrabold text-2xl tracking-tight leading-snug">
                   Pare de perder leads imobiliários no WhatsApp!
                 </h3>
-                
+
                 <p className="text-sm text-[color:var(--brand-sand)]/75 leading-relaxed">
-                  Deixe o **Albert IA** atender, qualificar e agendar visitas em tempo real direto no seu CRM, 24 horas por dia.
+                  Deixe o **Albert IA** atender, qualificar e agendar visitas em
+                  tempo real direto no seu CRM, 24 horas por dia.
                 </p>
 
                 <div className="pt-2">
-                  <button 
+                  <button
                     title="Falar com especialista"
                     onClick={() => openModal()}
                     data-gtm-cta="falar_especialista_albert_sidebar"
@@ -183,7 +220,8 @@ function BlogLeitor() {
                     data-gtm-modal-open="modal_demonstracao"
                     className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-ink)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft text-center decoration-none no-underline"
                   >
-                    Converse com o Albert agora mesmo <ArrowRight className="w-3.5 h-3.5" />
+                    Converse com o Albert agora mesmo{" "}
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
@@ -195,13 +233,14 @@ function BlogLeitor() {
                 <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-ink)]/5 flex items-center justify-center">
                   <Building2 className="w-5 h-5 text-[color:var(--brand-ink)]" />
                 </div>
-                
+
                 <h3 className="font-extrabold text-2xl tracking-tight leading-snug">
                   Gestão imobiliária que dá resultado
                 </h3>
-                
+
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Experimente o CRM mais robusto do mercado. Automações, contratos, integrações com portais e funil de vendas avançado.
+                  Experimente o CRM mais robusto do mercado. Automações,
+                  contratos, integrações com portais e funil de vendas avançado.
                 </p>
 
                 <div className="pt-2">
@@ -212,7 +251,8 @@ function BlogLeitor() {
                     data-gtm-modal-open="modal_demonstracao"
                     className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
                   >
-                    Falar com especialista <ArrowRight className="w-3.5 h-3.5" />
+                    Falar com especialista{" "}
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
@@ -224,10 +264,15 @@ function BlogLeitor() {
                 ✦ Sobre a Microsistec
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Fomos os **pioneiros absolutos em trazer a tecnologia para o setor imobiliário brasileiro** desde **1994**. Unimos CRM robusto, sites de carregamento instantâneo, aplicativos e IA, provando em três décadas de mercado que sabemos o que fazemos.
+                Fomos os **pioneiros absolutos em trazer a tecnologia para o
+                setor imobiliário brasileiro** desde **1994**. Unimos CRM
+                robusto, sites de carregamento instantâneo, aplicativos e IA,
+                provando em três décadas de mercado que sabemos o que fazemos.
               </p>
               <div className="pt-1">
-                <Link title="Sobre a Microsistec" to="/empresa"
+                <Link
+                  title="Sobre a Microsistec"
+                  to="/empresa"
                   data-gtm-cta="conhecer_historia_sidebar"
                   data-gtm-location="sidebar_blog"
                   className="text-sm font-semibold text-[color:var(--brand-orange)] hover:underline inline-flex items-center gap-1"
@@ -236,7 +281,6 @@ function BlogLeitor() {
                 </Link>
               </div>
             </div>
-
           </aside>
         </div>
       </main>

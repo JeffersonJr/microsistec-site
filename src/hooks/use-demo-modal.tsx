@@ -6,7 +6,9 @@ type DemoModalContextType = {
   closeModal: () => void;
 };
 
-const DemoModalContext = React.createContext<DemoModalContextType | undefined>(undefined);
+const DemoModalContext = React.createContext<DemoModalContextType | undefined>(
+  undefined,
+);
 
 export function DemoModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = React.useState(false);

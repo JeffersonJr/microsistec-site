@@ -1,11 +1,25 @@
 import * as React from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
 import { ChevronDown, Check } from "lucide-react";
 import { countries } from "@/lib/countries";
 import { cn } from "@/lib/utils";
 
-interface PhoneInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
+interface PhoneInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "value"
+> {
   value: string;
   dialCode: string;
   onPhoneChange: (phone: string, dialCode: string) => void;
@@ -22,7 +36,8 @@ export function PhoneInput({
   ...props
 }: PhoneInputProps) {
   const [open, setOpen] = React.useState(false);
-  const selectedCountry = countries.find(c => c.dialCode === dialCode) || countries[0];
+  const selectedCountry =
+    countries.find((c) => c.dialCode === dialCode) || countries[0];
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let v = e.target.value.replace(/\D/g, "");
@@ -35,7 +50,12 @@ export function PhoneInput({
   };
 
   return (
-    <div className={cn("flex w-full h-12 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-within:ring-1 focus-within:ring-[color:var(--brand-orange)]", containerClassName)}>
+    <div
+      className={cn(
+        "flex w-full h-12 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-within:ring-1 focus-within:ring-[color:var(--brand-orange)]",
+        containerClassName,
+      )}
+    >
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <button
@@ -71,9 +91,13 @@ export function PhoneInput({
                     className="flex items-center justify-between py-2"
                   >
                     <div className="flex items-center gap-2.5">
-                      <span className="text-lg leading-none">{country.flag}</span>
+                      <span className="text-lg leading-none">
+                        {country.flag}
+                      </span>
                       <span className="font-medium">{country.name}</span>
-                      <span className="text-muted-foreground text-sm">{country.dialCode}</span>
+                      <span className="text-muted-foreground text-sm">
+                        {country.dialCode}
+                      </span>
                     </div>
                     {dialCode === country.dialCode && (
                       <Check className="h-4 w-4 text-[color:var(--brand-orange)]" />
@@ -85,11 +109,14 @@ export function PhoneInput({
           </Command>
         </PopoverContent>
       </Popover>
-      <input 
+      <input
         required={required}
-        type="tel" 
+        type="tel"
         placeholder={dialCode === "+55" ? "(11) 99999-9999" : "999999999"}
-        className={cn("flex-1 px-4 bg-transparent focus:outline-none rounded-r-xl w-full min-w-0 text-[color:var(--brand-ink)] placeholder:text-muted-foreground", className)}
+        className={cn(
+          "flex-1 px-4 bg-transparent focus:outline-none rounded-r-xl w-full min-w-0 text-[color:var(--brand-ink)] placeholder:text-muted-foreground",
+          className,
+        )}
         value={value}
         onChange={handlePhoneChange}
         {...props}

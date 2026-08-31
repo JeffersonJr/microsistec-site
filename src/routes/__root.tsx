@@ -18,7 +18,10 @@ function NotFoundComponent() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-6 py-20 text-center relative overflow-hidden"
-      style={{ background: "var(--brand-ink, #0e1117)", color: "var(--brand-sand, #f5f0e8)" }}
+      style={{
+        background: "var(--brand-ink, #0e1117)",
+        color: "var(--brand-sand, #f5f0e8)",
+      }}
     >
       {/* Decorative grid */}
       <div
@@ -38,7 +41,13 @@ function NotFoundComponent() {
           animation: "float 3s ease-in-out infinite",
         }}
       >
-        <Key style={{ width: 36, height: 36, color: "var(--brand-orange, #ff6b35)" }} />
+        <Key
+          style={{
+            width: 36,
+            height: 36,
+            color: "var(--brand-orange, #ff6b35)",
+          }}
+        />
       </div>
 
       {/* Big 404 */}
@@ -46,7 +55,8 @@ function NotFoundComponent() {
         className="font-extrabold leading-none tracking-[-0.05em] select-none"
         style={{
           fontSize: "clamp(7rem, 20vw, 14rem)",
-          background: "linear-gradient(135deg, var(--brand-sand, #f5f0e8) 40%, var(--brand-orange, #ff6b35) 100%)",
+          background:
+            "linear-gradient(135deg, var(--brand-sand, #f5f0e8) 40%, var(--brand-orange, #ff6b35) 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           backgroundClip: "text",
@@ -58,7 +68,10 @@ function NotFoundComponent() {
       {/* Main heading */}
       <h1
         className="mt-4 font-extrabold tracking-tight"
-        style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)", color: "var(--brand-sand, #f5f0e8)" }}
+        style={{
+          fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+          color: "var(--brand-sand, #f5f0e8)",
+        }}
       >
         Página não encontrada
       </h1>
@@ -68,8 +81,11 @@ function NotFoundComponent() {
         className="mt-4 max-w-lg leading-relaxed"
         style={{ color: "rgba(245,240,232,0.65)", fontSize: "1.05rem" }}
       >
-        Parece que o nosso corretor saiu para uma visita e levou a página com ele.{" "}
-        <span style={{ color: "var(--brand-orange, #ff6b35)", fontStyle: "italic" }}>
+        Parece que o nosso corretor saiu para uma visita e levou a página com
+        ele.{" "}
+        <span
+          style={{ color: "var(--brand-orange, #ff6b35)", fontStyle: "italic" }}
+        >
           Mas não se preocupe
         </span>
         , vamos te guiar até o próximo lead.
@@ -91,7 +107,9 @@ function NotFoundComponent() {
 
       {/* CTA */}
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <Link title="Página Inicial da Microsistec" to="/"
+        <Link
+          title="Página Inicial da Microsistec"
+          to="/"
           className="inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-full transition-all duration-200 no-underline"
           style={{
             background: "var(--brand-orange, #ff6b35)",
@@ -117,7 +135,8 @@ function NotFoundComponent() {
         className="mt-16 text-sm font-mono"
         style={{ color: "rgba(245,240,232,0.3)", letterSpacing: "0.06em" }}
       >
-        © {new Date().getFullYear()} Microsistec · nem todos os endereços existem, mas todos os leads são bem-vindos.
+        © {new Date().getFullYear()} Microsistec · nem todos os endereços
+        existem, mas todos os leads são bem-vindos.
       </p>
 
       <style>{`
@@ -141,7 +160,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           This page didn't load
         </h1>
         <p className="mt-2 text-base text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Something went wrong on our end. You can try refreshing or head back
+          home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -154,7 +174,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a title="Página Inicial da Microsistec" href="/"
+          <a
+            title="Página Inicial da Microsistec"
+            href="/"
             data-gtm-cta="error_go_home"
             className="btn-micro inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-base font-medium text-foreground hover:bg-accent"
           >
@@ -166,51 +188,85 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Microsistec - CRM Imobiliário e Sistema para Imobiliárias" },
-      { name: "description", content: "O melhor CRM imobiliário, site e app para corretores. A proptech pioneira no Brasil desde 1994 ajudando imobiliárias a venderem mais." },
-      { name: "author", content: "Microsistec" },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
-      { name: "theme-color", content: "#0e1117" },
-      // Open Graph
-      { property: "og:title", content: "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994" },
-      { property: "og:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://microsistec.evolves.site" },
-      { property: "og:image", content: "https://microsistec.evolves.site/og-image.png" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Microsistec - Tecnologia para imobiliárias" },
-      { property: "og:locale", content: "pt_BR" },
-      { property: "og:site_name", content: "Microsistec" },
-      // Twitter Card
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@microsistec" },
-      { name: "twitter:title", content: "Microsistec - Tecnologia imobiliária desde 1994" },
-      { name: "twitter:description", content: "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores." },
-      { name: "twitter:image", content: "https://microsistec.evolves.site/og-image.png" },
-    ],
-    links: [
-      {
-        rel: "icon",
-        type: "image/svg+xml",
-        href: "/favicon.svg",
-      },
-      {
-        rel: "canonical",
-        href: "https://microsistec.com.br",
-      },
-    ],
-  }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
-});
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
+  {
+    head: () => ({
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: "Microsistec - CRM Imobiliário e Sistema para Imobiliárias" },
+        {
+          name: "description",
+          content:
+            "O melhor CRM imobiliário, site e app para corretores. A proptech pioneira no Brasil desde 1994 ajudando imobiliárias a venderem mais.",
+        },
+        { name: "author", content: "Microsistec" },
+        {
+          name: "robots",
+          content:
+            "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        },
+        { name: "theme-color", content: "#0e1117" },
+        // Open Graph
+        {
+          property: "og:title",
+          content:
+            "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994",
+        },
+        {
+          property: "og:description",
+          content:
+            "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores.",
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://microsistec.evolves.site" },
+        {
+          property: "og:image",
+          content: "https://microsistec.evolves.site/og-image.png",
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        {
+          property: "og:image:alt",
+          content: "Microsistec - Tecnologia para imobiliárias",
+        },
+        { property: "og:locale", content: "pt_BR" },
+        { property: "og:site_name", content: "Microsistec" },
+        // Twitter Card
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@microsistec" },
+        {
+          name: "twitter:title",
+          content: "Microsistec - Tecnologia imobiliária desde 1994",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores.",
+        },
+        {
+          name: "twitter:image",
+          content: "https://microsistec.evolves.site/og-image.png",
+        },
+      ],
+      links: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/favicon.svg",
+        },
+        {
+          rel: "canonical",
+          href: "https://microsistec.com.br",
+        },
+      ],
+    }),
+    shellComponent: RootShell,
+    component: RootComponent,
+    notFoundComponent: NotFoundComponent,
+    errorComponent: ErrorComponent,
+  },
+);
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
@@ -230,7 +286,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
           media="print"
-          onLoad={(e: any) => { e.currentTarget.media = 'all'; }}
+          onLoad={(e: any) => {
+            e.currentTarget.media = "all";
+          }}
         />
         <noscript>
           <link
@@ -248,11 +306,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 import { DemoModalProvider } from "@/hooks/use-demo-modal";
-const DemoModal = React.lazy(() => import("@/components/microsistec/DemoModal").then((m) => ({ default: m.DemoModal })));
+const DemoModal = React.lazy(() =>
+  import("@/components/microsistec/DemoModal").then((m) => ({
+    default: m.DemoModal,
+  })),
+);
 import { PrivacyNotice } from "@/components/microsistec/PrivacyNotice";
-
-
-
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -283,7 +342,8 @@ function RootComponent() {
       if (initialized) return;
       initialized = true;
       try {
-        const { default: Intercom } = await import("@intercom/messenger-js-sdk");
+        const { default: Intercom } =
+          await import("@intercom/messenger-js-sdk");
         Intercom({
           app_id: "mjj9j4fs",
           custom_launcher_selector: "#custom-intercom-launcher",
@@ -311,12 +371,14 @@ function RootComponent() {
               }
             }
           });
-          intercomFn("onUnreadCountChange", (count: number) => setUnreadCount(count));
+          intercomFn("onUnreadCountChange", (count: number) =>
+            setUnreadCount(count),
+          );
         }
       } catch (err) {
         console.error("Failed to initialize Intercom:", err);
       }
-      
+
       // Cleanup listeners once loaded
       window.removeEventListener("scroll", initIntercom);
       window.removeEventListener("mousemove", initIntercom);
@@ -357,10 +419,16 @@ function RootComponent() {
             opacity: isIntercomOpen ? 0 : 1,
             pointerEvents: isIntercomOpen ? "none" : "auto",
             transition: "opacity 0.3s ease, transform 0.2s ease",
-            padding: 0
+            padding: 0,
           }}
         >
-          <img src="/icon.svg" width={30} height={30} alt="Chat" className="img-micro-scale w-[30px] h-[30px] object-contain" />
+          <img
+            src="/icon.svg"
+            width={30}
+            height={30}
+            alt="Chat"
+            className="img-micro-scale w-[30px] h-[30px] object-contain"
+          />
           {unreadCount > 0 && (
             <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white shadow-sm">
               {unreadCount}

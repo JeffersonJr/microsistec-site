@@ -23,9 +23,12 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
 import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
+import { Route as IndicaEGanhaIndexRouteImport } from './routes/indica-e-ganha/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 import { Route as MateriaisSlugRouteImport } from './routes/materiais.$slug'
+import { Route as IndicaEGanhaIndicarRouteImport } from './routes/indica-e-ganha/indicar'
+import { Route as IndicaEGanhaConfirmacaoRouteImport } from './routes/indica-e-ganha/confirmacao'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
@@ -98,6 +101,11 @@ const MateriaisIndexRoute = MateriaisIndexRouteImport.update({
   path: '/materiais/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndicaEGanhaIndexRoute = IndicaEGanhaIndexRouteImport.update({
+  id: '/indica-e-ganha/',
+  path: '/indica-e-ganha/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -111,6 +119,16 @@ const SolucoesSlugRoute = SolucoesSlugRouteImport.update({
 const MateriaisSlugRoute = MateriaisSlugRouteImport.update({
   id: '/materiais/$slug',
   path: '/materiais/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndicaEGanhaIndicarRoute = IndicaEGanhaIndicarRouteImport.update({
+  id: '/indica-e-ganha/indicar',
+  path: '/indica-e-ganha/indicar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndicaEGanhaConfirmacaoRoute = IndicaEGanhaConfirmacaoRouteImport.update({
+  id: '/indica-e-ganha/confirmacao',
+  path: '/indica-e-ganha/confirmacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -133,9 +151,12 @@ export interface FileRoutesByFullPath {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/indica-e-ganha/confirmacao': typeof IndicaEGanhaConfirmacaoRoute
+  '/indica-e-ganha/indicar': typeof IndicaEGanhaIndicarRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/indica-e-ganha/': typeof IndicaEGanhaIndexRoute
   '/materiais/': typeof MateriaisIndexRoute
   '/solucoes/': typeof SolucoesIndexRoute
 }
@@ -153,9 +174,12 @@ export interface FileRoutesByTo {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/indica-e-ganha/confirmacao': typeof IndicaEGanhaConfirmacaoRoute
+  '/indica-e-ganha/indicar': typeof IndicaEGanhaIndicarRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/indica-e-ganha': typeof IndicaEGanhaIndexRoute
   '/materiais': typeof MateriaisIndexRoute
   '/solucoes': typeof SolucoesIndexRoute
 }
@@ -174,9 +198,12 @@ export interface FileRoutesById {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/indica-e-ganha/confirmacao': typeof IndicaEGanhaConfirmacaoRoute
+  '/indica-e-ganha/indicar': typeof IndicaEGanhaIndicarRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/indica-e-ganha/': typeof IndicaEGanhaIndexRoute
   '/materiais/': typeof MateriaisIndexRoute
   '/solucoes/': typeof SolucoesIndexRoute
 }
@@ -196,9 +223,12 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/termos-de-uso'
     | '/blog/$slug'
+    | '/indica-e-ganha/confirmacao'
+    | '/indica-e-ganha/indicar'
     | '/materiais/$slug'
     | '/solucoes/$slug'
     | '/blog/'
+    | '/indica-e-ganha/'
     | '/materiais/'
     | '/solucoes/'
   fileRoutesByTo: FileRoutesByTo
@@ -216,9 +246,12 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/termos-de-uso'
     | '/blog/$slug'
+    | '/indica-e-ganha/confirmacao'
+    | '/indica-e-ganha/indicar'
     | '/materiais/$slug'
     | '/solucoes/$slug'
     | '/blog'
+    | '/indica-e-ganha'
     | '/materiais'
     | '/solucoes'
   id:
@@ -236,9 +269,12 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/termos-de-uso'
     | '/blog/$slug'
+    | '/indica-e-ganha/confirmacao'
+    | '/indica-e-ganha/indicar'
     | '/materiais/$slug'
     | '/solucoes/$slug'
     | '/blog/'
+    | '/indica-e-ganha/'
     | '/materiais/'
     | '/solucoes/'
   fileRoutesById: FileRoutesById
@@ -257,9 +293,12 @@ export interface RootRouteChildren {
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  IndicaEGanhaConfirmacaoRoute: typeof IndicaEGanhaConfirmacaoRoute
+  IndicaEGanhaIndicarRoute: typeof IndicaEGanhaIndicarRoute
   MateriaisSlugRoute: typeof MateriaisSlugRoute
   SolucoesSlugRoute: typeof SolucoesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  IndicaEGanhaIndexRoute: typeof IndicaEGanhaIndexRoute
   MateriaisIndexRoute: typeof MateriaisIndexRoute
   SolucoesIndexRoute: typeof SolucoesIndexRoute
 }
@@ -364,6 +403,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MateriaisIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/indica-e-ganha/': {
+      id: '/indica-e-ganha/'
+      path: '/indica-e-ganha'
+      fullPath: '/indica-e-ganha/'
+      preLoaderRoute: typeof IndicaEGanhaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -383,6 +429,20 @@ declare module '@tanstack/react-router' {
       path: '/materiais/$slug'
       fullPath: '/materiais/$slug'
       preLoaderRoute: typeof MateriaisSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/indica-e-ganha/indicar': {
+      id: '/indica-e-ganha/indicar'
+      path: '/indica-e-ganha/indicar'
+      fullPath: '/indica-e-ganha/indicar'
+      preLoaderRoute: typeof IndicaEGanhaIndicarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/indica-e-ganha/confirmacao': {
+      id: '/indica-e-ganha/confirmacao'
+      path: '/indica-e-ganha/confirmacao'
+      fullPath: '/indica-e-ganha/confirmacao'
+      preLoaderRoute: typeof IndicaEGanhaConfirmacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -409,9 +469,12 @@ const rootRouteChildren: RootRouteChildren = {
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
   BlogSlugRoute: BlogSlugRoute,
+  IndicaEGanhaConfirmacaoRoute: IndicaEGanhaConfirmacaoRoute,
+  IndicaEGanhaIndicarRoute: IndicaEGanhaIndicarRoute,
   MateriaisSlugRoute: MateriaisSlugRoute,
   SolucoesSlugRoute: SolucoesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  IndicaEGanhaIndexRoute: IndicaEGanhaIndexRoute,
   MateriaisIndexRoute: MateriaisIndexRoute,
   SolucoesIndexRoute: SolucoesIndexRoute,
 }

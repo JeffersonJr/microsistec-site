@@ -27,8 +27,8 @@ function PlanosPage() {
         "Analista de Sucesso do Cliente",
         "Integração com Portais",
         "Treinamentos Online",
-        "App Leads"
-      ]
+        "App Leads",
+      ],
     },
     {
       id: "profissional",
@@ -45,8 +45,8 @@ function PlanosPage() {
         "Analista de Sucesso do Cliente",
         "Integração com Portais",
         "Treinamentos Online",
-        "App Leads"
-      ]
+        "App Leads",
+      ],
     },
     {
       id: "avancado",
@@ -62,8 +62,8 @@ function PlanosPage() {
         "Analista de Sucesso do Cliente",
         "Integração com Portais",
         "Treinamentos Online",
-        "App Leads"
-      ]
+        "App Leads",
+      ],
     },
     {
       id: "corporativo",
@@ -79,8 +79,8 @@ function PlanosPage() {
         "Analista de Sucesso do Cliente",
         "Integração com Portais",
         "Treinamentos Online",
-        "App Leads"
-      ]
+        "App Leads",
+      ],
     },
     {
       id: "infinity",
@@ -97,28 +97,28 @@ function PlanosPage() {
         "Analista de Sucesso Exclusivo",
         "Integração com Portais",
         "Treinamentos VIP",
-        "App Leads (Ilimitado)"
-      ]
-    }
+        "App Leads (Ilimitado)",
+      ],
+    },
   ];
 
   const faqs = [
     {
       q: "Existe alguma taxa de implantação?",
-      a: "Temos opções flexíveis. Consulte nosso time comercial para entender os pacotes de implantação que melhor se adequam à complexidade da sua operação."
+      a: "Temos opções flexíveis. Consulte nosso time comercial para entender os pacotes de implantação que melhor se adequam à complexidade da sua operação.",
     },
     {
       q: "Posso cancelar quando eu quiser?",
-      a: "Nossos planos não possuem multa por cancelamento após o período mínimo de permanência estabelecido em contrato (geralmente 12 meses para garantir o sucesso da operação)."
+      a: "Nossos planos não possuem multa por cancelamento após o período mínimo de permanência estabelecido em contrato (geralmente 12 meses para garantir o sucesso da operação).",
     },
     {
       q: "O suporte técnico está incluso?",
-      a: "Sim! Todos os planos contam com suporte técnico especializado por chat, e-mail e telefone, além de uma base de conhecimento completa."
+      a: "Sim! Todos os planos contam com suporte técnico especializado por chat, e-mail e telefone, além de uma base de conhecimento completa.",
     },
     {
       q: "Como funciona o bônus do ciclo anual?",
-      a: "Optando pelo faturamento anual, você recebe 20% de desconto no valor final da sua licença, garantindo a previsibilidade do seu fluxo de caixa."
-    }
+      a: "Optando pelo faturamento anual, você recebe 20% de desconto no valor final da sua licença, garantindo a previsibilidade do seu fluxo de caixa.",
+    },
   ];
 
   return (
@@ -127,7 +127,11 @@ function PlanosPage() {
 
       <main>
         {/* Header Section */}
-        <section id="hero_planos" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[color:var(--brand-ink)]/10">
+        <section
+          id="hero_planos"
+          data-gtm-section="hero_dobra_1"
+          className="relative overflow-hidden bg-hero pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[color:var(--brand-ink)]/10"
+        >
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -142,26 +146,42 @@ function PlanosPage() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-              Escolha o plano que melhor se adapta ao momento do seu negócio. Comece pequeno ou escale com poder total.
+              Escolha o plano que melhor se adapta ao momento do seu negócio.
+              Comece pequeno ou escale com poder total.
             </p>
           </div>
         </section>
 
         {/* Pricing Cards */}
-        <section id="tabela_planos" data-gtm-section="tabela_planos" className="mx-auto max-w-[1400px] px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+        <section
+          id="tabela_planos"
+          data-gtm-section="tabela_planos"
+          className="mx-auto max-w-[1400px] px-6 pt-12 pb-20 md:pt-16 md:pb-28"
+        >
           {/* Toggle Billing */}
           <div className="flex items-center justify-center gap-4 mb-10">
-            <span className={`text-base font-bold ${!isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>Mensal</span>
+            <span
+              className={`text-base font-bold ${!isAnnual ? "text-[color:var(--brand-ink)]" : "text-muted-foreground"}`}
+            >
+              Mensal
+            </span>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
               data-gtm-cta="toggle_faturamento_anual"
               data-gtm-location="tabela_planos"
               className="w-16 h-8 bg-[color:var(--brand-ink)]/10 rounded-full relative p-1 transition-colors cursor-pointer hover:bg-[color:var(--brand-ink)]/20"
             >
-              <div className={`w-6 h-6 bg-[color:var(--brand-orange)] rounded-full shadow-md transition-transform duration-300 ${isAnnual ? 'translate-x-8' : 'translate-x-0'}`} />
+              <div
+                className={`w-6 h-6 bg-[color:var(--brand-orange)] rounded-full shadow-md transition-transform duration-300 ${isAnnual ? "translate-x-8" : "translate-x-0"}`}
+              />
             </button>
-            <span className={`text-base font-bold ${isAnnual ? 'text-[color:var(--brand-ink)]' : 'text-muted-foreground'}`}>
-              Anual <span className="ml-2 text-sm bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">-20%</span>
+            <span
+              className={`text-base font-bold ${isAnnual ? "text-[color:var(--brand-ink)]" : "text-muted-foreground"}`}
+            >
+              Anual{" "}
+              <span className="ml-2 text-sm bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
+                -20%
+              </span>
             </span>
           </div>
 
@@ -169,10 +189,11 @@ function PlanosPage() {
             {plans.map((plan) => (
               <div
                 key={plan.id}
-                className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${plan.isPopular
-                  ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev border-2 border-[color:var(--brand-orange)]"
-                  : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
-                  }`}
+                className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${
+                  plan.isPopular
+                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev border-2 border-[color:var(--brand-orange)]"
+                    : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
+                }`}
               >
                 {plan.isPopular && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm whitespace-nowrap">
@@ -181,8 +202,12 @@ function PlanosPage() {
                 )}
 
                 <div className="space-y-4 mb-8">
-                  <h3 className="text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight leading-tight">{plan.name}</h3>
-                  <p className={`text-base leading-relaxed min-h-[40px] ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>
+                  <h3 className="text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight leading-tight">
+                    {plan.name}
+                  </h3>
+                  <p
+                    className={`text-base leading-relaxed min-h-[40px] ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}
+                  >
                     {plan.desc}
                   </p>
                 </div>
@@ -191,46 +216,78 @@ function PlanosPage() {
                   {!plan.isCustom ? (
                     <div className="flex items-end gap-1 flex-wrap">
                       <span className="text-base font-bold mb-1">R$</span>
-                      <span className="text-5xl lg:text-6xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tighter leading-none">{plan.price}</span>
-                      <span className={`text-base mb-1 ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}>/mês</span>
+                      <span className="text-5xl lg:text-6xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tighter leading-none">
+                        {plan.price}
+                      </span>
+                      <span
+                        className={`text-base mb-1 ${plan.isPopular ? "text-[color:var(--brand-sand)]/70" : "text-muted-foreground"}`}
+                      >
+                        /mês
+                      </span>
                     </div>
                   ) : (
-                    <div className="text-4xl font-extrabold tracking-tighter leading-none">{plan.price}</div>
+                    <div className="text-4xl font-extrabold tracking-tighter leading-none">
+                      {plan.price}
+                    </div>
                   )}
                 </div>
 
                 <div className="space-y-4 mb-8 flex-1">
                   <div className="pb-4 mb-4 border-b border-current/10">
                     <div className="flex items-center gap-2 mb-2 font-semibold text-base">
-                      <Building2 className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`} />
+                      <Building2
+                        className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}
+                      />
                       {plan.limit}
                     </div>
                     <div className="flex items-center gap-2 font-semibold text-base">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}
+                      >
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
                       {plan.users}
                     </div>
                   </div>
 
                   <ul className="space-y-3">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-base leading-tight">
-                        <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : "text-[color:var(--brand-ink)]/50"}`} />
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-base leading-tight"
+                      >
+                        <CheckCircle2
+                          className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : "text-[color:var(--brand-ink)]/50"}`}
+                        />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <button 
-                  title="Fale conosco pelo WhatsApp" 
+                <button
+                  title="Fale conosco pelo WhatsApp"
                   onClick={openModal}
                   data-gtm-cta={`falar_especialista_plano_${plan.id}`}
                   data-gtm-location="tabela_planos"
                   data-gtm-modal-open="modal_demonstracao"
-                  className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline border-none ${plan.isPopular
-                    ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
-                    : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
-                    }`}
+                  className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline border-none ${
+                    plan.isPopular
+                      ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
+                      : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
+                  }`}
                 >
                   Falar com especialista
                 </button>
@@ -240,7 +297,11 @@ function PlanosPage() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" data-gtm-section="faq" className="mx-auto max-w-3xl px-6 pb-20 md:pb-28">
+        <section
+          id="faq"
+          data-gtm-section="faq"
+          className="mx-auto max-w-3xl px-6 pb-20 md:pb-28"
+        >
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
               Dúvidas Frequentes
@@ -252,7 +313,10 @@ function PlanosPage() {
 
           <div className="space-y-6">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/10">
+              <div
+                key={idx}
+                className="p-6 rounded-2xl bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/10"
+              >
                 <div className="flex gap-4">
                   <HelpCircle className="w-6 h-6 shrink-0 text-[color:var(--brand-orange)]" />
                   <div>
@@ -268,14 +332,19 @@ function PlanosPage() {
         </section>
 
         {/* Final CTA */}
-        <section id="cta_final" data-gtm-section="cta_final" className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden">
+        <section
+          id="cta_final"
+          data-gtm-section="cta_final"
+          className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] py-20 md:py-28 relative overflow-hidden"
+        >
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
           <div className="relative mx-auto max-w-4xl px-6 text-center space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
               Ainda não tem certeza?
             </h2>
             <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-2xl mx-auto">
-              Fale com nosso especialista agora e monte a solução ideal para a sua imobiliária, tirando todas as suas dúvidas operacionais.
+              Fale com nosso especialista agora e monte a solução ideal para a
+              sua imobiliária, tirando todas as suas dúvidas operacionais.
             </p>
             <div className="pt-4">
               <button

@@ -12,6 +12,7 @@ interface LeadData {
   telefone: string;
   email: string;
   cnpj?: string;
+  origem?: string;
 }
 
 interface UseLeadSubmitReturn {
@@ -48,7 +49,7 @@ export function useLeadSubmit(): UseLeadSubmitReturn {
     setError(null);
 
     try {
-      await sendLeadToClickUp(data);
+      await sendLeadToClickUp({ data });
 
       // Abre o WhatsApp em nova aba com mensagem pré-preenchida
       const message = encodeURIComponent(

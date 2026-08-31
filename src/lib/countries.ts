@@ -22,5 +22,5 @@ export const countries = [
   { name: "Austrália", code: "AU", dialCode: "+61", flag: "🇦🇺" },
   { name: "Peru", code: "PE", dialCode: "+51", flag: "🇵🇪" },
   { name: "Bolívia", code: "BO", dialCode: "+591", flag: "🇧🇴" },
-  { name: "Venezuela", code: "VE", dialCode: "+58", flag: "🇻🇪" }
+  { name: "Venezuela", code: "VE", dialCode: "+58", flag: "🇻🇪" },
 ];

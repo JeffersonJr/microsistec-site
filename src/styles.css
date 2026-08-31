@@ -84,28 +84,49 @@
   --ring: oklch(0.6 0.18 280);
 
   /* Clean minimal proptech palette */
-  --background: oklch(0.99 0.003 270);          /* near white */
-  --foreground: oklch(0.15 0.02 260);            /* deep ink */
-  --brand-orange: oklch(0.623 0.106 195.8);     /* primary teal accent */
-  --brand-clay:   oklch(0.499 0.113 182.2);     /* dark teal */
-  --brand-teal:   oklch(0.735 0.121 190.4);     /* light teal */
-  --brand-ink:    oklch(0.18 0.025 255);         /* near black, cool */
-  --brand-sand:   oklch(0.97 0.008 75);         /* very light warm surface */
+  --background: oklch(0.99 0.003 270); /* near white */
+  --foreground: oklch(0.15 0.02 260); /* deep ink */
+  --brand-orange: oklch(0.623 0.106 195.8); /* primary teal accent */
+  --brand-clay: oklch(0.499 0.113 182.2); /* dark teal */
+  --brand-teal: oklch(0.735 0.121 190.4); /* light teal */
+  --brand-ink: oklch(0.18 0.025 255); /* near black, cool */
+  --brand-sand: oklch(0.97 0.008 75); /* very light warm surface */
 
-  --surface:      oklch(0.975 0.005 270);        /* ultra-light card surface */
-  --surface-hover: oklch(0.99 0.003 270);       /* hovered surface */
+  --surface: oklch(0.975 0.005 270); /* ultra-light card surface */
+  --surface-hover: oklch(0.99 0.003 270); /* hovered surface */
 
-  --gradient-hero: radial-gradient(70% 60% at 80% 0%, oklch(0.95 0.04 195 / 0.35), transparent 60%),
-                   radial-gradient(50% 50% at 0% 100%, oklch(0.9 0.06 200 / 0.25), transparent 60%);
-  --gradient-text: linear-gradient(100deg, var(--brand-clay), var(--brand-orange) 60%, var(--brand-teal));
-  --shadow-soft: 0 1px 2px oklch(0.14 0.02 270 / 0.03), 0 6px 20px oklch(0.14 0.02 270 / 0.05);
+  --gradient-hero:
+    radial-gradient(
+      70% 60% at 80% 0%,
+      oklch(0.95 0.04 195 / 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 50% at 0% 100%,
+      oklch(0.9 0.06 200 / 0.25),
+      transparent 60%
+    );
+  --gradient-text: linear-gradient(
+    100deg,
+    var(--brand-clay),
+    var(--brand-orange) 60%,
+    var(--brand-teal)
+  );
+  --shadow-soft:
+    0 1px 2px oklch(0.14 0.02 270 / 0.03),
+    0 6px 20px oklch(0.14 0.02 270 / 0.05);
   --shadow-elev: 0 20px 50px -16px oklch(0.14 0.02 270 / 0.14);
-  --shadow-card: 0 0 0 1px oklch(0.14 0.02 270 / 0.06), 0 4px 16px oklch(0.14 0.02 270 / 0.05);
-  --shadow-glow: 0 0 0 1px oklch(0.623 0.106 195.8 / 0.2), 0 8px 32px oklch(0.623 0.106 195.8 / 0.25);
-  --shadow-nav:  0 4px 24px oklch(0.14 0.02 270 / 0.10), 0 1px 0px oklch(0.14 0.02 270 / 0.04);
+  --shadow-card:
+    0 0 0 1px oklch(0.14 0.02 270 / 0.06),
+    0 4px 16px oklch(0.14 0.02 270 / 0.05);
+  --shadow-glow:
+    0 0 0 1px oklch(0.623 0.106 195.8 / 0.2),
+    0 8px 32px oklch(0.623 0.106 195.8 / 0.25);
+  --shadow-nav:
+    0 4px 24px oklch(0.14 0.02 270 / 0.1), 0 1px 0px oklch(0.14 0.02 270 / 0.04);
   --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
-  --font-serif:   "Instrument Serif", "Cormorant Garamond", Georgia, serif;
-  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -175,20 +196,39 @@
 }
 
 @layer utilities {
-  .font-mono-ui { font-family: var(--font-mono); letter-spacing: 0.02em; }
-  .font-serif-italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .font-mono-ui {
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+  }
+  .font-serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  .bg-hero { background: var(--gradient-hero); }
-  .shadow-soft { box-shadow: var(--shadow-soft); }
-  .shadow-elev { box-shadow: var(--shadow-elev); }
-  .shadow-card { box-shadow: var(--shadow-card); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-nav  { box-shadow: var(--shadow-nav); }
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-elev {
+    box-shadow: var(--shadow-elev);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-nav {
+    box-shadow: var(--shadow-nav);
+  }
 
   /* ================================================================== */
   /*  FLOATING NAV PILL — Apple/Linear inspired                          */
@@ -203,11 +243,14 @@
     box-shadow:
       var(--shadow-nav),
       inset 0 0.5px 0 0 oklch(1 0 0 / 0.6);
-    transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    transition:
+      background 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
   }
   .nav-pill-scrolled {
     background: oklch(1 0 0 / 0.94);
-    border-color: oklch(0.14 0.02 270 / 0.10);
+    border-color: oklch(0.14 0.02 270 / 0.1);
     box-shadow:
       0 8px 40px oklch(0.14 0.02 270 / 0.12),
       0 1px 0px oklch(0.14 0.02 270 / 0.05),
@@ -229,7 +272,9 @@
     height: 2px;
     background: var(--brand-orange);
     border-radius: 1px;
-    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+      width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .nav-link:hover::after,
   .nav-link-active::after {
@@ -262,7 +307,10 @@
   .mega-item {
     position: relative;
     border-left: 2px solid transparent;
-    transition: border-color 0.25s ease, background 0.2s ease, transform 0.2s ease;
+    transition:
+      border-color 0.25s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
   }
   .mega-item:hover {
     border-left-color: var(--brand-orange);
@@ -270,14 +318,18 @@
     transform: translateX(2px);
   }
   .mega-item .mega-icon {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
   .mega-item:hover .mega-icon {
     transform: scale(1.1);
     box-shadow: 0 0 12px oklch(0.623 0.106 195.8 / 0.3);
   }
   .mega-item .mega-title {
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
   }
   .mega-item:hover .mega-title {
     color: var(--brand-orange);
@@ -288,13 +340,19 @@
   /*  CTA SHIMMER — diagonal shine sweep                                 */
   /* ================================================================== */
   @keyframes shimmer {
-    0%   { transform: translateX(-100%) skewX(-15deg); }
-    100% { transform: translateX(200%) skewX(-15deg); }
+    0% {
+      transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(-15deg);
+    }
   }
   .cta-shimmer {
     position: relative;
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
   .cta-shimmer::after {
     content: "";
@@ -315,15 +373,22 @@
   }
   .cta-shimmer:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 20px oklch(0.623 0.106 195.8 / 0.25), 0 4px 16px oklch(0.14 0.02 270 / 0.1);
+    box-shadow:
+      0 0 20px oklch(0.623 0.106 195.8 / 0.25),
+      0 4px 16px oklch(0.14 0.02 270 / 0.1);
   }
 
   /* ================================================================== */
   /*  BADGE PULSE GLOW                                                   */
   /* ================================================================== */
   @keyframes badgePulse {
-    0%, 100% { box-shadow: 0 0 0 0 oklch(0.623 0.106 195.8 / 0.4); }
-    50%      { box-shadow: 0 0 8px 3px oklch(0.623 0.106 195.8 / 0.15); }
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 oklch(0.623 0.106 195.8 / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 8px 3px oklch(0.623 0.106 195.8 / 0.15);
+    }
   }
   .badge-pulse {
     animation: badgePulse 2.5s ease-in-out infinite;
@@ -347,8 +412,12 @@
   }
 
   @keyframes backdropFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   .animate-backdropFade {
     animation: backdropFadeIn 0.3s ease forwards;
@@ -372,7 +441,10 @@
   .card-clean {
     background: var(--surface);
     border: 1px solid oklch(0.14 0.02 270 / 0.07);
-    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      box-shadow 0.2s;
   }
   .card-clean:hover {
     background: var(--surface-hover);
@@ -382,7 +454,9 @@
 
   .bg-grid::before {
     content: "";
-    position: absolute; inset: 0; pointer-events: none;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background-image:
       linear-gradient(oklch(0.18 0.02 50 / 0.035) 1px, transparent 1px),
       linear-gradient(90deg, oklch(0.18 0.02 50 / 0.035) 1px, transparent 1px);
@@ -393,16 +467,24 @@
     animation: marquee 40s linear infinite;
   }
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
   .sticker {
     background: var(--brand-ink);
     color: var(--brand-sand);
     border-radius: 999px;
   }
-  .tilt-l { transform: none; }
-  .tilt-r { transform: none; }
+  .tilt-l {
+    transform: none;
+  }
+  .tilt-r {
+    transform: none;
+  }
   .stamp {
     border: 1.5px solid currentColor;
     border-radius: 5px;
@@ -416,7 +498,9 @@
   /* FAQ accordion */
   .faq-content {
     overflow: hidden;
-    transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    transition:
+      max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
   }
 
   /* Step connector line */
@@ -427,112 +511,158 @@
     top: 100%;
     width: 1px;
     height: 2rem;
-    background: linear-gradient(to bottom, oklch(0.623 0.106 195.8 / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      oklch(0.623 0.106 195.8 / 0.3),
+      transparent
+    );
     transform: translateX(-50%);
   }
 
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
 
-.animate-marquee-reverse {
-  animation: marquee 35s linear infinite reverse;
-}
+  .animate-marquee-reverse {
+    animation: marquee 35s linear infinite reverse;
+  }
 
-/* Subtle fade-in */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-  animation: fadeIn 0.25s ease forwards;
-}
+  /* Subtle fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.25s ease forwards;
+  }
 
-/* Slide up */
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.animate-slideUp {
-  animation: slideUp 0.4s ease forwards;
-}
+  /* Slide up */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-slideUp {
+    animation: slideUp 0.4s ease forwards;
+  }
 
-/* Fade up used by evolves-style hero */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-up {
-  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
+  /* Fade up used by evolves-style hero */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 
-/* Feature card hover lift - Enhanced with smoother easing and inner scale */
-.feature-card {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow;
-}
-.feature-card:hover {
-  transform: translateY(-4px) scale(1.005);
-  box-shadow: 0 16px 48px -12px oklch(0.623 0.106 195.8 / 0.15), 0 4px 12px oklch(0.14 0.02 270 / 0.05);
-}
+  /* Feature card hover lift - Enhanced with smoother easing and inner scale */
+  .feature-card {
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, box-shadow;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow:
+      0 16px 48px -12px oklch(0.623 0.106 195.8 / 0.15),
+      0 4px 12px oklch(0.14 0.02 270 / 0.05);
+  }
 
-/* ================================================================== */
-/*  MICRO-ANIMATIONS & INTERACTION STATES                              */
-/* ================================================================== */
+  /* ================================================================== */
+  /*  MICRO-ANIMATIONS & INTERACTION STATES                              */
+  /* ================================================================== */
 
-/* 1. Button Micro-interactions (Scale & Press) */
-.btn-micro {
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-  will-change: transform;
-}
-.btn-micro:hover {
-  transform: scale(1.02);
-}
-.btn-micro:active {
-  transform: scale(0.97);
-}
+  /* 1. Button Micro-interactions (Scale & Press) */
+  .btn-micro {
+    transition:
+      transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.2s ease,
+      box-shadow 0.2s ease,
+      opacity 0.2s ease;
+    will-change: transform;
+  }
+  .btn-micro:hover {
+    transform: scale(1.02);
+  }
+  .btn-micro:active {
+    transform: scale(0.97);
+  }
 
-/* 2. Icon Nudge inside Buttons */
-.btn-micro .icon-micro-nudge {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.btn-micro:hover .icon-micro-nudge {
-  transform: translateX(3px) translateY(-1px);
-}
+  /* 2. Icon Nudge inside Buttons */
+  .btn-micro .icon-micro-nudge {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .btn-micro:hover .icon-micro-nudge {
+    transform: translateX(3px) translateY(-1px);
+  }
 
-/* 3. Image Parallax/Scale (Super slow and continuous on hover) */
-.img-micro-scale {
-  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
-}
-.group:hover .img-micro-scale, 
-.img-micro-scale:hover {
-  transform: scale(1.03);
-}
+  /* 3. Image Parallax/Scale (Super slow and continuous on hover) */
+  .img-micro-scale {
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .group:hover .img-micro-scale,
+  .img-micro-scale:hover {
+    transform: scale(1.03);
+  }
 
-/* 4. Staggered Fade In for Mega Menu items */
-.mega-item-stagger {
-  opacity: 0;
-  animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-/* Generate nth-child delays for smooth cascading effect */
-.mega-item-stagger:nth-child(1) { animation-delay: 0.05s; }
-.mega-item-stagger:nth-child(2) { animation-delay: 0.08s; }
-.mega-item-stagger:nth-child(3) { animation-delay: 0.11s; }
-.mega-item-stagger:nth-child(4) { animation-delay: 0.14s; }
-.mega-item-stagger:nth-child(5) { animation-delay: 0.17s; }
+  /* 4. Staggered Fade In for Mega Menu items */
+  .mega-item-stagger {
+    opacity: 0;
+    animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  /* Generate nth-child delays for smooth cascading effect */
+  .mega-item-stagger:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .mega-item-stagger:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+  .mega-item-stagger:nth-child(3) {
+    animation-delay: 0.11s;
+  }
+  .mega-item-stagger:nth-child(4) {
+    animation-delay: 0.14s;
+  }
+  .mega-item-stagger:nth-child(5) {
+    animation-delay: 0.17s;
+  }
 
-/* 5. Subtle Icon Rotate (for lists/mega-menus) */
-.icon-micro-rotate {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
-}
-.group:hover .icon-micro-rotate {
-  transform: scale(1.1) rotate(5deg);
-}
-
+  /* 5. Subtle Icon Rotate (for lists/mega-menus) */
+  .icon-micro-rotate {
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      color 0.2s ease;
+  }
+  .group:hover .icon-micro-rotate {
+    transform: scale(1.1) rotate(5deg);
+  }
 }

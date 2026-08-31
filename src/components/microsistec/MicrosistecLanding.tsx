@@ -27,9 +27,14 @@ import {
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useDemoModal } from "@/hooks/use-demo-modal";
-import { solutions, getIconComponent, blogPosts, testimonials } from "@/lib/data";
+import {
+  solutions,
+  getIconComponent,
+  blogPosts,
+  testimonials,
+} from "@/lib/data";
 
-const Testimonial = React.lazy(() => import('./Testimonial'));
+const Testimonial = React.lazy(() => import("./Testimonial"));
 
 /* -------------------------------------------------------------------------- */
 /*  NAV                                                                       */
@@ -73,7 +78,7 @@ export function Nav() {
   }, [isMobileOpen]);
 
   const toggleMenu = (menu: OpenMenu) => {
-    setOpenMenu(prev => prev === menu ? null : menu);
+    setOpenMenu((prev) => (prev === menu ? null : menu));
   };
 
   return (
@@ -92,10 +97,23 @@ export function Nav() {
             title="Microsistec - Marca Registrada"
             onClick={() => setOpenMenu(null)}
           >
-            <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Tecnologia e Inovação" width={32} height={32} fetchPriority="high" className="w-8 h-8 object-contain" />
+            <img
+              src="/icon.svg"
+              alt="Microsistec Logo"
+              title="Microsistec - Tecnologia e Inovação"
+              width={32}
+              height={32}
+              fetchPriority="high"
+              className="w-8 h-8 object-contain"
+            />
             <div className="flex items-baseline gap-0.5">
               Microsistec
-              <span className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+              <span
+                className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal"
+                title="Marca Registrada"
+              >
+                ®
+              </span>
             </div>
           </Link>
 
@@ -110,7 +128,12 @@ export function Nav() {
                 Soluções
                 <ChevronDown
                   className="w-3.5 h-3.5 transition-transform duration-200"
-                  style={{ transform: openMenu === "solucoes" ? "rotate(180deg)" : "rotate(0deg)" }}
+                  style={{
+                    transform:
+                      openMenu === "solucoes"
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)",
+                  }}
                 />
               </button>
             </div>
@@ -124,20 +147,30 @@ export function Nav() {
                 Planos
                 <ChevronDown
                   className="w-3.5 h-3.5 transition-transform duration-200"
-                  style={{ transform: openMenu === "planos" ? "rotate(180deg)" : "rotate(0deg)" }}
+                  style={{
+                    transform:
+                      openMenu === "planos" ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
                 />
               </button>
             </div>
 
-            <Link title="Novidades e Lançamentos" to="/novidades"
+            <Link
+              title="Novidades e Lançamentos"
+              to="/novidades"
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_novidades"
               data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition flex items-center gap-1.5"
             >
-              Novidades <span className="badge-pulse bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">Novo</span>
+              Novidades{" "}
+              <span className="badge-pulse bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">
+                Novo
+              </span>
             </Link>
-            <Link title="Sobre a Microsistec" to="/empresa"
+            <Link
+              title="Sobre a Microsistec"
+              to="/empresa"
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_sobre"
               data-gtm-location="header"
@@ -145,7 +178,9 @@ export function Nav() {
             >
               Sobre
             </Link>
-            <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog"
+            <Link
+              title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário"
+              to="/blog"
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_blog"
               data-gtm-location="header"
@@ -153,7 +188,9 @@ export function Nav() {
             >
               Blog
             </Link>
-            <Link title="Materiais Ricos e Gratuitos" to="/materiais"
+            <Link
+              title="Materiais Ricos e Gratuitos"
+              to="/materiais"
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_materiais"
               data-gtm-location="header"
@@ -165,7 +202,9 @@ export function Nav() {
 
           {/* CTAs à direita */}
           <div className="flex items-center justify-end gap-2 shrink-0">
-            <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
+            <a
+              title="Acessar o Sistema Imob Online"
+              href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
               data-gtm-cta="entrar_imobonline_header"
@@ -182,16 +221,24 @@ export function Nav() {
               data-gtm-modal-open="modal_demonstracao"
               className="btn-micro hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
             >
-              Falar com especialista <ArrowUpRight className="icon-micro-nudge w-3.5 h-3.5" />
+              Falar com especialista{" "}
+              <ArrowUpRight className="icon-micro-nudge w-3.5 h-3.5" />
             </button>
             <button
-              onClick={() => { setIsMobileOpen(!isMobileOpen); setOpenMenu(null); }}
+              onClick={() => {
+                setIsMobileOpen(!isMobileOpen);
+                setOpenMenu(null);
+              }}
               data-gtm-cta="menu_mobile_toggle"
               data-gtm-location="header"
               className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/8 transition cursor-pointer"
               aria-label="Toggle menu"
             >
-              {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -203,16 +250,40 @@ export function Nav() {
               {/* Col 1: Operação */}
               <div className="space-y-4">
                 <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Operação & Vendas</span>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Operação & Vendas
+                  </span>
                 </div>
                 <div className="space-y-2">
                   {[
-                    { slug: "crm", title: "CRM Imobiliário", desc: "Gestão operacional e base unificada", icon: Building2 },
-                    { slug: "app", title: "App de Atendimento", desc: "Mobilidade e agilidade na rua", icon: Smartphone },
-                    { slug: "funil", title: "Multi-Funil Kanban", desc: "Pipelines separados por processo", icon: LineChart },
-                    { slug: "rodizio", title: "Rodízio de Leads", desc: "Distribuição automática e justa", icon: Users }
-                  ].map(item => (
-                    <Link title="Conhecer solução" key={item.slug}
+                    {
+                      slug: "crm",
+                      title: "CRM Imobiliário",
+                      desc: "Gestão operacional e base unificada",
+                      icon: Building2,
+                    },
+                    {
+                      slug: "app",
+                      title: "App de Atendimento",
+                      desc: "Mobilidade e agilidade na rua",
+                      icon: Smartphone,
+                    },
+                    {
+                      slug: "funil",
+                      title: "Multi-Funil Kanban",
+                      desc: "Pipelines separados por processo",
+                      icon: LineChart,
+                    },
+                    {
+                      slug: "rodizio",
+                      title: "Rodízio de Leads",
+                      desc: "Distribuição automática e justa",
+                      icon: Users,
+                    },
+                  ].map((item) => (
+                    <Link
+                      title="Conhecer solução"
+                      key={item.slug}
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
@@ -222,8 +293,12 @@ export function Nav() {
                         <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-normal">{item.desc}</p>
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-normal">
+                          {item.desc}
+                        </p>
                       </div>
                     </Link>
                   ))}
@@ -233,15 +308,34 @@ export function Nav() {
               {/* Col 2: Presença Digital */}
               <div className="space-y-4">
                 <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Presença Digital</span>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Presença Digital
+                  </span>
                 </div>
                 <div className="space-y-2">
                   {[
-                    { slug: "sites-template", title: "Sites Express", desc: "Templates otimizados em 1 dia", icon: Globe },
-                    { slug: "sites-v8", title: "Sites Custom V8", desc: "Design exclusivo de alta performance", icon: Sparkles },
-                    { slug: "integracoes", title: "Integrações", desc: "WhatsApp API e portais integrados", icon: Workflow }
-                  ].map(item => (
-                    <Link title="Conhecer solução" key={item.slug}
+                    {
+                      slug: "sites-template",
+                      title: "Sites Express",
+                      desc: "Templates otimizados em 1 dia",
+                      icon: Globe,
+                    },
+                    {
+                      slug: "sites-v8",
+                      title: "Sites Custom V8",
+                      desc: "Design exclusivo de alta performance",
+                      icon: Sparkles,
+                    },
+                    {
+                      slug: "integracoes",
+                      title: "Integrações",
+                      desc: "WhatsApp API e portais integrados",
+                      icon: Workflow,
+                    },
+                  ].map((item) => (
+                    <Link
+                      title="Conhecer solução"
+                      key={item.slug}
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
@@ -251,8 +345,12 @@ export function Nav() {
                         <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-normal">{item.desc}</p>
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-normal">
+                          {item.desc}
+                        </p>
                       </div>
                     </Link>
                   ))}
@@ -262,13 +360,22 @@ export function Nav() {
               {/* Col 3: Inteligência Artificial */}
               <div className="space-y-4">
                 <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Inteligência Artificial</span>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Inteligência Artificial
+                  </span>
                 </div>
                 <div className="space-y-2">
                   {[
-                    { slug: "albert-ia", title: "Albert IA (SDR)", desc: "Conversa e agenda no WhatsApp 24/7", icon: Bot }
-                  ].map(item => (
-                    <Link title="Conhecer solução" key={item.slug}
+                    {
+                      slug: "albert-ia",
+                      title: "Albert IA (SDR)",
+                      desc: "Conversa e agenda no WhatsApp 24/7",
+                      icon: Bot,
+                    },
+                  ].map((item) => (
+                    <Link
+                      title="Conhecer solução"
+                      key={item.slug}
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
@@ -278,8 +385,12 @@ export function Nav() {
                         <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">{item.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-normal">{item.desc}</p>
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-normal">
+                          {item.desc}
+                        </p>
                       </div>
                     </Link>
                   ))}
@@ -289,7 +400,9 @@ export function Nav() {
               {/* Col 4: Financeiro */}
               <div className="space-y-4">
                 <div className="border-b border-[color:var(--brand-ink)]/8 pb-2">
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Financeiro</span>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Financeiro
+                  </span>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-start gap-3 p-2.5 rounded-xl text-[color:var(--brand-ink)]/35 cursor-not-allowed">
@@ -298,10 +411,16 @@ export function Nav() {
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <h4 className="font-bold text-base leading-none">Sistema de Locação</h4>
-                        <span className="badge-pulse text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 leading-none">Em breve</span>
+                        <h4 className="font-bold text-base leading-none">
+                          Sistema de Locação
+                        </h4>
+                        <span className="badge-pulse text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 leading-none">
+                          Em breve
+                        </span>
                       </div>
-                      <p className="text-sm text-muted-foreground/50 leading-normal">Contratos, reajustes e repasses imobiliários digitais</p>
+                      <p className="text-sm text-muted-foreground/50 leading-normal">
+                        Contratos, reajustes e repasses imobiliários digitais
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -310,7 +429,10 @@ export function Nav() {
 
             {/* Bottom Bar */}
             <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-sm text-muted-foreground">
-              <span>Tem alguma dúvida operacional ou deseja integrar canais específicos?</span>
+              <span>
+                Tem alguma dúvida operacional ou deseja integrar canais
+                específicos?
+              </span>
               <button
                 title="Falar com especialista"
                 onClick={openModal}
@@ -334,19 +456,25 @@ export function Nav() {
                   <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
                     <Building2 className="w-4 h-4 text-[color:var(--brand-orange)]" />
                   </div>
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">CRM Imobiliário</span>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    CRM Imobiliário
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-                  Planos desenhados para corretores independentes, imobiliárias em crescimento ou grandes redes com dezenas de filiais.
+                  Planos desenhados para corretores independentes, imobiliárias
+                  em crescimento ou grandes redes com dezenas de filiais.
                 </p>
                 <div>
-                  <Link title="Planos e Preços do CRM" to="/planos"
+                  <Link
+                    title="Planos e Preços do CRM"
+                    to="/planos"
                     onClick={() => setOpenMenu(null)}
                     data-gtm-cta="nav_ver_planos_crm"
                     data-gtm-location="mega_menu"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
-                    Ver tabela de preços do CRM <ArrowRight className="w-3.5 h-3.5" />
+                    Ver tabela de preços do CRM{" "}
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -357,36 +485,50 @@ export function Nav() {
                   <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
                     <Bot className="w-4 h-4 text-[color:var(--brand-orange)]" />
                   </div>
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">Albert IA (SDR)</span>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Albert IA (SDR)
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-                  Automatize o primeiro contato dos portais e Meta Ads no WhatsApp 24/7 com inteligência e qualificação financeira.
+                  Automatize o primeiro contato dos portais e Meta Ads no
+                  WhatsApp 24/7 com inteligência e qualificação financeira.
                 </p>
                 <div>
-                  <Link title="Planos e Preços da IA Albert" to="/planos-albert"
+                  <Link
+                    title="Planos e Preços da IA Albert"
+                    to="/planos-albert"
                     onClick={() => setOpenMenu(null)}
                     data-gtm-cta="nav_ver_planos_albert"
                     data-gtm-location="mega_menu"
                     className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
                   >
-                    Conhecer planos do Albert IA <ArrowRight className="w-3.5 h-3.5" />
+                    Conhecer planos do Albert IA{" "}
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
-
 
               {/* Promo Banner */}
               <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
                 <div>
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-orange)] mb-1 block">Atendimento</span>
-                  <h4 className="font-extrabold text-lg mb-2">Fale com um Especialista</h4>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-orange)] mb-1 block">
+                    Atendimento
+                  </span>
+                  <h4 className="font-extrabold text-lg mb-2">
+                    Fale com um Especialista
+                  </h4>
                   <p className="text-sm text-[color:var(--brand-sand)]/70 leading-relaxed">
-                    Fale com nosso especialista agora e tire suas dúvidas ou solicite uma simulação customizada para o tamanho da sua imobiliária.
+                    Fale com nosso especialista agora e tire suas dúvidas ou
+                    solicite uma simulação customizada para o tamanho da sua
+                    imobiliária.
                   </p>
                 </div>
                 <button
-                  onClick={() => { setOpenMenu(null); openModal(); }}
+                  onClick={() => {
+                    setOpenMenu(null);
+                    openModal();
+                  }}
                   data-gtm-cta="falar_especialista_promo_banner"
                   data-gtm-location="mega_menu"
                   data-gtm-modal-open="modal_demonstracao"
@@ -413,7 +555,6 @@ export function Nav() {
           {/* Bottom sheet */}
           <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 animate-fadeIn pointer-events-auto">
             <div className="bg-[color:var(--brand-sand)] rounded-t-[28px] shadow-2xl border-t border-[color:var(--brand-ink)]/8">
-
               {/* Header com pull bar e botão de fechar */}
               <div className="relative flex justify-center pt-3.5 pb-2">
                 {/* Pull bar */}
@@ -436,19 +577,25 @@ export function Nav() {
               </div>
 
               {/* Content */}
-              <div className="overflow-y-auto px-4 pb-2" style={{ maxHeight: "60vh" }}>
-
+              <div
+                className="overflow-y-auto px-4 pb-2"
+                style={{ maxHeight: "60vh" }}
+              >
                 {/* Soluções */}
-                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mt-1 mb-0.5">Soluções</p>
+                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mt-1 mb-0.5">
+                  Soluções
+                </p>
                 {solutions.map((sol) => {
                   const IconComp = getIconComponent(sol.iconName);
                   if (sol.ctaText === "Em Breve") return null;
                   return (
-                    <Link title="Conhecer solução" key={sol.slug}
+                    <Link
+                      title="Conhecer solução"
+                      key={sol.slug}
                       to="/solucoes/$slug"
                       params={{ slug: sol.slug }}
                       onClick={() => setIsMobileOpen(false)}
-                      data-gtm-cta={`mobile_nav_solucao_${sol.slug.replace(/-/g, '_')}`}
+                      data-gtm-cta={`mobile_nav_solucao_${sol.slug.replace(/-/g, "_")}`}
                       data-gtm-location="mobile_menu"
                       className="flex items-center gap-3.5 px-2 rounded-2xl hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline text-[color:var(--brand-ink)]"
                       style={{ minHeight: 52 }}
@@ -456,7 +603,9 @@ export function Nav() {
                       <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
                         <IconComp className="w-[18px] h-[18px] text-[color:var(--brand-orange)]" />
                       </div>
-                      <span className="text-[15px] font-semibold flex-1">{sol.title}</span>
+                      <span className="text-[15px] font-semibold flex-1">
+                        {sol.title}
+                      </span>
                       <ArrowRight className="w-4 h-4 text-[color:var(--brand-ink)]/25 shrink-0" />
                     </Link>
                   );
@@ -466,19 +615,34 @@ export function Nav() {
                 <div className="h-px bg-[color:var(--brand-ink)]/8 mx-1 my-2" />
 
                 {/* Outras páginas */}
-                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mb-0.5">Páginas</p>
-                {([
-                  { label: "Planos CRM", to: "/planos" },
-                  { label: "Albert IA", to: "/planos-albert" },
-                  { label: "Novidades", to: "/novidades" },
-                  { label: "Sobre nós", to: "/empresa" },
-                  { label: "Blog", to: "/blog" },
-                  { label: "Materiais gratuitos", to: "/materiais" },
-                ] as { label: string; to: "/planos" | "/planos-albert" | "/novidades" | "/empresa" | "/blog" | "/materiais" }[]).map((item) => (
-                  <Link title="Acessar link" key={item.to}
+                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mb-0.5">
+                  Páginas
+                </p>
+                {(
+                  [
+                    { label: "Planos CRM", to: "/planos" },
+                    { label: "Albert IA", to: "/planos-albert" },
+                    { label: "Novidades", to: "/novidades" },
+                    { label: "Sobre nós", to: "/empresa" },
+                    { label: "Blog", to: "/blog" },
+                    { label: "Materiais gratuitos", to: "/materiais" },
+                  ] as {
+                    label: string;
+                    to:
+                      | "/planos"
+                      | "/planos-albert"
+                      | "/novidades"
+                      | "/empresa"
+                      | "/blog"
+                      | "/materiais";
+                  }[]
+                ).map((item) => (
+                  <Link
+                    title="Acessar link"
+                    key={item.to}
                     to={item.to}
                     onClick={() => setIsMobileOpen(false)}
-                    data-gtm-cta={`mobile_nav_${item.to.replace(/\//g, '').replace(/-/g, '_')}`}
+                    data-gtm-cta={`mobile_nav_${item.to.replace(/\//g, "").replace(/-/g, "_")}`}
                     data-gtm-location="mobile_menu"
                     className="flex items-center gap-3.5 px-2 rounded-2xl text-[15px] font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline"
                     style={{ minHeight: 52 }}
@@ -500,10 +664,13 @@ export function Nav() {
                   className="btn-micro w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline border-none cursor-pointer group"
                   style={{ minHeight: 56 }}
                 >
-                  Falar com especialista <ArrowUpRight className="icon-micro-nudge w-4 h-4" />
+                  Falar com especialista{" "}
+                  <ArrowUpRight className="icon-micro-nudge w-4 h-4" />
                 </button>
                 <div className="flex gap-2.5">
-                  <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
+                  <a
+                    title="Acessar o Sistema Imob Online"
+                    href="https://imob.online/"
                     target="_blank"
                     rel="noreferrer"
                     data-gtm-cta="entrar_imobonline_mobile"
@@ -537,7 +704,11 @@ function Hero() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="hero" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero min-h-screen flex flex-col justify-between lg:h-auto">
+    <section
+      id="hero"
+      data-gtm-section="hero_dobra_1"
+      className="relative overflow-hidden bg-hero min-h-screen flex flex-col justify-between lg:h-auto"
+    >
       <div className="bg-grid absolute inset-0" />
       <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-14 md:pt-36 md:pb-20 flex-grow flex flex-col justify-center">
         {/* eyebrow */}
@@ -563,7 +734,11 @@ function Hero() {
               o jogo
             </span>
             <br />
-            Para quem já <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">vive</span> o futuro
+            Para quem já{" "}
+            <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">
+              vive
+            </span>{" "}
+            o futuro
           </h1>
 
           {/* proof badge */}
@@ -583,7 +758,13 @@ function Hero() {
         {/* sub + CTAs */}
         <div className="mt-8 lg:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start md:items-center">
           <p className="md:col-span-7 text-lg md:text-xl text-foreground/75 leading-relaxed">
-            Somos pioneiros em tecnologia imobiliária no Brasil. Hoje nossa empresa é focada em <strong>inteligência artificial</strong>. Entregamos CRM completo, site personalizado, aplicativo de atendimento e automações. Conheça também o <strong className="text-foreground">Albert IA</strong>, o seu novo assistente de vendas. Tenha tudo em um só lugar. Validado por 30 anos de experiência real.
+            Somos pioneiros em tecnologia imobiliária no Brasil. Hoje nossa
+            empresa é focada em <strong>inteligência artificial</strong>.
+            Entregamos CRM completo, site personalizado, aplicativo de
+            atendimento e automações. Conheça também o{" "}
+            <strong className="text-foreground">Albert IA</strong>, o seu novo
+            assistente de vendas. Tenha tudo em um só lugar. Validado por 30
+            anos de experiência real.
           </p>
           <div className="md:col-span-5 flex flex-col sm:flex-row flex-wrap gap-4 md:justify-end mt-2 md:mt-0">
             <button
@@ -594,7 +775,8 @@ function Hero() {
               data-gtm-modal-open="modal_demonstracao"
               className="cta-shimmer btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
             >
-              Falar com especialista <ArrowRight className="icon-micro-nudge w-4 h-4" />
+              Falar com especialista{" "}
+              <ArrowRight className="icon-micro-nudge w-4 h-4" />
             </button>
           </div>
         </div>
@@ -627,7 +809,9 @@ function Ticker() {
         <div className="marquee flex gap-10 py-3.5 whitespace-nowrap text-base">
           {row.map((t, i) => (
             <span key={i} className="inline-flex items-center gap-3">
-              <span className="font-serif-italic text-[color:var(--brand-orange)]">✦</span>
+              <span className="font-serif-italic text-[color:var(--brand-orange)]">
+                ✦
+              </span>
               {t}
             </span>
           ))}
@@ -648,10 +832,15 @@ function StatsStrip() {
     { n: "5 mil+", label: "Imobiliárias atendidas" },
   ];
   return (
-    <section id="resultados" data-gtm-section="resultados" className="mx-auto max-w-7xl px-6 py-14 md:py-20">
+    <section
+      id="resultados"
+      data-gtm-section="resultados"
+      className="mx-auto max-w-7xl px-6 py-14 md:py-20"
+    >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-xl leading-snug">
-          Pioneiros em trazer tecnologia para imobiliárias. Três décadas de estrada{" "}
+          Pioneiros em trazer tecnologia para imobiliárias. Três décadas de
+          estrada{" "}
           <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
             provam que sabemos
           </span>{" "}
@@ -663,9 +852,16 @@ function StatsStrip() {
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/8 border-y border-[color:var(--brand-ink)]/8">
         {stats.map((s) => (
-          <div key={s.label} className="bg-background py-7 md:py-9 px-5 md:px-6 text-center md:text-left">
-            <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">{s.n}</div>
-            <div className="text-sm text-muted-foreground mt-1.5 font-mono-ui">{s.label}</div>
+          <div
+            key={s.label}
+            className="bg-background py-7 md:py-9 px-5 md:px-6 text-center md:text-left"
+          >
+            <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">
+              {s.n}
+            </div>
+            <div className="text-sm text-muted-foreground mt-1.5 font-mono-ui">
+              {s.label}
+            </div>
           </div>
         ))}
       </div>
@@ -700,16 +896,22 @@ function Pillars() {
     },
   ];
   return (
-    <section id="produto" data-gtm-section="produto" className="relative bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10">
+    <section
+      id="produto"
+      data-gtm-section="produto"
+      className="relative bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10"
+    >
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
           <h2 className="md:col-span-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
             Sistema, Site e App,{" "}
-            <span className="font-serif-italic font-normal">em um único ecossistema</span>
+            <span className="font-serif-italic font-normal">
+              em um único ecossistema
+            </span>
           </h2>
           <p className="md:col-span-4 text-xl text-muted-foreground">
-            Tudo o que a imobiliária precisa para vender mais e ter previsibilidade, sem amarrar
-            cinco ferramentas com cuspe e arame.
+            Tudo o que a imobiliária precisa para vender mais e ter
+            previsibilidade, sem amarrar cinco ferramentas com cuspe e arame.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/15 border border-[color:var(--brand-ink)]/15 rounded-3xl overflow-hidden">
@@ -724,7 +926,9 @@ function Pillars() {
                   0{i + 1} / 04
                 </span>
               </div>
-              <h3 className="font-bold text-2xl tracking-tight mb-2">{it.title}</h3>
+              <h3 className="font-bold text-2xl tracking-tight mb-2">
+                {it.title}
+              </h3>
               <p className="text-base text-muted-foreground group-hover:text-[color:var(--brand-sand)]/70 leading-relaxed">
                 {it.desc}
               </p>
@@ -749,7 +953,11 @@ function Albert() {
     "Personalizável, não é IA genérica de prateleira",
   ];
   return (
-    <section id="albert" data-gtm-section="albert" className="relative overflow-hidden bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
+    <section
+      id="albert"
+      data-gtm-section="albert"
+      className="relative overflow-hidden bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]"
+    >
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
@@ -760,7 +968,9 @@ function Albert() {
       <div className="bg-grid absolute inset-0 opacity-20" />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="inline-flex items-center gap-2 mb-6">
-          <span className="stamp text-[color:var(--brand-orange)] text-sm">Albert IA · v2</span>
+          <span className="stamp text-[color:var(--brand-orange)] text-sm">
+            Albert IA · v2
+          </span>
           <span className="font-serif-italic text-[color:var(--brand-sand)]/60">
             conheça
           </span>
@@ -769,16 +979,30 @@ function Albert() {
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
               <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
-                Uma IA que <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">conhece</span> imobiliária,
-                não uma que <em className="font-serif-italic text-[color:var(--brand-sand)]/50">finge</em> conhecer
+                Uma IA que{" "}
+                <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+                  conhece
+                </span>{" "}
+                imobiliária, não uma que{" "}
+                <em className="font-serif-italic text-[color:var(--brand-sand)]/50">
+                  finge
+                </em>{" "}
+                conhecer
               </h2>
               <p className="text-xl text-[color:var(--brand-sand)]/70 mb-8 max-w-xl">
-                Chega de chatbot decorando frase. O <strong className="text-[color:var(--brand-sand)]">Albert</strong> é
-                montado sob medida para a sua imobiliária, tecnologia de ponta com coração humano.
+                Chega de chatbot decorando frase. O{" "}
+                <strong className="text-[color:var(--brand-sand)]">
+                  Albert
+                </strong>{" "}
+                é montado sob medida para a sua imobiliária, tecnologia de ponta
+                com coração humano.
               </p>
               <ul className="space-y-3 mb-8 lg:mb-0">
                 {features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-[color:var(--brand-sand)]/85">
+                  <li
+                    key={f}
+                    className="flex items-start gap-3 text-[color:var(--brand-sand)]/85"
+                  >
                     <CheckCircle2 className="w-5 h-5 mt-0.5 text-[color:var(--brand-orange)] shrink-0" />
                     <span>{f}</span>
                   </li>
@@ -794,11 +1018,15 @@ function Albert() {
                 data-gtm-modal-open="modal_demonstracao"
                 className="btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-semibold hover:opacity-90 decoration-none no-underline text-center border-none cursor-pointer group"
               >
-                <span className="hidden sm:inline">Converse com o Albert agora mesmo</span>
+                <span className="hidden sm:inline">
+                  Converse com o Albert agora mesmo
+                </span>
                 <span className="sm:hidden">Falar com o Albert no zap</span>
                 <ArrowRight className="icon-micro-nudge w-4 h-4 shrink-0" />
               </button>
-              <Link title="Planos e Preços da IA Albert" to="/planos-albert"
+              <Link
+                title="Planos e Preços da IA Albert"
+                to="/planos-albert"
                 data-gtm-cta="ver_planos_albert"
                 data-gtm-location="albert"
                 className="btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full border border-[color:var(--brand-sand)]/25 px-6 py-3.5 font-medium hover:bg-[color:var(--brand-sand)]/10"
@@ -829,7 +1057,9 @@ function AlbertChat() {
               A
             </div>
             <div>
-              <div className="font-semibold text-base leading-tight">Albert</div>
+              <div className="font-semibold text-base leading-tight">
+                Albert
+              </div>
               <div className="font-mono-ui text-sm font-medium text-[color:var(--brand-sand)]/80">
                 SDR · atende agora
               </div>
@@ -842,21 +1072,28 @@ function AlbertChat() {
 
         <div className="p-5 space-y-3 text-base flex-1 flex flex-col justify-between">
           <div className="space-y-3 flex-1 flex flex-col justify-center">
-            <Bubble who="lead">Oi, vi o anúncio do 2 quartos na Av. Paulista 👋</Bubble>
-            <Bubble who="albert">
-              Oi! Que bom que chegou. Posso te perguntar se é para morar ou investir?
+            <Bubble who="lead">
+              Oi, vi o anúncio do 2 quartos na Av. Paulista 👋
             </Bubble>
-            <Bubble who="lead">Pra morar. Ainda não fiz aprovação de crédito.</Bubble>
             <Bubble who="albert">
-              Tranquilo. Já te passo pra <strong>Camila</strong>, especialista na Paulista. Sábado às
-              10h pra visitar funciona?
+              Oi! Que bom que chegou. Posso te perguntar se é para morar ou
+              investir?
+            </Bubble>
+            <Bubble who="lead">
+              Pra morar. Ainda não fiz aprovação de crédito.
+            </Bubble>
+            <Bubble who="albert">
+              Tranquilo. Já te passo pra <strong>Camila</strong>, especialista
+              na Paulista. Sábado às 10h pra visitar funciona?
             </Bubble>
             <Bubble who="lead">Funciona 🤝</Bubble>
           </div>
 
           <div className="mt-4 pt-3.5 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-sm text-muted-foreground font-medium">
             <span>qualificado e repassado em 38s</span>
-            <span className="text-[color:var(--brand-orange)] font-bold">+ CRM ✓</span>
+            <span className="text-[color:var(--brand-orange)] font-bold">
+              + CRM ✓
+            </span>
           </div>
         </div>
       </div>
@@ -864,7 +1101,13 @@ function AlbertChat() {
   );
 }
 
-function Bubble({ who, children }: { who: "lead" | "albert"; children: React.ReactNode }) {
+function Bubble({
+  who,
+  children,
+}: {
+  who: "lead" | "albert";
+  children: React.ReactNode;
+}) {
   if (who === "lead") {
     return (
       <div className="flex justify-end">
@@ -895,7 +1138,11 @@ function Funil() {
     "Processo de vendas imobiliária ponta-a-ponta",
   ];
   return (
-    <section id="funil" data-gtm-section="funil" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <section
+      id="funil"
+      data-gtm-section="funil"
+      className="mx-auto max-w-7xl px-6 py-24 md:py-32"
+    >
       <span className="font-serif-italic text-[#c2410c] text-2xl mb-4 block">
         sobre tempo
       </span>
@@ -906,8 +1153,8 @@ function Funil() {
               Você está perdendo lead enquanto procura ele no caderno
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Controle do atendimento + script bem executado = mais vendas. A gente organiza o
-              primeiro pra você poder focar no segundo.
+              Controle do atendimento + script bem executado = mais vendas. A
+              gente organiza o primeiro pra você poder focar no segundo.
             </p>
           </div>
           <ul className="space-y-3">
@@ -943,7 +1190,9 @@ function FunnelVisual() {
           <Building2 className="w-4 h-4" />
           <span className="font-mono-ui text-base font-medium">
             imob.online / funil{" "}
-            <span className="text-xs text-muted-foreground font-normal opacity-80">(exemplo ilustrativo)</span>
+            <span className="text-xs text-muted-foreground font-normal opacity-80">
+              (exemplo ilustrativo)
+            </span>
           </span>
         </div>
         <span className="font-mono-ui text-base text-emerald-700 font-bold">
@@ -955,12 +1204,17 @@ function FunnelVisual() {
           <div key={s.label}>
             <div className="flex items-center justify-between text-base mb-1.5">
               <span className="text-muted-foreground">{s.label}</span>
-              <span className="font-semibold tabular-nums">{s.value.toLocaleString("pt-BR")}</span>
+              <span className="font-semibold tabular-nums">
+                {s.value.toLocaleString("pt-BR")}
+              </span>
             </div>
             <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${i === stages.length - 1 ? "text-[color:var(--brand-ink)]" : "text-[color:var(--brand-sand)]"
-                  }`}
+                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${
+                  i === stages.length - 1
+                    ? "text-[color:var(--brand-ink)]"
+                    : "text-[color:var(--brand-sand)]"
+                }`}
                 style={{
                   width: s.w,
                   background:
@@ -984,12 +1238,28 @@ function FunnelVisual() {
 /* -------------------------------------------------------------------------- */
 function Ecosystem() {
   const items = [
-    { icon: Globe, title: "Sites para imobiliária", desc: "Templates rápidos, prontos pra ranquear no Google da sua cidade." },
-    { icon: MessageSquare, title: "Portais e WhatsApp", desc: "Viva Real, ZAP, OLX e WhatsApp integrados, publica uma vez, aparece em tudo." },
-    { icon: ShieldCheck, title: "LGPD e segurança", desc: "Infra robusta, 99.9% de uptime, backups diários, você dorme tranquilo." },
+    {
+      icon: Globe,
+      title: "Sites para imobiliária",
+      desc: "Templates rápidos, prontos pra ranquear no Google da sua cidade.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Portais e WhatsApp",
+      desc: "Viva Real, ZAP, OLX e WhatsApp integrados, publica uma vez, aparece em tudo.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "LGPD e segurança",
+      desc: "Infra robusta, 99.9% de uptime, backups diários, você dorme tranquilo.",
+    },
   ];
   return (
-    <section id="ecosystem" data-gtm-section="ecosistema" className="border-y border-[color:var(--brand-ink)]/8">
+    <section
+      id="ecosystem"
+      data-gtm-section="ecosistema"
+      className="border-y border-[color:var(--brand-ink)]/8"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
           {items.map((it) => (
@@ -998,8 +1268,12 @@ function Ecosystem() {
               className="rounded-2xl bg-[color:var(--brand-sand)]/40 border border-[color:var(--brand-ink)]/7 p-7 hover:bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300"
             >
               <it.icon className="w-5 h-5 text-[color:var(--brand-orange)] mb-5" />
-              <h3 className="font-bold text-xl tracking-tight mb-2">{it.title}</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">{it.desc}</p>
+              <h3 className="font-bold text-xl tracking-tight mb-2">
+                {it.title}
+              </h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                {it.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -1018,19 +1292,33 @@ function Ecosystem() {
 export function Blog() {
   const posts = blogPosts.slice(0, 3);
   return (
-    <section id="blog" data-gtm-section="blog" className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:py-32">
+    <section
+      id="blog"
+      data-gtm-section="blog"
+      className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:py-32"
+    >
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-2xl">
-          <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">Leitura</span>{" "}
+          <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+            Leitura
+          </span>{" "}
           rápida pra quem vende imóvel
         </h2>
-        <Link title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário" to="/blog" data-gtm-cta="ver_todos_blog" data-gtm-location="blog" className="inline-flex items-center gap-1.5 text-base font-medium hover:opacity-70">
+        <Link
+          title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário"
+          to="/blog"
+          data-gtm-cta="ver_todos_blog"
+          data-gtm-location="blog"
+          className="inline-flex items-center gap-1.5 text-base font-medium hover:opacity-70"
+        >
           Ver todos <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {posts.map((p) => (
-          <Link title="Ler artigo no Blog" key={p.id}
+          <Link
+            title="Ler artigo no Blog"
+            key={p.id}
             to="/blog/$slug"
             params={{ slug: p.slug }}
             data-gtm-cta="ler_artigo_blog"
@@ -1052,7 +1340,8 @@ export function Blog() {
                 decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
                 }}
               />
             </div>
@@ -1076,7 +1365,11 @@ export function CTA() {
   const { openModal } = useDemoModal();
 
   return (
-    <section id="demo" data-gtm-section="cta_demonstracao" className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+    <section
+      id="demo"
+      data-gtm-section="cta_demonstracao"
+      className="mx-auto max-w-7xl px-6 pb-16 md:pb-24"
+    >
       <div className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[color:var(--brand-ink)] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-8 md:p-16 shadow-elev">
         <div className="bg-grid absolute inset-0 opacity-25" />
         <div
@@ -1089,10 +1382,16 @@ export function CTA() {
               feito por gente que conhece de imobiliária de verdade
             </span>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
-              Bora vender mais, <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">de verdade</span>?
+              Bora vender mais,{" "}
+              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+                de verdade
+              </span>
+              ?
             </h2>
             <p className="text-xl text-[color:var(--brand-sand)]/70 max-w-xl leading-relaxed">
-              Surpreenda-se com o atendimento da nossa Inteligência Artificial. Experimente na prática e decida no seu tempo como ela pode acelerar as vendas da sua imobiliária.
+              Surpreenda-se com o atendimento da nossa Inteligência Artificial.
+              Experimente na prática e decida no seu tempo como ela pode
+              acelerar as vendas da sua imobiliária.
             </p>
           </div>
           <div className="md:col-span-4 flex flex-col gap-3 w-full">
@@ -1119,22 +1418,47 @@ export function CTA() {
 export function Footer() {
   const { openModal } = useDemoModal();
   return (
-    <footer data-gtm-location="rodape" className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20">
+    <footer
+      data-gtm-location="rodape"
+      className="border-t border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20"
+    >
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
           <div className="sm:col-span-2 lg:col-span-3">
-            <Link to="/" data-gtm-cta="home_logo_rodape" data-gtm-location="rodape" className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity" title="Microsistec - Marca Registrada">
-              <img src="/icon.svg" alt="Microsistec Logo" title="Microsistec - Soluções em Tecnologia" width={32} height={32} loading="lazy" decoding="async" className="w-8 h-8 object-contain" />
+            <Link
+              to="/"
+              data-gtm-cta="home_logo_rodape"
+              data-gtm-location="rodape"
+              className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] mb-4 hover:opacity-85 transition-opacity"
+              title="Microsistec - Marca Registrada"
+            >
+              <img
+                src="/icon.svg"
+                alt="Microsistec Logo"
+                title="Microsistec - Soluções em Tecnologia"
+                width={32}
+                height={32}
+                loading="lazy"
+                decoding="async"
+                className="w-8 h-8 object-contain"
+              />
               <div className="flex items-baseline gap-0.5">
                 Microsistec
-                <span className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal" title="Marca Registrada">®</span>
+                <span
+                  className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal"
+                  title="Marca Registrada"
+                >
+                  ®
+                </span>
               </div>
             </Link>
             <p className="text-muted-foreground text-base leading-relaxed max-w-sm">
-              Proptech brasileira desde 1994. CRM, sites, app de atendimento e Albert IA
-              num ecossistema só para imobiliárias de verdade.
+              Proptech brasileira desde 1994. CRM, sites, app de atendimento e
+              Albert IA num ecossistema só para imobiliárias de verdade.
             </p>
-            <a title="Acessar o Sistema Imob Online" href="https://imob.online/"
+            <a
+              title="Acessar o Sistema Imob Online"
+              href="https://imob.online/"
               target="_blank"
               rel="noreferrer"
               data-gtm-cta="entrar_imobonline_rodape"
@@ -1150,12 +1474,41 @@ export function Footer() {
             className="sm:col-span-1 lg:col-span-2"
             title="Soluções"
             links={[
-              { label: "CRM Imobiliário", to: "/solucoes/$slug", params: { slug: "crm" }, gtmCta: "nav_rodape_crm" },
-              { label: "Albert IA", to: "/solucoes/$slug", params: { slug: "albert-ia" }, gtmCta: "nav_rodape_albert_ia" },
-              { label: "Planos Albert IA", to: "/planos-albert", gtmCta: "nav_rodape_planos_albert_ia" },
-              { label: "App de Atendimento", to: "/solucoes/$slug", params: { slug: "app" }, gtmCta: "nav_rodape_app" },
-              { label: "Rodízio de Atendimento", to: "/solucoes/$slug", params: { slug: "rodizio" }, gtmCta: "nav_rodape_rodizio" },
-              { label: "Sites Customizados V8", to: "/solucoes/$slug", params: { slug: "sites-v8" }, gtmCta: "nav_rodape_sites_v8" },
+              {
+                label: "CRM Imobiliário",
+                to: "/solucoes/$slug",
+                params: { slug: "crm" },
+                gtmCta: "nav_rodape_crm",
+              },
+              {
+                label: "Albert IA",
+                to: "/solucoes/$slug",
+                params: { slug: "albert-ia" },
+                gtmCta: "nav_rodape_albert_ia",
+              },
+              {
+                label: "Planos Albert IA",
+                to: "/planos-albert",
+                gtmCta: "nav_rodape_planos_albert_ia",
+              },
+              {
+                label: "App de Atendimento",
+                to: "/solucoes/$slug",
+                params: { slug: "app" },
+                gtmCta: "nav_rodape_app",
+              },
+              {
+                label: "Rodízio de Atendimento",
+                to: "/solucoes/$slug",
+                params: { slug: "rodizio" },
+                gtmCta: "nav_rodape_rodizio",
+              },
+              {
+                label: "Sites Customizados V8",
+                to: "/solucoes/$slug",
+                params: { slug: "sites-v8" },
+                gtmCta: "nav_rodape_sites_v8",
+              },
             ]}
           />
           <FooterCol
@@ -1163,38 +1516,102 @@ export function Footer() {
             title="Empresa"
             links={[
               { label: "Sobre", to: "/empresa", gtmCta: "nav_rodape_sobre" },
-              { label: "Novidades", to: "/novidades", gtmCta: "nav_rodape_novidades" },
+              {
+                label: "Novidades",
+                to: "/novidades",
+                gtmCta: "nav_rodape_novidades",
+              },
               { label: "Planos", to: "/planos", gtmCta: "nav_rodape_planos" },
               { label: "Blog", to: "/blog", gtmCta: "nav_rodape_blog" },
-              { label: "Materiais", to: "/materiais", gtmCta: "nav_rodape_materiais" },
-              { label: "Falar no WhatsApp", onClick: openModal, gtmCta: "nav_rodape_falar_whatsapp" },
-              { label: "Política de Privacidade", to: "/politica-de-privacidade", gtmCta: "nav_rodape_politica_privacidade" },
-              { label: "Política de Cookies", to: "/politica-de-cookies", gtmCta: "nav_rodape_politica_cookies" },
-              { label: "Termos de Uso", to: "/termos-de-uso", gtmCta: "nav_rodape_termos_uso" },
+              {
+                label: "Materiais",
+                to: "/materiais",
+                gtmCta: "nav_rodape_materiais",
+              },
+              {
+                label: "Falar no WhatsApp",
+                onClick: openModal,
+                gtmCta: "nav_rodape_falar_whatsapp",
+              },
+              {
+                label: "Política de Privacidade",
+                to: "/politica-de-privacidade",
+                gtmCta: "nav_rodape_politica_privacidade",
+              },
+              {
+                label: "Política de Cookies",
+                to: "/politica-de-cookies",
+                gtmCta: "nav_rodape_politica_cookies",
+              },
+              {
+                label: "Termos de Uso",
+                to: "/termos-de-uso",
+                gtmCta: "nav_rodape_termos_uso",
+              },
             ]}
           />
           <FooterCol
             className="sm:col-span-1 lg:col-span-3"
             title="Contato"
             links={[
-              { label: "Fale Conosco", to: "/contato", gtmCta: "nav_rodape_fale_conosco" },
-              { label: "financeiro@microsistec.com.br", to: "mailto:financeiro@microsistec.com.br", gtmCta: "nav_rodape_email_financeiro" },
-              { label: "suporte@microsistec.com.br", to: "mailto:suporte@microsistec.com.br", gtmCta: "nav_rodape_email_suporte" },
+              {
+                label: "Fale Conosco",
+                to: "/contato",
+                gtmCta: "nav_rodape_fale_conosco",
+              },
+              {
+                label: "financeiro@microsistec.com.br",
+                to: "mailto:financeiro@microsistec.com.br",
+                gtmCta: "nav_rodape_email_financeiro",
+              },
+              {
+                label: "suporte@microsistec.com.br",
+                to: "mailto:suporte@microsistec.com.br",
+                gtmCta: "nav_rodape_email_suporte",
+              },
             ]}
           />
           <FooterCol
             className="sm:col-span-1 lg:col-span-2"
             title="Redes sociais"
             links={[
-              { label: <span className="flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</span>, to: "https://www.facebook.com/Microsistec/", gtmCta: "nav_rodape_facebook" },
-              { label: <span className="flex items-center gap-2"><Youtube className="w-4 h-4" /> Youtube</span>, to: "https://www.youtube.com/c/microsistec", gtmCta: "nav_rodape_youtube" },
-              { label: <span className="flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</span>, to: "https://www.instagram.com/microsistec.com.br", gtmCta: "nav_rodape_instagram" },
+              {
+                label: (
+                  <span className="flex items-center gap-2">
+                    <Facebook className="w-4 h-4" /> Facebook
+                  </span>
+                ),
+                to: "https://www.facebook.com/Microsistec/",
+                gtmCta: "nav_rodape_facebook",
+              },
+              {
+                label: (
+                  <span className="flex items-center gap-2">
+                    <Youtube className="w-4 h-4" /> Youtube
+                  </span>
+                ),
+                to: "https://www.youtube.com/c/microsistec",
+                gtmCta: "nav_rodape_youtube",
+              },
+              {
+                label: (
+                  <span className="flex items-center gap-2">
+                    <Instagram className="w-4 h-4" /> Instagram
+                  </span>
+                ),
+                to: "https://www.instagram.com/microsistec.com.br",
+                gtmCta: "nav_rodape_instagram",
+              },
             ]}
           />
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-[color:var(--brand-ink)]/8 text-sm text-muted-foreground font-mono-ui">
-          <span>© {new Date().getFullYear()} Microsistec · feito no Brasil</span>
-          <span className="font-serif-italic font-sans text-base">com Albert IA dentro</span>
+          <span>
+            © {new Date().getFullYear()} Microsistec · feito no Brasil
+          </span>
+          <span className="font-serif-italic font-sans text-base">
+            com Albert IA dentro
+          </span>
         </div>
       </div>
       <div style={{ display: "none" }} aria-hidden="true">
@@ -1210,11 +1627,17 @@ export function Footer() {
 function FooterCol({
   className,
   title,
-  links
+  links,
 }: {
   className?: string;
   title: string;
-  links: { label: React.ReactNode; to?: string; params?: any; onClick?: () => void; gtmCta?: string }[]
+  links: {
+    label: React.ReactNode;
+    to?: string;
+    params?: any;
+    onClick?: () => void;
+    gtmCta?: string;
+  }[];
 }) {
   return (
     <div className={className}>
@@ -1223,15 +1646,35 @@ function FooterCol({
         {links.map((link, idx) => (
           <li key={idx}>
             {link.onClick ? (
-              <button onClick={link.onClick} data-gtm-cta={link.gtmCta} data-gtm-location="rodape" className="hover:text-[color:var(--brand-orange)] transition cursor-pointer bg-transparent border-none p-0 text-left font-[inherit] text-[inherit]">
+              <button
+                onClick={link.onClick}
+                data-gtm-cta={link.gtmCta}
+                data-gtm-location="rodape"
+                className="hover:text-[color:var(--brand-orange)] transition cursor-pointer bg-transparent border-none p-0 text-left font-[inherit] text-[inherit]"
+              >
                 {link.label}
               </button>
-            ) : link.to?.startsWith("http") || link.to?.startsWith("#") || link.to?.startsWith("/#") ? (
-              <a title="Acessar link" href={link.to} data-gtm-cta={link.gtmCta} data-gtm-location="rodape" className="hover:text-[color:var(--brand-orange)] transition">
+            ) : link.to?.startsWith("http") ||
+              link.to?.startsWith("#") ||
+              link.to?.startsWith("/#") ? (
+              <a
+                title="Acessar link"
+                href={link.to}
+                data-gtm-cta={link.gtmCta}
+                data-gtm-location="rodape"
+                className="hover:text-[color:var(--brand-orange)] transition"
+              >
                 {link.label}
               </a>
             ) : link.to ? (
-              <Link title="Acessar link" to={link.to} params={link.params} data-gtm-cta={link.gtmCta} data-gtm-location="rodape" className="hover:text-[color:var(--brand-orange)] transition cursor-pointer">
+              <Link
+                title="Acessar link"
+                to={link.to}
+                params={link.params}
+                data-gtm-cta={link.gtmCta}
+                data-gtm-location="rodape"
+                className="hover:text-[color:var(--brand-orange)] transition cursor-pointer"
+              >
                 {link.label}
               </Link>
             ) : null}

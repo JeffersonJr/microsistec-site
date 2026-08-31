@@ -10,7 +10,10 @@ export const Route = createFileRoute("/")({
         content:
           "Microsistec une CRM, site, app e o Albert IA, a inteligência artificial sob medida para imobiliárias que querem vender mais e atender melhor.",
       },
-      { property: "og:title", content: "Microsistec - Tecnologia + IA para Imobiliárias" },
+      {
+        property: "og:title",
+        content: "Microsistec - Tecnologia + IA para Imobiliárias",
+      },
       {
         property: "og:description",
         content:

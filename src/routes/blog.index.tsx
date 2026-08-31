@@ -31,7 +31,7 @@ function BlogIndex() {
     "Gestão imobiliária",
     "Inovação",
     "Marketing Imobiliário",
-    "Mercado Imobiliário"
+    "Mercado Imobiliário",
   ];
 
   // Filter posts
@@ -49,7 +49,11 @@ function BlogIndex() {
 
       <main className="pb-24">
         {/* Blog Header Hero */}
-        <section id="hero_blog" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[color:var(--brand-ink)]/10">
+        <section
+          id="hero_blog"
+          data-gtm-section="hero_dobra_1"
+          className="relative overflow-hidden bg-hero pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[color:var(--brand-ink)]/10"
+        >
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-4">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -63,13 +67,19 @@ function BlogIndex() {
               </span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-lg mx-auto leading-relaxed">
-              Descubra estratégias práticas de SEO local, inteligência artificial, gestão comercial e vendas com o olhar de quem tem trinta anos de mercado.
+              Descubra estratégias práticas de SEO local, inteligência
+              artificial, gestão comercial e vendas com o olhar de quem tem
+              trinta anos de mercado.
             </p>
           </div>
         </section>
 
         {/* Filters and Search Strip */}
-        <section id="filtros_blog" data-gtm-section="filtros_blog" className="mx-auto max-w-7xl px-6 mt-12 mb-8">
+        <section
+          id="filtros_blog"
+          data-gtm-section="filtros_blog"
+          className="mx-auto max-w-7xl px-6 mt-12 mb-8"
+        >
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between pb-6 border-b border-[color:var(--brand-ink)]/10">
             {/* Tag Pills */}
             <div className="flex flex-wrap gap-2 w-full md:w-auto">
@@ -77,7 +87,7 @@ function BlogIndex() {
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
-                  data-gtm-cta={`filtro_tag_blog_${tag.toLowerCase().replace(/ /g, '_')}`}
+                  data-gtm-cta={`filtro_tag_blog_${tag.toLowerCase().replace(/ /g, "_")}`}
                   data-gtm-location="filtros_blog"
                   className={`px-3 py-1.5 rounded-full text-sm font-medium transition cursor-pointer border ${
                     selectedTag === tag
@@ -105,11 +115,17 @@ function BlogIndex() {
         </section>
 
         {/* Blog Post List */}
-        <section id="lista_blog" data-gtm-section="lista_blog" className="mx-auto max-w-7xl px-6">
+        <section
+          id="lista_blog"
+          data-gtm-section="lista_blog"
+          className="mx-auto max-w-7xl px-6"
+        >
           {filteredPosts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Link title="Ler artigo no Blog" key={post.id}
+                <Link
+                  title="Ler artigo no Blog"
+                  key={post.id}
                   to="/blog/$slug"
                   params={{ slug: post.slug }}
                   data-gtm-cta="ler_artigo_blog"
@@ -122,7 +138,7 @@ function BlogIndex() {
                     </span>
                     <span>{post.date}</span>
                   </div>
-                  
+
                   <div className="aspect-[16/10] rounded-2xl mb-5 overflow-hidden border border-[color:var(--brand-ink)]/10">
                     <img
                       src={post.imageUrl}
@@ -134,15 +150,16 @@ function BlogIndex() {
                       width={800}
                       height={500}
                       onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
+                        e.currentTarget.src =
+                          "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
                       }}
                     />
                   </div>
-                  
+
                   <h3 className="font-bold text-xl tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-sm text-muted-foreground mt-3 line-clamp-3 leading-relaxed">
                     {post.excerpt}
                   </p>
@@ -158,7 +175,9 @@ function BlogIndex() {
             </div>
           ) : (
             <div className="text-center py-20 border border-dashed border-[color:var(--brand-ink)]/15 rounded-3xl space-y-2">
-              <h3 className="font-bold text-xl text-foreground">Nenhuma matéria encontrada</h3>
+              <h3 className="font-bold text-xl text-foreground">
+                Nenhuma matéria encontrada
+              </h3>
               <p className="text-base text-muted-foreground">
                 Tente redefinir sua busca ou filtrar por outra categoria.
               </p>

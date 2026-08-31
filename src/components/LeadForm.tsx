@@ -7,7 +7,11 @@ import { useLocation } from "@tanstack/react-router";
  * Usa o hook `useLeadSubmit` para enviar dados ao ClickUp
  * e abrir o WhatsApp automaticamente.
  */
-export function LeadForm() {
+interface LeadFormProps {
+  origem?: string;
+}
+
+export function LeadForm({ origem }: LeadFormProps = {}) {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const { submitLead, isLoading, error } = useLeadSubmit();
@@ -15,7 +19,7 @@ export function LeadForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await submitLead({ nome, telefone, email: "", cnpj: "" });
+    await submitLead({ nome, telefone, email: "", cnpj: "", origem: origem || `Página: ${location.pathname}` });
     // Limpa o formulário após sucesso (o WhatsApp já foi aberto pelo hook)
     if (!error) {
       setNome("");
@@ -24,10 +28,10 @@ export function LeadForm() {
   };
 
   return (
-    <form 
+    <form
       data-gtm-form="captura_generica"
       data-form-page={location.pathname}
-      onSubmit={handleSubmit} 
+      onSubmit={handleSubmit}
       className="flex flex-col gap-4 max-w-md"
     >
       <h3 className="text-xl font-semibold">Fale com um especialista</h3>
@@ -56,9 +60,7 @@ export function LeadForm() {
         className="rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
       />
 
-      {error && (
-        <p className="text-sm text-red-500">{error}</p>
-      )}
+      {error && <p className="text-sm text-red-500">{error}</p>}
 
       <button
         type="submit"

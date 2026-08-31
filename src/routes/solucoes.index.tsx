@@ -4,7 +4,7 @@ import { solutions, getIconComponent } from "@/lib/data";
 import { ArrowRight, ChevronRight, Users, Building2, Zap } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/solucoes/")(({
+export const Route = createFileRoute("/solucoes/")({
   head: () => ({
     meta: [
       { title: "Soluções - Microsistec" },
@@ -16,18 +16,21 @@ export const Route = createFileRoute("/solucoes/")(({
     ],
   }),
   component: SolucoesIndex,
-}));
+});
 
 const categoryBadge: Record<string, { label: string; color: string }> = {
-  crm:              { label: "CRM",         color: "bg-blue-50 text-blue-700" },
-  app:              { label: "Mobile",      color: "bg-violet-50 text-violet-700" },
-  funil:            { label: "Pipeline",    color: "bg-indigo-50 text-indigo-700" },
-  integracoes:      { label: "Integrações", color: "bg-emerald-50 text-emerald-700" },
-  "albert-ia":      { label: "IA",          color: "bg-amber-50 text-amber-700" },
-  "sites-template": { label: "Sites",       color: "bg-rose-50 text-rose-700" },
-  "sites-v8":       { label: "Sites Pro",   color: "bg-rose-50 text-rose-700" },
-  rodizio:          { label: "Atendimento", color: "bg-cyan-50 text-cyan-700" },
-  locacao:          { label: "Locação",     color: "bg-orange-50 text-orange-700" },
+  crm: { label: "CRM", color: "bg-blue-50 text-blue-700" },
+  app: { label: "Mobile", color: "bg-violet-50 text-violet-700" },
+  funil: { label: "Pipeline", color: "bg-indigo-50 text-indigo-700" },
+  integracoes: {
+    label: "Integrações",
+    color: "bg-emerald-50 text-emerald-700",
+  },
+  "albert-ia": { label: "IA", color: "bg-amber-50 text-amber-700" },
+  "sites-template": { label: "Sites", color: "bg-rose-50 text-rose-700" },
+  "sites-v8": { label: "Sites Pro", color: "bg-rose-50 text-rose-700" },
+  rodizio: { label: "Atendimento", color: "bg-cyan-50 text-cyan-700" },
+  locacao: { label: "Locação", color: "bg-orange-50 text-orange-700" },
 };
 
 function SolucoesIndex() {
@@ -45,7 +48,9 @@ function SolucoesIndex() {
 
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
-              <Link title="Página Inicial da Microsistec" to="/"
+              <Link
+                title="Página Inicial da Microsistec"
+                to="/"
                 className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground"
               >
                 Home
@@ -61,12 +66,16 @@ function SolucoesIndex() {
                 Ecossistema Completo
               </span>
               <h1 className="font-extrabold tracking-[-0.045em] leading-[0.97] text-[clamp(2.4rem,5.5vw,4.2rem)]">
-                Tudo que sua imobiliária<br />
-                precisa, <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">num só lugar</span>
+                Tudo que sua imobiliária
+                <br />
+                precisa,{" "}
+                <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+                  num só lugar
+                </span>
               </h1>
               <p className="text-xl md:text-2xl text-foreground/65 leading-relaxed max-w-xl">
-                Tecnologia pioneira para o mercado imobiliário brasileiro desde 1994.
-                Conheça cada solução do nosso ecossistema integrado.
+                Tecnologia pioneira para o mercado imobiliário brasileiro desde
+                1994. Conheça cada solução do nosso ecossistema integrado.
               </p>
             </div>
           </div>
@@ -76,14 +85,25 @@ function SolucoesIndex() {
         <section className="border-b border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-ink)]">
           <div className="mx-auto max-w-7xl px-6 py-6 grid grid-cols-3 divide-x divide-[color:var(--brand-sand)]/10">
             {[
-              { icon: Building2, value: `${activeSolutions.length}`, label: "Soluções integradas" },
-              { icon: Users,     value: "1.2K",                      label: "Imobiliárias ativas" },
-              { icon: Zap,       value: "30+",                       label: "Anos de experiência" },
+              {
+                icon: Building2,
+                value: `${activeSolutions.length}`,
+                label: "Soluções integradas",
+              },
+              { icon: Users, value: "1.2K", label: "Imobiliárias ativas" },
+              { icon: Zap, value: "30+", label: "Anos de experiência" },
             ].map(({ icon: Icon, value, label }) => (
-              <div key={label} className="flex flex-col items-center gap-1 px-4 text-center">
+              <div
+                key={label}
+                className="flex flex-col items-center gap-1 px-4 text-center"
+              >
                 <Icon className="w-4 h-4 text-[color:var(--brand-orange)] mb-1" />
-                <span className="text-2xl font-extrabold text-[color:var(--brand-sand)] tracking-tight">{value}</span>
-                <span className="text-[11px] text-[color:var(--brand-sand)]/50 font-mono-ui">{label}</span>
+                <span className="text-2xl font-extrabold text-[color:var(--brand-sand)] tracking-tight">
+                  {value}
+                </span>
+                <span className="text-[11px] text-[color:var(--brand-sand)]/50 font-mono-ui">
+                  {label}
+                </span>
               </div>
             ))}
           </div>
@@ -102,7 +122,9 @@ function SolucoesIndex() {
               const badge = categoryBadge[sol.slug];
 
               return (
-                <Link title="Conhecer solução" key={sol.slug}
+                <Link
+                  title="Conhecer solução"
+                  key={sol.slug}
                   to="/solucoes/$slug"
                   params={{ slug: sol.slug }}
                   className="group relative flex flex-col rounded-2xl border border-[color:var(--brand-ink)]/8 bg-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-card transition-all duration-300 overflow-hidden no-underline decoration-none"
@@ -116,7 +138,9 @@ function SolucoesIndex() {
                         <IconComp className="w-5 h-5" />
                       </div>
                       {badge && (
-                        <span className={`text-[10px] font-mono-ui font-bold px-2.5 py-1 rounded-full ${badge.color}`}>
+                        <span
+                          className={`text-[10px] font-mono-ui font-bold px-2.5 py-1 rounded-full ${badge.color}`}
+                        >
                           {badge.label}
                         </span>
                       )}
@@ -192,10 +216,13 @@ function SolucoesIndex() {
                 Pronto para explorar o ecossistema?
               </h2>
               <p className="text-base text-[color:var(--brand-sand)]/60">
-                Nossa equipe está pronta para tirar suas dúvidas e mostrar o sistema na prática.
+                Nossa equipe está pronta para tirar suas dúvidas e mostrar o
+                sistema na prática.
               </p>
             </div>
-            <a title="Página Inicial da Microsistec" href="/"
+            <a
+              title="Página Inicial da Microsistec"
+              href="/"
               className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-7 py-3.5 font-bold text-base hover:bg-[color:var(--brand-sand)] transition shrink-0 no-underline decoration-none"
             >
               Falar com especialista <ArrowRight className="w-4 h-4" />

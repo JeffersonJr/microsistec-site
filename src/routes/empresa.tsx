@@ -2,7 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import * as React from "react";
 import { Nav, Footer } from "@/components/microsistec/MicrosistecLanding";
 import { useDemoModal } from "@/hooks/use-demo-modal";
-import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Trophy, Users } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  Sparkles,
+  Trophy,
+  Users,
+} from "lucide-react";
 
 export const Route = createFileRoute("/empresa")({
   head: () => ({
@@ -70,10 +77,14 @@ function Empresa() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      
+
       <main>
         {/* Editorial Hero */}
-        <section id="hero_empresa" data-gtm-section="hero_dobra_1" className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
+        <section
+          id="hero_empresa"
+          data-gtm-section="hero_dobra_1"
+          className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10"
+        >
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
@@ -88,13 +99,20 @@ function Empresa() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-              Como pioneiros absolutos em trazer a tecnologia para o setor imobiliário brasileiro, há mais de trinta anos ajudamos imobiliárias, construtoras e corretores a vender mais. Essa estrada sólida prova que realmente sabemos o que fazemos.
+              Como pioneiros absolutos em trazer a tecnologia para o setor
+              imobiliário brasileiro, há mais de trinta anos ajudamos
+              imobiliárias, construtoras e corretores a vender mais. Essa
+              estrada sólida prova que realmente sabemos o que fazemos.
             </p>
           </div>
         </section>
 
         {/* Story Section & Timeline */}
-        <section id="historia_empresa" data-gtm-section="historia_empresa" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <section
+          id="historia_empresa"
+          data-gtm-section="historia_empresa"
+          className="mx-auto max-w-7xl px-6 py-20 md:py-28"
+        >
           <div className="grid md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5 md:sticky md:top-24 space-y-6">
               <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl block">
@@ -104,7 +122,12 @@ function Empresa() {
                 Pioneiros absolutos em tecnologia imobiliária
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Nossa trajetória não começou ontem com slides bonitos de startup. Fomos os pioneiros em trazer computadores, banco de dados e sites dinâmicos para o setor imobiliário brasileiro desde 1994. São trinta anos de liderança comprovando que entendemos cada detalhe do dia a dia do corretor e que sabemos exatamente o que fazemos.
+                Nossa trajetória não começou ontem com slides bonitos de
+                startup. Fomos os pioneiros em trazer computadores, banco de
+                dados e sites dinâmicos para o setor imobiliário brasileiro
+                desde 1994. São trinta anos de liderança comprovando que
+                entendemos cada detalhe do dia a dia do corretor e que sabemos
+                exatamente o que fazemos.
               </p>
               <div className="pt-2">
                 <button
@@ -140,7 +163,11 @@ function Empresa() {
         </section>
 
         {/* Values Block */}
-        <section id="valores_empresa" data-gtm-section="valores_empresa" className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10 py-20 md:py-28">
+        <section
+          id="valores_empresa"
+          data-gtm-section="valores_empresa"
+          className="bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10 py-20 md:py-28"
+        >
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center space-y-3 mb-16">
               <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
@@ -150,10 +177,13 @@ function Empresa() {
                 O que nos move diariamente
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {values.map((v) => (
-                <div key={v.title} className="bg-background rounded-2xl border border-[color:var(--brand-ink)]/15 p-8 shadow-soft">
+                <div
+                  key={v.title}
+                  className="bg-background rounded-2xl border border-[color:var(--brand-ink)]/15 p-8 shadow-soft"
+                >
                   <v.icon className="w-8 h-8 text-[color:var(--brand-orange)] mb-6" />
                   <h3 className="font-bold text-2xl tracking-tight mb-3">
                     {v.title}
@@ -168,15 +198,33 @@ function Empresa() {
         </section>
 
         {/* Marquee Ticker */}
-        <section id="ticker_empresa" data-gtm-section="ticker_empresa" className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] overflow-hidden">
+        <section
+          id="ticker_empresa"
+          data-gtm-section="ticker_empresa"
+          className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] overflow-hidden"
+        >
           <div className="overflow-hidden">
             <div className="marquee flex gap-10 py-4 whitespace-nowrap text-base">
               {[...Array(3)].map((_, rIdx) => (
                 <div key={rIdx} className="flex gap-10 items-center">
-                  {["CRM imobiliário", "App de atendimento", "Site para imobiliária", "Albert IA · SDR", "Funil de vendas", "Automações", "Rodízio de leads", "Secretaria de vendas", "Integração com portais"].map((t, i) => (
+                  {[
+                    "CRM imobiliário",
+                    "App de atendimento",
+                    "Site para imobiliária",
+                    "Albert IA · SDR",
+                    "Funil de vendas",
+                    "Automações",
+                    "Rodízio de leads",
+                    "Secretaria de vendas",
+                    "Integração com portais",
+                  ].map((t, i) => (
                     <span key={i} className="inline-flex items-center gap-3">
-                      <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl">✦</span>
-                      <span className="font-medium tracking-wide uppercase text-[11px] font-mono-ui">{t}</span>
+                      <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl">
+                        ✦
+                      </span>
+                      <span className="font-medium tracking-wide uppercase text-[11px] font-mono-ui">
+                        {t}
+                      </span>
                     </span>
                   ))}
                 </div>
@@ -186,12 +234,17 @@ function Empresa() {
         </section>
 
         {/* CTA section */}
-        <section id="cta_final_empresa" data-gtm-section="cta_final_empresa" className="mx-auto max-w-7xl px-6 py-20 text-center space-y-6">
+        <section
+          id="cta_final_empresa"
+          data-gtm-section="cta_final_empresa"
+          className="mx-auto max-w-7xl px-6 py-20 text-center space-y-6"
+        >
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             Pronto para impulsionar sua imobiliária?
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Faça como mais de 1.200 imobiliárias em todo o Brasil. Ative seu período gratuito de testes em 30 segundos.
+            Faça como mais de 1.200 imobiliárias em todo o Brasil. Ative seu
+            período gratuito de testes em 30 segundos.
           </p>
           <div className="pt-2">
             <button

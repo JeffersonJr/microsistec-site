@@ -21,7 +21,11 @@ export default defineConfig({
     // Smaller chunks for better caching
     rollupOptions: {
       onwarn(warning, warn) {
-        if (warning.code === 'UNUSED_EXTERNAL_IMPORT' && warning.message.includes('@tanstack/router-core')) return;
+        if (
+          warning.code === "UNUSED_EXTERNAL_IMPORT" &&
+          warning.message.includes("@tanstack/router-core")
+        )
+          return;
         warn(warning);
       },
       output: {
@@ -29,8 +33,16 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes("node_modules")) {
             if (id.includes("lucide-react")) return "icons";
-            if (id.includes("@radix-ui") || id.includes("@tanstack/react-query")) return "ui";
-            if (id.includes("@tanstack/react-router") || id.includes("@tanstack/router")) return "router";
+            if (
+              id.includes("@radix-ui") ||
+              id.includes("@tanstack/react-query")
+            )
+              return "ui";
+            if (
+              id.includes("@tanstack/react-router") ||
+              id.includes("@tanstack/router")
+            )
+              return "router";
             return "vendor";
           }
         },

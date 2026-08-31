@@ -7,7 +7,10 @@ export const Route = createFileRoute("/obrigado-corretor")({
   head: () => ({
     meta: [
       { title: "Tudo certo! | Microsistec" },
-      { name: "description", content: "Sua mensagem foi enviada. Nossa equipe já vai te atender." },
+      {
+        name: "description",
+        content: "Sua mensagem foi enviada. Nossa equipe já vai te atender.",
+      },
     ],
   }),
   component: ObrigadoCorretorPage,
@@ -32,7 +35,9 @@ function ObrigadoCorretorPage() {
           </h1>
 
           <p className="text-2xl text-muted-foreground mb-12">
-            A janela do WhatsApp foi aberta! Nossa equipe está pronta para te atender e liberar todas as novidades exclusivas que preparamos para o Dia do Corretor.
+            A janela do WhatsApp foi aberta! Nossa equipe está pronta para te
+            atender e liberar todas as novidades exclusivas que preparamos para
+            o Dia do Corretor.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -44,7 +49,9 @@ function ObrigadoCorretorPage() {
             >
               Abrir WhatsApp
             </a>
-            <Link title="Sobre a Microsistec" to="/empresa"
+            <Link
+              title="Sobre a Microsistec"
+              to="/empresa"
               className="w-full sm:w-auto px-8 h-14 inline-flex items-center justify-center gap-2 rounded-xl bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)]/80 transition shadow-soft group"
             >
               Conhecer a Microsistec

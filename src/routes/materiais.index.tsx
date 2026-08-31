@@ -38,7 +38,8 @@ function MateriaisIndex() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-            E-books, guias, planilhas e scripts exclusivos desenvolvidos por especialistas para ajudar corretores e gestores a venderem mais.
+            E-books, guias, planilhas e scripts exclusivos desenvolvidos por
+            especialistas para ajudar corretores e gestores a venderem mais.
           </p>
         </div>
       </section>
@@ -48,7 +49,9 @@ function MateriaisIndex() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {materiaisData.map((mat) => (
-              <Link title="Acessar link" key={mat.id}
+              <Link
+                title="Acessar link"
+                key={mat.id}
                 to="/materiais/$slug"
                 params={{
                   slug: mat.slug,
