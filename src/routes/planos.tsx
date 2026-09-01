@@ -286,7 +286,7 @@ function PlanosPage() {
                   className={`w-full inline-flex items-center justify-center py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] no-underline border-none ${
                     plan.isPopular
                       ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
-                      : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
+                      : "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:opacity-90"
                   }`}
                 >
                   Falar com especialista

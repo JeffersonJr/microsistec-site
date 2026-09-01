@@ -803,7 +803,7 @@ function NovidadesPage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setDocGenerated(true)}
-                      className="px-4 py-2 rounded-full text-xs font-bold bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition flex items-center gap-1.5 border-none cursor-pointer shadow-sm"
+                      className="px-4 py-2 rounded-full text-xs font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:opacity-90 transition flex items-center gap-1.5 border-none cursor-pointer shadow-sm"
                     >
                       <FileDown className="w-3.5 h-3.5" />{" "}
                       {docGenerated

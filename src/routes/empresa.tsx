@@ -125,7 +125,7 @@ function Empresa() {
                 Nossa trajetória não começou ontem com slides bonitos de
                 startup. Fomos os pioneiros em trazer computadores, banco de
                 dados e sites dinâmicos para o setor imobiliário brasileiro
-                desde 1994. São trinta anos de liderança comprovando que
+                há + de 30 anos. São trinta anos de liderança comprovando que
                 entendemos cada detalhe do dia a dia do corretor e que sabemos
                 exatamente o que fazemos.
               </p>
@@ -135,7 +135,7 @@ function Empresa() {
                   data-gtm-cta="falar_especialista_historia_empresa"
                   data-gtm-location="historia_empresa"
                   data-gtm-modal-open="modal_demonstracao"
-                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
+                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3 font-bold hover:opacity-90 transition cursor-pointer border-none shadow-soft"
                 >
                   Falar com especialista <ArrowRight className="w-4 h-4" />
                 </button>

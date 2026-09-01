@@ -27,7 +27,9 @@ export const Route = createFileRoute("/materiais/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.material.title} | Microsistec` },
+      {
+        title: `${(loaderData?.material.lpTitle || loaderData?.material.title || "").replace(/\*\*/g, "")} | Microsistec`,
+      },
       { name: "description", content: loaderData?.material.description },
     ],
   }),
@@ -117,26 +119,29 @@ function MaterialLandingPage() {
       <main className="flex-1 relative bg-hero border-b border-[color:var(--brand-ink)]/10 overflow-x-clip">
         <div className="bg-grid absolute inset-0 pointer-events-none" />
 
-        <div className="pt-32 pb-16 md:pt-36 md:pb-24 px-6 relative z-10 max-w-7xl mx-auto w-full">
+        <div className="pt-20 pb-8 md:pt-36 md:pb-24 px-6 relative z-10 max-w-7xl mx-auto w-full">
           <Link
             title="Materiais Ricos e Gratuitos"
             to="/materiais"
-            className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10"
+            className="hidden md:inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para materiais
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            {/* Esquerda: Copy / Benefícios */}
-            <div className="flex flex-col lg:col-span-7">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-[color:var(--brand-sand)] text-sm font-bold text-[color:var(--brand-ink)] border border-[color:var(--brand-ink)]/5 w-fit mb-6">
-                Material Gratuito • {material.type}
-              </div>
+          <div className="w-full lg:w-7/12 lg:pr-10">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-[color:var(--brand-sand)] text-xs md:text-sm font-bold text-[color:var(--brand-ink)] border border-[color:var(--brand-ink)]/5 w-fit mb-4 md:mb-6">
+              Material Gratuito • {material.type}
+            </div>
 
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-0.02em] text-[color:var(--brand-ink)] leading-[1.15] mb-6">
-                {renderFormattedText(title)}
-              </h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-[-0.02em] text-[color:var(--brand-ink)] leading-[1.15] mb-6 md:mb-10">
+              {renderFormattedText(title)}
+            </h1>
+          </div>
+
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-8 lg:gap-20 items-start">
+            {/* Esquerda: Copy / Benefícios */}
+            <div className="flex flex-col lg:col-span-7 w-full">
 
               <p className="text-2xl text-foreground/80 leading-relaxed mb-8">
                 {subtitle}
@@ -167,19 +172,19 @@ function MaterialLandingPage() {
             </div>
 
             {/* Direita: Formulário Falso / Template (STICKY) */}
-            <div className="relative lg:col-span-5 lg:sticky lg:top-32">
-              <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-[color:var(--brand-ink)]/5 relative z-10 min-h-[450px] flex flex-col justify-center overflow-hidden">
+            <div className="relative w-full lg:col-span-5 lg:sticky lg:top-32">
+              <div className="bg-white rounded-3xl p-6 md:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-[color:var(--brand-ink)]/5 relative z-10 flex flex-col justify-center overflow-hidden">
                 {step === "form" ? (
                   <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <h3 className="text-3xl font-bold tracking-tight text-[color:var(--brand-ink)] mb-2">
+                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-[color:var(--brand-ink)] mb-2">
                       Baixe o material agora
                     </h3>
-                    <p className="text-base text-muted-foreground mb-8">
-                      Preencha seus dados reais para receber o link de download.
+                    <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
+                      Preencha seus dados reais para receber o link.
                     </p>
 
                     <form
-                      className="space-y-5"
+                      className="space-y-4 md:space-y-5"
                       onSubmit={async (e) => {
                         e.preventDefault();
                         setIsSubmitting(true);
@@ -216,7 +221,7 @@ function MaterialLandingPage() {
                           required
                           type="text"
                           placeholder="João da Silva"
-                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
                           value={formData.name}
                           onChange={(e) =>
                             setFormData((p) => ({ ...p, name: e.target.value }))
@@ -234,7 +239,7 @@ function MaterialLandingPage() {
                           required
                           type="email"
                           placeholder="joao@imobiliaria.com.br"
-                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData((p) => ({
@@ -267,7 +272,7 @@ function MaterialLandingPage() {
                         <input
                           type="text"
                           placeholder="00.000.000/0001-00"
-                          className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
                           value={formData.cnpj}
                           onChange={(e) =>
                             setFormData((p) => ({ ...p, cnpj: e.target.value }))
@@ -284,7 +289,7 @@ function MaterialLandingPage() {
                         <div className="relative">
                           <select
                             required
-                            className="w-full h-12 px-4 rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none cursor-pointer"
+                            className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none cursor-pointer"
                             value={formData.role}
                             onChange={(e) =>
                               setFormData((p) => ({
@@ -311,7 +316,7 @@ function MaterialLandingPage() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="w-full h-12 md:h-14 mt-4 inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] font-bold text-lg md:text-xl hover:bg-[color:var(--brand-sand)] transition shadow-soft disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {isSubmitting ? "Enviando..." : material.ctaText}
                       </button>

@@ -58,9 +58,9 @@ export const solutions: Solution[] = [
     slug: "crm",
     title: "CRM Imobiliário",
     shortDesc:
-      "O coração operacional da sua imobiliária. Cadastre imóveis, controle contatos e acompanhe propostas de forma unificada e simples.",
+      "Pare de perder vendas por desorganização. Centralize contatos, imóveis e propostas, e saiba exatamente onde cada negócio parou.",
     longDesc:
-      "Nosso CRM foi desenvolvido ouvindo as reais dores de imobiliárias de todos os portes. Esqueça planilhas confusas e dados dispersos: centralize sua carteira de imóveis e sua base de clientes em uma plataforma intuitiva que faz o trabalho pesado por você.",
+      "Sabemos que planilhas bagunçadas, cadernos e processos manuais fazem você perder leads quentes e vendas certas todos os dias. O CRM da Microsistec centraliza sua operação, organizando contatos, imóveis e propostas em um só lugar. Tenha o controle total da sua imobiliária e acabe com o desperdício de oportunidades.",
     iconName: "Building2",
     features: [
       "Cruzamento inteligente (match) entre perfis de compradores e imóveis disponíveis.",
@@ -81,9 +81,9 @@ export const solutions: Solution[] = [
     slug: "app",
     title: "App de Atendimento",
     shortDesc:
-      "Toda a força da Microsistec na palma da mão da sua equipe. Envie imóveis no WhatsApp e atualize status de visitas direto da rua.",
+      "Atenda antes do seu concorrente. Receba notificações em tempo real, envie imóveis no WhatsApp e não perca nenhum lead, mesmo estando na rua.",
     longDesc:
-      "Corretores não trabalham sentados atrás de uma mesa de escritório o dia todo. Eles estão na rua, fazendo visitas e fechando negócios. O nosso Aplicativo de Atendimento oferece mobilidade total, permitindo que sua equipe gerencie leads, atualize o CRM e agende tarefas diretamente de qualquer smartphone.",
+      "Seus corretores estão perdendo vendas porque demoram a responder enquanto estão na rua? O App da Microsistec acaba com esse problema. Notificações imediatas, acesso a toda a carteira de imóveis e envio rápido por WhatsApp para que você responda o lead antes da concorrência, de onde estiver.",
     iconName: "Smartphone",
     features: [
       "Sincronização imediata em tempo real com a plataforma web imobiliária.",
@@ -173,11 +173,11 @@ export const solutions: Solution[] = [
   {
     id: "albert-ia",
     slug: "albert-ia",
-    title: "Albert IA - SDR Inteligente",
+    title: "Albert IA - Assistente de Vendas",
     shortDesc:
-      "Nossa IA exclusiva que age como um clone do seu melhor corretor. Atendimento e qualificação automatizados em tempo real, 24 horas por dia.",
+      "Seus leads esfriam porque você demora a responder? O Albert IA atende em segundos e só repassa os contatos quentes e prontos para fechar.",
     longDesc:
-      "O Albert IA foi desenvolvido especialmente para o mercado imobiliário brasileiro. Ele não é um chatbot burro que apenas decora caminhos pré-definidos: ele entende intenções reais, responde com naturalidade, qualifica as finanças do lead e repassa o contato pronto para o corretor fechar o negócio no momento ideal.",
+      "Corretores perdem horas preciosas qualificando contatos curiosos ou perdem vendas porque não conseguem responder a tempo. O Albert IA resolve isso: ele entende intenções reais, responde com naturalidade 24 horas por dia, qualifica as finanças do lead e repassa o contato pronto para o corretor fechar o negócio no momento ideal.",
     iconName: "Bot",
     features: [
       "Treinamento sob medida baseado na história e no roteiro da sua imobiliária.",
@@ -196,11 +196,11 @@ export const solutions: Solution[] = [
   {
     id: "sites-template",
     slug: "sites-template",
-    title: "Sites Template Express",
+    title: "Sites Marketing",
     shortDesc:
-      "Sua imobiliária na internet em tempo recorde. Modelos otimizados para mecanismos de busca, elegantes e prontos para converter leads.",
+      "Seu site atual não atrai clientes e afasta leads? Tenha um Site Marketing de alta conversão, otimizado para captar leads todos os dias.",
     longDesc:
-      "Se você precisa de uma presença profissional na internet sem gastar fortunas e sem esperar meses por um desenvolvimento demorado, nossos templates de sites imobiliários são perfeitos. Eles são ultravelozes, responsivos e focados na conversão imediata de visitantes em contatos reais.",
+      "Se você está perdendo negócios porque seu site é lento, desatualizado e não gera confiança no cliente, nossos Sites Marketing são a solução. Eles são estruturados especificamente para conversão, entregando velocidade, presença no Google (SEO) e uma interface que transforma visitantes em contatos reais, sem depender de grandes investimentos iniciais.",
     iconName: "Globe",
     features: [
       "Estrutura otimizada para SEO local garantindo presença no Google.",
@@ -219,11 +219,11 @@ export const solutions: Solution[] = [
   {
     id: "sites-v8",
     slug: "sites-v8",
-    title: "Sites Customizados V8",
+    title: "Sites Premium",
     shortDesc:
-      "Sites feitos sob medida com performance extrema. Performance incrível, design arrojado e velocidade de carregamento absurda no mobile.",
+      "Imobiliárias de alto padrão perdem vendas quando o site é genérico. Nossos Sites Premium são desenvolvidos sob medida para velocidade e conversão.",
     longDesc:
-      "Para imobiliárias e construtoras que exigem o máximo de diferenciação e performance, a linha de sites V8 da Microsistec é a escolha definitiva. Criados com tecnologia de ponta usada pelas maiores tech companies do mundo, os sites V8 entregam carregamento instantâneo, design único e SEO imbatível.",
+      "Para imobiliárias e construtoras que exigem o máximo de diferenciação e estão perdendo conversões por causa de plataformas engessadas. Criados com tecnologia de ponta, os sites Premium entregam carregamento instantâneo, design exclusivo e arquitetura imbatível para escalar os resultados da sua operação.",
     iconName: "Sparkles",
     features: [
       "Design 100% exclusivo criado por designers especializados em proptech.",

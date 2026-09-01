@@ -75,8 +75,8 @@
   --secondary-foreground: oklch(0.18 0.02 270);
   --muted: oklch(0.96 0.01 280);
   --muted-foreground: oklch(0.48 0.02 270);
-  --accent: oklch(0.7 0.18 155);
-  --accent-foreground: oklch(0.14 0.02 270);
+  --accent: #E8A14B;
+  --accent-foreground: #1A1A1A;
   --destructive: oklch(0.62 0.24 25);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.93 0.008 270);
@@ -86,7 +86,7 @@
   /* Clean minimal proptech palette */
   --background: oklch(0.99 0.003 270); /* near white */
   --foreground: oklch(0.15 0.02 260); /* deep ink */
-  --brand-orange: oklch(0.623 0.106 195.8); /* primary teal accent */
+  --brand-orange: #E8A14B; /* actual orange accent */
   --brand-clay: oklch(0.499 0.113 182.2); /* dark teal */
   --brand-teal: oklch(0.735 0.121 190.4); /* light teal */
   --brand-ink: oklch(0.18 0.025 255); /* near black, cool */
@@ -155,8 +155,8 @@
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
+  --accent: #E8A14B;
+  --accent-foreground: #1A1A1A;
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);

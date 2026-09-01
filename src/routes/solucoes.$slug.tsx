@@ -71,35 +71,35 @@ export const Route = createFileRoute("/solucoes/$slug")({
 
     const seoMap: Record<string, { title: string; desc: string }> = {
       crm: {
-        title: "CRM Imobiliário e Sistema Completo",
+        title: "CRM Imobiliário Completo",
         desc: "Aumente as vendas da sua imobiliária com o melhor CRM do mercado.",
       },
       app: {
-        title: "App para Corretores de Imóveis",
+        title: "Aplicativo para Corretores de Imóveis",
         desc: "Aplicativo completo para o corretor gerenciar leads, funil de vendas e imóveis.",
       },
       "sites-v8": {
-        title: "Site Imobiliário Otimizado",
+        title: "Plataforma de Sites para Imobiliárias",
         desc: "Construa um site imobiliário de alta performance e conversão.",
       },
       "sites-template": {
-        title: "Temas e Sites para Imobiliárias",
+        title: "Temas Profissionais para Imobiliárias",
         desc: "Tenha um site imobiliário profissional no ar em poucas horas.",
       },
       "albert-ia": {
-        title: "Albert IA: Assistente Virtual",
+        title: "Albert IA - Assistente Virtual Imobiliário",
         desc: "Automatize o atendimento da sua imobiliária com Inteligência Artificial.",
       },
       funil: {
-        title: "Funil de Vendas Integrado",
+        title: "Gestão de Funil de Vendas Imobiliário",
         desc: "Acompanhe seus leads desde o primeiro contato até o fechamento.",
       },
       integracoes: {
-        title: "Integração com Portais Imobiliários",
+        title: "Integração Automática com Portais Imobiliários",
         desc: "Publique seus imóveis automaticamente nos maiores portais.",
       },
       rodizio: {
-        title: "Rodízio de Leads Imobiliários",
+        title: "Sistema de Rodízio de Leads Imobiliários",
         desc: "Distribuição automática e justa de leads entre seus corretores.",
       },
     };
@@ -778,24 +778,24 @@ const faqData: Record<string, { q: string; a: string }[]> = {
   ],
   "sites-v8": [
     {
-      q: "Qual o prazo de entrega de um site V8?",
+      q: "Qual o prazo de entrega de um site Premium?",
       a: "Em média 2 a 3 semanas do briefing à entrega, dependendo da complexidade e aprovações do cliente.",
     },
     {
-      q: "O site V8 é hospedado pela Microsistec?",
+      q: "O site Premium é hospedado pela Microsistec?",
       a: "Sim. Hospedagem, CDN Cloudflare, certificado SSL e monitoramento de performance estão incluídos no plano.",
     },
     {
       q: "Posso ter integrações customizadas?",
-      a: "Sim. Sites V8 permitem integrações com CRMs externos, sistemas de gestão de condomínios e APIs personalizadas.",
+      a: "Sim. Sites Premium permitem integrações com CRMs externos, sistemas de gestão de condomínios e APIs personalizadas.",
     },
     {
       q: "Como é feita a manutenção do site?",
       a: "Oferecemos pacotes de suporte mensal com atualizações de conteúdo, ajustes de layout e monitoramento técnico.",
     },
     {
-      q: "O site V8 é diferente dos temas prontos?",
-      a: "Totalmente. O V8 é um projeto exclusivo com design 100% personalizado, enquanto os templates são modelos pré-formatados prontos para uso.",
+      q: "O site Premium é diferente dos temas prontos?",
+      a: "Totalmente. O projeto Premium é exclusivo com design 100% personalizado, enquanto os templates são modelos pré-formatados prontos para uso.",
     },
   ],
   rodizio: [
@@ -1131,7 +1131,7 @@ function SolucaoDetalhe() {
                       data-gtm-cta={`falar_especialista_hero_${sol.slug}`}
                       data-gtm-location="hero_solucao"
                       data-gtm-modal-open="modal_demonstracao"
-                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
+                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:opacity-90 transition cursor-pointer border-none shadow-soft decoration-none no-underline"
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
                     </button>
@@ -1162,7 +1162,7 @@ function SolucaoDetalhe() {
                       }}
                       data-gtm-cta="baixar_app_hero"
                       data-gtm-location="hero_solucao"
-                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft decoration-none no-underline"
+                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:opacity-90 transition cursor-pointer border-none shadow-soft decoration-none no-underline"
                     >
                       {sol.ctaText} <Smartphone className="w-4 h-4" />
                     </a>
@@ -1172,7 +1172,7 @@ function SolucaoDetalhe() {
                       data-gtm-cta={`falar_especialista_hero_${sol.slug}`}
                       data-gtm-location="hero_solucao"
                       data-gtm-modal-open="modal_demonstracao"
-                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3.5 font-semibold hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft"
+                      className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-3.5 font-bold hover:opacity-90 transition cursor-pointer border-none shadow-soft"
                     >
                       {sol.ctaText} <ArrowRight className="w-4 h-4" />
                     </button>
@@ -2270,7 +2270,7 @@ const PageSpeedComparison = () => {
         </h3>
         <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
           Sites comuns de imobiliárias perdem vendas antes mesmo de carregar.
-          Veja o salto técnico que os Sites V8 da Microsistec proporcionam aos
+          Veja o salto técnico que os Sites Premium da Microsistec proporcionam aos
           olhos do Google.
         </p>
       </div>
@@ -2304,7 +2304,7 @@ const PageSpeedComparison = () => {
             <Sparkles className="w-8 h-8 text-[color:var(--brand-orange)] animate-pulse" />
           </div>
           <span className="bg-emerald-500/10 text-emerald-600 font-bold px-3 py-1 rounded-full text-[10px] uppercase tracking-wider mb-8">
-            Com Microsistec V8
+            Com Microsistec Premium
           </span>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {metrics.map((m, i) => (
@@ -2337,10 +2337,10 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
           Showcase Imobiliário Real
         </span>
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-          Vitrine de Projetos V8 Ativos
+          Vitrine de Projetos Premium Ativos
         </h2>
         <p className="text-base text-muted-foreground leading-relaxed">
-          Nossos clientes Sites V8 experimentam velocidade de carregamento
+          Nossos clientes Sites Premium experimentam velocidade de carregamento
           absurda no celular e nota máxima nos rankings técnicos. Veja projetos
           de verdade operando no mercado brasileiro:
         </p>

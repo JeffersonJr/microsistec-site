@@ -23,12 +23,12 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SolucoesIndexRouteImport } from './routes/solucoes.index'
 import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
-import { Route as IndicaEGanhaIndexRouteImport } from './routes/indica-e-ganha/index'
+import { Route as IndicaEGanhaIndexRouteImport } from './routes/indica-e-ganha.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as SolucoesSlugRouteImport } from './routes/solucoes.$slug'
 import { Route as MateriaisSlugRouteImport } from './routes/materiais.$slug'
-import { Route as IndicaEGanhaIndicarRouteImport } from './routes/indica-e-ganha/indicar'
-import { Route as IndicaEGanhaConfirmacaoRouteImport } from './routes/indica-e-ganha/confirmacao'
+import { Route as IndiqueCodigoRouteImport } from './routes/indique.$codigo'
+import { Route as IndicaEGanhaSucessoRouteImport } from './routes/indica-e-ganha.sucesso'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
@@ -121,14 +121,14 @@ const MateriaisSlugRoute = MateriaisSlugRouteImport.update({
   path: '/materiais/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndicaEGanhaIndicarRoute = IndicaEGanhaIndicarRouteImport.update({
-  id: '/indica-e-ganha/indicar',
-  path: '/indica-e-ganha/indicar',
+const IndiqueCodigoRoute = IndiqueCodigoRouteImport.update({
+  id: '/indique/$codigo',
+  path: '/indique/$codigo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndicaEGanhaConfirmacaoRoute = IndicaEGanhaConfirmacaoRouteImport.update({
-  id: '/indica-e-ganha/confirmacao',
-  path: '/indica-e-ganha/confirmacao',
+const IndicaEGanhaSucessoRoute = IndicaEGanhaSucessoRouteImport.update({
+  id: '/indica-e-ganha/sucesso',
+  path: '/indica-e-ganha/sucesso',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -151,8 +151,8 @@ export interface FileRoutesByFullPath {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/indica-e-ganha/confirmacao': typeof IndicaEGanhaConfirmacaoRoute
-  '/indica-e-ganha/indicar': typeof IndicaEGanhaIndicarRoute
+  '/indica-e-ganha/sucesso': typeof IndicaEGanhaSucessoRoute
+  '/indique/$codigo': typeof IndiqueCodigoRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -174,8 +174,8 @@ export interface FileRoutesByTo {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/indica-e-ganha/confirmacao': typeof IndicaEGanhaConfirmacaoRoute
-  '/indica-e-ganha/indicar': typeof IndicaEGanhaIndicarRoute
+  '/indica-e-ganha/sucesso': typeof IndicaEGanhaSucessoRoute
+  '/indique/$codigo': typeof IndiqueCodigoRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -198,8 +198,8 @@ export interface FileRoutesById {
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/indica-e-ganha/confirmacao': typeof IndicaEGanhaConfirmacaoRoute
-  '/indica-e-ganha/indicar': typeof IndicaEGanhaIndicarRoute
+  '/indica-e-ganha/sucesso': typeof IndicaEGanhaSucessoRoute
+  '/indique/$codigo': typeof IndiqueCodigoRoute
   '/materiais/$slug': typeof MateriaisSlugRoute
   '/solucoes/$slug': typeof SolucoesSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -223,8 +223,8 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/termos-de-uso'
     | '/blog/$slug'
-    | '/indica-e-ganha/confirmacao'
-    | '/indica-e-ganha/indicar'
+    | '/indica-e-ganha/sucesso'
+    | '/indique/$codigo'
     | '/materiais/$slug'
     | '/solucoes/$slug'
     | '/blog/'
@@ -246,8 +246,8 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/termos-de-uso'
     | '/blog/$slug'
-    | '/indica-e-ganha/confirmacao'
-    | '/indica-e-ganha/indicar'
+    | '/indica-e-ganha/sucesso'
+    | '/indique/$codigo'
     | '/materiais/$slug'
     | '/solucoes/$slug'
     | '/blog'
@@ -269,8 +269,8 @@ export interface FileRouteTypes {
     | '/politica-de-privacidade'
     | '/termos-de-uso'
     | '/blog/$slug'
-    | '/indica-e-ganha/confirmacao'
-    | '/indica-e-ganha/indicar'
+    | '/indica-e-ganha/sucesso'
+    | '/indique/$codigo'
     | '/materiais/$slug'
     | '/solucoes/$slug'
     | '/blog/'
@@ -293,8 +293,8 @@ export interface RootRouteChildren {
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
   BlogSlugRoute: typeof BlogSlugRoute
-  IndicaEGanhaConfirmacaoRoute: typeof IndicaEGanhaConfirmacaoRoute
-  IndicaEGanhaIndicarRoute: typeof IndicaEGanhaIndicarRoute
+  IndicaEGanhaSucessoRoute: typeof IndicaEGanhaSucessoRoute
+  IndiqueCodigoRoute: typeof IndiqueCodigoRoute
   MateriaisSlugRoute: typeof MateriaisSlugRoute
   SolucoesSlugRoute: typeof SolucoesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -431,18 +431,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MateriaisSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/indica-e-ganha/indicar': {
-      id: '/indica-e-ganha/indicar'
-      path: '/indica-e-ganha/indicar'
-      fullPath: '/indica-e-ganha/indicar'
-      preLoaderRoute: typeof IndicaEGanhaIndicarRouteImport
+    '/indique/$codigo': {
+      id: '/indique/$codigo'
+      path: '/indique/$codigo'
+      fullPath: '/indique/$codigo'
+      preLoaderRoute: typeof IndiqueCodigoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/indica-e-ganha/confirmacao': {
-      id: '/indica-e-ganha/confirmacao'
-      path: '/indica-e-ganha/confirmacao'
-      fullPath: '/indica-e-ganha/confirmacao'
-      preLoaderRoute: typeof IndicaEGanhaConfirmacaoRouteImport
+    '/indica-e-ganha/sucesso': {
+      id: '/indica-e-ganha/sucesso'
+      path: '/indica-e-ganha/sucesso'
+      fullPath: '/indica-e-ganha/sucesso'
+      preLoaderRoute: typeof IndicaEGanhaSucessoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -469,8 +469,8 @@ const rootRouteChildren: RootRouteChildren = {
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
   BlogSlugRoute: BlogSlugRoute,
-  IndicaEGanhaConfirmacaoRoute: IndicaEGanhaConfirmacaoRoute,
-  IndicaEGanhaIndicarRoute: IndicaEGanhaIndicarRoute,
+  IndicaEGanhaSucessoRoute: IndicaEGanhaSucessoRoute,
+  IndiqueCodigoRoute: IndiqueCodigoRoute,
   MateriaisSlugRoute: MateriaisSlugRoute,
   SolucoesSlugRoute: SolucoesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,

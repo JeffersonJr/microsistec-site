@@ -19,7 +19,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = blogPosts.find((p) => p.slug === params.slug);
     return {
       meta: [
-        { title: post ? `${post.title} - Blog` : "Artigo Microsistec" },
+        { title: post ? `${post.title} | Microsistec` : "Artigo | Microsistec" },
         {
           name: "description",
           content: post
@@ -55,9 +55,9 @@ function BlogLeitor() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      <main className="mx-auto max-w-7xl px-6 pt-28 pb-10 md:pt-36 md:pb-16">
+      <main className="mx-auto max-w-7xl px-6 pt-20 pb-6 md:pt-36 md:pb-16">
         {/* Breadcrumb */}
-        <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-[color:var(--brand-ink)]/10 pb-4">
+        <div className="flex flex-wrap items-center gap-2 mb-4 md:mb-8 border-b border-[color:var(--brand-ink)]/10 pb-3 md:pb-4">
           <Link
             title="Página Inicial da Microsistec"
             to="/"
@@ -249,7 +249,7 @@ function BlogLeitor() {
                     data-gtm-cta="falar_especialista_crm_sidebar"
                     data-gtm-location="sidebar_blog"
                     data-gtm-modal-open="modal_demonstracao"
-                    className="w-full bg-[color:var(--brand-ink)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] text-[color:var(--brand-sand)] transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
+                    className="w-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:opacity-90 transition rounded-full py-3 font-bold text-sm flex items-center justify-center gap-2 cursor-pointer border-none shadow-soft"
                   >
                     Falar com especialista{" "}
                     <ArrowRight className="w-3.5 h-3.5" />

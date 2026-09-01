@@ -21,7 +21,7 @@ function PlanosAlbertPage() {
       users: "Corretores Ilimitados",
       limit: "Até 200 chats",
       features: [
-        "Fidelidade Flexível",
+        "Sem Fidelidade",
         "Busca de imóveis",
         "Agendamento de visitas",
         "Envio de leads para o CRM",
@@ -41,7 +41,7 @@ function PlanosAlbertPage() {
       users: "Corretores Ilimitados",
       limit: "Até 500 chats",
       features: [
-        "Fidelidade Flexível",
+        "Sem Fidelidade",
         "Busca de imóveis",
         "Agendamento de visitas",
         "Envio de leads para o CRM",
@@ -60,7 +60,7 @@ function PlanosAlbertPage() {
       users: "Corretores Ilimitados",
       limit: "Até 800 chats",
       features: [
-        "Fidelidade Flexível",
+        "Sem Fidelidade",
         "Busca de imóveis",
         "Agendamento de visitas",
         "Envio de leads para o CRM",
@@ -79,7 +79,7 @@ function PlanosAlbertPage() {
       users: "Corretores Ilimitados",
       limit: "Volume massivo",
       features: [
-        "Fidelidade Flexível",
+        "Sem Fidelidade",
         "Busca de imóveis",
         "Agendamento de visitas",
         "Envio de leads para o CRM",
@@ -216,7 +216,7 @@ function PlanosAlbertPage() {
                   className={`w-full py-4 rounded-xl font-bold transition-all cursor-pointer shadow-sm active:scale-[0.98] ${
                     plan.isPopular
                       ? "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:brightness-110"
-                      : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-ink)]/90"
+                      : "bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:opacity-90"
                   }`}
                 >
                   Falar com Consultor

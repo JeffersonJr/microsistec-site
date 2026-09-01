@@ -118,7 +118,7 @@ export function Nav() {
           </Link>
 
           {/* Links no meio (apenas Desktop) */}
-          <nav className="hidden md:flex items-center justify-center gap-1 text-base flex-1">
+          <nav className="hidden xl:flex items-center justify-center gap-1 text-base flex-1">
             {/* Soluções */}
             <div className="relative">
               <button
@@ -161,12 +161,9 @@ export function Nav() {
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_novidades"
               data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition flex items-center gap-1.5"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
             >
-              Novidades{" "}
-              <span className="badge-pulse bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-full">
-                Novo
-              </span>
+              Novidades
             </Link>
             <Link
               title="Sobre a Microsistec"
@@ -209,7 +206,7 @@ export function Nav() {
               rel="noreferrer"
               data-gtm-cta="entrar_imobonline_header"
               data-gtm-location="header"
-              className="hidden md:inline text-base font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
+              className="hidden xl:inline text-base font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-full hover:bg-[color:var(--brand-ink)]/4"
             >
               Entrar
             </a>
@@ -219,7 +216,7 @@ export function Nav() {
               data-gtm-cta="falar_especialista_header"
               data-gtm-location="header"
               data-gtm-modal-open="modal_demonstracao"
-              className="btn-micro hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-base font-semibold px-4 py-2 hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
+              className="btn-micro hidden xl:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-base font-semibold px-4 py-2 hover:opacity-90 cursor-pointer border-none no-underline group"
             >
               Falar com especialista{" "}
               <ArrowUpRight className="icon-micro-nudge w-3.5 h-3.5" />
@@ -231,7 +228,7 @@ export function Nav() {
               }}
               data-gtm-cta="menu_mobile_toggle"
               data-gtm-location="header"
-              className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/8 transition cursor-pointer"
+              className="xl:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/8 transition cursor-pointer"
               aria-label="Toggle menu"
             >
               {isMobileOpen ? (
@@ -547,13 +544,13 @@ export function Nav() {
         <>
           {/* Backdrop — tap to close */}
           <div
-            className="md:hidden fixed inset-0 bg-[color:var(--brand-ink)]/30 backdrop-blur-sm z-30 animate-fadeIn pointer-events-auto"
+            className="xl:hidden fixed inset-0 bg-[color:var(--brand-ink)]/30 backdrop-blur-sm z-30 animate-fadeIn pointer-events-auto"
             onClick={() => setIsMobileOpen(false)}
             aria-hidden="true"
           />
 
           {/* Bottom sheet */}
-          <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 animate-fadeIn pointer-events-auto">
+          <div className="xl:hidden fixed bottom-0 left-0 right-0 z-40 animate-fadeIn pointer-events-auto">
             <div className="bg-[color:var(--brand-sand)] rounded-t-[28px] shadow-2xl border-t border-[color:var(--brand-ink)]/8">
               {/* Header com pull bar e botão de fechar */}
               <div className="relative flex justify-center pt-3.5 pb-2">
@@ -661,7 +658,7 @@ export function Nav() {
                   data-gtm-cta="falar_especialista_mobile_sticky"
                   data-gtm-location="mobile_menu"
                   data-gtm-modal-open="modal_demonstracao"
-                  className="btn-micro w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] text-[15px] font-bold no-underline border-none cursor-pointer group"
+                  className="btn-micro w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-[15px] font-bold no-underline border-none cursor-pointer group hover:opacity-90"
                   style={{ minHeight: 56 }}
                 >
                   Falar com especialista{" "}
@@ -773,7 +770,7 @@ function Hero() {
               data-gtm-cta="falar_especialista_hero"
               data-gtm-location="hero_dobra_1"
               data-gtm-modal-open="modal_demonstracao"
-              className="cta-shimmer btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-5 py-3 md:px-6 md:py-3.5 font-medium hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] cursor-pointer border-none no-underline group"
+              className="cta-shimmer btn-micro w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-5 py-3 md:px-6 md:py-3.5 font-bold hover:opacity-90 cursor-pointer border-none no-underline group"
             >
               Falar com especialista{" "}
               <ArrowRight className="icon-micro-nudge w-4 h-4" />
@@ -1443,7 +1440,7 @@ export function Footer() {
                 className="w-8 h-8 object-contain"
               />
               <div className="flex items-baseline gap-0.5">
-                Microsistec
+                microsistec
                 <span
                   className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal"
                   title="Marca Registrada"
@@ -1687,6 +1684,7 @@ function FooterCol({
 
 /* -------------------------------------------------------------------------- */
 export function MicrosistecLanding() {
+  const { openModal } = useDemoModal();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
@@ -1704,6 +1702,170 @@ export function MicrosistecLanding() {
         <CTA />
       </main>
       <Footer />
+      <StickyCTA />
+      <ExitModal openDemoModal={openModal} />
     </div>
+  );
+}
+
+function StickyCTA() {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const { openModal } = useDemoModal();
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      // Show when scrolled down 400px
+      if (window.scrollY > 400) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-[100] md:hidden animate-in slide-in-from-bottom-4 duration-300 pointer-events-auto">
+      <div className="bg-background/80 backdrop-blur-md border-t border-[color:var(--brand-ink)]/10 p-4 shadow-[0_-10px_40px_-10px_rgba(0,0,0,0.1)] pb-8">
+        <button
+          title="Falar com especialista"
+          onClick={openModal}
+          data-gtm-cta="falar_especialista_sticky"
+          data-gtm-location="sticky_mobile"
+          data-gtm-modal-open="modal_demonstracao"
+          className="w-full flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-6 py-4 text-base font-semibold hover:opacity-90 transition shadow-lg border-none cursor-pointer"
+        >
+          Falar com especialista
+          <ArrowRight className="w-5 h-5 shrink-0" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function ExitModal({ openDemoModal }: { openDemoModal: () => void }) {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (
+        e.clientY <= 0 ||
+        e.clientX <= 0 ||
+        e.clientX >= window.innerWidth ||
+        e.clientY >= window.innerHeight
+      ) {
+        if (!sessionStorage.getItem("exitModalShown")) {
+          setIsOpen(true);
+          sessionStorage.setItem("exitModalShown", "true");
+        }
+      }
+    };
+    document.addEventListener("mouseleave", handleMouseLeave);
+    return () => document.removeEventListener("mouseleave", handleMouseLeave);
+  }, []);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[color:var(--brand-ink)]/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-white text-[color:var(--brand-ink)] rounded-3xl w-full max-w-lg p-8 md:p-10 relative shadow-2xl animate-in zoom-in-95 duration-200">
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-5 right-5 text-muted-foreground hover:text-foreground transition-colors p-1 bg-transparent border-none cursor-pointer"
+          aria-label="Fechar modal"
+        >
+          <X className="w-6 h-6" />
+        </button>
+        <div className="text-center">
+          <div className="w-20 h-20 bg-[color:var(--brand-clay)]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span className="text-4xl">👋</span>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight mb-4 text-[color:var(--brand-clay)] leading-tight">
+            Vai mesmo sair agora?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Continuar perdendo leads por falta de organização não é a solução.
+            Fale com nosso especialista agora e descubra como o CRM definitivo pode dobrar suas vendas.
+          </p>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                openDemoModal();
+              }}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] text-lg font-bold px-6 py-4 hover:opacity-90 cursor-pointer border-none shadow-elev"
+            >
+              Falar com especialista agora
+            </button>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-sm font-semibold text-muted-foreground hover:text-foreground py-2 mt-2 bg-transparent border-none cursor-pointer"
+            >
+              Não, prefiro continuar perdendo leads
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function SimpleNav() {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 bg-background/80 backdrop-blur-md border-b border-[color:var(--brand-ink)]/10">
+      <div className="mx-auto max-w-7xl flex items-center justify-center py-4">
+        <Link
+          to="/"
+          className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
+        >
+          <img
+            src="/icon.svg"
+            alt="Microsistec Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 object-contain"
+          />
+          <div className="flex items-baseline gap-0.5 text-foreground">
+            microsistec
+            <span className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal">
+              ®
+            </span>
+          </div>
+        </Link>
+      </div>
+    </header>
+  );
+}
+
+export function SimpleFooter() {
+  return (
+    <footer className="bg-background py-8 border-t border-[color:var(--brand-ink)]/10 mt-auto">
+      <div className="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="flex items-center gap-2 font-bold text-lg text-foreground tracking-[-0.03em]">
+          <img
+            src="/icon.svg"
+            alt="Microsistec Logo"
+            width={24}
+            height={24}
+            className="w-6 h-6 object-contain"
+          />
+          <div className="flex items-baseline gap-0.5">
+            microsistec
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <Link to="/politica-de-privacidade" className="hover:text-foreground transition">
+            Política de Privacidade
+          </Link>
+          <Link to="/termos-de-uso" className="hover:text-foreground transition">
+            Termos de Uso
+          </Link>
+        </div>
+      </div>
+    </footer>
   );
 }

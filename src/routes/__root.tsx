@@ -156,6 +156,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
+        <div className="flex items-baseline gap-0.5 font-['Poppins'] font-normal">
+          microsistec
+          <span
+            className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal"
+            title="Marca Registrada"
+          >
+            ®
+          </span>
+        </div>
         <h1 className="text-2xl font-semibold tracking-tight text-foreground">
           This page didn't load
         </h1>
@@ -198,7 +207,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           name: "description",
           content:
-            "O melhor CRM imobiliário, site e app para corretores. A proptech pioneira no Brasil desde 1994 ajudando imobiliárias a venderem mais.",
+            "O melhor CRM imobiliário, site e app para corretores. A proptech pioneira no Brasil há + de 30 anos ajudando imobiliárias a venderem mais.",
         },
         { name: "author", content: "Microsistec" },
         {
@@ -211,7 +220,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           property: "og:title",
           content:
-            "Microsistec - A proptech pioneira em tecnologia imobiliária desde 1994",
+            "Microsistec - A proptech pioneira em tecnologia imobiliária há + de 30 anos",
         },
         {
           property: "og:description",
@@ -237,7 +246,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:site", content: "@microsistec" },
         {
           name: "twitter:title",
-          content: "Microsistec - Tecnologia imobiliária desde 1994",
+          content: "Microsistec - Tecnologia imobiliária há + de 30 anos",
         },
         {
           name: "twitter:description",
@@ -250,6 +259,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
       ],
       links: [
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
+        },
         {
           rel: "icon",
           type: "image/svg+xml",
@@ -408,33 +430,7 @@ function RootComponent() {
       <DemoModalProvider>
         <Outlet />
 
-        {/* Custom Intercom Launcher */}
-        <button
-          id="custom-intercom-launcher"
-          aria-label="Fale conosco"
-          data-gtm-cta="abrir_chat_flutuante"
-          data-gtm-location="floating"
-          className="btn-micro fixed bottom-6 right-6 z-50 flex items-center justify-center w-[60px] h-[60px] bg-white rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] border border-[color:var(--brand-ink)]/10 hover:scale-[1.05] cursor-pointer group"
-          style={{
-            opacity: isIntercomOpen ? 0 : 1,
-            pointerEvents: isIntercomOpen ? "none" : "auto",
-            transition: "opacity 0.3s ease, transform 0.2s ease",
-            padding: 0,
-          }}
-        >
-          <img
-            src="/icon.svg"
-            width={30}
-            height={30}
-            alt="Chat"
-            className="img-micro-scale w-[30px] h-[30px] object-contain"
-          />
-          {unreadCount > 0 && (
-            <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-xs font-bold text-white shadow-sm">
-              {unreadCount}
-            </span>
-          )}
-        </button>
+
 
         <React.Suspense fallback={null}>
           <DemoModal />
