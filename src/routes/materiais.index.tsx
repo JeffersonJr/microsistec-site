@@ -20,20 +20,20 @@ export const Route = createFileRoute("/materiais/")({
 
 function MateriaisIndex() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[color:var(--brand-orange)] selection:text-[color:var(--brand-sand)]">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[#2B5250] selection:text-[#F7F3EA]">
       <Nav />
 
       {/* HEADER */}
       <section className="relative overflow-hidden bg-hero pt-28 pb-20 md:pt-36 md:pb-28 border-b border-[color:var(--brand-ink)]/10">
         <div className="bg-grid absolute inset-0" />
         <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-          <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
+          <span className="stamp text-[#2B5250] text-sm inline-block">
             Conteúdos Gratuitos
           </span>
           <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
             Materiais para decolar a
             <br />
-            <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+            <span className="font-serif-italic font-normal text-[#2B5250]">
               sua imobiliária
             </span>
           </h1>
@@ -56,7 +56,7 @@ function MateriaisIndex() {
                 params={{
                   slug: mat.slug,
                 }}
-                className="group flex flex-col bg-[color:var(--brand-sand)]/30 rounded-3xl overflow-hidden border border-[color:var(--brand-ink)]/5 hover:border-[color:var(--brand-orange)]/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group flex flex-col bg-[color:var(--brand-sand)]/30 rounded-3xl overflow-hidden border border-[color:var(--brand-ink)]/5 hover:border-[#2B5250]/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 {/* Imagem */}
                 <div className="aspect-[4/3] w-full overflow-hidden relative">
@@ -71,21 +71,21 @@ function MateriaisIndex() {
                     height={300}
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-[color:var(--brand-ink)] flex items-center gap-1.5 shadow-sm">
-                    <FileText className="w-3.5 h-3.5 text-[color:var(--brand-orange)]" />
+                    <FileText className="w-3.5 h-3.5 text-[#2B5250]" />
                     {mat.type}
                   </div>
                 </div>
 
                 {/* Conteúdo */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold tracking-tight text-[color:var(--brand-ink)] leading-snug mb-3 group-hover:text-[color:var(--brand-orange)] transition-colors">
+                  <h3 className="text-xl font-bold tracking-tight text-[color:var(--brand-ink)] leading-snug mb-3 group-hover:text-[#2B5250] transition-colors">
                     {mat.title}
                   </h3>
                   <p className="text-base text-foreground/70 leading-relaxed mb-6 flex-1">
                     {mat.description}
                   </p>
 
-                  <div className="inline-flex items-center gap-2 font-bold text-[color:var(--brand-orange)] text-base mt-auto">
+                  <div className="inline-flex items-center gap-2 font-bold text-[#2B5250] text-base mt-auto">
                     {mat.ctaText}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

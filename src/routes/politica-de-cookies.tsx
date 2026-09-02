@@ -17,10 +17,10 @@ function PoliticaCookies() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[color:var(--brand-orange)]">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[#2B5250]">
           Política de Cookies
         </h1>
-        <div className="prose max-w-none text-foreground/90 prose-p:leading-relaxed prose-headings:font-bold prose-a:text-[color:var(--brand-orange)] space-y-6">
+        <div className="prose max-w-none text-foreground/90 prose-p:leading-relaxed prose-headings:font-bold prose-a:text-[#2B5250] space-y-6">
           <p>
             Esta Política de Cookies explica como a Microsistec usa cookies e
             tecnologias semelhantes para reconhecê-lo quando você visita nosso
@@ -106,7 +106,7 @@ function PoliticaCookies() {
             <a
               title="Acessar link"
               href="mailto:contato@microsistec.com.br"
-              className="text-[color:var(--brand-orange)] hover:underline"
+              className="text-[#2B5250] hover:underline"
             >
               contato@microsistec.com.br
             </a>

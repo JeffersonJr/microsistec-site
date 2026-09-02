@@ -26,7 +26,7 @@ function Contato() {
         data-gtm-section="contato_main"
         className="pt-32 pb-20 px-6 max-w-4xl mx-auto"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[color:var(--brand-orange)]">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[#2B5250]">
           Fale Conosco
         </h1>
         <p className="text-xl text-muted-foreground mb-12">
@@ -37,7 +37,7 @@ function Contato() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="bg-[color:var(--brand-sand)]/10 p-8 rounded-3xl border border-[color:var(--brand-ink)]/10">
             <h2 className="text-2xl font-bold mb-6 text-[color:var(--brand-ink)] flex items-center gap-3">
-              <Mail className="w-6 h-6 text-[color:var(--brand-orange)]" />
+              <Mail className="w-6 h-6 text-[#2B5250]" />
               E-mail
             </h2>
             <div className="space-y-4">
@@ -49,7 +49,7 @@ function Contato() {
                   href="mailto:suporte@microsistec.com.br"
                   data-gtm-cta="email_suporte"
                   data-gtm-location="contato_main"
-                  className="text-lg font-medium hover:text-[color:var(--brand-orange)] transition"
+                  className="text-lg font-medium hover:text-[#2B5250] transition"
                 >
                   suporte@microsistec.com.br
                 </a>
@@ -62,7 +62,7 @@ function Contato() {
                   href="mailto:financeiro@microsistec.com.br"
                   data-gtm-cta="email_financeiro"
                   data-gtm-location="contato_main"
-                  className="text-lg font-medium hover:text-[color:var(--brand-orange)] transition"
+                  className="text-lg font-medium hover:text-[#2B5250] transition"
                 >
                   financeiro@microsistec.com.br
                 </a>
@@ -72,7 +72,7 @@ function Contato() {
 
           <div className="bg-[color:var(--brand-sand)]/10 p-8 rounded-3xl border border-[color:var(--brand-ink)]/10">
             <h2 className="text-2xl font-bold mb-6 text-[color:var(--brand-ink)] flex items-center gap-3">
-              <Phone className="w-6 h-6 text-[color:var(--brand-orange)]" />
+              <Phone className="w-6 h-6 text-[#2B5250]" />
               Telefone
             </h2>
             <div className="space-y-4">

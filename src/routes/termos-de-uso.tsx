@@ -18,9 +18,9 @@ export const Route = createFileRoute("/termos-de-uso")({
 
 function TermosDeUso() {
   const contentClassName =
-    "prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-4xl prose-h2:mb-8 prose-h2:tracking-tight prose-h2:text-[color:var(--brand-ink)] dark:prose-h2:text-[color:var(--brand-sand)] prose-h3:text-2xl prose-h3:text-[color:var(--brand-orange)] prose-h3:mt-10 prose-h3:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-a:text-[color:var(--brand-orange)] prose-a:no-underline hover:prose-a:underline prose-ul:space-y-2 prose-ul:my-6";
+    "prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-4xl prose-h2:mb-8 prose-h2:tracking-tight prose-h2:text-[color:var(--brand-ink)] dark:prose-h2:text-[color:var(--brand-sand)] prose-h3:text-2xl prose-h3:text-[#2B5250] prose-h3:mt-10 prose-h3:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-a:text-[#2B5250] prose-a:no-underline hover:prose-a:underline prose-ul:space-y-2 prose-ul:my-6";
   const triggerClassName =
-    "rounded-xl px-6 py-3 text-sm md:text-base font-semibold data-[state=active]:bg-background data-[state=active]:text-[color:var(--brand-orange)] data-[state=active]:shadow-md transition-all";
+    "rounded-xl px-6 py-3 text-sm md:text-base font-semibold data-[state=active]:bg-background data-[state=active]:text-[#2B5250] data-[state=active]:shadow-md transition-all";
   const wrapperClassName =
     "bg-card border shadow-soft rounded-3xl p-8 md:p-12 focus:outline-none ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
@@ -29,7 +29,7 @@ function TermosDeUso() {
       <Nav />
       <main className="pt-32 pb-24 px-6 max-w-5xl mx-auto">
         <div className="mb-12 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-[color:var(--brand-orange)] tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-[#2B5250] tracking-tight">
             Termos e Condições
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl">

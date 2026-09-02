@@ -61,7 +61,7 @@ function BlogLeitor() {
           <Link
             title="Página Inicial da Microsistec"
             to="/"
-            className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition"
+            className="text-sm font-mono-ui uppercase hover:text-[#2B5250] transition"
           >
             Home
           </Link>
@@ -69,7 +69,7 @@ function BlogLeitor() {
           <Link
             title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário"
             to="/blog"
-            className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition"
+            className="text-sm font-mono-ui uppercase hover:text-[#2B5250] transition"
           >
             Blog
           </Link>
@@ -89,7 +89,7 @@ function BlogLeitor() {
           >
             {/* Meta */}
             <div className="flex items-center gap-3 text-sm font-mono-ui">
-              <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+              <span className="stamp text-[#2B5250] text-[10px]">
                 {post.tag}
               </span>
               <span className="text-muted-foreground flex items-center gap-1">
@@ -136,10 +136,10 @@ function BlogLeitor() {
                 }}
                 data-gtm-cta="compartilhar_artigo_blog"
                 data-gtm-location="artigo_blog"
-                className="ml-auto p-2 rounded-full border border-[color:var(--brand-ink)]/10 hover:border-[color:var(--brand-orange)] hover:bg-[color:var(--brand-sand)] transition"
+                className="ml-auto p-2 rounded-full border border-[color:var(--brand-ink)]/10 hover:border-[#2B5250] hover:bg-[color:var(--brand-sand)] transition"
                 title="Compartilhar"
               >
-                <Share2 className="w-4 h-4 text-muted-foreground hover:text-[color:var(--brand-orange)]" />
+                <Share2 className="w-4 h-4 text-muted-foreground hover:text-[#2B5250]" />
               </button>
             </div>
 
@@ -179,7 +179,7 @@ function BlogLeitor() {
                 to="/blog"
                 data-gtm-cta="voltar_blog"
                 data-gtm-location="artigo_blog"
-                className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition"
+                className="inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[#2B5250] transition"
               >
                 <ArrowLeft className="w-4 h-4" /> Voltar para o diretório de
                 artigos
@@ -198,8 +198,8 @@ function BlogLeitor() {
               <div className="bg-grid absolute inset-0 opacity-15" />
 
               <div className="relative space-y-4">
-                <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-orange)]/10 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-[color:var(--brand-orange)]" />
+                <div className="w-10 h-10 rounded-xl bg-[#5AA6A6]/15 flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-[#2B5250]" />
                 </div>
 
                 <h3 className="font-extrabold text-2xl tracking-tight leading-snug">
@@ -275,7 +275,7 @@ function BlogLeitor() {
                   to="/empresa"
                   data-gtm-cta="conhecer_historia_sidebar"
                   data-gtm-location="sidebar_blog"
-                  className="text-sm font-semibold text-[color:var(--brand-orange)] hover:underline inline-flex items-center gap-1"
+                  className="text-sm font-semibold text-[#2B5250] hover:underline inline-flex items-center gap-1"
                 >
                   Conhecer nossa história <Sparkles className="w-3.5 h-3.5" />
                 </Link>

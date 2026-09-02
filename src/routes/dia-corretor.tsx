@@ -80,7 +80,7 @@ function DiaCorretorPage() {
                   "Receba novidades exclusivas da campanha.",
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-[#2B5250] shrink-0 mt-0.5" />
                     <span className="text-foreground/80 text-xl font-medium">
                       {benefit}
                     </span>
@@ -100,13 +100,13 @@ function DiaCorretorPage() {
                         key={solution.id}
                         className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-[color:var(--brand-ink)]/5 shadow-sm hover:shadow-md transition-shadow"
                       >
-                        <div className="w-12 h-12 bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] rounded-xl flex items-center justify-center mb-4">
+                        <div className="w-12 h-12 bg-[#5AA6A6]/15 text-[#2B5250] rounded-xl flex items-center justify-center mb-4">
                           <Icon className="w-6 h-6" />
                         </div>
                         <h3 className="text-xl font-bold text-[color:var(--brand-ink)] mb-2 flex items-center gap-2">
                           {solution.title}
                           {solution.slug === "locacao" && (
-                            <span className="text-[10px] uppercase font-bold bg-[color:var(--brand-orange)]/20 text-[color:var(--brand-orange)] px-2 py-0.5 rounded-full">
+                            <span className="text-[10px] uppercase font-bold bg-[color:var(--brand-orange)]/20 text-[#2B5250] px-2 py-0.5 rounded-full">
                               Em breve
                             </span>
                           )}
@@ -164,7 +164,7 @@ function DiaCorretorPage() {
                     <div className="space-y-1.5">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                         Nome completo{" "}
-                        <span className="text-[color:var(--brand-orange)]">
+                        <span className="text-[#2B5250]">
                           *
                         </span>
                       </label>
@@ -182,7 +182,7 @@ function DiaCorretorPage() {
                     <div className="space-y-1.5">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                         E-mail de trabalho{" "}
-                        <span className="text-[color:var(--brand-orange)]">
+                        <span className="text-[#2B5250]">
                           *
                         </span>
                       </label>
@@ -200,7 +200,7 @@ function DiaCorretorPage() {
                     <div className="space-y-1.5">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                         Telefone / WhatsApp{" "}
-                        <span className="text-[color:var(--brand-orange)]">
+                        <span className="text-[#2B5250]">
                           *
                         </span>
                       </label>
@@ -230,7 +230,7 @@ function DiaCorretorPage() {
                     <div className="space-y-1.5 relative">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                         Cargo{" "}
-                        <span className="text-[color:var(--brand-orange)]">
+                        <span className="text-[#2B5250]">
                           *
                         </span>
                       </label>
@@ -289,13 +289,13 @@ function DiaCorretorPage() {
                     key={solution.id}
                     className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-[color:var(--brand-ink)]/5 shadow-sm"
                   >
-                    <div className="w-12 h-12 bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-[#5AA6A6]/15 text-[#2B5250] rounded-xl flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-bold text-[color:var(--brand-ink)] mb-2 flex items-center gap-2">
                       {solution.title}
                       {solution.slug === "locacao" && (
-                        <span className="text-[10px] uppercase font-bold bg-[color:var(--brand-orange)]/20 text-[color:var(--brand-orange)] px-2 py-0.5 rounded-full">
+                        <span className="text-[10px] uppercase font-bold bg-[color:var(--brand-orange)]/20 text-[#2B5250] px-2 py-0.5 rounded-full">
                           Em breve
                         </span>
                       )}

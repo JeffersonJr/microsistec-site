@@ -18,12 +18,12 @@ export const Route = createFileRoute("/obrigado-corretor")({
 
 function ObrigadoCorretorPage() {
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-[color:var(--brand-orange)] selection:text-white flex flex-col">
+    <div className="min-h-screen bg-white font-sans selection:bg-[#2B5250] selection:text-[#F7F3EA] flex flex-col">
       <Nav />
 
       <main className="flex-1 pt-32 pb-16 md:pt-48 md:pb-32 px-6 flex flex-col items-center justify-center relative overflow-hidden">
         {/* Background blobs */}
-        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[color:var(--brand-orange)]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#5AA6A6]/8 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
         <div className="max-w-2xl mx-auto w-full relative z-10 text-center animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">

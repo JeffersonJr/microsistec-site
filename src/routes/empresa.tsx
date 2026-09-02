@@ -87,14 +87,14 @@ function Empresa() {
         >
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
+            <span className="stamp text-[#2B5250] text-sm inline-block">
               Fundada em 1994
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
               Tecnologia imobiliária
               <br />
               com{" "}
-              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+              <span className="font-serif-italic font-normal text-[#2B5250]">
                 experiência de verdade
               </span>
             </h1>
@@ -115,7 +115,7 @@ function Empresa() {
         >
           <div className="grid md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5 md:sticky md:top-24 space-y-6">
-              <span className="font-serif-italic text-[color:var(--brand-orange)] text-2xl block">
+              <span className="font-serif-italic text-[#2B5250] text-2xl block">
                 Nossa história
               </span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
@@ -146,8 +146,8 @@ function Empresa() {
               {milestones.map((m, idx) => (
                 <div key={m.year} className="relative pl-6">
                   {/* Point */}
-                  <div className="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-[color:var(--brand-orange)] border-2 border-background" />
-                  <div className="text-base font-mono-ui font-bold text-[color:var(--brand-orange)] mb-1">
+                  <div className="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-[#5AA6A6] border-2 border-background" />
+                  <div className="text-base font-mono-ui font-bold text-[#2B5250] mb-1">
                     {m.year}
                   </div>
                   <h3 className="text-2xl font-bold tracking-tight mb-2">
@@ -170,7 +170,7 @@ function Empresa() {
         >
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center space-y-3 mb-16">
-              <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+              <span className="stamp text-[#2B5250] text-[10px]">
                 Nossos valores
               </span>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none">
@@ -184,7 +184,7 @@ function Empresa() {
                   key={v.title}
                   className="bg-background rounded-2xl border border-[color:var(--brand-ink)]/15 p-8 shadow-soft"
                 >
-                  <v.icon className="w-8 h-8 text-[color:var(--brand-orange)] mb-6" />
+                  <v.icon className="w-8 h-8 text-[#2B5250] mb-6" />
                   <h3 className="font-bold text-2xl tracking-tight mb-3">
                     {v.title}
                   </h3>
@@ -219,7 +219,7 @@ function Empresa() {
                     "Integração com portais",
                   ].map((t, i) => (
                     <span key={i} className="inline-flex items-center gap-3">
-                      <span className="font-serif-italic text-[color:var(--brand-orange)] text-xl">
+                      <span className="font-serif-italic text-[#2B5250] text-xl">
                         ✦
                       </span>
                       <span className="font-medium tracking-wide uppercase text-[11px] font-mono-ui">

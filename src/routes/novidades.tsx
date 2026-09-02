@@ -213,31 +213,31 @@ function NovidadesPage() {
           <div className="absolute inset-0 bg-grid opacity-15" />
 
           {/* Radial gradient background accent */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[color:var(--brand-orange)]/10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#5AA6A6]/15 blur-[120px] rounded-full pointer-events-none" />
 
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center gap-2 mb-8">
               <Link
                 title="Página Inicial"
                 to="/"
-                className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-[color:var(--brand-sand)]/50"
+                className="text-sm font-mono-ui uppercase hover:text-[#2B5250] transition text-[color:var(--brand-sand)]/50"
               >
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-[color:var(--brand-sand)]/30" />
-              <span className="text-sm font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold">
+              <span className="text-sm font-mono-ui uppercase text-[#2B5250] font-semibold">
                 Novidades
               </span>
             </div>
 
             <div className="max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 bg-[color:var(--brand-orange)]/15 text-[color:var(--brand-orange)] px-4 py-1.5 rounded-full font-bold text-sm">
+              <div className="inline-flex items-center gap-2 bg-[#5AA6A6]/15 text-[#2B5250] px-4 py-1.5 rounded-full font-bold text-sm">
                 <Sparkles className="w-4 h-4" />
                 Lançamentos & Atualizações
               </div>
               <h1 className="font-extrabold tracking-[-0.045em] leading-[1.05] text-[clamp(2.4rem,5.5vw,4.5rem)]">
                 O maior salto evolutivo na sua{" "}
-                <span className="text-[color:var(--brand-orange)] font-serif-italic font-normal">
+                <span className="text-[#2B5250] font-serif-italic font-normal">
                   gestão imobiliária
                 </span>
                 .
@@ -255,7 +255,7 @@ function NovidadesPage() {
         <div className="bg-[color:var(--brand-ink)]/95 backdrop-blur-md border-b border-[color:var(--brand-sand)]/10 sticky top-[72px] z-40 hidden md:block">
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex items-center gap-6 py-4 overflow-x-auto scrollbar-hide">
-              <span className="text-[color:var(--brand-orange)] font-mono-ui font-bold text-[10px] uppercase tracking-widest shrink-0">
+              <span className="text-[#2B5250] font-mono-ui font-bold text-[10px] uppercase tracking-widest shrink-0">
                 Novidades:
               </span>
               <button
@@ -344,7 +344,7 @@ function NovidadesPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Multifunil
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Em breve
                 </span>
               </h2>
@@ -361,7 +361,7 @@ function NovidadesPage() {
                   "Mova leads com facilidade e acompanhe a conversão",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#2B5250] shrink-0 mt-0.5" />
                     <span className="text-base font-medium text-[color:var(--brand-ink)]/80">
                       {item}
                     </span>
@@ -391,7 +391,7 @@ function NovidadesPage() {
                   <div className="h-16 bg-gray-50 rounded-lg mb-2" />
                   <div className="h-16 bg-gray-50 rounded-lg" />
                 </div>
-                <div className="flex-1 bg-white rounded-xl border border-[color:var(--brand-orange)]/40 p-4 shadow-md relative scale-105 z-10 ring-4 ring-[color:var(--brand-orange)]/10 transition-all duration-300">
+                <div className="flex-1 bg-white rounded-xl border border-[#2B5250]/40 p-4 shadow-md relative scale-105 z-10 ring-4 ring-[#2B5250]/10 transition-all duration-300">
                   <h4 className="font-bold text-sm mb-3 flex items-center justify-between">
                     {activeFunnel.stage2}{" "}
                     <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">
@@ -436,7 +436,7 @@ function NovidadesPage() {
             <div className="order-2 lg:order-1 bg-[color:var(--brand-sand)]/40 p-6 md:p-8 rounded-3xl border border-[color:var(--brand-ink)]/10 shadow-soft">
               <div className="flex items-center justify-between pb-4 border-b border-[color:var(--brand-ink)]/10 mb-5">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/15 text-[color:var(--brand-orange)] flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded-lg bg-[#5AA6A6]/15 text-[#2B5250] flex items-center justify-center font-bold">
                     <Database className="w-4 h-4" />
                   </div>
                   <div>
@@ -465,7 +465,7 @@ function NovidadesPage() {
                   <button
                     key={tag}
                     onClick={() => setPoolFilter(tag)}
-                    className={`px-3 py-1 rounded-full text-xs font-semibold transition border cursor-pointer ${poolFilter === tag ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]" : "bg-white text-muted-foreground border-gray-200 hover:border-[color:var(--brand-orange)]"}`}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold transition border cursor-pointer ${poolFilter === tag ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]" : "bg-white text-muted-foreground border-gray-200 hover:border-[#2B5250]"}`}
                   >
                     {tag}
                   </button>
@@ -479,7 +479,7 @@ function NovidadesPage() {
                   return (
                     <div
                       key={lead.id}
-                      className={`p-4 rounded-2xl border transition-all duration-300 ${isClaimed ? "bg-emerald-50/70 border-emerald-300" : "bg-white border-[color:var(--brand-ink)]/8 hover:border-[color:var(--brand-orange)]/30 hover:shadow-md"}`}
+                      className={`p-4 rounded-2xl border transition-all duration-300 ${isClaimed ? "bg-emerald-50/70 border-emerald-300" : "bg-white border-[color:var(--brand-ink)]/8 hover:border-[#2B5250]/30 hover:shadow-md"}`}
                     >
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div>
@@ -501,7 +501,7 @@ function NovidadesPage() {
                       </div>
 
                       <div className="flex items-center justify-between pt-2.5 border-t border-gray-100 mt-2">
-                        <span className="text-[11px] font-semibold text-[color:var(--brand-orange)] flex items-center gap-1">
+                        <span className="text-[11px] font-semibold text-[#2B5250] flex items-center gap-1">
                           ✦ {lead.score}
                         </span>
 
@@ -518,7 +518,7 @@ function NovidadesPage() {
                           className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-1.5 border-none cursor-pointer ${
                             isClaimed
                               ? "bg-emerald-600 text-white shadow-sm"
-                              : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)]"
+                              : "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] hover:bg-[#2B5250] hover:text-[#F7F3EA]"
                           }`}
                         >
                           {isClaimed ? (
@@ -549,7 +549,7 @@ function NovidadesPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Banco de Leads
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Novo
                 </span>
               </h2>
@@ -569,7 +569,7 @@ function NovidadesPage() {
                   "Reativação inteligente: transforme leads frios em novos negócios sem custo extra de mídia",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#2B5250] shrink-0 mt-0.5" />
                     <span className="text-base font-medium text-[color:var(--brand-ink)]/80">
                       {item}
                     </span>
@@ -592,7 +592,7 @@ function NovidadesPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Check-in de Plantão
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Novo
                 </span>
               </h2>
@@ -610,7 +610,7 @@ function NovidadesPage() {
                   "Visão em tempo real para o gestor de quem está no plantão, em visita ou folga",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#2B5250] shrink-0 mt-0.5" />
                     <span className="text-base font-medium text-[color:var(--brand-ink)]/80">
                       {item}
                     </span>
@@ -650,7 +650,7 @@ function NovidadesPage() {
                 {/* Checkin Action Card */}
                 <div className="p-4 rounded-xl bg-gradient-to-br from-[color:var(--brand-ink)] to-[#1c2433] text-[color:var(--brand-sand)] space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono-ui text-[color:var(--brand-orange)] font-bold flex items-center gap-1.5">
+                    <span className="text-xs font-mono-ui text-[#2B5250] font-bold flex items-center gap-1.5">
                       <Radio className="w-3.5 h-3.5" /> Plantão Sede Gonzaga
                     </span>
                     <span className="text-[10px] font-mono-ui text-white/60">
@@ -748,7 +748,7 @@ function NovidadesPage() {
                     }}
                     className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                       activeDoc.id === doc.id
-                        ? "bg-white border-[color:var(--brand-orange)] shadow-md ring-2 ring-[color:var(--brand-orange)]/10"
+                        ? "bg-white border-[#2B5250] shadow-md ring-2 ring-[#2B5250]/10"
                         : "bg-white/60 border-[color:var(--brand-ink)]/8 hover:bg-white"
                     }`}
                   >
@@ -766,7 +766,7 @@ function NovidadesPage() {
               <div className="bg-white rounded-2xl border border-[color:var(--brand-ink)]/10 p-6 shadow-sm relative overflow-hidden space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-gray-100">
                   <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                    <FileText className="w-4 h-4 text-[#2B5250]" />
                     <span className="font-bold text-xs text-[color:var(--brand-ink)]">
                       {activeDoc.title}
                     </span>
@@ -827,7 +827,7 @@ function NovidadesPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Documentos Automatizados
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Novo
                 </span>
               </h2>
@@ -848,7 +848,7 @@ function NovidadesPage() {
                   "Histórico contratual arquivado automaticamente na ficha de cada negócio",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#2B5250] shrink-0 mt-0.5" />
                     <span className="text-base font-medium text-[color:var(--brand-ink)]/80">
                       {item}
                     </span>
@@ -867,12 +867,12 @@ function NovidadesPage() {
           <div className="absolute inset-0 bg-grid opacity-10" />
           <div className="mx-auto max-w-7xl px-6 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="w-12 h-12 bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] rounded-xl flex items-center justify-center mb-6 mx-auto">
+              <div className="w-12 h-12 bg-[#5AA6A6] text-[#2B5250] rounded-xl flex items-center justify-center mb-6 mx-auto">
                 <BarChart3 className="w-6 h-6" />
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 text-[color:var(--brand-sand)] flex items-center justify-center gap-3 flex-wrap">
                 Visão 360º em Tempo Real
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Em breve
                 </span>
               </h2>
@@ -886,7 +886,7 @@ function NovidadesPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Analíticos */}
               <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[color:var(--brand-orange)]">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#2B5250]">
                   <FileText className="w-6 h-6" /> Dados Analíticos
                 </h3>
 
@@ -949,8 +949,8 @@ function NovidadesPage() {
               </div>
 
               {/* Desempenho */}
-              <div className="bg-[color:var(--brand-orange)]/10 border border-[color:var(--brand-orange)]/20 rounded-3xl p-8 backdrop-blur-sm">
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[color:var(--brand-orange)]">
+              <div className="bg-[#5AA6A6]/15 border border-[#2B5250]/20 rounded-3xl p-8 backdrop-blur-sm">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#2B5250]">
                   <TrendingUp className="w-6 h-6" /> Desempenho (Performance)
                 </h3>
 
@@ -982,7 +982,7 @@ function NovidadesPage() {
                     },
                   ].map((perf, i) => (
                     <div key={i} className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-[color:var(--brand-orange)]/20 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-[color:var(--brand-orange)]/20 text-[#2B5250] flex items-center justify-center shrink-0">
                         <Target className="w-5 h-5" />
                       </div>
                       <div>
@@ -1077,7 +1077,7 @@ function NovidadesPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Integração com Portais: Multi Corretor
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Em breve
                 </span>
               </h2>
@@ -1107,7 +1107,7 @@ function NovidadesPage() {
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] flex items-center gap-3 flex-wrap">
                 Automações de Fluxo
-                <span className="text-sm md:text-base font-bold bg-[color:var(--brand-orange)] text-white px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-sm md:text-base font-bold bg-[#2B5250] text-[#F7F3EA] px-3 py-1 rounded-full uppercase tracking-wider">
                   Em breve
                 </span>
               </h2>
@@ -1119,7 +1119,7 @@ function NovidadesPage() {
               </p>
               <ul className="space-y-4 pt-4">
                 <li className="flex items-start gap-3">
-                  <Workflow className="w-5 h-5 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                  <Workflow className="w-5 h-5 text-[#2B5250] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-base text-[color:var(--brand-ink)]">
                       Gatilhos Inteligentes
@@ -1131,7 +1131,7 @@ function NovidadesPage() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Workflow className="w-5 h-5 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                  <Workflow className="w-5 h-5 text-[#2B5250] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-base text-[color:var(--brand-ink)]">
                       Ações Sequenciais
@@ -1152,7 +1152,7 @@ function NovidadesPage() {
                   <button
                     key={a.id}
                     onClick={() => setActiveAutomation(a)}
-                    className={`flex-1 min-w-[120px] px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer border-none whitespace-nowrap ${activeAutomation.id === a.id ? "bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)]" : "bg-transparent text-muted-foreground hover:bg-gray-50"}`}
+                    className={`flex-1 min-w-[120px] px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer border-none whitespace-nowrap ${activeAutomation.id === a.id ? "bg-[#5AA6A6]/15 text-[#2B5250]" : "bg-transparent text-muted-foreground hover:bg-gray-50"}`}
                   >
                     {a.name}
                   </button>

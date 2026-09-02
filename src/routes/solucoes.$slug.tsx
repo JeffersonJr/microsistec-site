@@ -327,7 +327,7 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
     >
       <div className="border-t border-[color:var(--brand-ink)]/8 pt-14 md:pt-20">
         <div className="space-y-3 mb-12">
-          <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+          <span className="stamp text-[#2B5250] text-[10px]">
             Como funciona
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -337,14 +337,14 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
 
         <div className="grid md:grid-cols-3 gap-6 relative">
           {/* Connector line between steps */}
-          <div className="hidden md:block absolute top-10 left-[18%] right-[18%] h-px bg-gradient-to-r from-[color:var(--brand-orange)]/20 via-[color:var(--brand-orange)]/40 to-[color:var(--brand-orange)]/20" />
+          <div className="hidden md:block absolute top-10 left-[18%] right-[18%] h-px bg-gradient-to-r from-[#2B5250]/20 via-[#5AA6A6]/40 to-[#2B5250]/20" />
           {data.steps.map((step, i) => (
             <div
               key={i}
-              className="relative flex flex-col gap-4 p-7 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/30 hover:shadow-soft transition-all duration-300 feature-card"
+              className="relative flex flex-col gap-4 p-7 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[#2B5250]/30 hover:shadow-soft transition-all duration-300 feature-card"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center font-mono-ui text-base font-bold shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[#2B5250] flex items-center justify-center font-mono-ui text-base font-bold shrink-0">
                   {step.n}
                 </div>
                 <div className="h-px flex-1 bg-[color:var(--brand-ink)]/8 md:hidden" />
@@ -439,8 +439,8 @@ function SolutionMetrics({ slug }: { slug: string }) {
             key={i}
             className="relative bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-8 flex flex-col items-center gap-1 text-center overflow-hidden group feature-card border border-[color:var(--brand-ink)]"
           >
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-[color:var(--brand-orange)]/10 rounded-full" />
-            <div className="text-4xl md:text-5xl font-extrabold text-[color:var(--brand-orange)] tracking-tight relative z-10">
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#5AA6A6]/15 rounded-full" />
+            <div className="text-4xl md:text-5xl font-extrabold text-[#2B5250] tracking-tight relative z-10">
               {m.value}
             </div>
             <div className="text-sm font-semibold text-[color:var(--brand-sand)] mt-1 relative z-10">
@@ -612,7 +612,7 @@ function SolutionForWho({ slug }: { slug: string }) {
       className="mx-auto max-w-7xl px-6 pb-14 md:pb-20"
     >
       <div className="mb-8">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+        <span className="stamp text-[#2B5250] text-[10px]">
           Para quem é
         </span>
       </div>
@@ -620,14 +620,14 @@ function SolutionForWho({ slug }: { slug: string }) {
         {profiles.map((p, i) => (
           <div
             key={i}
-            className="group p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-gradient-to-br from-[color:var(--brand-sand)]/40 to-background hover:from-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-soft transition-all duration-300 feature-card"
+            className="group p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-gradient-to-br from-[color:var(--brand-sand)]/40 to-background hover:from-background hover:border-[#2B5250]/25 hover:shadow-soft transition-all duration-300 feature-card"
           >
-            <div className="mb-4 w-12 h-12 rounded-xl bg-[color:var(--brand-ink)]/5 flex items-center justify-center text-[color:var(--brand-orange)]">
+            <div className="mb-4 w-12 h-12 rounded-xl bg-[color:var(--brand-ink)]/5 flex items-center justify-center text-[#2B5250]">
               {React.createElement(p.icon as React.ElementType, {
                 className: "w-6 h-6",
               })}
             </div>
-            <h3 className="font-bold text-base mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+            <h3 className="font-bold text-base mb-2 group-hover:text-[#2B5250] transition-colors duration-200">
               {p.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -835,7 +835,7 @@ function SolutionFAQ({ slug }: { slug: string }) {
       className="mx-auto max-w-7xl px-6 pb-16 md:pb-24"
     >
       <div className="mb-8">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+        <span className="stamp text-[#2B5250] text-[10px]">
           Perguntas frequentes
         </span>
       </div>
@@ -851,11 +851,11 @@ function SolutionFAQ({ slug }: { slug: string }) {
                 data-gtm-location="faq_solucao"
                 className="w-full flex items-center justify-between gap-4 text-left cursor-pointer bg-transparent border-none py-1 group"
               >
-                <span className="text-base font-semibold text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                <span className="text-base font-semibold text-foreground group-hover:text-[#2B5250] transition-colors duration-200">
                   {faq.q}
                 </span>
                 <span
-                  className="text-[color:var(--brand-orange)] shrink-0 transition-transform duration-300"
+                  className="text-[#2B5250] shrink-0 transition-transform duration-300"
                   style={{
                     transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                   }}
@@ -1068,7 +1068,7 @@ function SolucaoDetalhe() {
               <Link
                 title="Página Inicial da Microsistec"
                 to="/"
-                className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground"
+                className="text-sm font-mono-ui uppercase hover:text-[#2B5250] transition text-muted-foreground"
               >
                 Home
               </Link>
@@ -1076,7 +1076,7 @@ function SolucaoDetalhe() {
               <Link
                 title="Acessar link"
                 to="/solucoes"
-                className="text-sm font-mono-ui uppercase text-[color:var(--brand-orange)]/80 hover:text-[color:var(--brand-orange)] transition"
+                className="text-sm font-mono-ui uppercase text-[#2B5250]/80 hover:text-[#2B5250] transition"
               >
                 Soluções
               </Link>
@@ -1103,10 +1103,10 @@ function SolucaoDetalhe() {
                     </div>
                   ) : (
                     <div className="w-11 h-11 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center">
-                      <IconComp className="w-5 h-5 text-[color:var(--brand-orange)]" />
+                      <IconComp className="w-5 h-5 text-[#2B5250]" />
                     </div>
                   )}
-                  <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+                  <span className="stamp text-[#2B5250] text-[10px]">
                     Produto Exclusivo
                   </span>
                 </div>
@@ -1190,7 +1190,7 @@ function SolucaoDetalhe() {
                       key={idx}
                       className="flex gap-2.5 text-base leading-relaxed text-foreground/75"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#2B5250] shrink-0 mt-0.5" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -1207,7 +1207,7 @@ function SolucaoDetalhe() {
           className="mx-auto max-w-7xl px-6 py-16 md:py-24"
         >
           <div className="space-y-4 mb-12">
-            <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+            <span className="stamp text-[#2B5250] text-[10px]">
               O que está incluso
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -1219,9 +1219,9 @@ function SolucaoDetalhe() {
             {sol.features.map((f: string, idx: number) => (
               <div
                 key={idx}
-                className="feature-card flex items-start gap-4 p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[color:var(--brand-orange)]/25 transition-all duration-300"
+                className="feature-card flex items-start gap-4 p-6 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[#2B5250]/25 transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/8 text-[color:var(--brand-orange)] flex items-center justify-center shrink-0 font-mono-ui text-sm font-bold">
+                <div className="w-9 h-9 rounded-xl bg-[#5AA6A6]/12 text-[#2B5250] flex items-center justify-center shrink-0 font-mono-ui text-sm font-bold">
                   {(idx + 1).toString().padStart(2, "0")}
                 </div>
                 <div>
@@ -1256,7 +1256,7 @@ function SolucaoDetalhe() {
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                 <div className="space-y-6 max-w-lg">
-                  <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+                  <span className="stamp text-[#2B5250] text-[10px]">
                     Ecossistema Completo
                   </span>
                   <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -1277,7 +1277,7 @@ function SolucaoDetalhe() {
                     placeholder="Buscar portal ou ferramenta..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-background border border-[color:var(--brand-ink)]/15 focus:outline-none focus:ring-1 focus:ring-[color:var(--brand-orange)] focus:border-[color:var(--brand-orange)] rounded-full text-sm font-medium"
+                    className="w-full pl-10 pr-4 py-2.5 bg-background border border-[color:var(--brand-ink)]/15 focus:outline-none focus:ring-1 focus:ring-[#2B5250] focus:border-[#2B5250] rounded-full text-sm font-medium"
                   />
                 </div>
               </div>
@@ -1299,7 +1299,7 @@ function SolucaoDetalhe() {
                     className={`px-4 py-2 rounded-full text-sm font-semibold transition cursor-pointer border ${
                       activeCategory === cat
                         ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]"
-                        : "bg-background text-muted-foreground border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] hover:text-foreground"
+                        : "bg-background text-muted-foreground border-[color:var(--brand-ink)]/15 hover:border-[#2B5250] hover:text-foreground"
                     }`}
                   >
                     {cat}
@@ -1344,11 +1344,11 @@ function SolucaoDetalhe() {
                       </div>
 
                       {/* Info */}
-                      <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                      <h3 className="font-bold text-base text-foreground group-hover:text-[#2B5250] transition-colors duration-200">
                         {portal.name}
                       </h3>
 
-                      <span className="text-[10px] text-[color:var(--brand-orange)] font-mono-ui font-semibold mt-1">
+                      <span className="text-[10px] text-[#2B5250] font-mono-ui font-semibold mt-1">
                         {portal.category}
                       </span>
 
@@ -1395,7 +1395,7 @@ function SolucaoDetalhe() {
             </div>
             <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[color:var(--brand-sand)] leading-[1.02]">
               Comece a usar o{" "}
-              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+              <span className="font-serif-italic font-normal text-[#2B5250]">
                 {sol.title}
               </span>{" "}
               hoje mesmo
@@ -1576,7 +1576,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Texts */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-sm font-mono-ui font-bold">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5AA6A6]/15 text-[#2B5250] text-sm font-mono-ui font-bold">
               <Bot className="w-3.5 h-3.5" /> Interatividade Real
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -1617,7 +1617,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                 onClick={resetChat}
                 data-gtm-cta="reiniciar_simulacao_albert"
                 data-gtm-location="demo_albert_ia"
-                className="text-sm font-mono-ui font-bold text-[color:var(--brand-orange)] hover:underline flex items-center gap-1 cursor-pointer"
+                className="text-sm font-mono-ui font-bold text-[#2B5250] hover:underline flex items-center gap-1 cursor-pointer"
               >
                 Reiniciar Simulação ↻
               </button>
@@ -1652,7 +1652,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                 </div>
               </div>
               <div className="ml-auto flex items-center gap-2">
-                <span className="stamp text-[color:var(--brand-orange)] text-[9px] border-[color:var(--brand-orange)]/30 font-bold">
+                <span className="stamp text-[#2B5250] text-[9px] border-[#2B5250]/30 font-bold">
                   24h ONLINE
                 </span>
               </div>
@@ -1708,7 +1708,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
                     onClick={() => handleOptionClick(opt.label, opt.actionStep)}
                     data-gtm-cta={`simulador_albert_opcao_${opt.actionStep}`}
                     data-gtm-location="demo_albert_ia"
-                    className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] px-4 py-2 rounded-full text-sm font-bold transition shadow-sm cursor-pointer"
+                    className="bg-background hover:bg-[color:var(--brand-sand)] text-foreground border border-[color:var(--brand-ink)]/15 hover:border-[#2B5250] px-4 py-2 rounded-full text-sm font-bold transition shadow-sm cursor-pointer"
                   >
                     {opt.label}
                   </button>
@@ -1741,7 +1741,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
         className="mx-auto max-w-7xl px-6 pb-20 md:pb-28"
       >
         <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
-          <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
+          <span className="stamp text-[#2B5250] text-[10px] inline-block">
             A única IA para imobiliárias com um coração
           </span>
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -1760,15 +1760,15 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
           {albertCapabilities.map((cap, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
+              className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[#2B5250]/30 transition duration-300 group"
             >
-              <span className="text-[color:var(--brand-orange)] shrink-0 mt-0.5">
+              <span className="text-[#2B5250] shrink-0 mt-0.5">
                 {React.createElement(cap.icon as React.ElementType, {
                   className: "w-8 h-8",
                 })}
               </span>
               <div>
-                <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
+                <h3 className="font-bold text-base text-foreground group-hover:text-[#2B5250] transition mb-1">
                   {cap.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1782,7 +1782,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
         {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">
+            <div className="text-4xl font-extrabold text-[#2B5250]">
               24/7
             </div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
@@ -1790,7 +1790,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             </div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">
+            <div className="text-4xl font-extrabold text-[#2B5250]">
               300%
             </div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
@@ -1798,7 +1798,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             </div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">
+            <div className="text-4xl font-extrabold text-[#2B5250]">
               &lt;3s
             </div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
@@ -1806,7 +1806,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             </div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[color:var(--brand-orange)]">
+            <div className="text-4xl font-extrabold text-[#2B5250]">
               100%
             </div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
@@ -2002,7 +2002,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
       className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16"
     >
       <div className="space-y-6 mb-12 text-center max-w-2xl mx-auto">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
+        <span className="stamp text-[#2B5250] text-[10px] inline-block">
           Catálogo Oficial de Temas
         </span>
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -2020,7 +2020,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
         {templates.map((tpl, i) => (
           <div
             key={i}
-            className="group bg-[color:var(--brand-sand)]/30 hover:bg-background border border-[color:var(--brand-ink)]/10 hover:border-[color:var(--brand-orange)]/30 rounded-2xl overflow-hidden transition-all duration-300 shadow-soft flex flex-col"
+            className="group bg-[color:var(--brand-sand)]/30 hover:bg-background border border-[color:var(--brand-ink)]/10 hover:border-[#2B5250]/30 rounded-2xl overflow-hidden transition-all duration-300 shadow-soft flex flex-col"
           >
             {/* Visual Frame */}
             <div className="aspect-[16/10] overflow-hidden border-b border-[color:var(--brand-ink)]/5 bg-muted relative">
@@ -2053,7 +2053,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
                     </span>
                   ))}
                 </div>
-                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[#2B5250] transition-colors duration-200">
                   {tpl.name}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -2070,7 +2070,7 @@ function SitesTemplateSubSection({ openModal }: { openModal: () => void }) {
                   rel="noopener noreferrer"
                   data-gtm-cta={`visualizar_tema_${tpl.name.toLowerCase().replace(/\s+/g, "_")}`}
                   data-gtm-location="catalogo_temas"
-                  className="flex-1 bg-background hover:bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-foreground hover:border-[color:var(--brand-orange)] transition text-center py-2.5 rounded-full text-[10px] font-extrabold flex items-center justify-center gap-1.5 no-underline decoration-none"
+                  className="flex-1 bg-background hover:bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 text-foreground hover:border-[#2B5250] transition text-center py-2.5 rounded-full text-[10px] font-extrabold flex items-center justify-center gap-1.5 no-underline decoration-none"
                 >
                   Visualizar Tema{" "}
                   <ExternalLink className="w-3 h-3 text-muted-foreground" />
@@ -2266,7 +2266,7 @@ const PageSpeedComparison = () => {
       <div className="text-center mb-10">
         <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
           A diferença invisível que{" "}
-          <span className="text-[color:var(--brand-orange)]">muda tudo</span>.
+          <span className="text-[#2B5250]">muda tudo</span>.
         </h3>
         <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
           Sites comuns de imobiliárias perdem vendas antes mesmo de carregar.
@@ -2301,7 +2301,7 @@ const PageSpeedComparison = () => {
         {/* Depois */}
         <div className="flex-1 flex flex-col items-center relative">
           <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5">
-            <Sparkles className="w-8 h-8 text-[color:var(--brand-orange)] animate-pulse" />
+            <Sparkles className="w-8 h-8 text-[#2B5250] animate-pulse" />
           </div>
           <span className="bg-emerald-500/10 text-emerald-600 font-bold px-3 py-1 rounded-full text-[10px] uppercase tracking-wider mb-8">
             Com Microsistec Premium
@@ -2333,7 +2333,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
       <PageSpeedComparison />
 
       <div className="space-y-6 mb-12 mt-16 text-center max-w-2xl mx-auto">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
+        <span className="stamp text-[#2B5250] text-[10px] inline-block">
           Showcase Imobiliário Real
         </span>
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -2351,12 +2351,12 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
         {v8Clients.map((client, i) => (
           <div
             key={i}
-            className="group bg-[color:var(--brand-sand)]/20 hover:bg-background border border-[color:var(--brand-ink)]/10 hover:border-[color:var(--brand-orange)]/30 p-6 rounded-3xl transition-all duration-300 shadow-soft flex flex-col justify-between"
+            className="group bg-[color:var(--brand-sand)]/20 hover:bg-background border border-[color:var(--brand-ink)]/10 hover:border-[#2B5250]/30 p-6 rounded-3xl transition-all duration-300 shadow-soft flex flex-col justify-between"
           >
             <div>
               {/* Header: Name and metrics info */}
               <div className="flex items-center justify-between pb-4 border-b border-dashed border-[color:var(--brand-ink)]/10 mb-4">
-                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[color:var(--brand-orange)] transition">
+                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[#2B5250] transition">
                   {client.name}
                 </h3>
                 <span
@@ -2430,7 +2430,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
       {/* Tech info footer bar */}
       <div className="mt-12 p-6 bg-[color:var(--brand-sand)]/40 rounded-3xl border border-[color:var(--brand-ink)]/10 grid md:grid-cols-3 gap-6 items-center text-center md:text-left">
         <div className="flex items-center gap-3">
-          <Award className="w-8 h-8 text-[color:var(--brand-orange)] shrink-0 mx-auto md:mx-0" />
+          <Award className="w-8 h-8 text-[#2B5250] shrink-0 mx-auto md:mx-0" />
           <div>
             <h4 className="font-bold text-sm">Pioneirismo V8</h4>
             <p className="text-[10px] text-muted-foreground">
@@ -2439,7 +2439,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <Shield className="w-8 h-8 text-[color:var(--brand-orange)] shrink-0 mx-auto md:mx-0" />
+          <Shield className="w-8 h-8 text-[#2B5250] shrink-0 mx-auto md:mx-0" />
           <div>
             <h4 className="font-bold text-sm">Segurança Extrema</h4>
             <p className="text-[10px] text-muted-foreground">
@@ -2448,7 +2448,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <Zap className="w-8 h-8 text-[color:var(--brand-orange)] shrink-0 mx-auto md:mx-0" />
+          <Zap className="w-8 h-8 text-[#2B5250] shrink-0 mx-auto md:mx-0" />
           <div>
             <h4 className="font-bold text-sm">Velocidade Crítica</h4>
             <p className="text-[10px] text-muted-foreground">
@@ -2523,7 +2523,7 @@ function CRMSubSection() {
     <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/10 pt-16">
       {/* Header */}
       <div className="space-y-6 mb-14 text-center max-w-2xl mx-auto">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px] inline-block">
+        <span className="stamp text-[#2B5250] text-[10px] inline-block">
           Ecossistema Completo
         </span>
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -2541,15 +2541,15 @@ function CRMSubSection() {
         {crmModules.map((mod, i) => (
           <div
             key={i}
-            className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group"
+            className="flex items-start gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-sand)]/20 hover:bg-background hover:border-[#2B5250]/30 transition duration-300 group"
           >
-            <span className="text-[color:var(--brand-orange)] shrink-0 mt-0.5">
+            <span className="text-[#2B5250] shrink-0 mt-0.5">
               {React.createElement(mod.icon as React.ElementType, {
                 className: "w-8 h-8",
               })}
             </span>
             <div>
-              <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition mb-1">
+              <h3 className="font-bold text-base text-foreground group-hover:text-[#2B5250] transition mb-1">
                 {mod.title}
                 {mod.title === "Blog Integrado" && (
                   <span className="ml-2 text-[9px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">
@@ -2568,7 +2568,7 @@ function CRMSubSection() {
       {/* Match Inteligente Visual */}
       <div className="grid lg:grid-cols-2 gap-10 items-center mb-14">
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-sm font-mono-ui font-bold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5AA6A6]/15 text-[#2B5250] text-sm font-mono-ui font-bold">
             <CheckCircle2 className="w-3.5 h-3.5" /> Cruzamento de Dados
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -2609,7 +2609,7 @@ function CRMSubSection() {
             <h4 className="font-extrabold text-base mt-1">
               Apartamento Vista Mar - Gonzaga
             </h4>
-            <div className="text-sm font-mono-ui font-semibold text-[color:var(--brand-orange)] mt-1">
+            <div className="text-sm font-mono-ui font-semibold text-[#2B5250] mt-1">
               R$ 890.000
             </div>
           </div>
@@ -2642,13 +2642,13 @@ function CRMSubSection() {
           rel="noopener noreferrer"
           data-gtm-cta="acessar_central_ajuda_crm"
           data-gtm-location="ecossistema_crm"
-          className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
+          className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[#2B5250]/30 transition duration-300 group no-underline decoration-none"
         >
           <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition">
+            <h3 className="font-bold text-base text-foreground group-hover:text-[#2B5250] transition">
               Central de Ajuda
             </h3>
             <p className="text-sm text-muted-foreground mt-0.5">
@@ -2656,7 +2656,7 @@ function CRMSubSection() {
               de suporte.
             </p>
           </div>
-          <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
+          <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[#2B5250] ml-auto shrink-0 transition" />
         </a>
 
         <a
@@ -2666,13 +2666,13 @@ function CRMSubSection() {
           rel="noopener noreferrer"
           data-gtm-cta="acessar_academy_crm"
           data-gtm-location="ecossistema_crm"
-          className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[color:var(--brand-orange)]/30 transition duration-300 group no-underline decoration-none"
+          className="flex items-center gap-4 p-5 rounded-2xl border border-[color:var(--brand-ink)]/10 bg-background hover:border-[#2B5250]/30 transition duration-300 group no-underline decoration-none"
         >
           <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
             <Award className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-foreground group-hover:text-[color:var(--brand-orange)] transition">
+            <h3 className="font-bold text-base text-foreground group-hover:text-[#2B5250] transition">
               Microsistec Academy
             </h3>
             <p className="text-sm text-muted-foreground mt-0.5">
@@ -2680,7 +2680,7 @@ function CRMSubSection() {
               recurso da plataforma.
             </p>
           </div>
-          <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[color:var(--brand-orange)] ml-auto shrink-0 transition" />
+          <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[#2B5250] ml-auto shrink-0 transition" />
         </a>
       </div>
 
@@ -2776,8 +2776,8 @@ function AppSubSection() {
               {/* Screen content cards */}
               <div className="space-y-2.5 flex-grow overflow-y-auto">
                 {/* New Lead notification */}
-                <div className="p-2.5 bg-[color:var(--brand-orange)]/10 rounded-xl border border-[color:var(--brand-orange)]/20 space-y-1">
-                  <span className="text-[8px] text-[color:var(--brand-orange)] font-mono-ui font-bold">
+                <div className="p-2.5 bg-[#5AA6A6]/15 rounded-xl border border-[#2B5250]/20 space-y-1">
+                  <span className="text-[8px] text-[#2B5250] font-mono-ui font-bold">
                     🔔 NOVO LEAD
                   </span>
                   <div className="font-bold text-[10px]">
@@ -2808,7 +2808,7 @@ function AppSubSection() {
                 <div className="p-2.5 bg-background rounded-xl border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1.5">
                   <div className="font-bold text-[10px] flex items-center justify-between">
                     <span>AP Gonzaga Vista Mar</span>
-                    <span className="text-[8px] text-[color:var(--brand-orange)] font-bold">
+                    <span className="text-[8px] text-[#2B5250] font-bold">
                       R$ 890k
                     </span>
                   </div>
@@ -2822,7 +2822,7 @@ function AppSubSection() {
 
                 {/* History */}
                 <div className="p-2.5 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-xl space-y-1.5">
-                  <span className="text-[8px] text-[color:var(--brand-orange)] font-bold font-mono-ui">
+                  <span className="text-[8px] text-[#2B5250] font-bold font-mono-ui">
                     HISTÓRICO
                   </span>
                   <div className="text-[9px] space-y-1 text-[color:var(--brand-sand)]/80">
@@ -2843,7 +2843,7 @@ function AppSubSection() {
 
         {/* Texts */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[color:var(--brand-orange)]/10 text-[color:var(--brand-orange)] text-sm font-mono-ui font-bold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5AA6A6]/15 text-[#2B5250] text-sm font-mono-ui font-bold">
             <Smartphone className="w-3.5 h-3.5" /> Mobilidade Total
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -2862,9 +2862,9 @@ function AppSubSection() {
             {appFeatures.map((feat, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 p-3 rounded-xl border border-[color:var(--brand-ink)]/5 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/20 transition"
+                className="flex items-start gap-3 p-3 rounded-xl border border-[color:var(--brand-ink)]/5 bg-[color:var(--brand-sand)]/20 hover:border-[#2B5250]/20 transition"
               >
-                <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0 text-[color:var(--brand-orange)]">
+                <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0 text-[#2B5250]">
                   <feat.icon className="w-4 h-4" />
                 </div>
                 <div>
@@ -2887,7 +2887,7 @@ function AppSubSection() {
               data-gtm-cta="falar_especialista_app"
               data-gtm-location="solucao_app"
               data-gtm-modal-open="modal_demonstracao"
-              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-base hover:bg-[color:var(--brand-orange)] hover:text-[color:var(--brand-ink)] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
+              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] px-6 py-3 font-bold text-base hover:bg-[#2B5250] hover:text-[#F7F3EA] transition cursor-pointer border-none shadow-soft no-underline decoration-none"
             >
               Fale com o Especialista <ArrowRight className="w-4 h-4" />
             </button>
@@ -3287,7 +3287,7 @@ export function FunilSubSectionMulti() {
     >
       {/* Header */}
       <div className="space-y-4 mb-10 max-w-2xl">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+        <span className="stamp text-[#2B5250] text-[10px]">
           Multi-Funil Interativo
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -3328,7 +3328,7 @@ export function FunilSubSectionMulti() {
           { label: "Tempo médio", value: `${funnel.metrics.avgDays}d` },
         ].map((m) => (
           <div key={m.label} className="bg-background px-4 py-3 text-center">
-            <div className="text-base font-extrabold text-[color:var(--brand-orange)]">
+            <div className="text-base font-extrabold text-[#2B5250]">
               {m.value}
             </div>
             <div className="text-[10px] text-muted-foreground font-mono-ui mt-0.5">
@@ -3356,7 +3356,7 @@ export function FunilSubSectionMulti() {
             {stage.leads.map((lead, li) => (
               <div
                 key={li}
-                className="p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)]/40 transition cursor-pointer"
+                className="p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[#2B5250]/40 transition cursor-pointer"
               >
                 <h4 className="font-bold text-[10px] leading-tight">
                   {lead.name}
@@ -3365,7 +3365,7 @@ export function FunilSubSectionMulti() {
                   {lead.desc}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-[9px] text-[color:var(--brand-orange)] font-bold">
+                  <span className="text-[9px] text-[#2B5250] font-bold">
                     {lead.value}
                   </span>
                   {lead.tag && (
@@ -3382,7 +3382,7 @@ export function FunilSubSectionMulti() {
             <div
               data-gtm-cta="adicionar_card_funil"
               data-gtm-location="funil_interativo_multi"
-              className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition"
+              className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[#2B5250]/30 hover:text-muted-foreground/60 transition"
             >
               + Adicionar
             </div>
@@ -3393,7 +3393,7 @@ export function FunilSubSectionMulti() {
       {/* Bottom callout */}
       <div className="mt-8 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
         <div className="flex-1">
-          <div className="text-sm font-mono-ui text-[color:var(--brand-orange)] mb-1">
+          <div className="text-sm font-mono-ui text-[#2B5250] mb-1">
             Multi-Funil Ilimitado
           </div>
           <p className="text-base text-[color:var(--brand-sand)]/80 leading-relaxed">
@@ -3560,7 +3560,7 @@ export function FunilSubSection() {
       className="mx-auto max-w-7xl px-6 pb-20 md:pb-28 border-t border-[color:var(--brand-ink)]/8 pt-16"
     >
       <div className="space-y-4 mb-10 max-w-2xl">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+        <span className="stamp text-[#2B5250] text-[10px]">
           Kanban Intuitivo
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -3581,7 +3581,7 @@ export function FunilSubSection() {
           { label: "Tempo médio", value: "22d" },
         ].map((m) => (
           <div key={m.label} className="bg-background px-4 py-3 text-center">
-            <div className="text-base font-extrabold text-[color:var(--brand-orange)]">
+            <div className="text-base font-extrabold text-[#2B5250]">
               {m.value}
             </div>
             <div className="text-[10px] text-muted-foreground font-mono-ui mt-0.5">
@@ -3610,7 +3610,7 @@ export function FunilSubSection() {
                     {stage.name}
                   </span>
                   {columnVGV > 0 && (
-                    <span className="text-[8px] font-mono-ui text-[color:var(--brand-orange)] font-bold">
+                    <span className="text-[8px] font-mono-ui text-[#2B5250] font-bold">
                       {formatVGV(columnVGV)}
                     </span>
                   )}
@@ -3624,7 +3624,7 @@ export function FunilSubSection() {
                   key={lead.id}
                   draggable
                   onDragStart={(e) => handleDragStart(e, si, li)}
-                  className={`p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[color:var(--brand-orange)]/40 hover:shadow-md transition cursor-grab active:cursor-grabbing ${draggedItem?.stageIndex === si && draggedItem?.leadIndex === li ? "opacity-50" : "opacity-100"}`}
+                  className={`p-2.5 bg-background rounded-lg border border-[color:var(--brand-ink)]/5 shadow-sm space-y-1 hover:border-[#2B5250]/40 hover:shadow-md transition cursor-grab active:cursor-grabbing ${draggedItem?.stageIndex === si && draggedItem?.leadIndex === li ? "opacity-50" : "opacity-100"}`}
                 >
                   <h4 className="font-bold text-[10px] leading-tight">
                     {lead.name}
@@ -3633,7 +3633,7 @@ export function FunilSubSection() {
                     {lead.desc}
                   </p>
                   <div className="flex items-center justify-between pointer-events-none">
-                    <span className="text-[9px] text-[color:var(--brand-orange)] font-bold">
+                    <span className="text-[9px] text-[#2B5250] font-bold">
                       {lead.value}
                     </span>
                     {lead.tag && (
@@ -3647,7 +3647,7 @@ export function FunilSubSection() {
               <div
                 data-gtm-cta="adicionar_card_funil_simples"
                 data-gtm-location="funil_kanban_simples"
-                className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[color:var(--brand-orange)]/30 hover:text-muted-foreground/60 transition mt-auto"
+                className="p-2 rounded-lg border border-dashed border-[color:var(--brand-ink)]/10 text-center text-[9px] text-muted-foreground/40 cursor-pointer hover:border-[#2B5250]/30 hover:text-muted-foreground/60 transition mt-auto"
               >
                 + Adicionar
               </div>
@@ -3658,7 +3658,7 @@ export function FunilSubSection() {
 
       <div className="mt-4 p-5 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex flex-col md:flex-row items-start md:items-center gap-4">
         <div className="flex-1">
-          <div className="text-sm font-mono-ui text-[color:var(--brand-orange)] mb-1">
+          <div className="text-sm font-mono-ui text-[#2B5250] mb-1">
             Mais Assertividade
           </div>
           <p className="text-base text-[color:var(--brand-sand)]/80 leading-relaxed">
@@ -3773,7 +3773,7 @@ function RodizioSubSection() {
     >
       {/* Header */}
       <div className="space-y-6 mb-14 max-w-2xl">
-        <span className="stamp text-[color:var(--brand-orange)] text-[10px]">
+        <span className="stamp text-[#2B5250] text-[10px]">
           Fila Inteligente Round-Robin
         </span>
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
@@ -3807,14 +3807,14 @@ function RodizioSubSection() {
             {queue.map((c, idx) => (
               <li
                 key={c.id}
-                className={`flex items-center gap-4 px-5 py-4 transition-all duration-500 ${idx === 0 ? "bg-[color:var(--brand-orange)]/8 border-l-2 border-[color:var(--brand-orange)]" : ""}`}
+                className={`flex items-center gap-4 px-5 py-4 transition-all duration-500 ${idx === 0 ? "bg-[#5AA6A6]/12 border-l-2 border-[#2B5250]" : ""}`}
               >
                 {/* Position badge */}
                 <div
                   className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0"
                   style={{
                     background:
-                      idx === 0 ? "var(--brand-orange)" : "rgba(14,17,23,0.06)",
+                      idx === 0 ? "#2B5250" : "rgba(14,17,23,0.06)",
                     color: idx === 0 ? "var(--brand-ink)" : "var(--brand-ink)",
                   }}
                 >
@@ -3837,7 +3837,7 @@ function RodizioSubSection() {
                       {c.name}
                     </span>
                     {idx === 0 && (
-                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] uppercase tracking-wide shrink-0">
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#5AA6A6] text-[#2B5250] uppercase tracking-wide shrink-0">
                         Vez
                       </span>
                     )}
@@ -3880,7 +3880,7 @@ function RodizioSubSection() {
 
             {incomingLead ? (
               <div className="space-y-3">
-                <div className="p-3.5 rounded-xl border border-[color:var(--brand-orange)]/30 bg-[color:var(--brand-orange)]/8 space-y-1.5">
+                <div className="p-3.5 rounded-xl border border-[#2B5250]/30 bg-[#5AA6A6]/12 space-y-1.5">
                   <div className="text-sm text-muted-foreground font-mono-ui">
                     via {incomingLead.portal}
                   </div>
@@ -3912,7 +3912,7 @@ function RodizioSubSection() {
                 data-gtm-location="simulador_rodizio"
                 className="w-full py-3 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer border-none"
                 style={{
-                  background: "var(--brand-orange)",
+                  background: "#2B5250",
                   color: "var(--brand-ink)",
                 }}
               >
@@ -3949,9 +3949,9 @@ function RodizioSubSection() {
             ].map((rule) => (
               <div
                 key={rule.title}
-                className="flex gap-3 p-3.5 rounded-xl border border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20 hover:border-[color:var(--brand-orange)]/30 transition"
+                className="flex gap-3 p-3.5 rounded-xl border border-[color:var(--brand-ink)]/8 bg-[color:var(--brand-sand)]/20 hover:border-[#2B5250]/30 transition"
               >
-                <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0 text-[color:var(--brand-orange)]">
+                <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-ink)]/5 flex items-center justify-center shrink-0 text-[#2B5250]">
                   <rule.icon className="w-4 h-4" />
                 </div>
                 <div>
@@ -3988,7 +3988,7 @@ function RodizioSubSection() {
           },
         ].map((m) => (
           <div key={m.label} className="text-center">
-            <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-[color:var(--brand-orange)]">
+            <div className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2B5250]">
               {m.value}
             </div>
             <div className="text-sm font-semibold mt-1">{m.label}</div>

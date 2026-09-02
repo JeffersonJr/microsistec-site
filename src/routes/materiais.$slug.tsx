@@ -42,7 +42,7 @@ function renderFormattedText(text: string) {
   const parts = text.split("**");
   return parts.map((part, i) =>
     i % 2 === 1 ? (
-      <span key={i} className="text-[color:var(--brand-orange)] font-black">
+      <span key={i} className="text-[#2B5250] font-black">
         {part}
       </span>
     ) : (
@@ -113,7 +113,7 @@ function MaterialLandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[color:var(--brand-orange)] selection:text-[color:var(--brand-sand)] flex flex-col">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-[#2B5250] selection:text-[#F7F3EA] flex flex-col">
       <Nav />
 
       <main className="flex-1 relative bg-hero border-b border-[color:var(--brand-ink)]/10 overflow-x-clip">
@@ -123,7 +123,7 @@ function MaterialLandingPage() {
           <Link
             title="Materiais Ricos e Gratuitos"
             to="/materiais"
-            className="hidden md:inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[color:var(--brand-orange)] transition-colors mb-10"
+            className="hidden md:inline-flex items-center gap-2 text-base font-semibold text-[color:var(--brand-ink)] hover:text-[#2B5250] transition-colors mb-10"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para materiais
@@ -150,7 +150,7 @@ function MaterialLandingPage() {
               <div className="space-y-4 mb-12">
                 {bullets.map((benefit, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-[color:var(--brand-orange)] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-[#2B5250] shrink-0 mt-0.5" />
                     <span className="text-foreground/80 text-xl font-medium">
                       {benefit}
                     </span>
@@ -213,7 +213,7 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           Nome completo{" "}
-                          <span className="text-[color:var(--brand-orange)]">
+                          <span className="text-[#2B5250]">
                             *
                           </span>
                         </label>
@@ -221,7 +221,7 @@ function MaterialLandingPage() {
                           required
                           type="text"
                           placeholder="João da Silva"
-                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2B5250]"
                           value={formData.name}
                           onChange={(e) =>
                             setFormData((p) => ({ ...p, name: e.target.value }))
@@ -231,7 +231,7 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           E-mail de trabalho{" "}
-                          <span className="text-[color:var(--brand-orange)]">
+                          <span className="text-[#2B5250]">
                             *
                           </span>
                         </label>
@@ -239,7 +239,7 @@ function MaterialLandingPage() {
                           required
                           type="email"
                           placeholder="joao@imobiliaria.com.br"
-                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2B5250]"
                           value={formData.email}
                           onChange={(e) =>
                             setFormData((p) => ({
@@ -252,7 +252,7 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           Telefone / WhatsApp{" "}
-                          <span className="text-[color:var(--brand-orange)]">
+                          <span className="text-[#2B5250]">
                             *
                           </span>
                         </label>
@@ -272,7 +272,7 @@ function MaterialLandingPage() {
                         <input
                           type="text"
                           placeholder="00.000.000/0001-00"
-                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)]"
+                          className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2B5250]"
                           value={formData.cnpj}
                           onChange={(e) =>
                             setFormData((p) => ({ ...p, cnpj: e.target.value }))
@@ -282,14 +282,14 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5 relative">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           Cargo{" "}
-                          <span className="text-[color:var(--brand-orange)]">
+                          <span className="text-[#2B5250]">
                             *
                           </span>
                         </label>
                         <div className="relative">
                           <select
                             required
-                            className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[color:var(--brand-orange)] appearance-none cursor-pointer"
+                            className="w-full h-10 md:h-12 px-3 md:px-4 text-sm md:text-base rounded-xl border border-input bg-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2B5250] appearance-none cursor-pointer"
                             value={formData.role}
                             onChange={(e) =>
                               setFormData((p) => ({

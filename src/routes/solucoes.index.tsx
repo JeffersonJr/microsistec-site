@@ -51,25 +51,25 @@ function SolucoesIndex() {
               <Link
                 title="Página Inicial da Microsistec"
                 to="/"
-                className="text-sm font-mono-ui uppercase hover:text-[color:var(--brand-orange)] transition text-muted-foreground"
+                className="text-sm font-mono-ui uppercase hover:text-[#2B5250] transition text-muted-foreground"
               >
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-muted-foreground/50" />
-              <span className="text-sm font-mono-ui uppercase text-[color:var(--brand-orange)] font-semibold">
+              <span className="text-sm font-mono-ui uppercase text-[#2B5250] font-semibold">
                 Soluções
               </span>
             </div>
 
             <div className="max-w-3xl space-y-5">
-              <span className="stamp text-[color:var(--brand-orange)] text-sm">
+              <span className="stamp text-[#2B5250] text-sm">
                 Ecossistema Completo
               </span>
               <h1 className="font-extrabold tracking-[-0.045em] leading-[0.97] text-[clamp(2.4rem,5.5vw,4.2rem)]">
                 Tudo que sua imobiliária
                 <br />
                 precisa,{" "}
-                <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+                <span className="font-serif-italic font-normal text-[#2B5250]">
                   num só lugar
                 </span>
               </h1>
@@ -97,7 +97,7 @@ function SolucoesIndex() {
                 key={label}
                 className="flex flex-col items-center gap-1 px-4 text-center"
               >
-                <Icon className="w-4 h-4 text-[color:var(--brand-orange)] mb-1" />
+                <Icon className="w-4 h-4 text-[#2B5250] mb-1" />
                 <span className="text-2xl font-extrabold text-[color:var(--brand-sand)] tracking-tight">
                   {value}
                 </span>
@@ -127,14 +127,14 @@ function SolucoesIndex() {
                   key={sol.slug}
                   to="/solucoes/$slug"
                   params={{ slug: sol.slug }}
-                  className="group relative flex flex-col rounded-2xl border border-[color:var(--brand-ink)]/8 bg-background hover:border-[color:var(--brand-orange)]/25 hover:shadow-card transition-all duration-300 overflow-hidden no-underline decoration-none"
+                  className="group relative flex flex-col rounded-2xl border border-[color:var(--brand-ink)]/8 bg-background hover:border-[#2B5250]/25 hover:shadow-card transition-all duration-300 overflow-hidden no-underline decoration-none"
                 >
                   {/* Top accent on hover */}
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-[color:var(--brand-orange)] transition-all duration-300" />
 
                   <div className="p-6 flex-1 flex flex-col gap-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-ink)] text-[color:var(--brand-orange)] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-ink)] text-[#2B5250] flex items-center justify-center">
                         <IconComp className="w-5 h-5" />
                       </div>
                       {badge && (
@@ -147,7 +147,7 @@ function SolucoesIndex() {
                     </div>
 
                     <div className="flex-1">
-                      <h2 className="font-bold text-lg tracking-tight mb-2 group-hover:text-[color:var(--brand-orange)] transition-colors duration-200">
+                      <h2 className="font-bold text-lg tracking-tight mb-2 group-hover:text-[#2B5250] transition-colors duration-200">
                         {sol.title}
                       </h2>
                       <p className="text-base text-muted-foreground leading-relaxed">
@@ -156,7 +156,7 @@ function SolucoesIndex() {
                     </div>
 
                     <div className="pt-3 border-t border-[color:var(--brand-ink)]/6 flex items-center justify-between">
-                      <span className="text-sm font-semibold text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors duration-200 flex items-center gap-1.5">
+                      <span className="text-sm font-semibold text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors duration-200 flex items-center gap-1.5">
                         Conhecer solução
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
                       </span>

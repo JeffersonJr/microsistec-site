@@ -103,13 +103,13 @@ function BlogIndex() {
         >
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-4">
-            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
+            <span className="stamp text-[#2B5250] text-sm inline-block">
               Conteúdo de Valor
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.2rem,5vw,4rem)]">
               Leitura rápida pra quem
               <br />
-              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+              <span className="font-serif-italic font-normal text-[#2B5250]">
                 vende imóvel de verdade
               </span>
             </h1>
@@ -139,7 +139,7 @@ function BlogIndex() {
                   className={`px-3 py-1.5 rounded-full text-sm font-medium transition cursor-pointer border ${
                     tag === t
                       ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] border-[color:var(--brand-ink)]"
-                      : "bg-background text-muted-foreground border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] hover:text-foreground"
+                      : "bg-background text-muted-foreground border-[color:var(--brand-ink)]/15 hover:border-[#2B5250] hover:text-foreground"
                   }`}
                 >
                   {t}
@@ -155,7 +155,7 @@ function BlogIndex() {
                 placeholder="Buscar matérias..."
                 value={q || ""}
                 onChange={handleSearch}
-                className="pl-9 bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[color:var(--brand-orange)] focus-visible:border-[color:var(--brand-orange)] rounded-full text-sm py-5"
+                className="pl-9 bg-background border-[color:var(--brand-ink)]/15 focus-visible:ring-[#2B5250] focus-visible:border-[#2B5250] rounded-full text-sm py-5"
               />
             </div>
           </div>
@@ -178,10 +178,10 @@ function BlogIndex() {
                     params={{ slug: post.slug }}
                     data-gtm-cta="ler_artigo_blog"
                     data-gtm-location="lista_blog"
-                    className="group flex flex-col border-t border-[color:var(--brand-ink)]/10 pt-6 hover:border-[color:var(--brand-orange)] transition duration-300 cursor-pointer"
+                    className="group flex flex-col border-t border-[color:var(--brand-ink)]/10 pt-6 hover:border-[#2B5250] transition duration-300 cursor-pointer"
                   >
                     <div className="flex items-center justify-between mb-4 text-[10px] font-mono-ui text-muted-foreground">
-                      <span className="uppercase tracking-wider text-[color:var(--brand-orange)] font-semibold">
+                      <span className="uppercase tracking-wider text-[#2B5250] font-semibold">
                         {post.tag}
                       </span>
                       <span>{post.date}</span>
@@ -204,7 +204,7 @@ function BlogIndex() {
                       />
                     </div>
 
-                    <h3 className="font-bold text-xl tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
+                    <h3 className="font-bold text-xl tracking-tight leading-snug group-hover:text-[#2B5250] transition">
                       {post.title}
                     </h3>
 
@@ -212,7 +212,7 @@ function BlogIndex() {
                       {post.excerpt}
                     </p>
 
-                    <div className="mt-auto pt-6 flex items-center justify-between text-[11px] font-mono-ui text-foreground/80 group-hover:text-[color:var(--brand-orange)] transition">
+                    <div className="mt-auto pt-6 flex items-center justify-between text-[11px] font-mono-ui text-foreground/80 group-hover:text-[#2B5250] transition">
                       <span>{post.readTime}</span>
                       <span className="flex items-center gap-0.5">
                         Ler Artigo <ArrowUpRight className="w-3.5 h-3.5" />
@@ -230,7 +230,7 @@ function BlogIndex() {
                     size="icon"
                     onClick={() => handlePage(safePage - 1)}
                     disabled={safePage === 1}
-                    className="rounded-full border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] hover:text-[color:var(--brand-orange)]"
+                    className="rounded-full border-[color:var(--brand-ink)]/15 hover:border-[#2B5250] hover:text-[#2B5250]"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </Button>
@@ -242,7 +242,7 @@ function BlogIndex() {
                     size="icon"
                     onClick={() => handlePage(safePage + 1)}
                     disabled={safePage === totalPages}
-                    className="rounded-full border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)] hover:text-[color:var(--brand-orange)]"
+                    className="rounded-full border-[color:var(--brand-ink)]/15 hover:border-[#2B5250] hover:text-[#2B5250]"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </Button>

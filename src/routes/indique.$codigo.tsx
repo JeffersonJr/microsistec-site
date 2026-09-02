@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Bot, Database, Globe, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Bot, Database, Globe, CheckCircle2, Loader2 } from "lucide-react";
 import { SimpleNav as Header, SimpleFooter as Footer } from "../components/microsistec/MicrosistecLanding";
 
 export const Route = createFileRoute("/indique/$codigo")({
@@ -18,18 +18,58 @@ function IndiqueLandingPage() {
     cidade: "",
     corretores: "",
     usaCrm: "",
-    qualCrm: "",
-    interesse: "",
-    desafio: ""
+    qualCrm: ""
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate sending data along with the referral code
-    console.log("Submitting lead with code:", codigo, formData);
-    setIsSubmitted(true);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const CLICKUP_LIST_ID = "901328205459";
+      const API_TOKEN = import.meta.env.VITE_CLICKUP_API_TOKEN;
+      
+      const taskName = `Indicado: ${formData.imobiliaria} (${codigo})`;
+      const taskDescription = `
+**Tipo:** Indicado
+**Campanha:** Indique e Ganha Setembro
+**Código da Indicação (Origem):** ${codigo}
+
+**Imobiliária:** ${formData.imobiliaria}
+**Responsável:** ${formData.responsavel}
+**WhatsApp:** ${formData.whatsapp}
+**Email:** ${formData.email}
+**Cidade / Estado:** ${formData.cidade}
+
+**Qualificação:**
+- Corretores: ${formData.corretores}
+- Usa CRM: ${formData.usaCrm}
+- Qual CRM: ${formData.qualCrm || "Não se aplica"}
+      `;
+
+      await fetch(`https://api.clickup.com/api/v2/list/${CLICKUP_LIST_ID}/task`, {
+        method: "POST",
+        headers: { 
+          "Authorization": API_TOKEN,
+          "Content-Type": "application/json" 
+        },
+        body: JSON.stringify({
+          name: taskName,
+          description: taskDescription,
+          tags: ["indicado", "indique-e-ganha-setembro"]
+        })
+      });
+    } catch (err) {
+      console.error("Erro ao enviar para webhook", err);
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
   };
 
   const scrollToForm = () => {
@@ -75,7 +115,7 @@ function IndiqueLandingPage() {
           <div className="container max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[color:var(--brand-ink)] leading-[1.2]">
               <span className="text-[color:var(--brand-clay)]">O Site encontra.</span><br/>
-              <span className="text-[color:var(--brand-orange)]">O Albert atende.</span><br/>
+              <span className="text-[#2B5250]">O Albert atende.</span><br/>
               O CRM organiza.<br/>
               Sua equipe vende.
             </h2>
@@ -219,42 +259,19 @@ function IndiqueLandingPage() {
                       </div>
                     )}
 
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-sm font-semibold text-slate-700">Qual é o principal interesse?*</label>
-                      <select required value={formData.interesse} onChange={e => setFormData({...formData, interesse: e.target.value})} className="px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-teal)] transition bg-white">
-                        <option value="" disabled>Selecione uma opção</option>
-                        <option value="CRM">CRM</option>
-                        <option value="Site">Site</option>
-                        <option value="Inteligência Artificial">Inteligência Artificial</option>
-                        <option value="CRM + Site">CRM + Site</option>
-                        <option value="CRM + IA">CRM + IA</option>
-                        <option value="Ecossistema completo">Ecossistema completo</option>
-                        <option value="Ainda não sei">Ainda não sei</option>
-                      </select>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-sm font-semibold text-slate-700">Qual é o principal desafio hoje?*</label>
-                      <select required value={formData.desafio} onChange={e => setFormData({...formData, desafio: e.target.value})} className="px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-teal)] transition bg-white">
-                        <option value="" disabled>Selecione uma opção</option>
-                        <option value="Organizar os leads">Organizar os leads</option>
-                        <option value="Melhorar a gestão comercial">Melhorar a gestão comercial</option>
-                        <option value="Gerar mais leads">Gerar mais leads</option>
-                        <option value="Melhorar o site">Melhorar o site</option>
-                        <option value="Responder clientes mais rápido">Responder clientes mais rápido</option>
-                        <option value="Automatizar atendimentos">Automatizar atendimentos</option>
-                        <option value="Aumentar a conversão">Aumentar a conversão</option>
-                        <option value="Outro">Outro</option>
-                      </select>
-                    </div>
                   </div>
 
                   <div className="pt-4 border-t border-slate-100">
                     <button
                       type="submit"
-                      className="w-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:opacity-90 font-bold py-5 rounded-2xl flex items-center justify-center gap-2 transition cursor-pointer border-none shadow-lg text-lg active:scale-[0.98]"
+                      disabled={isSubmitting}
+                      className="w-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] hover:opacity-90 font-bold py-5 rounded-2xl flex items-center justify-center gap-2 transition cursor-pointer border-none shadow-lg text-lg active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      QUERO CONHECER A MICROSISTEC <ArrowRight className="w-6 h-6" />
+                      {isSubmitting ? (
+                        <>ENVIANDO... <Loader2 className="w-6 h-6 animate-spin" /></>
+                      ) : (
+                        <>QUERO CONHECER A MICROSISTEC <ArrowRight className="w-6 h-6" /></>
+                      )}
                     </button>
                     <p className="text-center text-sm text-slate-500 mt-4">
                       Nosso time entrará em contato para entender sua operação e apresentar a melhor solução.

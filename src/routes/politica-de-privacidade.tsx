@@ -20,10 +20,10 @@ function PoliticaPrivacidade() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[color:var(--brand-orange)]">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-[#2B5250]">
           Política de Privacidade
         </h1>
-        <div className="prose max-w-none text-foreground/90 prose-p:leading-relaxed prose-headings:font-bold prose-a:text-[color:var(--brand-orange)] space-y-6">
+        <div className="prose max-w-none text-foreground/90 prose-p:leading-relaxed prose-headings:font-bold prose-a:text-[#2B5250] space-y-6">
           <p>
             Na Microsistec, levamos a sua privacidade a sério. Esta política
             descreve como coletamos, usamos e protegemos as suas informações
@@ -90,7 +90,7 @@ function PoliticaPrivacidade() {
             <a
               title="Acessar link"
               href="mailto:contato@microsistec.com.br"
-              className="text-[color:var(--brand-orange)] hover:underline"
+              className="text-[#2B5250] hover:underline"
             >
               contato@microsistec.com.br
             </a>

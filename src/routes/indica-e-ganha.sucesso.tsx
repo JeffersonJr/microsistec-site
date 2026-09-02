@@ -33,7 +33,7 @@ function IndicaEGanhaSucessoPage() {
         <div className="relative z-10 w-full max-w-md mx-auto">
           <Link to="/indica-e-ganha" className="inline-flex items-center gap-2 text-[color:var(--brand-sand)]/70 hover:text-[color:var(--brand-sand)] mb-8 transition decoration-none border-none">
             <ChevronLeft className="w-4 h-4" />
-            Voltar
+            Indicar outra imobiliária
           </Link>
           
           <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-2xl text-center border border-[color:var(--brand-clay)]/10">
@@ -73,7 +73,7 @@ function IndicaEGanhaSucessoPage() {
                 rel="noopener noreferrer"
                 className="w-full bg-[#25D366] text-white hover:bg-[#20bd5a] font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition cursor-pointer border-none shadow-sm active:scale-[0.98] decoration-none"
               >
-                COMPARTILHAR NO WHATSAPP <Send className="w-5 h-5" />
+                ENVIAR CONVITE PELO WHATSAPP <Send className="w-5 h-5" />
               </a>
             </div>
           </div>

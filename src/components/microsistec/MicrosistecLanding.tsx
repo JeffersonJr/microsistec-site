@@ -123,7 +123,8 @@ export function Nav() {
             <div className="relative">
               <button
                 onClick={() => toggleMenu("solucoes")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "solucoes" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "solucoes" ? "bg-[#2B5250]/8" : "text-muted-foreground hover:text-foreground hover:bg-[#2B5250]/6"}`}
+                style={openMenu === "solucoes" ? { color: "#2B5250" } : {}}
               >
                 Soluções
                 <ChevronDown
@@ -142,7 +143,8 @@ export function Nav() {
             <div className="relative">
               <button
                 onClick={() => toggleMenu("planos")}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "planos" ? "text-[color:var(--brand-orange)] bg-[color:var(--brand-ink)]/5" : "text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "planos" ? "bg-[#2B5250]/8" : "text-muted-foreground hover:text-foreground hover:bg-[#2B5250]/6"}`}
+                style={openMenu === "planos" ? { color: "#2B5250" } : {}}
               >
                 Planos
                 <ChevronDown
@@ -161,7 +163,10 @@ export function Nav() {
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_novidades"
               data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
+              style={{} as React.CSSProperties}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
             >
               Novidades
             </Link>
@@ -171,7 +176,10 @@ export function Nav() {
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_sobre"
               data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
+              style={{} as React.CSSProperties}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
             >
               Sobre
             </Link>
@@ -181,7 +189,10 @@ export function Nav() {
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_blog"
               data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
+              style={{} as React.CSSProperties}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
             >
               Blog
             </Link>
@@ -191,7 +202,10 @@ export function Nav() {
               onClick={() => setOpenMenu(null)}
               data-gtm-cta="nav_materiais"
               data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-[color:var(--brand-ink)]/4 transition"
+              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
+              style={{} as React.CSSProperties}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
             >
               Materiais
             </Link>
@@ -284,13 +298,16 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
-                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#2B5250]/5 transition group"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
-                        <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition" style={{ background: "rgba(43,82,80,0.08)" }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.16)"; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.08)"; }}
+                      >
+                        <item.icon className="icon-micro-rotate w-4 h-4" style={{ color: "#2B5250" }} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors leading-none mb-1">
                           {item.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-normal">
@@ -336,13 +353,16 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
-                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#2B5250]/5 transition group"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
-                        <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition" style={{ background: "rgba(43,82,80,0.08)" }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.16)"; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.08)"; }}
+                      >
+                        <item.icon className="icon-micro-rotate w-4 h-4" style={{ color: "#2B5250" }} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors leading-none mb-1">
                           {item.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-normal">
@@ -376,13 +396,16 @@ export function Nav() {
                       to="/solucoes/$slug"
                       params={{ slug: item.slug }}
                       onClick={() => setOpenMenu(null)}
-                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[color:var(--brand-ink)]/4 transition group"
+                      className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#2B5250]/5 transition group"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 group-hover:bg-[color:var(--brand-orange)]/20 flex items-center justify-center shrink-0 transition">
-                        <item.icon className="icon-micro-rotate w-4 h-4 text-[color:var(--brand-orange)]" />
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition" style={{ background: "rgba(43,82,80,0.08)" }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.16)"; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.08)"; }}
+                      >
+                        <item.icon className="icon-micro-rotate w-4 h-4" style={{ color: "#2B5250" }} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[color:var(--brand-orange)] transition-colors leading-none mb-1">
+                        <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors leading-none mb-1">
                           {item.title}
                         </h4>
                         <p className="text-sm text-muted-foreground leading-normal">
@@ -425,7 +448,7 @@ export function Nav() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-6 pt-6 border-t border-[color:var(--brand-ink)]/8 flex items-center justify-between text-sm text-muted-foreground">
+            <div className="mt-6 pt-6 border-t border-[#2B5250]/10 flex items-center justify-between text-sm text-muted-foreground">
               <span>
                 Tem alguma dúvida operacional ou deseja integrar canais
                 específicos?
@@ -436,7 +459,8 @@ export function Nav() {
                 data-gtm-cta="falar_especialista_mega_menu"
                 data-gtm-location="mega_menu"
                 data-gtm-modal-open="modal_demonstracao"
-                className="inline-flex items-center gap-1 font-bold text-[color:var(--brand-orange)] hover:underline border-none bg-transparent cursor-pointer p-0"
+                className="inline-flex items-center gap-1 font-bold hover:underline border-none bg-transparent cursor-pointer p-0"
+                style={{ color: "#2B5250" }}
               >
                 Falar com especialista <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
@@ -449,9 +473,12 @@ export function Nav() {
             <div className="grid grid-cols-3 gap-8 text-left">
               {/* CRM */}
               <div className="space-y-4">
-                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2 flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
-                    <Building2 className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                <div className="border-b border-[#2B5250]/10 pb-2 flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(43,82,80,0.1)" }}
+                  >
+                    <Building2 className="w-4 h-4" style={{ color: "#2B5250" }} />
                   </div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
                     CRM Imobiliário
@@ -468,7 +495,8 @@ export function Nav() {
                     onClick={() => setOpenMenu(null)}
                     data-gtm-cta="nav_ver_planos_crm"
                     data-gtm-location="mega_menu"
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+                    style={{ color: "#2B5250" }}
                   >
                     Ver tabela de preços do CRM{" "}
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -478,9 +506,12 @@ export function Nav() {
 
               {/* Albert IA */}
               <div className="space-y-4">
-                <div className="border-b border-[color:var(--brand-ink)]/8 pb-2 flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
-                    <Bot className="w-4 h-4 text-[color:var(--brand-orange)]" />
+                <div className="border-b border-[#2B5250]/10 pb-2 flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(43,82,80,0.1)" }}
+                  >
+                    <Bot className="w-4 h-4" style={{ color: "#2B5250" }} />
                   </div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
                     Albert IA (SDR)
@@ -497,7 +528,8 @@ export function Nav() {
                     onClick={() => setOpenMenu(null)}
                     data-gtm-cta="nav_ver_planos_albert"
                     data-gtm-location="mega_menu"
-                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--brand-orange)] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+                    style={{ color: "#2B5250" }}
                   >
                     Conhecer planos do Albert IA{" "}
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -505,17 +537,34 @@ export function Nav() {
                 </div>
               </div>
 
-              {/* Promo Banner */}
-              <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
+              {/* Promo Banner — verde escuro */}
+              <div
+                className="rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden"
+                style={{
+                  background: "linear-gradient(135deg, #2B5250 0%, #1e3a38 100%)",
+                  color: "#F7F3EA",
+                }}
+              >
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(90,166,166,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(90,166,166,0.08) 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                    opacity: 0.6,
+                  }}
+                />
                 <div>
-                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-orange)] mb-1 block">
+                  <span
+                    className="text-[10px] font-mono-ui font-bold uppercase tracking-widest mb-1 block"
+                    style={{ color: "#5AA6A6" }}
+                  >
                     Atendimento
                   </span>
-                  <h4 className="font-extrabold text-lg mb-2">
+                  <h4 className="font-extrabold text-lg mb-2" style={{ color: "#F7F3EA" }}>
                     Fale com um Especialista
                   </h4>
-                  <p className="text-sm text-[color:var(--brand-sand)]/70 leading-relaxed">
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(247,243,234,0.7)" }}>
                     Fale com nosso especialista agora e tire suas dúvidas ou
                     solicite uma simulação customizada para o tamanho da sua
                     imobiliária.
@@ -594,11 +643,14 @@ export function Nav() {
                       onClick={() => setIsMobileOpen(false)}
                       data-gtm-cta={`mobile_nav_solucao_${sol.slug.replace(/-/g, "_")}`}
                       data-gtm-location="mobile_menu"
-                      className="flex items-center gap-3.5 px-2 rounded-2xl hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline text-[color:var(--brand-ink)]"
+                      className="flex items-center gap-3.5 px-2 rounded-2xl hover:bg-[#2B5250]/5 active:bg-[#2B5250]/10 transition no-underline text-[color:var(--brand-ink)]"
                       style={{ minHeight: 52 }}
                     >
-                      <div className="w-9 h-9 rounded-xl bg-[color:var(--brand-orange)]/10 flex items-center justify-center shrink-0">
-                        <IconComp className="w-[18px] h-[18px] text-[color:var(--brand-orange)]" />
+                      <div
+                        className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                        style={{ background: "rgba(90,166,166,0.12)" }}
+                      >
+                        <IconComp className="w-[18px] h-[18px]" style={{ color: "#2B5250" }} />
                       </div>
                       <span className="text-[15px] font-semibold flex-1">
                         {sol.title}
@@ -626,12 +678,12 @@ export function Nav() {
                   ] as {
                     label: string;
                     to:
-                      | "/planos"
-                      | "/planos-albert"
-                      | "/novidades"
-                      | "/empresa"
-                      | "/blog"
-                      | "/materiais";
+                    | "/planos"
+                    | "/planos-albert"
+                    | "/novidades"
+                    | "/empresa"
+                    | "/blog"
+                    | "/materiais";
                   }[]
                 ).map((item) => (
                   <Link
@@ -712,8 +764,8 @@ function Hero() {
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 md:mb-12">
           <div className="flex items-center gap-3 text-base">
             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--brand-ink)]/10 bg-[color:var(--brand-ink)]/[0.03] px-3.5 py-1 text-[13px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse" />
-              A pioneira em tecnologia imobiliária desde 1994
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2B5250] animate-pulse" />
+              Mais de 30 anos de pioneirismo em tecnologia imobiliária
             </span>
           </div>
           <span className="font-serif-italic text-muted-foreground/60 hidden md:inline text-base">
@@ -727,12 +779,12 @@ function Hero() {
             O CRM Imobiliário
             <br />
             que muda{" "}
-            <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+            <span className="font-serif-italic font-normal text-[#2B5250]">
               o jogo
             </span>
             <br />
             Para quem já{" "}
-            <span className="underline decoration-[color:var(--brand-orange)] decoration-[6px] underline-offset-[8px]">
+            <span className="underline decoration-[#2B5250] decoration-[6px] underline-offset-[8px]">
               vive
             </span>{" "}
             o futuro
@@ -740,10 +792,10 @@ function Hero() {
 
           {/* proof badge */}
           <div className="flex lg:col-span-3 justify-start lg:justify-end mt-8 lg:mt-0 relative z-10">
-            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-3xl px-6 py-5 max-w-[280px] shadow-[0_15px_40px_-10px_rgba(255,107,53,0.25)] select-none border border-[color:var(--brand-orange)]/40 -rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 cursor-default">
-              <div className="font-mono-ui text-[10px] font-bold text-[color:var(--brand-orange)] uppercase tracking-widest mb-3 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--brand-orange)] animate-pulse"></span>
-                Desde 1994
+            <div className="bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-3xl px-6 py-5 max-w-[280px] shadow-[0_15px_40px_-10px_rgba(43,82,80,0.25)] select-none border border-[#2B5250]/40 -rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 cursor-default">
+              <div className="font-mono-ui text-[10px] font-bold text-[#5AA6A6] uppercase tracking-widest mb-3 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5AA6A6] animate-pulse"></span>
+                Há mais de 30 anos
               </div>
               <p className="font-serif-italic text-2xl leading-[1.3] text-[color:var(--brand-sand)]">
                 "feito por gente que conhece imobiliária de verdade"
@@ -801,12 +853,15 @@ function Ticker() {
   ];
   const row = [...items, ...items];
   return (
-    <div className="relative border-y border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
+    <div
+      className="relative border-y border-[#5AA6A6]/30"
+      style={{ background: "#5AA6A6", color: "#1e3a38" }}
+    >
       <div className="overflow-hidden">
         <div className="marquee flex gap-10 py-3.5 whitespace-nowrap text-base">
           {row.map((t, i) => (
             <span key={i} className="inline-flex items-center gap-3">
-              <span className="font-serif-italic text-[color:var(--brand-orange)]">
+              <span className="font-serif-italic font-bold" style={{ color: "#2B5250" }}>
                 ✦
               </span>
               {t}
@@ -838,7 +893,7 @@ function StatsStrip() {
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-xl leading-snug">
           Pioneiros em trazer tecnologia para imobiliárias. Três décadas de
           estrada{" "}
-          <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+          <span className="font-serif-italic font-normal" style={{ color: "#2B5250" }}>
             provam que sabemos
           </span>{" "}
           o que fazemos.
@@ -853,7 +908,10 @@ function StatsStrip() {
             key={s.label}
             className="bg-background py-7 md:py-9 px-5 md:px-6 text-center md:text-left"
           >
-            <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)]">
+            <div
+              className="text-4xl md:text-5xl font-extrabold tracking-tight"
+              style={{ color: "#2B5250" }}
+            >
               {s.n}
             </div>
             <div className="text-sm text-muted-foreground mt-1.5 font-mono-ui">
@@ -896,7 +954,8 @@ function Pillars() {
     <section
       id="produto"
       data-gtm-section="produto"
-      className="relative bg-[color:var(--brand-sand)] border-y border-[color:var(--brand-ink)]/10"
+      className="relative border-y border-[color:var(--brand-ink)]/10"
+      style={{ background: "#F7F3EA" }}
     >
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid md:grid-cols-12 gap-10 mb-14 items-end">
@@ -911,22 +970,31 @@ function Pillars() {
             previsibilidade, sem amarrar cinco ferramentas com cuspe e arame.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[color:var(--brand-ink)]/15 border border-[color:var(--brand-ink)]/15 rounded-3xl overflow-hidden">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px border border-[color:var(--brand-ink)]/15 rounded-3xl overflow-hidden" style={{ background: "rgba(43,82,80,0.15)" }}>
           {items.map((it, i) => (
             <div
               key={it.title}
-              className="bg-background p-7 md:p-8 relative group hover:bg-[color:var(--brand-ink)] hover:text-[color:var(--brand-sand)] transition-colors duration-300"
+              className="p-7 md:p-8 relative group transition-colors duration-300"
+              style={{ background: "#fff" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.background = "#2B5250";
+                (e.currentTarget as HTMLDivElement).style.color = "#F7F3EA";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.background = "#fff";
+                (e.currentTarget as HTMLDivElement).style.color = "";
+              }}
             >
               <div className="flex items-start justify-between mb-8">
-                <it.icon className="w-6 h-6 text-[color:var(--brand-orange)]" />
-                <span className="font-mono-ui text-sm font-medium text-muted-foreground group-hover:text-[color:var(--brand-sand)]/80">
+                <it.icon className="w-6 h-6" style={{ color: "#5AA6A6" }} />
+                <span className="font-mono-ui text-sm font-medium text-muted-foreground">
                   0{i + 1} / 04
                 </span>
               </div>
               <h3 className="font-bold text-2xl tracking-tight mb-2">
                 {it.title}
               </h3>
-              <p className="text-base text-muted-foreground group-hover:text-[color:var(--brand-sand)]/70 leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 {it.desc}
               </p>
             </div>
@@ -953,35 +1021,53 @@ function Albert() {
     <section
       id="albert"
       data-gtm-section="albert"
-      className="relative overflow-hidden bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]"
+      className="relative overflow-hidden"
+      style={{ background: "#2B5250", color: "#F7F3EA" }}
     >
       <div
-        className="absolute inset-0 opacity-40 pointer-events-none"
+        className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background:
-            "radial-gradient(60% 50% at 90% 10%, oklch(0.7 0.19 45 / 0.4), transparent 60%), radial-gradient(50% 50% at 10% 90%, oklch(0.55 0.1 195 / 0.35), transparent 60%)",
+            "radial-gradient(60% 50% at 90% 10%, rgba(90,166,166,0.4) 0%, transparent 60%), radial-gradient(50% 50% at 10% 90%, rgba(43,82,80,0.6) 0%, transparent 60%)",
         }}
       />
-      <div className="bg-grid absolute inset-0 opacity-20" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(90,166,166,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(90,166,166,0.06) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+          opacity: 0.5,
+        }}
+      />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="inline-flex items-center gap-2 mb-6">
-          <span className="stamp text-[color:var(--brand-orange)] text-sm">
+          <span className="stamp text-sm" style={{ color: "#5AA6A6", borderColor: "#5AA6A6" }}>
             Albert IA · v2
           </span>
-          <span className="font-serif-italic text-[color:var(--brand-sand)]/60">
+          <span className="font-serif-italic" style={{ color: "rgba(247,243,234,0.6)" }}>
             conheça
           </span>
         </div>
         <div className="grid lg:grid-cols-12 gap-12 items-stretch">
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
+              <h2
+                className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6"
+                style={{ color: "#F7F3EA" }}
+              >
                 Uma IA que{" "}
-                <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+                <span
+                  className="font-serif-italic font-normal"
+                  style={{ color: "#5AA6A6" }}
+                >
                   conhece
                 </span>{" "}
                 imobiliária, não uma que{" "}
-                <em className="font-serif-italic text-[color:var(--brand-sand)]/50">
+                <em
+                  className="font-serif-italic"
+                  style={{ color: "rgba(247,243,234,0.45)" }}
+                >
                   finge
                 </em>{" "}
                 conhecer
@@ -998,9 +1084,10 @@ function Albert() {
                 {features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-start gap-3 text-[color:var(--brand-sand)]/85"
+                    className="flex items-start gap-3"
+                    style={{ color: "rgba(247,243,234,0.85)" }}
                   >
-                    <CheckCircle2 className="w-5 h-5 mt-0.5 text-[color:var(--brand-orange)] shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: "#5AA6A6" }} />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -1045,10 +1132,16 @@ function Albert() {
 function AlbertChat() {
   return (
     <div className="relative tilt-r flex-1 flex flex-col h-full">
-      <div className="absolute -inset-3 rounded-[28px] bg-[color:var(--brand-orange)]/15 blur-2xl pointer-events-none" />
-      <div className="relative bg-[color:var(--brand-sand)] text-[color:var(--brand-ink)] rounded-3xl border border-[color:var(--brand-ink)] shadow-elev overflow-hidden flex-1 flex flex-col justify-between">
+      <div className="absolute -inset-3 rounded-[28px] blur-2xl pointer-events-none" style={{ background: "rgba(90,166,166,0.2)" }} />
+      <div
+        className="relative rounded-3xl border shadow-elev overflow-hidden flex-1 flex flex-col justify-between"
+        style={{ background: "#F7F3EA", borderColor: "#2B5250", color: "#1A1A1A" }}
+      >
         {/* paper header */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-[color:var(--brand-ink)]/15 bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)]">
+        <div
+          className="flex items-center justify-between px-5 py-3.5 border-b"
+          style={{ background: "#2B5250", borderColor: "rgba(90,166,166,0.2)", color: "#F7F3EA" }}
+        >
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] flex items-center justify-center font-bold">
               A
@@ -1087,7 +1180,7 @@ function AlbertChat() {
           </div>
 
           <div className="mt-4 pt-3.5 border-t border-dashed border-[color:var(--brand-ink)]/30 flex items-center justify-between font-mono-ui text-sm text-muted-foreground font-medium">
-            <span>qualificado e repassado em 38s</span>
+            <span>qualificado e repassado em minutos</span>
             <span className="text-[color:var(--brand-orange)] font-bold">
               + CRM ✓
             </span>
@@ -1140,7 +1233,7 @@ function Funil() {
       data-gtm-section="funil"
       className="mx-auto max-w-7xl px-6 py-24 md:py-32"
     >
-      <span className="font-serif-italic text-[#c2410c] text-2xl mb-4 block">
+      <span className="font-serif-italic text-2xl mb-4 block" style={{ color: "#2B5250" }}>
         sobre tempo
       </span>
       <div className="grid lg:grid-cols-12 gap-12 items-stretch">
@@ -1157,7 +1250,7 @@ function Funil() {
           <ul className="space-y-3">
             {features.map((f) => (
               <li key={f} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 mt-0.5 text-[color:var(--brand-orange)] shrink-0" />
+                <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: "#2B5250" }} />
                 <span>{f}</span>
               </li>
             ))}
@@ -1207,11 +1300,10 @@ function FunnelVisual() {
             </div>
             <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${
-                  i === stages.length - 1
+                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${i === stages.length - 1
                     ? "text-[color:var(--brand-ink)]"
                     : "text-[color:var(--brand-sand)]"
-                }`}
+                  }`}
                 style={{
                   width: s.w,
                   background:
@@ -1262,9 +1354,21 @@ function Ecosystem() {
           {items.map((it) => (
             <div
               key={it.title}
-              className="rounded-2xl bg-[color:var(--brand-sand)]/40 border border-[color:var(--brand-ink)]/7 p-7 hover:bg-background hover:border-[color:var(--brand-orange)]/20 hover:shadow-soft transition-all duration-300"
+              className="rounded-2xl p-7 hover:bg-background hover:shadow-soft transition-all duration-300"
+              style={{
+                background: "rgba(90,166,166,0.08)",
+                border: "1px solid rgba(43,82,80,0.12)",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = "rgba(43,82,80,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = "rgba(43,82,80,0.12)";
+              }}
             >
-              <it.icon className="w-5 h-5 text-[color:var(--brand-orange)] mb-5" />
+              <it.icon className="w-5 h-5 mb-5" style={{ color: "#2B5250" }} />
               <h3 className="font-bold text-xl tracking-tight mb-2">
                 {it.title}
               </h3>
@@ -1296,7 +1400,7 @@ export function Blog() {
     >
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-2xl">
-          <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+          <span className="font-serif-italic font-normal" style={{ color: "#2B5250" }}>
             Leitura
           </span>{" "}
           rápida pra quem vende imóvel
@@ -1320,7 +1424,7 @@ export function Blog() {
             params={{ slug: p.slug }}
             data-gtm-cta="ler_artigo_blog"
             data-gtm-location="blog"
-            className="group flex flex-col border-t border-[color:var(--brand-ink)]/20 pt-6 hover:border-[color:var(--brand-orange)] transition cursor-pointer"
+            className="group flex flex-col border-t border-[color:var(--brand-ink)]/20 pt-6 transition cursor-pointer hover:border-[#2B5250]"
           >
             <div className="flex items-center justify-between mb-6 text-sm font-mono-ui text-muted-foreground">
               <span className="uppercase tracking-wider">{p.tag}</span>
@@ -1342,7 +1446,7 @@ export function Blog() {
                 }}
               />
             </div>
-            <h3 className="font-bold text-2xl tracking-tight leading-snug group-hover:text-[color:var(--brand-orange)] transition">
+            <h3 className="font-bold text-2xl tracking-tight leading-snug transition group-hover:text-[#2B5250]">
               {p.title}
             </h3>
             <p className="text-base text-muted-foreground mt-3 line-clamp-2 leading-relaxed">
@@ -1367,11 +1471,25 @@ export function CTA() {
       data-gtm-section="cta_demonstracao"
       className="mx-auto max-w-7xl px-6 pb-16 md:pb-24"
     >
-      <div className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-[color:var(--brand-ink)] bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] p-8 md:p-16 shadow-elev">
-        <div className="bg-grid absolute inset-0 opacity-25" />
+      <div
+        className="relative overflow-hidden rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 shadow-elev"
+        style={{
+          background: "linear-gradient(135deg, #2B5250 0%, #1e3a38 100%)",
+          border: "1px solid rgba(90,166,166,0.25)",
+          color: "#F7F3EA",
+        }}
+      >
         <div
-          className="absolute -top-20 -right-10 w-80 h-80 rounded-full opacity-30"
-          style={{ background: "var(--brand-orange)", filter: "blur(80px)" }}
+          className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(90,166,166,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(90,166,166,0.08) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div
+          className="absolute -top-20 -right-10 w-80 h-80 rounded-full opacity-25"
+          style={{ background: "#5AA6A6", filter: "blur(80px)" }}
         />
         <div className="relative grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-8">
@@ -1380,7 +1498,7 @@ export function CTA() {
             </span>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
               Bora vender mais,{" "}
-              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+              <span className="font-serif-italic font-normal" style={{ color: "#5AA6A6" }}>
                 de verdade
               </span>
               ?

@@ -134,14 +134,14 @@ function PlanosPage() {
         >
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
-            <span className="stamp text-[color:var(--brand-orange)] text-sm inline-block">
+            <span className="stamp text-[#2B5250] text-sm inline-block">
               Preços e Planos
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
               Invista no futuro
               <br />
               da sua{" "}
-              <span className="font-serif-italic font-normal text-[color:var(--brand-orange)]">
+              <span className="font-serif-italic font-normal text-[#2B5250]">
                 imobiliária
               </span>
             </h1>
@@ -191,8 +191,8 @@ function PlanosPage() {
                 key={plan.id}
                 className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 ${
                   plan.isPopular
-                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev border-2 border-[color:var(--brand-orange)]"
-                    : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[color:var(--brand-orange)]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
+                    ? "bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] shadow-elev border-2 border-[#2B5250]"
+                    : "bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/15 hover:border-[#2B5250]/50 hover:shadow-soft text-[color:var(--brand-ink)]"
                 }`}
               >
                 {plan.isPopular && (
@@ -236,7 +236,7 @@ function PlanosPage() {
                   <div className="pb-4 mb-4 border-b border-current/10">
                     <div className="flex items-center gap-2 mb-2 font-semibold text-base">
                       <Building2
-                        className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}
+                        className={`w-4 h-4 ${plan.isPopular ? "text-[#2B5250]" : ""}`}
                       />
                       {plan.limit}
                     </div>
@@ -251,7 +251,7 @@ function PlanosPage() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className={`w-4 h-4 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : ""}`}
+                        className={`w-4 h-4 ${plan.isPopular ? "text-[#2B5250]" : ""}`}
                       >
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                         <circle cx="9" cy="7" r="4" />
@@ -269,7 +269,7 @@ function PlanosPage() {
                         className="flex items-start gap-3 text-base leading-tight"
                       >
                         <CheckCircle2
-                          className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[color:var(--brand-orange)]" : "text-[color:var(--brand-ink)]/50"}`}
+                          className={`w-4 h-4 shrink-0 mt-0.5 ${plan.isPopular ? "text-[#2B5250]" : "text-[color:var(--brand-ink)]/50"}`}
                         />
                         <span>{feature}</span>
                       </li>
@@ -318,7 +318,7 @@ function PlanosPage() {
                 className="p-6 rounded-2xl bg-[color:var(--brand-sand)] border border-[color:var(--brand-ink)]/10"
               >
                 <div className="flex gap-4">
-                  <HelpCircle className="w-6 h-6 shrink-0 text-[color:var(--brand-orange)]" />
+                  <HelpCircle className="w-6 h-6 shrink-0 text-[#2B5250]" />
                   <div>
                     <h4 className="font-bold text-xl mb-2">{faq.q}</h4>
                     <p className="text-base text-muted-foreground leading-relaxed">

@@ -83,34 +83,37 @@
   --input: oklch(0.91 0.01 270);
   --ring: oklch(0.6 0.18 280);
 
-  /* Clean minimal proptech palette */
+  /* Clean minimal proptech palette — 60% verde, 25% neutros, 10% ink, 5% laranja (CTAs) */
   --background: oklch(0.99 0.003 270); /* near white */
   --foreground: oklch(0.15 0.02 260); /* deep ink */
-  --brand-orange: #E8A14B; /* actual orange accent */
-  --brand-clay: oklch(0.499 0.113 182.2); /* dark teal */
-  --brand-teal: oklch(0.735 0.121 190.4); /* light teal */
-  --brand-ink: oklch(0.18 0.025 255); /* near black, cool */
-  --brand-sand: oklch(0.97 0.008 75); /* very light warm surface */
+  --brand-orange: #E8A14B; /* accent laranja — apenas CTAs e detalhes mínimos */
+  --brand-primary: #2B5250; /* verde escuro — cor principal da marca */
+  --brand-secondary: #5AA6A6; /* teal claro — complementar */
+  --brand-clay: oklch(0.37 0.078 185); /* verde/teal escuro (mapeado de #2B5250) */
+  --brand-teal: oklch(0.64 0.1 190); /* teal médio (mapeado de #5AA6A6) */
+  --brand-ink: oklch(0.15 0.02 260); /* near black */
+  --brand-sand: #F7F3EA; /* creme quente — neutro claro */
+  --brand-fog: #E8EDED; /* névoa fria — neutro médio */
 
-  --surface: oklch(0.975 0.005 270); /* ultra-light card surface */
-  --surface-hover: oklch(0.99 0.003 270); /* hovered surface */
+  --surface: oklch(0.975 0.005 195); /* ultra-light tinted surface */
+  --surface-hover: oklch(0.985 0.003 195); /* hovered surface */
 
   --gradient-hero:
     radial-gradient(
       70% 60% at 80% 0%,
-      oklch(0.95 0.04 195 / 0.35),
+      oklch(0.64 0.1 190 / 0.18),
       transparent 60%
     ),
     radial-gradient(
       50% 50% at 0% 100%,
-      oklch(0.9 0.06 200 / 0.25),
+      oklch(0.37 0.078 185 / 0.12),
       transparent 60%
     );
   --gradient-text: linear-gradient(
     100deg,
     var(--brand-clay),
-    var(--brand-orange) 60%,
-    var(--brand-teal)
+    var(--brand-teal) 60%,
+    oklch(0.55 0.09 190)
   );
   --shadow-soft:
     0 1px 2px oklch(0.14 0.02 270 / 0.03),
@@ -270,7 +273,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--brand-orange);
+    background: #2B5250;
     border-radius: 1px;
     transition:
       width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
@@ -313,7 +316,7 @@
       transform 0.2s ease;
   }
   .mega-item:hover {
-    border-left-color: var(--brand-orange);
+    border-left-color: #2B5250;
     background: oklch(0.14 0.02 270 / 0.03);
     transform: translateX(2px);
   }
@@ -332,7 +335,7 @@
       transform 0.2s ease;
   }
   .mega-item:hover .mega-title {
-    color: var(--brand-orange);
+    color: #2B5250;
     transform: translateX(1px);
   }
 
