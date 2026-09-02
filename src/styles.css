@@ -669,3 +669,12 @@
     transform: scale(1.1) rotate(5deg);
   }
 }
+
+/* Acessibilidade: Foco visível para teclado */
+@layer base {
+  a:focus-visible, 
+  button:focus-visible {
+    outline: 2px solid var(--brand-orange, #ff5722);
+    outline-offset: 2px;
+  }
+}

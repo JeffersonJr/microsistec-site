@@ -196,7 +196,7 @@ export const solutions: Solution[] = [
   {
     id: "sites-template",
     slug: "sites-template",
-    title: "Sites Marketing",
+    title: "Sites premium",
     shortDesc:
       "Seu site atual não atrai clientes e afasta leads? Tenha um Site Marketing de alta conversão, otimizado para captar leads todos os dias.",
     longDesc:
@@ -219,7 +219,7 @@ export const solutions: Solution[] = [
   {
     id: "sites-v8",
     slug: "sites-v8",
-    title: "Sites Premium",
+    title: "Sites personalizados",
     shortDesc:
       "Imobiliárias de alto padrão perdem vendas quando o site é genérico. Nossos Sites Premium são desenvolvidos sob medida para velocidade e conversão.",
     longDesc:

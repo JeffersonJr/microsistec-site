@@ -211,7 +211,7 @@ function Empresa() {
                     "CRM imobiliário",
                     "App de atendimento",
                     "Site para imobiliária",
-                    "Albert IA · SDR",
+                    "Albert IA",
                     "Funil de vendas",
                     "Automações",
                     "Rodízio de leads",

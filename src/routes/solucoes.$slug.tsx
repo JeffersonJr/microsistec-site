@@ -673,7 +673,7 @@ const faqData: Record<string, { q: string; a: string }[]> = {
     },
     {
       q: "O Albert substitui o corretor?",
-      a: "Não. O Albert é um SDR — ele qualifica e agenda, mas o corretor fecha. O objetivo é liberar o time para o que importa: negociar e fechar.",
+      a: "Não. O Albert qualifica e agenda, mas o corretor fecha. O objetivo é liberar o time para o que importa: negociar e fechar.",
     },
     {
       q: "Em quais plataformas o Albert atua?",
@@ -946,7 +946,7 @@ function SolucaoDetalhe() {
       case "integracoes":
         return "Conectividade total com portais, WhatsApp e Meta";
       case "albert-ia":
-        return "Conheça o SDR que nunca dorme e não perde leads";
+        return "Conheça a IA que nunca dorme e não perde leads";
       case "sites-template":
         return "Seu site imobiliário no ar em tempo recorde";
       case "sites-v8":
@@ -1537,7 +1537,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
     {
       icon: Brain,
       title: "IA personalizada para sua imobiliária",
-      desc: "O Albert é treinado sob medida com os dados, tom de voz e roteiro comercial da sua empresa. Ele não é genérico, ele é o clone do seu melhor SDR.",
+      desc: "O Albert é treinado sob medida com os dados, tom de voz e roteiro comercial da sua empresa. Ele não é genérico, ele é o clone do seu melhor atendente.",
     },
     {
       icon: MessageCircle,
@@ -1745,7 +1745,7 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
             A única IA para imobiliárias com um coração
           </span>
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            O clone do seu melhor SDR
+            O clone do seu melhor atendente
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             Chega de soluções genéricas. O Albert é uma IA personalizada que

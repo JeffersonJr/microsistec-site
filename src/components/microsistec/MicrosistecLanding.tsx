@@ -330,13 +330,13 @@ export function Nav() {
                   {[
                     {
                       slug: "sites-template",
-                      title: "Sites Express",
+                      title: "Sites premium",
                       desc: "Templates otimizados em 1 dia",
                       icon: Globe,
                     },
                     {
                       slug: "sites-v8",
-                      title: "Sites Custom V8",
+                      title: "Sites personalizados",
                       desc: "Design exclusivo de alta performance",
                       icon: Sparkles,
                     },
@@ -385,7 +385,7 @@ export function Nav() {
                   {[
                     {
                       slug: "albert-ia",
-                      title: "Albert IA (SDR)",
+                      title: "Albert IA",
                       desc: "Conversa e agenda no WhatsApp 24/7",
                       icon: Bot,
                     },
@@ -514,7 +514,7 @@ export function Nav() {
                     <Bot className="w-4 h-4" style={{ color: "#2B5250" }} />
                   </div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
-                    Albert IA (SDR)
+                    Albert IA
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -844,7 +844,7 @@ function Ticker() {
     "CRM imobiliário",
     "App de atendimento",
     "Site para imobiliária",
-    "Albert IA · SDR",
+    "Albert IA",
     "Funil de vendas",
     "Automações",
     "Rodízio de leads",
@@ -1011,7 +1011,7 @@ function Pillars() {
 function Albert() {
   const { openModal } = useDemoModal();
   const features = [
-    "Clone do seu melhor SDR, treinado com seu script",
+    "Clone do seu melhor atendente, treinado com seu script",
     "Atendimento omnichannel 24/7 (WhatsApp, site, portais)",
     "Qualifica e repassa o lead pro corretor certo",
     "Histórico completo conectado ao CRM Microsistec",
@@ -1151,7 +1151,7 @@ function AlbertChat() {
                 Albert
               </div>
               <div className="font-mono-ui text-sm font-medium text-[color:var(--brand-sand)]/80">
-                SDR · atende agora
+                Assistente virtual · atende agora
               </div>
             </div>
           </div>
