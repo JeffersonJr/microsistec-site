@@ -203,11 +203,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Microsistec - CRM Imobiliário e Sistema para Imobiliárias" },
+        { title: "Microsistec - CRM Imobiliário e Inteligência Artificial (LLMs)" },
         {
           name: "description",
           content:
-            "O melhor CRM imobiliário, site e app para corretores. A proptech pioneira no Brasil há + de 30 anos ajudando imobiliárias a venderem mais.",
+            "O melhor CRM imobiliário com Inteligência Artificial, site de alta conversão e Assistente Virtual (LLMs). Solução pioneira para escalar vendas e automação.",
         },
         { name: "author", content: "Microsistec" },
         {
@@ -220,12 +220,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           property: "og:title",
           content:
-            "Microsistec - A proptech pioneira em tecnologia imobiliária há + de 30 anos",
+            "Microsistec - CRM Imobiliário Inteligente, IA e Automação",
         },
         {
           property: "og:description",
           content:
-            "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores.",
+            "Transforme sua imobiliária com CRM de alta performance, Albert IA (LLMs) e sites focados em conversão de leads.",
         },
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://microsistec.evolves.site" },
@@ -237,7 +237,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:image:height", content: "630" },
         {
           property: "og:image:alt",
-          content: "Microsistec - Tecnologia para imobiliárias",
+          content: "Microsistec - Tecnologia em IA para imobiliárias",
         },
         { property: "og:locale", content: "pt_BR" },
         { property: "og:site_name", content: "Microsistec" },
@@ -246,12 +246,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:site", content: "@microsistec" },
         {
           name: "twitter:title",
-          content: "Microsistec - Tecnologia imobiliária há + de 30 anos",
+          content: "Microsistec - IA e CRM para o Mercado Imobiliário",
         },
         {
           name: "twitter:description",
           content:
-            "CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores.",
+            "Transforme sua imobiliária com CRM de alta performance, Albert IA (LLMs) e sites focados em conversão de leads.",
         },
         {
           name: "twitter:image",

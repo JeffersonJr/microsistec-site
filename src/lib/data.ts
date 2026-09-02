@@ -109,7 +109,7 @@ export const solutions: Solution[] = [
     iconName: "LineChart",
     features: [
       "Multi-funil ilimitado: crie funis separados para venda, locação, captação, lançamentos, alto padrão, MCMV e qualquer outro processo.",
-      "Etapas 100% customizáveis por funil — adicione, renomeie, reordene e remova sem limite.",
+      "Etapas totalmente customizáveis por funil — adicione, renomeie, reordene e remova sem limite.",
       "Drag & drop intuitivo estilo Kanban para mover leads entre etapas com um toque ou clique.",
       "Métricas independentes por funil: taxa de conversão, tempo médio por etapa e previsão de receita separados.",
       "Alertas automáticos por funil quando um lead fica parado além do tempo configurado em cada etapa.",
@@ -175,9 +175,9 @@ export const solutions: Solution[] = [
     slug: "albert-ia",
     title: "Albert IA - Assistente de Vendas",
     shortDesc:
-      "Seus leads esfriam porque você demora a responder? O Albert IA atende em segundos e só repassa os contatos quentes e prontos para fechar.",
+      "Não perca vendas por demora no atendimento. O Albert IA (Assistente Virtual Baseado em LLMs) qualifica leads em segundos com IA conversacional avançada.",
     longDesc:
-      "Corretores perdem horas preciosas qualificando contatos curiosos ou perdem vendas porque não conseguem responder a tempo. O Albert IA resolve isso: ele entende intenções reais, responde com naturalidade 24 horas por dia, qualifica as finanças do lead e repassa o contato pronto para o corretor fechar o negócio no momento ideal.",
+      "Otimize seu funil de vendas com Inteligência Artificial. O Albert IA utiliza LLMs de última geração para entender intenções reais, qualificar leads financeiramente 24/7 e automatizar o atendimento inicial, garantindo que sua equipe só foque nos clientes de alta conversão.",
     iconName: "Bot",
     features: [
       "Treinamento sob medida baseado na história e no roteiro da sua imobiliária.",
@@ -198,12 +198,12 @@ export const solutions: Solution[] = [
     slug: "sites-template",
     title: "Sites premium",
     shortDesc:
-      "Seu site atual não atrai clientes e afasta leads? Tenha um Site Marketing de alta conversão, otimizado para captar leads todos os dias.",
+      "Transforme visitantes em leads qualificados. Tenha um Site Imobiliário de Alta Conversão, estruturado com SEO avançado para dominar o Google.",
     longDesc:
       "Se você está perdendo negócios porque seu site é lento, desatualizado e não gera confiança no cliente, nossos Sites Marketing são a solução. Eles são estruturados especificamente para conversão, entregando velocidade, presença no Google (SEO) e uma interface que transforma visitantes em contatos reais, sem depender de grandes investimentos iniciais.",
     iconName: "Globe",
     features: [
-      "Estrutura otimizada para SEO local garantindo presença no Google.",
+      "Estrutura otimizada para SEO local favorecendo o ranqueamento no Google.",
       "Filtros de busca avançados (localização, preço, dormitórios, vagas).",
       "Páginas de imóveis limpas com galeria de fotos e botão direto para WhatsApp.",
       "Layout totalmente adaptado para visualização perfeita em dispositivos móveis.",
@@ -226,7 +226,7 @@ export const solutions: Solution[] = [
       "Para imobiliárias e construtoras que exigem o máximo de diferenciação e estão perdendo conversões por causa de plataformas engessadas. Criados com tecnologia de ponta, os sites Premium entregam carregamento instantâneo, design exclusivo e arquitetura imbatível para escalar os resultados da sua operação.",
     iconName: "Sparkles",
     features: [
-      "Design 100% exclusivo criado por designers especializados em proptech.",
+      "Design exclusivo criado por designers especializados em proptech.",
       "Código limpo de alta performance com nota máxima no Google PageSpeed Insights.",
       "Integrações complexas com múltiplos sistemas de gestão e mapas.",
       "Otimização avançada de imagens de forma automática para carregamento rápido.",
@@ -246,7 +246,7 @@ export const solutions: Solution[] = [
     shortDesc:
       "Distribuição inteligente e justa de leads. Garanta que toda a sua equipe de corretores seja atendida em tempo recorde de forma equilibrada.",
     longDesc:
-      "Nosso sistema de Rodízio de Atendimento foi criado para eliminar o atrito e garantir total velocidade na resposta de leads. Ao receber contatos de portais, sites ou Meta Ads, o sistema faz o cruzamento imediato de regras configuráveis (disponibilidade, escala de plantão ou especialidade de nicho) e direciona o lead de forma justa no WhatsApp do corretor da vez.",
+      "Nosso sistema de Rodízio de Atendimento foi criado para eliminar o atrito e maximizar a velocidade na resposta de leads. Ao receber contatos de portais, sites ou Meta Ads, o sistema faz o cruzamento imediato de regras configuráveis (disponibilidade, escala de plantão ou especialidade de nicho) e direciona o lead de forma justa no WhatsApp do corretor da vez.",
     iconName: "Users",
     features: [
       "Fila automatizada Round-Robin com inteligência de distribuição justa.",
@@ -269,7 +269,7 @@ export const solutions: Solution[] = [
     shortDesc:
       "Gestão completa de contratos de locação. Controle de vencimentos, reajustes, garantias e repasses em uma única plataforma.",
     longDesc:
-      "O Sistema de Locação da Microsistec foi projetado para simplificar toda a administração de imóveis alugados. Controle vencimentos, calcule reajustes automáticos pelo IGPM/IPCA, gerencie garantias e caução, emita boletos e acompanhe repasses para proprietários de forma 100% digital.",
+      "O Sistema de Locação da Microsistec foi projetado para simplificar toda a administração de imóveis alugados. Controle vencimentos, calcule reajustes automáticos pelo IGPM/IPCA, gerencie garantias e caução, emita boletos e acompanhe repasses para proprietários de forma totalmente digital.",
     iconName: "Home",
     features: [
       "Controle automatizado de contratos com alertas de vencimento e renovação.",
@@ -315,7 +315,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "3",
     quote:
-      "Usar o CRM Microsistec unificado com os portais nos economizou mais de 40 horas semanais de trabalho burocrático e duplicado. Agora nosso foco é 100% no cliente.",
+      "Usar o CRM Microsistec unificado com os portais nos economizou mais de 40 horas semanais de trabalho burocrático e duplicado. Agora nosso foco é totalmente no cliente.",
     author: "Juliana Costa",
     role: "Gerente de Operações",
     company: "Habita Prime Negócios",
@@ -1001,7 +1001,7 @@ export const materiaisData: Material[] = [
     lpSubtitle:
       "Baixe agora grátis e aplique hoje mesmo as melhores práticas para Home Office na sua imobiliária",
     lpBullets: [
-      "Sua operação 100% Online",
+      "Sua operação totalmente Online",
       "Controle sobre as atividades da equipe",
       "Boa práticas para melhor desempenho",
       "Sua equipe engajada",

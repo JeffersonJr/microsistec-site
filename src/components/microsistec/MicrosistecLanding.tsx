@@ -107,7 +107,7 @@ export function Nav() {
               className="w-8 h-8 object-contain"
             />
             <div className="flex items-baseline gap-0.5">
-              Microsistec
+              microsistec
               <span
                 className="text-[18px] text-muted-foreground self-start mt-1 select-none font-sans font-normal"
                 title="Marca Registrada"
@@ -1940,7 +1940,7 @@ export function SimpleNav() {
           to="/"
           className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
         >
-          <img
+          <img loading="lazy"
             src="/icon.svg"
             alt="Microsistec Logo"
             width={32}
@@ -1964,7 +1964,7 @@ export function SimpleFooter() {
     <footer className="bg-background py-8 border-t border-[color:var(--brand-ink)]/10 mt-auto">
       <div className="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-2 font-bold text-lg text-foreground tracking-[-0.03em]">
-          <img
+          <img loading="lazy"
             src="/icon.svg"
             alt="Microsistec Logo"
             width={24}

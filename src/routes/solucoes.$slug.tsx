@@ -219,7 +219,7 @@ const howItWorksData: Record<
       {
         n: "01",
         title: "Recomendações e Match",
-        desc: "Receba recomendações de imóveis perfeitos de acordo com o perfil do lead através do nosso cruzamento de dados inteligente.",
+        desc: "Receba recomendações de imóveis ideais de acordo com o perfil do lead através do nosso cruzamento de dados inteligente.",
       },
       {
         n: "02",
@@ -284,7 +284,7 @@ const howItWorksData: Record<
       {
         n: "02",
         title: "Design exclusivo",
-        desc: "Criamos um layout único 100% personalizado com identidade visual, tipografia e paleta desenvolvidas para você.",
+        desc: "Criamos um layout único totalmente personalizado com identidade visual, tipografia e paleta desenvolvidas para você.",
       },
       {
         n: "03",
@@ -373,51 +373,51 @@ const metricsData: Record<
   crm: [
     { value: "40%", label: "mais produtividade", sub: "corretores ativos" },
     { value: "3×", label: "mais velocidade", sub: "busca de imóveis" },
-    { value: "100%", label: "LGPD conforme", sub: "segurança de dados" },
+    { value: "Total", label: "Adequação LGPD", sub: "segurança de dados" },
     { value: "30+", label: "anos de mercado", sub: "experiência validada" },
   ],
   "albert-ia": [
     { value: "24/7", label: "atendimento", sub: "sem pausas" },
     { value: "<3s", label: "tempo de resposta", sub: "média do Albert" },
     { value: "300%", label: "mais velocidade", sub: "vs. atendimento humano" },
-    { value: "100%", label: "integrado", sub: "ao CRM Microsistec" },
+    { value: "Total", label: "integrado", sub: "ao CRM Microsistec" },
   ],
   app: [
     { value: "2×", label: "conversão", sub: "1º contato mais rápido" },
     { value: "iOS + Android", label: "multiplataforma", sub: "nativo" },
-    { value: "100%", label: "sincronizado", sub: "em tempo real" },
+    { value: "Total", label: "sincronizado", sub: "em tempo real" },
     { value: "Offline", label: "histórico disponível", sub: "sem internet" },
   ],
   /* === BACKUP MULTI-FUNIL ===
-  funil:         [{ value: "∞", label: "funis possíveis", sub: "sem limite" }, { value: "∞", label: "etapas por funil", sub: "total liberdade" }, { value: "100%", label: "métricas separadas", sub: "por processo" }, { value: "0", label: "leads misturados", sub: "cada negócio no lugar certo" }],
+  funil:         [{ value: "∞", label: "funis possíveis", sub: "sem limite" }, { value: "∞", label: "etapas por funil", sub: "total liberdade" }, { value: "Alta", label: "precisão de métricas", sub: "por processo" }, { value: "0", label: "leads misturados", sub: "cada negócio no lugar certo" }],
   */
   funil: [
-    { value: "100%", label: "visual", sub: "interface kanban" },
+    { value: "Total", label: "visual", sub: "interface kanban" },
     { value: "Automático", label: "recomendações", sub: "match de imóveis" },
     { value: "1 click", label: "envios", sub: "whatsapp e e-mail" },
     { value: "Integrado", label: "agendamento", sub: "com termo de visita" },
   ],
   integracoes: [
     { value: "40+", label: "portais", sub: "conectados" },
-    { value: "100%", label: "automático", sub: "sem cadastro manual" },
+    { value: "Total", label: "automático", sub: "sem cadastro manual" },
     { value: "↓ 90%", label: "menos tempo", sub: "em publicações" },
     { value: "Bidirecional", label: "sincronia", sub: "leads e anúncios" },
   ],
   "sites-template": [
     { value: "15", label: "temas", sub: "de alta conversão" },
     { value: "1 dia", label: "para publicar", sub: "do zero ao ar" },
-    { value: "100%", label: "integrado", sub: "ao CRM Microsistec" },
+    { value: "Total", label: "integrado", sub: "ao CRM Microsistec" },
     { value: "SEO", label: "nativo", sub: "otimizado Google" },
   ],
   "sites-v8": [
     { value: "98+", label: "PageSpeed", sub: "mobile e desktop" },
-    { value: "100%", label: "SEO score", sub: "técnico" },
+    { value: "Alto", label: "SEO score", sub: "técnico" },
     { value: "CDN", label: "Cloudflare Edge", sub: "velocidade global" },
     { value: "Custom", label: "design exclusivo", sub: "identidade única" },
   ],
   rodizio: [
     { value: "<3min", label: "resposta média", sub: "com rodízio ativo" },
-    { value: "100%", label: "equidade", sub: "distribuição justa" },
+    { value: "Alta", label: "equidade", sub: "distribuição justa" },
     { value: "↑ 42%", label: "conversão", sub: "1º contato" },
     { value: "Round-Robin", label: "algoritmo", sub: "inteligente" },
   ],
@@ -506,7 +506,7 @@ const forWhoData: Record<
     {
       icon: Smartphone,
       title: "Equipes ágeis e mobile-first",
-      desc: "Que preferem operar 100% pelo smartphone com notificações instantâneas de leads.",
+      desc: "Que preferem operar totalmente pelo smartphone com notificações instantâneas de leads.",
     },
     {
       icon: ZapIcon,
@@ -795,7 +795,7 @@ const faqData: Record<string, { q: string; a: string }[]> = {
     },
     {
       q: "O site Premium é diferente dos temas prontos?",
-      a: "Totalmente. O projeto Premium é exclusivo com design 100% personalizado, enquanto os templates são modelos pré-formatados prontos para uso.",
+      a: "Totalmente. O projeto Premium é exclusivo com design totalmente personalizado, enquanto os templates são modelos pré-formatados prontos para uso.",
     },
   ],
   rodizio: [
@@ -1000,11 +1000,11 @@ function SolucaoDetalhe() {
         "Otimização para Buscas (SEO)",
         "Filtros de Busca Avançados",
         "Páginas de Alta Conversão",
-        "Design 100% Responsivo",
+        "Design Totalmente Responsivo",
         "Blog e Captação Nativas",
       ],
       "sites-v8": [
-        "Design 100% Exclusivo",
+        "Design Totalmente Exclusivo",
         "Performance Extrema (PageSpeed 100)",
         "Integrações Customizadas",
         "Otimização Avançada de Mídias",
@@ -1882,7 +1882,7 @@ const templates: ThemeTemplate[] = [
     url: "http://circleshaus1.imob.online/",
     image:
       "https://d2xnmiivr6f5qr.cloudfront.net/wp-content/uploads/2024/08/06164326/circles-scaled.jpg",
-    desc: "Elementos geométricos arredondados e transições suaves, perfeito para imobiliárias dinâmicas.",
+    desc: "Elementos geométricos arredondados e transições suaves, ideal para imobiliárias dinâmicas.",
     tags: ["Moderno", "Circular", "Transições Suaves"],
   },
   {
@@ -1946,7 +1946,7 @@ const templates: ThemeTemplate[] = [
     url: "http://smarthousemicrosistec1.imob.online/",
     image:
       "https://d2xnmiivr6f5qr.cloudfront.net/wp-content/uploads/2024/08/06165328/smart-scaled.jpg",
-    desc: "Foco tecnológico e automações visuais integradas, perfeito para jovens proptechs.",
+    desc: "Foco tecnológico e automações visuais integradas, ideal para jovens proptechs.",
     tags: ["Tech", "Automações", "Jovem"],
   },
   {
