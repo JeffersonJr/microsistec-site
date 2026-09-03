@@ -486,7 +486,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-600/10",
     logoTextColor: "text-emerald-600",
     logoText: "CR",
-    logoImg: "/logos/creci.png",
+    logoImg: "https://imob.online/imgs/portais/portalcreci.png",
     officialColor: "#006B3F",
   },
   {
@@ -558,7 +558,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-600/10",
     logoTextColor: "text-amber-600",
     logoText: "OM",
-    logoImg: "/logos/olho-magico.png",
+    logoImg: "https://imob.online/imgs/portais/olhomagico.png",
     officialColor: "#EC4899",
   },
   {
@@ -582,7 +582,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-stone-600/10",
     logoTextColor: "text-stone-600",
     logoText: "321",
-    logoImg: "/logos/321achei.png",
+    logoImg: "https://imob.online/imgs/portais/321achei.png",
     officialColor: "#78716C",
   },
   {
@@ -594,7 +594,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-500/10",
     logoTextColor: "text-indigo-600",
     logoText: "AJ",
-    logoImg: "/logos/alugar-ja.png",
+    logoImg: "https://imob.online/imgs/portais/alugarja.png",
     officialColor: "#6366F1",
   },
   {
@@ -678,7 +678,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-600/10",
     logoTextColor: "text-teal-600",
     logoText: "GC",
-    logoImg: "/logos/imovel-cia.png",
+    logoImg: "https://imob.online/imgs/portais/guiaimovelcia.png",
     officialColor: "#0D9488",
   },
   {
@@ -702,7 +702,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-400/10",
     logoTextColor: "text-indigo-600",
     logoText: "SP",
-    logoImg: "/logos/sp-imovel.png",
+    logoImg: "https://imob.online/imgs/portais/grupo_sp.png",
     officialColor: "#818CF8",
   },
   {
@@ -762,7 +762,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-400/10",
     logoTextColor: "text-emerald-600",
     logoText: "PI",
-    logoImg: "/logos/portais-imobiliarios.png",
+    logoImg: "https://imob.online/imgs/portais/portaisimobiliarios.png",
     officialColor: "#34D399",
   },
   {
@@ -774,7 +774,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-sky-400/10",
     logoTextColor: "text-sky-600",
     logoText: "TL",
-    logoImg: "/logos/trocalar.png",
+    logoImg: "https://imob.online/imgs/portais/trocalar.png",
     officialColor: "#38BDF8",
   },
   {
@@ -786,7 +786,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-300/10",
     logoTextColor: "text-indigo-600",
     logoText: "VC",
-    logoImg: "/logos/vc-busca.png",
+    logoImg: "https://imob.online/imgs/portais/vcbusca.png",
     officialColor: "#A5B4FC",
   },
   {
@@ -870,7 +870,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-lime-400/10",
     logoTextColor: "text-lime-600",
     logoText: "LK",
-    logoImg: "/logos/linklar.png",
+    logoImg: "https://imob.online/imgs/portais/linklar.png",
     officialColor: "#A3E635",
   },
   {
@@ -882,7 +882,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-orange-400/10",
     logoTextColor: "text-orange-600",
     logoText: "SI",
-    logoImg: "https://www.google.com/s2/favicons?domain=storiaimoveis.com.br&sz=128",
+    logoImg: "https://imob.online/imgs/portais/storia.png",
     officialColor: "#FB923C",
   },
   {
@@ -906,6 +906,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-400/10",
     logoTextColor: "text-amber-600",
     logoText: "BK",
+    logoImg: "https://imob.online/imgs/portais/campainha.png",
     officialColor: "#FBBF24",
   },
   {
@@ -917,7 +918,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-rose-400/10",
     logoTextColor: "text-rose-600",
     logoText: "EP",
-    logoImg: "/logos/epungo.png",
+    logoImg: "https://imob.online/imgs/portais/epungo.png",
     officialColor: "#FB7185",
   },
   {
@@ -929,6 +930,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-300/10",
     logoTextColor: "text-teal-600",
     logoText: "IC",
+    logoImg: "https://imob.online/imgs/portais/imocasa.png",
     officialColor: "#5EEAD4",
   },
   {
