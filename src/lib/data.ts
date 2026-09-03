@@ -694,7 +694,7 @@ export const portalIntegrations: PortalIntegration[] = [
     officialColor: "#65A30D",
   },
   {
-    name: "Grupo SP",
+    name: "SP Imóvel",
     category: "Portais Imobiliários Nacionais",
     description:
       "Portal nacional otimizado para anúncios de venda rápida e locação de imóveis prontos.",
@@ -702,7 +702,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-400/10",
     logoTextColor: "text-indigo-600",
     logoText: "SP",
-    logoImg: "https://www.google.com/s2/favicons?domain=gruposp.arq.br&sz=128",
+    logoImg: "/logos/sp-imovel.png",
     officialColor: "#818CF8",
   },
   {
@@ -762,7 +762,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-400/10",
     logoTextColor: "text-emerald-600",
     logoText: "PI",
-    logoImg: "https://www.google.com/s2/favicons?domain=portaisimobiliarios.com.br&sz=128",
+    logoImg: "/logos/portais-imobiliarios.png",
     officialColor: "#34D399",
   },
   {
@@ -774,6 +774,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-sky-400/10",
     logoTextColor: "text-sky-600",
     logoText: "TL",
+    logoImg: "/logos/trocalar.png",
     officialColor: "#38BDF8",
   },
   {
@@ -785,6 +786,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-300/10",
     logoTextColor: "text-indigo-600",
     logoText: "VC",
+    logoImg: "/logos/vc-busca.png",
     officialColor: "#A5B4FC",
   },
   {
@@ -863,12 +865,13 @@ export const portalIntegrations: PortalIntegration[] = [
     name: "Linklar",
     category: "Portais Imobiliários Nacionais",
     description:
-      "Portal dinâmico com design limpo, focado em simplificar buscas de lançamentos.",
+      "Conexão veloz entre inquilinos buscando aluguel rápido e imobiliárias dinâmicas.",
     type: "XML",
-    logoBg: "bg-blue-300/10",
-    logoTextColor: "text-blue-600",
-    logoText: "LL",
-    officialColor: "#93C5FD",
+    logoBg: "bg-lime-400/10",
+    logoTextColor: "text-lime-600",
+    logoText: "LK",
+    logoImg: "/logos/linklar.png",
+    officialColor: "#A3E635",
   },
   {
     name: "Storia Imóveis",
