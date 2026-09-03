@@ -134,7 +134,7 @@ function SolucoesIndex() {
 
                   <div className="p-6 flex-1 flex flex-col gap-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-ink)] text-[#2B5250] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center">
                         <IconComp className="w-5 h-5" />
                       </div>
                       {badge && (

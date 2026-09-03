@@ -344,7 +344,7 @@ function SolutionHowItWorks({ slug }: { slug: string }) {
               className="relative flex flex-col gap-4 p-7 rounded-2xl border border-[color:var(--brand-ink)]/7 bg-background hover:border-[#2B5250]/30 hover:shadow-soft transition-all duration-300 feature-card"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[#2B5250] flex items-center justify-center font-mono-ui text-base font-bold shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center font-mono-ui text-base font-bold shrink-0">
                   {step.n}
                 </div>
                 <div className="h-px flex-1 bg-[color:var(--brand-ink)]/8 md:hidden" />
@@ -1101,7 +1101,7 @@ function SolucaoDetalhe() {
                     </div>
                   ) : (
                     <div className="w-11 h-11 rounded-2xl bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] flex items-center justify-center">
-                      <IconComp className="w-5 h-5 text-[#2B5250]" />
+                      <IconComp className="w-5 h-5 text-current" />
                     </div>
                   )}
                   <span className="stamp text-[#2B5250] text-[10px]">
