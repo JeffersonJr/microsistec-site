@@ -220,24 +220,24 @@ function NovidadesPage() {
               <Link
                 title="Página Inicial"
                 to="/"
-                className="text-sm font-mono-ui uppercase hover:text-[#2B5250] transition text-[color:var(--brand-sand)]/50"
+                className="text-sm font-mono-ui uppercase hover:text-[#5AA6A6] transition text-[color:var(--brand-sand)]/50"
               >
                 Home
               </Link>
               <ChevronRight className="w-3 h-3 text-[color:var(--brand-sand)]/30" />
-              <span className="text-sm font-mono-ui uppercase text-[#2B5250] font-semibold">
+              <span className="text-sm font-mono-ui uppercase text-[#5AA6A6] font-semibold">
                 Novidades
               </span>
             </div>
 
             <div className="max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 bg-[#5AA6A6]/15 text-[#2B5250] px-4 py-1.5 rounded-full font-bold text-sm">
+              <div className="inline-flex items-center gap-2 bg-[#5AA6A6]/15 text-[#5AA6A6] px-4 py-1.5 rounded-full font-bold text-sm">
                 <Sparkles className="w-4 h-4" />
                 Lançamentos & Atualizações
               </div>
               <h1 className="font-extrabold tracking-[-0.045em] leading-[1.05] text-[clamp(2.4rem,5.5vw,4.5rem)]">
                 O maior salto evolutivo na sua{" "}
-                <span className="text-[#2B5250] font-serif-italic font-normal">
+                <span className="text-[#5AA6A6] font-serif-italic font-normal">
                   gestão imobiliária
                 </span>
                 .
@@ -255,7 +255,7 @@ function NovidadesPage() {
         <div className="bg-[color:var(--brand-ink)]/95 backdrop-blur-md border-b border-[color:var(--brand-sand)]/10 sticky top-[72px] z-40 hidden md:block">
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex items-center gap-6 py-4 overflow-x-auto scrollbar-hide">
-              <span className="text-[#2B5250] font-mono-ui font-bold text-[10px] uppercase tracking-widest shrink-0">
+              <span className="text-[#5AA6A6] font-mono-ui font-bold text-[10px] uppercase tracking-widest shrink-0">
                 Novidades:
               </span>
               <button
@@ -886,7 +886,7 @@ function NovidadesPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Analíticos */}
               <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#2B5250]">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#5AA6A6]">
                   <FileText className="w-6 h-6" /> Dados Analíticos
                 </h3>
 
@@ -949,8 +949,8 @@ function NovidadesPage() {
               </div>
 
               {/* Desempenho */}
-              <div className="bg-[#5AA6A6]/15 border border-[#2B5250]/20 rounded-3xl p-8 backdrop-blur-sm">
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#2B5250]">
+              <div className="bg-[#5AA6A6]/15 border border-[#5AA6A6]/20 rounded-3xl p-8 backdrop-blur-sm">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-[#5AA6A6]">
                   <TrendingUp className="w-6 h-6" /> Desempenho (Performance)
                 </h3>
 
