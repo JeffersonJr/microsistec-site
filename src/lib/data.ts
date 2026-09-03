@@ -414,7 +414,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-stone-600/10",
     logoTextColor: "text-stone-600",
     logoText: "321",
-    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT47Q2lnrlGyooHMsUXpJ_5oCWNJXlDiwUdaDpfIsPd0sFXnAMoJeX1dZY&s=10",
+    logoImg: "https://www.google.com/s2/favicons?domain=321achei.com.br&sz=64",
     officialColor: "#78716C",
   },
   {
@@ -438,7 +438,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-500/10",
     logoTextColor: "text-indigo-600",
     logoText: "AJ",
-    logoImg: "https://www.akonsulting.com.br/wp-content/uploads/2016/10/logo-alugar-j%C3%A1-novo-291x300.png",
+    logoImg: "https://imob.online/imgs/portais/alugarja.png",
     officialColor: "#6366F1",
   },
   {
@@ -450,7 +450,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-400/10",
     logoTextColor: "text-amber-600",
     logoText: "BK",
-    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC3NnObF61ZMvv5c25-pjypLJAdZOew1NuJYw3isSh0A&s=10",
+    logoImg: "https://www.google.com/s2/favicons?domain=buskaza.com.br&sz=64",
     officialColor: "#FBBF24",
   },
   {
