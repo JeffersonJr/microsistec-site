@@ -2256,7 +2256,8 @@ function IntegrationsSection() {
                 Solicite um contato
               </button>
               <Link
-                to="/solucoes/integracoes"
+                to="/solucoes/$slug"
+                params={{ slug: "integracoes" }}
                 className="inline-flex items-center justify-center text-[color:var(--brand-ink)] font-bold text-lg hover:underline transition-colors cursor-pointer group"
               >
                 Ver todos
