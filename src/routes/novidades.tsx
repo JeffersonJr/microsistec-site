@@ -982,7 +982,7 @@ function NovidadesPage() {
                     },
                   ].map((perf, i) => (
                     <div key={i} className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-[color:var(--brand-orange)]/20 text-[#2B5250] flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-[#5AA6A6]/20 text-[#5AA6A6] flex items-center justify-center shrink-0">
                         <Target className="w-5 h-5" />
                       </div>
                       <div>

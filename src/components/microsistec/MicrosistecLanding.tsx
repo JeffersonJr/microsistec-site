@@ -1167,28 +1167,18 @@ function Pillars() {
           {items.map((it, i) => (
             <div
               key={it.title}
-              className="p-7 md:p-8 relative group transition-colors duration-300"
-              style={{ background: "#fff" }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background =
-                  "#2B5250";
-                (e.currentTarget as HTMLDivElement).style.color = "#F7F3EA";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background = "#fff";
-                (e.currentTarget as HTMLDivElement).style.color = "";
-              }}
+              className="p-7 md:p-8 relative group transition-colors duration-300 bg-white hover:bg-[#2B5250] hover:text-[#F7F3EA]"
             >
               <div className="flex items-start justify-between mb-8">
-                <it.icon className="w-6 h-6" style={{ color: "#5AA6A6" }} />
-                <span className="font-mono-ui text-sm font-medium text-muted-foreground">
+                <it.icon className="w-6 h-6 text-[#5AA6A6] group-hover:text-[#F7F3EA]/80 transition-colors" />
+                <span className="font-mono-ui text-sm font-medium text-muted-foreground group-hover:text-[#F7F3EA]/70 transition-colors">
                   0{i + 1} / 04
                 </span>
               </div>
-              <h3 className="font-bold text-2xl tracking-tight mb-2">
+              <h3 className="font-bold text-2xl tracking-tight mb-2 group-hover:text-[#F7F3EA] transition-colors">
                 {it.title}
               </h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed group-hover:text-[#F7F3EA]/90 transition-colors">
                 {it.desc}
               </p>
             </div>

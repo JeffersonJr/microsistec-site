@@ -440,7 +440,7 @@ function SolutionMetrics({ slug }: { slug: string }) {
             className="relative bg-[color:var(--brand-ink)] text-[color:var(--brand-sand)] rounded-2xl px-5 py-8 flex flex-col items-center gap-1 text-center overflow-hidden group feature-card border border-[color:var(--brand-ink)]"
           >
             <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#5AA6A6]/15 rounded-full" />
-            <div className="text-4xl md:text-5xl font-extrabold text-[#2B5250] tracking-tight relative z-10">
+            <div className="text-4xl md:text-5xl font-extrabold text-[#5AA6A6] tracking-tight relative z-10">
               {m.value}
             </div>
             <div className="text-sm font-semibold text-[color:var(--brand-sand)] mt-1 relative z-10">
@@ -4183,7 +4183,7 @@ function RodizioSubSection() {
                 className="w-full py-3 rounded-xl font-semibold text-base transition-all duration-200 cursor-pointer border-none"
                 style={{
                   background: "#2B5250",
-                  color: "var(--brand-ink)",
+                  color: "var(--brand-sand)",
                 }}
               >
                 + Novo Lead
