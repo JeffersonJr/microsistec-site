@@ -299,6 +299,30 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
         <SeoSchema />
+        
+        {/* Preload critical fonts to eliminate CLS and maximize LCP */}
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+          href="https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7M.woff2"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+          href="https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+          href="https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2"
+        />
+
         {/* Inline CSS to completely eliminate render blocking network requests */}
         <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
         {/* Fontes do Google estão inlined no styles.css para performance (0 render-blocking) */}
