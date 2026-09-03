@@ -75,8 +75,8 @@
   --secondary-foreground: oklch(0.18 0.02 270);
   --muted: oklch(0.96 0.01 280);
   --muted-foreground: oklch(0.48 0.02 270);
-  --accent: #E8A14B;
-  --accent-foreground: #1A1A1A;
+  --accent: #e8a14b;
+  --accent-foreground: #1a1a1a;
   --destructive: oklch(0.62 0.24 25);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.93 0.008 270);
@@ -86,14 +86,16 @@
   /* Clean minimal proptech palette — 60% verde, 25% neutros, 10% ink, 5% laranja (CTAs) */
   --background: oklch(0.99 0.003 270); /* near white */
   --foreground: oklch(0.15 0.02 260); /* deep ink */
-  --brand-orange: #E8A14B; /* accent laranja — apenas CTAs e detalhes mínimos */
-  --brand-primary: #2B5250; /* verde escuro — cor principal da marca */
-  --brand-secondary: #5AA6A6; /* teal claro — complementar */
-  --brand-clay: oklch(0.37 0.078 185); /* verde/teal escuro (mapeado de #2B5250) */
+  --brand-orange: #e8a14b; /* accent laranja — apenas CTAs e detalhes mínimos */
+  --brand-primary: #2b5250; /* verde escuro — cor principal da marca */
+  --brand-secondary: #5aa6a6; /* teal claro — complementar */
+  --brand-clay: oklch(
+    0.37 0.078 185
+  ); /* verde/teal escuro (mapeado de #2B5250) */
   --brand-teal: oklch(0.64 0.1 190); /* teal médio (mapeado de #5AA6A6) */
   --brand-ink: oklch(0.15 0.02 260); /* near black */
-  --brand-sand: #F7F3EA; /* creme quente — neutro claro */
-  --brand-fog: #E8EDED; /* névoa fria — neutro médio */
+  --brand-sand: #f7f3ea; /* creme quente — neutro claro */
+  --brand-fog: #e8eded; /* névoa fria — neutro médio */
 
   --surface: oklch(0.975 0.005 195); /* ultra-light tinted surface */
   --surface-hover: oklch(0.985 0.003 195); /* hovered surface */
@@ -158,8 +160,8 @@
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: #E8A14B;
-  --accent-foreground: #1A1A1A;
+  --accent: #e8a14b;
+  --accent-foreground: #1a1a1a;
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
@@ -273,7 +275,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: #2B5250;
+    background: #2b5250;
     border-radius: 1px;
     transition:
       width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
@@ -316,7 +318,7 @@
       transform 0.2s ease;
   }
   .mega-item:hover {
-    border-left-color: #2B5250;
+    border-left-color: #2b5250;
     background: oklch(0.14 0.02 270 / 0.03);
     transform: translateX(2px);
   }
@@ -335,7 +337,7 @@
       transform 0.2s ease;
   }
   .mega-item:hover .mega-title {
-    color: #2B5250;
+    color: #2b5250;
     transform: translateX(1px);
   }
 
@@ -672,7 +674,7 @@
 
 /* Acessibilidade: Foco visível para teclado */
 @layer base {
-  a:focus-visible, 
+  a:focus-visible,
   button:focus-visible {
     outline: 2px solid var(--brand-orange, #ff5722);
     outline-offset: 2px;

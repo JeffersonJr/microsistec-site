@@ -19,7 +19,13 @@ export function LeadForm({ origem }: LeadFormProps = {}) {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await submitLead({ nome, telefone, email: "", cnpj: "", origem: origem || `Página: ${location.pathname}` });
+    await submitLead({
+      nome,
+      telefone,
+      email: "",
+      cnpj: "",
+      origem: origem || `Página: ${location.pathname}`,
+    });
     // Limpa o formulário após sucesso (o WhatsApp já foi aberto pelo hook)
     if (!error) {
       setNome("");
@@ -62,9 +68,19 @@ export function LeadForm({ origem }: LeadFormProps = {}) {
 
       {error && <p className="text-sm text-red-500">{error}</p>}
       <div className="text-[11px] text-gray-500 leading-tight">
-        Ao enviar, você concorda com nossos <a href="/termos-de-uso" className="underline hover:text-gray-700">Termos</a> e <a href="/politica-de-privacidade" className="underline hover:text-gray-700">Política de Privacidade</a>.
+        Ao enviar, você concorda com nossos{" "}
+        <a href="/termos-de-uso" className="underline hover:text-gray-700">
+          Termos
+        </a>{" "}
+        e{" "}
+        <a
+          href="/politica-de-privacidade"
+          className="underline hover:text-gray-700"
+        >
+          Política de Privacidade
+        </a>
+        .
       </div>
-
 
       <button
         type="submit"

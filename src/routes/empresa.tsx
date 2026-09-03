@@ -18,7 +18,7 @@ export const Route = createFileRoute("/empresa")({
       {
         name: "description",
         content:
-          "Conheça a história da Microsistec, pioneira em tecnologia imobiliária fundada em 1994, agora impulsionando vendas com CRM e IA.",
+          "Conheça a história da Microsistec, pioneira em tecnologia imobiliária há mais de 30 anos, agora impulsionando vendas com CRM e IA.",
       },
     ],
   }),
@@ -30,7 +30,7 @@ function Empresa() {
 
   const milestones = [
     {
-      year: "1994",
+      year: "Mais de 30 anos",
       title: "Fundação & Primeiros Passos",
       desc: "Nascemos em Praia Grande/SP, em uma época em que controle de imóveis era feito em fichas de papel. Nosso fundador visualizou que o futuro das imobiliárias seria impulsionado por computadores.",
     },
@@ -88,7 +88,7 @@ function Empresa() {
           <div className="bg-grid absolute inset-0" />
           <div className="relative mx-auto max-w-7xl px-6 text-center space-y-6">
             <span className="stamp text-[#2B5250] text-sm inline-block">
-              Fundada em 1994
+              Mais de 30 anos de história
             </span>
             <h1 className="font-extrabold tracking-[-0.04em] leading-[0.98] text-[clamp(2.5rem,5.5vw,4.5rem)]">
               Tecnologia imobiliária
@@ -124,8 +124,8 @@ function Empresa() {
               <p className="text-muted-foreground leading-relaxed">
                 Nossa trajetória não começou ontem com slides bonitos de
                 startup. Fomos os pioneiros em trazer computadores, banco de
-                dados e sites dinâmicos para o setor imobiliário brasileiro
-                há + de 30 anos. São trinta anos de liderança comprovando que
+                dados e sites dinâmicos para o setor imobiliário brasileiro há +
+                de 30 anos. São trinta anos de liderança comprovando que
                 entendemos cada detalhe do dia a dia do corretor e que sabemos
                 exatamente o que fazemos.
               </p>

@@ -19,7 +19,9 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = blogPosts.find((p) => p.slug === params.slug);
     return {
       meta: [
-        { title: post ? `${post.title} | Microsistec` : "Artigo | Microsistec" },
+        {
+          title: post ? `${post.title} | Microsistec` : "Artigo | Microsistec",
+        },
         {
           name: "description",
           content: post
@@ -265,7 +267,7 @@ function BlogLeitor() {
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Fomos os **pioneiros absolutos em trazer a tecnologia para o
-                setor imobiliário brasileiro** desde **1994**. Unimos CRM
+                setor imobiliário brasileiro** há **mais de 30 anos**. Unimos CRM
                 robusto, sites de carregamento instantâneo, aplicativos e IA,
                 provando em três décadas de mercado que sabemos o que fazemos.
               </p>

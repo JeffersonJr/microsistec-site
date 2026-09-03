@@ -39,7 +39,7 @@ const Testimonial = React.lazy(() => import("./Testimonial"));
 /* -------------------------------------------------------------------------- */
 /*  NAV                                                                       */
 /* -------------------------------------------------------------------------- */
-type OpenMenu = "solucoes" | "planos" | null;
+type OpenMenu = "solucoes" | "planos" | "conteudos" | null;
 
 export function Nav() {
   const { openModal } = useDemoModal();
@@ -165,8 +165,12 @@ export function Nav() {
               data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
               style={{} as React.CSSProperties}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "";
+              }}
             >
               Novidades
             </Link>
@@ -178,37 +182,34 @@ export function Nav() {
               data-gtm-location="header"
               className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
               style={{} as React.CSSProperties}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "";
+              }}
             >
               Sobre
             </Link>
-            <Link
-              title="Blog da Microsistec - Conteúdos sobre Mercado Imobiliário"
-              to="/blog"
-              onClick={() => setOpenMenu(null)}
-              data-gtm-cta="nav_blog"
-              data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
-              style={{} as React.CSSProperties}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
-            >
-              Blog
-            </Link>
-            <Link
-              title="Materiais Ricos e Gratuitos"
-              to="/materiais"
-              onClick={() => setOpenMenu(null)}
-              data-gtm-cta="nav_materiais"
-              data-gtm-location="header"
-              className="px-3 py-2 rounded-full text-base font-semibold text-muted-foreground hover:bg-[#2B5250]/6 transition"
-              style={{} as React.CSSProperties}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#2B5250"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = ""; }}
-            >
-              Materiais
-            </Link>
+            {/* Conteúdos */}
+            <div className="relative">
+              <button
+                onClick={() => toggleMenu("conteudos")}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-base font-semibold transition cursor-pointer border-none bg-transparent ${openMenu === "conteudos" ? "bg-[#2B5250]/8" : "text-muted-foreground hover:text-foreground hover:bg-[#2B5250]/6"}`}
+                style={openMenu === "conteudos" ? { color: "#2B5250" } : {}}
+              >
+                Conteúdos
+                <ChevronDown
+                  className="w-3.5 h-3.5 transition-transform duration-200"
+                  style={{
+                    transform:
+                      openMenu === "conteudos"
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)",
+                  }}
+                />
+              </button>
+            </div>
           </nav>
 
           {/* CTAs à direita */}
@@ -300,11 +301,22 @@ export function Nav() {
                       onClick={() => setOpenMenu(null)}
                       className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#2B5250]/5 transition group"
                     >
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition" style={{ background: "rgba(43,82,80,0.08)" }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.16)"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.08)"; }}
+                      <div
+                        className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition"
+                        style={{ background: "rgba(43,82,80,0.08)" }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.background =
+                            "rgba(43,82,80,0.16)";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.background =
+                            "rgba(43,82,80,0.08)";
+                        }}
                       >
-                        <item.icon className="icon-micro-rotate w-4 h-4" style={{ color: "#2B5250" }} />
+                        <item.icon
+                          className="icon-micro-rotate w-4 h-4"
+                          style={{ color: "#2B5250" }}
+                        />
                       </div>
                       <div>
                         <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors leading-none mb-1">
@@ -355,11 +367,22 @@ export function Nav() {
                       onClick={() => setOpenMenu(null)}
                       className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#2B5250]/5 transition group"
                     >
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition" style={{ background: "rgba(43,82,80,0.08)" }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.16)"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.08)"; }}
+                      <div
+                        className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition"
+                        style={{ background: "rgba(43,82,80,0.08)" }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.background =
+                            "rgba(43,82,80,0.16)";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.background =
+                            "rgba(43,82,80,0.08)";
+                        }}
                       >
-                        <item.icon className="icon-micro-rotate w-4 h-4" style={{ color: "#2B5250" }} />
+                        <item.icon
+                          className="icon-micro-rotate w-4 h-4"
+                          style={{ color: "#2B5250" }}
+                        />
                       </div>
                       <div>
                         <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors leading-none mb-1">
@@ -398,11 +421,22 @@ export function Nav() {
                       onClick={() => setOpenMenu(null)}
                       className="mega-item-stagger flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#2B5250]/5 transition group"
                     >
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition" style={{ background: "rgba(43,82,80,0.08)" }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.16)"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.background = "rgba(43,82,80,0.08)"; }}
+                      <div
+                        className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition"
+                        style={{ background: "rgba(43,82,80,0.08)" }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.background =
+                            "rgba(43,82,80,0.16)";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.background =
+                            "rgba(43,82,80,0.08)";
+                        }}
                       >
-                        <item.icon className="icon-micro-rotate w-4 h-4" style={{ color: "#2B5250" }} />
+                        <item.icon
+                          className="icon-micro-rotate w-4 h-4"
+                          style={{ color: "#2B5250" }}
+                        />
                       </div>
                       <div>
                         <h4 className="font-bold text-base text-[color:var(--brand-ink)] group-hover:text-[#2B5250] transition-colors leading-none mb-1">
@@ -478,7 +512,10 @@ export function Nav() {
                     className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                     style={{ background: "rgba(43,82,80,0.1)" }}
                   >
-                    <Building2 className="w-4 h-4" style={{ color: "#2B5250" }} />
+                    <Building2
+                      className="w-4 h-4"
+                      style={{ color: "#2B5250" }}
+                    />
                   </div>
                   <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
                     CRM Imobiliário
@@ -541,7 +578,8 @@ export function Nav() {
               <div
                 className="rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden"
                 style={{
-                  background: "linear-gradient(135deg, #2B5250 0%, #1e3a38 100%)",
+                  background:
+                    "linear-gradient(135deg, #2B5250 0%, #1e3a38 100%)",
                   color: "#F7F3EA",
                 }}
               >
@@ -561,10 +599,16 @@ export function Nav() {
                   >
                     Atendimento
                   </span>
-                  <h4 className="font-extrabold text-lg mb-2" style={{ color: "#F7F3EA" }}>
+                  <h4
+                    className="font-extrabold text-lg mb-2"
+                    style={{ color: "#F7F3EA" }}
+                  >
                     Fale com um Especialista
                   </h4>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(247,243,234,0.7)" }}>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "rgba(247,243,234,0.7)" }}
+                  >
                     Fale com nosso especialista agora e tire suas dúvidas ou
                     solicite uma simulação customizada para o tamanho da sua
                     imobiliária.
@@ -582,6 +626,114 @@ export function Nav() {
                 >
                   Falar com especialista agora
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {openMenu === "conteudos" && (
+          <div className="absolute top-full left-0 right-0 mt-3 w-full bg-[color:var(--brand-sand)]/98 backdrop-blur-xl border border-[color:var(--brand-ink)]/12 rounded-[24px] p-8 shadow-elev animate-fadeIn z-50 pointer-events-auto">
+            <div className="grid grid-cols-3 gap-8 text-left">
+              {/* Blog */}
+              <div className="space-y-4">
+                <div className="border-b border-[#2B5250]/10 pb-2 flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(43,82,80,0.1)" }}
+                  >
+                    <Quote className="w-4 h-4" style={{ color: "#2B5250" }} />
+                  </div>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Blog
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                  Artigos sobre gestão imobiliária, marketing, vendas e as
+                  melhores práticas do mercado.
+                </p>
+                <div>
+                  <Link
+                    title="Acessar o Blog"
+                    to="/blog"
+                    onClick={() => setOpenMenu(null)}
+                    data-gtm-cta="nav_ver_blog"
+                    data-gtm-location="mega_menu"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+                    style={{ color: "#2B5250" }}
+                  >
+                    Acessar o Blog <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Materiais */}
+              <div className="space-y-4">
+                <div className="border-b border-[#2B5250]/10 pb-2 flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(43,82,80,0.1)" }}
+                  >
+                    <CheckCircle2
+                      className="w-4 h-4"
+                      style={{ color: "#2B5250" }}
+                    />
+                  </div>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Materiais Ricos
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                  E-books, planilhas e guias práticos gratuitos para alavancar
+                  os resultados da sua imobiliária.
+                </p>
+                <div>
+                  <Link
+                    title="Acessar Materiais"
+                    to="/materiais"
+                    onClick={() => setOpenMenu(null)}
+                    data-gtm-cta="nav_ver_materiais"
+                    data-gtm-location="mega_menu"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+                    style={{ color: "#2B5250" }}
+                  >
+                    Ver Materiais Ricos <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Podcast */}
+              <div className="space-y-4">
+                <div className="border-b border-[#2B5250]/10 pb-2 flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style={{ background: "rgba(43,82,80,0.1)" }}
+                  >
+                    <MessageSquare
+                      className="w-4 h-4"
+                      style={{ color: "#2B5250" }}
+                    />
+                  </div>
+                  <span className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-muted-foreground/60">
+                    Podcast
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                  Acompanhe nosso podcast e fique por dentro das principais
+                  novidades e estratégias do mercado.
+                </p>
+                <div>
+                  <Link
+                    title="Acessar Podcast"
+                    to="/podcast"
+                    onClick={() => setOpenMenu(null)}
+                    data-gtm-cta="nav_ver_podcast"
+                    data-gtm-location="mega_menu"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+                    style={{ color: "#2B5250" }}
+                  >
+                    Ouvir Episódios <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -650,7 +802,10 @@ export function Nav() {
                         className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
                         style={{ background: "rgba(90,166,166,0.12)" }}
                       >
-                        <IconComp className="w-[18px] h-[18px]" style={{ color: "#2B5250" }} />
+                        <IconComp
+                          className="w-[18px] h-[18px]"
+                          style={{ color: "#2B5250" }}
+                        />
                       </div>
                       <span className="text-[15px] font-semibold flex-1">
                         {sol.title}
@@ -673,17 +828,45 @@ export function Nav() {
                     { label: "Albert IA", to: "/planos-albert" },
                     { label: "Novidades", to: "/novidades" },
                     { label: "Sobre nós", to: "/empresa" },
-                    { label: "Blog", to: "/blog" },
-                    { label: "Materiais gratuitos", to: "/materiais" },
                   ] as {
                     label: string;
                     to:
-                    | "/planos"
-                    | "/planos-albert"
-                    | "/novidades"
-                    | "/empresa"
-                    | "/blog"
-                    | "/materiais";
+                      | "/planos"
+                      | "/planos-albert"
+                      | "/novidades"
+                      | "/empresa";
+                  }[]
+                ).map((item) => (
+                  <Link
+                    title="Acessar link"
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setIsMobileOpen(false)}
+                    data-gtm-cta={`mobile_nav_${item.to.replace(/\//g, "").replace(/-/g, "_")}`}
+                    data-gtm-location="mobile_menu"
+                    className="flex items-center gap-3.5 px-2 rounded-2xl text-[15px] font-semibold text-[color:var(--brand-ink)] hover:bg-[color:var(--brand-ink)]/5 active:bg-[color:var(--brand-ink)]/10 transition no-underline"
+                    style={{ minHeight: 52 }}
+                  >
+                    <span className="flex-1">{item.label}</span>
+                    <ArrowRight className="w-4 h-4 text-[color:var(--brand-ink)]/25 shrink-0" />
+                  </Link>
+                ))}
+
+                {/* Divider */}
+                <div className="h-px bg-[color:var(--brand-ink)]/8 mx-1 my-2" />
+
+                {/* Conteúdos */}
+                <p className="text-[10px] font-mono-ui font-bold uppercase tracking-widest text-[color:var(--brand-ink)]/40 px-1 mb-0.5">
+                  Conteúdos
+                </p>
+                {(
+                  [
+                    { label: "Blog", to: "/blog" },
+                    { label: "Materiais gratuitos", to: "/materiais" },
+                    { label: "Podcast", to: "/podcast" },
+                  ] as {
+                    label: string;
+                    to: "/blog" | "/materiais" | "/podcast";
                   }[]
                 ).map((item) => (
                   <Link
@@ -861,7 +1044,10 @@ function Ticker() {
         <div className="marquee flex gap-10 py-3.5 whitespace-nowrap text-base">
           {row.map((t, i) => (
             <span key={i} className="inline-flex items-center gap-3">
-              <span className="font-serif-italic font-bold" style={{ color: "#2B5250" }}>
+              <span
+                className="font-serif-italic font-bold"
+                style={{ color: "#2B5250" }}
+              >
                 ✦
               </span>
               {t}
@@ -893,7 +1079,10 @@ function StatsStrip() {
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-xl leading-snug">
           Pioneiros em trazer tecnologia para imobiliárias. Três décadas de
           estrada{" "}
-          <span className="font-serif-italic font-normal" style={{ color: "#2B5250" }}>
+          <span
+            className="font-serif-italic font-normal"
+            style={{ color: "#2B5250" }}
+          >
             provam que sabemos
           </span>{" "}
           o que fazemos.
@@ -970,14 +1159,18 @@ function Pillars() {
             previsibilidade, sem amarrar cinco ferramentas com cuspe e arame.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px border border-[color:var(--brand-ink)]/15 rounded-3xl overflow-hidden" style={{ background: "rgba(43,82,80,0.15)" }}>
+        <div
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px border border-[color:var(--brand-ink)]/15 rounded-3xl overflow-hidden"
+          style={{ background: "rgba(43,82,80,0.15)" }}
+        >
           {items.map((it, i) => (
             <div
               key={it.title}
               className="p-7 md:p-8 relative group transition-colors duration-300"
               style={{ background: "#fff" }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background = "#2B5250";
+                (e.currentTarget as HTMLDivElement).style.background =
+                  "#2B5250";
                 (e.currentTarget as HTMLDivElement).style.color = "#F7F3EA";
               }}
               onMouseLeave={(e) => {
@@ -1042,10 +1235,16 @@ function Albert() {
       />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="inline-flex items-center gap-2 mb-6">
-          <span className="stamp text-sm" style={{ color: "#5AA6A6", borderColor: "#5AA6A6" }}>
+          <span
+            className="stamp text-sm"
+            style={{ color: "#5AA6A6", borderColor: "#5AA6A6" }}
+          >
             Albert IA · v2
           </span>
-          <span className="font-serif-italic" style={{ color: "rgba(247,243,234,0.6)" }}>
+          <span
+            className="font-serif-italic"
+            style={{ color: "rgba(247,243,234,0.6)" }}
+          >
             conheça
           </span>
         </div>
@@ -1087,7 +1286,10 @@ function Albert() {
                     className="flex items-start gap-3"
                     style={{ color: "rgba(247,243,234,0.85)" }}
                   >
-                    <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: "#5AA6A6" }} />
+                    <CheckCircle2
+                      className="w-5 h-5 mt-0.5 shrink-0"
+                      style={{ color: "#5AA6A6" }}
+                    />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -1132,15 +1334,26 @@ function Albert() {
 function AlbertChat() {
   return (
     <div className="relative tilt-r flex-1 flex flex-col h-full">
-      <div className="absolute -inset-3 rounded-[28px] blur-2xl pointer-events-none" style={{ background: "rgba(90,166,166,0.2)" }} />
+      <div
+        className="absolute -inset-3 rounded-[28px] blur-2xl pointer-events-none"
+        style={{ background: "rgba(90,166,166,0.2)" }}
+      />
       <div
         className="relative rounded-3xl border shadow-elev overflow-hidden flex-1 flex flex-col justify-between"
-        style={{ background: "#F7F3EA", borderColor: "#2B5250", color: "#1A1A1A" }}
+        style={{
+          background: "#F7F3EA",
+          borderColor: "#2B5250",
+          color: "#1A1A1A",
+        }}
       >
         {/* paper header */}
         <div
           className="flex items-center justify-between px-5 py-3.5 border-b"
-          style={{ background: "#2B5250", borderColor: "rgba(90,166,166,0.2)", color: "#F7F3EA" }}
+          style={{
+            background: "#2B5250",
+            borderColor: "rgba(90,166,166,0.2)",
+            color: "#F7F3EA",
+          }}
         >
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-[color:var(--brand-orange)] text-[color:var(--brand-ink)] flex items-center justify-center font-bold">
@@ -1233,7 +1446,10 @@ function Funil() {
       data-gtm-section="funil"
       className="mx-auto max-w-7xl px-6 py-24 md:py-32"
     >
-      <span className="font-serif-italic text-2xl mb-4 block" style={{ color: "#2B5250" }}>
+      <span
+        className="font-serif-italic text-2xl mb-4 block"
+        style={{ color: "#2B5250" }}
+      >
         sobre tempo
       </span>
       <div className="grid lg:grid-cols-12 gap-12 items-stretch">
@@ -1250,7 +1466,10 @@ function Funil() {
           <ul className="space-y-3">
             {features.map((f) => (
               <li key={f} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" style={{ color: "#2B5250" }} />
+                <CheckCircle2
+                  className="w-5 h-5 mt-0.5 shrink-0"
+                  style={{ color: "#2B5250" }}
+                />
                 <span>{f}</span>
               </li>
             ))}
@@ -1300,10 +1519,11 @@ function FunnelVisual() {
             </div>
             <div className="h-9 rounded-md bg-[color:var(--brand-sand)] overflow-hidden border border-[color:var(--brand-ink)]/20">
               <div
-                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${i === stages.length - 1
+                className={`h-full flex items-center px-3 text-base font-bold font-mono-ui transition-all ${
+                  i === stages.length - 1
                     ? "text-[color:var(--brand-ink)]"
                     : "text-[color:var(--brand-sand)]"
-                  }`}
+                }`}
                 style={{
                   width: s.w,
                   background:
@@ -1400,7 +1620,10 @@ export function Blog() {
     >
       <div className="mb-12 flex items-end justify-between flex-wrap gap-4">
         <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-2xl">
-          <span className="font-serif-italic font-normal" style={{ color: "#2B5250" }}>
+          <span
+            className="font-serif-italic font-normal"
+            style={{ color: "#2B5250" }}
+          >
             Leitura
           </span>{" "}
           rápida pra quem vende imóvel
@@ -1498,7 +1721,10 @@ export function CTA() {
             </span>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02] mb-6">
               Bora vender mais,{" "}
-              <span className="font-serif-italic font-normal" style={{ color: "#5AA6A6" }}>
+              <span
+                className="font-serif-italic font-normal"
+                style={{ color: "#5AA6A6" }}
+              >
                 de verdade
               </span>
               ?
@@ -1568,7 +1794,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-muted-foreground text-base leading-relaxed max-w-sm">
-              Proptech brasileira desde 1994. CRM, sites, app de atendimento e
+              Proptech brasileira há mais de 30 anos. CRM, sites, app de atendimento e
               Albert IA num ecossistema só para imobiliárias de verdade.
             </p>
             <a
@@ -1907,7 +2133,8 @@ export function ExitModal({ openDemoModal }: { openDemoModal: () => void }) {
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
             Continuar perdendo leads por falta de organização não é a solução.
-            Fale com nosso especialista agora e descubra como o CRM definitivo pode dobrar suas vendas.
+            Fale com nosso especialista agora e descubra como o CRM definitivo
+            pode dobrar suas vendas.
           </p>
           <div className="flex flex-col gap-3">
             <button
@@ -1940,7 +2167,8 @@ export function SimpleNav() {
           to="/"
           className="flex flex-row items-center gap-2 font-bold text-2xl tracking-[-0.03em] hover:opacity-85 transition-opacity"
         >
-          <img loading="lazy"
+          <img
+            loading="lazy"
             src="/icon.svg"
             alt="Microsistec Logo"
             width={32}
@@ -1964,22 +2192,27 @@ export function SimpleFooter() {
     <footer className="bg-background py-8 border-t border-[color:var(--brand-ink)]/10 mt-auto">
       <div className="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <div className="flex items-center gap-2 font-bold text-lg text-foreground tracking-[-0.03em]">
-          <img loading="lazy"
+          <img
+            loading="lazy"
             src="/icon.svg"
             alt="Microsistec Logo"
             width={24}
             height={24}
             className="w-6 h-6 object-contain"
           />
-          <div className="flex items-baseline gap-0.5">
-            microsistec
-          </div>
+          <div className="flex items-baseline gap-0.5">microsistec</div>
         </div>
         <div className="flex items-center gap-4">
-          <Link to="/politica-de-privacidade" className="hover:text-foreground transition">
+          <Link
+            to="/politica-de-privacidade"
+            className="hover:text-foreground transition"
+          >
             Política de Privacidade
           </Link>
-          <Link to="/termos-de-uso" className="hover:text-foreground transition">
+          <Link
+            to="/termos-de-uso"
+            className="hover:text-foreground transition"
+          >
             Termos de Uso
           </Link>
         </div>

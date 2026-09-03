@@ -163,10 +163,7 @@ function DiaCorretorPage() {
                   >
                     <div className="space-y-1.5">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
-                        Nome completo{" "}
-                        <span className="text-[#2B5250]">
-                          *
-                        </span>
+                        Nome completo <span className="text-[#2B5250]">*</span>
                       </label>
                       <input
                         required
@@ -182,9 +179,7 @@ function DiaCorretorPage() {
                     <div className="space-y-1.5">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                         E-mail de trabalho{" "}
-                        <span className="text-[#2B5250]">
-                          *
-                        </span>
+                        <span className="text-[#2B5250]">*</span>
                       </label>
                       <input
                         required
@@ -200,9 +195,7 @@ function DiaCorretorPage() {
                     <div className="space-y-1.5">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                         Telefone / WhatsApp{" "}
-                        <span className="text-[#2B5250]">
-                          *
-                        </span>
+                        <span className="text-[#2B5250]">*</span>
                       </label>
                       <PhoneInput
                         required
@@ -229,10 +222,7 @@ function DiaCorretorPage() {
                     </div>
                     <div className="space-y-1.5 relative">
                       <label className="text-base font-semibold text-[color:var(--brand-ink)]">
-                        Cargo{" "}
-                        <span className="text-[#2B5250]">
-                          *
-                        </span>
+                        Cargo <span className="text-[#2B5250]">*</span>
                       </label>
                       <div className="relative">
                         <select

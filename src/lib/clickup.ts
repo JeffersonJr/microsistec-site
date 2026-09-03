@@ -28,28 +28,28 @@ export const sendLeadToClickUp = createServerFn({ method: "POST" })
       throw new Error("Configuração ausente: Token do ClickUp não encontrado.");
     }
 
-  const customFields = [];
+    const customFields = [];
 
-  if (lead.telefone) {
-    customFields.push({
-      id: "18b57b65-8a2a-41e4-8114-d4a5e4945f56", // Telefone
-      value: lead.telefone,
-    });
-  }
+    if (lead.telefone) {
+      customFields.push({
+        id: "18b57b65-8a2a-41e4-8114-d4a5e4945f56", // Telefone
+        value: lead.telefone,
+      });
+    }
 
-  if (lead.email) {
-    customFields.push({
-      id: "9902a72d-5372-40c6-b579-6d98801f6c49", // E-mail
-      value: lead.email,
-    });
-  }
+    if (lead.email) {
+      customFields.push({
+        id: "9902a72d-5372-40c6-b579-6d98801f6c49", // E-mail
+        value: lead.email,
+      });
+    }
 
-  if (lead.cnpj) {
-    customFields.push({
-      id: "41046864-b5f9-4375-bb29-ebe6752f2c03", // CNPJ/CPF
-      value: lead.cnpj,
-    });
-  }
+    if (lead.cnpj) {
+      customFields.push({
+        id: "41046864-b5f9-4375-bb29-ebe6752f2c03", // CNPJ/CPF
+        value: lead.cnpj,
+      });
+    }
 
     const leadDescription = `
 Nova Conversão pelo Site
@@ -85,7 +85,7 @@ ${lead.cnpj ? `CNPJ/CPF: ${lead.cnpj}` : ""}
       console.error(`[ClickUp] API error [${response.status}]:`, errorBody);
       throw new Error("Erro ao registrar lead no ClickUp.");
     }
-    
+
     return { success: true };
   });
 
@@ -144,6 +144,6 @@ E-mail: ${data.indicado_email}
       console.error(`[ClickUp] API error [${response.status}]:`, errorBody);
       throw new Error("Erro ao registrar indicação no ClickUp.");
     }
-    
+
     return { success: true };
   });

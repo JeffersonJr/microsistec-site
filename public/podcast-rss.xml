@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Microsistec Podcast</title>
+    <link>https://microsistec.com.br/podcast</link>
+    <language>pt-BR</language>
+    <description>O podcast oficial da Microsistec focado no mercado imobiliário.</description>
+    <itunes:image href="https://microsistec.com.br/icon.svg" />
+
+    <item>
+      <title><![CDATA[Venda Consultiva - Atendimento Imobiliário]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Tue, 19 Jan 2021 14:33:44 +0000</pubDate>
+      <description><![CDATA[Nesse podcast vamos falar sobre Venda Consultiva no atendimento imobiliário]]></description>
+      <enclosure url="https://microsistec.com.br/audios/venda_consultiva_atendimento_de_venda_de_imoveis_9198868031203018810.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>11:22</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[A forma certa de atender um novo lead]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Tue, 19 Jan 2021 17:55:30 +0000</pubDate>
+      <description><![CDATA[Vamos falar como identificar um cliente caroço e otimizar seus atendimentos.]]></description>
+      <enclosure url="https://microsistec.com.br/audios/forma_atender.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>13:11</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[3 Dicas para Corretores de Imóveis terem a atenção do cliente na ligação]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 28 Jan 2021 04:00:00 +0000</pubDate>
+      <description><![CDATA[Vamos trazer aqui 3 técnicas práticas para você aplicar no seu atendimento telefônico e ter a atenção do seu cliente.]]></description>
+      <enclosure url="https://microsistec.com.br/audios/003_3_dicas_atendimento.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>12:49</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[O que todo gestor imobiliário precisa saber]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Wed, 03 Feb 2021 13:49:16 +0000</pubDate>
+      <description><![CDATA[Vamos bater um papo com um assunto que todo gestor de imobiliária deveria saber para ter uma equipe de corretores campeã.]]></description>
+      <enclosure url="https://microsistec.com.br/audios/004-Gestores-Imobiliarios.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>8:59</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[A melhor forma de atender mais leads. Rotina Produtiva]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 11 Feb 2021 18:47:02 +0000</pubDate>
+      <description><![CDATA[Hoje vamos falar sobre como organizar sua rotina e conseguir realizar mais tarefas, incluindo atender mais clientes.]]></description>
+      <enclosure url="https://microsistec.com.br/audios/005-atender-mais-leads.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>11:47</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[Como aumentar em 21 vezes a qualificação dos seus leads]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 18 Feb 2021 12:24:08 +0000</pubDate>
+      <description><![CDATA[Neste podcast vamos falar sobre uma tecnica simples e conhecida, que fará aumentar em até 21 vezes a qualificação dos seus leads]]></description>
+      <enclosure url="https://microsistec.com.br/audios/006-qualificacao.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>6:09</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[O maior erro ao descartar leads]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 25 Feb 2021 09:00:00 +0000</pubDate>
+      <description><![CDATA[Conheça o maior erro que é cometido diariamente e pode comprometer a qualificação dos seus leads]]></description>
+      <enclosure url="https://microsistec.com.br/audios/007-cadencia.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>9:56</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[Porque tenho leads mas não fecho vendas?]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 04 Mar 2021 19:10:32 +0000</pubDate>
+      <description><![CDATA[Aprenda a identificar onde está o problema de leads e vendas na sua imobiliária.]]></description>
+      <enclosure url="https://microsistec.com.br/audios/008-tenho-leads-nao-vendo.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>3:40</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[Funil de vendas serve para corretor autônomo? Descubra]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 11 Mar 2021 11:27:14 +0000</pubDate>
+      <description><![CDATA[]]></description>
+      <enclosure url="https://microsistec.com.br/audios/009-funil-autonomo.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>6:30</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[Scripts de atendimento para whatsapp]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 18 Mar 2021 11:31:03 +0000</pubDate>
+      <description><![CDATA[]]></description>
+      <enclosure url="https://microsistec.com.br/audios/010-whatsapp.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>7:40</itunes:duration>
+    </item>
+  
+    <item>
+      <title><![CDATA[3 Dicas para levar mais clientes para visitar imóveis]]></title>
+      <link>https://microsistec.com.br/podcast</link>
+      <pubDate>Thu, 25 Mar 2021 12:16:23 +0000</pubDate>
+      <description><![CDATA[]]></description>
+      <enclosure url="https://microsistec.com.br/audios/011-dicas-para-visita.mp3" type="audio/mpeg" length="1024" />
+      <itunes:duration>6:13</itunes:duration>
+    </item>
+  
+  </channel>
+</rss>

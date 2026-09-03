@@ -62,7 +62,7 @@ function BlogIndex() {
   const safePage = Math.max(1, Math.min(page || 1, totalPages || 1));
   const paginatedPosts = filteredPosts.slice(
     (safePage - 1) * POSTS_PER_PAGE,
-    safePage * POSTS_PER_PAGE
+    safePage * POSTS_PER_PAGE,
   );
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,7 +86,9 @@ function BlogIndex() {
         replace: true,
       });
       // scroll to top of list
-      document.getElementById("filtros_blog")?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById("filtros_blog")
+        ?.scrollIntoView({ behavior: "smooth" });
     }
   };
 

@@ -1,7 +1,10 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Gift, Loader2 } from "lucide-react";
-import { SimpleNav as Header, SimpleFooter as Footer } from "../components/microsistec/MicrosistecLanding";
+import {
+  SimpleNav as Header,
+  SimpleFooter as Footer,
+} from "../components/microsistec/MicrosistecLanding";
 
 export const Route = createFileRoute("/indica-e-ganha/")({
   component: IndicaEGanhaPage,
@@ -21,29 +24,30 @@ function IndicaEGanhaPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
-    
+
     setIsSubmitting(true);
-    
+
     const formatForUrl = (text: string) => {
       return text
         .trim()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
-        .replace(/[^a-z0-9 ]/g, '') // remove caracteres especiais, mantem espaços
+        .replace(/[^a-z0-9 ]/g, "") // remove caracteres especiais, mantem espaços
         .split(/\s+/)
-        .join('.');
+        .join(".");
     };
 
     const cleanResponsavel = formatForUrl(formData.responsavel);
     const cleanImobiliaria = formatForUrl(formData.imobiliaria);
-    
+
     // Se por acaso os campos estiverem vazios, coloca um fallback
     const uniqueCode = `${cleanResponsavel || "user"}-${cleanImobiliaria || "imob"}`;
-    
+
     try {
       const CLICKUP_LIST_ID = "901328205459";
       const API_TOKEN = import.meta.env.VITE_CLICKUP_API_TOKEN;
-      
+
       const taskName = `Indicador: ${formData.imobiliaria} (${formData.responsavel})`;
       const taskDescription = `
 **Tipo:** Indicador
@@ -55,19 +59,21 @@ function IndicaEGanhaPage() {
 **Código de Indicação Gerado:** ${uniqueCode}
       `;
 
-      await fetch(`https://api.clickup.com/api/v2/list/${CLICKUP_LIST_ID}/task`, {
-        method: "POST",
-        headers: { 
-          "Authorization": API_TOKEN,
-          "Content-Type": "application/json" 
+      await fetch(
+        `https://api.clickup.com/api/v2/list/${CLICKUP_LIST_ID}/task`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: API_TOKEN,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: taskName,
+            description: taskDescription,
+            tags: ["indicador", "indique-e-ganha-setembro"],
+          }),
         },
-        body: JSON.stringify({
-          name: taskName,
-          description: taskDescription,
-          tags: ["indicador", "indique-e-ganha-setembro"]
-        })
-      });
-      
+      );
     } catch (err) {
       console.error("Erro ao enviar para webhook", err);
     } finally {
@@ -94,36 +100,66 @@ function IndicaEGanhaPage() {
                 <span>Campanha exclusiva para clientes</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Indique uma imobiliária.<br />
+                Indique uma imobiliária.
+                <br />
                 Ganhe desconto na sua mensalidade.
               </h1>
               <p className="text-lg md:text-xl text-[color:var(--brand-sand)]/80 mb-8 leading-relaxed">
-                Durante setembro, cada indicação que fechar contrato rende a você <strong className="text-[color:var(--brand-teal)]">10% OFF</strong> na sua mensalidade Microsistec. <br className="hidden md:block" />
+                Durante setembro, cada indicação que fechar contrato rende a
+                você{" "}
+                <strong className="text-[color:var(--brand-teal)]">
+                  10% OFF
+                </strong>{" "}
+                na sua mensalidade Microsistec.{" "}
+                <br className="hidden md:block" />
                 <span className="inline-block mt-2 text-base">
-                  O desconto é <strong className="text-white">cumulativo</strong> e você pode ter até <strong>10 indicações válidas</strong> (podendo chegar a 100% de desconto).
+                  O desconto é{" "}
+                  <strong className="text-white">cumulativo</strong> e você pode
+                  ter até <strong>10 indicações válidas</strong> (podendo chegar
+                  a 100% de desconto).
                 </span>
               </p>
 
               <div className="flex flex-col gap-6">
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-[color:var(--brand-clay)] text-white flex items-center justify-center font-bold shrink-0">1</div>
+                  <div className="w-10 h-10 rounded-full bg-[color:var(--brand-clay)] text-white flex items-center justify-center font-bold shrink-0">
+                    1
+                  </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">Preencha seus dados</h3>
-                    <p className="text-[color:var(--brand-sand)]/70">Cadastre sua imobiliária e gere seu link exclusivo.</p>
+                    <h3 className="text-white font-bold text-lg mb-1">
+                      Preencha seus dados
+                    </h3>
+                    <p className="text-[color:var(--brand-sand)]/70">
+                      Cadastre sua imobiliária e gere seu link exclusivo.
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-[color:var(--brand-clay)] text-white flex items-center justify-center font-bold shrink-0">2</div>
+                  <div className="w-10 h-10 rounded-full bg-[color:var(--brand-clay)] text-white flex items-center justify-center font-bold shrink-0">
+                    2
+                  </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">Compartilhe seu link</h3>
-                    <p className="text-[color:var(--brand-sand)]/70">Envie pelo WhatsApp para imobiliárias que ainda não usam o CRM Microsistec.</p>
+                    <h3 className="text-white font-bold text-lg mb-1">
+                      Compartilhe seu link
+                    </h3>
+                    <p className="text-[color:var(--brand-sand)]/70">
+                      Envie pelo WhatsApp para imobiliárias que ainda não usam o
+                      CRM Microsistec.
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-full bg-[color:var(--brand-clay)] text-white flex items-center justify-center font-bold shrink-0">3</div>
+                  <div className="w-10 h-10 rounded-full bg-[color:var(--brand-clay)] text-white flex items-center justify-center font-bold shrink-0">
+                    3
+                  </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1">Virou cliente? Você ganha.</h3>
-                    <p className="text-[color:var(--brand-sand)]/70">Se a imobiliária indicada contratar, você recebe 10% de desconto em uma mensalidade.</p>
+                    <h3 className="text-white font-bold text-lg mb-1">
+                      Virou cliente? Você ganha.
+                    </h3>
+                    <p className="text-[color:var(--brand-sand)]/70">
+                      Se a imobiliária indicada contratar, você recebe 10% de
+                      desconto em uma mensalidade.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -134,54 +170,93 @@ function IndicaEGanhaPage() {
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[color:var(--brand-clay)] rounded-full blur-[40px] opacity-20 pointer-events-none" />
 
               <div className="relative z-10">
-                <h2 className="text-2xl font-bold text-[color:var(--brand-ink)] mb-2">Gere seu link de indicação</h2>
-                <p className="text-[color:var(--brand-ink)]/70 mb-6">Preencha seus dados e receba um link exclusivo para compartilhar.</p>
+                <h2 className="text-2xl font-bold text-[color:var(--brand-ink)] mb-2">
+                  Gere seu link de indicação
+                </h2>
+                <p className="text-[color:var(--brand-ink)]/70 mb-6">
+                  Preencha seus dados e receba um link exclusivo para
+                  compartilhar.
+                </p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="imobiliaria" className="text-sm font-semibold text-[color:var(--brand-ink)]">Nome da imobiliária*</label>
+                    <label
+                      htmlFor="imobiliaria"
+                      className="text-sm font-semibold text-[color:var(--brand-ink)]"
+                    >
+                      Nome da imobiliária*
+                    </label>
                     <input
                       id="imobiliaria"
                       type="text"
                       required
                       value={formData.imobiliaria}
-                      onChange={(e) => setFormData({ ...formData, imobiliaria: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          imobiliaria: e.target.value,
+                        })
+                      }
                       className="w-full px-4 py-3 rounded-xl border border-[color:var(--brand-ink)]/10 bg-white text-[color:var(--brand-ink)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-clay)] transition"
                       placeholder="Sua imobiliária"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="responsavel" className="text-sm font-semibold text-[color:var(--brand-ink)]">Nome do responsável*</label>
+                    <label
+                      htmlFor="responsavel"
+                      className="text-sm font-semibold text-[color:var(--brand-ink)]"
+                    >
+                      Nome do responsável*
+                    </label>
                     <input
                       id="responsavel"
                       type="text"
                       required
                       value={formData.responsavel}
-                      onChange={(e) => setFormData({ ...formData, responsavel: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          responsavel: e.target.value,
+                        })
+                      }
                       className="w-full px-4 py-3 rounded-xl border border-[color:var(--brand-ink)]/10 bg-white text-[color:var(--brand-ink)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-clay)] transition"
                       placeholder="Seu nome completo"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="telefone" className="text-sm font-semibold text-[color:var(--brand-ink)]">Telefone / WhatsApp*</label>
+                    <label
+                      htmlFor="telefone"
+                      className="text-sm font-semibold text-[color:var(--brand-ink)]"
+                    >
+                      Telefone / WhatsApp*
+                    </label>
                     <input
                       id="telefone"
                       type="tel"
                       required
                       value={formData.telefone}
-                      onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, telefone: e.target.value })
+                      }
                       className="w-full px-4 py-3 rounded-xl border border-[color:var(--brand-ink)]/10 bg-white text-[color:var(--brand-ink)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-clay)] transition"
                       placeholder="(00) 00000-0000"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="email" className="text-sm font-semibold text-[color:var(--brand-ink)]">E-mail*</label>
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-semibold text-[color:var(--brand-ink)]"
+                    >
+                      E-mail*
+                    </label>
                     <input
                       id="email"
                       type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       className="w-full px-4 py-3 rounded-xl border border-[color:var(--brand-ink)]/10 bg-white text-[color:var(--brand-ink)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brand-clay)] transition"
                       placeholder="seu@email.com.br"
                     />
@@ -193,13 +268,20 @@ function IndicaEGanhaPage() {
                     className="w-full mt-4 bg-[color:var(--brand-clay)] text-white hover:bg-[color:var(--brand-clay)]/90 font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition cursor-pointer shadow-lg active:scale-[0.98] border-none disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
-                      <>Gerando Link... <Loader2 className="w-5 h-5 animate-spin" /></>
+                      <>
+                        Gerando Link...{" "}
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                      </>
                     ) : (
-                      <>Gerar Meu Link <ArrowRight className="w-5 h-5" /></>
+                      <>
+                        Gerar Meu Link <ArrowRight className="w-5 h-5" />
+                      </>
                     )}
                   </button>
                   <p className="text-center text-xs text-[color:var(--brand-ink)]/60 mt-2">
-                    Leva menos de 1 minuto para gerar seu link.<br />Campanha válida até 30/09/2026.
+                    Leva menos de 1 minuto para gerar seu link.
+                    <br />
+                    Campanha válida até 30/09/2026.
                   </p>
                 </form>
               </div>

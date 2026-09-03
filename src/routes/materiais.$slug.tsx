@@ -142,7 +142,6 @@ function MaterialLandingPage() {
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-8 lg:gap-20 items-start">
             {/* Esquerda: Copy / Benefícios */}
             <div className="flex flex-col lg:col-span-7 w-full">
-
               <p className="text-2xl text-foreground/80 leading-relaxed mb-8">
                 {subtitle}
               </p>
@@ -197,7 +196,7 @@ function MaterialLandingPage() {
                               email: formData.email,
                               cnpj: formData.cnpj,
                               origem: `Landing Page: Materiais Ricos (${material.title})`,
-                            }
+                            },
                           });
                         } catch (err) {
                           console.error(
@@ -213,9 +212,7 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           Nome completo{" "}
-                          <span className="text-[#2B5250]">
-                            *
-                          </span>
+                          <span className="text-[#2B5250]">*</span>
                         </label>
                         <input
                           required
@@ -231,9 +228,7 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           E-mail de trabalho{" "}
-                          <span className="text-[#2B5250]">
-                            *
-                          </span>
+                          <span className="text-[#2B5250]">*</span>
                         </label>
                         <input
                           required
@@ -252,9 +247,7 @@ function MaterialLandingPage() {
                       <div className="space-y-1.5">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
                           Telefone / WhatsApp{" "}
-                          <span className="text-[#2B5250]">
-                            *
-                          </span>
+                          <span className="text-[#2B5250]">*</span>
                         </label>
                         <PhoneInput
                           required
@@ -281,10 +274,7 @@ function MaterialLandingPage() {
                       </div>
                       <div className="space-y-1.5 relative">
                         <label className="text-base font-semibold text-[color:var(--brand-ink)]">
-                          Cargo{" "}
-                          <span className="text-[#2B5250]">
-                            *
-                          </span>
+                          Cargo <span className="text-[#2B5250]">*</span>
                         </label>
                         <div className="relative">
                           <select

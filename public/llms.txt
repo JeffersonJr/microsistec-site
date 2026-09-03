@@ -1,10 +1,10 @@
 # Microsistec — Plataforma de Tecnologia Imobiliária
 
-> A proptech pioneira no Brasil desde 1994. CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores.
+> A proptech pioneira no Brasil há mais de 30 anos. CRM imobiliário completo, site, Albert IA e integrações para imobiliárias e corretores.
 
 ## O que é a Microsistec
 
-A Microsistec é uma empresa de tecnologia imobiliária brasileira fundada em 1994, pioneira em trazer software e internet para o setor imobiliário nacional. Oferecemos um ecossistema completo para imobiliárias e corretores autônomos que desejam vender mais com tecnologia.
+A Microsistec é uma empresa de tecnologia imobiliária brasileira com mais de 30 anos de mercado, pioneira em trazer software e internet para o setor imobiliário nacional. Oferecemos um ecossistema completo para imobiliárias e corretores autônomos que desejam vender mais com tecnologia.
 
 ## Produto Principal: imob.online
 
@@ -72,7 +72,7 @@ Acesse em: [Blog Microsistec](https://microsistec.com.br/blog)
 
 ## Sobre a Empresa
 
-- Fundada em: 1994
+- Experiência: mais de 30 anos
 - Sede: Praia Grande, SP — Brasil
 - Especialidade: Software imobiliário (proptech)
 - Clientes: Imobiliárias e corretores autônomos em todo o Brasil

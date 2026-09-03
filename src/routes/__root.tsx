@@ -203,7 +203,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Microsistec - CRM Imobiliário e Inteligência Artificial (LLMs)" },
+        {
+          title:
+            "Microsistec - CRM Imobiliário e Inteligência Artificial (LLMs)",
+        },
         {
           name: "description",
           content:
@@ -219,8 +222,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         // Open Graph
         {
           property: "og:title",
-          content:
-            "Microsistec - CRM Imobiliário Inteligente, IA e Automação",
+          content: "Microsistec - CRM Imobiliário Inteligente, IA e Automação",
         },
         {
           property: "og:description",
@@ -429,8 +431,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <DemoModalProvider>
         <Outlet />
-
-
 
         <React.Suspense fallback={null}>
           <DemoModal />

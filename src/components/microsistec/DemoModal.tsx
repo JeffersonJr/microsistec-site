@@ -101,7 +101,7 @@ export function DemoModal() {
                         email: formData.email,
                         cnpj: formData.cnpj,
                         origem: "Modal: Solicite uma Demonstração",
-                      }
+                      },
                     });
                     setStep("whatsapp");
                   } catch (err) {

@@ -612,9 +612,7 @@ function SolutionForWho({ slug }: { slug: string }) {
       className="mx-auto max-w-7xl px-6 pb-14 md:pb-20"
     >
       <div className="mb-8">
-        <span className="stamp text-[#2B5250] text-[10px]">
-          Para quem é
-        </span>
+        <span className="stamp text-[#2B5250] text-[10px]">Para quem é</span>
       </div>
       <div className="grid md:grid-cols-3 gap-4">
         {profiles.map((p, i) => (
@@ -1782,33 +1780,25 @@ function AlbertIASubSection({ openModal }: { openModal: () => void }) {
         {/* Stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[#2B5250]">
-              24/7
-            </div>
+            <div className="text-4xl font-extrabold text-[#2B5250]">24/7</div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
               Disponibilidade
             </div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[#2B5250]">
-              300%
-            </div>
+            <div className="text-4xl font-extrabold text-[#2B5250]">300%</div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
               + Velocidade
             </div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[#2B5250]">
-              &lt;3s
-            </div>
+            <div className="text-4xl font-extrabold text-[#2B5250]">&lt;3s</div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
               Tempo resposta
             </div>
           </div>
           <div className="text-center p-5 bg-[color:var(--brand-sand)]/40 rounded-2xl border border-[color:var(--brand-ink)]/5">
-            <div className="text-4xl font-extrabold text-[#2B5250]">
-              100%
-            </div>
+            <div className="text-4xl font-extrabold text-[#2B5250]">100%</div>
             <div className="text-sm text-muted-foreground font-mono-ui mt-1">
               Integrado ao CRM
             </div>
@@ -2270,8 +2260,8 @@ const PageSpeedComparison = () => {
         </h3>
         <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
           Sites comuns de imobiliárias perdem vendas antes mesmo de carregar.
-          Veja o salto técnico que os Sites Premium da Microsistec proporcionam aos
-          olhos do Google.
+          Veja o salto técnico que os Sites Premium da Microsistec proporcionam
+          aos olhos do Google.
         </p>
       </div>
 
@@ -3813,8 +3803,7 @@ function RodizioSubSection() {
                 <div
                   className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0"
                   style={{
-                    background:
-                      idx === 0 ? "#2B5250" : "rgba(14,17,23,0.06)",
+                    background: idx === 0 ? "#2B5250" : "rgba(14,17,23,0.06)",
                     color: idx === 0 ? "var(--brand-ink)" : "var(--brand-ink)",
                   }}
                 >

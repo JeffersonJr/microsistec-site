@@ -74,8 +74,8 @@ function SolucoesIndex() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-foreground/65 leading-relaxed max-w-xl">
-                Tecnologia pioneira para o mercado imobiliário brasileiro desde
-                1994. Conheça cada solução do nosso ecossistema integrado.
+                Tecnologia pioneira para o mercado imobiliário brasileiro há mais de
+                30 anos. Conheça cada solução do nosso ecossistema integrado.
               </p>
             </div>
           </div>

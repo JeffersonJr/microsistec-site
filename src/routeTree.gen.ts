@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as PodcastRouteImport } from './routes/podcast'
 import { Route as PlanosAlbertRouteImport } from './routes/planos-albert'
 import { Route as PlanosRouteImport } from './routes/planos'
 import { Route as ObrigadoCorretorRouteImport } from './routes/obrigado-corretor'
@@ -44,6 +45,11 @@ const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
 const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
   id: '/politica-de-cookies',
   path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PodcastRoute = PodcastRouteImport.update({
+  id: '/podcast',
+  path: '/podcast',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlanosAlbertRoute = PlanosAlbertRouteImport.update({
@@ -147,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
   '/planos-albert': typeof PlanosAlbertRoute
+  '/podcast': typeof PodcastRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
@@ -170,6 +177,7 @@ export interface FileRoutesByTo {
   '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
   '/planos-albert': typeof PlanosAlbertRoute
+  '/podcast': typeof PodcastRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
@@ -194,6 +202,7 @@ export interface FileRoutesById {
   '/obrigado-corretor': typeof ObrigadoCorretorRoute
   '/planos': typeof PlanosRoute
   '/planos-albert': typeof PlanosAlbertRoute
+  '/podcast': typeof PodcastRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
@@ -219,6 +228,7 @@ export interface FileRouteTypes {
     | '/obrigado-corretor'
     | '/planos'
     | '/planos-albert'
+    | '/podcast'
     | '/politica-de-cookies'
     | '/politica-de-privacidade'
     | '/termos-de-uso'
@@ -242,6 +252,7 @@ export interface FileRouteTypes {
     | '/obrigado-corretor'
     | '/planos'
     | '/planos-albert'
+    | '/podcast'
     | '/politica-de-cookies'
     | '/politica-de-privacidade'
     | '/termos-de-uso'
@@ -265,6 +276,7 @@ export interface FileRouteTypes {
     | '/obrigado-corretor'
     | '/planos'
     | '/planos-albert'
+    | '/podcast'
     | '/politica-de-cookies'
     | '/politica-de-privacidade'
     | '/termos-de-uso'
@@ -289,6 +301,7 @@ export interface RootRouteChildren {
   ObrigadoCorretorRoute: typeof ObrigadoCorretorRoute
   PlanosRoute: typeof PlanosRoute
   PlanosAlbertRoute: typeof PlanosAlbertRoute
+  PodcastRoute: typeof PodcastRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
@@ -324,6 +337,13 @@ declare module '@tanstack/react-router' {
       path: '/politica-de-cookies'
       fullPath: '/politica-de-cookies'
       preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podcast': {
+      id: '/podcast'
+      path: '/podcast'
+      fullPath: '/podcast'
+      preLoaderRoute: typeof PodcastRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/planos-albert': {
@@ -465,6 +485,7 @@ const rootRouteChildren: RootRouteChildren = {
   ObrigadoCorretorRoute: ObrigadoCorretorRoute,
   PlanosRoute: PlanosRoute,
   PlanosAlbertRoute: PlanosAlbertRoute,
+  PodcastRoute: PodcastRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
