@@ -438,7 +438,6 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-500/10",
     logoTextColor: "text-indigo-600",
     logoText: "AJ",
-    logoImg: "https://imob.online/imgs/portais/alugarja.png",
     officialColor: "#6366F1",
   },
   {
@@ -546,7 +545,6 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-rose-400/10",
     logoTextColor: "text-rose-600",
     logoText: "EP",
-    logoImg: "https://imob.online/imgs/portais/epungo.png",
     officialColor: "#FB7185",
   },
   {

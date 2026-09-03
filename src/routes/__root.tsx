@@ -310,28 +310,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-          media="print"
-          onLoad={(e: any) => {
-            e.currentTarget.media = "all";
-          }}
         />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-          />
-        </noscript>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-          media="print"
-          onLoad={(e: any) => {
-            e.currentTarget.media = "all";
-          }}
         />
       </head>
       <body suppressHydrationWarning>
