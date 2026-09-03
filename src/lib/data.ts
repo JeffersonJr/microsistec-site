@@ -581,6 +581,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-stone-600/10",
     logoTextColor: "text-stone-600",
     logoText: "321",
+    logoImg: "https://www.google.com/s2/favicons?domain=321achei.com&sz=128",
     officialColor: "#78716C",
   },
   {
@@ -603,6 +604,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-500/10",
     logoTextColor: "text-emerald-600",
     logoText: "CJ",
+    logoImg: "https://www.google.com/s2/favicons?domain=casajau.com.br&sz=128",
     officialColor: "#10B981",
   },
   {
@@ -626,6 +628,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-red-500/10",
     logoTextColor: "text-red-600",
     logoText: "DI",
+    logoImg: "https://www.google.com/s2/favicons?domain=diarioimoveis.com.br&sz=128",
     officialColor: "#EF4444",
   },
   {
@@ -649,6 +652,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-pink-500/10",
     logoTextColor: "text-pink-600",
     logoText: "DC",
+    logoImg: "https://www.google.com/s2/favicons?domain=dreamcasa.com.br&sz=128",
     officialColor: "#EC4899",
   },
   {
@@ -660,6 +664,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-rose-500/10",
     logoTextColor: "text-rose-600",
     logoText: "GI",
+    logoImg: "https://www.google.com/s2/favicons?domain=guiadeimoveis.imb.br&sz=128",
     officialColor: "#F43F5E",
   },
   {
@@ -671,6 +676,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-600/10",
     logoTextColor: "text-teal-600",
     logoText: "GC",
+    logoImg: "https://www.google.com/s2/favicons?domain=guiaimovelecia.com.br&sz=128",
     officialColor: "#0D9488",
   },
   {
@@ -682,6 +688,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-lime-600/10",
     logoTextColor: "text-lime-600",
     logoText: "IMB",
+    logoImg: "https://www.google.com/s2/favicons?domain=guiadeimoveis.imb.br&sz=128",
     officialColor: "#65A30D",
   },
   {
@@ -693,6 +700,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-400/10",
     logoTextColor: "text-indigo-600",
     logoText: "SP",
+    logoImg: "https://www.google.com/s2/favicons?domain=gruposp.arq.br&sz=128",
     officialColor: "#818CF8",
   },
   {
@@ -704,6 +712,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-400/10",
     logoTextColor: "text-teal-600",
     logoText: "LP",
+    logoImg: "https://www.google.com/s2/favicons?domain=loophouse.com.br&sz=128",
     officialColor: "#2DD4BF",
   },
   {
@@ -715,6 +724,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-cyan-400/10",
     logoTextColor: "text-cyan-600",
     logoText: "LI",
+    logoImg: "https://www.google.com/s2/favicons?domain=localimoveis.com.br&sz=128",
     officialColor: "#22D3EE",
   },
   {
@@ -726,6 +736,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-violet-400/10",
     logoTextColor: "text-violet-600",
     logoText: "MV",
+    logoImg: "https://www.google.com/s2/favicons?domain=moving.com.br&sz=128",
     officialColor: "#A78BFA",
   },
   {
@@ -737,6 +748,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-orange-500/10",
     logoTextColor: "text-orange-600",
     logoText: "LC",
+    logoImg: "https://www.google.com/s2/favicons?domain=lugarcerto.com.br&sz=128",
     officialColor: "#F97316",
   },
   {
@@ -748,6 +760,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-400/10",
     logoTextColor: "text-emerald-600",
     logoText: "PI",
+    logoImg: "https://www.google.com/s2/favicons?domain=portaisimobiliarios.com.br&sz=128",
     officialColor: "#34D399",
   },
   {
@@ -793,6 +806,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-fuchsia-600/10",
     logoTextColor: "text-fuchsia-600",
     logoText: "ZI",
+    logoImg: "https://www.google.com/s2/favicons?domain=zoop.com.br&sz=128",
     officialColor: "#C026D3",
   },
   {
@@ -816,6 +830,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-700/10",
     logoTextColor: "text-teal-600",
     logoText: "MZ",
+    logoImg: "/icon.svg",
     officialColor: "#0F766E",
   },
   {
@@ -827,6 +842,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-neutral-600/10",
     logoTextColor: "text-neutral-600",
     logoText: "XML",
+    logoImg: "/icon.svg",
     officialColor: "#525252",
   },
   {
@@ -838,6 +854,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-300/10",
     logoTextColor: "text-emerald-600",
     logoText: "CF",
+    logoImg: "https://www.google.com/s2/favicons?domain=chavefacil.com.br&sz=128",
     officialColor: "#6EE7B7",
   },
   {
@@ -872,6 +889,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-200/10",
     logoTextColor: "text-indigo-600",
     logoText: "AM",
+    logoImg: "https://www.google.com/s2/favicons?domain=achoumudou.com.br&sz=128",
     officialColor: "#C7D2FE",
   },
   {
@@ -906,6 +924,28 @@ export const portalIntegrations: PortalIntegration[] = [
     logoTextColor: "text-teal-600",
     logoText: "IC",
     officialColor: "#5EEAD4",
+  },
+  {
+    name: "Imoveldo",
+    category: "Portais Imobiliários Nacionais",
+    description: "Inovação tecnológica e busca simplificada de imóveis de diversas regiões.",
+    type: "XML",
+    logoBg: "bg-cyan-200/10",
+    logoTextColor: "text-cyan-700",
+    logoText: "IM",
+    logoImg: "https://www.google.com/s2/favicons?domain=imovendo.pt&sz=128",
+    officialColor: "#0891B2",
+  },
+  {
+    name: "Lello",
+    category: "Portais Imobiliários Nacionais",
+    description: "Tradição e confiança em serviços integrados para facilitar a negociação imobiliária.",
+    type: "XML",
+    logoBg: "bg-rose-200/10",
+    logoTextColor: "text-rose-700",
+    logoText: "LE",
+    logoImg: "https://www.google.com/s2/favicons?domain=lellocondominios.com.br&sz=128",
+    officialColor: "#E11D48",
   },
 ];
 
