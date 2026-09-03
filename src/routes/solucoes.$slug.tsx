@@ -2100,6 +2100,7 @@ interface V8Client {
 
 const v8Clients: V8Client[] = [
 
+
   {
     name: "Attila Imóveis",
     url: "https://attilaimoveis.com.br/",
@@ -2352,6 +2353,104 @@ const v8Clients: V8Client[] = [
     perf: { mobile: 99, desktop: 100, seo: 100 },
     tags: ["Alta Performance","Mobile First","Premium"],
   },
+  {
+    name: "Vitrine Negócios imobiliários",
+    url: "http://vitrinenegocios.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Ronaldo Grego",
+    url: "http://ronaldogrego.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Shimilly Gomes",
+    url: "https://imobiliariasg.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "O Pioneiro Imóveis",
+    url: "http://opioneiro.com/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "THM Administração de Imóveis, Négocios Imobiliários",
+    url: "http://thmimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Kozmab Imóveis",
+    url: "http://kozmabimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Imóvel na Costa",
+    url: "http://imovelnacosta.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Spazio Imóveis Curitiba Ltda",
+    url: "http://spazioimoveiscuritiba.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Litoral Palace Imóveis",
+    url: "http://litoralpalaceimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Scorsatto imobiliaria",
+    url: "http://scorsatto.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Rovida Invest",
+    url: "http://rovidainvest.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Demax Imóveis",
+    url: "http://demaximoveis.com/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Lorena Pádua Negócios Imobiliários",
+    url: "http://lpinvestimob.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Vastel Estruturação e Inteligência Imobiliária Ltda",
+    url: "http://vastel.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
 ];
 
 const HalfCircleDial = ({
@@ -2515,6 +2614,14 @@ const PageSpeedComparison = () => {
 };
 
 function SitesV8SubSection({ openModal }: { openModal: () => void }) {
+  const [searchTerm, setSearchTerm] = React.useState("");
+
+  const filteredClients = React.useMemo(() => {
+    if (!searchTerm) return v8Clients;
+    const lower = searchTerm.toLowerCase();
+    return v8Clients.filter(c => c.name.toLowerCase().includes(lower) || c.url.toLowerCase().includes(lower));
+  }, [searchTerm]);
+
   return (
     <section
       id="showcase_v8"
@@ -2535,11 +2642,26 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
           absurda no celular e nota máxima nos rankings técnicos. Veja projetos
           de verdade operando no mercado brasileiro:
         </p>
+
+        {/* Search Bar */}
+        <div className="relative max-w-md mx-auto mt-8">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-muted-foreground" />
+          </div>
+          <input
+            type="text"
+            className="block w-full pl-11 pr-4 py-3 border border-input rounded-xl leading-5 bg-background placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#2B5250] focus:border-[#2B5250] sm:text-sm transition duration-150 ease-in-out"
+            placeholder="Buscar por nome do site ou link..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Grid of clients */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {v8Clients.map((client, i) => (
+        {filteredClients.length > 0 ? (
+          filteredClients.map((client, i) => (
           <div
             key={i}
             className="group bg-[color:var(--brand-sand)]/20 hover:bg-background border border-[color:var(--brand-ink)]/10 hover:border-[#2B5250]/30 p-6 rounded-3xl transition-all duration-300 shadow-soft flex flex-col justify-between"
@@ -2616,7 +2738,12 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
               Visitar Portal Ativo <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
-        ))}
+        ))
+        ) : (
+          <div className="col-span-full py-12 text-center text-muted-foreground">
+            Nenhum site encontrado para a busca "{searchTerm}"
+          </div>
+        )}
       </div>
 
       {/* Tech info footer bar */}
