@@ -1039,7 +1039,7 @@ function Ticker() {
   return (
     <div
       className="relative border-y border-[#5AA6A6]/30"
-      style={{ background: "#5AA6A6", color: "#1e3a38" }}
+      style={{ background: "#5AA6A6", color: "#081716" }}
     >
       <div className="overflow-hidden">
         <div className="marquee flex gap-10 py-3.5 whitespace-nowrap text-base">
@@ -1500,7 +1500,7 @@ function FunnelVisual() {
           <Building2 className="w-4 h-4" />
           <span className="font-mono-ui text-base font-medium">
             imob.online / funil{" "}
-            <span className="text-xs text-muted-foreground font-normal opacity-80">
+            <span className="text-xs text-muted-foreground font-normal">
               (exemplo ilustrativo)
             </span>
           </span>
@@ -1635,6 +1635,7 @@ export function Blog() {
           data-gtm-cta="ver_todos_blog"
           data-gtm-location="blog"
           className="inline-flex items-center gap-1.5 text-base font-medium hover:opacity-70"
+          aria-label="Ver todos os artigos do blog"
         >
           Ver todos <ArrowUpRight className="w-4 h-4" />
         </Link>
@@ -2259,6 +2260,7 @@ function IntegrationsSection() {
                 to="/solucoes/$slug"
                 params={{ slug: "integracoes" }}
                 className="inline-flex items-center justify-center text-[color:var(--brand-ink)] font-bold text-lg hover:underline transition-colors cursor-pointer group"
+                aria-label="Ver todas as integrações"
               >
                 Ver todos
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
