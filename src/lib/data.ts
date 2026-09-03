@@ -388,6 +388,7 @@ export interface PortalIntegration {
   logoBg: string;
   logoTextColor: string;
   logoText: string;
+  logoImg?: string;
   officialColor: string;
 }
 
@@ -401,6 +402,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-600/10",
     logoTextColor: "text-indigo-600",
     logoText: "GZ",
+    logoImg: "https://www.google.com/s2/favicons?domain=zapimoveis.com.br&sz=128",
     officialColor: "#131a40",
   },
   {
@@ -412,6 +414,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-blue-600/10",
     logoTextColor: "text-blue-600",
     logoText: "VR",
+    logoImg: "https://www.google.com/s2/favicons?domain=vivareal.com.br&sz=128",
     officialColor: "#35D4B6",
   },
   {
@@ -423,6 +426,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-cyan-600/10",
     logoTextColor: "text-cyan-600",
     logoText: "ZP",
+    logoImg: "https://www.google.com/s2/favicons?domain=zapimoveis.com.br&sz=128",
     officialColor: "#1b2d91",
   },
   {
@@ -434,6 +438,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-yellow-500/10",
     logoTextColor: "text-yellow-600",
     logoText: "ML",
+    logoImg: "https://www.google.com/s2/favicons?domain=mercadolivre.com.br&sz=128",
     officialColor: "#FFF159",
   },
   {
@@ -445,6 +450,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-purple-600/10",
     logoTextColor: "text-purple-600",
     logoText: "OLX",
+    logoImg: "https://www.google.com/s2/favicons?domain=olx.com.br&sz=128",
     officialColor: "#8C38B2",
   },
   {
@@ -456,6 +462,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-red-600/10",
     logoTextColor: "text-red-600",
     logoText: "IW",
+    logoImg: "https://www.google.com/s2/favicons?domain=imovelweb.com.br&sz=128",
     officialColor: "#E63B2E",
   },
   {
@@ -467,6 +474,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-orange-600/10",
     logoTextColor: "text-orange-600",
     logoText: "CM",
+    logoImg: "https://www.google.com/s2/favicons?domain=chavesnamao.com.br&sz=128",
     officialColor: "#E30613",
   },
   {

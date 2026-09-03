@@ -1324,9 +1324,13 @@ function SolucaoDetalhe() {
                       {/* Logo and Badge */}
                       <div className="flex items-center justify-between mb-4">
                         <div
-                          className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-sm ${portal.logoBg} ${portal.logoTextColor}`}
+                          className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-sm overflow-hidden ${portal.logoBg} ${portal.logoTextColor}`}
                         >
-                          {portal.logoText}
+                          {portal.logoImg ? (
+                            <img src={portal.logoImg} alt={portal.name} className="w-full h-full object-cover p-1.5 bg-white rounded-xl" />
+                          ) : (
+                            portal.logoText
+                          )}
                         </div>
                         <span
                           className={`text-[9px] font-mono-ui font-bold px-2 py-0.5 rounded-full ${
