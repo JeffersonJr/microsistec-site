@@ -486,6 +486,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-600/10",
     logoTextColor: "text-emerald-600",
     logoText: "CR",
+    logoImg: "https://www.google.com/s2/favicons?domain=creci.org.br&sz=128",
     officialColor: "#006B3F",
   },
   {
@@ -497,6 +498,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-sky-600/10",
     logoTextColor: "text-sky-600",
     logoText: "NI",
+    logoImg: "https://www.google.com/s2/favicons?domain=netimoveis.com&sz=128",
     officialColor: "#0F172A",
   },
   {
@@ -508,6 +510,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-500/10",
     logoTextColor: "text-teal-600",
     logoText: "OR",
+    logoImg: "https://www.google.com/s2/favicons?domain=orulo.com.br&sz=128",
     officialColor: "#00F2A6",
   },
   {
@@ -519,6 +522,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-blue-700/10",
     logoTextColor: "text-blue-700",
     logoText: "FB",
+    logoImg: "https://www.google.com/s2/favicons?domain=facebook.com&sz=128",
     officialColor: "#1877F2",
   },
   {
@@ -530,6 +534,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-violet-600/10",
     logoTextColor: "text-violet-600",
     logoText: "LD",
+    logoImg: "https://www.google.com/s2/favicons?domain=leadster.com.br&sz=128",
     officialColor: "#8B5CF6",
   },
   {
@@ -541,6 +546,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-cyan-500/10",
     logoTextColor: "text-cyan-600",
     logoText: "IF",
+    logoImg: "https://www.google.com/s2/favicons?domain=imobflux.com.br&sz=128",
     officialColor: "#14B8A6",
   },
   {
@@ -563,6 +569,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-zinc-600/10",
     logoTextColor: "text-zinc-600",
     logoText: "123",
+    logoImg: "https://www.google.com/s2/favicons?domain=123i.uol.com.br&sz=128",
     officialColor: "#4B5563",
   },
   {
@@ -607,6 +614,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-500/10",
     logoTextColor: "text-amber-600",
     logoText: "CM",
+    logoImg: "https://www.google.com/s2/favicons?domain=casamineira.com.br&sz=128",
     officialColor: "#F59E0B",
   },
   {
@@ -629,6 +637,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-blue-500/10",
     logoTextColor: "text-blue-600",
     logoText: "DF",
+    logoImg: "https://www.google.com/s2/favicons?domain=dfimoveis.com.br&sz=128",
     officialColor: "#3B82F6",
   },
   {
@@ -772,6 +781,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-blue-400/10",
     logoTextColor: "text-blue-600",
     logoText: "WI",
+    logoImg: "https://www.google.com/s2/favicons?domain=wimoveis.com.br&sz=128",
     officialColor: "#60A5FA",
   },
   {
@@ -794,6 +804,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-rose-600/10",
     logoTextColor: "text-rose-600",
     logoText: "IG",
+    logoImg: "https://www.google.com/s2/favicons?domain=imovelguide.com.br&sz=128",
     officialColor: "#E11D48",
   },
   {
@@ -849,6 +860,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-orange-400/10",
     logoTextColor: "text-orange-600",
     logoText: "SI",
+    logoImg: "https://www.google.com/s2/favicons?domain=storiaimoveis.com.br&sz=128",
     officialColor: "#FB923C",
   },
   {
