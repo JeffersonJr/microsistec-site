@@ -301,20 +301,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <SeoSchema />
         {/* Inline CSS to completely eliminate render blocking network requests */}
         <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
-        {/* Optimized Font Loading (Deferred to prevent render blocking) */}
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        />
+        {/* Fontes do Google estão inlined no styles.css para performance (0 render-blocking) */}
       </head>
       <body suppressHydrationWarning>
         {children}
