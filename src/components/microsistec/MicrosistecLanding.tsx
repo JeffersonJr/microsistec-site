@@ -2248,13 +2248,22 @@ function IntegrationsSection() {
               Possuímos <strong>APIs e webhooks</strong> para integrarmos com qualquer
               solução que esteja preparada para enviar ou consumir dados
             </p>
-            <div className="pt-2">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <button
                 onClick={openModal}
                 className="inline-flex items-center justify-center rounded-xl bg-[#2B5250] text-white px-8 py-4 font-bold text-lg hover:bg-[#1f3b39] transition-colors shadow-lg cursor-pointer border-none"
               >
                 Solicite um contato
               </button>
+              <Link
+                to="/solucoes/integracoes"
+                className="inline-flex items-center justify-center text-[color:var(--brand-ink)] font-bold text-lg hover:underline transition-colors cursor-pointer group"
+              >
+                Ver todos
+                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
 
