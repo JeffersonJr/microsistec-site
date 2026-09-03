@@ -486,7 +486,6 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-600/10",
     logoTextColor: "text-emerald-600",
     logoText: "CR",
-    logoImg: "https://imob.online/imgs/portais/portalcreci.png",
     officialColor: "#006B3F",
   },
   {
@@ -558,7 +557,6 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-600/10",
     logoTextColor: "text-amber-600",
     logoText: "OM",
-    logoImg: "https://imob.online/imgs/portais/olhomagico.png",
     officialColor: "#EC4899",
   },
   {
@@ -582,7 +580,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-stone-600/10",
     logoTextColor: "text-stone-600",
     logoText: "321",
-    logoImg: "https://imob.online/imgs/portais/321achei.png",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT47Q2lnrlGyooHMsUXpJ_5oCWNJXlDiwUdaDpfIsPd0sFXnAMoJeX1dZY&s=10",
     officialColor: "#78716C",
   },
   {
@@ -594,7 +592,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-500/10",
     logoTextColor: "text-indigo-600",
     logoText: "AJ",
-    logoImg: "https://imob.online/imgs/portais/alugarja.png",
+    logoImg: "https://www.akonsulting.com.br/wp-content/uploads/2016/10/logo-alugar-j%C3%A1-novo-291x300.png",
     officialColor: "#6366F1",
   },
   {
@@ -678,7 +676,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-600/10",
     logoTextColor: "text-teal-600",
     logoText: "GC",
-    logoImg: "https://imob.online/imgs/portais/guiaimovelcia.png",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfXcSe0BIeh1BrH3IrrAg2b_a3gxcWLabia-ysmjtLDg&s",
     officialColor: "#0D9488",
   },
   {
@@ -702,7 +700,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-400/10",
     logoTextColor: "text-indigo-600",
     logoText: "SP",
-    logoImg: "https://imob.online/imgs/portais/grupo_sp.png",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvJpCqmEPiLZH37Yk5wk4G3u-5HZWpkCAaVUaU49UdhxC1hfNUkE3d5w&s=10",
     officialColor: "#818CF8",
   },
   {
@@ -774,7 +772,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-sky-400/10",
     logoTextColor: "text-sky-600",
     logoText: "TL",
-    logoImg: "https://imob.online/imgs/portais/trocalar.png",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ77mMb2M2AUFP88o_iLJvrFtBKh1xU7Fzn5cSNPKcOlw&s=10",
     officialColor: "#38BDF8",
   },
   {
@@ -870,7 +868,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-lime-400/10",
     logoTextColor: "text-lime-600",
     logoText: "LK",
-    logoImg: "https://imob.online/imgs/portais/linklar.png",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD3JyBigvnkExl1it6pjPSGAvwIjvaDrmRdJsAAsaz8exMIPH595UU8256&s=10",
     officialColor: "#A3E635",
   },
   {
@@ -906,7 +904,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-400/10",
     logoTextColor: "text-amber-600",
     logoText: "BK",
-    logoImg: "https://imob.online/imgs/portais/campainha.png",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC3NnObF61ZMvv5c25-pjypLJAdZOew1NuJYw3isSh0A&s=10",
     officialColor: "#FBBF24",
   },
   {
