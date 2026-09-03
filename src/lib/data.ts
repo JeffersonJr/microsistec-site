@@ -486,7 +486,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-600/10",
     logoTextColor: "text-emerald-600",
     logoText: "CR",
-    logoImg: "https://www.google.com/s2/favicons?domain=creci.org.br&sz=128",
+    logoImg: "/logos/creci.png",
     officialColor: "#006B3F",
   },
   {
@@ -558,6 +558,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-600/10",
     logoTextColor: "text-amber-600",
     logoText: "OM",
+    logoImg: "/logos/olho-magico.png",
     officialColor: "#EC4899",
   },
   {
@@ -581,7 +582,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-stone-600/10",
     logoTextColor: "text-stone-600",
     logoText: "321",
-    logoImg: "https://www.google.com/s2/favicons?domain=321achei.com&sz=128",
+    logoImg: "/logos/321achei.png",
     officialColor: "#78716C",
   },
   {
@@ -593,6 +594,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-500/10",
     logoTextColor: "text-indigo-600",
     logoText: "AJ",
+    logoImg: "/logos/alugar-ja.png",
     officialColor: "#6366F1",
   },
   {
@@ -676,7 +678,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-teal-600/10",
     logoTextColor: "text-teal-600",
     logoText: "GC",
-    logoImg: "https://www.google.com/s2/favicons?domain=guiaimovelecia.com.br&sz=128",
+    logoImg: "/logos/imovel-cia.png",
     officialColor: "#0D9488",
   },
   {
@@ -912,6 +914,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-rose-400/10",
     logoTextColor: "text-rose-600",
     logoText: "EP",
+    logoImg: "/logos/epungo.png",
     officialColor: "#FB7185",
   },
   {
