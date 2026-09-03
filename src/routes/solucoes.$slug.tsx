@@ -2658,25 +2658,21 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
                     <Gauge className="w-3.5 h-3.5 text-emerald-500" /> PageSpeed
                     Mobile
                   </span>
-                  <span className="text-emerald-600">
-                    {client.perf.mobile}/100
-                  </span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono-ui font-bold">
                   <span className="flex items-center gap-1">
                     <Activity className="w-3.5 h-3.5 text-emerald-500" />{" "}
                     PageSpeed Desktop
                   </span>
-                  <span className="text-emerald-600">
-                    {client.perf.desktop}/100
-                  </span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 </div>
                 <div className="flex items-center justify-between text-[10px] font-mono-ui font-bold">
                   <span className="flex items-center gap-1">
-                    <Shield className="w-3.5 h-3.5 text-indigo-500" /> SEO
+                    <Shield className="w-3.5 h-3.5 text-emerald-500" /> SEO
                     Ranking
                   </span>
-                  <span className="text-indigo-600">{client.perf.seo}%</span>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 </div>
               </div>
             </div>
