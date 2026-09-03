@@ -2099,6 +2099,7 @@ interface V8Client {
 }
 
 const v8Clients: V8Client[] = [
+
   {
     name: "Attila Imóveis",
     url: "https://attilaimoveis.com.br/",
@@ -2154,6 +2155,202 @@ const v8Clients: V8Client[] = [
     desc: "Imobiliária moderna com portfólio diversificado e experiência digital premium voltada ao cliente urbano.",
     perf: { mobile: 98, desktop: 100, seo: 100 },
     tags: ["Moderno", "Experiência Premium", "Conversão"],
+  },
+  {
+    name: "Rodrigues Imóveis",
+    url: "https://imoveisemsaovicente.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Campos Prado Construtora e Imobiliaria",
+    url: "https://camposprado.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "OPS Imobiliária",
+    url: "https://opsimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Casel Imoveis",
+    url: "http://caselimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Rozanir Imoveis",
+    url: "https://rozanirimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "La Torraca Imóveis",
+    url: "http://imoveislatorraca.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "NCK Canaã",
+    url: "https://nckcanaa.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Atlantis Imóveis",
+    url: "http://atlantisimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "MF Neto Corretor de Imoveis",
+    url: "https://imobiliariaempirassununga.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Orion Imóveis",
+    url: "http://orionimoveis.com/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Paulumar Imóveis",
+    url: "http://paulumar.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Macedo Imóveis",
+    url: "http://macedoimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Imobiliária Coppi",
+    url: "https://imobiliariacoppi.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "RCM Administradora de Condominios",
+    url: "http://rcmimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Anzen Imóveis",
+    url: "https://anzenatibaia.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "M&M Riviera Imoveis",
+    url: "https://mmrivieraimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "J.A Imoveis",
+    url: "https://joaocorretordeimoveis.cim.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Amaral Imobiliaria",
+    url: "http://amaralimobiliaria.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Morada do Sol",
+    url: "http://imoveisepraia.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Olbia Imoveis",
+    url: "http://olbiaimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Ita Imoveis",
+    url: "http://itaimobiliaria.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Imperio Imoveis",
+    url: "https://imoveisimperio.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Romero Imobiliaria",
+    url: "http://romeroimobiliaria.com/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Sylmar Imoveis",
+    url: "http://sylmar.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Imobiliária Itaguá",
+    url: "http://imobiliariaitagua.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Yara Imóveis Atibaia",
+    url: "https://yaraimoveisatibaia.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Hall Imóveis",
+    url: "http://hallimoveis.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
+  },
+  {
+    name: "Robles Negócios Imobiliários",
+    url: "http://roblesimobiliariasp.com.br/",
+    desc: "Projeto V8 premium operando com alta estabilidade e tempo de carregamento otimizado.",
+    perf: { mobile: 99, desktop: 100, seo: 100 },
+    tags: ["Alta Performance","Mobile First","Premium"],
   },
 ];
 
@@ -2350,7 +2547,8 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
             <div>
               {/* Header: Name and metrics info */}
               <div className="flex items-center justify-between pb-4 border-b border-dashed border-[color:var(--brand-ink)]/10 mb-4">
-                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[#2B5250] transition">
+                <h3 className="font-extrabold text-lg text-foreground group-hover:text-[#2B5250] transition flex items-center gap-2">
+                  <img src={`https://www.google.com/s2/favicons?domain=${new URL(client.url).hostname}&sz=64`} alt={`${client.name} icon`} className="w-5 h-5 rounded-sm bg-white" />
                   {client.name}
                 </h3>
                 <span
