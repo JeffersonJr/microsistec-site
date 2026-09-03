@@ -2626,7 +2626,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
               {/* Header: Name and metrics info */}
               <div className="flex items-center justify-between pb-4 border-b border-dashed border-[color:var(--brand-ink)]/10 mb-4">
                 <h3 className="font-extrabold text-lg text-foreground group-hover:text-[#2B5250] transition flex items-center gap-2">
-                  <img src={`https://www.google.com/s2/favicons?domain=${new URL(client.url).hostname}&sz=64`} alt={`${client.name} icon`} className="w-5 h-5 rounded-sm bg-white" />
+                  <img src={`https://www.google.com/s2/favicons?domain=${new URL(client.url).hostname}&sz=64`} alt={`${client.name} icon`} className="w-5 h-5 rounded-sm bg-white" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
                   {client.name}
                 </h3>
                 <span
