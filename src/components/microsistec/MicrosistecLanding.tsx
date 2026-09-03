@@ -32,6 +32,7 @@ import {
   getIconComponent,
   blogPosts,
   testimonials,
+  portalIntegrations,
 } from "@/lib/data";
 
 const Testimonial = React.lazy(() => import("./Testimonial"));
@@ -2038,6 +2039,7 @@ export function MicrosistecLanding() {
         <Pillars />
         <Albert />
         <Funil />
+        <IntegrationsSection />
         <Ecosystem />
         <React.Suspense fallback={<div className="w-full h-64 md:h-96" />}>
           <Testimonial />
@@ -2218,5 +2220,87 @@ export function SimpleFooter() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function IntegrationsSection() {
+  const { openModal } = useDemoModal();
+  
+  // Use all integrations for the marquee
+  const allIntegrations = portalIntegrations;
+  
+  // We double the list to make the marquee loop seamless
+  const duplicatedTop = [...allIntegrations.slice(0, 8), ...allIntegrations.slice(0, 8), ...allIntegrations.slice(0, 8)];
+  const duplicatedBottom = [...allIntegrations.slice(8, 16), ...allIntegrations.slice(8, 16), ...allIntegrations.slice(8, 16)];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden border-t border-[color:var(--brand-ink)]/10">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Left Side: Text */}
+          <div className="w-full lg:w-5/12 space-y-6 text-center lg:text-left">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[color:var(--brand-ink)] leading-[1.1]">
+              Integramos com
+              <br />
+              seus sistemas
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Possuímos <strong>APIs e webhooks</strong> para integrarmos com qualquer
+              solução que esteja preparada para enviar ou consumir dados
+            </p>
+            <div className="pt-2">
+              <button
+                onClick={openModal}
+                className="inline-flex items-center justify-center rounded-xl bg-[#2B5250] text-white px-8 py-4 font-bold text-lg hover:bg-[#1f3b39] transition-colors shadow-lg cursor-pointer border-none"
+              >
+                Solicite um contato
+              </button>
+            </div>
+          </div>
+
+          {/* Right Side: Marquee */}
+          <div className="w-full lg:w-7/12 relative">
+            <div 
+              className="flex flex-col gap-6 relative overflow-hidden" 
+              style={{
+                maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+              }}
+            >
+              <div className="flex w-max animate-marquee gap-6">
+                {duplicatedTop.map((portal, i) => (
+                  <IntegrationPill key={i} portal={portal} />
+                ))}
+              </div>
+              <div className="flex w-max animate-marquee-reverse gap-6 ml-[-20%]">
+                {duplicatedBottom.map((portal, i) => (
+                  <IntegrationPill key={i} portal={portal} />
+                ))}
+              </div>
+            </div>
+            <p className="text-center text-sm text-muted-foreground font-medium mt-8">
+              Veja algumas das soluções que já integramos para nossos clientes
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function IntegrationPill({ portal }: { portal: any }) {
+  return (
+    <div className="flex items-center justify-center gap-3 bg-[color:var(--brand-sand)] px-6 py-4 rounded-full min-w-[200px] border border-[color:var(--brand-ink)]/5 shadow-sm">
+      {portal.logoImg ? (
+        <img src={portal.logoImg} alt={portal.name} className="w-8 h-8 object-contain bg-white rounded-full p-1" />
+      ) : (
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ${portal.logoBg} ${portal.logoTextColor}`}>
+          {portal.logoText}
+        </div>
+      )}
+      <span className="font-semibold text-[color:var(--brand-ink)] text-sm whitespace-nowrap">
+        {portal.name}
+      </span>
+    </div>
   );
 }
