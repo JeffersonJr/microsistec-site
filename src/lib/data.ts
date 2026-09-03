@@ -912,6 +912,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-rose-400/10",
     logoTextColor: "text-rose-600",
     logoText: "EP",
+    logoImg: "https://www.google.com/s2/favicons?domain=epungo.com.br&sz=128",
     officialColor: "#FB7185",
   },
   {
