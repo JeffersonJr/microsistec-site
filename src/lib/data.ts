@@ -438,7 +438,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-indigo-500/10",
     logoTextColor: "text-indigo-600",
     logoText: "AJ",
-    logoImg: "https://imob.online/imgs/portais/alugarja.png",
+    logoImg: "https://www.google.com/s2/favicons?domain=alugarja.com.br&sz=64",
     officialColor: "#6366F1",
   },
   {
