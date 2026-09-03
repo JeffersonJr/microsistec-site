@@ -486,6 +486,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-emerald-600/10",
     logoTextColor: "text-emerald-600",
     logoText: "CR",
+    logoImg: "https://media.licdn.com/dms/image/v2/C4D03AQErx3Dzpr8S8w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1641672790139?e=2147483647&v=beta&t=6tVZICvQLHxNpYmbOtbBs7a-mUPknKr3pjX_s61CIkE",
     officialColor: "#006B3F",
   },
   {
@@ -544,8 +545,8 @@ export const portalIntegrations: PortalIntegration[] = [
     type: "API",
     logoBg: "bg-cyan-500/10",
     logoTextColor: "text-cyan-600",
-    logoText: "IF",
-    logoImg: "https://www.google.com/s2/favicons?domain=imobflux.com.br&sz=128",
+    logoText: "IM",
+    logoImg: "/logos/imobflux.jpg",
     officialColor: "#14B8A6",
   },
   {
@@ -557,6 +558,7 @@ export const portalIntegrations: PortalIntegration[] = [
     logoBg: "bg-amber-600/10",
     logoTextColor: "text-amber-600",
     logoText: "OM",
+    logoImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0yk7nVYRjKj8nuIN3jEr4iVyhH-NvZ8z8y6uEnUe2ow&s",
     officialColor: "#EC4899",
   },
   {
