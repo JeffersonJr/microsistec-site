@@ -342,7 +342,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
-import { DemoModalProvider } from "@/hooks/use-demo-modal";
+import { DemoModalProvider, useDemoModal } from "@/hooks/use-demo-modal";
 const DemoModal = React.lazy(() =>
   import("@/components/microsistec/DemoModal").then((m) => ({
     default: m.DemoModal,
@@ -445,12 +445,21 @@ function RootComponent() {
       <DemoModalProvider>
         <Outlet />
 
-        <React.Suspense fallback={null}>
-          <DemoModal />
-        </React.Suspense>
+        <DemoModalContainer />
         <PrivacyNotice />
         <Analytics />
       </DemoModalProvider>
     </QueryClientProvider>
+  );
+}
+
+function DemoModalContainer() {
+  const { isOpen } = useDemoModal();
+  if (!isOpen) return null;
+  
+  return (
+    <React.Suspense fallback={null}>
+      <DemoModal />
+    </React.Suspense>
   );
 }
