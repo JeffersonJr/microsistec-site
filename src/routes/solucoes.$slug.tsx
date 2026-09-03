@@ -2691,7 +2691,7 @@ function SitesV8SubSection({ openModal }: { openModal: () => void }) {
               data-gtm-location="showcase_v8"
               className="w-full bg-[color:var(--brand-ink)] group-hover:bg-[color:var(--brand-orange)] text-[color:var(--brand-sand)] group-hover:text-[color:var(--brand-ink)] transition text-center py-2.5 rounded-full text-sm font-bold flex items-center justify-center gap-1.5 no-underline decoration-none"
             >
-              Visitar Portal Ativo <ArrowUpRight className="w-3.5 h-3.5" />
+              Acessar Site <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
         ))
