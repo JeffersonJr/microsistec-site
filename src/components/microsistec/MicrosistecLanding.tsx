@@ -2221,8 +2221,8 @@ function IntegrationsSection() {
   const allIntegrations = portalIntegrations;
   
   // We double the list to make the marquee loop seamless
-  const duplicatedTop = [...allIntegrations.slice(0, 8), ...allIntegrations.slice(0, 8), ...allIntegrations.slice(0, 8)];
-  const duplicatedBottom = [...allIntegrations.slice(8, 16), ...allIntegrations.slice(8, 16), ...allIntegrations.slice(8, 16)];
+  const duplicatedTop = [...allIntegrations.slice(0, 8), ...allIntegrations.slice(0, 8)];
+  const duplicatedBottom = [...allIntegrations.slice(8, 16), ...allIntegrations.slice(8, 16)];
 
   return (
     <section className="py-24 bg-white overflow-hidden border-t border-[color:var(--brand-ink)]/10">
@@ -2294,7 +2294,7 @@ function IntegrationPill({ portal }: { portal: any }) {
   return (
     <div className="flex items-center justify-center gap-3 bg-[color:var(--brand-sand)] px-6 py-4 rounded-full min-w-[200px] border border-[color:var(--brand-ink)]/5 shadow-sm">
       {portal.logoImg ? (
-        <img src={portal.logoImg} alt={portal.name} className="w-8 h-8 object-contain bg-white rounded-full p-1" />
+        <img loading="lazy" src={portal.logoImg} alt={portal.name} className="w-8 h-8 object-contain bg-white rounded-full p-1" />
       ) : (
         <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ${portal.logoBg} ${portal.logoTextColor}`}>
           {portal.logoText}
