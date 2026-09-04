@@ -6,7 +6,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   // Disable the Cloudflare Workers adapter — not needed on Vercel
-  cloudflare: false,
+  nitro: false,
   plugins: [],
   tanstackStart: {
     server: {
