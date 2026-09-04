@@ -65,7 +65,7 @@ export default function IntegrationsSection() {
                 className="inline-flex items-center justify-center text-[color:var(--brand-ink)] font-bold text-lg hover:underline transition-colors cursor-pointer group"
                 aria-label="Ver todas as integrações"
               >
-                Ver todos
+                Ver todas as integrações
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
