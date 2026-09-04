@@ -16,6 +16,7 @@ export default defineConfig({
   build: {
     // Target modern browsers for smaller bundles
     target: "es2020",
+    sourcemap: true,
     // Enable CSS minification
     cssMinify: true,
     // Smaller chunks for better caching

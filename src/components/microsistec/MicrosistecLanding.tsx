@@ -1121,66 +1121,7 @@ function Ticker() {
 /* -------------------------------------------------------------------------- */
 
 
-function FooterCol({
-  className,
-  title,
-  links,
-}: {
-  className?: string;
-  title: string;
-  links: {
-    label: React.ReactNode;
-    to?: string;
-    params?: any;
-    onClick?: () => void;
-    gtmCta?: string;
-  }[];
-}) {
-  return (
-    <div className={className}>
-      <h3 className="font-semibold mb-4 text-lg">{title}</h3>
-      <ul className="space-y-2 text-muted-foreground text-base">
-        {links.map((link, idx) => (
-          <li key={idx}>
-            {link.onClick ? (
-              <button
-                onClick={link.onClick}
-                data-gtm-cta={link.gtmCta}
-                data-gtm-location="rodape"
-                className="hover:text-[color:var(--brand-orange)] transition cursor-pointer bg-transparent border-none p-0 text-left font-[inherit] text-[inherit]"
-              >
-                {link.label}
-              </button>
-            ) : link.to?.startsWith("http") ||
-              link.to?.startsWith("#") ||
-              link.to?.startsWith("/#") ? (
-              <a
-                title="Acessar link"
-                href={link.to}
-                data-gtm-cta={link.gtmCta}
-                data-gtm-location="rodape"
-                className="hover:text-[color:var(--brand-orange)] transition"
-              >
-                {link.label}
-              </a>
-            ) : link.to ? (
-              <Link
-                title="Acessar link"
-                to={link.to}
-                params={link.params}
-                data-gtm-cta={link.gtmCta}
-                data-gtm-location="rodape"
-                className="hover:text-[color:var(--brand-orange)] transition cursor-pointer"
-              >
-                {link.label}
-              </Link>
-            ) : null}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+
 
 /* -------------------------------------------------------------------------- */
 export function MicrosistecLanding() {
@@ -1188,7 +1129,7 @@ export function MicrosistecLanding() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <main>
+      <main id="main-content" role="main">
         <Hero />
         <React.Suspense fallback={<div className="w-full h-32" />}>
           <StatsStrip />
